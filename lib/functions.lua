@@ -6,17 +6,19 @@
 function runPremiumSystem(cid)
 	local message = "Dear "..getCreatureName(cid)..",\nYour premium time is over!\nYou were automatically taken to the temple of Quendor City.\nContinue contributing to the Darghos Server and have a good game!\n\nYours,\nUltraXSoft Team."
 	
+	name = getCreatureName(cid)
+	
 	if isPremium(cid) == TRUE then
-		print("[premiumsystem] Possui premium")
+		print("[premiumsystem] Possui premium (Player:"..name..")")
 		
 		if getPlayerStorageValue(cid,sid.PREMMY_VERIFY) ~= 1 then
 			setPlayerStorageValue(cid, sid.PREMMY_VERIFY,1)
 			doSendMagicEffect(getPlayerPosition(cid),11)
 			
-			print("[premiumsystem] Configurou o Premium Statys no Storage Value")
+			print("[premiumsystem] Configurou o Premium Status no Storage Value (Player:"..name..")")
 		end
 	else
-		print("[premiumsystem] Nao possui premium")
+		print("[premiumsystem] Nao possui premium (Player:"..name..")")
 	
 		if getPlayerStorageValue(cid, sid.PREMMY_VERIFY) == 1 then
 			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, message)
@@ -24,7 +26,7 @@ function runPremiumSystem(cid)
 			setPlayerStorageValue(cid, sid.PREMMY_VERIFY,0)
 			doPlayerSetTown(cid, getTownIdByName("quendor"))
 			
-			print("[premiumsystem] Moveu o player para Quendor")
+			print("[premiumsystem] Moveu o player para Quendor (Player:"..name..")")
 		end
 	end
 end
