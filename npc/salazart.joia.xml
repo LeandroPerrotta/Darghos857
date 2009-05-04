@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Hembler" script="sample.lua" walkinterval="1000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="134" head="4" body="3" legs="2" feet="1" addons="1"/>
+    <parameters>
+        
+        <parameter key="message_farewell" value="Farewell, |PLAYERNAME|."/>
+        <parameter key="message_sendtrade" value="Here, take a look."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="name;offer;job;" />
+        <parameter key="keyword_reply1" value="I am the {best}!, it's a pleasure to meet you." />
+        <parameter key="keyword_reply2" value="Well, I sell gems and {goblets}. If you'd like to see my offers, ask me for a {trade}." />
+        <parameter key="keyword_reply3" value="I am responsible for buying and selling gems, pearls, and the like." />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="black pearl,2144,560;golden amulet,2130,6600;ruby necklace,2133,3560;small amethyst,2150,400;small diamond,2145,600;small sapphire,2146,500;wedding ring,2121,990;white pearl,2143,320;small ruby,2147,500;small emerald,2149,500;bronze goblet,5807,2000;golden goblet,5805,5000;silver goblet,5806,3000;" />
+        <parameter key="shop_sellable" value="black pearl,2144,280;small amethyst,2150,200;small diamond,2145,300;small sapphire,2146,250;white pearl,2143,160;small ruby,2147,250;small emerald,2149,250;" />
+    </parameters>
+</npc>

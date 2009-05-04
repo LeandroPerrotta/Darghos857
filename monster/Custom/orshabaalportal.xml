@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Orshabaal" nameDescription="Orshabaal" race="fire" experience="10000" speed="240" manacost="0">
+  <health now="5000000" max="5000000"/>
+  <look type="201" head="0" body="0" legs="0" feet="0" corpse="2916"/>
+  <targetchange interval="2000" chance="10"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag runonhealth="2500"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="0" max="-1500"/>
+    <attack name="strength" interval="1000" chance="6" radius="3" target="0" min="-100" max="-400">
+      <attribute key="areaEffect" value="blackspark"/>
+    </attack>
+    <attack name="fire" interval="1000" chance="34" range="7" radius="7" target="1" min="-100" max="-650">
+      <attribute key="shootEffect" value="fire"/>
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+    <attack name="firefield" interval="1000" chance="10" range="7" radius="4" target="1">
+      <attribute key="shootEffect" value="fire"/>
+    </attack>
+    <attack name="energy" interval="1000" chance="25" length="8" spread="0" min="-100" max="-1300">
+      <attribute key="areaEffect" value="energy"/>
+    </attack>
+  </attacks>
+  <defenses armor="70" defense="60">
+    <defense name="healing" interval="1000" chance="8" min="3200" max="5000">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="healing" interval="1000" chance="17" min="800" max="1900">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="1"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <summons maxSummons="4">
+    <summon name="demon" interval="1000" chance="3" max="4"/>
+  </summons>
+  <voices interval="5000" chance="10">
+    <voice sentence="PRAISED BE MY MASTERS, THE RUTHLESS SEVEN!" yell="1"/>
+    <voice sentence="YOU ARE DOOMED!" yell="1"/>
+    <voice sentence="ORSHABAAL IS BACK!" yell="1"/>
+    <voice sentence="Be prepared for the day my masters will come for you!"/>
+    <voice sentence="SOULS FOR ORSHABAAL!" yell="1"/>
+  </voices>
+  <loot capacity="5000">
+    <item id="2152" countmax="7" chance="100000"/> //platinum
+    <item id="2148" countmax="100" chance="100000"/> //gold  
+    <item id="2151" countmax="10" chance="25000"/> //talons	
+    <item id="2158" countmax="1" chance="1500"/> //blue gem
+    <item id="2195" countmax="1" chance="5000"/> //boots of haste
+	<item id="2678" countmax="4" chance="5000"/> //coconut
+    <item id="2520" countmax="1" chance="15500"/> //demon shield
+	<item id="6300" countmax="1" chance="8000"/> //death ring
+    <item id="2462" countmax="1" chance="11000"/> //devil helmet
+    <item id="2387" countmax="1" chance="20000"/> //double axe
+    <item id="2167" countmax="1" chance="13500"/> //energy ring
+    <item id="2432" countmax="1" chance="17000"/> //fire axe
+    <item id="2393" countmax="1" chance="12500"/> //giant sword
+    <item id="2179" countmax="1" chance="8000"/> //gold ring
+    <item id="2033" countmax="1" chance="7500"/> //golden mug
+    <item id="2418" countmax="1" chance="4500"/> //golden sickle
+    <item id="2182" countmax="1" chance="3500"/> //snakebite rod
+    <item id="2188" countmax="1" chance="2500"/> //wand of plague
+    <item id="2396" countmax="1" chance="7500"/> //ice rapier
+    <item id="2164" countmax="1" chance="5000"/> //might ring
+    <item id="2178" countmax="1" chance="4000"/> //mind stone
+    <item id="2176" countmax="1" chance="12000"/> //orb
+	<item id="5808" countmax="1" chance="12000"/> //orshabaal brain
+    <item id="2171" countmax="1" chance="4500"/> //platinum amulet
+    <item id="1982" countmax="1" chance="2600"/> //purple tome
+    <item id="2214" countmax="1" chance="13000"/> //ring of healing
+    <item id="2123" countmax="1" chance="3500"/> //ring of the sky
+    <item id="2402" countmax="1" chance="15500"/> //silver dagger
+    <item id="2436" countmax="1" chance="5000"/> //skull staff
+    <item id="2165" countmax="1" chance="9500"/> //stealth ring
+    <item id="2174" countmax="1" chance="2500"/> //strange symbol
+    <item id="2112" countmax="1" chance="14500"/> //teddy bear   
+    <item id="2377" countmax="1" chance="20000"/> //two handed sword
+	<item id="1995" countmax="1" chance="100000">
+		<inside>
+			<item id="2144" countmax="15" chance="15000"/> //black pearls
+			<item id="2150" countmax="20" chance="13500"/> //small amethysts	
+			<item id="2145" countmax="5" chance="9500"/> //small diamonds
+			<item id="2149" countmax="10" chance="15500"/> //small emeralds
+			<item id="2146" countmax="10" chance="13500"/> //small sapphire			
+		</inside>
+	</item>		
+	<item id="5949" countmax="1" chance="100000">
+		<inside>
+			<item id="2472" countmax="1" chance="7500"/> //magic plate armor
+			<item id="2514" countmax="1" chance="9500"/> //mastermind shield
+			<item id="2421" countmax="1" chance="24500"/> //thunder hammer	
+			<item id="2470" countmax="1" chance="5000"/> //golden legs
+		</inside>
+	</item>			
+  </loot>
+</monster>

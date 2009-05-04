@@ -1,0 +1,9 @@
+	<npc name="Oracio" script="sample.lua" walkinterval="2000" floorchange="0" access="5" level="1" maglevel="1">
+	<health now="150" max="150"/>
+	<look type="143" head="124" body="104" legs="17" feet="87" addons="1" corpse="2212"/>
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I buy armors,shields,and legs." />
+		<parameter key="shop_sellable" value="battle shield,2513,90;chain helmet,2458,56;steel helmet,2457,292;iron helmet,2459,123;brass helmet,2460,125;plate armor,2463,425;chain armor,2464,225;brass armor,2465,125;viking helmet,2473,94;brass legs,2478,143;dark helmet,2490,157;steel shield,2509,169;plate shield,2510,142;brass shield,2511,68;chain legs,2648,73;" />
+	</parameters>
+</npc>

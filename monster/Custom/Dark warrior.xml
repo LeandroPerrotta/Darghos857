@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Dark Warrior" nameDescription="a warrior" race="blood" experience="45" speed="600" manacost="320">
+  <health now="10000" max="10000"/>
+  <look type="268" head="95" body="95" legs="95" feet="95" addons="2" corpse="6080"/>
+  <targetchange interval="2000" chance="0"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="0"/>
+    <flag canpushcreatures="0"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="500" min="-10" max="-150"/>
+  </attacks>
+  <defenses armor="50" defense="100"/>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="0"/>
+    <immunity poison="0"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="0"/>
+    <immunity outfit="0"/>
+    <immunity drunk="0"/>
+    <immunity invisible="0"/>
+  </immunities>
+  <voices interval="7000" chance="50">
+    <voice sentence="Hail My General!"/>
+  </voices>
+  <loot>
+    <item id="2148" countmax="15" chance1="100000" chancemax="0"/>
+    <item id="2388" chance="6666"/>
+    <item id="2386" chance="5000"/>
+    <item id="2484" chance="20000"/>
+    <item id="2530" chance="6666"/>
+    <item id="2649" chance="10000"/>
+    <item id="5880" chance="2000" countmax="1" /> -- iron ore
+    <item id="1987" chance="100000">
+      <inside>
+        <item id="2787" countmax="2" chance1="20000" chancemax="0"/>
+      </inside>
+    </item>
+  </loot>
+</monster>

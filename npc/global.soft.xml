@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Aldemar Boladasso" script="game/soft boots.lua" walkinterval="2000" floorchange="0" access="5" level="1" maglevel="1">
+	<health now="150" max="150"/>
+	<look type="130" head="78" body="51" legs="47" feet="38" addons="2"/>
+	<parameters>
+    <parameter key="module_shop" value="1" />
+    <parameter key="shop_buyable" value="leather helmet,,12;studded helmet,,63;leather legs,,10;studded legs,,60;sandals,,2;leather boots,,2;" />
+    </parameters>
+</npc>

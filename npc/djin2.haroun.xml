@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Haroun" script="sample.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="80" head="95" body="132" legs="0" feet="0" addons="0"/>
+	<parameters>
+		<parameter key="module_shop" value="2"/>
+		<parameter key="shop_buyable" value="Axe ring,2208,500;Club ring,2209,500;Power ring,2166,100;Stealth ring,2165,5000;Sword ring,2207,500;Bronze amulet,2172,100;Garlic necklace,2199,100;elven amulet,2198,500;Stone skin amulet,2197,5000;Magic Light Wand,2162,120"/>
+		<parameter key="shop_sellable" value="Axe ring,2208,100;Club ring,2209,100;Power ring,2166,50;Stealth ring,2165,200;Sword ring,2207,100;Bronze amulet,2172,50;Garlic necklace,2199,50;elven amulet,2198,100;Stone skin amulet,2197,500;Wand of cosmic energy,2189,2000;Wand of decay,2188,1000;Wand of dragonbreath,2191,200;Wand of inferno,2187,3000;Wand of vortex,2190,100;Wand of Draconia,8921,1500;Wand of Starstorm,8920,3600;Wand of Voodoo,8922,4400;Magic Light Wand,2162,35;Life Crystal,4851,50;Mind Stone,2178,100;Orb,7493,750"/>
+	</parameters>
+</npc>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Captain Bonifacius" script="sample.lua" walkinterval="0" floorchange="0">
+	<health now="150" max="150"/>
+	<look type="152" head="18" body="88" legs="78" feet="68" corpse="2212"/>
+    <parameters>
+        <parameter key="module_travel" value="1"/>
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. If you don't know where to flow, say {travel}."/>
+        <parameter key="travel_destinations" value="quendor,1925,1865,6,210;aracura,3005,1119,6,110;"/>
+    </parameters>
+</npc>

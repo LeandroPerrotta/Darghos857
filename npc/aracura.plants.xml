@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Meyra" script="sample.lua" walkinterval="1000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="136" head="55" body="77" legs="11" feet="6" addons="0"/>
+    <parameters>
+        
+        <parameter key="message_farewell" value="Good bye."/>
+        <parameter key="message_sendtrade" value="Of course, just browse through my wares."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="name;job;offer;" />
+        <parameter key="keyword_reply1" value="My name is Rose, nice to meet you, |PLAYERNAME|." />
+        <parameter key="keyword_reply2" value="Here you may buy some of the most beautiful flowers." />
+        <parameter key="keyword_reply3" value="I am selling beautiful flowers here. Just ask me for a {trade} if you'd like to see them!" />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="exotic flowers,2107,300;indoor plant kit,3937,8;god flowers,2100,5;flower bowl,2102,6;honey flower,2103,5;potted flower,2104,5;" />
+        <parameter key="shop_sellable" value="" />
+    </parameters>
+</npc>

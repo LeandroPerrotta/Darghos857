@@ -1,0 +1,8 @@
+<npc name="Michelo" script="sample.lua" walkinterval="2000" floorchange="0" access="5" level="1" maglevel="1">
+	<health now="150" max="150"/>
+	<look type="142" head="17" body="65" legs="33" feet="114" addons="0" corpse="2212"/>
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="crossbow,2455,160;bow,2456,130;spear,2389,1;royal,7378,50;bolt,2543,2;arrow,2544,1;power,2547,6" />
+	</parameters>
+</npc>

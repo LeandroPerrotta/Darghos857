@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Myh Sayn" script="game/mission_quara.lua" walkinterval="1000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="288" head="92" body="89" legs="132" feet="91" addons="2"/>
+    <parameters>
+        
+        <parameter key="message_farewell" value="Good bye."/>
+        <parameter key="message_sendtrade" value="Here, is my offers."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="name;job;offer;" />
+        <parameter key="keyword_reply1" value="My name is Myh, Myh Sayn, nice to meet you, |PLAYERNAME|." />
+        <parameter key="keyword_reply2" value="With me, you can make the access to the Quara Islands and I sell assassin stars." />
+        <parameter key="keyword_reply3" value="Im sell assassin starts. Just ask me for a {trade} if you'd like to see them!" />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="assassin star,7368,100;" />
+        <parameter key="shop_sellable" value="" />
+    </parameters>
+</npc>
