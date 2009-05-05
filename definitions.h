@@ -23,8 +23,8 @@
 #define __OTSERV_DEFINITIONS_H__
 
 
-#define OTSERV_VERSION "0.6.3_SVN"
-#define OTSERV_NAME "OTServ"
+#define OTSERV_VERSION "Darghos - 0.6.3_SVN"
+#define OTSERV_NAME "Darghos"
 #define OTSERV_CLIENT_VERSION "8.42"
 #define CURRENT_SCHEMA_VERSION 9
 

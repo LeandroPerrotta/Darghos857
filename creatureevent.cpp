@@ -45,7 +45,7 @@ void CreatureEvents::clear()
 	for(it = m_creatureEvents.begin(); it != m_creatureEvents.end(); ++it){
 		it->second->clearEvent();
 	}
-	
+
 	//clear lua state
 	m_scriptInterface.reInitState();
 }
@@ -177,6 +177,11 @@ bool CreatureEvent::configureEvent(xmlNodePtr p)
 		else if(asLowerCaseString(str) == "die"){
 			m_type = CREATURE_EVENT_DIE;
 		}
+		#ifdef __DARGHOS__
+		else if(asLowerCaseString(str) == "death"){
+			m_type = CREATURE_EVENT_DEATH;
+		}
+		#endif
 		else if(asLowerCaseString(str) == "kill"){
 			m_type = CREATURE_EVENT_KILL;
 		}
@@ -209,6 +214,11 @@ std::string CreatureEvent::getScriptEventName()
 	case CREATURE_EVENT_DIE:
 		return "onDie";
 		break;
+	#ifdef __DARGHOS__
+    case CREATURE_EVENT_DEATH:
+		return "onDeath";
+		break;
+	#endif
 	case CREATURE_EVENT_KILL:
 		return "onKill";
 		break;
@@ -339,6 +349,45 @@ uint32_t CreatureEvent::executeOnDie(Creature* creature, Item* corpse)
 		return 0;
 	}
 }
+
+#ifdef __DARGHOS__
+uint32_t CreatureEvent::executeOnDeath(Creature* creature, Creature* lastHit, Creature* mostDamage)
+{
+	//onDeath(cid, lastHitKiller, mostDamageKiller)
+	if(m_scriptInterface->reserveScriptEnv()){
+		ScriptEnviroment* env = m_scriptInterface->getScriptEnv();
+
+		#ifdef __DEBUG_LUASCRIPTS__
+		std::stringstream desc;
+		desc << creature->getName();
+		env->setEventDesc(desc.str());
+		#endif
+
+		env->setScriptId(m_scriptId, m_scriptInterface);
+		env->setRealPos(creature->getPosition());
+
+		uint32_t cid = env->addThing(creature);
+		uint32_t lastHitKiller = env->addThing(lastHit);
+		uint32_t mostDamageKiller = env->addThing(mostDamage);
+
+		lua_State* L = m_scriptInterface->getLuaState();
+
+		m_scriptInterface->pushFunction(m_scriptId);
+		lua_pushnumber(L, cid);
+		lua_pushnumber(L, lastHitKiller);
+		lua_pushnumber(L, mostDamageKiller);
+
+		int32_t result = m_scriptInterface->callFunction(3);
+		m_scriptInterface->releaseScriptEnv();
+
+		return (result != LUA_FALSE);
+	}
+	else{
+		std::cout << "[Error] Call stack overflow. CreatureEvent::executeOnDeath" << std::endl;
+		return 0;
+	}
+}
+#endif
 
 uint32_t CreatureEvent::executeOnKill(Creature* creature, Creature* target)
 {

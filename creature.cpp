@@ -718,30 +718,44 @@ void Creature::onDie()
 	Creature* mostDamageCreatureMaster = NULL;
 	Creature* lastHitCreatureMaster = NULL;
 
-	if(getKillers(&lastHitCreature, &mostDamageCreature)){
-		if(lastHitCreature){
+	if(getKillers(&lastHitCreature, &mostDamageCreature))
+	{
+		if(lastHitCreature)
+		{
 			lastHitCreature->onKilledCreature(this);
 			lastHitCreatureMaster = lastHitCreature->getMaster();
 		}
 
-		if(mostDamageCreature){
+		if(mostDamageCreature)
+		{
 			mostDamageCreatureMaster = mostDamageCreature->getMaster();
 			bool isNotLastHitMaster = (mostDamageCreature != lastHitCreatureMaster);
 			bool isNotMostDamageMaster = (lastHitCreature != mostDamageCreatureMaster);
 			bool isNotSameMaster = lastHitCreatureMaster == NULL || (mostDamageCreatureMaster != lastHitCreatureMaster);
 
-			if(mostDamageCreature != lastHitCreature && isNotLastHitMaster &&
-				isNotMostDamageMaster && isNotSameMaster){
+			if(mostDamageCreature != lastHitCreature && isNotLastHitMaster && isNotMostDamageMaster && isNotSameMaster)
+            {
 				mostDamageCreature->onKilledCreature(this);
 			}
 		}
 	}
 
-	for(CountMap::iterator it = damageMap.begin(); it != damageMap.end(); ++it){
-		if(Creature* attacker = g_game.getCreatureByID((*it).first)){
+	for(CountMap::iterator it = damageMap.begin(); it != damageMap.end(); ++it)
+	{
+		if(Creature* attacker = g_game.getCreatureByID((*it).first))
+		{
 			attacker->onAttackedCreatureKilled(this);
 		}
 	}
+
+    #ifdef __DARGHOS__
+	//scripting event - onDeath
+	CreatureEventList deathEvents = getCreatureEvents(CREATURE_EVENT_DEATH);
+	for(CreatureEventList::iterator it = deathEvents.begin(); it != deathEvents.end(); ++it)
+	{
+		(*it)->executeOnDeath(this, lastHitCreature, mostDamageCreature);
+	}
+	#endif
 
 	die();
 	dropCorpse();
@@ -786,7 +800,7 @@ Item* Creature::dropCorpse()
 	{
 		(*it)->executeOnDie(this, corpse);
 	}
-	
+
 	g_game.removeCreature(this, false);
 
 	return corpse;
@@ -1068,7 +1082,7 @@ uint64_t Creature::getGainedExperience(Creature* attacker, bool useMultiplier /*
 	if(Player* player = attacker->getPlayer()){
 		if(useMultiplier)
 			retValue = (uint64_t)std::floor(retValue * player->getRateValue(LEVEL_EXPERIENCE));
-		
+
 		//[check & remove stamina
 		if(!player->hasFlag(PlayerFlag_HasInfiniteStamina)){
 			if(player->getStaminaMinutes() <= 840 && player->getStaminaMinutes() > 0)
@@ -1494,7 +1508,7 @@ bool Creature::registerCreatureEvent(const std::string& name)
 		eventsList.push_back(event);
 		return true;
 	}
-	
+
 	return false;
 }
 
@@ -1509,7 +1523,7 @@ CreatureEventList Creature::getCreatureEvents(CreatureEventType_t type)
 			}
 		}
 	}
-	
+
 	return typeList;
 }
 

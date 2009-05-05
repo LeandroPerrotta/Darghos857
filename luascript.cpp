@@ -1130,7 +1130,7 @@ void LuaScriptInterface::registerFunctions()
 
 	//getPlayerSkullType(cid)
 	lua_register(m_luaState, "getPlayerSkullType", LuaScriptInterface::luaGetPlayerSkullType);
-	
+
 	//getPlayerRedSkullTicks(cid)
 	lua_register(m_luaState, "getPlayerRedSkullTicks", LuaScriptInterface::luaGetPlayerRedSkullTicks);
 
@@ -1222,7 +1222,7 @@ void LuaScriptInterface::registerFunctions()
 
 	//doPlayerSendDefaultCancel(cid, ReturnValue)
 	lua_register(m_luaState, "doPlayerSendDefaultCancel", LuaScriptInterface::luaDoSendDefaultCancel);
-	
+
 	//doPlayerSetIdleTime(cid, time, warned)
 	lua_register(m_luaState, "doPlayerSetIdleTime", LuaScriptInterface::luaDoPlayerSetIdleTime);
 
@@ -1780,6 +1780,11 @@ void LuaScriptInterface::registerFunctions()
 	//bit operations for Lua, based on bitlib project release 24
 	//bit.bnot, bit.band, bit.bor, bit.bxor, bit.lshift, bit.rshift
 	luaL_register(m_luaState, "bit", LuaScriptInterface::luaBitReg);
+
+	#ifdef __DARGHOS__
+	//writeDeath(cid, level, date, lasthit[, mostdamage])
+	lua_register(m_luaState, "writeDeath", LuaScriptInterface::luaWriteDeath);
+	#endif
 }
 
 int LuaScriptInterface::internalGetPlayerInfo(lua_State *L, PlayerInfo_t info)
@@ -2013,16 +2018,50 @@ int LuaScriptInterface::luaGetPlayerSkullType(lua_State *L){
 
 int LuaScriptInterface::luaGetPlayerRedSkullTicks(lua_State *L){
 	return internalGetPlayerInfo(L, PlayerInfoRedSkullTicks);}
-	
+
 int LuaScriptInterface::luaGetPlayerBalance(lua_State *L){
 	return internalGetPlayerInfo(L, PlayerInfoBalance);}
-	
+
 int LuaScriptInterface::luaIsPzLocked(lua_State *L){
 	return internalGetPlayerInfo(L, PlayerInfoPzLock);}
-	
+
 int LuaScriptInterface::luaIsPremium(lua_State *L){
 	return internalGetPlayerInfo(L, PlayerInfoPremium);}
 //
+
+#ifdef __DARGHOS__
+int LuaScriptInterface::luaWriteDeath(lua_State *L)
+{
+    //writeDeath(cid, level, date, lasthit[, mostdamage])
+	int32_t parameters = lua_gettop(L);
+
+	std::string mostdamage = "";
+	if(parameters > 4){
+		mostdamage = popString(L);
+	}
+
+    std::string lasthit = popString(L);
+    uint32_t date = popNumber(L);
+    uint32_t level = popNumber(L);
+    uint32_t player_id = popNumber(L);
+
+ 	Database* db = Database::instance();
+    DBQuery query;
+
+    query << "INSERT INTO `player_deaths` (`player_id`, `level`, `date`, `lasthit_killer`, `mostdamage_killer`) values('" << player_id << "', '" << level << "', '" << date << "', '" << lasthit << "', '" << mostdamage << "')";
+
+	if(!db->executeQuery(query.str()))
+	{
+	    reportErrorFunc("No valid query.");
+	    lua_pushnumber(L, LUA_ERROR);
+
+		return 1;
+	}
+
+	lua_pushnumber(L, LUA_TRUE);
+	return 1;
+}
+#endif
 
 int LuaScriptInterface::luaGetPlayerFlagValue(lua_State *L)
 {
@@ -2552,8 +2591,8 @@ int LuaScriptInterface::luaDoPlayerAddSkillTry(lua_State *L)
 	bool useMultiplier = false;
 	if(parameters > 3){
 		useMultiplier = (popNumber(L) >= 1);
-	}	
-	
+	}
+
 	uint32_t n = popNumber(L);
 	uint32_t skillid = popNumber(L);
 	uint32_t cid = popNumber(L);
@@ -4511,7 +4550,7 @@ int LuaScriptInterface::luaDoPlayerAddExp(lua_State *L)
 	if(parameters > 2){
 		useRate = (popNumber(L) >= 1);
 	}
-	
+
 	int64_t exp = (int64_t)popNumber(L);
 	uint32_t cid = popNumber(L);
 
@@ -6980,7 +7019,7 @@ int LuaScriptInterface::luaDoPlayerSetRate(lua_State *L)
 	double value = popFloatNumber(L);
 	uint32_t rateType = popNumber(L);
 	uint32_t cid = popNumber(L);
-	
+
 	ScriptEnviroment* env = getScriptEnv();
 
 	Player* player = env->getPlayerByUID(cid);
@@ -6998,7 +7037,7 @@ int LuaScriptInterface::luaDoPlayerSetRate(lua_State *L)
 		reportErrorFunc(getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
 		lua_pushnumber(L, LUA_ERROR);
 	}
-	
+
 	return 1;
 }
 
@@ -7017,13 +7056,13 @@ int LuaScriptInterface::luaGetPlayerFrags(lua_State *L)
 	uint32_t cid = popNumber(L);
 
 	ScriptEnviroment* env = getScriptEnv();
-	
+
 	Player* player = env->getPlayerByUID(cid);
 	if(player){
 		lua_pushnumber(L, player->getFrags());
 	}
-	else 
-	{		
+	else
+	{
 		reportErrorFunc(getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
 		lua_pushnumber(L, LUA_ERROR);
 	}

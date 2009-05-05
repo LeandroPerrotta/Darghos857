@@ -613,6 +613,10 @@ protected:
 	static int luaGetPlayerFrags(lua_State *L);
 	//
 
+	#ifdef __DARGHOS__
+	static int luaWriteDeath(lua_State *L);
+	#endif
+
 	static int internalGetPlayerInfo(lua_State *L, PlayerInfo_t info);
 
 	static const luaL_Reg luaBitReg[13];
