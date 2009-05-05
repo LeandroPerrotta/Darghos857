@@ -46,6 +46,8 @@
 		
 		<!-- BANSHEE QUEST -->
 
+		<movevent event="StepIn" itemid="1387" script="game/citizen.lua"/>		
+		
 	<!-- Footprint -->
 	<moveevent event="StepIn" itemid="6594" script="footprint.lua" />
 	<moveevent event="StepIn" itemid="670" script="footprint.lua" />
