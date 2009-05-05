@@ -68,8 +68,8 @@ function onLogin(cid)
 	--Register the kill/die event
 	registerCreatureEvent(cid, "AutoBan")
 	registerCreatureEvent(cid, "RemoveBlesses")
+	registerCreatureEvent(cid, "deathList")
 
-	print("[console] Print LoL :P")
 	runPremiumSystem(cid)	
 	
 	--Remove blesses if necessary

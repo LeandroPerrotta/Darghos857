@@ -3,4 +3,5 @@
 	<event name="PlayerLogin" type="login" script="login.lua"/>
 	<event name="AutoBan" type="kill" script="autoban.lua"/>
 	<event name="RemoveBlesses" type="die" script="removeblesses.lua"/>
+	<event name="deathList" type="death" script="game/deathList.lua"/>
 </creaturescripts>

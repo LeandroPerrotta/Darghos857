@@ -4,36 +4,35 @@
 
 -- Verificação ATUAL se um player está em Area premmy, e teleporta ele para area free.
 function runPremiumSystem(cid)
+
 	local message = "Dear "..getCreatureName(cid)..",\nYour premium time is over!\nYou were automatically taken to the temple of Quendor City.\nContinue contributing to the Darghos Server and have a good game!\n\nYours,\nUltraXSoft Team."
 	
 	name = getCreatureName(cid)
 	
 	if isPremium(cid) == TRUE then
-		print("[premiumsystem] Possui premium (Player:"..name..")")
 		
 		if getPlayerStorageValue(cid,sid.PREMMY_VERIFY) ~= 1 then
+		
 			setPlayerStorageValue(cid, sid.PREMMY_VERIFY,1)
 			doSendMagicEffect(getPlayerPosition(cid),11)
 			
 			print("[premiumsystem] Configurou o Premium Status no Storage Value (Player:"..name..")")
 		end
 	else
-		print("[premiumsystem] Nao possui premium (Player:"..name..")")
 	
 		if getPlayerStorageValue(cid, sid.PREMMY_VERIFY) == 1 then
+		
 			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, message)
 			doTeleportThing(cid, QUENDOR)
 			setPlayerStorageValue(cid, sid.PREMMY_VERIFY,0)
 			doPlayerSetTown(cid, getTownIdByName("quendor"))
-			
-			print("[premiumsystem] Moveu o player para Quendor (Player:"..name..")")
 		end
 	end
 end
 
 -- Verifica se o player está em area premium sendo um free account
 -- Usado em creaturescripts/login.lua
-function freeInPremiumArea(cid)
+--[[ function freeInPremiumArea(cid)
 
 	local message = "Dear "..getCreatureName(cid)..",\nYour premium time is over!\nYou were automatically taken to the temple of Quendor City.\nContinue contributing to the Darghos Server and have a good game!\n\nYours,\nUltraXSoft Team."
 	local PremDay = getPlayerPremiumDays(cid)	
@@ -44,7 +43,7 @@ function freeInPremiumArea(cid)
 			doPlayerPopupFYI(cid,message)
 		end
     end
-end 
+end ]]--
 
 -- Reproduz um efeito em torno do jogador
 function sendEnvolveEffect(cid, effect)
@@ -62,7 +61,7 @@ end
 
 -- Verifica se o player possui um item no shop a receber
 -- Usado em creaturescripts/login.lua
-function itemFromShop(cid)
+--[[ function itemFromShop(cid)
 
 	local itemshopid = getPlayerStorageValue(cid, sid.ITEM_SHOP_ID)
 	
@@ -90,4 +89,4 @@ function itemFromShop(cid)
 		end		
 	end 
 	
-end 	
+end ]]--	
