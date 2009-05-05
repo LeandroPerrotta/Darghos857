@@ -1784,6 +1784,15 @@ void LuaScriptInterface::registerFunctions()
 	#ifdef __DARGHOS__
 	//writeDeath(cid, level, date, lasthit[, mostdamage])
 	lua_register(m_luaState, "writeDeath", LuaScriptInterface::luaWriteDeath);
+
+	//getPlayerShopItemId(itemshopid)
+	lua_register(m_luaState, "getPlayerShopItemId", LuaScriptInterface::luaGetPlayerShopItemId);
+
+	//getPlayerShopItemCount(itemshopid)
+	lua_register(m_luaState, "getPlayerShopItemCount", LuaScriptInterface::luaGetPlayerShopItemCount);
+
+	//setPlayerShopReceived(itemshopid)
+	lua_register(m_luaState, "setPlayerShopReceived", LuaScriptInterface::luaSetPlayerShopReceived);
 	#endif
 }
 
@@ -2049,6 +2058,80 @@ int LuaScriptInterface::luaWriteDeath(lua_State *L)
     DBQuery query;
 
     query << "INSERT INTO `player_deaths` (`player_id`, `level`, `date`, `lasthit_killer`, `mostdamage_killer`) values('" << player_id << "', '" << level << "', '" << date << "', '" << lasthit << "', '" << mostdamage << "')";
+
+	if(!db->executeQuery(query.str()))
+	{
+	    reportErrorFunc("No valid query.");
+	    lua_pushnumber(L, LUA_ERROR);
+
+		return 1;
+	}
+
+	lua_pushnumber(L, LUA_TRUE);
+	return 1;
+}
+
+int LuaScriptInterface::luaGetPlayerShopItemId(lua_State *L)
+{
+    //getPlayerShopItemId(itemshopid)
+    uint32_t idFromShop = popNumber(L);
+
+ 	Database* db = Database::instance();
+
+    DBQuery query;
+    DBResult* result;
+
+    query << "SELECT `itemshoplist`.item_id FROM `wb_itemshop_list` AS `itemshoplist`, `wb_itemshop` AS `itemshop` WHERE `itemshop`.id = '" << idFromShop << "' AND `itemshop`.itemlist_id = `itemshoplist`.id";
+
+	if(!(result = db->storeQuery(query.str())))
+	{
+	    reportErrorFunc("No valid query.");
+	    lua_pushnumber(L, LUA_ERROR);
+
+		return 1;
+	}
+
+	lua_pushnumber(L, result->getDataInt("item_id"));
+	db->freeResult(result);
+
+	return 1;
+}
+
+int LuaScriptInterface::luaGetPlayerShopItemCount(lua_State *L)
+{
+    //getPlayerShopItemCount(itemshopid)
+    uint32_t idFromShop = popNumber(L);
+
+ 	Database* db = Database::instance();
+
+    DBQuery query;
+    DBResult* result;
+
+    query << "SELECT `itemshoplist`.count FROM `wb_itemshop_list` AS `itemshoplist`, `wb_itemshop` AS `itemshop` WHERE `itemshop`.id = '" << idFromShop << "' AND `itemshop`.itemlist_id = `itemshoplist`.id";
+
+	if(!(result = db->storeQuery(query.str())))
+	{
+	    reportErrorFunc("No valid query.");
+	    lua_pushnumber(L, LUA_ERROR);
+
+		return 1;
+	}
+
+	lua_pushnumber(L, result->getDataInt("count"));
+	db->freeResult(result);
+
+	return 1;
+}
+
+int LuaScriptInterface::luaSetPlayerShopReceived(lua_State *L)
+{
+    //setPlayerShopReceived(itemshopid)
+    uint32_t idFromShop = popNumber(L);
+
+ 	Database* db = Database::instance();
+    DBQuery query;
+
+    query << "UPDATE `wb_itemshop` SET `received` = '1' WHERE id = '" << idFromShop << "'";
 
 	if(!db->executeQuery(query.str()))
 	{

@@ -615,6 +615,9 @@ protected:
 
 	#ifdef __DARGHOS__
 	static int luaWriteDeath(lua_State *L);
+	static int luaGetPlayerShopItemId(lua_State *L);
+	static int luaGetPlayerShopItemCount(lua_State *L);
+	static int luaSetPlayerShopReceived(lua_State *L);
 	#endif
 
 	static int internalGetPlayerInfo(lua_State *L, PlayerInfo_t info);
