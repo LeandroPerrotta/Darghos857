@@ -71,6 +71,7 @@ function onLogin(cid)
 	registerCreatureEvent(cid, "deathList")
 
 	runPremiumSystem(cid)	
+	checkItemShop(cid)
 	
 	--Remove blesses if necessary
 	if getPlayerStorageValue(cid, STORAGE_REMOVE_BLESSES) == 1 then
