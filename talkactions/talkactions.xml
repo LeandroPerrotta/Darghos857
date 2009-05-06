@@ -23,4 +23,5 @@
 	<talkaction words="Amila Kratus!" event="script" value="game/demona_enter.lua"/>
 	<talkaction words="!bless" event="script" value="game/bless.lua"/>
 	
+	<talkaction words="/serverinfo" script="serverinfo.lua"/>
 </talkactions>
