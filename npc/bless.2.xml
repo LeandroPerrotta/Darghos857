@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="Lauch, the Havengk" script="game/bless/bless2.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="142" head="12" body="69" legs="44" feet="87" addons="3"/>
-</npc>

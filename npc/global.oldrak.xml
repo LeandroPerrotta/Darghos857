@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="Oldrak" script="sample.lua" walkinterval="2000" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="57" head="78" body="57" legs="58" feet="80" addons="3"/>
-	<parameters>
-		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="holy tible,1970,660"/>
-	</parameters>
-</npc>

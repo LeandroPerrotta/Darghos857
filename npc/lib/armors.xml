@@ -1,0 +1,161 @@
+<?xml version="1.0"?>
+
+<interaction>
+
+	<!--
+	Armor's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="armor_all">
+			<item keywords="chain;armor" id="2464" buyprice="200" sellprice="70"/>
+			<item keywords="brass;armor" id="2465" buyprice="450" sellprice="150"/>
+			<item keywords="scale;armor" id="2483" buyprice="260" sellprice="75"/>
+			<item keywords="plate;armor" id="2463" buyprice="1200" sellprice="400"/>
+			<item keywords="dark;armor" id="2489" buyprice="1500" sellprice="400"/>
+		</itemlist>
+
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="armor_sellable">
+			<item keywords="knight;armor" id="2476" sellprice="750"/>
+			<item keywords="golden;armor" id="2466" sellprice="1500"/>
+		</itemlist> 
+
+	
+	
+	
+	<!--
+	Helmet's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="helmet_all">
+			<item keywords="chain;helmet" id="2458" buyprice="52" sellprice="17"/>
+			<item keywords="brass;helmet" id="2460" buyprice="120" sellprice="30"/>
+			<item keywords="viking;helmet" id="2473" buyprice="265" sellprice="66"/>
+			<item keywords="soldier;helmet" id="2481" buyprice="200" sellprice="20"/>
+			<item keywords="iron;helmet" id="2459" buyprice="390" sellprice="150"/>
+			<item keywords="steel;helmet" id="2457" buyprice="580" sellprice="190"/>
+		</itemlist>
+
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="helmet_sellable">
+			<item keywords="legion;helmet" id="2480" sellprice="30"/>
+			<item keywords="warrior;helmet" id="2475" sellprice="696"/>
+		</itemlist> 
+
+	
+	
+	<!--
+	Legs's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="legs_all">
+			<item keywords="studded;legs" id="2468" buyprice="60" sellprice="15"/>
+			<item keywords="chain;legs" id="2648" buyprice="80" sellprice="25"/>
+			<item keywords="brass;legs" id="2478" buyprice="195" sellprice="49"/>
+		</itemlist>
+
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="legs_sellable">
+			<item keywords="plate;legs" id="2647" sellprice="115"/>
+			<item keywords="knight;legs" id="2477" sellprice="375"/>
+		</itemlist> 
+
+	
+	
+	<!--
+	Boots's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="boots_all">
+			<item keywords="leather;boots" id="2643" buyprice="10" sellprice="2"/>
+		</itemlist>
+
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="boots_sellable">
+			<item keywords="crocodile;boots" id="3982" sellprice="100"/>
+		</itemlist> 
+
+	
+	
+
+	<!--
+	Djinn (???)
+	-->	
+		<!--
+		Itens compraveis e vendiveis
+		-->
+		<itemlist listid="djinn_all">
+			
+			<!-- Armor's -->
+			--None
+			
+			<!-- Helmet's -->
+			<item keywords="dark;helmet" id="2490" buyprice="1000" sellprice="250"/>			
+			
+		</itemlist>	
+		
+		<!--
+		Itens apenas compraveis
+		-->	
+		<itemlist listid="djinn_buyable">
+			
+		</itemlist>	
+		
+		<!--
+		Itens apenas vendiveis
+		-->	
+		<itemlist listid="djinn_sellable">
+		
+			<!-- Armor's -->
+			<item keywords="leopard;armor" id="3968" sellprice="1000"/>
+			<item keywords="knight;armor" id="2476" sellprice="5000"/>
+			<item keywords="blue;robe" id="2656" sellprice="10000"/>
+			<item keywords="crown;armor" id="2487" sellprice="12000"/>
+			<item keywords="golden;armor" id="2466" sellprice="20000"/>
+			<item keywords="dragon;scale;mail" id="2492" sellprice="40000"/>
+			<item keywords="magic;plate;armor" id="2472" sellprice="70000"/>
+			
+			<!-- Helmet's -->
+			<item keywords="mystic;turban" id="2663" sellprice="150"/>	
+			<item keywords="strange;helmet" id="2479" sellprice="500"/>
+			<item keywords="devil;helmet" id="2462" sellprice="1000"/>
+			<item keywords="crown;helmet" id="2491" sellprice="2500"/>
+			<item keywords="warrior;helmet" id="2475" sellprice="5000"/>
+			<item keywords="crusader;helmet" id="2497" sellprice="6000"/>
+			<item keywords="skull;helmet" id="5741" sellprice="40000"/>
+			<item keywords="royal;helmet" id="2498" sellprice="30000"/>
+			
+			<!-- Legs's -->
+			<item keywords="knight;legs" id="2477" sellprice="5000"/>
+			<item keywords="crown;legs" id="2488" sellprice="12000"/>
+			<item keywords="golden;legs" id="2470" sellprice="35000"/>
+			
+			<!-- Boots's -->
+			<item keywords="crocodile;boots" id="3982" sellprice="1000"/>
+			<item keywords="fur;boots" id="7457" sellprice="2000"/>
+			<item keywords="terra;boots" id="7886" sellprice="2500"/>
+			<item keywords="pirate;boots" id="5462" sellprice="3000"/>
+			<item keywords="boots;of;haste" id="2195" sellprice="30000"/>
+			<item keywords="steel;boots" id="2645" sellprice="30000"/>
+		</itemlist>		
+
+
+
+		
+</interaction>
