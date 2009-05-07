@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<npc name="Leonard" floorchange="0" walkinterval="2000" speed="220">
+<npc name="Michelo" floorchange="0" walkinterval="2000" speed="220">
 	<health now="150" max="150"/>
-	<look type="143" head="11" body="11" legs="52" feet="22" addons="0" corpse="2212"/>
+	<look type="142" head="17" body="65" legs="33" feet="114" addons="0" corpse="2212"/>
   
   <interaction range="3" idletime="0" defaultpublic="0">
 
-    <include file="armors.xml"/>
+    <include file="weapons.xml"/>
     
     <interact keywords="hi" focus="1">
       <keywords>hello</keywords>
@@ -34,12 +34,13 @@
     <interact keywords="wares">
 		<keywords>trade</keywords>
 
-		<response text="I sell and buy equipments in general, as {armors}, {legs}, {helmets} and {boots} also {shields}."/>
+		<response text="I sell and buy {distance} weapons and {ammunition} in general."/>
     </interact>
 	
-	<interact keywords="armors">
-		<list>armor_all</list>
-		<list>armor_sellable</list>
+	<interact keywords="distance">
+		<list>distance_all</list>
+		<list>distance_sellable</list>
+		<list>distance_buyable</list>
 
 		<response>
 			<action name="script">
@@ -50,35 +51,8 @@
 		</response>
 	</interact>
 	
-	<interact keywords="legs">
-		<list>legs_all</list>
-		<list>legs_sellable</list>
-
-		<response>
-			<action name="script">
-			<![CDATA[
-			  openShopWindow(cid, itemlist, -1, -1)
-			]]>
-			</action>
-		</response>
-	</interact>	
-	
-	<interact keywords="helmets">
-		<list>helmet_all</list>
-		<list>helmet_sellable</list>
-		
-		<response>
-			<action name="script">
-			<![CDATA[
-			  openShopWindow(cid, itemlist, -1, -1)
-			]]>
-			</action>
-		</response>
-	</interact>	
-	
-	<interact keywords="boots">
-		<list>boots_all</list>
-		<list>boots_sellable</list>
+	<interact keywords="ammunition">
+		<list>ammunition</list>
 
 		<response>
 			<action name="script">
@@ -88,19 +62,6 @@
 			</action>
 		</response>
 	</interact>		
-	
-	<interact keywords="shields">
-		<list>shields_all</list>
-		<list>shields_sellable</list>
-
-		<response>
-			<action name="script">
-			<![CDATA[
-			  openShopWindow(cid, itemlist, -1, -1)
-			]]>
-			</action>
-		</response>
-	</interact>	
 
     <interact event="onPlayerShopSell">
       <response>
@@ -155,17 +116,10 @@
     </interact>
     
     <interact keywords="sell;|AMOUNT|;|LIST|">
-      <!-- See merchant.xml to add more items/lists-->
-      <list>armor_all</list>
-      <list>armor_sellable</list>
-      <list>helmet_all</list>
-      <list>helmet_sellable</list>
-      <list>legs_all</list>
-      <list>legs_sellable</list>
-      <list>boots_all</list>
-      <list>boots_sellable</list>
-      <list>shields_sellable</list>
-      <list>shields_sellable</list>
+		<list>distance_all</list>
+		<list>distance_sellable</list>
+		<list>distance_buyable</list>
+		<list>ammunition</list>
 
       <response>
         <action name="amount" value="|AMOUNT|"/>
@@ -193,17 +147,10 @@
     </interact>
 
     <interact keywords="buy;|AMOUNT|;|LIST|">
-      <!-- See merchant.xml to add more items/lists-->
-      <list>armor_all</list>
-      <list>armor_sellable</list>
-      <list>helmet_all</list>
-      <list>helmet_sellable</list>
-      <list>legs_all</list>
-      <list>legs_sellable</list>
-      <list>boots_all</list>
-      <list>boots_sellable</list>
-      <list>shields_sellable</list>
-      <list>shields_sellable</list>
+		<list>distance_all</list>
+		<list>distance_sellable</list>
+		<list>distance_buyable</list>
+		<list>ammunition</list>
 
       <response>
         <action name="amount" value="|AMOUNT|"/>

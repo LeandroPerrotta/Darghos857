@@ -1948,6 +1948,9 @@
     <monster name="Valkyrie" x="-1" y="0" z="6" spawntime="120"/>
     <monster name="Amazon" x="0" y="2" z="6" spawntime="120"/>
   </spawn>
+   <spawn centerx="1978" centery="1844" centerz="7" radius="1">
+    <npc name="quendor.weapons" x="0" y="1" z="7" spawntime="60"/>
+  </spawn> 
   <spawn centerx="1971" centery="1856" centerz="6" radius="1">
     <npc name="quendor.box" x="0" y="1" z="6" spawntime="60"/>
   </spawn>

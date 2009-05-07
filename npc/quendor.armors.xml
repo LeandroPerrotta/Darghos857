@@ -3,7 +3,7 @@
 	<health now="150" max="150"/>
 	<look type="143" head="124" body="114" legs="114" feet="114" addons="2" corpse="2212"/>
   
-  <interaction range="3" idletime="0" defaultpublic="0">
+   <interaction range="3" idletime="0" defaultpublic="0">
 
     <include file="armors.xml"/>
     
@@ -34,7 +34,7 @@
     <interact keywords="wares">
 		<keywords>trade</keywords>
 
-		<response text="I sell and buy equipments in general, as {armors}, {legs}, {helmets} and {boots}."/>
+		<response text="I sell and buy equipments in general, as {armors}, {legs}, {helmets} and {boots} also {shields}."/>
     </interact>
 	
 	<interact keywords="armors">
@@ -79,6 +79,19 @@
 	<interact keywords="boots">
 		<list>boots_all</list>
 		<list>boots_sellable</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>		
+	
+	<interact keywords="shields">
+		<list>shields_all</list>
+		<list>shields_sellable</list>
 
 		<response>
 			<action name="script">
@@ -151,6 +164,8 @@
       <list>legs_sellable</list>
       <list>boots_all</list>
       <list>boots_sellable</list>
+      <list>shields_sellable</list>
+      <list>shields_sellable</list>
 
       <response>
         <action name="amount" value="|AMOUNT|"/>
@@ -187,6 +202,8 @@
       <list>legs_sellable</list>
       <list>boots_all</list>
       <list>boots_sellable</list>
+      <list>shields_sellable</list>
+      <list>shields_sellable</list>
 
       <response>
         <action name="amount" value="|AMOUNT|"/>

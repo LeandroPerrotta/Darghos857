@@ -2,6 +2,182 @@
 
 <interaction>
 
-	-- NADA AQUI AINDA
+	<!--
+	Swords's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="swords_all">
+			<item keywords="rapier" id="2384" buyprice="15" sellprice="5"/>
+			<item keywords="sabre" id="2385" buyprice="35" sellprice="12"/>
+			<item keywords="machete" id="2420" buyprice="35" sellprice="10"/>
+			<item keywords="sword" id="2376" buyprice="85" sellprice="25"/>
+			<item keywords="carlin;sword" id="2395" buyprice="473" sellprice="118"/>
+			<item keywords="longsword" id="2397" buyprice="160" sellprice="51"/>
+			<item keywords="two;handed;sword" id="2377" buyprice="950" sellprice="450"/>
+		</itemlist>
+
+		<!--
+		apenas compraveis
+		-->
+		<itemlist listid="swords_buyable">
+			<item keywords="crimson;sword" id="7385" buyprice="610"/>
+		</itemlist>		
 		
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="swords_sellable">
+			<item keywords="short;sword" id="2406" sellprice="10"/>
+			<item keywords="katana" id="2412" sellprice="25"/>
+			<item keywords="templar;scytheblade" id="3963" sellprice="200"/>
+			<item keywords="spike;sword" id="2383" sellprice="240"/>
+			<item keywords="fire;sword" id="2392" sellprice="1000"/>
+			<item keywords="broadsword" id="2413" sellprice="180"/>
+		</itemlist> 
+
+	
+	<!--
+	Axes's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="axes_all">
+			<item keywords="hand;axe" id="2380" buyprice="8" sellprice="4"/>
+			<item keywords="axe" id="2386" buyprice="20" sellprice="7"/>
+			<item keywords="hatchet" id="2388" buyprice="85" sellprice="25"/>
+			<item keywords="battle;axe" id="2378" buyprice="235" sellprice="80"/>
+			<item keywords="barbarian;axe" id="2429" buyprice="590" sellprice="185"/>
+		</itemlist>
+
+		<!--
+		apenas compraveis
+		-->
+		<itemlist listid="axes_buyable">
+			<item keywords="steel;axe" id="8601" buyprice="500"/>
+		</itemlist>			
+		
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="axes_sellable">
+			<item keywords="orcish;axe" id="2428" sellprice="55"/>
+			<item keywords="fire;axe" id="2432" sellprice="280"/>
+			<item keywords="ripper;lance" id="3964" sellprice="500"/>
+			<item keywords="halberd" id="2381" sellprice="400"/>
+			<item keywords="double;axe" id="2387" sellprice="260"/>
+			<item keywords="dragon;lance" id="2414" sellprice="660"/>
+		</itemlist> 
+
+	
+	
+	<!--
+	Clubs's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="clubs_all">
+			<item keywords="mace" id="2398" buyprice="90" sellprice="30"/>
+			<item keywords="battle;hammer" id="2417" buyprice="350" sellprice="120"/>
+			<item keywords="morning;star" id="2394" buyprice="430" sellprice="100"/>
+			<item keywords="clerical;mace" id="2423" buyprice="540" sellprice="170"/>
+		</itemlist>
+
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="clubs_sellable">
+			<item keywords="bone;club" id="2449" sellprice="5"/>
+			<item keywords="daramanian;mace" id="2439" sellprice="65"/>
+			<item keywords="banana;staff" id="3966" sellprice="1000"/>
+			<item keywords="war;hammer" id="2391" sellprice="470"/>
+			<item keywords="thunder;hammer" id="2421" sellprice="999"/>
+		</itemlist> 
+
+	<!--
+	Rod's Shop
+	-->
+		<!--
+		apenas compraveis
+		-->
+		<itemlist listid="rods_buyable">
+			<item keywords="snakebite;rod" id="2182" buyprice="500"/>
+			<item keywords="moonlight;rod" id="2186" buyprice="1000"/>
+			<item keywords="necrotic;rod" id="2185" buyprice="5000"/>
+			<item keywords="northwind;rod" id="8911" buyprice="7500"/>
+			<item keywords="terra;rod" id="2181" buyprice="10000"/>
+			<item keywords="hailstorm;rod" id="2183" buyprice="15000"/>
+			<item keywords="springsprout;rod" id="8912" buyprice="18000"/>
+			<item keywords="underworld;rod" id="8910" buyprice="22000"/>
+		</itemlist>			
+			
+			
+	<!--
+	Wand's Shop
+	-->
+		<!--
+		apenas compraveis
+		-->
+		<itemlist listid="wands_buyable">
+			<item keywords="wand;of;vortex" id="2190" buyprice="500"/>
+			<item keywords="wand;of;dragonbreath" id="2191" buyprice="1000"/>
+			<item keywords="wand;of;decay" id="2188" buyprice="5000"/>
+			<item keywords="wand;of;draconia" id="8921" buyprice="7500"/>
+			<item keywords="wand;of;cosmic;energy" id="2189" buyprice="10000"/>
+			<item keywords="wand;of;inferno" id="2187" buyprice="15000"/>
+			<item keywords="wand;of;starstorm" id="8920" buyprice="18000"/>
+			<item keywords="wand;of;voodoo" id="8922" buyprice="22000"/>
+		</itemlist>	
+		
+
+	<!--
+	Distance Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="distance_all">
+			<item keywords="crossbow" id="2455" buyprice="500" sellprice="160"/>
+			<item keywords="bow" id="2456" buyprice="400" sellprice="130"/>
+			<item keywords="spear" id="2389" buyprice="10" sellprice="3"/>
+		</itemlist>
+
+		<!--
+		apenas compraveis
+		-->
+		<itemlist listid="distance_buyable">
+			<item keywords="throwing;knife" id="2410" buyprice="25"/>
+			<item keywords="throwing;star" id="2399" buyprice="42"/>
+			<item keywords="royal;spear" id="7378" buyprice="15"/>
+		</itemlist> 	
+
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="distance_sellable">
+			<item keywords="hunting;spear" id="3965" sellprice="25"/>
+		</itemlist> 
+
+	<!--
+	Ammunition Shop
+	-->
+		<itemlist listid="ammunition">
+			<!-- para Bow's -->
+			<item keywords="arrow" id="2544" subtype="100" buyprice="300"/>
+			<item keywords="earth;arrow" id="7850" subtype="100" buyprice="500"/>
+			<item keywords="flaming;arrow" id="7840" subtype="100" buyprice="500"/>
+			<item keywords="flash;arrow" id="7838" subtype="100" buyprice="500"/>
+			<item keywords="onyx;arrow" id="7365" subtype="100" buyprice="700"/>
+			<item keywords="shiver;arrow" id="7839" subtype="100" buyprice="500"/>
+			<item keywords="sniper;arrow" id="7364" subtype="100" buyprice="500"/>
+			
+			<!-- para Crossbow's -->
+			<item keywords="bolt" id="2543" subtype="100" buyprice="400"/>
+			<item keywords="piercing;bolt" id="7363" subtype="100" buyprice="500"/>
+			<item keywords="power;bolt" id="2547" subtype="100" buyprice="700"/>
+		</itemlist>	
+
 </interaction>
