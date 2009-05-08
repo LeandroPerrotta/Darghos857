@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+
+<interaction>
+
+	<!--
+	Furniture SHOP
+	-->
+		<!--
+		TABLES compraveis
+		-->
+		<itemlist listid="table">
+			<item keywords="trophy;stand" id="7936" buyprice="50"/>
+			<item keywords="small;table;kit" id="3908" buyprice="20"/>
+			<item keywords="round;table;kit" id="3909" buyprice="25"/>
+			<item keywords="square;table;kit" id="3910" buyprice="25"/>
+			<item keywords="big;table;kit" id="3911" buyprice="35"/>
+		</itemlist>
+
+		<!--
+		VASOS (Inuteis u.u)
+		-->
+		<itemlist listid="vase">
+			<item keywords="amphora" id="2023" buyprice="4"/>
+			<item keywords="vase" id="2008" buyprice="3"/>
+		</itemlist>
+	
+		<!-- 
+		BOXES (Caixas)
+		-->
+		<itemlist listid="box">
+			<item keywords="drawer;kit" id="3915" buyprice="18"/>
+			<item keywords="dresser;kit" id="3916" buyprice="25"/>
+			<item keywords="locker;kit" id="3917" buyprice="30"/>
+			<item keywords="box" id="1738" buyprice="10"/>
+			<item keywords="barrel;kit" id="3919" buyprice="12"/>
+			<item keywords="trough;kit" id="3918" buyprice="7"/>
+			<item keywords="trunk;kit" id="3920" buyprice="10"/>
+			<item keywords="armor;rack;kit" id="6114" buyprice="90"/>
+			<item keywords="weapon;rack;kit" id="6115" buyprice="90"/>
+			<item keywords="bookcase;kit" id="6373" buyprice="70"/>
+		</itemlist>	
+
+		<!--
+		PILLOWS (Almofadas)
+		-->
+		<itemlist listid="pillow">
+			<item keywords="small;purple;pillow" id="1678" buyprice="20"/>
+			<item keywords="small;green;pillow" id="1679" buyprice="20"/>
+			<item keywords="small;red;pillow" id="1680" buyprice="20"/>
+			<item keywords="small;blue;pillow" id="1688" buyprice="20"/>
+			<item keywords="small;orange;pillow" id="1682" buyprice="20"/>
+			<item keywords="small;turquoise;pillow" id="1683" buyprice="20"/>
+			<item keywords="small;white;pillow" id="1684" buyprice="20"/>
+			<item keywords="heart;pillow" id="1685" buyprice="85"/>
+			<item keywords="blue;pillow" id="1686" buyprice="25"/>
+			<item keywords="red;pillow" id="1687" buyprice="25"/>
+			<item keywords="green;pillow" id="1688" buyprice="25"/>
+			<item keywords="yellow;pillow" id="8072" buyprice="25"/>
+			<item keywords="round;blue;pillow" id="1690" buyprice="25"/>
+			<item keywords="round;purple;pillow" id="1692" buyprice="25"/>
+			<item keywords="round;turquoise;pillow" id="1693" buyprice="25"/>
+			<item keywords="purple;tapestry" id="1857" buyprice="25"/>
+			<item keywords="green;tapestry" id="1860" buyprice="25"/>
+			<item keywords="yellow;tapestry" id="1863" buyprice="25"/>
+			<item keywords="orange;tapestry" id="1866" buyprice="25"/>
+			<item keywords="red;tapestry" id="1869" buyprice="25"/>
+			<item keywords="blue;tapestry" id="1872" buyprice="25"/>
+			<item keywords="white;tapestry" id="1880" buyprice="25"/>
+		</itemlist>		
+		
+		<!--
+		PLANTS (Oi)
+		-->
+		<itemlist listid="plants">
+			<item keywords="exotic;flowers" id="2107" buyprice="300"/>
+			<item keywords="indoor;plant;kit" id="3937" buyprice="80"/>
+			<item keywords="god;flowers" id="2100" buyprice="5"/>
+			<item keywords="flower;bowl" id="2102" buyprice="6"/>
+			<item keywords="honey;flower" id="2103" buyprice="5"/>
+			<item keywords="potted;flower" id="2104" buyprice="5"/>
+		</itemlist>	
+	
+	
+</interaction>

@@ -1,0 +1,110 @@
+<?xml version="1.0"?>
+<npc name="Valdelene" floorchange="0" walkinterval="2000" speed="220">
+	<health now="150" max="150"/>
+    <look type="143" head="17" body="99" legs="65" feet="115" addons="0"/>
+  
+  <interaction range="3" idletime="0" defaultpublic="0">
+
+	<include file="events_shop.xml"/>
+    <include file="furnitures.xml"/>
+    
+    <interact keywords="hi" focus="1">
+      <keywords>hello</keywords>
+      
+      <response text="Hello. How may I help you |NAME|?"/>
+    </interact>
+
+    <interact keywords="bye" focus="0">
+      <keywords>farewell</keywords>
+
+      <response text="It was a pleasure to help you."/>
+    </interact>
+
+    <interact event="onPlayerLeave" focus="0">
+      <response text="It was a pleasure to help you |NAME|."/>
+    </interact>
+    
+    <interact keywords="name">
+      <response text="My name is |NPCNAME|."/>
+    </interact>
+
+    <interact keywords="job">
+      <response text="I am a merchant, my job is to serve you!"/>
+    </interact>
+
+    <interact keywords="wares">
+		<keywords>trade</keywords>
+
+		<response text="I sell vases in general, ask {vase} for more informations."/>
+    </interact>
+	
+	<interact keywords="vase">
+		<list>vase</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>
+    
+    <interact keywords="sell;|AMOUNT|;|LIST|">
+      <list>vase</list>
+
+      <response>
+        <action name="amount" value="|AMOUNT|"/>
+        <action name="price" value="|SELLPRICE|"/>
+
+        <action name="script">
+        <![CDATA[
+          if(_state.amount > 1) then
+            selfSay("Do you want to sell " .. _state.amount .. " " .. _state.listpname .. " for " ..  _state.price * _state.amount .. " gold?", cid)
+          else
+            selfSay("Do you want to sell " .. _state.listname .. " for " .. _state.price .. " gold?", cid)
+          end
+        ]]>
+        </action>
+
+        <interact keywords="yes">
+          <response param="noamount" text="Sorry, you do not have one."/>
+          <response param="lowamount" text="Sorry, you do not have that many."/>
+          <response text="Ok. Here is your money.">
+            <action name="sell" value="|PRICE|"/>
+          </response>
+        </interact>
+        
+      </response>
+    </interact>
+
+    <interact keywords="buy;|AMOUNT|;|LIST|">
+      <list>vase</list>
+
+
+      <response>
+        <action name="amount" value="|AMOUNT|"/>
+        <action name="price" value="|BUYPRICE|"/>
+
+        <action name="script">
+        <![CDATA[
+          if(_state.amount > 1) then
+            selfSay("Do you want to buy " .. _state.amount .. " " .. _state.listpname .. " for " ..  _state.price * _state.amount .. " gold?", cid)
+          else
+            selfSay("Do you want to buy " .. _state.listname .. " for " .. _state.price .. " gold?", cid)
+          end
+        ]]>
+        </action>
+
+        <interact keywords="yes">
+          <response param="lowmoney" text="Sorry, you do not have enough gold."/>
+          <response text="Thank you. Here it is.">
+            <action name="buy" value="|PRICE|"/>
+          </response>
+        </interact>
+
+      </response>
+    </interact>
+  </interaction>
+  
+</npc>
