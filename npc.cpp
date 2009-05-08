@@ -1585,6 +1585,8 @@ void Npc::executeResponse(Player* player, NpcState* npcState, const NpcResponse*
 						scriptstream << "amount = " << npcState->amount << ',' << std::endl;
 						scriptstream << "price = " << npcState->price << ',' << std::endl;
 						scriptstream << "level = " << npcState->level << ',' << std::endl;
+						scriptstream << "buywithbackpack = " << npcState->buyWithBackpack << ',' << std::endl;
+						scriptstream << "ignorecapacity = " << npcState->ignoreCapacity << ',' << std::endl;
 						scriptstream << "spellname = \"" << npcState->spellName << "\"" << ',' << std::endl;
 						scriptstream << "listname = \"" << npcState->listName << "\"" << ',' << std::endl;
 						scriptstream << "listpname = \"" << npcState->listPluralName << "\"" << ',' << std::endl;
