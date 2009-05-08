@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<npc name="Evandir" floorchange="0" walkinterval="2000" speed="220">
+<npc name="Hembler" floorchange="0" walkinterval="2000" speed="220">
 	<health now="150" max="150"/>
-	<look type="128" head="117" body="50" legs="67" feet="71" addons="0"/>
+	<look type="134" head="4" body="3" legs="2" feet="1" addons="1"/>
   
   <interaction range="3" idletime="0" defaultpublic="0">
 
@@ -35,11 +35,11 @@
     <interact keywords="wares">
 		<keywords>trade</keywords>
 
-		<response text="I sell and buy acessories in general, as {backpacks}, {bags} and {tools}."/>
+		<response text="I sell and buy {jewerly} in general."/>
     </interact>
 	
-	<interact keywords="backpacks">
-		<list>backpacks</list>
+	<interact keywords="jewerly">
+		<list>jewerly</list>
 
 		<response>
 			<action name="script">
@@ -49,35 +49,9 @@
 			</action>
 		</response>
 	</interact>
-	
-	<interact keywords="bags">
-		<list>bags</list>
-		
-		<response>
-			<action name="script">
-			<![CDATA[
-			  openShopWindow(cid, itemlist, -1, -1)
-			]]>
-			</action>
-		</response>
-	</interact>	
-	
-	<interact keywords="tools">
-		<list>tools</list>
-		
-		<response>
-			<action name="script">
-			<![CDATA[
-			  openShopWindow(cid, itemlist, -1, -1)
-			]]>
-			</action>
-		</response>
-	</interact>	
     
     <interact keywords="sell;|AMOUNT|;|LIST|">
-      <list>backpacks</list>
-      <list>bags</list>
-      <list>tools</list>
+		<list>jewerly</list>
 
       <response>
         <action name="amount" value="|AMOUNT|"/>
@@ -105,9 +79,7 @@
     </interact>
 
     <interact keywords="buy;|AMOUNT|;|LIST|">
-      <list>backpacks</list>
-      <list>bags</list>
-      <list>tools</list>
+		<list>jewerly</list>
 
       <response>
         <action name="amount" value="|AMOUNT|"/>

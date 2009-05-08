@@ -96,41 +96,6 @@
 			<item keywords="war;hammer" id="2391" sellprice="470"/>
 			<item keywords="thunder;hammer" id="2421" sellprice="999"/>
 		</itemlist> 
-
-	<!--
-	Rod's Shop
-	-->
-		<!--
-		apenas compraveis
-		-->
-		<itemlist listid="rods_buyable">
-			<item keywords="snakebite;rod" id="2182" buyprice="500"/>
-			<item keywords="moonlight;rod" id="2186" buyprice="1000"/>
-			<item keywords="necrotic;rod" id="2185" buyprice="5000"/>
-			<item keywords="northwind;rod" id="8911" buyprice="7500"/>
-			<item keywords="terra;rod" id="2181" buyprice="10000"/>
-			<item keywords="hailstorm;rod" id="2183" buyprice="15000"/>
-			<item keywords="springsprout;rod" id="8912" buyprice="18000"/>
-			<item keywords="underworld;rod" id="8910" buyprice="22000"/>
-		</itemlist>			
-			
-			
-	<!--
-	Wand's Shop
-	-->
-		<!--
-		apenas compraveis
-		-->
-		<itemlist listid="wands_buyable">
-			<item keywords="wand;of;vortex" id="2190" buyprice="500"/>
-			<item keywords="wand;of;dragonbreath" id="2191" buyprice="1000"/>
-			<item keywords="wand;of;decay" id="2188" buyprice="5000"/>
-			<item keywords="wand;of;draconia" id="8921" buyprice="7500"/>
-			<item keywords="wand;of;cosmic;energy" id="2189" buyprice="10000"/>
-			<item keywords="wand;of;inferno" id="2187" buyprice="15000"/>
-			<item keywords="wand;of;starstorm" id="8920" buyprice="18000"/>
-			<item keywords="wand;of;voodoo" id="8922" buyprice="22000"/>
-		</itemlist>	
 		
 
 	<!--
@@ -166,18 +131,18 @@
 	-->
 		<itemlist listid="ammunition">
 			<!-- para Bow's -->
-			<item keywords="arrow" id="2544" subtype="100" buyprice="300"/>
-			<item keywords="earth;arrow" id="7850" subtype="100" buyprice="500"/>
-			<item keywords="flaming;arrow" id="7840" subtype="100" buyprice="500"/>
-			<item keywords="flash;arrow" id="7838" subtype="100" buyprice="500"/>
-			<item keywords="onyx;arrow" id="7365" subtype="100" buyprice="700"/>
-			<item keywords="shiver;arrow" id="7839" subtype="100" buyprice="500"/>
-			<item keywords="sniper;arrow" id="7364" subtype="100" buyprice="500"/>
+			<item keywords="arrow" id="2544" buyprice="3"/>
+			<item keywords="earth;arrow" id="7850" buyprice="5"/>
+			<item keywords="flaming;arrow" id="7840" buyprice="5"/>
+			<item keywords="flash;arrow" id="7838" buyprice="5"/>
+			<item keywords="onyx;arrow" id="7365" buyprice="7"/>
+			<item keywords="shiver;arrow" id="7839" buyprice="5"/>
+			<item keywords="sniper;arrow" id="7364" buyprice="5"/>
 			
 			<!-- para Crossbow's -->
-			<item keywords="bolt" id="2543" subtype="100" buyprice="400"/>
-			<item keywords="piercing;bolt" id="7363" subtype="100" buyprice="500"/>
-			<item keywords="power;bolt" id="2547" subtype="100" buyprice="700"/>
+			<item keywords="bolt" id="2543" buyprice="4"/>
+			<item keywords="piercing;bolt" id="7363" buyprice="5"/>
+			<item keywords="power;bolt" id="2547" buyprice="7"/>
 		</itemlist>	
 
 </interaction>

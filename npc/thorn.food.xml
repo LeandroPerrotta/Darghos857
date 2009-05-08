@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
-<npc name="Michelo" floorchange="0" walkinterval="2000" speed="220">
+<npc name="Jorjemar" floorchange="0" walkinterval="2000" speed="220">
 	<health now="150" max="150"/>
-	<look type="142" head="17" body="65" legs="33" feet="114" addons="0" corpse="2212"/>
+	<look type="128" head="124" body="114" legs="114" feet="124" addons="0"/>
   
   <interaction range="3" idletime="0" defaultpublic="0">
 
-    <include file="weapons.xml"/>
+    <include file="others.xml"/>
     
     <interact keywords="hi" focus="1">
       <keywords>hello</keywords>
@@ -34,13 +34,11 @@
     <interact keywords="wares">
 		<keywords>trade</keywords>
 
-		<response text="I sell and buy {distance} weapons and {ammunition} in general."/>
+		<response text="I sell all kind of {foods}."/>
     </interact>
 	
-	<interact keywords="distance">
-		<list>distance_all</list>
-		<list>distance_sellable</list>
-		<list>distance_buyable</list>
+	<interact keywords="foods">
+		<list>foods</list>
 
 		<response>
 			<action name="script">
@@ -50,77 +48,12 @@
 			</action>
 		</response>
 	</interact>
+    
+	<include file="events_shop.xml"/>
 	
-	<interact keywords="ammunition">
-		<list>ammunition</list>
-
-		<response>
-			<action name="script">
-			<![CDATA[
-			  openShopWindow(cid, itemlist, -1, -1)
-			]]>
-			</action>
-		</response>
-	</interact>		
-
-    <interact event="onPlayerShopSell">
-      <response>
-        <action name="price" value="|SELLPRICE|"/>
-        <action name="script">
-        <![CDATA[
-          if(doPlayerRemoveItem(cid, _state.itemid, _state.amount, _state.subtype) == TRUE) then
-            doPlayerAddMoney(cid, _state.price * _state.amount)
-            selfSay("Here you are.", cid)
-          else
-            selfSay("Sorry, you do not have one.", cid)
-          end
-        ]]>
-        </action>
-      </response>
-    </interact>
-    
-    <interact event="onPlayerShopBuy">
-      <response>
-        <action name="price" value="|BUYPRICE|"/>
-        <action name="script">
-        <![CDATA[
-          if(getPlayerMoney(cid) >= _state.amount * _state.price) then
-            local count
-            for count=0, _state.amount-1 do
-              local result = doPlayerAddItem(cid, _state.itemid, _state.subtype, 0)
-
-              if(result == -1) then
-                if(count == 0) then
-                  selfSay("Sorry, but you don't have room to take it.", cid)
-                  return
-                else
-                  selfSay("I've sold some for you, but it seems you can't carry more than this. I won't take more money than necessary.", cid)
-                  doPlayerRemoveMoney(cid, count * _state.price)
-                  return
-                end
-              end
-            end
-
-            selfSay("Here you are.", cid)
-            doPlayerRemoveMoney(cid, _state.price * _state.amount)
-          else
-            selfSay("Sorry, you do not have enough gold.", cid)
-          end
-        ]]>
-        </action>
-      </response>
-    </interact>
-
-    <interact event="onPlayerShopClose">
-      <response text="It was a pleasure to help you."/>
-    </interact>
-    
     <interact keywords="sell;|AMOUNT|;|LIST|">
-		<list>distance_all</list>
-		<list>distance_sellable</list>
-		<list>distance_buyable</list>
-		<list>ammunition</list>
-
+      <list>foods</list>
+	  
       <response>
         <action name="amount" value="|AMOUNT|"/>
         <action name="price" value="|SELLPRICE|"/>
@@ -147,10 +80,7 @@
     </interact>
 
     <interact keywords="buy;|AMOUNT|;|LIST|">
-		<list>distance_all</list>
-		<list>distance_sellable</list>
-		<list>distance_buyable</list>
-		<list>ammunition</list>
+      <list>foods</list>
 
       <response>
         <action name="amount" value="|AMOUNT|"/>
