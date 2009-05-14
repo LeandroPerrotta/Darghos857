@@ -35,9 +35,9 @@
 				if(getPlayerMoney(cid) >= _state.amount * _state.price) then
 				
 					if(isItemStackable(_state.itemid) == 1 and _state.subtype == 0) then
-					
-						local result = doPlayerAddItem(cid, _state.itemid, _state.amount, 0)
-
+				
+							local result = doPlayerAddItem(cid, _state.itemid, _state.amount, 0)
+							
 						if(result == -1) then
 								
 							selfSay("Sorry, but you don't have room to take it.", cid)
@@ -77,7 +77,7 @@
 							
 								local result = doAddContainerItem(backpacks[toBackpack], _state.itemid, _state.subtype)							
 							else
-								local result = doPlayerAddItem(cid, _state.itemid, _state.subtype)
+								local result = doPlayerAddItem(cid, _state.itemid,_state.amout, _state.subtype)
 							end	
 
 							if(_state.buywithbackpack == 0 and result == -1) then
