@@ -24,6 +24,8 @@
 
 #include "definitions.h"
 
+#include <boost/any.hpp>
+
 #include "templates.h"
 #include "map.h"
 #include "position.h"
@@ -81,6 +83,36 @@ struct FindPathParams{
 		maxTargetDist = -1;
 	}
 };
+
+// Used for death entries
+struct DeathLessThan;
+struct DeathEntry{
+	// Death can be either a name (for fields) or a creature (for anything substantial)
+	// Fields are only counted if they are the final hit killer
+	DeathEntry(std::string name, int dmg) : data(name), damage(dmg) {}
+	DeathEntry(Creature* killer, int dmg) : data(killer), damage(dmg) {}
+	
+	bool isCreatureKill() const {return data.type() == typeid(Creature*);}
+	bool isNameKill() const {return !isCreatureKill();}
+
+	Creature* getKillerCreature() const {return boost::any_cast<Creature*>(data);}
+	std::string getKillerName() const {return boost::any_cast<std::string>(data);}
+
+protected:
+	int damage;
+	boost::any data;
+
+	friend struct DeathLessThan;
+};
+
+struct DeathLessThan{
+	bool operator()(const DeathEntry& d1, const DeathEntry& d2){
+		// Sort descending
+		return d1.damage > d2.damage;
+	}
+};
+
+typedef std::vector<DeathEntry> DeathList;
 
 enum ZoneType_t{
 	ZONE_PROTECTION,
@@ -171,11 +203,11 @@ public:
 	virtual bool canSeeInvisibility() const { return false;}
 
 	int64_t getSleepTicks() const;
-	int32_t getWalkDelay(Direction dir) const;
+	int32_t getWalkDelay(Direction dir, uint32_t resolution) const;
 	int64_t getTimeSinceLastMove() const;
 
-	virtual int64_t getEventStepTicks() const;
-	int32_t getStepDuration() const;
+	int64_t getEventStepTicks() const;
+	int32_t getStepDuration(bool addLastStepCost = true) const;
 	virtual int32_t getStepSpeed() const {return getSpeed();}
 	int32_t getSpeed() const {return baseSpeed + varSpeed;}
 	void setSpeed(int32_t varSpeedDelta)
@@ -201,7 +233,7 @@ public:
 	const Outfit_t getCurrentOutfit() const {return currentOutfit;}
 	const void setCurrentOutfit(Outfit_t outfit) {currentOutfit = outfit;}
 	const Outfit_t getDefaultOutfit() const {return defaultOutfit;}
-	bool isInvisible() const {return hasCondition(CONDITION_INVISIBLE);}
+	bool isInvisible() const {return hasCondition(CONDITION_INVISIBLE, false);}
 	ZoneType_t getZone() const {
 		const Tile* tile = getTile();
 		if(tile->hasFlag(TILESTATE_PROTECTIONZONE)){
@@ -286,17 +318,16 @@ public:
 
 	virtual void onDie();
 	
-	uint32_t getStaminaRatio(Creature* attacker) const;
 	virtual uint64_t getGainedExperience(Creature* attacker, bool useMultiplier = true) const;
 	void addDamagePoints(Creature* attacker, int32_t damagePoints);
 	void addHealPoints(Creature* caster, int32_t healthPoints);
 	bool hasBeenAttacked(uint32_t attackerId) const;
 
 	//combat event functions
-	virtual void onAddCondition(ConditionType_t type);
-	virtual void onAddCombatCondition(ConditionType_t type);
-	virtual void onEndCondition(ConditionType_t type);
-	virtual void onTickCondition(ConditionType_t type, bool& bRemove);
+	virtual void onAddCondition(ConditionType_t type, bool hadCondition);
+	virtual void onAddCombatCondition(ConditionType_t type, bool hadCondition);
+	virtual void onEndCondition(ConditionType_t type, bool lastCondition);
+	virtual void onTickCondition(ConditionType_t type, int32_t interval, bool& bRemove);
 	virtual void onCombatRemoveCondition(const Creature* attacker, Condition* condition);
 	virtual void onAttackedCreature(Creature* target);
 	virtual void onAttacked();
@@ -322,21 +353,21 @@ public:
 	virtual bool getNextStep(Direction& dir);
 
 	virtual void onAddTileItem(const Tile* tile, const Position& pos, const Item* item);
-	virtual void onUpdateTileItem(const Tile* tile, const Position& pos, uint32_t stackpos,
+	virtual void onUpdateTileItem(const Tile* tile, const Position& pos,
 		const Item* oldItem, const ItemType& oldType, const Item* newItem, const ItemType& newType);
-	virtual void onRemoveTileItem(const Tile* tile, const Position& pos, uint32_t stackpos,
+	virtual void onRemoveTileItem(const Tile* tile, const Position& pos,
 		const ItemType& iType, const Item* item);
 	virtual void onUpdateTile(const Tile* tile, const Position& pos);
 
 	virtual void onCreatureAppear(const Creature* creature, bool isLogin);
-	virtual void onCreatureDisappear(const Creature* creature, uint32_t stackpos, bool isLogout);
+	virtual void onCreatureDisappear(const Creature* creature, bool isLogout);
 	virtual void onCreatureMove(const Creature* creature, const Tile* newTile, const Position& newPos,
-		const Tile* oldTile, const Position& oldPos, uint32_t oldStackPos, bool teleport);
+		const Tile* oldTile, const Position& oldPos, bool teleport);
 
 	virtual void onAttackedCreatureDissapear(bool isLogout) {};
 	virtual void onFollowCreatureDissapear(bool isLogout) {};
 
-	virtual void onCreatureTurn(const Creature* creature, uint32_t stackPos) { };
+	virtual void onCreatureTurn(const Creature* creature) { };
 	virtual void onCreatureSay(const Creature* creature, SpeakClasses type, const std::string& text) { };
 
 	virtual void onCreatureChangeOutfit(const Creature* creature, const Outfit_t& outfit) { };
@@ -395,7 +426,6 @@ protected:
 	int32_t masterRadius;
 	uint64_t lastStep;
 	uint32_t lastStepCost;
-	uint32_t extraStepDuration;
 	uint32_t baseSpeed;
 	int32_t varSpeed;
 	bool skillLoss;
@@ -428,6 +458,7 @@ protected:
 	typedef std::map<uint32_t, CountBlock_t> CountMap;
 	CountMap damageMap;
 	CountMap healMap;
+	CombatType_t lastDamageSource;
 	uint32_t lastHitCreature;
 	uint32_t blockCount;
 	uint32_t blockTicks;
@@ -447,19 +478,20 @@ protected:
 #endif
 	void updateTileCache(const Tile* tile, int32_t dx, int32_t dy);
 	void updateTileCache(const Tile* tile, const Position& pos);
-	void onCreatureDisappear(const Creature* creature, bool isLogout);
+	void internalCreatureDisappear(const Creature* creature, bool isLogout);
 	virtual void doAttacking(uint32_t interval) {};
 	virtual bool hasExtraSwing() {return false;}
 
 	virtual uint64_t getLostExperience() const { return 0; };
 	virtual double getDamageRatio(Creature* attacker) const;
 	bool getKillers(Creature** lastHitCreature, Creature** mostDamageCreature);
+	DeathList getKillers(int assist_count = 1);
 	virtual void dropLoot(Container* corpse) {};
 	virtual uint16_t getLookCorpse() const { return 0; }
 	virtual void getPathSearchParams(const Creature* creature, FindPathParams& fpp) const;
 	virtual void die() {};
 	virtual Item* dropCorpse();
-	virtual Item* getCorpse();
+	virtual Item* createCorpse();
 
 	friend class Game;
 	friend class Map;

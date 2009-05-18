@@ -83,9 +83,6 @@ public:
 	uint32_t executeOnLogin(Player* player);
 	uint32_t executeOnLogout(Player* player);
 	uint32_t executeOnDie(Creature* creature, Item* corpse);
-	#ifdef __DARGHOS__
-	uint32_t executeOnDeath(Creature* creature, Creature* lastHit, Creature* mostDamage);
-	#endif
 	uint32_t executeOnKill(Creature* creature, Creature* target);
 	uint32_t executeOnAdvance(Player* player, uint32_t oldLevel, uint32_t newLevel, levelTypes_t type);
 	//

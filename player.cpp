@@ -592,7 +592,7 @@ void Player::sendIcons() const
 	}
 }
 
-void Player::updateInventoryWeigth()
+void Player::updateInventoryWeight()
 {
 	inventoryWeight = 0.00;
 
@@ -790,7 +790,6 @@ int32_t Player::getDefaultStats(stats_t stat)
 	}
 }
 
-
 int32_t Player::getStepSpeed() const
 {
 	if(getSpeed() > PLAYER_MAX_SPEED){
@@ -969,17 +968,21 @@ bool Player::canSee(const Position& pos) const
 	return false;
 }
 
-bool Player::canSeeInvisibility() const {
+bool Player::canSeeInvisibility() const
+{
 	return hasFlag(PlayerFlag_CanSenseInvisibility);
 }
 
 bool Player::canSeeCreature(const Creature* creature) const
 {
-	if(creature->isInvisible() &&
-		!creature->getPlayer() &&
-		!hasFlag(PlayerFlag_CanSenseInvisibility) &&
-		!canSeeInvisibility())
-	{
+	if(canSeeInvisibility()){
+		return true;
+	}
+
+	if(creature->getPlayer() && creature->getPlayer()->hasFlag(PlayerFlag_CannotBeSeen)){
+		return false;
+	}
+	else if(creature->isInvisible()){
 		return false;
 	}
 
@@ -1426,13 +1429,13 @@ void Player::onAddTileItem(const Tile* tile, const Position& pos, const Item* it
 	Creature::onAddTileItem(tile, pos, item);
 }
 
-void Player::onUpdateTileItem(const Tile* tile, const Position& pos, uint32_t stackpos,
+void Player::onUpdateTileItem(const Tile* tile, const Position& pos,
 	const Item* oldItem, const ItemType& oldType, const Item* newItem, const ItemType& newType)
 {
-	Creature::onUpdateTileItem(tile, pos, stackpos, oldItem, oldType, newItem, newType);
+	Creature::onUpdateTileItem(tile, pos, oldItem, oldType, newItem, newType);
 
 	if(oldItem != newItem){
-		onRemoveTileItem(tile, pos, stackpos, oldType, oldItem);
+		onRemoveTileItem(tile, pos, oldType, oldItem);
 	}
 
 	if(tradeState != TRADE_TRANSFER){
@@ -1442,10 +1445,10 @@ void Player::onUpdateTileItem(const Tile* tile, const Position& pos, uint32_t st
 	}
 }
 
-void Player::onRemoveTileItem(const Tile* tile, const Position& pos, uint32_t stackpos,
+void Player::onRemoveTileItem(const Tile* tile, const Position& pos,
 	const ItemType& iType, const Item* item)
 {
-	Creature::onRemoveTileItem(tile, pos, stackpos, iType, item);
+	Creature::onRemoveTileItem(tile, pos, iType, item);
 
 	if(tradeState != TRADE_TRANSFER){
 		checkTradeState(item);
@@ -1500,6 +1503,7 @@ void Player::onCreatureAppear(const Creature* creature, bool isLogin)
 			int64_t timeOff = time(NULL) - lastLogout - 600;
 			if(timeOff > 0){
 				int32_t stamina_rate = g_config.getNumber(ConfigManager::RATE_STAMINA_GAIN);
+				int32_t slow_stamina_rate = g_config.getNumber(ConfigManager::SLOW_RATE_STAMINA_GAIN);
 				int32_t quick_stamina_max = MAX_STAMINA - g_config.getNumber(ConfigManager::STAMINA_EXTRA_EXPERIENCE_DURATION);
 				int64_t gain;
 				bool checkSlowStamina = true;
@@ -1517,7 +1521,7 @@ void Player::onCreatureAppear(const Creature* creature, bool isLogin)
 				}
 
 				if(getStamina() < MAX_STAMINA && checkSlowStamina){
-					gain = timeOff * stamina_rate / 4;
+					gain = timeOff * slow_stamina_rate;
 					addStamina(gain);
 				}
 			}
@@ -1588,10 +1592,9 @@ void Player::onAttackedCreatureChangeZone(ZoneType_t zone)
 	}
 }
 
-
-void Player::onCreatureDisappear(const Creature* creature, uint32_t stackpos, bool isLogout)
+void Player::onCreatureDisappear(const Creature* creature, bool isLogout)
 {
-	Creature::onCreatureDisappear(creature, stackpos, isLogout);
+	Creature::onCreatureDisappear(creature, isLogout);
 
 	if(creature == this){
 		if(isLogout){
@@ -1678,9 +1681,9 @@ void Player::onWalk(Direction& dir)
 }
 
 void Player::onCreatureMove(const Creature* creature, const Tile* newTile, const Position& newPos,
-	const Tile* oldTile, const Position& oldPos, uint32_t oldStackPos, bool teleport)
+	const Tile* oldTile, const Position& oldPos, bool teleport)
 {
-	Creature::onCreatureMove(creature, newTile, newPos, oldTile, oldPos, oldStackPos, teleport);
+	Creature::onCreatureMove(creature, newTile, newPos, oldTile, oldPos, teleport);
 
 	if(creature == this){
 		if(tradeState != TRADE_TRANSFER){
@@ -1703,11 +1706,9 @@ void Player::onCreatureMove(const Creature* creature, const Tile* newTile, const
 		}
 
 		if(teleport || (oldPos.z != newPos.z)){
-			addCondition(
-				Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_PACIFIED, 
+			addCondition(Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_PACIFIED, 
 				g_config.getNumber(ConfigManager::STAIRHOP_EXHAUSTED)));
-			addCondition(
-				Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_EXHAUST_COMBAT, 
+			addCondition(Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_EXHAUST_COMBAT, 
 				g_config.getNumber(ConfigManager::STAIRHOP_EXHAUSTED)));
 		}
 	}
@@ -2219,6 +2220,9 @@ void Player::onDie()
 		if(isSkillPrevented){
 			setLossSkill(false);
 		}
+
+		DeathList killers = getKillers(g_config.getNumber(ConfigManager::DEATH_ASSIST_COUNT));
+		IOPlayer::instance()->addPlayerDeath(this, killers);
 	}
 
 	Creature::onDie();
@@ -2232,7 +2236,9 @@ void Player::die()
 			it = conditions.erase(it);
 
 			condition->endCondition(this, CONDITIONEND_DIE);
-			onEndCondition(condition->getType());
+
+			bool lastCondition = !hasCondition(condition->getType(), false);
+			onEndCondition(condition->getType(), lastCondition);
 			delete condition;
 		}
 		else{
@@ -2344,9 +2350,9 @@ Item* Player::dropCorpse()
 	}
 }
 
-Item* Player::getCorpse()
+Item* Player::createCorpse()
 {
-	Item* corpse = Creature::getCorpse();
+	Item* corpse = Creature::createCorpse();
 	if(corpse && corpse->getContainer()){
 		std::stringstream ss;
 
@@ -3149,11 +3155,9 @@ void Player::postAddNotification(Thing* thing, const Cylinder* oldParent, int32_
 		else
 			requireListUpdate = oldParent != this;
 
-		if(requireListUpdate){
-			updateItemsLight();
-			updateInventoryWeigth();
-			sendStats();
-		}
+		updateInventoryWeight();
+		updateItemsLight();
+		sendStats();
 	}
 
 	if(const Item* item = thing->getItem()){
@@ -3201,11 +3205,9 @@ void Player::postRemoveNotification(Thing* thing, const Cylinder* newParent, int
 		else
 			requireListUpdate = newParent != this;
 
-		if(requireListUpdate){
-			updateItemsLight();
-			updateInventoryWeigth();
-			sendStats();
-		}
+		updateInventoryWeight();
+		updateItemsLight();
+		sendStats();
 	}
 
 
@@ -3472,7 +3474,6 @@ void Player::onWalkComplete()
 void Player::stopWalk()
 {
 	if(!listWalkDir.empty()){
-		extraStepDuration = getStepDuration();
 		stopEventWalk();
 	}
 }
@@ -3508,13 +3509,13 @@ void Player::updateItemsLight(bool internal /*=false*/)
 	}
 }
 
-void Player::onAddCondition(ConditionType_t type)
+void Player::onAddCondition(ConditionType_t type, bool hadCondition)
 {
-	Creature::onAddCondition(type);
+	Creature::onAddCondition(type, hadCondition);
 	sendIcons();
 }
 
-void Player::onAddCombatCondition(ConditionType_t type)
+void Player::onAddCombatCondition(ConditionType_t type, bool hadCondition)
 {
 	if(type == CONDITION_POISON){
 		sendTextMessage(MSG_STATUS_DEFAULT, "You are poisoned.");
@@ -3530,9 +3531,9 @@ void Player::onAddCombatCondition(ConditionType_t type)
 	}
 }
 
-void Player::onEndCondition(ConditionType_t type)
+void Player::onEndCondition(ConditionType_t type, bool lastCondition)
 {
-	Creature::onEndCondition(type);
+	Creature::onEndCondition(type, lastCondition);
 	sendIcons();
 
 	if(type == CONDITION_INFIGHT){
@@ -3579,6 +3580,15 @@ void Player::onCombatRemoveCondition(const Creature* attacker, Condition* condit
 			removeCondition(condition);
 		}
 	}
+}
+
+void Player::onTickCondition(ConditionType_t type, int32_t interval, bool& bRemove)
+{
+	if(type == CONDITION_HUNTING){
+		removeStamina(interval * g_config.getNumber(ConfigManager::RATE_STAMINA_LOSS));
+	}
+
+	Creature::onTickCondition(type, interval, bRemove);
 }
 
 void Player::onAttackedCreature(Creature* target)

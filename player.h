@@ -361,10 +361,11 @@ public:
 	virtual uint64_t getGainedExperience(Creature* attacker, bool useMultiplier = true) const;
 
 	//combat event functions
-	virtual void onAddCondition(ConditionType_t type);
-	virtual void onAddCombatCondition(ConditionType_t type);
-	virtual void onEndCondition(ConditionType_t type);
+	virtual void onAddCondition(ConditionType_t type, bool hadCondition);
+	virtual void onAddCombatCondition(ConditionType_t type, bool hadCondition);
+	virtual void onEndCondition(ConditionType_t type, bool lastCondition);
 	virtual void onCombatRemoveCondition(const Creature* attacker, Condition* condition);
+	virtual void onTickCondition(ConditionType_t type, int32_t interval, bool& bRemove);
 	virtual void onAttackedCreature(Creature* target);
 	virtual void onAttacked();
 	virtual void onAttackedCreatureDrainHealth(Creature* target, int32_t points);
@@ -415,26 +416,27 @@ public:
 
 	//tile
 	//send methods
-	void sendAddTileItem(const Tile* tile, const Position& pos, uint32_t stackpos, const Item* item)
-		{if(client) client->sendAddTileItem(tile, pos, stackpos, item);}
-	void sendUpdateTileItem(const Tile* tile, const Position& pos,
-		uint32_t stackpos, const Item* olditem, const Item* newitem)
-		{if(client) client->sendUpdateTileItem(tile, pos, stackpos, newitem);}
+	void sendAddTileItem(const Tile* tile, const Position& pos, const Item* item)
+	{if(client) client->sendAddTileItem(tile, pos, tile->getClientIndexOfThing(this, item), item);}
+	void sendUpdateTileItem(const Tile* tile, const Position& pos, const Item* olditem, const Item* newitem)
+	{if(client) client->sendUpdateTileItem(tile, pos, tile->getClientIndexOfThing(this, newitem), newitem);}
 	void sendRemoveTileItem(const Tile* tile, const Position& pos, uint32_t stackpos, const Item* item)
 		{if(client) client->sendRemoveTileItem(tile, pos, stackpos);}
 	void sendUpdateTile(const Tile* tile, const Position& pos)
 		{if(client) client->sendUpdateTile(tile, pos);}
 
-	void sendCreatureAppear(const Creature* creature, const Position& pos, uint32_t stackpos, bool isLogin)
-		{if(client) client->sendAddCreature(creature, pos, stackpos, isLogin);}
-	void sendCreatureDisappear(const Creature* creature, uint32_t stackpos, bool isLogout)
-		{if(client) client->sendRemoveCreature(creature, creature->getPosition(), stackpos, isLogout);}
-	void sendCreatureMove(const Creature* creature, const Tile* newTile, const Position& newPos, uint32_t stackpos,
-	const Tile* oldTile, const Position& oldPos, uint32_t oldStackPos, bool teleport)
-		{if(client) client->sendMoveCreature(creature, newTile, newPos, stackpos, oldTile, oldPos, oldStackPos, teleport);}
+	void sendCreatureAppear(const Creature* creature, const Position& pos, bool isLogin)
+		{if(client) client->sendAddCreature(creature, pos, creature->getTile()->getClientIndexOfThing(this, creature), isLogin);}
+	void sendCreatureDisappear(const Creature* creature, bool isLogout)
+		{if(client) client->sendRemoveCreature(creature, creature->getPosition(), 
+			creature->getTile()->getClientIndexOfThing(this, creature), isLogout);}
+	void sendCreatureMove(const Creature* creature, const Tile* newTile, const Position& newPos,
+		const Tile* oldTile, const Position& oldPos, uint32_t oldStackPos, bool teleport)
+		{if(client) client->sendMoveCreature(creature, newTile, newPos, newTile->getClientIndexOfThing(this, creature),
+		oldTile, oldPos, oldStackPos, teleport);}
 
-	void sendCreatureTurn(const Creature* creature, uint32_t stackpos)
-		{if(client) client->sendCreatureTurn(creature, (uint8_t)stackpos);}
+	void sendCreatureTurn(const Creature* creature)
+		{if(client) client->sendCreatureTurn(creature, creature->getTile()->getClientIndexOfThing(this, creature));}
 	void sendCreatureSay(const Creature* creature, SpeakClasses type, const std::string& text)
 		{if(client) client->sendCreatureSay(creature, type, text);}
 	void sendCreatureSquare(const Creature* creature, SquareColor_t color)
@@ -444,11 +446,27 @@ public:
 	void sendCreatureChangeVisible(const Creature* creature, bool visible)
 		{
 			if(client){
-				if(visible){
-					client->sendCreatureOutfit(creature, creature->getCurrentOutfit());
+				if(creature->getPlayer() && !creature->getPlayer()->hasFlag(PlayerFlag_CannotBeSeen)){
+					if(visible){
+						client->sendCreatureOutfit(creature, creature->getCurrentOutfit());
+					}
+					else{
+						static Outfit_t outfit;
+						client->sendCreatureOutfit(creature, outfit);
+					}
 				}
 				else{
-					client->sendCreatureInvisible(creature);
+					if(canSeeInvisibility()){
+						client->sendCreatureOutfit(creature, creature->getCurrentOutfit());
+					}
+					else{
+						if(visible){
+							client->sendAddCreature(creature, creature->getPosition(), creature->getTile()->getClientIndexOfThing(this, creature), false);
+						}
+						else{
+							client->sendRemoveCreature(creature, creature->getPosition(), creature->getTile()->__getIndexOfThing(creature), false);
+						}
+					}
 				}
 			}
 		}
@@ -474,22 +492,22 @@ public:
 
 	//event methods
 	virtual void onAddTileItem(const Tile* tile, const Position& pos, const Item* item);
-	virtual void onUpdateTileItem(const Tile* tile, const Position& pos, uint32_t stackpos,
+	virtual void onUpdateTileItem(const Tile* tile, const Position& pos,
 		const Item* oldItem, const ItemType& oldType, const Item* newItem, const ItemType& newType);
-	virtual void onRemoveTileItem(const Tile* tile, const Position& pos, uint32_t stackpos,
+	virtual void onRemoveTileItem(const Tile* tile, const Position& pos,
 		const ItemType& iType, const Item* item);
 	virtual void onUpdateTile(const Tile* tile, const Position& pos);
 
 	virtual void onCreatureAppear(const Creature* creature, bool isLogin);
-	virtual void onCreatureDisappear(const Creature* creature, uint32_t stackpos, bool isLogout);
+	virtual void onCreatureDisappear(const Creature* creature, bool isLogout);
 	virtual void onCreatureMove(const Creature* creature, const Tile* newTile, const Position& newPos,
-		const Tile* oldTile, const Position& oldPos, uint32_t oldStackPos, bool teleport);
+		const Tile* oldTile, const Position& oldPos, bool teleport);
 
 	virtual void onAttackedCreatureDissapear(bool isLogout);
 	virtual void onFollowCreatureDissapear(bool isLogout);
 
 	//virtual void onCreatureSay(const Creature* creature, SpeakClasses type, const std::string& text);
-	//virtual void onCreatureTurn(const Creature* creature, uint32_t stackpos);
+	//virtual void onCreatureTurn(const Creature* creature);
 	//virtual void onCreatureChangeOutfit(const Creature* creature, const Outfit_t& outfit);
 
 	//container
@@ -639,7 +657,7 @@ protected:
 	void gainExperience(uint64_t& exp);
 	void addExperience(uint64_t exp);
 
-	void updateInventoryWeigth();
+	void updateInventoryWeight();
 
 	void setNextWalkActionTask(SchedulerTask* task);
 	void setNextWalkTask(SchedulerTask* task);
@@ -648,7 +666,7 @@ protected:
 	void onDie();
 	void die();
 	virtual Item* dropCorpse();
-	virtual Item* getCorpse();
+	virtual Item* createCorpse();
 
 	//cylinder implementations
 	virtual ReturnValue __queryAdd(int32_t index, const Thing* thing, uint32_t count,

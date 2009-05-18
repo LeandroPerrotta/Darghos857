@@ -178,7 +178,7 @@ Weapon::Weapon(LuaScriptInterface* _interface) :
 	mana = 0;
 	manaPercent = 0;
 	soul = 0;
-	exhaustion = false;
+	exhaustion = 0;
 	premium = false;
 	enabled = true;
 	wieldUnproperly = false;
@@ -231,7 +231,7 @@ bool Weapon::configureEvent(xmlNodePtr p)
 	}
 
 	if(readXMLInteger(p, "exhaustion", intValue)){
-		exhaustion = (intValue == 1);
+		exhaustion = intValue;
 	}
 
 	if(readXMLInteger(p, "prem", intValue)){
@@ -500,7 +500,10 @@ void Weapon::onUsedWeapon(Player* player, Item* item, Tile* destTile) const
 	}
 
 	if(!player->hasFlag(PlayerFlag_HasNoExhaustion) && hasExhaustion()){
-		player->addCombatExhaust(g_game.getFightExhaustionTicks());
+		if(exhaustion == -1)
+			player->addCombatExhaust(g_game.getFightExhaustionTicks());
+		else
+			player->addCombatExhaust(exhaustion);
 	}
 
 	int32_t manaCost = getManaCost(player);
@@ -900,29 +903,33 @@ bool WeaponDistance::useWeapon(Player* player, Item* item, Creature* target) con
 		Weapon::internalUseWeapon(player, item, target, damageModifier);
 	}
 	else{
-		//miss target
-		typedef std::pair<int32_t, int32_t> dPair;
-		std::vector<dPair> destList;
-		destList.push_back(dPair(-1, -1));
-		destList.push_back(dPair(-1, 0));
-		destList.push_back(dPair(-1, 1));
-		destList.push_back(dPair(0, -1));
-		destList.push_back(dPair(0, 1));
-		destList.push_back(dPair(1, -1));
-		destList.push_back(dPair(1, 0));
-		destList.push_back(dPair(1, 1));
-
-		std::random_shuffle(destList.begin(), destList.end());
-
-		Position destPos = target->getPosition();
+		// We failed attack, miss!
 		Tile* destTile = target->getTile();
-		Tile* tmpTile = NULL;
+		if(!Position::areInRange<1,1,0>(player->getPosition(), target->getPosition())){
+			typedef std::pair<int32_t, int32_t> dPair;
+			std::vector<dPair> destList;
+			destList.push_back(dPair(-1, -1));
+			destList.push_back(dPair(-1, 0));
+			destList.push_back(dPair(-1, 1));
+			destList.push_back(dPair(0, -1));
+			destList.push_back(dPair(0, 0));
+			destList.push_back(dPair(0, 1));
+			destList.push_back(dPair(1, -1));
+			destList.push_back(dPair(1, 0));
+			destList.push_back(dPair(1, 1));
 
-		for(std::vector<dPair>::iterator it = destList.begin(); it != destList.end(); ++it){
-			tmpTile = g_game.getTile(destPos.x + it->first, destPos.y + it->second, destPos.z);
-			if(tmpTile && !tmpTile->hasProperty(IMMOVABLEBLOCKSOLID)){
-				destTile = tmpTile;
-				break;
+			std::random_shuffle(destList.begin(), destList.end());
+
+			Position destPos = target->getPosition();
+			Tile* tmpTile = NULL;
+
+			for(std::vector<dPair>::iterator it = destList.begin(); it != destList.end(); ++it){
+				tmpTile = g_game.getTile(destPos.x + it->first, destPos.y + it->second, destPos.z);
+				// Blocking tiles or tiles without ground ain't valid targets for spears
+				if(tmpTile && !tmpTile->hasProperty(IMMOVABLEBLOCKSOLID) && tmpTile->ground != NULL){
+					destTile = tmpTile;
+					break;
+				}
 			}
 		}
 

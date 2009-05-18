@@ -333,7 +333,7 @@ Thing* Game::internalGetThing(Player* player, const Position& pos, int32_t index
 		if(tile){
 			/*look at*/
 			if(type == STACKPOS_LOOK){
-				return tile->getTopThing();
+				return tile->getTopVisibleThing(player);
 			}
 
 			Thing* thing = NULL;
@@ -344,7 +344,7 @@ Thing* Game::internalGetThing(Player* player, const Position& pos, int32_t index
 				if(item && !item->isNotMoveable())
 					thing = item;
 				else
-					thing = tile->getTopCreature();
+					thing = tile->getTopVisibleCreature(player);
 			}
 			/*use item*/
 			else if(type == STACKPOS_USE){
@@ -408,7 +408,7 @@ Thing* Game::internalGetThing(Player* player, const Position& pos, int32_t index
 
 			int32_t subType = -1;
 			if(it.isFluidContainer()){
-				int32_t maxFluidType = sizeof(reverseFluidMap) / sizeof(uint32_t);
+				int32_t maxFluidType = sizeof(reverseFluidMap) / sizeof(uint8_t);
 				if(index < maxFluidType){
 					subType = reverseFluidMap[index];
 				}
@@ -636,13 +636,11 @@ bool Game::placeCreature(Creature* creature, const Position& pos, bool extendedP
 	SpectatorVec::iterator it;
 	getSpectators(list, creature->getPosition(), false, true);
 
-	int32_t newStackPos = creature->getParent()->__getIndexOfThing(creature);
-
 	//send to client
 	Player* tmpPlayer = NULL;
 	for(it = list.begin(); it != list.end(); ++it) {
 		if((tmpPlayer = (*it)->getPlayer())){
-			tmpPlayer->sendCreatureAppear(creature, creature->getPosition(), newStackPos, true);
+			tmpPlayer->sendCreatureAppear(creature, creature->getPosition(), true);
 		}
 	}
 
@@ -651,7 +649,8 @@ bool Game::placeCreature(Creature* creature, const Position& pos, bool extendedP
 		(*it)->onCreatureAppear(creature, true);
 	}
 
-	creature->getParent()->postAddNotification(creature, NULL, newStackPos);
+	int32_t newIndex = creature->getParent()->__getIndexOfThing(creature);
+	creature->getParent()->postAddNotification(creature, NULL, newIndex);
 
 	addCreatureCheck(creature);
 
@@ -676,25 +675,24 @@ bool Game::removeCreature(Creature* creature, bool isLogout /*= true*/)
 	SpectatorVec::iterator it;
 	getSpectators(list, cylinder->getPosition(), false, true);
 
-	int32_t index = cylinder->__getIndexOfThing(creature);
-	if(!map->removeCreature(creature)){
-		return false;
-	}
-
 	//send to client
 	Player* player = NULL;
 	for(it = list.begin(); it != list.end(); ++it){
 		if((player = (*it)->getPlayer())){
-			player->sendCreatureDisappear(creature, index, isLogout);
+			if(player->canSeeCreature(creature)){
+				player->sendCreatureDisappear(creature, isLogout);
+			}
 		}
 	}
 
 	//event method
 	for(it = list.begin(); it != list.end(); ++it){
-		(*it)->onCreatureDisappear(creature, index, isLogout);
+		(*it)->onCreatureDisappear(creature, isLogout);
 	}
 
-	creature->getParent()->postRemoveNotification(creature, NULL, index, true);
+	int32_t oldIndex = cylinder->__getIndexOfThing(creature);
+	map->removeCreature(creature);
+	creature->getParent()->postRemoveNotification(creature, NULL, oldIndex, true);
 
 	listCreature.removeList(creature->getID());
 	creature->removeList();
@@ -943,19 +941,21 @@ ReturnValue Game::internalMoveCreature(Creature* creature, Cylinder* fromCylinde
 
 	fromCylinder->getTile()->moveCreature(creature, toCylinder);
 
-	int32_t index = 0;
-	Item* toItem = NULL;
-	Cylinder* subCylinder = NULL;
+	if(creature->getParent() == toCylinder){
+		int32_t index = 0;
+		Item* toItem = NULL;
+		Cylinder* subCylinder = NULL;
 
-	uint32_t n = 0;
-	while((subCylinder = toCylinder->__queryDestination(index, creature, &toItem, flags)) != toCylinder){
-		toCylinder->getTile()->moveCreature(creature, subCylinder);
-		toCylinder = subCylinder;
-		flags = 0;
+		uint32_t n = 0;
+		while((subCylinder = toCylinder->__queryDestination(index, creature, &toItem, flags)) != toCylinder){
+			toCylinder->getTile()->moveCreature(creature, subCylinder);
+			toCylinder = subCylinder;
+			flags = 0;
 
-		//to prevent infinite loop
-		if(++n >= MAP_MAX_LAYERS)
-			break;
+			//to prevent infinite loop
+			if(++n >= MAP_MAX_LAYERS)
+				break;
+		}
 	}
 
 	return RET_NOERROR;
@@ -1907,7 +1907,9 @@ bool Game::playerMove(uint32_t playerId, Direction direction)
 		return false;
 
 	player->stopWalk();
-	int32_t delay = player->getWalkDelay(direction);
+	//client works with 50 ms resolution
+	int32_t delay = player->getWalkDelay(direction, 50);
+
 	if(delay > 0){
 		player->setNextAction(OTSYS_TIME() + player->getStepDuration());
 		SchedulerTask* task = createSchedulerTask( ((uint32_t)delay), boost::bind(&Game::playerMove, this,
@@ -2946,7 +2948,7 @@ bool Game::playerPurchaseItem(uint32_t playerId, uint16_t spriteId, uint8_t coun
 
 	uint8_t subType = 0;
 	if(it.isFluidContainer()){
-		int32_t maxFluidType = sizeof(reverseFluidMap) / sizeof(uint32_t);
+		int32_t maxFluidType = sizeof(reverseFluidMap) / sizeof(uint8_t);
 		if(count < maxFluidType){
 			subType = (uint8_t)reverseFluidMap[count];
 		}
@@ -2979,7 +2981,7 @@ bool Game::playerSellItem(uint32_t playerId, uint16_t spriteId, uint8_t count, u
 
 	uint8_t subType = 0;
 	if(it.isFluidContainer()){
-		int32_t maxFluidType = sizeof(reverseFluidMap) / sizeof(uint32_t);
+		int32_t maxFluidType = sizeof(reverseFluidMap) / sizeof(uint8_t);
 		if(count < maxFluidType){
 			subType = (uint8_t)reverseFluidMap[count];
 		}
@@ -3015,7 +3017,7 @@ bool Game::playerLookInShop(uint32_t playerId, uint16_t spriteId, uint8_t count)
 
 	int32_t subType = 0;
 	if(it.isFluidContainer()){
-		int32_t maxFluidType = sizeof(reverseFluidMap) / sizeof(uint32_t);
+		int32_t maxFluidType = sizeof(reverseFluidMap) / sizeof(uint8_t);
 		if(count < maxFluidType){
 			subType = reverseFluidMap[count];
 		}
@@ -3684,8 +3686,6 @@ bool Game::internalCreatureTurn(Creature* creature, Direction dir)
 	if(creature->getDirection() != dir){
 		creature->setDirection(dir);
 
-		int32_t stackpos = creature->getParent()->__getIndexOfThing(creature);
-
 		const SpectatorVec& list = getSpectators(creature->getPosition());
 		SpectatorVec::const_iterator it;
 
@@ -3693,13 +3693,13 @@ bool Game::internalCreatureTurn(Creature* creature, Direction dir)
 		Player* tmpPlayer = NULL;
 		for(it = list.begin(); it != list.end(); ++it) {
 			if((tmpPlayer = (*it)->getPlayer())){
-				tmpPlayer->sendCreatureTurn(creature, stackpos);
+				tmpPlayer->sendCreatureTurn(creature);
 			}
 		}
 
 		//event method
 		for(it = list.begin(); it != list.end(); ++it) {
-			(*it)->onCreatureTurn(creature, stackpos);
+			(*it)->onCreatureTurn(creature);
 		}
 
 		return true;
@@ -3945,6 +3945,10 @@ void Game::changeLight(const Creature* creature)
 bool Game::combatBlockHit(CombatType_t combatType, Creature* attacker, Creature* target,
 	int32_t& healthChange, bool checkDefense, bool checkArmor)
 {
+	if(target->getPlayer() && target->getPlayer()->hasFlag(PlayerFlag_CannotBeSeen)){
+		return true;
+	}
+
 	if(healthChange > 0){
 		return false;
 	}

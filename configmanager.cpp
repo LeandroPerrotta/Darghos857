@@ -143,7 +143,8 @@ bool ConfigManager::loadFile(const std::string& _filename)
 	m_confInteger[RATE_MAGIC] = getGlobalNumber(L, "rate_mag", 1);
 	m_confInteger[RATE_SPAWN] = getGlobalNumber(L, "rate_spawn", 1);
 	m_confInteger[RATE_STAMINA_LOSS] = getGlobalNumber(L, "rate_stamina_loss", 1);
-	m_confInteger[RATE_STAMINA_GAIN] = getGlobalNumber(L, "rate_stamina_gain", 334); //3 minutes offline = 1 minute of stamina - quick gain
+	m_confInteger[RATE_STAMINA_GAIN] = getGlobalNumber(L, "rate_stamina_gain", 334);
+	m_confInteger[SLOW_RATE_STAMINA_GAIN] = getGlobalNumber(L, "slow_rate_stamina_gain", 84);
 	m_confInteger[STAMINA_EXTRA_EXPERIENCE_DURATION] = getGlobalNumber(L, "stamina_extra_experience_duration", 60 * 60 * 1000);
 	m_confInteger[STAMINA_EXTRA_EXPERIENCE_ONLYPREM] = getGlobalBoolean(L, "stamina_extra_experience_onlyprem", true);
 	m_confFloat[STAMINA_EXTRA_EXPERIENCE_RATE] = getGlobalFloat(L, "stamina_extra_experience_rate", 0.5);
@@ -176,6 +177,7 @@ bool ConfigManager::loadFile(const std::string& _filename)
 	m_confInteger[FINALBAN_LENGTH] = getGlobalNumber(L, "final_banishment_length", 30 * 86400);
 	m_confInteger[IPBANISHMENT_LENGTH] = getGlobalNumber(L, "ip_banishment_length", 86400);
 	m_confInteger[ALLOW_GAMEMASTER_MULTICLIENT] = getGlobalBoolean(L, "allow_gamemaster_multiclient", false);
+	m_confInteger[DEATH_ASSIST_COUNT] = getGlobalNumber(L, "death_assist_count", 1);
 
 	m_confInteger[PASSWORD_TYPE] = PASSWORD_TYPE_PLAIN;
 	m_confInteger[STATUSQUERY_TIMEOUT] = getGlobalNumber(L, "statustimeout", 30 * 1000);

@@ -459,7 +459,7 @@ Spell::Spell()
 	manaPercent = 0;
 	soul = 0;
 	range = -1;
-	exhaustion = true;
+	exhaustion = -1;
 	needTarget = false;
 	needWeapon = false;
 	selfTarget = false;
@@ -535,7 +535,7 @@ bool Spell::configureSpell(xmlNodePtr p)
 	}
 
 	if(readXMLInteger(p, "exhaustion", intValue)){
-		exhaustion = (intValue == 1);
+		exhaustion = intValue;
 	}
 
 	if(readXMLInteger(p, "prem", intValue)){
@@ -738,7 +738,7 @@ bool Spell::playerInstantSpellCheck(Player* player, const Position& toPos)
 				return false;
 			}
 
-			if(blockingCreature && tile->getCreatureCount() != 0){
+			if(blockingCreature && tile->getTopVisibleCreature(player) != NULL){
 				player->sendCancelMessage(RET_NOTENOUGHROOM);
 				g_game.addMagicEffect(player->getPosition(), NM_ME_PUFF);
 				return false;
@@ -797,7 +797,7 @@ bool Spell::playerRuneSpellCheck(Player* player, const Position& toPos)
 				return false;
 			}
 
-			if(blockingCreature && tile->getCreatureCount() != 0){
+			if(blockingCreature && tile->getTopVisibleCreature(player) != NULL){
 				player->sendCancelMessage(RET_NOTENOUGHROOM);
 				g_game.addMagicEffect(player->getPosition(), NM_ME_PUFF);
 				return false;
@@ -808,15 +808,15 @@ bool Spell::playerRuneSpellCheck(Player* player, const Position& toPos)
 				return false;
 			}
 
-			if(needTarget && tile->getCreatureCount() == 0){
+			if(needTarget && tile->getTopVisibleCreature(player) == NULL){
 				player->sendCancelMessage(RET_CANONLYUSETHISRUNEONCREATURES);
 				g_game.addMagicEffect(player->getPosition(), NM_ME_PUFF);
 				return false;
 			}
 
 #ifdef __SKULLSYSTEM__
-			if(isAggressive && needTarget && player->hasSafeMode() && tile->getCreatureCount() > 0){
-				Player* targetPlayer = tile->getTopCreature()->getPlayer();
+			if(isAggressive && needTarget && player->hasSafeMode() && tile->getTopVisibleCreature(player)){
+				Player* targetPlayer = tile->getTopVisibleCreature(player)->getPlayer();
 				if(targetPlayer && targetPlayer != player && targetPlayer->getSkull() == SKULL_NONE){
 					player->sendCancelMessage(RET_TURNSECUREMODETOATTACKUNMARKEDPLAYERS);
 					g_game.addMagicEffect(player->getPosition(), NM_ME_PUFF);
@@ -834,12 +834,18 @@ void Spell::postCastSpell(Player* player, bool finishedCast /*= true*/, bool pay
 {
 	if(finishedCast){
 		if(!player->hasFlag(PlayerFlag_HasNoExhaustion)){
-			if(exhaustion){
+			if(exhaustion != 0){
 				if(isAggressive){
-					player->addCombatExhaust(g_game.getFightExhaustionTicks());
+					if(exhaustion == -1)
+						player->addCombatExhaust(g_game.getFightExhaustionTicks());
+					else
+						player->addCombatExhaust(exhaustion);
 				}
 				else{
-					player->addHealExhaust(g_game.getHealExhaustionTicks());
+					if(exhaustion == -1)
+						player->addHealExhaust(g_game.getHealExhaustionTicks());
+					else
+						player->addHealExhaust(exhaustion);
 				}
 			}
 		}

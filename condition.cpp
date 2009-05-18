@@ -186,6 +186,11 @@ void Condition::setTicks(int32_t newTicks)
 
 bool Condition::executeCondition(Creature* creature, int32_t interval)
 {
+	if(interval > 0){
+		bool bRemove = false;
+		creature->onTickCondition(getType(), interval, bRemove);
+	}
+
 	if(ticks != -1){
 		int32_t newTicks = std::max(((int32_t)0), ((int32_t)getTicks() - interval));
 		//Not using set ticks here since it would reset endTime
@@ -1313,7 +1318,7 @@ bool ConditionDamage::executeCondition(Creature* creature, int32_t interval)
 		IntervalInfo& damageInfo = damageList.front();
 
 		bool bRemove = (getTicks() != -1);
-		creature->onTickCondition(getType(), bRemove);
+		creature->onTickCondition(getType(), interval, bRemove);
 		damageInfo.timeLeft -= interval;
 
 		if(damageInfo.timeLeft <= 0){
@@ -1736,15 +1741,12 @@ bool ConditionInvisible::startCondition(Creature* creature)
 		return false;
 	}
 
-	g_game.internalCreatureChangeVisible(creature, false);
 	return true;
 }
 
 void ConditionInvisible::endCondition(Creature* creature, ConditionEnd_t reason)
 {
-	if(!creature->isInvisible()){
-		g_game.internalCreatureChangeVisible(creature, true);
-	}
+	//
 }
 
 ConditionOutfit::ConditionOutfit(ConditionId_t _id, ConditionType_t _type, int32_t _ticks) :

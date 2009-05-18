@@ -869,10 +869,6 @@ ResponseList Npc::loadInteraction(xmlNodePtr node)
 								action.intValue = (*it).subType;
 								listItemProp.actionList.push_front(action);
 
-								action.actionType = ACTION_SETSUBTYPE;
-								action.intValue = (*it).subType;
-								listItemProp.actionList.push_front(action);
-
 								action.actionType = ACTION_SETLISTNAME;
 								if(!(*it).name.empty()){
 									action.strValue = (*it).name;
@@ -982,16 +978,15 @@ void Npc::onAddTileItem(const Tile* tile, const Position& pos, const Item* item)
 	Creature::onAddTileItem(tile, pos, item);
 }
 
-void Npc::onUpdateTileItem(const Tile* tile, const Position& pos, uint32_t stackpos,
+void Npc::onUpdateTileItem(const Tile* tile, const Position& pos,
 	const Item* oldItem, const ItemType& oldType, const Item* newItem, const ItemType& newType)
 {
-	Creature::onUpdateTileItem(tile, pos, stackpos, oldItem, oldType, newItem, newType);
+	Creature::onUpdateTileItem(tile, pos, oldItem, oldType, newItem, newType);
 }
 
-void Npc::onRemoveTileItem(const Tile* tile, const Position& pos, uint32_t stackpos,
-	const ItemType& iType, const Item* item)
+void Npc::onRemoveTileItem(const Tile* tile, const Position& pos, const ItemType& iType, const Item* item)
 {
-	Creature::onRemoveTileItem(tile, pos, stackpos, iType, item);
+	Creature::onRemoveTileItem(tile, pos, iType, item);
 }
 
 void Npc::onUpdateTile(const Tile* tile, const Position& pos)
@@ -1028,9 +1023,9 @@ void Npc::onCreatureAppear(const Creature* creature, bool isLogin)
 	}
 }
 
-void Npc::onCreatureDisappear(const Creature* creature, uint32_t stackpos, bool isLogout)
+void Npc::onCreatureDisappear(const Creature* creature, bool isLogout)
 {
-	Creature::onCreatureDisappear(creature, stackpos, isLogout);
+	Creature::onCreatureDisappear(creature, isLogout);
 
 	if(creature == this){
 		//Close all open shop window's
@@ -1058,9 +1053,9 @@ void Npc::onCreatureDisappear(const Creature* creature, uint32_t stackpos, bool 
 }
 
 void Npc::onCreatureMove(const Creature* creature, const Tile* newTile, const Position& newPos,
-		const Tile* oldTile, const Position& oldPos, uint32_t oldStackPos, bool teleport)
+		const Tile* oldTile, const Position& oldPos, bool teleport)
 {
-	Creature::onCreatureMove(creature, newTile, newPos, oldTile, oldPos, oldStackPos, teleport);
+	Creature::onCreatureMove(creature, newTile, newPos, oldTile, oldPos, teleport);
 
 	if(creature == this){
 		if(m_npcEventHandler){
@@ -1094,9 +1089,9 @@ void Npc::onCreatureMove(const Creature* creature, const Tile* newTile, const Po
 	}
 }
 
-void Npc::onCreatureTurn(const Creature* creature, uint32_t stackpos)
+void Npc::onCreatureTurn(const Creature* creature)
 {
-	Creature::onCreatureTurn(creature, stackpos);
+	Creature::onCreatureTurn(creature);
 }
 
 void Npc::onCreatureSay(const Creature* creature, SpeakClasses type, const std::string& text)
@@ -1182,7 +1177,10 @@ void Npc::onThink(uint32_t interval)
 				npcState->prevInteraction = OTSYS_TIME();
 			}
 
-			if(idleTime > 0 && (OTSYS_TIME() - npcState->prevInteraction) > idleTime * 1000){
+			if(!queueList.empty() && npcState->isIdle && npcState->respondToText.empty()){
+				closeConversation = true;
+			}
+			else if(idleTime > 0 && (OTSYS_TIME() - npcState->prevInteraction) > idleTime * 1000){
 				idleTimeout = true;
 				closeConversation = true;
 			}
@@ -1451,14 +1449,32 @@ void Npc::executeResponse(Player* player, NpcState* npcState, const NpcResponse*
 						if(it.hasSubType()){
 							subType = npcState->subType;
 						}
+						
+						if(g_game.getMoney(player) >= moneyCount){
+							if(it.stackable){
+								int32_t amount = npcState->amount;
+								while(amount > 0){
+									int32_t stackCount = std::min((int32_t)100, (int32_t)amount);
+									Item* item = Item::CreateItem(it.id, stackCount);
+									if(g_game.internalPlayerAddItem(player, item) != RET_NOERROR){
+										delete item;
+										break;
+									}
 
-						if(g_game.removeMoney(player, moneyCount)){
-							for(int32_t i = 0; i < npcState->amount; ++i){
-								Item* item = Item::CreateItem(it.id, subType);
-								if(g_game.internalPlayerAddItem(player, item) != RET_NOERROR){
-									delete item;
+									amount = amount - stackCount;
 								}
 							}
+							else{
+								for(int32_t i = 0; i < npcState->amount; ++i){
+									Item* item = Item::CreateItem(it.id, subType);
+									if(g_game.internalPlayerAddItem(player, item) != RET_NOERROR){
+										delete item;
+										break;
+									}
+								}
+							}
+
+							g_game.removeMoney(player, moneyCount);
 						}
 						else{
 							std::cout << "Error [Npc::executeResponse] Not enough money: " << player->getName()  << "\tNpc: " << getName() << std::endl;
@@ -2023,7 +2039,7 @@ const NpcResponse* Npc::getResponse(const ResponseList& list, const Player* play
 
 			if(hasBitSet(RESPOND_LOWMONEY, params)){
 				int32_t moneyCount = g_game.getMoney(player);
-				if(moneyCount >= npcState->price){
+				if(moneyCount >= (npcState->price * npcState->amount)){
 					continue;
 				}
 				++matchCount;

@@ -1167,6 +1167,9 @@ void LuaScriptInterface::registerFunctions()
 	//isPremium(cid)
 	lua_register(m_luaState, "isPremium", LuaScriptInterface::luaIsPremium);
 
+	//getPlayerLastLogin(cid)
+	lua_register(m_luaState, "getPlayerLastLogin", LuaScriptInterface::luaGetPlayerLastLogin);
+
 	//getGlobalStorageValue(valueid)
 	lua_register(m_luaState, "getGlobalStorageValue", LuaScriptInterface::luaGetGlobalStorageValue);
 
@@ -1210,6 +1213,9 @@ void LuaScriptInterface::registerFunctions()
 
 	//getTopCreature(pos)
 	lua_register(m_luaState, "getTopCreature", LuaScriptInterface::luaGetTopCreature);
+
+	//getWaypointPositionByName(name)
+	lua_register(m_luaState, "getWaypointPositionByName", LuaScriptInterface::luaGetWaypointPositionByName);
 
 	//doRemoveItem(uid, <optional> count)
 	lua_register(m_luaState, "doRemoveItem", LuaScriptInterface::luaDoRemoveItem);
@@ -1308,6 +1314,9 @@ void LuaScriptInterface::registerFunctions()
 
 	//doSendTutorial(cid, tutorialid)
 	lua_register(m_luaState, "doSendTutorial", LuaScriptInterface::luaDoSendTutorial);
+
+	//doPlayerSendOutfitWindow(cid)
+	lua_register(m_luaState, "doPlayerSendOutfitWindow", LuaScriptInterface::luaDoPlayerSendOutfitWindow);
 
 	//doAddMapMark(cid, pos, type, <optional> description)
 	lua_register(m_luaState, "doAddMapMark", LuaScriptInterface::luaDoAddMark);
@@ -1782,9 +1791,6 @@ void LuaScriptInterface::registerFunctions()
 	luaL_register(m_luaState, "bit", LuaScriptInterface::luaBitReg);
 
 	#ifdef __DARGHOS__
-	//writeDeath(cid, level, date, lasthit[, mostdamage])
-	lua_register(m_luaState, "writeDeath", LuaScriptInterface::luaWriteDeath);
-
 	//getPlayerShopItemId(itemshopid)
 	lua_register(m_luaState, "getPlayerShopItemId", LuaScriptInterface::luaGetPlayerShopItemId);
 
@@ -1932,6 +1938,9 @@ int LuaScriptInterface::internalGetPlayerInfo(lua_State *L, PlayerInfo_t info)
 		case PlayerInfoPremium:
 			value = player->isPremium();
 			break;
+		case PlayerInfoLastLogin:
+			value = player->getLastLoginSaved();
+			break;
 		default:
 			std::string error_str = "Unknown player info. info = " + info;
 			reportErrorFunc(error_str);
@@ -2036,41 +2045,12 @@ int LuaScriptInterface::luaIsPzLocked(lua_State *L){
 
 int LuaScriptInterface::luaIsPremium(lua_State *L){
 	return internalGetPlayerInfo(L, PlayerInfoPremium);}
+
+int LuaScriptInterface::luaGetPlayerLastLogin(lua_State *L){
+	return internalGetPlayerInfo(L, PlayerInfoLastLogin);}
 //
 
 #ifdef __DARGHOS__
-int LuaScriptInterface::luaWriteDeath(lua_State *L)
-{
-    //writeDeath(cid, level, date, lasthit[, mostdamage])
-	int32_t parameters = lua_gettop(L);
-
-	std::string mostdamage = "";
-	if(parameters > 4){
-		mostdamage = popString(L);
-	}
-
-    std::string lasthit = popString(L);
-    uint32_t date = popNumber(L);
-    uint32_t level = popNumber(L);
-    uint32_t player_id = popNumber(L);
-
- 	Database* db = Database::instance();
-    DBQuery query;
-
-    query << "INSERT INTO `player_deaths` (`player_id`, `level`, `date`, `lasthit_killer`, `mostdamage_killer`) values('" << player_id << "', '" << level << "', '" << date << "', '" << lasthit << "', '" << mostdamage << "')";
-
-	if(!db->executeQuery(query.str()))
-	{
-	    reportErrorFunc("No valid query.");
-	    lua_pushnumber(L, LUA_ERROR);
-
-		return 1;
-	}
-
-	lua_pushnumber(L, LUA_TRUE);
-	return 1;
-}
-
 int LuaScriptInterface::luaGetPlayerShopItemId(lua_State *L)
 {
     //getPlayerShopItemId(itemshopid)
@@ -3243,6 +3223,26 @@ int LuaScriptInterface::luaDoSendTutorial(lua_State *L)
 	return 1;
 }
 
+int LuaScriptInterface::luaDoPlayerSendOutfitWindow(lua_State *L)
+{
+	//doPlayerSendOutfitWindow(cid)
+	uint32_t cid = popNumber(L);
+
+	ScriptEnviroment* env = getScriptEnv();
+	Player* player = env->getPlayerByUID(cid);
+
+	if(player){
+		player->sendOutfitWindow();
+		lua_pushnumber(L, LUA_NO_ERROR);
+	}
+	else{
+		reportErrorFunc(getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
+		lua_pushnumber(L, LUA_ERROR);
+	}
+
+	return 1;
+}
+
 int LuaScriptInterface::luaDoAddMark(lua_State *L)
 {
 	//doAddMapMark(cid, pos, type, <optional> description)
@@ -3573,6 +3573,22 @@ int LuaScriptInterface::luaGetTopCreature(lua_State *L)
 
 	uint32_t uid = env->addThing(thing);
 	pushThing(L, thing, uid);
+	return 1;
+}
+
+int LuaScriptInterface::luaGetWaypointPositionByName(lua_State *L)
+{
+	//getWaypointPositionByName(name)
+
+	std::string name = popString(L);
+
+	Waypoint_ptr waypoint = g_game.getMap()->waypoints.getWaypointByName(name);
+	if(waypoint){
+		pushPosition(L, waypoint->pos);
+	}
+	else{
+		lua_pushnumber(L, LUA_ERROR);
+	}
 	return 1;
 }
 

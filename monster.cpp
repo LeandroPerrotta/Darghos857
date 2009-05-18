@@ -149,9 +149,9 @@ void Monster::onCreatureAppear(const Creature* creature, bool isLogin)
 	}
 }
 
-void Monster::onCreatureDisappear(const Creature* creature, uint32_t stackpos, bool isLogout)
+void Monster::onCreatureDisappear(const Creature* creature, bool isLogout)
 {
-	Creature::onCreatureDisappear(creature, stackpos, isLogout);
+	Creature::onCreatureDisappear(creature, isLogout);
 
 	if(creature == this){
 		if(spawn){
@@ -166,9 +166,9 @@ void Monster::onCreatureDisappear(const Creature* creature, uint32_t stackpos, b
 }
 
 void Monster::onCreatureMove(const Creature* creature, const Tile* newTile, const Position& newPos,
-	const Tile* oldTile, const Position& oldPos, uint32_t oldStackPos, bool teleport)
+	const Tile* oldTile, const Position& oldPos, bool teleport)
 {
-	Creature::onCreatureMove(creature, newTile, newPos, oldTile, oldPos, oldStackPos, teleport);
+	Creature::onCreatureMove(creature, newTile, newPos, oldTile, oldPos, teleport);
 
 	if(creature == this){
 		if(isSummon()){
@@ -562,8 +562,10 @@ bool Monster::deactivate(bool forced /*= false*/)
 	return !isActivated;
 }
 
-void Monster::onAddCondition(ConditionType_t type)
+void Monster::onAddCondition(ConditionType_t type, bool hadCondition)
 {
+	Creature::onAddCondition(type, hadCondition);
+
 	//the walkCache need to be updated if the monster becomes "resistent" to the damage, see Tile::__queryAdd()
 	if(type == CONDITION_FIRE || type == CONDITION_ENERGY || type == CONDITION_POISON){
 		updateMapCache();
@@ -572,8 +574,10 @@ void Monster::onAddCondition(ConditionType_t type)
 	activate();
 }
 
-void Monster::onEndCondition(ConditionType_t type)
+void Monster::onEndCondition(ConditionType_t type, bool lastCondition)
 {
+	Creature::onEndCondition(type, lastCondition);
+
 	//the walkCache need to be updated if the monster loose the "resistent" to the damage, see Tile::__queryAdd()
 	if(type == CONDITION_FIRE || type == CONDITION_ENERGY || type == CONDITION_POISON){
 		updateMapCache();
@@ -1148,7 +1152,7 @@ bool Monster::canWalkTo(Position pos, Direction dir)
 		}
 
 		Tile* tile = g_game.getTile(pos.x, pos.y, pos.z);
-		if(tile && tile->getCreatureCount() == 0 && tile->__queryAdd(0, this, 1, FLAG_PATHFINDING) == RET_NOERROR){
+		if(tile && tile->getTopVisibleCreature(this) == NULL && tile->__queryAdd(0, this, 1, FLAG_PATHFINDING) == RET_NOERROR){
 			return true;
 		}
 	}
@@ -1172,9 +1176,9 @@ void Monster::die()
 	deactivate(true);
 }
 
-Item* Monster::getCorpse()
+Item* Monster::createCorpse()
 {
-	Item* corpse = Creature::getCorpse();
+	Item* corpse = Creature::createCorpse();
 	if(corpse){
 		Creature* lastHitCreature = NULL;
 		Creature* mostDamageCreature = NULL;

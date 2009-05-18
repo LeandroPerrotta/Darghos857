@@ -78,35 +78,24 @@ s_defcommands Commands::defined_commands[] = {
 	{"/m",&Commands::placeMonster},
 	{"/summon",&Commands::placeSummon},
 	{"/B",&Commands::broadcastMessage},
-	//{"/b",&Commands::banPlayer},
-	//{"/t",&Commands::teleportMasterPos},
-	//{"/c",&Commands::teleportHere},
 	{"/i",&Commands::createItemById},
 	{"/n",&Commands::createItemByName},
-	{"/q",&Commands::subtractMoney},
 	{"/reload",&Commands::reloadInfo},
 	{"/z",&Commands::testCommand},
 	{"/zt",&Commands::testTutorialCommand},
-	{"/goto",&Commands::teleportTo},
 	{"/info",&Commands::getInfo},
-	//{"/save",&Commands::saveServer},
 	{"/shutdown",&Commands::shutdownServer},
 	{"/closeserver",&Commands::closeServer},
 	{"/openserver",&Commands::openServer},
 	{"/getonline",&Commands::onlineList},
-	{"/a",&Commands::teleportNTiles},
-	//{"/kick",&Commands::kickPlayer},
 	{"/owner",&Commands::setHouseOwner},
 	{"/sellhouse",&Commands::sellHouse},
 	{"/gethouse",&Commands::getHouse},
-	//{"/bans",&Commands::bansManager},
-	//{"/town",&Commands::teleportToTown},
-	//{"/serverinfo",&Commands::serverInfo},
+	{"/raid",&Commands::forceRaid},
+	{"/refreshmap",&Commands::refreshMap},
 #ifdef __ENABLE_SERVER_DIAGNOSTIC__
 	{"/serverdiag",&Commands::serverDiag},
 #endif
-	{"/raid",&Commands::forceRaid},
-	{"/refreshmap",&Commands::refreshMap}
 };
 
 
@@ -429,36 +418,6 @@ bool Commands::createItemByName(Creature* creature, const std::string& cmd, cons
 	return true;
 }
 
-bool Commands::subtractMoney(Creature* creature, const std::string& cmd, const std::string& param)
-{
-	Player* player = creature->getPlayer();
-	if(!player)
-		return false;
-
-	int count = atoi(param.c_str());
-	uint32_t money = g_game.getMoney(player);
-	if(!count){
-		std::stringstream info;
-		info << "You have " << money << " gold.";
-		player->sendCancel(info.str().c_str());
-		return true;
-	}
-	else if(count > (int)money){
-		std::stringstream info;
-		info << "You have " << money << " gold and is not sufficient.";
-		player->sendCancel(info.str().c_str());
-		return true;
-	}
-
-	if(!g_game.removeMoney(player, count)){
-		std::stringstream info;
-		info << "Can not subtract money!";
-		player->sendCancel(info.str().c_str());
-	}
-
-	return true;
-}
-
 bool Commands::reloadInfo(Creature* creature, const std::string& cmd, const std::string& param)
 {
 	Player* player = creature->getPlayer();
@@ -542,28 +501,6 @@ bool Commands::testTutorialCommand(Creature* creature, const std::string& cmd, c
 	return true;
 }
 
-
-bool Commands::teleportTo(Creature* creature, const std::string& cmd, const std::string& param)
-{
-	Position destPos;
-	if(Waypoint_ptr waypoint = g_game.getMap()->waypoints.getWaypointByName(param)){
-		destPos = waypoint->pos;
-	}
-	else if(Creature* paramCreature = g_game.getCreatureByName(param)){
-		destPos = paramCreature->getPosition();
-	}
-	else{
-		return false;
-	}
-
-	if(g_game.internalTeleport(creature, destPos) == RET_NOERROR){
-		g_game.addMagicEffect(destPos, NM_ME_ENERGY_AREA);
-		return true;
-	}
-
-	return false;
-}
-
 bool Commands::getInfo(Creature* creature, const std::string& cmd, const std::string& param)
 {
 	Player* player = creature->getPlayer();
@@ -610,7 +547,7 @@ bool Commands::closeServer(Creature* creature, const std::string& cmd, const std
 			++it;
 		}
 	}
-	
+
 	// Is it a real serversave?
 	if(param == "serversave")
 		g_game.saveServer(true);
@@ -686,37 +623,6 @@ bool Commands::onlineList(Creature* creature, const std::string& cmd, const std:
 	players.str("");
 	players << "Total: " << n << " player(s)" << std::endl;
 	player->sendTextMessage(MSG_STATUS_CONSOLE_BLUE, players.str().c_str());
-	return true;
-}
-
-bool Commands::teleportNTiles(Creature* creature, const std::string& cmd, const std::string& param)
-{
-	int ntiles = atoi(param.c_str());
-	if(ntiles != 0)
-	{
-		Position newPos = creature->getPosition();
-		switch(creature->getDirection()){
-		case NORTH:
-			newPos.y = newPos.y - ntiles;
-			break;
-		case SOUTH:
-			newPos.y = newPos.y + ntiles;
-			break;
-		case EAST:
-			newPos.x = newPos.x + ntiles;
-			break;
-		case WEST:
-			newPos.x = newPos.x - ntiles;
-			break;
-		default:
-			break;
-		}
-
-		if(g_game.internalTeleport(creature, newPos) == RET_NOERROR){
-			g_game.addMagicEffect(newPos, NM_ME_TELEPORT);
-		}
-	}
-
 	return true;
 }
 
