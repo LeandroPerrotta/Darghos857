@@ -20,7 +20,6 @@ function onSay(cid, words, param)
 		local oldCreaturePos = getCreaturePosition(paramCreature)
 		if(doTeleportThing(creature, playerPos) ~= LUA_ERROR) then
 			local newCreaturePos = getCreaturePosition(paramCreature)
-			doSendMagicEffect(oldCreaturePos, CONST_ME_POFF)
 			doSendMagicEffect(newCreaturePos, CONST_ME_TELEPORT)		
 		else
 			doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Could not teleport creature to your position.")

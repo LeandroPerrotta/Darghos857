@@ -34,7 +34,13 @@
     <interact keywords="bless">
       <response text="Do you want to buy mine bless? Its is based on your level!	">
         <action name="topic" value="1"/>
-    
+         <action name="script">
+        <![CDATA[   
+			level = getPlayerLevel(cid)
+			price = getBlessPrice(level)	
+				selfSay(price,cid)			
+        ]]>		
+          </action>  
     <interact keywords="yes" topic="1">
        <response>
         <action name="script">

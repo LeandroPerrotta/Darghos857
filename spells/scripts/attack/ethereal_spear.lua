@@ -4,13 +4,12 @@ setCombatParam(combat, COMBAT_PARAM_BLOCKARMOR, TRUE)
 setCombatParam(combat, COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_ETHEREALSPEAR)
 
 function getSpellDamage(cid, weaponSkill, weaponAttack, attackStrength)
-	local attack = 25 --Spear's attack
-	local skill = getPlayerSkill(cid, CONST_SKILL_DISTANCE)
+	local level = getPlayerLevel(cid)
 
-	local maxWeaponDamage = (skill * attack) / 20 + attack
-	local damage = -((math.random(0, maxWeaponDamage) * attackStrength) / 100) * 0.8 --0.8 is the multiplier
+	local min = -(((getPlayerSkill(cid,4)+25)/3)+(level/5))
+	local max = -((getPlayerSkill(cid,4)+25)+(level/5))
 
-	return damage, damage --The random part of the formula has already been made, just return the normal damage
+	return min, max
 end
 
 setCombatCallback(combat, CALLBACK_PARAM_SKILLVALUE, "getSpellDamage")

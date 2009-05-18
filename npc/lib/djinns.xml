@@ -100,5 +100,41 @@
 			<item keywords="power;ring" id="2166" buyprice="100"/>	
 			<item keywords="stone;skin;amulet" subtype="5" id="2197" buyprice="20000"/>	
 		</itemlist>
-	
+					
+		<!--
+		RASHID
+		-->
+		<itemlist listid="rashid">	
+			<item keywords="dragon;scale;mail" id="2492" sellprice="40000"/>	
+			<item keywords="glacier;robe" id="7897" sellprice="11000"/>	
+			<item keywords="golden;armor" id="2466" sellprice="20000"/>	
+			<item keywords="lightning;robe" id="7898" sellprice="11000"/>	
+			<item keywords="magma;coat" id="7899" sellprice="11000"/>	
+			<item keywords="paladin;armor" id="8891" sellprice="15000"/>	
+			<item keywords="skullcracker;armor" id="8889" sellprice="18000"/>	
+			<item keywords="terra;mantle" id="7884" sellprice="11000"/>	
+			<item keywords="glacier;kilt" id="7896" sellprice="11000"/>	
+			<item keywords="lightning.legs" id="7895" sellprice="11000"/>	
+			<item keywords="magma;legs" id="7894" sellprice="11000"/>	
+			<item keywords="terra;legs" id="7885" sellprice="11000"/>	
+			<item keywords="demon;shield" id="2520" sellprice="30000"/>	
+			<item keywords="medusa;shield" id="2536" sellprice="9000"/>	
+			<item keywords="spellbook;of;enlightenment" id="8900" sellprice="4000"/>	
+			<item keywords="glacier;mask" id="7902" sellprice="2500"/>	
+			<item keywords="lightning;headband" id="7901" sellprice="2500"/>	
+			<item keywords="magma;monocle" id="7900" sellprice="2500"/>	
+			<item keywords="skull;helmet" id="5741" sellprice="40000"/>	
+			<item keywords="fur;boots" id="7457" sellprice="2000"/>	
+			<item keywords="glacier;shoes" id="7892" sellprice="2500"/>	
+			<item keywords="lightning;boots" id="7893" sellprice="2500"/>	
+			<item keywords="magma;boots" id="7891" sellprice="2500"/>	
+			<item keywords="steel;boots" id="2645" sellprice="30000"/>	
+			<item keywords="terra;boots" id="7886" sellprice="2500"/>	
+			<item keywords="amber;staff" id="7526" sellprice="8000"/>	
+			<item keywords="chaos;mace" id="7427" sellprice="12000"/>	
+			<item keywords="demonrage;sword" id="7382" sellprice="36000"/>	
+			<item keywords="dragon;slayer" id="7402" sellprice="15000"/>	
+			<item keywords="guardian;halberd" id="2427" sellprice="11000"/>	
+			<item keywords="wyvern;fang" id="7408" sellprice="9000"/>	
+		</itemlist>		
 </interaction>

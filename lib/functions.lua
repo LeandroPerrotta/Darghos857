@@ -1,6 +1,21 @@
 --[[
  * Contem todas funções referente ao Darghos
 ]]--
+function staffOufitMode(cid)
+	
+	if(getPlayerAcess(cid)) == 3 then
+		lookType = 75
+	elseif (getPlayerAcess(cid)) == 4 then
+		lookType = 266
+	elseif (getPlayerAcess(cid)) == 5 then
+		lookType = 302
+	end	
+	doCreatureChangeOutfit(cid, {lookType = lookType, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
+
+end
+
+
+
 
 -- Verificação ATUAL se um player está em Area premmy, e teleporta ele para area free.
 function runPremiumSystem(cid)
