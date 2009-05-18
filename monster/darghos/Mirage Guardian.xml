@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Mirage Guardian" nameDescription="Mirage Guardian" race="blood" experience="15000" speed="300" manacost="0">
+  <health now="11000" max="11000"/>
+  <look type="204" head="0" body="0" legs="0" feet="0" corpse="2881"/>
+  <targetchange interval="2000" chance="5"/>
+  <strategy attack="70" defense="10"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag runonhealth="300"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="90" attack="70"/>
+	<attack name="manadrain" interval="1000" chance="5" range="7" min="-20" max="-40"/>
+    <attack name="fire" interval="1000" chance="20" range="10" radius="4" target="1" min="-500" max="-1000">
+      <attribute key="shootEffect" value="fire"/>
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+    <attack name="firefield" interval="1000" chance="10" range="7" radius="30" target="1">
+      <attribute key="shootEffect" value="fire"/>
+    </attack>
+    <attack name="fire" interval="1000" chance="16" length="8" spread="3" min="-500" max="-1000">
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+  </attacks>
+  <defenses armor="45" defense="70">
+    <defense name="healing" interval="1000" chance="50" min="200" max="450">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <summons maxSummons="2">
+    <summon name="sand dragon" interval="1000" chance="17" max="5"/>
+  </summons>
+  <voices interval="5000" chance="10">
+    <voice sentence="ZCHHHHH" yell="1"/>
+    <voice sentence="WE WILL RULE THE WORLD!" yell="1"/>
+    <voice sentence="THERE IS NOTHING YOU CAN DO!" yell="1"/>
+  </voices>
+  <loot capacity="1500">
+    <item id="1976" countmax="1" chance="9000"/> //gemmed book
+	<item id="2546" countmax="6" chance="7500"/> //burst arrow
+	<item id="2509" countmax="1" chance="3500"/> //steel shield
+	<item id="2457" countmax="1" chance="4000"/> //steel helmet
+	<item id="2145" countmax="4" chance="7000"/> //small diamond
+	<item id="2146" countmax="4" chance="7000"/> //small sapphire
+	<item id="2434" countmax="1" chance="10000"/> //dragon hammer
+	<item id="2647" countmax="1" chance="10000"/> //plate legs
+	<item id="2409" countmax="1" chance="10000"/>//serpent sword
+	<item id="2472" countmax="1" chance="600"/>
+    <item id="2672" countmax="10" chance="25000"/> //dragon ham    
+    <item id="2167" countmax="1" chance="5000"/> //energy ring
+    <item id="2392" countmax="1" chance="6000"/> //fire sword
+    <item id="2148" countmax="100" chance="100000"/> //gold coin
+    <item id="2148" countmax="100" chance="100000"/> //gold coin
+    <item id="2033" countmax="1" chance="6000"/> //golden mug
+    <item id="2796" countmax="4" chance="24000"/> //green mushroom
+    <item id="2177" countmax="1" chance="1200"/> //life crystal
+    <item id="2547" countmax="1" chance="16000"/> //power bolt
+	<item id="2498" countmax="1" chance="4000"/> //royal helmet  
+    <item id="2479" countmax="1" chance="2000"/> //strange helmet
+	<item id="2413" countmax="1" chance="3500"/>//broad sword    
+	<item id="2387" countmax="1" chance="16000"/>//double axe
+	<item id="2455" countmax="1" chance="12000"/>//crossbow
+	<item id="2397" countmax="1" chance="12000"/>//longsword  
+	<item id="2406" countmax="1" chance="25000"/>//short sword	
+	<item id="1987" countmax="1" chance="100000">
+		<inside>
+			<item id="2148" countmax="90" chance="65000"/> //gold coin
+			<item id="2516" countmax="1" chance="10000"/> //dragon shield
+			<item id="2187" countmax="1" chance="10000"/>//wand of Inferno
+			<item id="2398" countmax="1" chance="60000"/>//mace
+			<item id="5948" countmax="1" chance="20000"/>//red dragon leather
+			<item id="7314" countmax="1" chance="10000"/>//red dragon scale
+			<item id="2492" countmax="1" chance="2500"/> //dragon scale mail	
+			<item id="2528" countmax="1" chance="7500"/> //tower shield		
+			<item id="2033" countmax="1" chance="6000"/>//golden mug	
+			<item id="2191" countmax="1" chance="7000"/>//wand of dragonbreath	
+			<item id="5919" countmax="1" chance="5000"/>//dragon claw	
+			<item id="2514" countmax="1" chance="550"/>
+			<item id="2470" countmax="1" chance="500"/>
+			<item id="2432" countmax="1" chance="550"/>
+			<item id="2195" countmax="1" chance="300"/>
+		</inside>
+	</item>		
+  </loot>
+</monster>

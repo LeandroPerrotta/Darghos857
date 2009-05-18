@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Dark General" nameDescription="a elite warrior" race="blood" experience="2755000" speed="20" manacost="0">
+  <health now="900000" max="900000"/>
+  <look type="268" head="80" body="95" legs="80" feet="95" addons="3" corpse="6080"/>
+  <targetchange interval="5000" chance="4"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="150"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="50" attack="70"/>
+    <attack name="physical" interval="1000" chance="10" range="7" radius="4" target="1" min="-50" max="-320">
+      <attribute key="shootEffect" value="bolt"/>
+      <attribute key="areaEffect" value="blackspark"/>
+    </attack>
+    <attack name="physical" interval="1000" chance="34" range="7" min="-55" max="-305">
+      <attribute key="shootEffect" value="whirlwindaxe"/>
+    </attack>
+  </attacks>
+  <defenses armor="15" defense="15">
+    <defense name="healing" interval="1000" chance="50" min="750" max="2025">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+    <summons maxSummons="30">
+    <summon name="dark warrior" interval="500" chance="50" max="10"/>
+    <summon name="dark archer" interval="500" chance="100" max="10"/>
+  </summons>
+  <voices interval="5000" chance="50">
+    <voice sentence="Ahhhh!"/>
+    <voice sentence="Heal Me!"/>
+  </voices>
+  <loot>
+    <item id="2148" countmax="20" chance1="100000" chancemax="0"/>
+    <item id="2673" countmax="3" chance1="6666" chancemax="0"/>
+    <item id="5880" countmax="1" chance1="2000" chancemax="0"/>
+    <item id="2260" chance="4000"/>
+    <item id="2649" chance="10000"/>
+    <item id="2643" chance="20000"/>
+    <item id="1987" chance="100000">
+      <inside>
+        <item id="2162" chance="2500"/>
+        <item id="7886" chance="800"/>
+        <item id="2787" countmax="3" chance1="20000" chancemax="0"/>
+      </inside>
+    </item>
+  </loot>
+</monster>
