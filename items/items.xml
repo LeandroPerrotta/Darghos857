@@ -13982,15 +13982,15 @@
 	<item id="6384" name="gravel"/>
 	<item id="6385" name="gravel"/>
 	<item id="6386" name="gravel"/>
-	<item id="6387" article="a" name="birthday card">
+	<item id="6387" article="a" name="first nightmare addon">
+		<attribute key="description" value="Use this item to receive the first nightmare addon."/>
 		<attribute key="weight" value="0"/>
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="512"/>
+		<attribute key="writeable" value="0"/>
 	</item>
-	<item id="6388" article="a" name="christmas card">
-		<attribute key="weight" value="100"/>
-		<attribute key="writeable" value="1"/>
-		<attribute key="maxTextLen" value="0"/>
+	<item id="6388" article="a" name="second nightmare addon">
+		<attribute key="description" value="Use this item to receive the second nightmare addon."/>
+		<attribute key="weight" value="0"/>
+		<attribute key="writeable" value="0"/>
 	</item>
 	<item id="6389" name="ground"/>
 	<item id="6390" article="a" name="fountain"/>
