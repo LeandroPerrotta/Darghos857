@@ -1,57 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monsters>
-
-	<!-- Custom -->
-	<monster name="Bad Bug" file="Darghos/bad bug.xml"/>
-	<monster name="Bad Rabbit" file="Darghos/bad rabbit.xml"/>
-	<monster name="Hero Hacker" file="Darghos/hero hacker.xml"/>
-	<monster name="Anamelech" file="Darghos/Anamelech.xml" />
-	<monster name="Ancient Demon" file="Darghos/ancient demon.xml" />
-	<monster name="Apocalypse" file="Darghos/apocalypse.xml" />
-	<monster name="Azathoth" file="Darghos/Azathoth.xml" />
-	<monster name="Balrog" file="Darghos/Balrog.xml" />
-	<monster name="Bayemon" file="Darghos/Bayemon.xml" />
-	<monster name="Bazir" file="Darghos/bazir.xml" />	
-	<monster name="Behemoth King" file="Darghos/behemoth king.xml" />
-	<monster name="Behemoth Minion" file="Darghos/Behemoth Minion.xml" />
-	<monster name="Dark warrior" file="Darghos/dark warrior.xml" />
-	<monster name="Dark General" file="Darghos/dark general.xml" />
-	<monster name="Dark Archer" file="Darghos/dark archer.xml" />
-	<monster name="Dark Eye" file="Darghos/dark eye.xml" />
-	<monster name="demonlegs" file="Darghos/demonlegs.xml" />
-	<monster name="demonportal" file="Darghos/demonportal.xml" />
-	<monster name="Durin" file="Darghos/durin.xml" />
-	<monster name="Dwarf Miner" file="Darghos/Dwarf Miner.xml" />
-	<monster name="ent" file="Darghos/ent.xml" />
-	<monster name="Fallen Mooh'tah Master Ghar" file="Darghos/Fallen Mooh'tah Master Ghar.xml" />
-	<monster name="High Inquisitor" file="Darghos/High Inquisitor.xml" />
-	<monster name="Incendius" file="Darghos/Incendius.xml" />
-	<monster name="Krapt-Kun" file="Darghos/krapt.xml" />
-	<monster name="Krish-Katul" file="Darghos/krish.xml" />
-	<monster name="Mechanical Catapult" file="Darghos/Mechanical Catapult.xml" />
-	<monster name="Mirage Guardian" file="Darghos/Mirage Guardian.xml" />
-	<monster name="Molten Guard" file="Darghos/Molten Guard.xml" />
-	<monster name="Nergal" file="Darghos/Nergal.xml" />
-	<monster name="Nosferatu" file="Darghos/Nosferatu.xml" />
-	<monster name="onyxia" file="Darghos/onyxia.xml" />
-	<monster name="onyxiab" file="Darghos/onyxiab.xml" />
-	<monster name="orshabaalportal" file="Darghos/orshabaalportal.xml" />
-	<monster name="Ragnaros" file="Darghos/Ragnaros.xml" />
-	<monster name="Sand Dragon" file="Darghos/sand dragon.xml" />
-	<monster name="son of ferumbras" file="Darghos/son of ferumbras.xml" />
-	<monster name="Tezrian" file="Darghos/Tezrian.xml" />
-	<monster name="thashi aharon" file="Darghos/thashi aharon.xml" />
-	<monster name="Tutankamun" file="Darghos/tutankamun.xml" />
-	<monster name="Ukobach" file="Darghos/Ukobach.xml" />
-	<monster name="Uruk-hai" file="Darghos/uruk.xml" />
-	<monster name="Yojamba sentinel" file="Darghos/Yojamba sentinel.xml" />
-	<monster name="Yojamba snakecharmer" file="Darghos/Yojamba snakecharmer.xml" />
-	<monster name="Yojamba templar" file="Darghos/Yojamba Templar.xml" />
-	<monster name="Yojamba King" file="Darghos/Yojamba King.xml" />
-	<monster name="Yojamba Throne" file="Darghos/Yojamba Throne.xml" />
-	<monster name="Zepar" file="Darghos/Zepar.xml" />
-	<monster name="Zunda-Burs" file="Darghos/zunda.xml" />
-
 	<!-- Amazons -->
 	<monster name="Amazon" file="amazons/amazon.xml"/>
 	<monster name="Valkyrie" file="amazons/valkyrie.xml"/>
@@ -194,7 +142,6 @@
 	<monster name="Werewolf" file="canines/werewolf.xml"/>
 	<monster name="Winter wolf" file="canines/winter wolf.xml"/>
 	<monster name="Wolf" file="canines/wolf.xml"/>
-	<monster name="Husky" file="Canines/husky.xml"/>
 	
 	<!-- Chakoyas -->
 	<monster name="Chakoya Toolshaper" file="chakoyas/chakoya toolshaper.xml"/>
@@ -423,83 +370,11 @@
 	<monster name="Vashresamun" file="pharaohs/vashresamun.xml"/>
 
 	<!-- Pirates -->
-	<!-- Pirates -->
-	<monster name="Pirate Buccaneer" file="Pirates/pirate buccaneer.xml"/>
-	<monster name="Pirate Corsair" file="Pirates/pirate corsair.xml"/>
-	<monster name="Pirate Cutthroat" file="Pirates/pirate cutthroat.xml"/>
-	<monster name="Pirate Marauder" file="Pirates/pirate marauder.xml"/>
-	<monster name="Pirate Syd the Pink" file="Pirates/Pirate Syd the Pink.xml" />
-	<monster name="Pirate Hubert the Infected" file="Pirates/Pirate Hubert the Infected.xml" />
-	<monster name="Fubar Brant Hornigold" file="Pirates/Fubar Brant Hornigold.xml" />
-	<monster name="Giant Elmer Blythe" file="Pirates/Giant Elmer Blythe.xml" />
-	<monster name="Pirate Ron the Pink" file="Pirates/Pirate Ron the Pink.xml" />
-	<monster name="Pirate Tad the Well-Tanned" file="Pirates/Pirate Tad the Well-Tanned.xml" />
-	<monster name="Pants-Down Elmer" file="Pirates/Pants-Down Elmer.xml" />
-	<monster name="Pirate Ron the Off-White" file="Pirates/Pirate Ron the Off-White.xml" />
-	<monster name="Shoutin' Wally Cutty" file="Pirates/Shoutin' Wally Cutty.xml" />
-	<monster name="Sea Monkey Ferdinand" file="Pirates/Sea Monkey Ferdinand.xml" />
-	<monster name="Pirate Laszlo the Engorged" file="Pirates/Pirate Laszlo the Engorged.xml" />
-	<monster name="Epileptic Enrico Slaughter" file="Pirates/Epileptic Enrico Slaughter.xml" />
-	<monster name="Seal Breath Booker" file="Pirates/Seal Breath Booker.xml" />
-	<monster name="Shoutin' Clive Morgan" file="Pirates/Shoutin' Clive Morgan.xml" />
-	<monster name="Sea Monkey Billy" file="Pirates/Sea Monkey Billy.xml" />
-	<monster name="Cap'n Izzy Jailbait" file="Pirates/Cap'n Izzy Jailbait.xml" />
-	<monster name="Pirate Laszlo the Ochre" file="Pirates/Pirate Laszlo the Ochre.xml" />
-	<monster name="Poop Deck Bart" file="Pirates/Poop Deck Bart.xml" />
-	<monster name="Cowerin' Garrick Drake" file="Pirates/Cowerin' Garrick Drake.xml" />
-	<monster name="Snifflin' Hannibal Teach" file="Pirates/Snifflin' Hannibal Teach.xml" />
-	<monster name="Agnostic Billy Slaughter" file="Pirates/Agnostic Billy Slaughter.xml" />
-	<monster name="Cap'n Edward Buttscrape" file="Pirates/Cap'n Edward Buttscrape.xml" />
-	<monster name="Cap'n Bryant Peckerwood" file="Pirates/Cap'n Bryant Peckerwood.xml" />
-	<monster name="Pantin' Bill Dread" file="Pirates/Pantin' Bill Dread.xml" />
-	<monster name="Pirate Pete the Malformed" file="Pirates/Pirate Pete the Malformed.xml" />
-	<monster name="Syphilitic Walt Bones" file="Pirates/Syphilitic Walt Bones.xml" />
-	<monster name="Pirate Davy the Engorged" file="Pirates/Pirate Davy the Engorged.xml" />
-	<monster name="Cap'n Eugene Graybeard" file="Pirates/Cap'n Eugene Graybeard.xml" />
-	<monster name="Cowerin' Maurice Dregg" file="Pirates/Cowerin' Maurice Dregg.xml" />
-	<monster name="Fartin' Conroy Bonny" file="Pirates/Fartin' Conroy Bonny.xml" />
-	<monster name="Puffy Shirt Seamus" file="Pirates/Puffy Shirt Seamus.xml" />
-	<monster name="Cap'n Enrico Bloodsmear" file="Pirates/Cap'n Enrico Bloodsmear.xml" />
-	<monster name="Jelly Wrist Pete" file="Pirates/Jelly Wrist Pete.xml" />
-	<monster name="Cap'n Bryan Pinkbeard" file="Pirates/Cap'n Bryan Pinkbeard.xml" />
-	<monster name="Pirate Tad the Fruit" file="Pirates/Pirate Tad the Fruit.xml" />
-	<monster name="Scowlin' Gus Straw" file="Pirates/Scowlin' Gus Straw.xml" />
-	<monster name="Gangrenous Tobias Jones" file="Pirates/Gangrenous Tobias Jones.xml" />
-	<monster name="Mast Hugger Edgar" file="Pirates/Mast Hugger Edgar.xml" />
-	<monster name="Pirate Edmund the Dagger" file="Pirates/Pirate Edmund the Dagger.xml" />
-	<monster name="Blind Joe Drake" file="Pirates/Blind Joe Drake.xml" />
-	<monster name="Decayin' Quincy Napier" file="Pirates/Decayin' Quincy Napier.xml" />
-	<monster name="Saggin' Jowls Sam" file="Pirates/Saggin' Jowls Sam.xml" />
-	<monster name="Reeking Jake Sparrow" file="Pirates/Reeking Jake Sparrow.xml" />
-	<monster name="Cap'n Edgar Yellowbeard" file="Pirates/Cap'n Edgar Yellowbeard.xml" />
-	<monster name="Mast Hugger Guideon" file="Pirates/Mast Hugger Guideon.xml" />
-	<monster name="Pirate Dan the Dagger" file="Pirates/Pirate Dan the Dagger.xml" />
-	<monster name="Pants-Down Hank" file="Pirates/Pants-Down Hank.xml" />
-	<monster name="Armless Quincy Sparrow" file="Pirates/Armless Quincy Sparrow.xml" />
-	<monster name="Slouchin' Barney Blythe" file="Pirates/Slouchin' Barney Blythe.xml" />
-	<monster name="Pirate Butch the Off-White" file="Pirates/Pirate Butch the Off-White.xml" />
-	<monster name="Cap'n Harvey Snaggletooth" file="Pirates/Cap'n Harvey Snaggletooth.xml" />
-	<monster name="Yellow Tad Hawkins" file="Pirates/Yellow Tad Hawkins.xml" />
-	<monster name="Cap'n Eugene Knockboots" file="Pirates/Cap'n Eugene Knockboots.xml" />
-	<monster name="Lazy Eye Ozzy" file="Pirates/Lazy Eye Ozzy.xml" />
-	<monster name="Pear-Shaped Barney" file="Pirates/Pear-Shaped Barney.xml" />
-	<monster name="Tax-Evadin' Brant Bones" file="Pirates/Tax-Evadin' Brant Bones.xml" />
-	<monster name="Cap'n Isaac Greasepalms" file="Pirates/Cap'n Isaac Greasepalms.xml" />
-	<monster name="Cap'n Bart Mowhawk" file="Pirates/Cap'n Bart Mowhawk.xml" />
-	<monster name="Cap'n Patrick Backstabber" file="Pirates/Cap'n Patrick Backstabber.xml" />
-	<monster name="Cap'n Baird Jailbird" file="Pirates/Cap'n Baird Jailbird.xml" />
-	<monster name="Snifflin' Blaine Kidd" file="Pirates/Snifflin' Blaine Kidd.xml" />
-	<monster name="Retarded Jim Dagger" file="Pirates/Retarded Jim Dagger.xml" />
-	<monster name="Cap'n Hugo Knockboots" file="Pirates/Cap'n Hugo Knockboots.xml" />
-	<monster name="Jelly Legs Jim" file="Pirates/Jelly Legs Jim.xml" />
-	<monster name="Decayin' Baird Hornigold" file="Pirates/Decayin' Baird Hornigold.xml" />
-	<monster name="Cannon-Balls Benjamin" file="Pirates/Cannon-Balls Benjamin.xml" />
-	<monster name="Cap'n Patrick Bloodbeard" file="Pirates/Cap'n Patrick Bloodbeard.xml" />
-	<monster name="Barnacle Breath Ron" file="Pirates/Barnacle Breath Ron.xml" />
-	<monster name="Jolly Ozzy Jones" file="Pirates/Jolly Ozzy Jones.xml" />
-	<monster name="No-Eyes Thomas" file="Pirates/No-Eyes Thomas.xml" />
-	<monster name="Wankin' Elmer Hacke" file="Pirates/Wankin' Elmer Hacke.xml" />
-	<monster name="Cheatin' Hidalgo Bonny" file="Pirates/Cheatin' Hidalgo Bonny.xml" />
+	<monster name="Pirate Buccaneer" file="pirates/pirate buccaneer.xml"/>
+	<monster name="Pirate Corsair" file="pirates/pirate corsair.xml"/>
+	<monster name="Pirate Cutthroat" file="pirates/pirate cutthroat.xml"/>
+	<monster name="Pirate Marauder" file="pirates/pirate marauder.xml"/>
+
 	<!-- Plant-Like -->
 	<monster name="Carniphila" file="plant-like/carniphila.xml"/>
 	<monster name="Spit Nettle" file="plant-like/spit nettle.xml"/>

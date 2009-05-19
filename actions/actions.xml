@@ -1,7 +1,5 @@
 <?xml version="1.0"?>
-
 <actions>
-	
 <!-- Map Actions -->
 	<action itemid="6387" script="game/item_nightmare1.lua"/>
 	<action itemid="6388" script="game/item_nightmare2.lua"/>	
@@ -840,5 +838,4 @@
 	
 	<!-- Others -->
 	<action itemid="2785" script="blueberry_bush.lua"/>
-
 </actions>

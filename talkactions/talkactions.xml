@@ -1,10 +1,15 @@
 <?xml version="1.0"?>
 <talkactions>
 
+	<!-- Darghos Block -->
+	<talkaction words="Amila Kratus!" event="script" value="game/demona_enter.lua"/>
+	<talkaction words="!bless" event="script" value="game/bless.lua"/>
+
 	<talkaction words="!buyhouse" script="buyhouse.lua"/>
 	<talkaction words="!leavehouse" script="leavehouse.lua"/>
 	<talkaction words="!houseinfo" script="houseinfo.lua"/>
 	<talkaction words="!online" script="onlinelist.lua"/>
+	<talkaction words="!frags" script="frags.lua"/>
 	<talkaction words="/cleanhouses" filter="first word" script="housecleaning.lua"/>
 	<talkaction words="/b" filter="first word" sensitive="1" script="banmanager.lua"/>
 	<talkaction words="/bans" filter="first word" script="banmanager.lua"/>
@@ -13,15 +18,10 @@
 	<talkaction words="/down" filter="first word" script="floorchange.lua"/>
 	<talkaction words="/t" script="teleportmasterpos.lua"/>
 	<talkaction words="/town" filter="first word" script="teleporttotown.lua"/>
-	<talkaction words="!frags" script="frags_status.lua"/>
 	<talkaction words="/save" script="saveserver.lua"/>
 	<talkaction words="/kick" filter="first word" script="kickplayer.lua"/>
 	<talkaction words="/c" filter="first word" script="teleporthere.lua"/>
-	
-	<!-- Our Talkactions -->
-	
-	<talkaction words="Amila Kratus!" event="script" value="game/demona_enter.lua"/>
-	<talkaction words="!bless" event="script" value="game/bless.lua"/>
-	
 	<talkaction words="/serverinfo" script="serverinfo.lua"/>
+	<talkaction words="/a" filter="first word" script="teleportntiles.lua"/>
+	<talkaction words="/goto" filter="first word" script="teleportto.lua"/>
 </talkactions>
