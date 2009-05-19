@@ -3,7 +3,7 @@
 	<health now="150" max="150"/>
     <look type="136" head="55" body="77" legs="11" feet="6" addons="0"/>
   
-  <interaction range="3" idletime="0" defaultpublic="0">
+  <interaction range="4" idletime="0" defaultpublic="0">
 
 	<include file="events_shop.xml"/>
     <include file="furnitures.xml"/>
