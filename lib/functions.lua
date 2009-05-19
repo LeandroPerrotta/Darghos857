@@ -4,14 +4,13 @@
 function staffOufitMode(cid)
 	
 	if(getPlayerAccess(cid)) == 4 then
-		lookType = 75
+	doCreatureChangeOutfit(cid, {lookType = 75, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
 	elseif (getPlayerAccess(cid)) == 5 then
-		lookType = 266
-	elseif (getPlayercAcess(cid)) == 6 then
-		lookType = 302
+	doCreatureChangeOutfit(cid, {lookType = 266, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
+	elseif (getPlayercAccess(cid)) == 6 then
+	doCreatureChangeOutfit(cid, {lookType = 302, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
 	end	
-	doCreatureChangeOutfit(cid, {lookType = lookType, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
-
+	
 end
 
 

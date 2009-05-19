@@ -3,7 +3,7 @@ function onLogin(cid)
 	registerCreatureEvent(cid, "AutoBan")
 	registerCreatureEvent(cid, "RemoveBlesses")
 
-	staffOufitMode(cid)	
+
 	runPremiumSystem(cid)	
 	checkItemShop(cid)
 	
