@@ -1,5 +1,5 @@
-local MIN = 600
-local MAX = 900
+local MIN = 700
+local MAX = 950
 local EMPTY_POTION = 7635
 
 local combat = createCombatObject()
