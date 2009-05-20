@@ -144,5 +144,12 @@
 			<item keywords="piercing;bolt" id="7363" buyprice="5"/>
 			<item keywords="power;bolt" id="2547" buyprice="7"/>
 		</itemlist>	
+		
+		<!--
+		AOL THAUN
+		-->
+		<itemlist listid="thaun_aol">
+			<item keywords="amulet;of;loss" id="2173" buyprice="50000"/>
+		</itemlist> 
 
 </interaction>
