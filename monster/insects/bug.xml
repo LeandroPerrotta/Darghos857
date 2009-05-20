@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<monster name="bug" namedescription="a bug" race="venom" experience="2000000" speed="240" manacost="250">
+<monster name="bug" namedescription="a bug" race="venom" experience="18" speed="240" manacost="250">
   <health now="29" max="29"/>
   <look type="45" head="20" body="30" legs="40" feet="50" corpse="5990"/>
   <targetchange interval="2000" chance="0"/>
