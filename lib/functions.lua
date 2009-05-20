@@ -1,14 +1,24 @@
 --[[
  * Contem todas funções referente ao Darghos
 ]]--
-function staffOufitMode(cid)
+function checkGeneralInfoPlayer(cid)
 	
-	if(getPlayerAccess(cid)) == 4 then
-	doCreatureChangeOutfit(cid, {lookType = 75, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
-	elseif (getPlayerAccess(cid)) == 5 then
-	doCreatureChangeOutfit(cid, {lookType = 266, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
-	elseif (getPlayercAccess(cid)) == 6 then
-	doCreatureChangeOutfit(cid, {lookType = 302, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
+	local level 		= 	getPlayerLevel(cid)
+	
+	if(isSorcerer(cid)) or (isDruid(cid)) then
+		realHP 	=	(level * 5 + 145)
+	elseif(isKnight(cid)) then
+		realHP	=	(level * 15 + 65)
+	elseif(isPaladin(cid)) then
+		realHP	= 	(level * 10 + 105)
+	else
+		realHP	= 	(level * 5 + 145)
+	end
+	
+	if(getPlayerMaxHealth(cid)) < realHP then
+		print("[infoChecker] Player "..getCreatureName(cid).." esta com a life bugada!")
+	else
+		print("[infoChecker] Player "..getCreatureName(cid).." esta mil grau.")
 	end	
 	
 end
