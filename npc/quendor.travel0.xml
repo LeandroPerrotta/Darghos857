@@ -107,8 +107,9 @@
         <action name="price" value="220"/>
     
     <interact keywords="yes" topic="1">
-      <response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
-      <response param="lowmoney" text="You don't have enough money."/>
+    <response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
+ 	<response param="premium" text="Only premium accounts can travel with me.."/>   
+	<response param="lowmoney" text="You don't have enough money."/>
       <response text="Have a nice trip!">
         <action name="idle" value="1"/>
         <action name="takemoney" value="|PRICE|"/>
