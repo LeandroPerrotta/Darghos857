@@ -40,19 +40,19 @@
 			<attribute key="areaEffect" value="blueshimmer"/>
 		</defense>
 	</defenses>
-	<elements>
-		<element firePercent="100"/>
-		<element earthPercent="70"/>
-		<element icePercent="-10"/>
-		<element energyPercent="-5"/>
-	</elements>
 	<immunities>
+		<immunity physical="0"/>
+		<immunity energy="0"/>
+		<immunity fire="1"/>
+		<immunity poison="0"/>
+		<immunity lifedrain="0"/>
 		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
 		<immunity invisible="1"/>
 	</immunities>
 	<voices interval="5000" chance="50">
-		<voice sentence="Fchu?" yell="0"/>
-		<voice sentence="Rooawwrr"/>
+		<voice sentence="Zchu?" yell="0"/>
 	</voices>
 	<loot capacity="800">
 		<item id="7620" countmax="1" chance="3500"/>
