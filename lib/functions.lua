@@ -49,6 +49,14 @@ function runPremiumSystem(cid)
 			doTeleportThing(cid, QUENDOR)
 			setPlayerStorageValue(cid, sid.PREMMY_VERIFY,0)
 			doPlayerSetTown(cid, getTownIdByName("quendor"))
+			--Player is not premium - remove premium privileges
+			--Change outfit
+			local lookType = 128
+			if(getPlayerSex(cid) == 0) then
+				lookType = 136
+			end
+			doCreatureChangeOutfit(cid, {lookType = lookType, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
+						
 		end
 	end
 end
