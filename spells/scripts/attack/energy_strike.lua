@@ -1,6 +1,6 @@
 local combat = createCombatObject()
 setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_ENERGYAREA)
+setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_PURPLEENERGY)
 
 function onGetFormulaValues(cid, level, maglevel)
 	local min = -(((level/5)+(maglevel*1.4))+10)
