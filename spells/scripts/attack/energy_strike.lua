@@ -12,7 +12,7 @@ setCombatCallback(combat, CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
 
 local distanceCombat = createCombatObject()
 setCombatParam(distanceCombat, COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-setCombatParam(distanceCombat, COMBAT_PARAM_EFFECT, CONST_ME_ENERGYAREA)
+setCombatParam(distanceCombat, COMBAT_PARAM_EFFECT, CONST_ME_PURPLEENERGY)
 setCombatParam(distanceCombat, COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_ENERGY)
 
 function onGetFormulaValues(cid, level, maglevel)
