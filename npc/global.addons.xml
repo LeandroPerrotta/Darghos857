@@ -12,6 +12,9 @@
 	<include file="addons/nobleman.xml"/>   
 	<include file="addons/summoner.xml"/>   
 	<include file="addons/warrior.xml"/>   
+	<include file="addons/druid.xml"/>   
+	<include file="addons/wizard.xml"/>   
+	<include file="addons/oriental.xml"/>   
 	
 	
     <interact keywords="hi" focus="1">
