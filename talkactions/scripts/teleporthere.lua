@@ -19,13 +19,12 @@ function onSay(cid, words, param)
 		local playerPos = getPlayerPosition(cid)
 		local oldCreaturePos = getCreaturePosition(creature)
 		if(doTeleportThing(creature, playerPos) ~= LUA_ERROR) then
-			if(getPlayerFlagValue(cid, PLAYERFLAG_CANNOTBESEEN) == 0) then
-				local newCreaturePos = getCreaturePosition(creature)
+			if(getPlayerFlagValue(cid, PLAYERFLAG_CANNOTBESEEN) == LUA_NULL) then
 				doSendMagicEffect(oldCreaturePos, CONST_ME_POFF)
-				doSendMagicEffect(newCreaturePos, CONST_ME_TELEPORT)
+				doSendMagicEffect(playerPos, CONST_ME_TELEPORT)
 			end
 		else
-			doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Could not teleport creature to your position.")
+			doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Can not teleport creature to your position.")
 		end
 	else
 		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "You do not have access to do that.")
