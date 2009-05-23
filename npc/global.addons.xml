@@ -6,6 +6,12 @@
 <interaction range="4" idletime="0" defaultpublic="0">
  
 	<include file="addons/citizen.xml"/>   
+	<include file="addons/barbarian.xml"/>   
+	<include file="addons/hunter.xml"/>   
+	<include file="addons/knight.xml"/>   
+	<include file="addons/nobleman.xml"/>   
+	<include file="addons/summoner.xml"/>   
+	<include file="addons/warrior.xml"/>   
 	
 	
     <interact keywords="hi" focus="1">
