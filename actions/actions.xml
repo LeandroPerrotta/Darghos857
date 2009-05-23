@@ -36,9 +36,9 @@
 	<action actionid="2023" script="game/quests/chest.lua"/>
 	<action actionid="2024" script="game/quests/chest.lua"/>
 	<action actionid="2025" script="game/quests/chest.lua"/>
-	<action actionid="2026" script="game/quests/chest.lua"/>
-	<action actionid="2027" script="game/quests/chest.lua"/>
-	<action actionid="2028" script="game/quests/chest.lua"/>
+	<action actionid="2026" script="game/quests/system.lua"/>
+	<action actionid="2027" script="game/quests/system.lua"/>
+	<action actionid="2028" script="game/quests/system.lua"/>
 	<action actionid="2029" script="game/quests/chest.lua"/>
 	<action actionid="2030" script="game/quests/chest.lua"/>
 	<action actionid="2031" script="game/quests/chest.lua"/>
