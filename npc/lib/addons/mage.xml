@@ -7,15 +7,9 @@
 	-->
 	
     <interact keywords="first;mage;addon">
-        <action name="topic" value="1"/>
-         <action name="script">
-        <![CDATA[
-		if(getPlayerSex(cid)) == 1
-			selfSay("You need the ticket of premium vials for this! Do you have?",cid)
-		else
-			selfSay("You need 10 ounces of magic sulphur, 20 ankhs and 1 soul stone, do you have it?", cid)
-		end		
-        ]]>		
+       <response text="If you are female, you need a ticket of premium vials, and if you are male, you need 10 magic sulphur, 20 ankhs and 1 soul stone. Do you have this?">
+		<action name="topic" value="1"/>
+	
     <interact keywords="yes" topic="1">
        <response>
         <action name="script">
@@ -77,15 +71,9 @@
 	-->
 	
     <interact keywords="second;mage;addon">
-        <action name="topic" value="1"/>
-         <action name="script">
-        <![CDATA[
-		if(getPlayerSex(cid)) == 1
-			selfSay("You need 70 bat wings, 20 red piece of cloth, 40 ape fur, 35 holy orchids, 10 spools of spider silk yarn, 60 lizard scales, 40 red dragon scales, 15 ounces of magic sulphur, 30 ounces of vampire dust for this! Do you have?",cid)
-		else
-			selfSay("You the {FERUMBRAS HAT} for this addon, do you have it?", cid)
-		end		
-        ]]>		
+       <response text="If you are female you need 70 bat wings, 20 red piece of cloth, 40 ape fur, 35 holy orchids, 10 spider silk yarn, 60 lizard scales, 40 red dragon scales, 15 magic sulphur and 30 ounces of vampire dust, and if you are male, you need Feumbrsa HAT. You have this?">
+		<action name="topic" value="1"/>
+
     <interact keywords="yes" topic="1">
        <response>
         <action name="script">

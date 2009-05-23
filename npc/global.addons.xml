@@ -15,6 +15,7 @@
 	<include file="addons/druid.xml"/>   
 	<include file="addons/wizard.xml"/>   
 	<include file="addons/oriental.xml"/>   
+	<include file="addons/mage.xml"/>   
 	
 	
     <interact keywords="hi" focus="1">
