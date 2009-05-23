@@ -8,7 +8,7 @@ local config = {
 
 
 	if(item.actionid == aid.XP_PIRATE) then
-		if(getPlayerStorageValue(cid, sid.XP_PIRATE)) == 1 then
+		if(getPlayerStorageValue(cid, sid.XP_PIRATE)) ~= 1 then
 			doPlayerAddExp(cid, config.p_exp)
 			setPlayerStorageValue(cid, sid.XP_PIRATE,1)
 			doSendAnimatedText(getCreaturePosition(cid), config.p_exp, TEXTCOLOR_YELLOW)
