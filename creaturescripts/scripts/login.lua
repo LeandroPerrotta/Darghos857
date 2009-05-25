@@ -3,6 +3,7 @@ function onLogin(cid)
 	registerCreatureEvent(cid, "AutoBan")
 	registerCreatureEvent(cid, "RemoveBlesses")
 	
+	setRateStage(cid)
 	checkItemShop(cid)
 	
 	--Remove blesses if necessary

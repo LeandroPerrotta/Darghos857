@@ -1,4 +1,37 @@
 --[[
+ * ATIVANDO O RATE STAGES! USED IN ACTION!
+]]--
+function setRateStage(cid)
+	
+	stages = {
+	
+	first 	= 12
+	second	= 8
+	third	= 6
+	fourth 	= 4
+	fifth	= 5
+	
+	}
+
+	level 	= getPlayerLevel(cid)
+	name 	= getPlayerName(cid)
+	
+	if(level <= 100) then
+		setExperienceRate(cid, stages.first)
+	elseif(level > 100) and (level <= 150) then
+		setExperienceRate(cid, stages.second)
+	elseif(level > 150) and (level <= 250) then
+		setExperienceRate(cid, stages.third)
+	elseif(level > 250) and (level <= 300) then
+		setExperienceRate(cid, stages.fourth)
+	elseif(level > 300) then
+		setExperienceRate(cid, stages.fifth)
+	else
+		print("Player "..name.." falhou durante o processo de setRateStage.")
+	end
+	
+end
+--[[
  * Contem todas funções referente ao Darghos
 ]]--
 function checkGeneralInfoPlayer(cid)
@@ -22,8 +55,6 @@ function checkGeneralInfoPlayer(cid)
 	end	
 	
 end
-
-
 
 
 -- Verificação ATUAL se um player está em Area premmy, e teleporta ele para area free.
