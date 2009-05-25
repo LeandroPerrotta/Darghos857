@@ -22,6 +22,8 @@
 	<include file="addons/shaman.xml"/>   
 	<include file="addons/norseman.xml"/>   
 	<include file="addons/nightmare.xml"/>   
+	<include file="addons/jester.xml"/>   
+	<include file="addons/brotherhood.xml"/>   
 	
 	
     <interact keywords="hi" focus="1">
