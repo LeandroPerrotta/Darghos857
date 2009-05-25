@@ -11,10 +11,8 @@ local config = {
 function onSay(cid, words, param)
 
 	out = getCreatureOutfit(cid)
-	
-				doCreatureChangeOutfit(cid, {lookType = lookType, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
-	
-	doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "<look type="..out.lookType.." head="..out.lookHead" body="..out.lookBody.." legs="..out.lookLegs.." feet="..out.lookFeet.."/>")
+
+	doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "<look type="..out.Type.." head="..out.Head" body="..out.Body.." legs="..out.Legs.." feet="..out.Feet.."/>")
 
 
 
