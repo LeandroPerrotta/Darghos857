@@ -5,10 +5,10 @@ function setRateStage(cid)
 	
 	stages = {
 	
-	first 	= 12
-	second	= 8
-	third	= 6
-	fourth 	= 4
+	first 	= 12,
+	second	= 8,
+	third	= 6,
+	fourth 	= 4,
 	fifth	= 5
 	
 	}
