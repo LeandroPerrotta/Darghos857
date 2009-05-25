@@ -1921,6 +1921,9 @@
     <monster name="Bat" x="-11" y="2" z="6" spawntime="59"/>
     <monster name="Bat" x="-7" y="3" z="6" spawntime="59"/>
   </spawn>
+  <spawn centerx="2005" centery="1846" centerz="6" radius="1">
+    <npc name="quendor.bank" x="0" y="0" z="6" spawntime="60"/>
+  </spawn>
   <spawn centerx="2407" centery="1848" centerz="6" radius="1">
     <npc name="thorn.postman" x="0" y="0" z="6" spawntime="60"/>
   </spawn>
@@ -3242,6 +3245,9 @@
   </spawn>
   <spawn centerx="2974" centery="1154" centerz="7" radius="2">
     <npc name="aracura.promotion" x="0" y="0" z="7" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2983" centery="1155" centerz="7" radius="1">
+    <npc name="aracura.bank" x="0" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1867" centery="1161" centerz="7" radius="20">
     <monster name="Chakoya Tribewarden" x="-6" y="-20" z="7" spawntime="60"/>
@@ -4625,6 +4631,9 @@
   </spawn>
   <spawn centerx="2341" centery="1853" centerz="7" radius="1">
     <npc name="thorn.magic" x="-1" y="0" z="7" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2370" centery="1853" centerz="7" radius="1">
+    <npc name="thorn.bank" x="0" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2088" centery="1854" centerz="7" radius="5">
     <monster name="Amazon" x="2" y="-2" z="7" spawntime="120"/>
@@ -14511,6 +14520,13 @@
     <monster name="Zepar" x="-21" y="-11" z="11" spawntime="60"/>
     <monster name="Behemoth" x="-2" y="9" z="11" spawntime="60"/>
     <monster name="Demon" x="18" y="21" z="11" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2678" centery="1306" centerz="11" radius="5">
+    <monster name="Hero" x="-3" y="-5" z="11" spawntime="60"/>
+    <monster name="Necromancer" x="-4" y="-4" z="11" spawntime="60"/>
+    <monster name="Hero" x="-1" y="2" z="11" spawntime="60"/>
+    <monster name="Necromancer" x="4" y="3" z="11" spawntime="60"/>
+    <monster name="Hero" x="4" y="5" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="1827" centery="1323" centerz="11" radius="30">
     <monster name="Plaguesmith" x="6" y="-10" z="11" spawntime="60"/>

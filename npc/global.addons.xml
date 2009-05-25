@@ -16,6 +16,12 @@
 	<include file="addons/wizard.xml"/>   
 	<include file="addons/oriental.xml"/>   
 	<include file="addons/mage.xml"/>   
+	<include file="addons/pirate.xml"/>   
+	<include file="addons/assassin.xml"/>   
+	<include file="addons/beggar.xml"/>   
+	<include file="addons/shaman.xml"/>   
+	<include file="addons/norseman.xml"/>   
+	<include file="addons/nightmare.xml"/>   
 	
 	
     <interact keywords="hi" focus="1">

@@ -3,25 +3,25 @@
 <interaction>
 
 	<!--
-	FIRST CITIZEN
+	FIRST SHAMAN
 	-->
 	
-    <interact keywords="first;citizen;addon">
-      <response text="For this addon you need 100 minotaurs leathers, do you have?">
+    <interact keywords="first;shaman;addon">
+      <response text="For this addon you need 5 dworc voodoo dolls and 1 mandrake, do you have this?">
         <action name="topic" value="1"/>
     
     <interact keywords="yes" topic="1">
        <response>
         <action name="script">
         <![CDATA[
-		
-		items 	= {{5878,100}}
+
+		items 	= {{3955,5} , {5015,1}}
 		conf  	= 
 		{
-			typeFemale		= 136,
-			typeMale		= 128,
+			typeFemale		= 158,
+			typeMale		= 154,
 			addon			= 1,
-			storage			= sid.FIRST_CITIZEN
+			storage			= sid.FIRST_SHAMAN
 		}
 		
 		
@@ -62,11 +62,11 @@
 
 
 	<!--
-	SECOND CITIZEN
+	SECOND SHAMAN
 	-->
 	
-    <interact keywords="second;citizen;addon">
-      <response text="Oh, you're back already? Did you bring a legion helmet, 100 chicken feathers and 50 honeycombs?">
+    <interact keywords="second;shaman;addon">
+      <response text="You need to get for me, 5 banana staff's and 5 tribal masks, do you have this?">
         <action name="topic" value="1"/>
     
     <interact keywords="yes" topic="1">
@@ -74,13 +74,13 @@
         <action name="script">
         <![CDATA[
 		
-		items 	= {{5890,100}, {5902,50}, {2480,1}}
+		items 	= {{3966,5} , {3967,5}}
 		conf  	= 
 		{
-			typeFemale		= 136,
-			typeMale		= 128,
+			typeFemale		= 158,
+			typeMale		= 154,
 			addon			= 2,
-			storage			= sid.SECOND_CITIZEN
+			storage			= sid.SECOND_SHAMAN
 		}
 		
 		

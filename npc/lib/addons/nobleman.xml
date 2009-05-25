@@ -22,7 +22,7 @@
 			typeFemale		= 140,
 			typeMale		= 132,
 			addon			= 1,
-			storage			= FIRST_NOBLEMAN
+			storage			= sid.FIRST_NOBLEMAN
 		}
 		
 		
@@ -34,7 +34,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) and (doPlayerRemoveMoney(cid, cost)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]
@@ -82,7 +82,7 @@
 			typeFemale		= 140,
 			typeMale		= 132,
 			addon			= 2,
-			storage			= SECOND_NOBLEMAN
+			storage			= sid.SECOND_NOBLEMAN
 		}
 		
 		
@@ -94,7 +94,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) and (doPlayerRemoveMoney(cid, cost)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]

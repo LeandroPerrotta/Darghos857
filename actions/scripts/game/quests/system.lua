@@ -8,10 +8,15 @@ local config = {
 
 
 	if(item.actionid == aid.XP_PIRATE) then
-		if(getPlayerStorageValue(cid, sid.XP_PIRATE)) ~= 1 then
+		if(getPlayerStorageValue(cid, sid.XP_PIRATE)) == 1 then
 			doPlayerAddExp(cid, config.p_exp)
 			setPlayerStorageValue(cid, sid.XP_PIRATE,1)
 			doSendAnimatedText(getCreaturePosition(cid), config.p_exp, TEXTCOLOR_YELLOW)
+			bp = doPlayerAddItem(cid,5927,1)
+			doAddContainerItem(bp,6099,1)
+			doAddContainerItem(bp,6100,1)			
+			doAddContainerItem(bp,6101,1)
+			doAddContainerItem(bp,6102,1)			
 			local position = getCreaturePosition(cid)
 			local i = 0
 			while i <= 100 do

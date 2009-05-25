@@ -21,7 +21,7 @@
 			typeFemale		= 147,
 			typeMale		= 143,
 			addon			= 1,
-			storage			= FIRST_BARBARIAN
+			storage			= sid.FIRST_BARBARIAN
 		}
 		
 		
@@ -33,7 +33,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]
@@ -80,7 +80,7 @@
 			typeFemale		= 147,
 			typeMale		= 143,
 			addon			= 2,
-			storage			= SECOND_BARBARIAN
+			storage			= sid.SECOND_BARBARIAN
 		}
 		
 		
@@ -92,7 +92,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]

@@ -1,5 +1,10 @@
 local quests =
 	{
+		[aid.BEGGAR_STAFF] = {
+			storageId = sid.BEGGAR_STAFF,
+			rewardId = 6107,
+			count = 1
+		},
 		[aid.ANIHI_SCA] = {
 			storageId = sid.ANIHI,
 			rewardId = 2431,

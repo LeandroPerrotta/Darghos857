@@ -146,6 +146,13 @@
 		</itemlist>	
 		
 		<!--
+		ASSASSIN STAR
+		-->
+		<itemlist listid="assassin_star">
+			<item keywords="assassin;star" id="7368" buyprice="100"/>
+		</itemlist> 	
+		
+		<!--
 		AOL THAUN
 		-->
 		<itemlist listid="thaun_aol">

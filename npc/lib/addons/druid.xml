@@ -21,7 +21,7 @@
 			typeFemale		= 148,
 			typeMale		= 144,
 			addon			= 1,
-			storage			= FIRST_DRUID
+			storage			= sid.FIRST_DRUID
 		}
 		
 		
@@ -33,7 +33,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]
@@ -80,7 +80,7 @@
 			typeFemale		= 148,
 			typeMale		= 144,
 			addon			= 2,
-			storage			= SECOND_DRUID
+			storage			= sid.SECOND_DRUID
 		}
 		
 		
@@ -92,7 +92,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]

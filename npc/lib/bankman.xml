@@ -166,7 +166,7 @@
 
       <interact keywords="|AMOUNT|">
         <response text="Would you really like to deposit |AMOUNT| gold?">
-          <action name="script"/>
+		<action name="amount" value="|AMOUNT|"/>
 
           <interact keywords="yes">
             <response>

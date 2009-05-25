@@ -3,25 +3,25 @@
 <interaction>
 
 	<!--
-	FIRST CITIZEN
+	FIRST JESTER
 	-->
 	
-    <interact keywords="first;citizen;addon">
-      <response text="For this addon you need 100 minotaurs leathers, do you have?">
+    <interact keywords="first;jester;addon">
+      <response text="For this addon you need 100 soul orb and 10 dragon scale mail, do you have this?">
         <action name="topic" value="1"/>
     
     <interact keywords="yes" topic="1">
        <response>
         <action name="script">
         <![CDATA[
-		
-		items 	= {{5878,100}}
+
+		items 	= {{2492,10} , {5944,100}}
 		conf  	= 
 		{
-			typeFemale		= 136,
-			typeMale		= 128,
+			typeFemale		= 270,
+			typeMale		= 273,
 			addon			= 1,
-			storage			= sid.FIRST_CITIZEN
+			storage			= sid.FIRST_JESTER
 		}
 		
 		
@@ -62,11 +62,11 @@
 
 
 	<!--
-	SECOND CITIZEN
+	SECOND JESTER
 	-->
 	
-    <interact keywords="second;citizen;addon">
-      <response text="Oh, you're back already? Did you bring a legion helmet, 100 chicken feathers and 50 honeycombs?">
+    <interact keywords="second;jester;addon">
+      <response text="For this addon you need 100 soul orb and 10 royal helmets, do you have this?">
         <action name="topic" value="1"/>
     
     <interact keywords="yes" topic="1">
@@ -74,13 +74,13 @@
         <action name="script">
         <![CDATA[
 		
-		items 	= {{5890,100}, {5902,50}, {2480,1}}
+		items 	= {{5944,100} , {2498,10}}
 		conf  	= 
 		{
-			typeFemale		= 136,
-			typeMale		= 128,
+			typeFemale		= 270,
+			typeMale		= 273,
 			addon			= 2,
-			storage			= sid.SECOND_CITIZEN
+			storage			= sid.SECOND_JESTER
 		}
 		
 		

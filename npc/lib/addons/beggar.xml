@@ -3,25 +3,25 @@
 <interaction>
 
 	<!--
-	FIRST CITIZEN
+	FIRST BEGGAR
 	-->
 	
-    <interact keywords="first;citizen;addon">
-      <response text="For this addon you need 100 minotaurs leathers, do you have?">
+    <interact keywords="first;beggar;addon">
+      <response text="For this addon you need 100 ape fur and 20000 gold, do you have?">
         <action name="topic" value="1"/>
     
     <interact keywords="yes" topic="1">
        <response>
         <action name="script">
         <![CDATA[
-		
-		items 	= {{5878,100}}
+		cost 	= 20000
+		items 	= {{5883,100}}
 		conf  	= 
 		{
-			typeFemale		= 136,
-			typeMale		= 128,
+			typeFemale		= 157,
+			typeMale		= 153,
 			addon			= 1,
-			storage			= sid.FIRST_CITIZEN
+			storage			= sid.FIRST_BEGGAR
 		}
 		
 		
@@ -34,7 +34,7 @@
 			end
 		end	
 			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
-				if(itemsN == table.maxn(items)) then
+				if(itemsN == table.maxn(items)) and (doPlayerRemoveMoney(cid, cost)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]
 							doPlayerRemoveItem(cid,item[1],item[2])
@@ -62,11 +62,11 @@
 
 
 	<!--
-	SECOND CITIZEN
+	SECOND BEGGAR
 	-->
 	
-    <interact keywords="second;citizen;addon">
-      <response text="Oh, you're back already? Did you bring a legion helmet, 100 chicken feathers and 50 honeycombs?">
+    <interact keywords="second;beggar;addon">
+      <response text="You need to get for me, Simon the Beggar's favorite staff, do you have this?">
         <action name="topic" value="1"/>
     
     <interact keywords="yes" topic="1">
@@ -74,13 +74,13 @@
         <action name="script">
         <![CDATA[
 		
-		items 	= {{5890,100}, {5902,50}, {2480,1}}
+		items 	= {{6107,1}}
 		conf  	= 
 		{
-			typeFemale		= 136,
-			typeMale		= 128,
+			typeFemale		= 157,
+			typeMale		= 153,
 			addon			= 2,
-			storage			= sid.SECOND_CITIZEN
+			storage			= sid.SECOND_BEGGAR
 		}
 		
 		

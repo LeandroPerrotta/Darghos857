@@ -3,11 +3,11 @@
 <interaction>
 
 	<!--
-	FIRST CITIZEN
+	FIRST ASSASSIN
 	-->
 	
-    <interact keywords="first;citizen;addon">
-      <response text="For this addon you need 100 minotaurs leathers, do you have?">
+    <interact keywords="first;assassin;addon">
+      <response text="For this addon you need 50 red piece of cloth, 50 blue piece of cloth, 50 white piece of cloth, 50 brown piece of cloth, 50 green piece of cloth, 50 yellow piece of cloth and 10 spider silk yarn, do you have?">
         <action name="topic" value="1"/>
     
     <interact keywords="yes" topic="1">
@@ -15,13 +15,13 @@
         <action name="script">
         <![CDATA[
 		
-		items 	= {{5878,100}}
+		items 	= {{5909,50} , {5910,50} , {5911,50} , {5912,50} , {5913,50} , {5914,50} , {5886,10}}
 		conf  	= 
 		{
-			typeFemale		= 136,
-			typeMale		= 128,
+			typeFemale		= 156,
+			typeMale		= 152,
 			addon			= 1,
-			storage			= sid.FIRST_CITIZEN
+			storage			= sid.FIRST_ASSASSIN
 		}
 		
 		
@@ -62,11 +62,11 @@
 
 
 	<!--
-	SECOND CITIZEN
+	SECOND ASSASSIN
 	-->
 	
-    <interact keywords="second;citizen;addon">
-      <response text="Oh, you're back already? Did you bring a legion helmet, 100 chicken feathers and 50 honeycombs?">
+    <interact keywords="second;assassin;addon">
+      <response text="Okay, listen up. I don't have a list of stupid objects, I just want two things. A behemoth claw and a nose ring. Got that?">
         <action name="topic" value="1"/>
     
     <interact keywords="yes" topic="1">
@@ -74,13 +74,13 @@
         <action name="script">
         <![CDATA[
 		
-		items 	= {{5890,100}, {5902,50}, {2480,1}}
+		items 	= {{5930,1},{5804,1}}
 		conf  	= 
 		{
-			typeFemale		= 136,
-			typeMale		= 128,
+			typeFemale		= 156,
+			typeMale		= 152,
 			addon			= 2,
-			storage			= sid.SECOND_CITIZEN
+			storage			= sid.SECOND_ASSASSIN
 		}
 		
 		

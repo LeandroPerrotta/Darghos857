@@ -25,7 +25,7 @@
 			typeFemale		= 141,
 			typeMale		= 133,
 			addon			= 1,
-			storage			= FIRST_SUMMONER
+			storage			= sid.FIRST_SUMMONER
 		}
 		
 		
@@ -37,7 +37,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]
@@ -89,7 +89,7 @@
 			typeFemale		= 141,
 			typeMale		= 133,
 			addon			= 2,
-			storage			= SECOND_SUMMONER
+			storage			= sid.SECOND_SUMMONER
 		}
 		
 		
@@ -101,7 +101,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]

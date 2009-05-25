@@ -60,7 +60,15 @@
 	<action actionid="2047" script="game/quests/chest.lua"/>
 	<action actionid="2048" script="game/quests/chest.lua"/>
 	<action actionid="2049" script="game/quests/chest.lua"/>
-	<action actionid="2050" script="game/quests/chest.lua"/>	
+	<action actionid="2050" script="game/quests/chest.lua"/>
+	<action actionid="2051" script="game/quests/chest.lua"/>
+	<action actionid="2052" script="game/quests/chest.lua"/>
+	<action actionid="2053" script="game/quests/chest.lua"/>
+	<action actionid="2054" script="game/quests/chest.lua"/>
+	<action actionid="2055" script="game/quests/chest.lua"/>
+
+
+	
 	
 	<!-- Quest Rewards (only for example) -->
 	<action uniqueid="1000" script="quest_reward.lua"/>

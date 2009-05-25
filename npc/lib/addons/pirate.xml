@@ -7,7 +7,7 @@
 	-->
 	
     <interact keywords="first;pirate;addon">
-      <response text="For this addon you need 100 minotaurs leathers, do you have?">
+      <response text="For this addon you need 100 eye patches, 100 peg legs and 100 hook, do you have this?">
         <action name="topic" value="1"/>
     
     <interact keywords="yes" topic="1">
@@ -15,13 +15,13 @@
         <action name="script">
         <![CDATA[
 		
-		items 	= {{5878,100}}
+		items 	= {{6098,100} , {6126,100} , {6097,100}}
 		conf  	= 
 		{
-			typeFemale		= 136,
-			typeMale		= 128,
+			typeFemale		= 155,
+			typeMale		= 151,
 			addon			= 1,
-			storage			= FIRST_PIRATE
+			storage			= sid.FIRST_PIRATE
 		}
 		
 		
@@ -33,7 +33,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]
@@ -66,7 +66,7 @@
 	-->
 	
     <interact keywords="second;pirate;addon">
-      <response text="Oh, you're back already? Did you bring a legion helmet, 100 chicken feathers and 50 honeycombs?">
+      <response text="For this addon, you need Ron the Ripper's sabre, Deadeye Devious' eye patch, Lethal Lissy's shirt and Brutus Bloodbeard's hat?">
         <action name="topic" value="1"/>
     
     <interact keywords="yes" topic="1">
@@ -74,13 +74,13 @@
         <action name="script">
         <![CDATA[
 		
-		items 	= {{5890,100}, {5902,50}, {2480,1}}
+		items 	= {{6101,1} , {6102,2}, {6100,1} , {6099,1}}
 		conf  	= 
 		{
-			typeFemale		= 136,
-			typeMale		= 128,
+			typeFemale		= 155,
+			typeMale		= 151,
 			addon			= 2,
-			storage			= SECOND_PIRATE
+			storage			= sid.SECOND_PIRATE
 		}
 		
 		
@@ -92,7 +92,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]

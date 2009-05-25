@@ -21,7 +21,7 @@
 			typeFemale		= 142,
 			typeMale		= 134,
 			addon			= 1,
-			storage			= FIRST_WARRIOR
+			storage			= sid.FIRST_WARRIOR
 		}
 		
 		
@@ -33,7 +33,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]
@@ -80,7 +80,7 @@
 			typeFemale		= 142,
 			typeMale		= 134,
 			addon			= 2,
-			storage			= SECOND_WARRIOR
+			storage			= sid.SECOND_WARRIOR
 		}
 		
 		
@@ -92,7 +92,7 @@
 				itemsN = itemsN + 1
 			end
 		end	
-			if(getPlayerStorageValue(cid, storage)) ~= 1 then
+			if(getPlayerStorageValue(cid, conf.storage)) ~= 1 then
 				if(itemsN == table.maxn(items)) then
 						for i = 1, table.maxn(items) do
 							local item = items[i]

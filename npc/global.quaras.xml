@@ -103,6 +103,36 @@
         </response>
     </interact>
 
+	<!-- INICIO - TROCAR GS SILK @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="spool;of;yarn">
+      <response text="Do you want to trade 10 giant spider silk for a Spool of Yarn?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			
+			sk = getItemIdByName("giant spider silk")
+			
+			if getPlayerItemCount(cid,sk) >= 1 then
+					doPlayerRemoveItem(cid,sk,10)
+					doPlayerAddItem(cid, 5886,1)
+					selfSay("Thanks to this trade!",cid)
+			else
+				selfSay("You dont have nescessary itens for this.",cid)
+			end
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>
+
 	
   </interaction>
   
