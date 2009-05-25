@@ -176,7 +176,7 @@
                 if(getPlayerMoney(cid)) < _state.amount then
 					selfSay("Sorry, you don't have enough sucifient golds for deposit.",cid)
 				else
-					doPlayerDepositMoney(cid, _state.amount)
+					doPlayerDepositMoney(cid, total)
 					selfSay("Alright, we have added the amount of ".._state.amount.." gold to your balance. You can withdraw your money anytime you want to.",cid)
 				end
 
