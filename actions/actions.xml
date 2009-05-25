@@ -81,7 +81,6 @@
 	<action itemid="2550" script="scythe.lua"/>
 	<action itemid="2580" script="fishing_rod.lua" allowfaruse="1"/>
 	<action itemid="5865" script="juice_squeezer.lua"/>
-
 	
 
 	<!-- Enchanting -->
