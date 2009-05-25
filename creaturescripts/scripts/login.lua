@@ -2,9 +2,7 @@ function onLogin(cid)
 	--Register the kill/die event
 	registerCreatureEvent(cid, "AutoBan")
 	registerCreatureEvent(cid, "RemoveBlesses")
-	checkGeneralInfoPlayer(cid)
-
-	runPremiumSystem(cid)	
+	
 	checkItemShop(cid)
 	
 	--Remove blesses if necessary

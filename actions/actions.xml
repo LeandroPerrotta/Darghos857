@@ -89,7 +89,11 @@
 	<action itemid="2550" script="scythe.lua"/>
 	<action itemid="2580" script="fishing_rod.lua" allowfaruse="1"/>
 	<action itemid="5865" script="juice_squeezer.lua"/>
-	
+
+	<!-- golds -->
+	<action itemid="2148" script="game/gold.lua" />	
+	<action itemid="2152" script="game/gold.lua" />	
+	<action itemid="2162" script="game/gold.lua" />	
 
 	<!-- Enchanting -->
 	<action itemid="7759" script="enchant.lua" />
