@@ -31,6 +31,18 @@
       <response text="I am a blesser, my job is to bless you!"/>
     </interact>
 	
+		<interact keywords="trade">
+		<list>thaun_aol</list>
+		
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>	
+	
     <interact keywords="bless">
       <response text="Do you want to buy mine bless? Its is based on your level!">
         <action name="topic" value="1"/>
