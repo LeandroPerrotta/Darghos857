@@ -4,7 +4,7 @@
 	<look type="324" head="78" body="41" legs="89" feet="56" addons="0"/>
   
   <interaction range="4" idletime="0" defaultpublic="0">
-
+    <include file="weapons.xml"/>
 	<include file="events_shop.xml"/>
     
     <interact keywords="hi" focus="1">
