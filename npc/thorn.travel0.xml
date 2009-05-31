@@ -3,7 +3,7 @@
 	<health now="150" max="150"/>
 	<look type="129" head="128" body="55" legs="128" feet="3"/>
   
-<interaction range="4" idletime="0" defaultpublic="0">
+<interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
     
     <interact keywords="hi" focus="1">
       <!--These are the keywords will trigger this interaction-->
@@ -84,6 +84,7 @@
 
     
     <interact keywords="yes" topic="1">
+	  <response param="free" text="Only premium players can travel with me."/>
       <response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
       <response param="lowmoney" text="You don't have enough money."/>
       <response text="Have a nice trip!">
@@ -108,6 +109,7 @@
 
     
     <interact keywords="yes" topic="1">
+	  <response param="free" text="Only premium players can travel with me."/>
       <response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
       <response param="lowmoney" text="You don't have enough money."/>
       <response text="Have a nice trip!">

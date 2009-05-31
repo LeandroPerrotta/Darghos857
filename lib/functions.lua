@@ -9,7 +9,7 @@ function setRateStage(cid)
 	second	= 8,
 	third	= 6,
 	fourth 	= 4,
-	fifth	= 5
+	fifth	= 2
 	
 	}
 
@@ -17,7 +17,7 @@ function setRateStage(cid)
 	name 	= getPlayerName(cid)
 	
 	if(level <= 100) then
-		doPlayerSetRate(cid, LEVEL_EXPERIENCE, stages.first)
+		setExperienceRate(cid, stages.first)
 	elseif(level > 100) and (level <= 150) then
 		setExperienceRate(cid, stages.second)
 	elseif(level > 150) and (level <= 250) then

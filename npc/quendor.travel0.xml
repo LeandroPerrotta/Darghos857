@@ -3,12 +3,13 @@
 	<health now="150" max="150"/>
 	<look type="134" head="22" body="118" legs="98" feet="14"/>
   
-<interaction range="4" idletime="0" defaultpublic="0">
+<interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
     
     <interact keywords="hi" focus="1">
       <!--These are the keywords will trigger this interaction-->
       <keywords>hello</keywords>
-
+     
+  
       <response>
         <action name="script">
         <![CDATA[
@@ -17,6 +18,9 @@
           else
             selfSay("Welcome on board, Sir " .. getCreatureName(cid) .. ".", cid)
           end
+		  
+		  _state.b1 = (isPremium(cid) == TRUE)
+		  
         ]]>
         </action>
       </response>
@@ -83,6 +87,7 @@
         <action name="price" value="180"/>
     
     <interact keywords="yes" topic="1">
+	  <response param="free" text="Only premium players can travel with me."/>
       <response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
       <response param="lowmoney" text="You don't have enough money."/>
       <response text="Have a nice trip!">
@@ -102,12 +107,11 @@
 
 	<!-- INICIO - DESTINO: NORTHREND @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
     <interact keywords="northrend">
-      <response text="Do you want a passage to Northrend for |PRICE| gold?">
+      <response b1="1" text="Do you want a passage to Northrend for |PRICE| gold?">
         <action name="topic" value="1"/>
         <action name="price" value="220"/>
     
     <interact keywords="yes" topic="1">
-  	<response param="premium" text="Only premium accounts can travel with me.."/> 
 	<response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
 	<response param="lowmoney" text="You don't have enough money."/>
       <response text="Have a nice trip!">
@@ -133,7 +137,8 @@
     
     <interact keywords="yes" topic="1">
       <response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
-      <response param="lowmoney" text="You don't have enough money."/>
+ 	  <response param="premium"/>
+	  <response param="lowmoney" text="You don't have enough money."/>
       <response text="Have a nice trip!">
         <action name="idle" value="1"/>
         <action name="takemoney" value="|PRICE|"/>

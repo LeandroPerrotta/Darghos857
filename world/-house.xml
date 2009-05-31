@@ -398,4 +398,5 @@
   <house name="Goer's Refuge IV" houseid="451" entryx="2859" entryy="1177" entryz="7" rent="0" townid="2" size="43"/>
   <house name="Goer's Refuge V" houseid="452" entryx="2872" entryy="1172" entryz="7" rent="0" townid="2" size="97"/>
   <house name="District of Flowers VIII" houseid="453" entryx="2898" entryy="1216" entryz="7" rent="0" townid="2" size="27"/>
+  <house name="The Temples House" houseid="454" entryx="2021" entryy="1894" entryz="7" rent="6000" townid="1" size="30"/>
 </houses>

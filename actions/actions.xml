@@ -93,7 +93,7 @@
 	<!-- golds -->
 	<action itemid="2148" script="game/gold.lua" />	
 	<action itemid="2152" script="game/gold.lua" />	
-	<action itemid="2162" script="game/gold.lua" />	
+	<action itemid="2160" script="game/gold.lua" />	
 
 	<!-- Enchanting -->
 	<action itemid="7759" script="enchant.lua" />

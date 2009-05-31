@@ -182,6 +182,9 @@
     <monster name="Minotaur archer" x="1" y="-1" z="3" spawntime="60"/>
     <monster name="Minotaur mage" x="1" y="1" z="3" spawntime="60"/>
   </spawn>
+  <spawn centerx="2168" centery="1978" centerz="3" radius="2">
+    <npc name="quendor.tapete" x="-1" y="0" z="3" spawntime="60"/>
+  </spawn>
   <spawn centerx="2016" centery="1982" centerz="3" radius="5">
     <monster name="Dragon" x="0" y="-1" z="3" spawntime="60"/>
   </spawn>
@@ -1135,6 +1138,9 @@
   <spawn centerx="1982" centery="2385" centerz="5" radius="5">
     <monster name="Sand Dragon" x="2" y="3" z="5" spawntime="60"/>
   </spawn>
+  <spawn centerx="2311" centery="2393" centerz="5" radius="2">
+    <npc name="salazart.tapete" x="0" y="1" z="5" spawntime="60"/>
+  </spawn>
   <spawn centerx="1996" centery="2401" centerz="5" radius="5">
     <monster name="Dragon" x="-2" y="-2" z="5" spawntime="60"/>
     <monster name="Dragon" x="2" y="-2" z="5" spawntime="60"/>
@@ -1367,6 +1373,9 @@
   </spawn>
   <spawn centerx="2823" centery="1206" centerz="6" radius="5">
     <monster name="Wyvern" x="0" y="-1" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2941" centery="1206" centerz="6" radius="2">
+    <npc name="aracura.tapete" x="1" y="0" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="1894" centery="1207" centerz="6" radius="15">
     <monster name="Mammoth" x="9" y="-3" z="6" spawntime="60"/>

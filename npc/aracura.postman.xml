@@ -3,7 +3,7 @@
 	<health now="150" max="150"/>
 	<look type="132" head="111" body="78" legs="90" feet="40" addons="2"/>
 
-  <interaction range="4" idletime="30">
+  <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
     <include file="postman.xml"/>
     
     <interact keywords="hi" focus="1">
