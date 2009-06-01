@@ -242,9 +242,9 @@
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>
 		<vocation name="Paladin"/>  <vocation name="Royal Paladin"/>
 	</instant>
-	<instant name="Levitate" words="exani hur" lvl="12" mana="50" prem="1" params="1" function="levitate">
+	<instant name="Levitate" words="exani hur" lvl="12" mana="50" prem="0" params="1" function="levitate">
 	</instant>
-	<instant name="Energy Strike" words="exori vis" lvl="12" mana="20" prem="1" casterTargetOrDirection="1" script="attack/energy_strike.lua">
+	<instant name="Energy Strike" words="exori vis" lvl="12" mana="20" prem="0" casterTargetOrDirection="1" script="attack/energy_strike.lua">
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/>
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>
 	</instant>
@@ -265,7 +265,7 @@
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/>
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>
 	</instant>
-	<instant name="Ice Strike" words="exori frigo" lvl="15" mana="20" prem="1" casterTargetOrDirection="1" script="attack/ice_strike.lua">
+	<instant name="Ice Strike" words="exori frigo" lvl="15" mana="20" prem="0" casterTargetOrDirection="1" script="attack/ice_strike.lua">
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/>
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>
 	</instant>
@@ -304,7 +304,7 @@
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/>
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>
 	</instant>
-	<instant name="Ethereal Spear" words="exori con" lvl="23" mana="25" prem="1" needtarget="1" aggressive="1" script="attack/ethereal_spear.lua">
+	<instant name="Ethereal Spear" words="exori con" lvl="23" mana="25" prem="0" needtarget="1" aggressive="1" script="attack/ethereal_spear.lua">
 		<vocation name="Paladin"/>  <vocation name="Royal Paladin"/>
 	</instant>
 	<instant name="Summon Creature" words="utevo res" lvl="25" params="1" function="summonMonster">
