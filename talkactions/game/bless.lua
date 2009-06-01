@@ -40,7 +40,7 @@ function onSay(cid, words, param)
 	
 	local message = "Here you can see if you have completed the blesses, or no.\n\nFirst Bless      = "..first.."(Quendor)\n\nSecond Bless      = "..second.."(Thorn)\n\nThird Bless      = "..third.."(Aracura)\n\nFourth Bless      = "..fourth.."(Thaun)\n\nFifth Bless      = "..fifth.."(Salazart)\n\nItem drop:\n"..aol..""
 	
-	doPlayerPopupFYI(cid, message)
+	doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, message)
 
 	
 end
