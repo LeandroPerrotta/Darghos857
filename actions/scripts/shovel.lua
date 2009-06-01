@@ -32,6 +32,8 @@ function onUse(cid, item, frompos, item2, topos)
 			end
 		end
 		doSendMagicEffect(topos, CONST_ME_POFF)
+	elseif(item2.acionid == 233) then
+		doTransformItem(item2.uid, 469)	
 	else
 		return FALSE
 	end
