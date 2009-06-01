@@ -296,6 +296,7 @@
 	
 	<!-- Doors -->
 	<action itemid="1209" script="doors/door_locked.lua"/>
+	<action itemid="6255" script="doors/door_locked.lua"/>
 	<action itemid="1210" script="increment.lua"/>
 	<action itemid="1211" script="doors/door_open_vertical.lua"/>
 	<action itemid="1212" script="doors/door_locked.lua"/>
