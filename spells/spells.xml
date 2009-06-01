@@ -272,7 +272,7 @@
 	<instant name="WhirlWind Throw" words="exori hur" lvl="15" mana="40" prem="1" needtarget="1" needweapon="1" script="attack/whirlwind_throw.lua">
 		<vocation name="Knight"/>   <vocation name="Elite Knight"/>
 	</instant>
-	<instant name="Death Strike" words="exori mort" lvl="16" mana="20" prem="1" casterTargetOrDirection="1" script="attack/death_strike.lua">
+	<instant name="Death Strike" words="exori mort" lvl="16" mana="20" prem="0" casterTargetOrDirection="1" script="attack/death_strike.lua">
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/>
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>
 	</instant>
