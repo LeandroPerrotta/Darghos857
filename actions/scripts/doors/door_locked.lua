@@ -1,5 +1,5 @@
 function onUse(cid, item, frompos, item2, topos)
-	if(item.actionid == 0) then
+	if(item.actionid == 0) or (item.actionid == 10000) then
 		-- This is impossible to happen, but whatever.
 		doTransformItem(item.uid, item.itemid+2)
 		return TRUE
