@@ -62,12 +62,12 @@ function onUse(cid, item, frompos, item2, topos)
 						demon5pos = {x=2713, y=1349, z=11}
 						demon6pos = {x=2713, y=1349, z=11}
 						
-						doSummonCreature("Demon", demon1pos)
-						doSummonCreature("Demon", demon2pos)
-						doSummonCreature("Demon", demon3pos)
-						doSummonCreature("Demon", demon4pos)
-						doSummonCreature("Demon", demon5pos)
-						doSummonCreature("Demon", demon6pos)
+						doSummonCreature("demon", demon1pos)
+						doSummonCreature("demon", demon2pos)
+						doSummonCreature("demon", demon3pos)
+						doSummonCreature("demon", demon4pos)
+						doSummonCreature("demon", demon5pos)
+						doSummonCreature("demon", demon6pos)
 						
 						nplayer1pos = {x=2714, y=1347, z=11}
 						nplayer2pos = {x=2713, y=1347, z=11}
@@ -79,10 +79,10 @@ function onUse(cid, item, frompos, item2, topos)
 						doSendMagicEffect(player3pos,2)
 						doSendMagicEffect(player4pos,2)
 						
-						doTeleportThing(player1.uid,nplayer1pos,1)
-						doTeleportThing(player2.uid,nplayer2pos,1)
-						doTeleportThing(player3.uid,nplayer3pos,1)
-						doTeleportThing(player4.uid,nplayer4pos,1)
+						doTeleportThing(player1.uid,nplayer1pos)
+						doTeleportThing(player2.uid,nplayer2pos)
+						doTeleportThing(player3.uid,nplayer3pos)
+						doTeleportThing(player4.uid,nplayer4pos)
 						
 						doSendMagicEffect(nplayer1pos,10)
 						doSendMagicEffect(nplayer2pos,10)
