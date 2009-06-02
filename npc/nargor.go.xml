@@ -89,7 +89,7 @@
       <response text="Have a nice trip!">
         <action name="idle" value="1"/>
         <action name="takemoney" value="|PRICE|"/>
-        <action name="teleport" value="2402;2056;6"/>
+        <action name="teleport" value="2402;2056;7"/>
         <action name="effect" value="teleport"/>
       </response>
     </interact>
