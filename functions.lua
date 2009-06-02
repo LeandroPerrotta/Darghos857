@@ -484,7 +484,7 @@ function getPlayerBless(cid, blessid)
 end
 
 function doPlayerRemoveSkillLossPercent(cid, amount)
-	local lossvalue = getLOSSPercent(cid, LOSS_EXPERIENCE)
+	local lossvalue = getPlayerLossPercent(cid, LOSS_EXPERIENCE)
 	local newvalue = lossvalue - amount
 	if newvalue < 0 then
 		newvalue = 0

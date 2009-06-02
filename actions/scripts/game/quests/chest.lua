@@ -4,7 +4,7 @@ local quests =
 			storageId = sid.PLATINUM_10QUEST,
 			rewardId = 2160,
 			count = 1
-		}		
+		},		
 		[aid.DH_SHIELD] = {
 			storageId = sid.DH_SHIELD,
 			rewardId = 2520,
