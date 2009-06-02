@@ -66,6 +66,10 @@
 	<action actionid="2053" script="game/quests/chest.lua"/>
 	<action actionid="2054" script="game/quests/chest.lua"/>
 	<action actionid="2055" script="game/quests/chest.lua"/>
+	<action actionid="2056" script="game/quests/chest.lua"/>
+	<action actionid="2057" script="game/quests/chest.lua"/>
+	<action actionid="2058" script="game/quests/chest.lua"/>
+	<action actionid="2059" script="game/quests/chest.lua"/>
 
 
 	

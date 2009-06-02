@@ -1,5 +1,25 @@
 local quests =
 	{
+		[aid.PLATINUM_10QUEST] = {
+			storageId = sid.PLATINUM_10QUEST,
+			rewardId = 2160,
+			count = 1
+		}		
+		[aid.DH_SHIELD] = {
+			storageId = sid.DH_SHIELD,
+			rewardId = 2520,
+			count = 1
+		},		
+		[aid.DH_STEELBOOTS] = {
+			storageId = sid.DH_STEELBOOTS,
+			rewardId = 2645,
+			count = 1
+		},
+		[aid.DH_HELMET] = {
+			storageId = sid.DH_HELMET,
+			rewardId = 2493,
+			count = 1
+		},
 		[aid.BEGGAR_STAFF] = {
 			storageId = sid.BEGGAR_STAFF,
 			rewardId = 6107,

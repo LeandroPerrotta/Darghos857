@@ -484,13 +484,13 @@ function getPlayerBless(cid, blessid)
 end
 
 function doPlayerRemoveSkillLossPercent(cid, amount)
-	local lossvalue = getPlayerLossPercent(cid, PLAYERLOSS_EXPERIENCE)
+	local lossvalue = getLOSSPercent(cid, LOSS_EXPERIENCE)
 	local newvalue = lossvalue - amount
 	if newvalue < 0 then
 		newvalue = 0
 	end
 	-- Setting experience is enough (all other types follow it)
-	doPlayerSetLossPercent(cid, PLAYERLOSS_EXPERIENCE, newvalue)
+	doPlayerSetLossPercent(cid, LOSS_EXPERIENCE, newvalue)
 end
 
 function doPlayerUpdateItemLossPercent(cid)
@@ -506,23 +506,23 @@ function doPlayerUpdateItemLossPercent(cid)
 
 	-- update %
 	if blesses >= 5 then
-		doPlayerSetLossPercent(cid, PLAYERLOSS_ITEMS, 0)
-		doPlayerSetLossPercent(cid, PLAYERLOSS_CONTAINERS, 0)
+		doPlayerSetLossPercent(cid, LOSS_ITEMS, 0)
+		doPlayerSetLossPercent(cid, LOSS_CONTAINERS, 0)
 	elseif blesses >= 4 then
-		doPlayerSetLossPercent(cid, PLAYERLOSS_ITEMS, 1)
-		doPlayerSetLossPercent(cid, PLAYERLOSS_CONTAINERS, 10)
+		doPlayerSetLossPercent(cid, LOSS_ITEMS, 1)
+		doPlayerSetLossPercent(cid, LOSS_CONTAINERS, 10)
 	elseif blesses >= 3 then
-		doPlayerSetLossPercent(cid, PLAYERLOSS_ITEMS, 3)
-		doPlayerSetLossPercent(cid, PLAYERLOSS_CONTAINERS, 25)
+		doPlayerSetLossPercent(cid, LOSS_ITEMS, 3)
+		doPlayerSetLossPercent(cid, LOSS_CONTAINERS, 25)
 	elseif blesses >= 2 then
-		doPlayerSetLossPercent(cid, PLAYERLOSS_ITEMS, 5)
-		doPlayerSetLossPercent(cid, PLAYERLOSS_CONTAINERS, 45)
+		doPlayerSetLossPercent(cid, LOSS_ITEMS, 5)
+		doPlayerSetLossPercent(cid, LOSS_CONTAINERS, 45)
 	elseif blesses >= 1 then
-		doPlayerSetLossPercent(cid, PLAYERLOSS_ITEMS, 7)
-		doPlayerSetLossPercent(cid, PLAYERLOSS_CONTAINERS, 70)
+		doPlayerSetLossPercent(cid, LOSS_ITEMS, 7)
+		doPlayerSetLossPercent(cid, LOSS_CONTAINERS, 70)
 	else
-		doPlayerSetLossPercent(cid, PLAYERLOSS_ITEMS, 10)
-		doPlayerSetLossPercent(cid, PLAYERLOSS_CONTAINERS, 100)
+		doPlayerSetLossPercent(cid, LOSS_ITEMS, 10)
+		doPlayerSetLossPercent(cid, LOSS_CONTAINERS, 100)
 	end
 end
 
