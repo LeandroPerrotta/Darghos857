@@ -52,7 +52,7 @@ function onUse(cid, item, frompos, item2, topos)
 					queststatus3 = getPlayerStorageValue(player3.uid,sid.ANIHI_QUEST)
 					queststatus4 = getPlayerStorageValue(player4.uid,sid.ANIHI_QUEST)
 					
-					if queststatus1 == -1 and queststatus2 == -1 and queststatus3 == -1 and queststatus4 == -1 or getPlayerGroupId(player1.uid) > 3 then					
+					if queststatus1 == -1 and queststatus2 == -1 and queststatus3 == -1 and queststatus4 == -1 or getPlayerGroup(player1.uid) > 3 then					
 						
 						--if 1==1 then				
 						demon1pos = {x=2715, y=1347, z=11}
