@@ -25,7 +25,7 @@ function removeDemons()
 end
 
 function onUse(cid, item, frompos, item2, topos)
-	if item.aid == aid.ANIHI_SWITCH then
+	if item.actionid == aid.ANIHI_SWITCH then
 		if item.itemid == 1945 then
 		
 			player1pos = {x=2717, y=1319, z=11, stackpos=253}
