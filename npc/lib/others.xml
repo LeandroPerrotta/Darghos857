@@ -130,5 +130,12 @@
 		<itemlist listid="oldrak">		
 			<item keywords="holy;tible" id="1970" buyprice="1000" />
 		</itemlist>	
-		
+
+	<!--
+	ACESSORIES MAGIC ITENS Shop
+	-->
+		<itemlist listid="magic_acessories">		
+			<item keywords="magician's;robe" id="8819" buyprice="2000" />
+			<item keywords="spirit;cloack" id="8870" buyprice="4000" />
+		</itemlist>			
 </interaction>

@@ -64,7 +64,7 @@
 	
 	<interact keywords="tools">
 		<list>tools</list>
-		
+		<list>magic_acessories</list>		
 		<response>
 			<action name="script">
 			<![CDATA[
