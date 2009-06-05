@@ -546,9 +546,9 @@ end
 
 function getBlessPrice(level)
 	local price = 2000
-	level = math.min(400, level)
+	level = math.min(120, level)
 	if(level > 30) then
-		price = (price + ((level - 30) * 240))
+		price = (price + ((level - 30) * 200))
 	end
 
 	return price

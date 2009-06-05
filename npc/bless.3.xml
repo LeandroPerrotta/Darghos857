@@ -45,7 +45,7 @@
        <response>
         <action name="script">
         <![CDATA[
-				  blessID = 3
+				  blessID = 2
 				  level = getPlayerLevel(cid)
 				  price = getBlessPrice(level)
 				  

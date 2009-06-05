@@ -1,26 +1,22 @@
 <?xml version="1.0"?>
-<npc name="Captain Kaleen" floorchange="0" walkinterval="4000">
+<npc name="The Undead'Master" floorchange="0" walkinterval="4000">
 	<health now="150" max="150"/>
-	<look type="134" head="22" body="118" legs="98" feet="14"/>
+	<look type="231" head="128" body="55" legs="128" feet="3"/>
   
 <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
     
     <interact keywords="hi" focus="1">
       <!--These are the keywords will trigger this interaction-->
       <keywords>hello</keywords>
-     
-  
+
       <response>
         <action name="script">
         <![CDATA[
           if(getPlayerSex(cid)) == 0 then
-            selfSay("Welcome on board, Madam " .. getCreatureName(cid) .. ".", cid)
+            selfSay("Heeelllloooooooo!!!!, Madam " .. getCreatureName(cid) .. ".", cid)
           else
-            selfSay("Welcome on board, Sir " .. getCreatureName(cid) .. ".", cid)
+            selfSay("Heeelllloooooooo!!!!, Sir " .. getCreatureName(cid) .. ".", cid)
           end
-		  
-		  _state.b1 = (isPremium(cid) == TRUE)
-		  
         ]]>
         </action>
       </response>
@@ -80,23 +76,25 @@
         <action name="scriptparam" value="|TEXT|"/>
       </response>
     </interact>
-	<!-- INICIO - DESTINO: ARACURA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-    <interact keywords="aracura">
-      <response text="Do you want a passage to Aracura for |PRICE| gold?">
+	<!-- INICIO - DESTINO: AOOSOTH GO @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="aosoth">
+      <keywords>travel</keywords>
+      <keywords>help</keywords>
+      <response text="Do you want a passage to Aosoth Island, the lair of Undead Monsters, for |PRICE| gold?">
         <action name="topic" value="1"/>
-        <action name="price" value="180"/>
+        <action name="price" value="70"/>
+
     
     <interact keywords="yes" topic="1">
-	  <response param="free" text="Only premium players can travel with me."/>
       <response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
       <response param="lowmoney" text="You don't have enough money."/>
       <response text="Have a nice trip!">
         <action name="idle" value="1"/>
         <action name="takemoney" value="|PRICE|"/>
-        <action name="teleport" value="3005;1119;6"/>
+        <action name="teleport" value="1836;1216;7"/>
         <action name="effect" value="teleport"/>
       </response>
-    </interact> 
+    </interact>
         <interact keywords="|*|">
           <response text="Maybe some other time."/>
         </interact>
@@ -104,51 +102,6 @@
         </response>
     </interact>
 
-    <interact keywords="thorn">
-      <response text="Do you want a passage to Thorn for |PRICE| gold?">
-        <action name="topic" value="1"/>
-        <action name="price" value="180"/>
-    
-    <interact keywords="yes" topic="1">
-	  <response param="free" text="Only premium players can travel with me."/>
-      <response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
-      <response param="lowmoney" text="You don't have enough money."/>
-      <response text="Have a nice trip!">
-        <action name="idle" value="1"/>
-        <action name="takemoney" value="|PRICE|"/>
-        <action name="teleport" value="2454;1860;6"/>
-        <action name="effect" value="teleport"/>
-      </response>
-    </interact> 
-        <interact keywords="|*|">
-          <response text="Maybe some other time."/>
-        </interact>
-
-        </response>
-    </interact>	
-
-	<!-- INICIO - DESTINO: NORTHREND @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-    <interact keywords="northrend">
-      <response b1="1" text="Do you want a passage to Northrend for |PRICE| gold?">
-        <action name="topic" value="1"/>
-        <action name="price" value="220"/>
-    
-    <interact keywords="yes" topic="1">
-	<response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
-	<response param="lowmoney" text="You don't have enough money."/>
-      <response text="Have a nice trip!">
-        <action name="idle" value="1"/>
-        <action name="takemoney" value="|PRICE|"/>
-        <action name="teleport" value="2025;1235;6"/>
-        <action name="effect" value="teleport"/>
-      </response>
-    </interact>	
-        <interact keywords="|*|">
-          <response text="Maybe some other time."/>
-        </interact>
-
-        </response>
-    </interact>
 	
   </interaction>
   

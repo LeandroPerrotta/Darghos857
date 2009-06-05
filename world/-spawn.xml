@@ -3472,6 +3472,9 @@
     <monster name="Bear" x="1" y="-4" z="7" spawntime="60"/>
     <monster name="Bear" x="3" y="3" z="7" spawntime="60"/>
   </spawn>
+  <spawn centerx="1837" centery="1226" centerz="7" radius="5">
+    <npc name="global.aosoth" x="0" y="-1" z="7" spawntime="60"/>
+  </spawn>
   <spawn centerx="1974" centery="1226" centerz="7" radius="1">
     <npc name="north.distance" x="0" y="0" z="7" spawntime="60"/>
   </spawn>
