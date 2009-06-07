@@ -1,113 +1,144 @@
-function removeDemons()
-
-	pos1 = {x=2712, y=1345, z=11, stackpos=253}
-	pos1object = getThingfromPos(pos1)
-	pos2 = {x=2714, y=1345, z=11, stackpos=253}
-	pos2object = getThingfromPos(pos2)
-	pos3 = {x=2711, y=1349, z=11, stackpos=253}
-	pos3object = getThingfromPos(pos3)
-	pos4 = {x=2713, y=1349, z=11, stackpos=253}
-	pos4object = getThingfromPos(pos4)
-	pos5 = {x=2715, y=1347, z=11, stackpos=253}
-	pos5object = getThingfromPos(pos5)
-	pos6 = {x=2716, y=1347, z=11, stackpos=253}
-	pos6object = getThingfromPos(pos6)
-	
-	doRemoveCreature(pos1object.uid)
-	doRemoveCreature(pos2object.uid)
-	doRemoveCreature(pos3object.uid)
-	doRemoveCreature(pos4object.uid)
-	doRemoveCreature(pos5object.uid)
-	doRemoveCreature(pos6object.uid)
-
-	
-	return 0
-end
-
 function onUse(cid, item, frompos, item2, topos)
 	if item.actionid == aid.ANIHI_SWITCH then
 		if item.itemid == 1945 then
-		
-			player1pos = {x=2717, y=1319, z=11, stackpos=253}
-			player1 = getThingfromPos(player1pos)
-			player2pos = {x=2716, y=1319, z=11, stackpos=253}
-			player2 = getThingfromPos(player2pos)
-			player3pos = {x=2715, y=1319, z=11, stackpos=253}
-			player3 = getThingfromPos(player3pos)
-			player4pos = {x=2714, y=1319, z=11, stackpos=253}
-			player4 = getThingfromPos(player4pos)
 			
-			if player1.itemid > 0 and player2.itemid > 0 and player3.itemid > 0 and player4.itemid > 0 or getPlayerGroupId(player1.uid) > 3 then
-				
-				player1level = getPlayerLevel(player1.uid)
-				player2level = getPlayerLevel(player2.uid)
-				player3level = getPlayerLevel(player3.uid)
-				player4level = getPlayerLevel(player4.uid)
-				questlevel = 100
-				
-				if player1level >= questlevel and player2level >= questlevel and player3level >= questlevel and player4level >= questlevel or getPlayerGroupId(player1.uid) > 3 then
+			p1 = {}
+			p2 = {}
+			p3 = {}
+			p4 = {}
+			
+			p1 = getThingPos(uid.ANIHI_PLAYER1)
+			p1.stackpos = 253
+			p2 = getThingPos(uid.ANIHI_PLAYER2)
+			p2.stackpos = 253		
+			p3 = getThingPos(uid.ANIHI_PLAYER3)
+			p3.stackpos = 253			
+			p4 = getThingPos(uid.ANIHI_PLAYER4)
+			p4.stackpos = 253	
+			
+			pla_1 		= getThingfromPos(p1)
+			pla_2 		= getThingfromPos(p2)		
+			pla_3 		= getThingfromPos(p3)		
+			pla_4 		= getThingfromPos(p4)
+			
+			npos_1		= getThingPos(uid.ANIHI_NPOS1)
+			npos_2		= getThingPos(uid.ANIHI_NPOS2)
+			npos_3		= getThingPos(uid.ANIHI_NPOS3)
+			npos_4		= getThingPos(uid.ANIHI_NPOS4)
+			
+			
+			
+			if(pla_1.itemid > 0 and pla_2.itemid >= 0 and pla_3.itemid >= 0 and pla_4.itemid >= 0) then
 					
-					queststatus1 = getPlayerStorageValue(player1.uid,sid.ANIHI_QUEST)
-					queststatus2 = getPlayerStorageValue(player2.uid,sid.ANIHI_QUEST)
-					queststatus3 = getPlayerStorageValue(player3.uid,sid.ANIHI_QUEST)
-					queststatus4 = getPlayerStorageValue(player4.uid,sid.ANIHI_QUEST)
+					status_1	= getPlayerStorageValue(pla_1.uid, sid.ANIHI_COMPLETE)
+					status_2	= getPlayerStorageValue(pla_2.uid, sid.ANIHI_COMPLETE)
+					status_3	= getPlayerStorageValue(pla_3.uid, sid.ANIHI_COMPLETE)
+					status_4	= getPlayerStorageValue(pla_4.uid, sid.ANIHI_COMPLETE)
 					
-					if queststatus1 == -1 and queststatus2 == -1 and queststatus3 == -1 and queststatus4 == -1 or getPlayerGroup(player1.uid) > 3 then					
-						
-						--if 1==1 then				
-						demon1pos = {x=2715, y=1347, z=11}
-						demon2pos = {x=2716, y=1347, z=11}
-						demon3pos = {x=2714, y=1345, z=11}
-						demon4pos = {x=2712, y=1345, z=11}
-						demon5pos = {x=2713, y=1349, z=11}
-						demon6pos = {x=2713, y=1349, z=11}
-						
-						doSummonCreature("demon", demon1pos)
-						doSummonCreature("demon", demon2pos)
-						doSummonCreature("demon", demon3pos)
-						doSummonCreature("demon", demon4pos)
-						doSummonCreature("demon", demon5pos)
-						doSummonCreature("demon", demon6pos)
-						
-						nplayer1pos = {x=2714, y=1347, z=11}
-						nplayer2pos = {x=2713, y=1347, z=11}
-						nplayer3pos = {x=2712, y=1347, z=11}
-						nplayer4pos = {x=2711, y=1347, z=11}
-						
-						doSendMagicEffect(player1pos,2)
-						doSendMagicEffect(player2pos,2)
-						doSendMagicEffect(player3pos,2)
-						doSendMagicEffect(player4pos,2)
-						
-						doTeleportThing(player1.uid,nplayer1pos)
-						doTeleportThing(player2.uid,nplayer2pos)
-						doTeleportThing(player3.uid,nplayer3pos)
-						doTeleportThing(player4.uid,nplayer4pos)
-						
-						doSendMagicEffect(nplayer1pos,10)
-						doSendMagicEffect(nplayer2pos,10)
-						doSendMagicEffect(nplayer3pos,10)
-						doSendMagicEffect(nplayer4pos,10)
-										
-					else
-						doPlayerSendCancel(cid,"A player of this team already have done this quest.")
-					end
+				if(status_1 == -1 and status_2 == -1 and status_3 == -1 and status_4 == -1) then
 					
+					demon_1		= getThingPos(uid.ANIHI_DEMON1)
+					demon_2		= getThingPos(uid.ANIHI_DEMON2)
+					demon_3		= getThingPos(uid.ANIHI_DEMON3)
+					demon_4		= getThingPos(uid.ANIHI_DEMON4)
+					demon_5		= getThingPos(uid.ANIHI_DEMON5)
+					demon_6		= getThingPos(uid.ANIHI_DEMON6)
+					
+					doSummonCreature("demon", demon_1)	
+					doSummonCreature("demon", demon_2)	
+					doSummonCreature("demon", demon_3)	
+					doSummonCreature("demon", demon_4)	
+					doSummonCreature("demon", demon_5)	
+					doSummonCreature("demon", demon_6)
+
+					doSendMagicEffect(p1, 2)
+					doSendMagicEffect(p2, 2)
+					doSendMagicEffect(p3, 2)
+					doSendMagicEffect(p4, 2)
+					
+					doTeleportThing(pla_1.uid, npos_1)
+					doTeleportThing(pla_2.uid, npos_2)
+					doTeleportThing(pla_3.uid, npos_3)
+					doTeleportThing(pla_4.uid, npos_4)
+					
+					doSendMagicEffect(npos_1, 10)
+					doSendMagicEffect(npos_2, 10)
+					doSendMagicEffect(npos_3, 10)
+					doSendMagicEffect(npos_4, 10)
+					
+					setGlobalStorageValue(gid.ANIHI_TIMER,1)
+					addEvent(anihi_timmer, (600*1000))					
 				else
-					doPlayerSendCancel(cid,"Its nescessary level 100 or higher.")
+					doPlayerSendTextMessage(cid, MESSAGE_EVENT_DEFAULT, "A player of this team already have done this quest.")
+					return TRUE
 				end
-				
 			else
-			doPlayerSendCancel(cid,"Its nescessary four players.")
+				doPlayerSendTextMessage(cid, MESSAGE_EVENT_DEFAULT, "Its nescessary four players to own this quest.")
+				return TRUE
 			end
 		end
-		
-		if item.itemid == 1946 then
-						
-			removeDemons()	
-			
+	end		
+	
+	
+	
+	if item.itemid == 1946 then
+		if(getGlobalStorageValue(gid.ANIHI_TIMER) ~= 1) then
+	
+		else
+			doPlayerSendTextMessage(cid, MESSAGE_EVENT_DEFAULT, "You need wait 10 minutes for use the the switch again.")
+			return TRUE			
 		end
 	end
 
+end
+
+function anihi_timmer()
+
+			setGlobalStorageValue(gid.ANIHI_TIMER,0)
+			
+			demon_1		= getThingPos(uid.ANIHI_DEMON1)
+			demon_1.stackpos = 253
+			demon_2		= getThingPos(uid.ANIHI_DEMON2)
+			demon_2.stackpos = 253		
+			demon_3		= getThingPos(uid.ANIHI_DEMON3)
+			demon_3.stackpos = 253
+			demon_4		= getThingPos(uid.ANIHI_DEMON4)
+			demon_4.stackpos = 253
+			demon_5		= getThingPos(uid.ANIHI_DEMON5)
+			demon_5.stackpos = 253
+			demon_6		= getThingPos(uid.ANIHI_DEMON6)
+			demon_6.stackpos = 253
+			
+			npos_1				= getThingPos(uid.ANIHI_NPOS1)
+			npos_1.stackpos 	= 253
+			npos_2				= getThingPos(uid.ANIHI_NPOS2)
+			npos_2.stackpos 	= 253
+			npos_3				= getThingPos(uid.ANIHI_NPOS3)
+			npos_3.stackpos 	= 253
+			npos_4				= getThingPos(uid.ANIHI_NPOS4)	
+			npos_4.stackpos 	= 253
+			
+			player_pos1	= getThingfromPos(npos_1)
+			player_pos2	= getThingfromPos(npos_2)
+			player_pos3	= getThingfromPos(npos_3)
+			player_pos4	= getThingfromPos(npos_4)
+			
+			demon1 		= getThingfromPos(demon_1)
+			demon2 		= getThingfromPos(demon_2)
+			demon3 		= getThingfromPos(demon_3)
+			demon4 		= getThingfromPos(demon_4)
+			demon5 		= getThingfromPos(demon_5)
+			demon6 		= getThingfromPos(demon_6)
+				
+			doRemoveCreature(demon1.uid)
+			doRemoveCreature(demon2.uid)
+			doRemoveCreature(demon3.uid)
+			doRemoveCreature(demon4.uid)
+			doRemoveCreature(demon5.uid)
+			doRemoveCreature(demon6.uid)
+			doRemoveCreature(player_pos1.uid)
+			doRemoveCreature(player_pos2.uid)
+			doRemoveCreature(player_pos3.uid)
+			doRemoveCreature(player_pos4.uid)
 
 end
