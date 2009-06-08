@@ -50,61 +50,7 @@
 		</response>
 	</interact>
     
-    <interact keywords="sell;|AMOUNT|;|LIST|">
-      <list>vase</list>
-
-      <response>
-        <action name="amount" value="|AMOUNT|"/>
-        <action name="price" value="|SELLPRICE|"/>
-
-        <action name="script">
-        <![CDATA[
-          if(_state.amount > 1) then
-            selfSay("Do you want to sell " .. _state.amount .. " " .. _state.listpname .. " for " ..  _state.price * _state.amount .. " gold?", cid)
-          else
-            selfSay("Do you want to sell " .. _state.listname .. " for " .. _state.price .. " gold?", cid)
-          end
-        ]]>
-        </action>
-
-        <interact keywords="yes">
-          <response param="noamount" text="Sorry, you do not have one."/>
-          <response param="lowamount" text="Sorry, you do not have that many."/>
-          <response text="Ok. Here is your money.">
-            <action name="sell" value="|PRICE|"/>
-          </response>
-        </interact>
-        
-      </response>
-    </interact>
-
-    <interact keywords="buy;|AMOUNT|;|LIST|">
-      <list>vase</list>
-
-
-      <response>
-        <action name="amount" value="|AMOUNT|"/>
-        <action name="price" value="|BUYPRICE|"/>
-
-        <action name="script">
-        <![CDATA[
-          if(_state.amount > 1) then
-            selfSay("Do you want to buy " .. _state.amount .. " " .. _state.listpname .. " for " ..  _state.price * _state.amount .. " gold?", cid)
-          else
-            selfSay("Do you want to buy " .. _state.listname .. " for " .. _state.price .. " gold?", cid)
-          end
-        ]]>
-        </action>
-
-        <interact keywords="yes">
-          <response param="lowmoney" text="Sorry, you do not have enough gold."/>
-          <response text="Thank you. Here it is.">
-            <action name="buy" value="|PRICE|"/>
-          </response>
-        </interact>
-
-      </response>
-    </interact>
+ 
   </interaction>
   
 </npc>
