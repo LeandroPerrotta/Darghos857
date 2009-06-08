@@ -28,7 +28,7 @@ function onUse(cid, item, frompos, item2, topos)
 			
 			
 			
-			if(pla_1.itemid > 0 and pla_2.itemid >= 0 and pla_3.itemid >= 0 and pla_4.itemid >= 0) then
+			if(pla_1.itemid > 0 and pla_2.itemid > 0 and pla_3.itemid > 0 and pla_4.itemid > 0) then
 					
 					status_1	= getPlayerStorageValue(pla_1.uid, sid.ANIHI_COMPLETE)
 					status_2	= getPlayerStorageValue(pla_2.uid, sid.ANIHI_COMPLETE)
