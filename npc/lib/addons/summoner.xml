@@ -14,7 +14,7 @@
        <response>
         <action name="script">
         <![CDATA[
-		if(getPlayerSex(cid)) == 0		
+		if(getPlayerSex(cid)) == 1		
 			items 	= {{4842,1}}
 		else
 			items  	= {{5904,10} , {2193,20} , {5809,1}}
@@ -78,7 +78,7 @@
         <action name="script">
         <![CDATA[
 		
-		if(getPlayerSex(cid)) == 0		
+		if(getPlayerSex(cid)) == 1		
 			items 	= {{5894,70} , {5911,20} , {5883,40} , {5922,35} , {5886,10} , {5881,60} , {5882,40} , {5904,15} , {5905,30}}
 		else
 			items  	= {{5903,1}}
