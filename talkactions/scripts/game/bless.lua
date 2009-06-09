@@ -2,37 +2,37 @@ function onSay(cid, words, param)
 
 
 
-	if(getPlayerBless(cid, 0) == FALSE) then
+	if(getPlayerStorageValue( then
 		first = "Completed"
 	else
 		first = "Non-Completed"
 	end
 	
-	if(getPlayerBless(cid, 1) == TRUE) then
+	if(getPlayerStorageValue(cid, 500000+1) == 1) then
 		second = "Completed"
 	else
 		second = "Non-Completed"
 	end
 	
-	if(getPlayerBless(cid, 2) == TRUE) then
+	if(getPlayerStorageValue(cid, 500000+2) == 1) then
 		third = "Completed"
 	else
 		third = "Non-Completed"
 	end	
 	
-	if(getPlayerBless(cid, 3) == TRUE) then
+	if(getPlayerStorageValue(cid, 500000+3) == 1) then
 		fourth = "Completed"
 	else
 		fourth = "Non-Completed"
 	end	
 	
-	if(getPlayerBless(cid, 4) == TRUE) then
+	if(getPlayerStorageValue(cid, 500000+4) == 1) then
 		fifth = "Completed"
 	else
 		fifth = "Non-Completed"
 	end	
 	
-	if (getPlayerBless(cid, 0)) and (getPlayerBless(cid, 1)) and (getPlayerBless(cid, 2)) and (getPlayerBless(cid, 3)) and (getPlayerBless(cid, 4)) then
+	if (getPlayerStorageValue(cid, 500000+0) == 1) and (getPlayerStorageValue(cid, 500000+1) == 1) and (getPlayerStorageValue(cid, 500000+2) == 1) and (getPlayerStorageValue(cid, 500000+3) == 1) and (getPlayerStorageValue(cid, 500000+4) == 1) then
 		aol = "You have all blesses and your item/backpack loss is FULL SECURE!"
 	else	
 		aol = "You dont have all blesses and your item/back not is secure, and go drop when you die."
