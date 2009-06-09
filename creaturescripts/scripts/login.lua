@@ -5,6 +5,11 @@ function onLogin(cid)
 	
 	setRateStage(cid)
 	checkItemShop(cid)
+	-- faz a porra do caralho da promotion funcionar -.-
+	if(isPremium(cid) == TRUE and getPlayerVocation(cid) >= 4 and getPlayerStorageValue(cid, sid.VALUE_TO_RECEIVE_PROMO) ~= 1) then
+		setPlayerStorageValue(cid, sid.VALUE_TO_RECEIVE_PROMO, 1)
+		setPlayerStorageValue(cid, STORAGE_PROMOTION, 1)
+	end	
 	
 	--Remove blesses if necessary
 	if getPlayerStorageValue(cid, STORAGE_REMOVE_BLESSES) == 1 then
@@ -18,8 +23,10 @@ function onLogin(cid)
 
 	--Promotes player if necessary
 	if(isPremium(cid) == TRUE) then
-		if(getPlayerStorageValue(cid, STORAGE_PROMOTION) == 1 and getPlayerVocation(cid) <= 4) then
-			doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
+		if(getPlayerStorageValue(cid, STORAGE_PROMOTION) == 1) then
+			if(getPlayerVocation(cid) <= 4) then
+				doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
+			end
 			doPlayerRemoveSkillLossPercent(cid, 30)
 			setPlayerStorageValue(cid, STORAGE_PROMOTION, -1)
 		end
