@@ -32,7 +32,7 @@ function onSay(cid, words, param)
 		fifth = "Non-Completed"
 	end	
 	
-	if (getPlayerBless(cid, 0)) and (getPlayerBless(cid, 1)) and (getPlayerBless(cid, 2)) and (getPlayerBless(cid, 3)) and (getPlayerBless(cid, 4)) then
+	if (getPlayerBless(cid, 0) == TRUE) and (getPlayerBless(cid, 1) == TRUE) and (getPlayerBless(cid, 2) == TRUE) and (getPlayerBless(cid, 3) == TRUE) and (getPlayerBless(cid, 4) == TUE) then
 		aol = "You have all blesses and your item/backpack loss is FULL SECURE!"
 	else	
 		aol = "You dont have all blesses and your item/back not is secure, and go drop when you die."
