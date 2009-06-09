@@ -2,31 +2,31 @@ function onSay(cid, words, param)
 
 
 
-	if(getPlayerBless(cid, 1)) then
+	if(getPlayerBless(cid, 1) == TRUE) then
 		first = "Completed"
 	else
 		first = "Non-Completed"
 	end
 	
-	if(getPlayerBless(cid, 2)) then
+	if(getPlayerBless(cid, 2) == TRUE) then
 		second = "Completed"
 	else
 		second = "Non-Completed"
 	end
 	
-	if(getPlayerBless(cid, 3)) then
+	if(getPlayerBless(cid, 3) == TRUE) then
 		third = "Completed"
 	else
 		third = "Non-Completed"
 	end	
 	
-	if(getPlayerBless(cid, 4)) then
+	if(getPlayerBless(cid, 4) == TRUE) then
 		fourth = "Completed"
 	else
 		fourth = "Non-Completed"
 	end	
 	
-	if(getPlayerBless(cid, 5)) then
+	if(getPlayerBless(cid, 5) == TRUE) then
 		fifth = "Completed"
 	else
 		fifth = "Non-Completed"
