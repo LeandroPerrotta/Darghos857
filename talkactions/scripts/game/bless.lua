@@ -2,7 +2,7 @@ function onSay(cid, words, param)
 
 
 
-	if(getPlayerBless(cid, 0) == TRUE) then
+	if(getPlayerBless(cid, 0) == FALSE) then
 		first = "Completed"
 	else
 		first = "Non-Completed"
