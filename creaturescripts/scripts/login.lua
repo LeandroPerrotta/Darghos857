@@ -1,8 +1,9 @@
-function onLogin(cid)
+	function onLogin(cid)
 	--Register the kill/die event
 	registerCreatureEvent(cid, "AutoBan")
 	registerCreatureEvent(cid, "RemoveBlesses")
 	
+	runPremiumSystem(cid)
 	setRateStage(cid)
 	checkItemShop(cid)
 	-- faz a porra do caralho da promotion funcionar -.-
