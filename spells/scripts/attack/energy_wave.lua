@@ -1,12 +1,12 @@
 local combat = createCombatObject()
 setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_ENERGYAREA)
-setCombatParam(combat, COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_ENERGY)
+setCombatFormula(combat, COMBAT_FORMULA_LEVELMAGIC, -1.5, 0, -2.0, 0)
 
 function onGetFormulaValues(cid, level, maglevel)
-	local min = -((level/5)+(maglevel*4.5))
-	local max = -((level/5)+(maglevel*9))
-	return min, max
+	local min = ((level/5)+(maglevel*4.5))
+	local max = ((level/5)+(maglevel*9))
+	return -min, -max
 end
 
 setCombatCallback(combat, CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")

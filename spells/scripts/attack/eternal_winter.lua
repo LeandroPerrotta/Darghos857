@@ -3,9 +3,9 @@ setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_ICETORNADO)
 
 function onGetFormulaValues(cid, level, maglevel)
-	local min = -((level/5)+(maglevel*6))
-	local max = -((level/5)+(maglevel*12))
-	return min, max
+	local min = ((level/5)+(maglevel*6))
+	local max = ((level/5)+(maglevel*12))
+	return -min, -max
 end
 
 setCombatCallback(combat, CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
