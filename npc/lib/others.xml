@@ -60,41 +60,41 @@
 	-->
 		<itemlist listid="foods">
 		
-			<item keywords="brown:mushroom" id="2789" buyprice="10" />
-			<item keywords="white:mushroom" id="2787" buyprice="6" />
-			<item keywords="egg" id="2695" buyprice="2" />
-			<item keywords="cookie" id="2687" buyprice="2" />
-			<item keywords="orange" id="2675" buyprice="5" />
-			<item keywords="strawberry" id="2680" buyprice="2" />
-			<item keywords="red;mushroom" id="2788" buyprice="12" />
-			<item keywords="tomato" id="2685" buyprice="3" />
-			<item keywords="potato" id="8838" buyprice="4" />
-			<item keywords="raspberry" id="8840" buyprice="1" />
-			<item keywords="lemon" id="8841" buyprice="3" />
-			<item keywords="cherry" id="2679" buyprice="1" />
-			<item keywords="blueberry" id="2677" buyprice="1" />
-			<item keywords="banana" id="2676" buyprice="2" />
-			<item keywords="red apple" id="2674" buyprice="3" />
-			<item keywords="plum" id="8839" buyprice="3" />
-			<item keywords="beetroot" id="8845" buyprice="2" />
-			<item keywords="pear" id="2673" buyprice="4" />
-			<item keywords="onion" id="8843" buyprice="2" />
+			<item keywords="brown:mushroom" id="2789" subtype="1" buyprice="10" />
+			<item keywords="white:mushroom" id="2787" subtype="1" buyprice="6" />
+			<item keywords="egg" id="2695" subtype="1" buyprice="2" />
+			<item keywords="cookie" id="2687" subtype="1" buyprice="2" />
+			<item keywords="orange" id="2675" subtype="1" buyprice="5" />
+			<item keywords="strawberry" id="2680" subtype="1" buyprice="2" />
+			<item keywords="red;mushroom" id="2788" subtype="1" buyprice="12" />
+			<item keywords="tomato" id="2685" subtype="1" buyprice="3" />
+			<item keywords="potato" id="8838" subtype="1" buyprice="4" />
+			<item keywords="raspberry" id="8840" subtype="1" buyprice="1" />
+			<item keywords="lemon" id="8841" subtype="1" buyprice="3" />
+			<item keywords="cherry" id="2679" subtype="1" buyprice="1" />
+			<item keywords="blueberry" id="2677" subtype="1" buyprice="1" />
+			<item keywords="banana" id="2676" subtype="1" buyprice="2" />
+			<item keywords="red apple" id="2674" subtype="1" buyprice="3" />
+			<item keywords="plum" id="8839" subtype="1" buyprice="3" />
+			<item keywords="beetroot" id="8845" subtype="1" buyprice="2" />
+			<item keywords="pear" id="2673" subtype="1" buyprice="4" />
+			<item keywords="onion" id="8843" subtype="1" buyprice="2" />
 			<item keywords="grapes" id="2681" buyprice="5" />
-			<item keywords="cucumber" id="8842" buyprice="3" />
-			<item keywords="jalapeno;pepper" id="8844" buyprice="2" />
-			<item keywords="salmon" id="2668" buyprice="6" />
-			<item keywords="carrot" id="2684" buyprice="2" />
-			<item keywords="roll" id="2690" buyprice="2" />
-			<item keywords="corncob" id="2686" buyprice="3" />
+			<item keywords="cucumber" id="8842" subtype="1" buyprice="3" />
+			<item keywords="jalapeno;pepper" subtype="1" id="8844" buyprice="2" />
+			<item keywords="salmon" id="2668" subtype="1" buyprice="6" />
+			<item keywords="carrot" id="2684" subtype="1" buyprice="2" />
+			<item keywords="roll" id="2690" subtype="1" buyprice="2" />
+			<item keywords="corncob" id="2686" subtype="1" buyprice="3" />
 			<item keywords="valentine's;cake" id="6393" buyprice="100" />
-			<item keywords="fish" id="2667" buyprice="5" />
-			<item keywords="mango" id="5097" buyprice="10" />
+			<item keywords="fish" id="2667" subtype="1" buyprice="5" />
+			<item keywords="mango" id="5097" subtype="1" buyprice="10" />
 			<item keywords="melon" id="2682" buyprice="8" />
-			<item keywords="dragon;ham" id="2672" buyprice="25" />
-			<item keywords="brown;bread" id="2691" buyprice="3" />
-			<item keywords="bread" id="2689" buyprice="3" />
-			<item keywords="ham" id="2671" buyprice="8" />
-			<item keywords="meat" id="2666" buyprice="3" />
+			<item keywords="dragon;ham" id="2672" subtype="1" buyprice="25" />
+			<item keywords="brown;bread" id="2691" subtype="1" buyprice="3" />
+			<item keywords="bread" id="2689" subtype="1" buyprice="3" />
+			<item keywords="ham" id="2671" subtype="1" buyprice="8" />
+			<item keywords="meat" id="2666" subtype="1" buyprice="3" />
 			<item keywords="pumpkin" id="2683" buyprice="10" />
 
 		</itemlist>			
@@ -105,14 +105,14 @@
 		<itemlist listid="jewerly">
 		
 			<!-- GEMS E PEDRAS -->
-			<item keywords="black;pearl" id="2144" buyprice="560" sellprice="280" />
-			<item keywords="small;amethyst" id="2150" buyprice="400" sellprice="180" />
-			<item keywords="small;diamond" id="2145" buyprice="600" sellprice="610" />
-			<item keywords="small;sapphire" id="2146" buyprice="500" sellprice="245" />
-			<item keywords="small;sapphire" id="2146" buyprice="500" sellprice="245" />
-			<item keywords="white;pearl" id="2143" buyprice="320" sellprice="160" />
-			<item keywords="small;ruby" id="2147" buyprice="500" sellprice="235" />
-			<item keywords="small;emerald" id="2149" buyprice="500" sellprice="235" />
+			<item keywords="black;pearl" id="2144" subtype="1" buyprice="560" sellprice="280" />
+			<item keywords="small;amethyst" id="2150" subtype="1" buyprice="400" sellprice="180" />
+			<item keywords="small;diamond" id="2145" subtype="1" buyprice="600" sellprice="610" />
+			<item keywords="small;sapphire" id="2146" subtype="1" buyprice="500" sellprice="245" />
+			<item keywords="small;sapphire" id="2146" subtype="1" buyprice="500" sellprice="245" />
+			<item keywords="white;pearl" id="2143" subtype="1" buyprice="320" sellprice="160" />
+			<item keywords="small;ruby" id="2147" subtype="1" buyprice="500" sellprice="235" />
+			<item keywords="small;emerald" id="2149" subtype="1" buyprice="500" sellprice="235" />
 			
 			<!-- AMULETOS, DECORATIVOS E PINGENTES -->
 			<item keywords="golden;amulet" id="2130" buyprice="6600" />
