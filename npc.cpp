@@ -355,6 +355,11 @@ uint32_t Npc::loadParams(xmlNodePtr node)
 			else if(asLowerCaseString(*it) == "premium"){
 				params |= RESPOND_PREMIUM;
 			}
+			#ifdef __DARGHOS__
+			else if(asLowerCaseString(*it) == "free"){
+			    params |= RESPOND_FREE;
+			}
+			#endif
 			else if(asLowerCaseString(*it) == "druid"){
 				params |= RESPOND_DRUID;
 			}
@@ -1449,7 +1454,7 @@ void Npc::executeResponse(Player* player, NpcState* npcState, const NpcResponse*
 						if(it.hasSubType()){
 							subType = npcState->subType;
 						}
-						
+
 						if(g_game.getMoney(player) >= moneyCount){
 							if(it.stackable){
 								int32_t amount = npcState->amount;
@@ -2001,6 +2006,15 @@ const NpcResponse* Npc::getResponse(const ResponseList& list, const Player* play
 				}
 				++matchCount;
 			}
+
+            #ifdef __DARGHOS__
+			if(hasBitSet(RESPOND_FREE, params)){
+				if(player->isPremium()){
+					continue;
+				}
+				++matchCount;
+			}
+			#endif
 
 			if(hasBitSet(RESPOND_DRUID, params)){
 				if(player->getVocationId() != VOCATION_DRUID){

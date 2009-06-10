@@ -99,8 +99,8 @@ struct DeathEntry{
 	std::string getKillerName() const {return boost::any_cast<std::string>(data);}
 
 protected:
-	int damage;
 	boost::any data;
+	int damage;
 
 	friend struct DeathLessThan;
 };
@@ -334,7 +334,7 @@ public:
 	virtual void onAttackedCreatureDrainHealth(Creature* target, int32_t points);
 	virtual void onTargetCreatureGainHealth(Creature* target, int32_t points);
 	virtual void onAttackedCreatureKilled(Creature* target);
-	virtual void onKilledCreature(Creature* target);
+	virtual void onKilledCreature(Creature* target, bool lastHit);
 	virtual void onGainExperience(uint64_t gainExp);
 	virtual void onGainSharedExperience(uint64_t gainExp);
 	virtual void onAttackedCreatureBlockHit(Creature* target, BlockType_t blockType);

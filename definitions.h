@@ -26,7 +26,7 @@
 #define OTSERV_VERSION "0.6.3_SVN"
 #define OTSERV_NAME "EluneOT"
 #define OTSERV_CLIENT_VERSION "8.42"
-#define CURRENT_SCHEMA_VERSION 9
+#define CURRENT_SCHEMA_VERSION 11
 
 
 #if defined(WIN32) && !defined(__WINDOWS__)

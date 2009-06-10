@@ -150,6 +150,10 @@ bool Creature::canSee(const Position& pos) const
 
 bool Creature::canSeeCreature(const Creature* creature) const
 {
+	if(creature == this){
+		return true;
+	}
+
 	if(creature->getPlayer() && creature->getPlayer()->hasFlag(PlayerFlag_CannotBeSeen)){
 		return false;
 	}
@@ -339,17 +343,14 @@ void Creature::stopEventWalk()
 
 void Creature::internalCreatureDisappear(const Creature* creature, bool isLogout)
 {
-	onCreatureDisappear(creature, true);
-
-	if(creature == this){
-		if(getMaster() && !getMaster()->isRemoved()){
-			getMaster()->removeSummon(this);
-		}
+	if(attackedCreature == creature){
+		setAttackedCreature(NULL);
+		onAttackedCreatureDissapear(isLogout);
 	}
-	else if(isMapLoaded){
-		if(creature->getPosition().z == getPosition().z){
-			updateTileCache(creature->getTile(), creature->getPosition());
-		}
+
+	if(followCreature == creature){
+		setFollowCreature(NULL);
+		onFollowCreatureDissapear(isLogout);
 	}
 }
 
@@ -516,14 +517,17 @@ void Creature::onCreatureAppear(const Creature* creature, bool isLogin)
 
 void Creature::onCreatureDisappear(const Creature* creature, bool isLogout)
 {
-	if(attackedCreature == creature){
-		setAttackedCreature(NULL);
-		onAttackedCreatureDissapear(isLogout);
-	}
+	internalCreatureDisappear(creature, true);
 
-	if(followCreature == creature){
-		setFollowCreature(NULL);
-		onFollowCreatureDissapear(isLogout);
+	if(creature == this){
+		if(getMaster() && !getMaster()->isRemoved()){
+			getMaster()->removeSummon(this);
+		}
+	}
+	else if(isMapLoaded){
+		if(creature->getPosition().z == getPosition().z){
+			updateTileCache(creature->getTile(), creature->getPosition());
+		}
 	}
 }
 
@@ -732,7 +736,7 @@ void Creature::onDie()
 
 	if(getKillers(&lastHitCreature, &mostDamageCreature)){
 		if(lastHitCreature){
-			lastHitCreature->onKilledCreature(this);
+			lastHitCreature->onKilledCreature(this, true);
 			lastHitCreatureMaster = lastHitCreature->getMaster();
 		}
 
@@ -744,7 +748,7 @@ void Creature::onDie()
 
 			if(mostDamageCreature != lastHitCreature && isNotLastHitMaster &&
 				isNotMostDamageMaster && isNotSameMaster){
-				mostDamageCreature->onKilledCreature(this);
+				mostDamageCreature->onKilledCreature(this, false);
 			}
 		}
 	}
@@ -1300,10 +1304,10 @@ void Creature::onAttackedCreatureKilled(Creature* target)
 	}
 }
 
-void Creature::onKilledCreature(Creature* target)
+void Creature::onKilledCreature(Creature* target, bool lastHit)
 {
 	if(getMaster()){
-		getMaster()->onKilledCreature(target);
+		getMaster()->onKilledCreature(target, lastHit);
 	}
 
 	//scripting event - onKill

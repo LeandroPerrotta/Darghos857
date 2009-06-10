@@ -975,12 +975,16 @@ bool Player::canSeeInvisibility() const
 
 bool Player::canSeeCreature(const Creature* creature) const
 {
-	if(canSeeInvisibility()){
+	if(canSeeInvisibility() || creature == this){
 		return true;
 	}
 
-	if(creature->getPlayer() && creature->getPlayer()->hasFlag(PlayerFlag_CannotBeSeen)){
-		return false;
+	if(creature->getPlayer()){
+		if(creature->getPlayer()->hasFlag(PlayerFlag_CannotBeSeen)){
+			return false;
+		}
+
+		return true;
 	}
 	else if(creature->isInvisible()){
 		return false;
@@ -2391,23 +2395,29 @@ void Player::preSave()
 
 void Player::addCombatExhaust(uint32_t ticks)
 {
-	// Add exhaust condition
-	Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_EXHAUST_COMBAT, ticks, 0);
-	addCondition(condition);
+	if(!hasFlag(PlayerFlag_HasNoExhaustion)){
+		// Add exhaust condition
+		Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_EXHAUST_COMBAT, ticks, 0);
+		addCondition(condition);
+	}
 }
 
 void Player::addHealExhaust(uint32_t ticks)
 {
-	Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_EXHAUST_HEAL, ticks, 0);
-	addCondition(condition);
+	if(!hasFlag(PlayerFlag_HasNoExhaustion)){
+		Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_EXHAUST_HEAL, ticks, 0);
+		addCondition(condition);
+	}
 }
 
 void Player::addInFightTicks(bool pzlock /*= false*/)
 {
-	Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_INFIGHT, g_game.getInFightTicks(), 0);
-	addCondition(condition);
-	if(pzlock)
-		pzLocked = true;
+	if(!hasFlag(PlayerFlag_NotGainInFight)){
+		Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_INFIGHT, g_game.getInFightTicks(), 0);
+		addCondition(condition);
+		if(pzlock)
+			pzLocked = true;
+	}
 }
 
 void Player::addDefaultRegeneration(uint32_t addTicks)
@@ -3691,7 +3701,7 @@ void Player::onTargetCreatureGainHealth(Creature* target, int32_t points)
 	}
 }
 
-void Player::onKilledCreature(Creature* target)
+void Player::onKilledCreature(Creature* target, bool lastHit)
 {
 	if(hasFlag(PlayerFlag_NotGenerateLoot)){
 		target->setDropLoot(false);
@@ -3712,7 +3722,7 @@ void Player::onKilledCreature(Creature* target)
 			}
 #endif
 
-			if(!Combat::isInPvpZone(this, targetPlayer) && hasCondition(CONDITION_INFIGHT)){
+			if(!Combat::isInPvpZone(this, targetPlayer) && hasCondition(CONDITION_INFIGHT) && lastHit){
 				pzLocked = true;
 				Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_INFIGHT, g_config.getNumber(ConfigManager::SKULL_TIME), 0);
 				addCondition(condition);
@@ -3725,7 +3735,7 @@ void Player::onKilledCreature(Creature* target)
 		addCondition(condition);
 	}
 	
-	Creature::onKilledCreature(target);
+	Creature::onKilledCreature(target, lastHit);
 }
 
 void Player::gainExperience(uint64_t& gainExp)

@@ -146,7 +146,12 @@ enum RespondParam_t{
 	RESPOND_KNIGHT = 256,
 	RESPOND_PALADIN = 512,
 	RESPOND_SORCERER = 1024,
+	#ifdef __DARGHOS__
+	RESPOND_LOWLEVEL = 2048,
+	RESPOND_FREE = 4096
+	#else
 	RESPOND_LOWLEVEL = 2048
+	#endif
 };
 
 enum ResponseType_t{
@@ -398,7 +403,7 @@ struct NpcState{
 	int32_t itemId;
 	int32_t subType;
 	bool ignoreCapacity;
-	bool buyWithBackpack; 
+	bool buyWithBackpack;
 	std::string spellName;
 	std::string listName;
 	std::string listPluralName;

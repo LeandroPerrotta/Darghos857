@@ -133,6 +133,8 @@ CREATE TABLE "houses" (
     "paid" BIGINT NOT NULL DEFAULT 0,
     "warnings" INT NOT NULL DEFAULT 0,
     "lastwarning" BIGINT NOT NULL DEFAULT 0,
+    "doors" INT NOT NULL DEFAULT 0,
+    "beds" INT NOT NULL DEFAULT 0,
     PRIMARY KEY ("id")
 );
 
@@ -182,6 +184,36 @@ CREATE TABLE "map_store" (
     KEY("house_id")
 );
 
+CREATE TABLE "player_deaths" (
+	"id" SERIAL,
+	"player_id" INT NOT NULL,
+	"date" INT NOT NULL,
+	"level" INT NOT NULL,
+    PRIMARY KEY ("id"),
+    FOREIGN KEY ("player_id") REFERENCES "players" ("id") ON DELETE CASCADE
+);
+
+CREATE TABLE "killers" (
+	"id" SERIAL,
+	"death_id" INT NOT NULL,
+	"final_hit" SMALLINT NOT NULL DEFAULT 1,
+	PRIMARY KEY("id"),
+    FOREIGN KEY ("death_id") REFERENCES "player_deaths" ("id") ON DELETE CASCADE
+);
+
+CREATE TABLE "environment_killers" (
+	"kill_id" INT NOT NULL,
+	"name" VARCHAR(255) NOT NULL,
+    FOREIGN KEY ("kill_id") REFERENCES "killers" ("id") ON DELETE CASCADE
+);
+
+CREATE TABLE "player_killers" (
+	"kill_id" INT NOT NULL,
+	"player_id" INT NOT NULL,
+    FOREIGN KEY ("kill_id") REFERENCES "killers" ("id") ON DELETE CASCADE,
+    FOREIGN KEY ("player_id") REFERENCES "players" ("id") ON DELETE CASCADE
+);
+
 CREATE TABLE "player_depotitems" (
     "player_id" INT NOT NULL,
     "depot_id" INT NOT NULL DEFAULT 0,
@@ -206,7 +238,7 @@ CREATE TABLE "schema_info" (
     PRIMARY KEY ("name")
 );
 
-INSERT INTO "schema_info" ("name", "value") VALUES ('version', 9);
+INSERT INTO "schema_info" ("name", "value") VALUES ('version', 11);
 
 CREATE FUNCTION "ondelete_accounts"()
 RETURNS TRIGGER

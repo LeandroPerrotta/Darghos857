@@ -370,7 +370,7 @@ public:
 	virtual void onAttacked();
 	virtual void onAttackedCreatureDrainHealth(Creature* target, int32_t points);
 	virtual void onTargetCreatureGainHealth(Creature* target, int32_t points);
-	virtual void onKilledCreature(Creature* target);
+	virtual void onKilledCreature(Creature* target, bool lastHit);
 	virtual void onGainExperience(uint64_t gainExp);
 	virtual void onGainSharedExperience(uint64_t gainExp);
 	virtual void onAttackedCreatureBlockHit(Creature* target, BlockType_t blockType);
@@ -446,13 +446,15 @@ public:
 	void sendCreatureChangeVisible(const Creature* creature, bool visible)
 		{
 			if(client){
-				if(creature->getPlayer() && !creature->getPlayer()->hasFlag(PlayerFlag_CannotBeSeen)){
-					if(visible){
-						client->sendCreatureOutfit(creature, creature->getCurrentOutfit());
-					}
-					else{
-						static Outfit_t outfit;
-						client->sendCreatureOutfit(creature, outfit);
+				if(creature->getPlayer()){
+					if(creature == this || !creature->getPlayer()->hasFlag(PlayerFlag_CannotBeSeen)){
+						if(visible){
+							client->sendCreatureOutfit(creature, creature->getCurrentOutfit());
+						}
+						else{
+							static Outfit_t outfit;
+							client->sendCreatureOutfit(creature, outfit);
+						}
 					}
 				}
 				else{
