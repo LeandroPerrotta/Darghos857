@@ -8,7 +8,7 @@ local config = {
 
 
 	if(item.actionid == aid.XP_PIRATE) then
-		if(getPlayerStorageValue(cid, sid.XP_PIRATE)) ~= 1 then
+		if(getPlayerStorageValue(cid, sid.PIRATE_EXPQUEST)) ~= 1 then
 			doPlayerAddExp(cid, config.p_exp)
 			setPlayerStorageValue(cid, sid.XP_PIRATE,1)
 			doSendAnimatedText(getCreaturePosition(cid), config.p_exp, TEXTCOLOR_YELLOW)
@@ -27,7 +27,7 @@ local config = {
 			doSendAnimatedText(getCreaturePosition(cid),"Fail!", TEXTCOLOR_LIGHTBLUE)
 		end
 	elseif(item.actionid == aid.XP_HELHEIM) then
-		if(getPlayerStorageValue(cid, sid.XP_HELHEIM)) ~= 1 then
+		if(getPlayerStorageValue(cid, sid.HELHEIM_EXPQUEST)) ~= 1 then
 			doPlayerAddExp(cid, config.h_exp)
 			setPlayerStorageValue(cid, sid.XP_HELHEIM,1)
 			doSendAnimatedText(getCreaturePosition(cid), config.h_exp, TEXTCOLOR_YELLOW)
@@ -41,7 +41,7 @@ local config = {
 			doSendAnimatedText(getCreaturePosition(cid),"Fail!", TEXTCOLOR_LIGHTBLUE)
 		end
 	elseif(item.actionid == aid.XP_MINES) then
-		if(getPlayerStorageValue(cid, sid.XP_MINES)) ~= 1 then
+		if(getPlayerStorageValue(cid, sid.MINES_EXPQUEST)) ~= 1 then
 			doPlayerAddExp(cid, config.m_exp)
 			setPlayerStorageValue(cid, sid.XP_MINES,1)
 			doSendAnimatedText(getCreaturePosition(cid), config.m_exp, TEXTCOLOR_YELLOW)
