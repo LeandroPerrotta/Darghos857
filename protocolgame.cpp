@@ -86,7 +86,7 @@ void ProtocolGame::addGameTaskInternal(bool droppable, uint32_t delay, const Fun
 	}
 }
 
-ProtocolGame::ProtocolGame(Connection* connection) :
+ProtocolGame::ProtocolGame(Connection_ptr connection) :
 	Protocol(connection)
 {
 	player = NULL;
@@ -234,6 +234,7 @@ bool ProtocolGame::login(const std::string& name, bool isSetGM)
 		player->lastip = player->getIP();
 		player->lastLoginSaved = std::max(time(NULL), player->lastLoginSaved + 1);
 		player->lastLoginMs = OTSYS_TIME();
+		IOPlayer::instance()->updateLoginInfo(player);
 		m_acceptPackets = true;
 
 		return true;
@@ -277,12 +278,12 @@ bool ProtocolGame::connect(uint32_t playerId)
 	player->isConnecting = false;
 	player->client = this;
 	player->client->sendAddCreature(player, player->getPosition(),
-		player->getTile()->__getIndexOfThing(player), false);
+		player->getTile()->__getIndexOfThing(player));
 	player->sendIcons();
 	player->lastip = player->getIP();
-	player->lastLoginSaved = std::max(time(NULL), player->lastLoginSaved + 1);
-	player->lastLoginMs = OTSYS_TIME();
+	IOPlayer::instance()->updateLoginInfo(player);
 	m_acceptPackets = true;
+	
 	return true;
 }
 
@@ -316,7 +317,7 @@ bool ProtocolGame::logout(bool forced)
 		}
 	}
 
-	if(Connection* connection = getConnection()){
+	if(Connection_ptr connection = getConnection()){
 		connection->closeConnection();
 	}
 
@@ -2133,7 +2134,7 @@ void ProtocolGame::sendUpdateTile(const Tile* tile, const Position& pos)
 	}
 }
 
-void ProtocolGame::sendAddCreature(const Creature* creature, const Position& pos, uint32_t stackpos, bool isLogin)
+void ProtocolGame::sendAddCreature(const Creature* creature, const Position& pos, uint32_t stackpos)
 {
 	if(canSee(creature)){
 		NetworkMessage_ptr msg = getOutputBuffer();

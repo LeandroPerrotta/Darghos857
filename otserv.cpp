@@ -29,6 +29,7 @@
 
 #include "otsystem.h"
 #include "server.h"
+#include "ioplayer.h"
 #include <boost/thread.hpp>
 #include <boost/asio.hpp>
 
@@ -433,10 +434,12 @@ void mainLoader(const CommandLineOptions& command_opts, ServiceManager* service_
 		ErrorMessage(os.str());
 		exit(-1);
 	}
-	std::cout << "[done]" << std::endl;
+	std::cout << " [done]" << std::endl;
 
 #ifdef WIN32
-	CreateMutex(NULL, true, "otserv_" + g_config.getNumber(ConfigManager::LOGIN_PORT));
+	std::stringstream mutexName;
+	mutexName << "otserv_" << g_config.getNumber(ConfigManager::LOGIN_PORT);
+	CreateMutex(NULL, FALSE, mutexName.str().c_str());
 	if(GetLastError() == ERROR_ALREADY_EXISTS)
 		ErrorMessage("There's an another instance of the OTServ running with the same login port, please shut it down first or change ports for this one.");
 #endif
@@ -601,6 +604,15 @@ void mainLoader(const CommandLineOptions& command_opts, ServiceManager* service_
 	}
 
 	std::cout << ":: Worldtype: " << asUpperCaseString(worldType) << std::endl;
+	
+	std::cout << ":: Cleaning online players info... " << std::flush;
+	if(!IOPlayer::instance()->cleanOnlineInfo()){
+		std::stringstream errormsg;
+		errormsg << "Unable to execute query for cleaning online status!";
+		ErrorMessage(errormsg.str().c_str());
+		exit(-1);
+	}
+	std::cout << "[done]" << std::endl;
 
 	#ifdef __SKULLSYSTEM__
 	std::cout << ":: Skulls enabled" << std::endl;
@@ -624,7 +636,6 @@ void mainLoader(const CommandLineOptions& command_opts, ServiceManager* service_
 		exit(-1);
 	}
 
-
 	if(!g_game.loadMap(g_config.getString(ConfigManager::MAP_FILE),
 		g_config.getString(ConfigManager::MAP_KIND))){
 		// ok ... so we didn't succeed in laoding the map.
@@ -633,13 +644,10 @@ void mainLoader(const CommandLineOptions& command_opts, ServiceManager* service_
 		filename.str("");
 		filename << g_config.getString(ConfigManager::DATA_DIRECTORY) << g_config.getString(ConfigManager::MAP_FILE);
 
-		if(!g_game.loadMap(filename.str(),
-			g_config.getString(ConfigManager::MAP_KIND))){
-		ErrorMessage("Couldn't load map");
-				exit(-1);
-			}
-
-
+		if(!g_game.loadMap(filename.str(), g_config.getString(ConfigManager::MAP_KIND))){
+			ErrorMessage("Couldn't load map");
+			exit(-1);
+		}
 	}
 
 	g_game.setGameState(GAME_STATE_INIT);

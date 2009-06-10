@@ -33,6 +33,8 @@
 extern BanManager g_bans;
 
 
+bool ServicePort::m_logError = true;
+
 ///////////////////////////////////////////////////////////////////////////////
 // Service
 
@@ -67,7 +69,12 @@ void ServiceManager::run()
 {
 	assert(!running);
 	running = true;
-	m_io_service.run();
+	try{
+		m_io_service.run();
+	}
+	catch(boost::system::system_error& e){
+		LOG_MESSAGE("NETWORK", LOGTYPE_ERROR, 1, e.what());
+	}
 }
 
 void ServiceManager::stop()
@@ -80,7 +87,12 @@ void ServiceManager::stop()
 	for(std::map<uint16_t, ServicePort_ptr>::iterator it = m_acceptors.begin();
 		it != m_acceptors.end(); ++it)
 	{
-		m_io_service.post(boost::bind(&ServicePort::onStopServer, it->second));
+		try{
+			m_io_service.post(boost::bind(&ServicePort::onStopServer, it->second));
+		}
+		catch(boost::system::system_error& e){
+			LOG_MESSAGE("NETWORK", LOGTYPE_ERROR, 1, e.what());
+		}
 	}
 	m_acceptors.clear();
 
@@ -98,8 +110,7 @@ ServicePort::ServicePort(boost::asio::io_service& io_service) :
 	m_io_service(io_service),
 	m_acceptor(NULL),
 	m_serverPort(0),
-	m_pendingStart(false),
-	m_logError(true)
+	m_pendingStart(false)
 {
 }
 
@@ -134,11 +145,19 @@ void ServicePort::accept()
 		return;
 	}
 
-	boost::asio::ip::tcp::socket* socket = new boost::asio::ip::tcp::socket(m_io_service);
+	try{
+		boost::asio::ip::tcp::socket* socket = new boost::asio::ip::tcp::socket(m_io_service);
 
-	m_acceptor->async_accept(*socket,
-		boost::bind(&ServicePort::onAccept, this, socket,
-		boost::asio::placeholders::error));
+		m_acceptor->async_accept(*socket,
+			boost::bind(&ServicePort::onAccept, this, socket,
+			boost::asio::placeholders::error));
+	}
+	catch(boost::system::system_error& e){
+		if(m_logError){
+			LOG_MESSAGE("NETWORK", LOGTYPE_ERROR, 1, e.what());
+			m_logError = false;
+		}
+	}
 }
 
 void ServicePort::onAccept(boost::asio::ip::tcp::socket* socket, const boost::system::error_code& error)
@@ -160,7 +179,7 @@ void ServicePort::onAccept(boost::asio::ip::tcp::socket* socket, const boost::sy
 
 		if(remote_ip != 0 && g_bans.acceptConnection(remote_ip)){
 
-			Connection* connection = ConnectionManager::getInstance()->createConnection(socket, m_io_service, shared_from_this());
+			Connection_ptr connection = ConnectionManager::getInstance()->createConnection(socket, m_io_service, shared_from_this());
 
 			if(m_services.front()->is_single_socket()){
 				// Only one handler, and it will send first
@@ -192,7 +211,7 @@ void ServicePort::onAccept(boost::asio::ip::tcp::socket* socket, const boost::sy
 			if(!m_pendingStart){
 				m_pendingStart = true;
 				g_scheduler.addEvent(createSchedulerTask(5000,
-					boost::bind(&ServicePort::open, this, m_serverPort)));
+					boost::bind(&ServicePort::openAcceptor, boost::weak_ptr<ServicePort>(shared_from_this()), m_serverPort)));
 			}
 		}
 		else{
@@ -212,7 +231,7 @@ Protocol* ServicePort::make_protocol(bool checksummed, NetworkMessage& msg) cons
 		if(service->get_protocol_identifier() == protocolId && ((checksummed &&
 			service->is_checksummed()) || !service->is_checksummed())){
 			// Correct service! Create protocol and get on with it
-			return service->make_protocol(NULL);
+			return service->make_protocol(Connection_ptr());
 		}
 
 		// We can ignore the other cases, they will most likely end up in return NULL anyways.
@@ -224,6 +243,20 @@ Protocol* ServicePort::make_protocol(bool checksummed, NetworkMessage& msg) cons
 void ServicePort::onStopServer()
 {
 	close();
+}
+
+void ServicePort::openAcceptor(boost::weak_ptr<ServicePort> weak_service, uint16_t port)
+{
+	if(weak_service.expired()){
+		return;
+	}
+
+	if(ServicePort_ptr service = weak_service.lock()){		
+		#ifdef __DEBUG_NET_DETAIL__
+		std::cout << "ServicePort::openAcceptor" << std::endl;
+		#endif
+		service->open(port);
+	}
 }
 
 void ServicePort::open(uint16_t port)
@@ -245,7 +278,7 @@ void ServicePort::open(uint16_t port)
 
 		m_pendingStart = true;
 		g_scheduler.addEvent(createSchedulerTask(5000,
-			boost::bind(&ServicePort::open, this, port)));
+			boost::bind(&ServicePort::openAcceptor, boost::weak_ptr<ServicePort>(shared_from_this()), port)));
 	}
 }
 

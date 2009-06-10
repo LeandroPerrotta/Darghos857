@@ -374,7 +374,7 @@ public:
 		const Position& movingCreatureOrigPos, const Position& toPos);
 	bool playerMoveItem(uint32_t playerId, const Position& fromPos,
 		uint16_t spriteId, uint8_t fromStackPos, const Position& toPos, uint8_t count);
-	bool playerMove(uint32_t playerId, Direction direction);
+	bool playerMove(uint32_t playerId, Direction dir);
 	bool playerCreatePrivateChannel(uint32_t playerId);
 	bool playerChannelInvite(uint32_t playerId, const std::string& name);
 	bool playerChannelExclude(uint32_t playerId, const std::string& name);
@@ -466,7 +466,7 @@ public:
 
 	GameState_t getGameState();
 	void setGameState(GameState_t newState);
-	bool saveServer(bool globalSave);
+	bool saveServer(bool payHouses);
 	void saveGameState();
 	void loadGameState();
 	void refreshMap(Map::TileMap::iterator* begin = NULL, int clean_max = 0);

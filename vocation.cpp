@@ -123,6 +123,42 @@ bool Vocations::loadFromXml(const std::string& datadir)
 								std::cout << "Missing skill id." << std::endl;
 							}
 						}
+						else if(xmlStrcmp(skillNode->name, (const xmlChar*)"damage") == 0){
+							if(readXMLFloat(skillNode, "magicDamage", floatVal)){
+								voc->magicBaseDamage = floatVal;
+							}
+							if(readXMLFloat(skillNode, "wandDamage", floatVal)){
+								voc->wandBaseDamage = floatVal;
+							}
+							if(readXMLFloat(skillNode, "healingDamage", floatVal)){
+								voc->healingBaseDamage = floatVal;
+							}
+						}
+						else if(xmlStrcmp(skillNode->name, (const xmlChar*)"meleeDamage") == 0){
+							if(readXMLFloat(skillNode, "sword", floatVal)){
+								voc->swordBaseDamage = floatVal;
+							}
+							if(readXMLFloat(skillNode, "axe", floatVal)){
+								voc->axeBaseDamage = floatVal;
+							}
+							if(readXMLFloat(skillNode, "club", floatVal)){
+								voc->clubBaseDamage = floatVal;
+							}
+							if(readXMLFloat(skillNode, "dist", floatVal)){
+								voc->distBaseDamage = floatVal;
+							}
+							if(readXMLFloat(skillNode, "fist", floatVal)){
+								voc->fistBaseDamage = floatVal;
+							}
+						}
+						else if(xmlStrcmp(skillNode->name, (const xmlChar*)"defense") == 0){
+							if(readXMLFloat(skillNode, "baseDefense", floatVal)){
+								voc->baseDefense = floatVal;
+							}
+							if(readXMLFloat(skillNode, "armorDefense", floatVal)){
+								voc->armorDefense = floatVal;
+							}
+						}
 						skillNode = skillNode->next;
 					}
 
@@ -187,6 +223,19 @@ Vocation::Vocation()
 	skillMultipliers[4] = 2.0f;
 	skillMultipliers[5] = 1.5f;
 	skillMultipliers[6] = 1.1f;
+
+	swordBaseDamage = 1.;
+	axeBaseDamage = 1.;
+	clubBaseDamage = 1.;
+	distBaseDamage = 1.;
+	fistBaseDamage = 1.;
+
+	magicBaseDamage = 1.;
+	wandBaseDamage = 1.;
+	healingBaseDamage = 1.;
+
+	baseDefense = 1.;
+	armorDefense = 1.;
 }
 
 Vocation::~Vocation()

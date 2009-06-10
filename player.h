@@ -182,6 +182,7 @@ public:
 
 	void setVocation(uint32_t vocId);
 	uint32_t getVocationId() const;
+	Vocation* getVocation() const {return vocation;};
 
 	playersex_t getSex() const {return sex;}
 	void setSex(playersex_t);
@@ -307,7 +308,7 @@ public:
 	virtual void onWalk(Direction& dir);
 	virtual void onWalkAborted();
 	virtual void onWalkComplete();
-	
+
 	void checkIdleTime(uint32_t ticks);
 	void setIdleTime(uint32_t value, bool warned){idleTime = value; idleWarned = warned;}
 
@@ -406,7 +407,7 @@ public:
 	uint32_t getFrags();
 	int64_t getRedSkullTicks() const {return redSkullTicks;}
 #endif
-	
+
 	void checkRecentlyGainedExperience(uint32_t interval);
 	const OutfitListType& getPlayerOutfits();
 	bool canWear(uint32_t _looktype, uint32_t _addons);
@@ -425,11 +426,11 @@ public:
 	void sendUpdateTile(const Tile* tile, const Position& pos)
 		{if(client) client->sendUpdateTile(tile, pos);}
 
-	void sendCreatureAppear(const Creature* creature, const Position& pos, bool isLogin)
-		{if(client) client->sendAddCreature(creature, pos, creature->getTile()->getClientIndexOfThing(this, creature), isLogin);}
-	void sendCreatureDisappear(const Creature* creature, bool isLogout)
-		{if(client) client->sendRemoveCreature(creature, creature->getPosition(), 
-			creature->getTile()->getClientIndexOfThing(this, creature), isLogout);}
+	void sendCreatureAppear(const Creature* creature, const Position& pos)
+		{if(client) client->sendAddCreature(creature, pos, creature->getTile()->getClientIndexOfThing(this, creature));}
+	void sendCreatureDisappear(const Creature* creature, uint32_t stackpos, bool isLogout)
+		{if(client) client->sendRemoveCreature(creature, creature->getPosition(),
+			stackpos, isLogout);}
 	void sendCreatureMove(const Creature* creature, const Tile* newTile, const Position& newPos,
 		const Tile* oldTile, const Position& oldPos, uint32_t oldStackPos, bool teleport)
 		{if(client) client->sendMoveCreature(creature, newTile, newPos, newTile->getClientIndexOfThing(this, creature),
@@ -463,10 +464,10 @@ public:
 					}
 					else{
 						if(visible){
-							client->sendAddCreature(creature, creature->getPosition(), creature->getTile()->getClientIndexOfThing(this, creature), false);
+							client->sendAddCreature(creature, creature->getPosition(), creature->getTile()->getClientIndexOfThing(this, creature));
 						}
 						else{
-							client->sendRemoveCreature(creature, creature->getPosition(), creature->getTile()->__getIndexOfThing(creature), false);
+							client->sendRemoveCreature(creature, creature->getPosition(), creature->getTile()->getClientIndexOfThing(this, creature), false);
 						}
 					}
 				}
@@ -639,7 +640,7 @@ public:
 	//items
 	ContainerVector containerVec;
 	void preSave();
-	
+
 	//stamina
 	void addStamina(int64_t value);
 	void removeStamina(int64_t value) {addStamina(-value);}
@@ -726,7 +727,7 @@ protected:
 	uint32_t nextStepEvent;
 	uint32_t walkTaskEvent;
 	SchedulerTask* walkTask;
-	
+
 	int32_t idleTime;
 	bool idleWarned;
 
@@ -775,7 +776,7 @@ protected:
 
 	//loss percent variables
 	uint32_t lossPercent[LOSS_LAST + 1];
-	
+
 	//rate value variables
 	double rateValue[LEVEL_LAST + 1];
 

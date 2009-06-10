@@ -429,6 +429,12 @@ bool Weapon::useFist(Player* player, Creature* target)
 		int32_t attackValue = 7;
 
 		int32_t maxDamage = Weapons::getMaxWeaponDamage(player->getLevel(), attackSkill, attackValue, attackFactor);
+
+		Vocation* vocation = player->getVocation();
+		if(vocation && vocation->getMeleeBaseDamage(WEAPON_NONE) != 1.0){
+			maxDamage = int32_t(maxDamage * vocation->getMeleeBaseDamage(WEAPON_NONE));
+		}
+
 		int32_t damage = -random_range(0, maxDamage, DISTRO_NORMAL);
 
 		CombatParams params;
@@ -708,6 +714,12 @@ int32_t WeaponMelee::getElementDamage(const Player* player, const Item* item) co
 	int32_t attackSkill = player->getWeaponSkill(item);
 	float attackFactor = player->getAttackFactor();
 	int32_t maxValue = Weapons::getMaxWeaponDamage(player->getLevel(), attackSkill, elementDamage, attackFactor);
+
+	Vocation* vocation = player->getVocation();
+	if(vocation && vocation->getMeleeBaseDamage(item->getWeaponType()) != 1.0){
+		maxValue = int32_t(maxValue * vocation->getMeleeBaseDamage(item->getWeaponType()));
+	}
+
 	return -random_range(0, maxValue, DISTRO_NORMAL);
 }
 
@@ -717,6 +729,11 @@ int32_t WeaponMelee::getWeaponDamage(const Player* player, const Creature* targe
 	int32_t attackValue = std::max((int32_t)0, ((int32_t)item->getAttack() - elementDamage));
 	float attackFactor = player->getAttackFactor();
 	int32_t maxValue = Weapons::getMaxWeaponDamage(player->getLevel(), attackSkill, attackValue, attackFactor);
+
+	Vocation* vocation = player->getVocation();
+	if(vocation && vocation->getMeleeBaseDamage(item->getWeaponType()) != 1.0){
+		maxValue = int32_t(maxValue * vocation->getMeleeBaseDamage(item->getWeaponType()));
+	}
 
 	if(maxDamage){
 		return -maxValue;
@@ -969,13 +986,17 @@ int32_t WeaponDistance::getWeaponDamage(const Player* player, const Creature* ta
 	int32_t attackSkill = player->getSkill(SKILL_DIST, SKILL_LEVEL);
 	float attackFactor = player->getAttackFactor();
 	int32_t maxValue = Weapons::getMaxWeaponDamage(player->getLevel(), attackSkill, attackValue, attackFactor);
+	int32_t minValue = 0;
 
+	Vocation* vocation = player->getVocation();
+	if(vocation && vocation->getMeleeBaseDamage(WEAPON_DIST) != 1.0){
+		maxValue = int32_t(maxValue * vocation->getMeleeBaseDamage(WEAPON_DIST));
+	}
 
 	if(maxDamage){
 		return -maxValue;
 	}
 
-	int32_t minValue = 0;
 	if(target){
 		if(target->getPlayer()){
 			minValue = (int32_t)std::ceil(player->getLevel() * 0.1);
@@ -983,6 +1004,10 @@ int32_t WeaponDistance::getWeaponDamage(const Player* player, const Creature* ta
 		else{
 			minValue = (int32_t)std::ceil(player->getLevel() * 0.2);
 		}
+	}
+	
+	if(vocation && vocation->getMeleeBaseDamage(WEAPON_DIST) != 1.0){
+		minValue = int32_t(minValue * vocation->getMeleeBaseDamage(WEAPON_DIST));
 	}
 
 	return -random_range(minValue, maxValue, DISTRO_NORMAL);
@@ -1078,9 +1103,18 @@ bool WeaponWand::configureWeapon(const ItemType& it)
 
 int32_t WeaponWand::getWeaponDamage(const Player* player, const Creature* target, const Item* item, bool maxDamage /*= false*/) const
 {
-	if(maxDamage){
-		return -maxChange;
+	int32_t minValue = minChange;
+	int32_t maxValue = maxChange;
+
+	Vocation* vocation = player->getVocation();
+	if(vocation && vocation->getWandBaseDamage() != 1.0){
+		 minValue = int32_t(minValue * vocation->getWandBaseDamage());
+		 maxValue = int32_t(maxValue * vocation->getWandBaseDamage());
 	}
 
-	return random_range(-minChange, -maxChange, DISTRO_NORMAL);
+	if(maxDamage){
+		return -maxValue;
+	}
+
+	return random_range(-minValue, -maxValue, DISTRO_NORMAL);
 }

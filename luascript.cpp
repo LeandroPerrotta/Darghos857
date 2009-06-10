@@ -42,11 +42,13 @@
 #include "configmanager.h"
 #include "teleport.h"
 #include "ban.h"
+#include "movement.h"
 
 extern Game g_game;
 extern Monsters g_monsters;
 extern BanManager g_bans;
 extern ConfigManager g_config;
+extern MoveEvents* g_moveEvents;
 extern Spells* g_spells;
 
 enum{
@@ -1786,7 +1788,7 @@ void LuaScriptInterface::registerFunctions()
 	//isPzLocked(cid)
 	lua_register(m_luaState, "isPzLocked", LuaScriptInterface::luaIsPzLocked);
 
-	//doSaveServer(globalsave)
+	//doSaveServer(payHouses)
 	lua_register(m_luaState, "doSaveServer", LuaScriptInterface::luaDoSaveServer);
 
 	//getPlayerFrags(cid)
@@ -2146,7 +2148,7 @@ int LuaScriptInterface::luaGetPlayerFlagValue(lua_State *L)
 	Player* player = env->getPlayerByUID(cid);
 	if(player){
 		if(flagindex < PlayerFlag_LastFlag){
-			lua_pushnumber(L, player->hasFlag((PlayerFlags)flagindex) ? 1 : 0);
+			lua_pushnumber(L, player->hasFlag((PlayerFlags)flagindex) ? LUA_TRUE : LUA_FALSE);
 		}
 		else{
 			reportErrorFunc("No valid flag index.");
@@ -2519,7 +2521,6 @@ int LuaScriptInterface::luaDoTeleportThing(lua_State *L)
 			lua_pushnumber(L, LUA_NO_ERROR);
 		}
 		else{
-			reportErrorFunc("Can not teleport thing.");
 			lua_pushnumber(L, LUA_ERROR);
 		}
 	}
@@ -2746,10 +2747,18 @@ int LuaScriptInterface::luaDoPlayerAddMana(lua_State *L)
 	int32_t manaChange = (int32_t)popNumber(L);
 	ScriptEnviroment* env = getScriptEnv();
 	if(Player* player = env->getPlayerByUID(popNumber(L))){
-		if(filter)
-			g_game.combatChangeMana(NULL, player, manaChange);
-		else
-			player->drainMana(NULL, manaChange);
+		if(manaChange > 0){
+			player->changeMana(manaChange);
+		}
+		else{
+			if(filter){
+				player->drainMana(NULL, -manaChange);
+			}
+			else{
+				g_game.combatChangeMana(NULL, player, manaChange);
+			}
+		}
+			
 		lua_pushnumber(L, LUA_NO_ERROR);
 	}
 	else{
@@ -3648,7 +3657,6 @@ int LuaScriptInterface::luaDoCreateItem(lua_State *L)
 
 			if(ret != RET_NOERROR){
 				delete newItem;
-				reportErrorFunc("Could not add item");
 				lua_pushnumber(L, LUA_ERROR);
 				return 1;
 			}
@@ -3675,7 +3683,6 @@ int LuaScriptInterface::luaDoCreateItem(lua_State *L)
 		ReturnValue ret = g_game.internalAddItem(tile, newItem, INDEX_WHEREEVER, FLAG_NOLIMIT);
 		if(ret != RET_NOERROR){
 			delete newItem;
-			reportErrorFunc("Can not add Item");
 			lua_pushnumber(L, LUA_ERROR);
 			return 1;
 		}
@@ -3767,7 +3774,6 @@ int LuaScriptInterface::luaDoCreateTeleport(lua_State *L)
 	ReturnValue ret = g_game.internalAddItem(tile, newTp, INDEX_WHEREEVER, FLAG_NOLIMIT);
 	if(ret != RET_NOERROR){
 		delete newItem;
-		reportErrorFunc("Can not add Item");
 		lua_pushnumber(L, LUA_ERROR);
 		return 1;
 	}
@@ -3846,7 +3852,11 @@ int LuaScriptInterface::luaDoSetItemActionId(lua_State *L)
 
 	Item* item = env->getItemByUID(uid);
 	if(item){
+		if(item->getActionId() != 0){
+			g_moveEvents->onRemoveTileItem(item->getTile(), item);
+		}
 		item->setActionId(actionid);
+		g_moveEvents->onAddTileItem(item->getTile(), item);
 		lua_pushnumber(L, LUA_NO_ERROR);
 	}
 	else{
@@ -4541,9 +4551,9 @@ int LuaScriptInterface::luaCleanHouse(lua_State *L)
 
 	if(house) {
 		house->cleanHouse();
-		lua_pushboolean(L, 1);
+		lua_pushnumber(L, LUA_TRUE);
 	} else {
-		lua_pushboolean(L, 0);
+		lua_pushnumber(L, LUA_FALSE);
 	}
 
 	return 1;
@@ -6684,7 +6694,6 @@ int LuaScriptInterface::luaDoAddContainerItem(lua_State *L)
 
 				if(ret != RET_NOERROR){
 					delete newItem;
-					reportErrorFunc("Could not add item");
 					lua_pushnumber(L, LUA_ERROR);
 					return 1;
 				}
@@ -6711,7 +6720,6 @@ int LuaScriptInterface::luaDoAddContainerItem(lua_State *L)
 			ReturnValue ret = g_game.internalAddItem(container, newItem);
 			if(ret != RET_NOERROR){
 				delete newItem;
-				reportErrorFunc("Could not add item");
 				lua_pushnumber(L, LUA_ERROR);
 				return 1;
 			}
@@ -7197,10 +7205,14 @@ int LuaScriptInterface::luaDoPlayerSetRate(lua_State *L)
 
 int LuaScriptInterface::luaDoSaveServer(lua_State *L)
 {
-	//doSaveServer(globalSave)
-	bool globalSave = (popNumber(L) > 0);
-	bool b = g_game.saveServer(globalSave);
-	lua_pushnumber(L, b? LUA_NO_ERROR : LUA_ERROR);
+	//doSaveServer(payHouses)
+	bool payHouses = (popNumber(L) > 0);
+	if(!g_game.saveServer(payHouses)){
+		lua_pushnumber(L, LUA_ERROR);
+		return 1;
+	}
+
+	lua_pushnumber(L, LUA_NO_ERROR);
 	return 1;
 }
 

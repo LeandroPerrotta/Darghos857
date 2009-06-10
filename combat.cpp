@@ -82,6 +82,19 @@ bool Combat::getMinMaxValues(Creature* creature, Creature* target, int32_t& min,
 				{
 					max = (int32_t)((player->getLevel() + player->getMagicLevel() * 4) * 1. * mina + minb);
 					min = (int32_t)((player->getLevel() + player->getMagicLevel() * 4) * 1. * maxa + maxb);
+
+					Vocation* vocation = player->getVocation();
+					if(vocation){
+						if(max > 0 && min > 0 && vocation->getHealingBaseDamage() != 1.0){
+							min = int32_t(min * vocation->getHealingBaseDamage());
+							max = int32_t(max * vocation->getHealingBaseDamage());
+						}
+						else if(max < 0 && min < 0 && vocation->getMagicBaseDamage() != 1.0){
+							min = int32_t(min * vocation->getMagicBaseDamage());
+							max = int32_t(max * vocation->getMagicBaseDamage());
+						}
+					}
+
 					return true;
 					break;
 				}
@@ -772,7 +785,7 @@ void Combat::CombatFunc(Creature* caster, const Position& pos,
 
 		if(canDoCombat(caster, iter_tile, params.isAggressive) == RET_NOERROR){
 			if(iter_tile->getCreatures()){
-				for(CreatureVector::iterator cit = iter_tile->getCreatures()->begin(), 
+				for(CreatureVector::iterator cit = iter_tile->getCreatures()->begin(),
 					cend = iter_tile->getCreatures()->end();
 					bContinue && cit != cend; ++cit)
 				{
@@ -1001,6 +1014,7 @@ void ValueCallback::getMinMaxValues(Player* player, int32_t& min, int32_t& max, 
 		lua_pushnumber(L, cid);
 
 		int32_t parameters = 1;
+		bool isMagicFormula = false;
 
 		switch(type){
 			case FORMULA_LEVELMAGIC:
@@ -1009,6 +1023,7 @@ void ValueCallback::getMinMaxValues(Player* player, int32_t& min, int32_t& max, 
 				lua_pushnumber(L, player->getLevel());
 				lua_pushnumber(L, player->getMagicLevel());
 				parameters += 2;
+				isMagicFormula = true;
 				break;
 			}
 
@@ -1048,6 +1063,18 @@ void ValueCallback::getMinMaxValues(Player* player, int32_t& min, int32_t& max, 
 		else{
 			max = LuaScriptInterface::popNumber(L);
 			min = LuaScriptInterface::popNumber(L);
+			
+			Vocation* vocation = player->getVocation();
+			if(isMagicFormula && vocation){
+				if(max > 0 && min > 0 && vocation->getHealingBaseDamage() != 1.0){
+					min = int32_t(min * vocation->getHealingBaseDamage());
+					max = int32_t(max * vocation->getHealingBaseDamage());
+				}
+				else if(max < 0 && min < 0 && vocation->getMagicBaseDamage() != 1.0){
+					min = int32_t(min * vocation->getMagicBaseDamage());
+					max = int32_t(max * vocation->getMagicBaseDamage());
+				}
+			}
 		}
 
 		if((lua_gettop(L) + parameters /*nParams*/  + 1) != size0){
@@ -1485,7 +1512,7 @@ void MagicField::onStepInField(Creature* creature, bool purposeful/*= true*/)
 						}
 					}
 				}
-				if(   !harmfulField || 
+				if(   !harmfulField ||
 					  (OTSYS_TIME() - createTime <= g_config.getNumber(ConfigManager::FIELD_OWNERSHIP_DURATION)) ||
 						creature->hasBeenAttacked(owner))
 				{

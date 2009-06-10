@@ -29,6 +29,7 @@
 #include <boost/enable_shared_from_this.hpp>
 
 class Connection;
+typedef boost::shared_ptr<Connection> Connection_ptr;
 class Protocol;
 class NetworkMessage;
 
@@ -45,12 +46,14 @@ typedef boost::shared_ptr<ServicePort> ServicePort_ptr;
 class ServiceBase : boost::noncopyable
 {
 public:
+	virtual ~ServiceBase() {} // Redundant, but stifles compiler warnings
+
 	virtual bool is_single_socket() const = 0;
 	virtual bool is_checksummed() const = 0;
 	virtual uint8_t get_protocol_identifier() const = 0;
 	virtual const char* get_protocol_name() const = 0;
 
-	virtual Protocol* make_protocol(Connection* c) const = 0;
+	virtual Protocol* make_protocol(Connection_ptr c) const = 0;
 };
 
 template <typename ProtocolType>
@@ -62,7 +65,7 @@ public:
 	uint8_t get_protocol_identifier() const {return ProtocolType::protocol_identifier;}
 	const char* get_protocol_name() const {return ProtocolType::protocol_name();}
 
-	Protocol* make_protocol(Connection* c) const {return new ProtocolType(c);}
+	Protocol* make_protocol(Connection_ptr c) const {return new ProtocolType(c);}
 };
 
 // A Service Port represents a listener on a port.
@@ -75,6 +78,7 @@ public:
 	ServicePort(boost::asio::io_service& io_service);
 	~ServicePort();
 
+	static void openAcceptor(boost::weak_ptr<ServicePort> weak_service, uint16_t port);
 	void open(uint16_t port);
 	void close();
 	bool is_single_socket() const;
@@ -95,7 +99,7 @@ protected:
 
 	uint16_t m_serverPort;
 	bool m_pendingStart;
-	bool m_logError;
+	static bool m_logError;
 };
 
 typedef boost::shared_ptr<ServicePort> ServicePort_ptr;

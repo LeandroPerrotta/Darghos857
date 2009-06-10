@@ -24,9 +24,9 @@
 
 
 #define OTSERV_VERSION "0.6.3_SVN"
-#define OTSERV_NAME "EluneOT"
+#define OTSERV_NAME "Darghos"
 #define OTSERV_CLIENT_VERSION "8.42"
-#define CURRENT_SCHEMA_VERSION 11
+#define CURRENT_SCHEMA_VERSION 13
 
 
 #if defined(WIN32) && !defined(__WINDOWS__)
@@ -37,6 +37,13 @@
 	#define xmlFreeOTSERV(s)	free(s)
 #else
 	#define xmlFreeOTSERV(s)	xmlFree(s)
+#endif
+
+#ifdef __USE_MINIDUMP__
+	#ifndef __EXCEPTION_TRACER__
+		#define __EXCEPTION_TRACER__
+	#endif
+
 #endif
 
 #ifdef __DEBUG_EXCEPTION_REPORT__

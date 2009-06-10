@@ -57,7 +57,7 @@ public:
 	static uint32_t protocolGameCount;
 #endif
 
-	ProtocolGame(Connection* connection);
+	ProtocolGame(Connection_ptr connection);
 	virtual ~ProtocolGame();
 
 	bool login(const std::string& name, bool isSetGM);
@@ -191,7 +191,6 @@ private:
 	void sendCancelWalk();
 	void sendChangeSpeed(const Creature* creature, uint32_t speed);
 	void sendCancelTarget();
-	void sendCreatureVisible(const Creature* creature, bool visible);
 	void sendCreatureOutfit(const Creature* creature, const Outfit_t& outfit);
 	void sendStats();
 	void sendTextMessage(MessageClasses mclass, const std::string& message);
@@ -231,7 +230,7 @@ private:
 	void sendRemoveTileItem(const Tile* tile, const Position& pos, uint32_t stackpos);
 	void sendUpdateTile(const Tile* tile, const Position& pos);
 
-	void sendAddCreature(const Creature* creature, const Position& pos, uint32_t stackpos, bool isLogin);
+	void sendAddCreature(const Creature* creature, const Position& pos, uint32_t stackpos);
 	void sendRemoveCreature(const Creature* creature, const Position& pos, uint32_t stackpos, bool isLogout);
 	void sendMoveCreature(const Creature* creature, const Tile* newTile, const Position& newPos, uint32_t newStackPos,
 		const Tile* oldTile, const Position& oldPos, uint32_t oldStackPos, bool teleport);

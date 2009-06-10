@@ -184,7 +184,7 @@ public:
 	static uint32_t protocolAdminCount;
 #endif
 
-	ProtocolAdmin(Connection* connection);
+	ProtocolAdmin(Connection_ptr connection);
 	virtual ~ProtocolAdmin();
 
 	virtual void parsePacket(NetworkMessage& msg);
@@ -210,10 +210,7 @@ protected:
 		LOGGED_IN,
 	};
 
-
-
 private:
-
 	int32_t m_loginTries;
 	ConnectionState_t m_state;
 	time_t m_lastCommand;

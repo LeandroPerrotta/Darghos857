@@ -169,8 +169,13 @@ void Game::setGameState(GameState_t newState)
 				break;
 			}
 
-			case GAME_STATE_STARTUP:
 			case GAME_STATE_CLOSED:
+			{
+				g_bans.clearTemporaryBans();
+				break;
+			}
+
+			case GAME_STATE_STARTUP:
 			case GAME_STATE_CLOSING:
 			case GAME_STATE_NORMAL:
 			default:
@@ -185,7 +190,7 @@ void Game::saveGameState()
 	ScriptEnviroment::saveGameState();
 }
 
-bool Game::saveServer(bool globalSave)
+bool Game::saveServer(bool payHouses)
 {
 	saveGameState();
 
@@ -197,13 +202,11 @@ bool Game::saveServer(bool globalSave)
 		IOPlayer::instance()->savePlayer(it->second);
 	}
 
-	if(globalSave){
+	if(payHouses){
 		Houses::getInstance().payHouses();
-		g_bans.clearTemporaryBans();
 	}
 
 	return map->saveMap();
-
 }
 
 void Game::loadGameState()
@@ -640,7 +643,7 @@ bool Game::placeCreature(Creature* creature, const Position& pos, bool extendedP
 	Player* tmpPlayer = NULL;
 	for(it = list.begin(); it != list.end(); ++it) {
 		if((tmpPlayer = (*it)->getPlayer())){
-			tmpPlayer->sendCreatureAppear(creature, creature->getPosition(), true);
+			tmpPlayer->sendCreatureAppear(creature, creature->getPosition());
 		}
 	}
 
@@ -663,24 +666,34 @@ bool Game::removeCreature(Creature* creature, bool isLogout /*= true*/)
 	if(creature->isRemoved())
 		return false;
 
-#ifdef __DEBUG__
-	std::cout << "removing creature "<< std::endl;
-#endif
-
-	//std::cout << "remove: " << creature << " " << creature->getID() << std::endl;
-
-	Cylinder* cylinder = creature->getTile();
+	Tile* tile = creature->getTile();
 
 	SpectatorVec list;
 	SpectatorVec::iterator it;
-	getSpectators(list, cylinder->getPosition(), false, true);
+	getSpectators(list, tile->getPosition(), false, true);
 
-	//send to client
 	Player* player = NULL;
+	std::vector<uint32_t> oldStackPosVector;
 	for(it = list.begin(); it != list.end(); ++it){
 		if((player = (*it)->getPlayer())){
 			if(player->canSeeCreature(creature)){
-				player->sendCreatureDisappear(creature, isLogout);
+				oldStackPosVector.push_back(tile->getClientIndexOfThing(player, creature));
+			}
+		}
+	}	
+
+	int32_t oldIndex = tile->__getIndexOfThing(creature);
+	if(!map->removeCreature(creature)){
+		return false;
+	}
+	
+	//send to client
+	uint32_t i = 0;
+	for(it = list.begin(); it != list.end(); ++it){
+		if((player = (*it)->getPlayer())){
+			if(player->canSeeCreature(creature)){
+				player->sendCreatureDisappear(creature, oldStackPosVector[i], isLogout);
+				++i;
 			}
 		}
 	}
@@ -690,8 +703,6 @@ bool Game::removeCreature(Creature* creature, bool isLogout /*= true*/)
 		(*it)->onCreatureDisappear(creature, isLogout);
 	}
 
-	int32_t oldIndex = cylinder->__getIndexOfThing(creature);
-	map->removeCreature(creature);
 	creature->getParent()->postRemoveNotification(creature, NULL, oldIndex, true);
 
 	listCreature.removeList(creature->getID());
@@ -1900,28 +1911,27 @@ bool Game::anonymousBroadcastMessage(MessageClasses type, const std::string& tex
 }
 
 //Implementation of player invoked events
-bool Game::playerMove(uint32_t playerId, Direction direction)
+bool Game::playerMove(uint32_t playerId, Direction dir)
 {
 	Player* player = getPlayerByID(playerId);
 	if(!player || player->isRemoved())
 		return false;
 
 	player->stopWalk();
-	//client works with 50 ms resolution
-	int32_t delay = player->getWalkDelay(direction, 50);
+	int32_t delay = player->getWalkDelay(dir);
 
 	if(delay > 0){
-		player->setNextAction(OTSYS_TIME() + player->getStepDuration());
+		player->setNextAction(OTSYS_TIME() + player->getStepDuration(dir) - 1);
 		SchedulerTask* task = createSchedulerTask( ((uint32_t)delay), boost::bind(&Game::playerMove, this,
-			playerId, direction));
+			playerId, dir));
 		player->setNextWalkTask(task);
 		return false;
 	}
 
 	player->setIdleTime(0, false);
 	player->setFollowCreature(NULL);
-	player->onWalk(direction);
-	return (internalMoveCreature(player, direction) == RET_NOERROR);
+	player->onWalk(dir);
+	return (internalMoveCreature(player, dir) == RET_NOERROR);
 }
 
 bool Game::internalBroadcastMessage(Player* player, const std::string& text)
@@ -2250,6 +2260,8 @@ bool Game::playerUseItemEx(uint32_t playerId, const Position& fromPos, uint8_t f
 		showUseHotkeyMessage(player, item);
 	}
 
+	player->setIdleTime(0, false);
+
 	if(!player->canDoAction()){
 		uint32_t delay = player->getNextActionTime();
 		SchedulerTask* task = createSchedulerTask(delay, boost::bind(&Game::playerUseItemEx, this,
@@ -2310,6 +2322,8 @@ bool Game::playerUseItem(uint32_t playerId, const Position& pos, uint8_t stackPo
 	if(isHotkey){
 		showUseHotkeyMessage(player, item);
 	}
+
+	player->setIdleTime(0, false);
 
 	if(!player->canDoAction()){
 		uint32_t delay = player->getNextActionTime();
@@ -2384,6 +2398,8 @@ bool Game::playerUseBattleWindow(uint32_t playerId, const Position& fromPos, uin
 	if(isHotkey){
 		showUseHotkeyMessage(player, item);
 	}
+
+	player->setIdleTime(0, false);
 
 	if(!player->canDoAction()){
 		uint32_t delay = player->getNextActionTime();
@@ -2876,9 +2892,11 @@ bool Game::internalCloseTrade(Player* player)
 	Player* tradePartner = player->tradePartner;
 	if((tradePartner && tradePartner->getTradeState() == TRADE_TRANSFER) ||
 		  player->getTradeState() == TRADE_TRANSFER){
+#ifdef __DEBUG__
   		std::cout << "Warning: [Game::playerCloseTrade] TradeState == TRADE_TRANSFER. " <<
 		  	player->getName() << " " << player->getTradeState() << " , " <<
 		  	tradePartner->getName() << " " << tradePartner->getTradeState() << std::endl;
+#endif
 		return true;
 	}
 
@@ -4342,7 +4360,9 @@ void Game::internalDecayItem(Item* item)
 		ReturnValue ret = internalRemoveItem(item);
 
 		if(ret != RET_NOERROR){
+#ifdef __DEBUG__
 			std::cout << "DEBUG, internalDecayItem failed, error code: " << (int) ret << "item id: " << item->getID() << std::endl;
+#endif
 		}
 	}
 }
@@ -4361,7 +4381,9 @@ void Game::checkDecay()
 			decreaseTime = item->getDuration();
 		}
 		item->decreaseDuration(decreaseTime);
-		//std::cout << "checkDecay: " << item << ", id:" << item->getID() << ", name: " << item->getName() << ", duration: " << item->getDuration() << std::endl;
+#ifdef __DEBUG__
+		std::cout << "checkDecay: " << item << ", id:" << item->getID() << ", name: " << item->getName() << ", duration: " << item->getDuration() << std::endl;
+#endif
 
 		if(!item->canDecay()){
 			item->setDecaying(DECAYING_FALSE);
@@ -4536,7 +4558,6 @@ void Game::shutdown()
 	g_dispatcher.shutdown();
 	Spawns::getInstance()->clear();
 	Raids::getInstance()->clear();
-	g_bans.clearTemporaryBans();
 
 	cleanup();
 
@@ -4570,7 +4591,6 @@ void Game::cleanup()
 
 void Game::FreeThing(Thing* thing)
 {
-	//std::cout << "freeThing() " << thing <<std::endl;
 	ToReleaseThings.push_back(thing);
 }
 

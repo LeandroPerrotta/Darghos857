@@ -65,8 +65,10 @@ CREATE TABLE "players" (
     "town_id" INT NOT NULL,
     "balance" INT NOT NULL DEFAULT 0,
     "stamina" INT NOT NULL DEFAULT 151200000,
+    "online" SMALLINT NOT NULL DEFAULT 0,
     PRIMARY KEY ("id"),
     UNIQUE ("name"),
+    KEY ("online"),
     FOREIGN KEY ("account_id") REFERENCES "accounts" ("id") ON DELETE CASCADE,
     FOREIGN KEY ("group_id") REFERENCES "groups" ("id")
 );
@@ -238,14 +240,14 @@ CREATE TABLE "schema_info" (
     PRIMARY KEY ("name")
 );
 
-INSERT INTO "schema_info" ("name", "value") VALUES ('version', 11);
+INSERT INTO "schema_info" ("name", "value") VALUES ('version', 13);
 
 CREATE FUNCTION "ondelete_accounts"()
 RETURNS TRIGGER
 AS $$
 BEGIN
     DELETE FROM "bans" WHERE "type" = 3 AND "value" = OLD."id";
-
+    DELETE FROM "players" WHERE "account_id" = OLD."id";
     RETURN OLD;
 END;
 $$ LANGUAGE plpgsql;

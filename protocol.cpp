@@ -76,7 +76,7 @@ void Protocol::onRecvMessage(NetworkMessage& msg)
 
 OutputMessage_ptr Protocol::getOutputBuffer()
 {
-	if(m_outputBuffer){
+	if(m_outputBuffer && m_outputBuffer->getMessageLength() < NETWORKMESSAGE_MAXSIZE - 4096){
 		return m_outputBuffer;
 	}
 	else if(m_connection){
@@ -104,7 +104,7 @@ void Protocol::deleteProtocolTask()
 {
 	//dispather thread
 	assert(m_refCount == 0);
-	setConnection(NULL);
+	setConnection(Connection_ptr());
 
 	delete this;
 }
@@ -198,7 +198,9 @@ bool Protocol::RSA_decrypt(RSA* rsa, NetworkMessage& msg)
 	}
 
 	if(msg.GetByte() != 0){
+#ifdef __DEBUG_NET_DETAIL__
 		std::cout << "Warning: [Protocol::RSA_decrypt]. First byte != 0" << std::endl;
+#endif
 		return false;
 	}
 

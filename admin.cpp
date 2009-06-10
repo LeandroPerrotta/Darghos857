@@ -45,7 +45,7 @@ AdminProtocolConfig* g_adminConfig = NULL;
 uint32_t ProtocolAdmin::protocolAdminCount = 0;
 #endif
 
-ProtocolAdmin::ProtocolAdmin(Connection* connection) :
+ProtocolAdmin::ProtocolAdmin(Connection_ptr connection) :
 Protocol(connection)
 {
 	m_state = NO_CONNECTED;
@@ -344,7 +344,6 @@ void ProtocolAdmin::parsePacket(NetworkMessage& msg)
 			{
 				g_dispatcher.addTask(
 					createTask(boost::bind(&ProtocolAdmin::adminCommandShutdownServer, this)));
-				getConnection()->closeConnection();
 				return;
 				break;
 			}
@@ -414,23 +413,11 @@ void ProtocolAdmin::adminCommandCloseServer()
 			++it;
 		}
 	}
-	bool success = g_game.saveServer(false);
-
+	
 	OutputMessage_ptr output = OutputMessagePool::getInstance()->getOutputMessage(this, false);
 	if(output){
 		TRACK_MESSAGE(output);
-
-		if(!success){
-			addLogLine(this, LOGTYPE_WARNING, 1, "close server fail");
-
-			output->AddByte(AP_MSG_COMMAND_FAILED);
-			output->AddString("Save");
-			OutputMessagePool::getInstance()->send(output);
-			return;
-		}
-
 		addLogLine(this, LOGTYPE_EVENT, 1, "close server ok");
-
 		output->AddByte(AP_MSG_COMMAND_OK);
 		OutputMessagePool::getInstance()->send(output);
 	}
