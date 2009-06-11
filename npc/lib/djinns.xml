@@ -137,5 +137,6 @@
 			<item keywords="guardian;halberd" id="2427" sellprice="11000"/>	
 			<item keywords="wyvern;fang" id="7408" sellprice="9000"/>	
 			<item keywords="ring;of;the;sky" id="2123" sellprice="30000"/>
+			<item keywords="relic;sword" id="7383" sellprice="25000"/>
 		</itemlist>		
 </interaction>
