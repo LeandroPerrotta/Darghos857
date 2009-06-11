@@ -1737,6 +1737,7 @@
 	</item>
 	<item id="1740" article="a" name="chest">
 		<attribute key="weight" value="12000"/>
+		<attribute key="moveable" value="false"/>		
 		<attribute key="rotateTo" value="1748"/>
 		<attribute key="containerSize" value="15"/>
 	</item>
