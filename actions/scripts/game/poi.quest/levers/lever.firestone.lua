@@ -9,5 +9,4 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		doCreateItem(1304,1,stone)
 	end	
 	
-	return TRUE
 end
