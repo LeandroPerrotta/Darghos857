@@ -11,7 +11,7 @@
 	POI_DOWN_TO_CENTRAL			= {x=384 ,y=386 ,z=10},
 	POI_TP_NPOS_GRAVESTONE		= {x=348 ,y=448 ,z=8},
 	POI_STAIR_CREATE			= {x=411 ,y=435 ,z=9 ,stackpos=1},
-	POI_FIRESTONE				= {x=406 ,y=395 ,z=8},
+	POI_FIRESTONE				= {x=406 ,y=395 ,z=8, stackpos=1},
 	POI_GOTO_CENTRAL			= {x=406 ,y=395 ,z=8},
 	POI_MOVE_TP1GO				= {x=384 ,y=428 ,z=7},
 	POI_MOVE_TP2GO				= {x=397 ,y=437 ,z=7},
