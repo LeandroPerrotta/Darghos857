@@ -14,31 +14,37 @@
     <flag canpushitems="1"/>
     <flag canpushcreatures="1"/>
     <flag targetdistance="1"/>
-    <flag staticattack="90"/>
+    <flag staticattack="80"/>
     <flag runonhealth="0"/>
   </flags>
   <attacks>
-    <attack name="melee" interval="2000" min="-90" max="-430"/>
+    <attack name="melee" interval="2000" skill="85" attack="95"/>
     <attack name="physical" interval="2000" chance="15" range="7" min="-100" max="-185">
       <attribute key="shootEffect" value="largerock"/>
     </attack>
   </attacks>
-  <defenses armor="40" defense="45">
-    <defense name="speed" interval="1000" chance="7" speedchange="290" duration="4000">
+  <defenses armor="50" defense="50">
+    <defense name="speed" interval="1000" chance="7" speedchange="320" duration="4000">
       <attribute key="areaEffect" value="redshimmer"/>
     </defense>
   </defenses>
-  <elements>
-	<element earthPercent="80"/>
-	<element holyPercent="30"/>
-	<element firePercent="30"/>
-	<element energyPercent="10"/>
-	<element physicalPercent="10"/>
-	<element icePercent="-10"/>
-	<element deathPercent="-5"/>
-  </elements>
+	<elements>
+		<element physicalPercent="10"/>
+		<element earthPercent="80"/>
+		<element icePercent="-10"/>
+		<element holyPercent="30"/>
+		<element deathPercent="-5"/>
+		<element firePercent="30"/>
+	</elements>
   <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="0"/>
+    <immunity poison="0"/>
+    <immunity lifedrain="1"/>
     <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
     <immunity invisible="1"/>
   </immunities>
   <voices interval="5000" chance="10">
@@ -55,7 +61,7 @@
     <item id="2387" chance="2000"/>
     <item id="2377" chance="4000"/>
     <item id="2231" countmax="1" chance="7000"/>
-    <item id="5930" countmax="1" chance="400"/>
+    <item id="5930" countmax="1" chance="2500"/>
     <item id="2393" chance="688"/>
     <item id="2454" chance="488"/>
     <item id="2150" countmax="2" chance="4000"/>

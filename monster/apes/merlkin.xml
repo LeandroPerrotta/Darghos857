@@ -18,8 +18,8 @@
     <flag runonhealth="0"/>
   </flags>
   <attacks>
-    <attack name="melee" interval="2000" skill="25" attack="15"/>
-    <attack name="fire" interval="2000" chance="13" range="7" min="-30" max="-90">
+    <attack name="melee" interval="2000" skill="25" attack="20"/>
+    <attack name="fire" interval="2000" chance="15" range="7" min="-60" max="-90">
       <attribute key="shootEffect" value="fire"/>
       <attribute key="areaEffect" value="firearea"/>
     </attack>
@@ -27,7 +27,7 @@
       <attribute key="shootEffect" value="energy"/>
       <attribute key="areaEffect" value="energy"/>
     </attack>
-    <attack name="poisonfield" interval="1000" chance="15" range="7" radius="1" target="1">
+    <attack name="poisonfield" interval="1000" chance="13" range="7" radius="1" target="1">
       <attribute key="shootEffect" value="energy"/>
     </attack>
   </attacks>
@@ -38,16 +38,12 @@
   </defenses>
   <elements>
 	<element firePercent="20"/>
-	<element earthPercent="10"/>
-	<element holyPercent="3"/>
+	<element energyPercent="10"/>
+	<element holyPercent="10"/>
 	<element icePercent="-15"/>
 	<element deathPercent="-5"/>
   </elements>
   <immunities>
-    <immunity lifedrain="0"/>
-    <immunity paralyze="0"/>
-    <immunity outfit="1"/>
-    <immunity drunk="1"/>
     <immunity invisible="1"/>
   </immunities>
   <voices interval="5000" chance="10">
@@ -55,13 +51,19 @@
     <voice sentence="Holy banana!"/>
     <voice sentence="Chakka! Chakka!"/>
   </voices>
-  <loot>
-	<item id="2148" chance="100000" countmax="50"/>
-	<item id="2188" chance="1538"/>
-	<item id="2675" chance="10000" countmax="5"/>
-	<item id="2162" chance="2222"/>
-	<item id="5883" chance="1000" countmax="2"/>
-	<item id="3966" chance="1333"/>
-	<item id="2150" chance="1538" countmax="3"/>
-  </loot>
+<loot>
+	<item id="2148" chance="100000" countmax="62" /> -- gold coin
+	<item id="2150" chance="1538" countmax="1" /> -- small amethyst
+	<item id="2675" chance="10000" countmax="5" /> -- orange
+	<item id="5883" chance="1000" countmax="1" /> -- ape fur
+	<item id="2676" chance="8000" coountmax="12"/> --Bananas
+	<item id="1987" chance="50000">
+		<inside>
+			<item id="3966" chance="2333" /> -- banana staff
+			<item id="2188" chance="3038" /> -- wand of decay
+			<item id="2162" chance="6222" /> -- magic lightwand
+		</inside>
+	</item>
+</loot>
+
 </monster>
