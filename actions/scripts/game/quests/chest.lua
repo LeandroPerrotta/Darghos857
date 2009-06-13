@@ -1,5 +1,15 @@
 local quests =
 	{
+		[aid.SERPENT_SWORDARACURA] = {
+			storageId = sid.SERPENT_SWORDARACURA,
+			rewardId = 2409,
+			count = 1
+		},	
+		[aid.QUEST_50PLATINUM] = {
+			storageId = sid.QUEST_50PLATINUM,
+			rewardId = 2152,
+			count = 50
+		},	
 		[aid.PSET_ARMOR_ARACURA] = {
 			storageId = sid.PSET_ARMOR_ARACURA,
 			rewardId = 2463,

@@ -1455,16 +1455,14 @@
     <monster name="Frost Troll" x="4" y="2" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2825" centery="1251" centerz="6" radius="2">
-    <monster name="Cyclops" x="1" y="1" z="6" spawntime="10"/>
+    <monster name="Cyclops" x="1" y="-2" z="6" spawntime="10"/>
   </spawn>
   <spawn centerx="1769" centery="1252" centerz="6" radius="5">
     <monster name="Frost Troll" x="-3" y="-1" z="6" spawntime="60"/>
     <monster name="Frost Troll" x="4" y="-1" z="6" spawntime="60"/>
     <monster name="Frost Troll" x="0" y="2" z="6" spawntime="60"/>
   </spawn>
-  <spawn centerx="2818" centery="1252" centerz="6" radius="2">
-    <monster name="Cyclops" x="-2" y="-2" z="6" spawntime="10"/>
-  </spawn>
+  <spawn centerx="2818" centery="1252" centerz="6" radius="2"/>
   <spawn centerx="1870" centery="1255" centerz="6" radius="15">
     <monster name="Mammoth" x="-8" y="-2" z="6" spawntime="60"/>
     <monster name="Mammoth" x="-1" y="0" z="6" spawntime="60"/>
@@ -1508,9 +1506,16 @@
   <spawn centerx="2987" centery="1275" centerz="6" radius="5">
     <monster name="Bog Raider" x="1" y="2" z="6" spawntime="60"/>
   </spawn>
+  <spawn centerx="2832" centery="1277" centerz="6" radius="2">
+    <monster name="Dragon" x="1" y="0" z="6" spawntime="10"/>
+  </spawn>
   <spawn centerx="2945" centery="1277" centerz="6" radius="5">
     <monster name="Bog Raider" x="2" y="-5" z="6" spawntime="60"/>
     <monster name="Bog Raider" x="-1" y="3" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2839" centery="1278" centerz="6" radius="2">
+    <monster name="Dragon" x="-2" y="-2" z="6" spawntime="10"/>
+    <monster name="Dragon" x="1" y="1" z="6" spawntime="10"/>
   </spawn>
   <spawn centerx="2925" centery="1278" centerz="6" radius="5">
     <monster name="Bog Raider" x="1" y="0" z="6" spawntime="60"/>
