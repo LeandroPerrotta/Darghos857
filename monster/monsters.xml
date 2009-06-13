@@ -126,7 +126,8 @@
 	<monster name="Braindeath" file="beholders/braindeath.xml"/>
 	<monster name="Elder Beholder" file="beholders/elder beholder.xml"/>
 	<monster name="Gazer" file="beholders/gazer.xml"/>
-
+	<monster name="Eye of the seven" file="beholders/Eye of the seven.xml"/>
+	
 	<!-- Birds -->
 	<monster name="Chicken" file="birds/chicken.xml"/>
 	<monster name="Dire Penguin" file="birds/dire penguin.xml"/>
