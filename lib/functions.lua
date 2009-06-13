@@ -101,27 +101,29 @@ function setRateStage(cid)
 	
 	stages = {
 	
-	first 	= 12,
-	second	= 8,
-	third	= 6,
-	fourth 	= 4,
-	fifth	= 2
-	
+	first 	= 15,
+	second	= 10,
+	third	= 5,
+	fourth 	= 3,
+	fifth	= 2,
+	six		= 1
 	}
 
 	level 	= getPlayerLevel(cid)
 	name 	= getPlayerName(cid)
 	
-	if(level <= 100) then
+	if(level <= 40) then
 		setExperienceRate(cid, stages.first)
-	elseif(level > 100) and (level <= 150) then
+	elseif(level > 40) and (level <= 80) then
 		setExperienceRate(cid, stages.second)
-	elseif(level > 150) and (level <= 250) then
+	elseif(level > 80) and (level <= 120) then
 		setExperienceRate(cid, stages.third)
-	elseif(level > 250) and (level <= 300) then
+	elseif(level > 120) and (level <= 160) then
 		setExperienceRate(cid, stages.fourth)
-	elseif(level > 300) then
+	elseif(level > 160) and (level <= 250) then
 		setExperienceRate(cid, stages.fifth)
+	elseif(level > 250) then
+		setExperienceRate(cid, stages.six)
 	else
 		print("Player "..name.." falhou durante o processo de setRateStage.")
 	end
