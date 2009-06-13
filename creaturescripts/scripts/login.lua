@@ -12,12 +12,6 @@
 		defineFirstItems(cid)	
 	end
 	
-	-- faz a porra do caralho da promotion funcionar -.-
-	if(isPremium(cid) == TRUE and getPlayerVocation(cid) >= 4 and getPlayerStorageValue(cid, sid.VALUE_TO_RECEIVE_PROMO) ~= 1) then
-		setPlayerStorageValue(cid, sid.VALUE_TO_RECEIVE_PROMO, 1)
-		setPlayerStorageValue(cid, STORAGE_PROMOTION, 1)
-	end	
-	
 	--Remove blesses if necessary
 	if getPlayerStorageValue(cid, STORAGE_REMOVE_BLESSES) == 1 then
 		local i = 0
