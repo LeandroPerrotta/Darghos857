@@ -3,9 +3,14 @@
 	registerCreatureEvent(cid, "AutoBan")
 	registerCreatureEvent(cid, "RemoveBlesses")
 	
+	
 	runPremiumSystem(cid)
 	setRateStage(cid)
 	checkItemShop(cid)
+	if(getPlayerVocation(cid) <= 4) then
+		defineFirstItems(cid)	
+	end
+	
 	-- faz a porra do caralho da promotion funcionar -.-
 	if(isPremium(cid) == TRUE and getPlayerVocation(cid) >= 4 and getPlayerStorageValue(cid, sid.VALUE_TO_RECEIVE_PROMO) ~= 1) then
 		setPlayerStorageValue(cid, sid.VALUE_TO_RECEIVE_PROMO, 1)

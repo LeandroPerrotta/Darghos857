@@ -1,4 +1,100 @@
 --[[
+	* SETAR NOVOS ITEMS PARA FIRST LOGIN
+]]--
+function defineFirstItems(cid)
+
+	local storage = sid.FIRSTLOGIN_ITEMS
+
+	
+	local array = 
+	{
+		[1] = {
+			legs 	=  getItemIdByName("studded legs"),
+			armor	=  getItemIdByName("magician's robe"),
+			boots	=  getItemIdByName("leather boots"),
+			shield 	=  getItemIdByName("dwarven shield"),
+			helmet	=  getItemIdByName("mage hat"),
+			weapon	=  getItemIdByName("wand of vortex"),
+			food	=  getItemIdByName("brown mushroom"),
+			rope	=  getItemIdByName("rope"),
+			shovel	=  getItemIdByName("shovel"),
+			money	=  getItemIdByName("platinum coin")
+		},
+		[2] = {
+			legs 	=  getItemIdByName("studded legs"),
+			armor	=  getItemIdByName("magician's robe"),
+			boots	=  getItemIdByName("leather boots"),
+			shield 	=  getItemIdByName("dwarven shield"),
+			helmet	=  getItemIdByName("mage hat"),
+			weapon	=  getItemIdByName("snakebite rod"),
+			food	=  getItemIdByName("brown mushroom"),
+			rope	=  getItemIdByName("rope"),
+			shovel	=  getItemIdByName("shovel"),
+			money	=  getItemIdByName("platinum coin")
+		},
+		[3] = {
+			legs 	=  getItemIdByName("studded legs"),
+			armor	=  getItemIdByName("belted cape"),
+			boots	=  getItemIdByName("leather boots"),
+			shield 	=  getItemIdByName("dwarven shield"),
+			helmet	=  getItemIdByName("studded helmet"),
+			weapon	=  getItemIdByName("spear"),
+			food	=  getItemIdByName("brown mushroom"),
+			rope	=  getItemIdByName("rope"),
+			shovel	=  getItemIdByName("shovel"),
+			money	=  getItemIdByName("platinum coin")
+		},
+		[4] = {
+			legs 	=  getItemIdByName("studded legs"),
+			armor	=  getItemIdByName("studded armor"),
+			boots	=  getItemIdByName("leather boots"),
+			shield 	=  getItemIdByName("dwarven shield"),
+			helmet	=  getItemIdByName("studded helmet"),
+			weapon	=  getItemIdByName("hatchet"),
+			weapon2	=  getItemIdByName("mace"),
+			weapon3	=  getItemIdByName("katana"),
+			food	=  getItemIdByName("brown mushroom"),
+			rope	=  getItemIdByName("rope"),
+			shovel	=  getItemIdByName("shovel"),
+			money	=  getItemIdByName("platinum coin")	
+		}
+	}
+	
+	putItems(cid, array[getPlayerVocation(cid)])
+	
+end
+function putItems(cid, add)
+	
+	local status 	= getPlayerStorageValue(cid, sid.FIRSTLOGIN_ITEMS)
+
+
+	if(status ~= 1) then
+		container = doPlayerAddItem(cid, getItemIdByName("backpack"), 1)
+		doAddContainerItem(container, add.food,100)
+		doAddContainerItem(container, add.rope,1)
+		doAddContainerItem(container, add.shovel,1)
+		doAddContainerItem(container, add.money,2)
+		doPlayerAddItem(cid, add.armor,1)
+		doPlayerAddItem(cid, add.legs,1)		
+		doPlayerAddItem(cid, add.boots,1)		
+		doPlayerAddItem(cid, add.shield,1)	
+		doPlayerAddItem(cid, add.helmet,1)
+		if(getPlayerVocation(cid) == 3) then
+			doPlayerAddItem(cid, add.weapon,5)
+		elseif(getPlayerVocation(cid) == 4) then
+			doPlayerAddItem(cid, add.weapon,1)
+			doPlayerAddItem(cid, add.weapon2,1)
+			doPlayerAddItem(cid, add.weapon3,1)
+		else
+			doPlayerAddItem(cid, add.weapon,1)		
+		end
+		setPlayerStorageValue(cid, sid.FIRSTLOGIN_ITEMS, 1)		
+	end
+end
+
+
+
+--[[
  * ATIVANDO O RATE STAGES! USED IN ACTION!
 ]]--
 function setRateStage(cid)
