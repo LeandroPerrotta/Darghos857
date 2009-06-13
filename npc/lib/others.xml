@@ -45,7 +45,7 @@
 	Tools's Shop
 	-->
 		<itemlist listid="tools">
-			<item keywords="fishing;rod" id="2580" buyprice="150" sellprice="40" />
+			<item keywords="fishing;rod" id="2580" buyprice="150" sellprice="60" />
 			<item keywords="pick" id="2553" buyprice="50" sellprice="15" />
 			<item keywords="rope" id="2120" buyprice="50" sellprice="15" />
 			<item keywords="scythe" id="2550" buyprice="50" sellprice="10" />
@@ -105,14 +105,14 @@
 		<itemlist listid="jewerly">
 		
 			<!-- GEMS E PEDRAS -->
-			<item keywords="black;pearl" id="2144" subtype="1" buyprice="560" sellprice="280" />
-			<item keywords="small;amethyst" id="2150" subtype="1" buyprice="400" sellprice="180" />
-			<item keywords="small;diamond" id="2145" subtype="1" buyprice="600" sellprice="610" />
-			<item keywords="small;sapphire" id="2146" subtype="1" buyprice="500" sellprice="245" />
-			<item keywords="small;sapphire" id="2146" subtype="1" buyprice="500" sellprice="245" />
-			<item keywords="white;pearl" id="2143" subtype="1" buyprice="320" sellprice="160" />
-			<item keywords="small;ruby" id="2147" subtype="1" buyprice="500" sellprice="235" />
-			<item keywords="small;emerald" id="2149" subtype="1" buyprice="500" sellprice="235" />
+			<item keywords="black;pearl" id="2144" subtype="1" buyprice="560" sellprice="420" />
+			<item keywords="small;amethyst" id="2150" subtype="1" buyprice="400" sellprice="270" />
+			<item keywords="small;diamond" id="2145" subtype="1" buyprice="600" sellprice="1005" />
+			<item keywords="small;sapphire" id="2146" subtype="1" buyprice="500" sellprice="375" />
+			<item keywords="small;sapphire" id="2146" subtype="1" buyprice="500" sellprice="375" />
+			<item keywords="white;pearl" id="2143" subtype="1" buyprice="320" sellprice="1088" />
+			<item keywords="small;ruby" id="2147" subtype="1" buyprice="500" sellprice="352" />
+			<item keywords="small;emerald" id="2149" subtype="1" buyprice="500" sellprice="352" />
 			
 			<!-- AMULETOS, DECORATIVOS E PINGENTES -->
 			<item keywords="golden;amulet" id="2130" buyprice="6600" />

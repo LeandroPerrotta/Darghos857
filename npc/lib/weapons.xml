@@ -9,13 +9,13 @@
 		compraveis e vendiveis
 		-->
 		<itemlist listid="swords_all">
-			<item keywords="rapier" id="2384" buyprice="15" sellprice="5"/>
-			<item keywords="sabre" id="2385" buyprice="35" sellprice="12"/>
-			<item keywords="machete" id="2420" buyprice="35" sellprice="10"/>
-			<item keywords="sword" id="2376" buyprice="85" sellprice="25"/>
-			<item keywords="carlin;sword" id="2395" buyprice="473" sellprice="118"/>
-			<item keywords="longsword" id="2397" buyprice="160" sellprice="51"/>
-			<item keywords="two;handed;sword" id="2377" buyprice="950" sellprice="450"/>
+			<item keywords="rapier" id="2384" buyprice="15" sellprice="7"/>
+			<item keywords="sabre" id="2385" buyprice="35" sellprice="18"/>
+			<item keywords="machete" id="2420" buyprice="35" sellprice="15"/>
+			<item keywords="sword" id="2376" buyprice="85" sellprice="37"/>
+			<item keywords="carlin;sword" id="2395" buyprice="473" sellprice="177"/>
+			<item keywords="longsword" id="2397" buyprice="160" sellprice="76"/>
+			<item keywords="two;handed;sword" id="2377" buyprice="950" sellprice="675"/>
 		</itemlist>
 
 		<!--
@@ -29,12 +29,12 @@
 		apenas vendiveis
 		-->
 		<itemlist listid="swords_sellable">
-			<item keywords="short;sword" id="2406" sellprice="10"/>
-			<item keywords="katana" id="2412" sellprice="25"/>
-			<item keywords="templar;scytheblade" id="3963" sellprice="200"/>
-			<item keywords="spike;sword" id="2383" sellprice="240"/>
-			<item keywords="fire;sword" id="2392" sellprice="1000"/>
-			<item keywords="broadsword" id="2413" sellprice="180"/>
+			<item keywords="short;sword" id="2406" sellprice="15"/>
+			<item keywords="katana" id="2412" sellprice="37"/>
+			<item keywords="templar;scytheblade" id="3963" sellprice="300"/>
+			<item keywords="spike;sword" id="2383" sellprice="360"/>
+			<item keywords="fire;sword" id="2392" sellprice="1500"/>
+			<item keywords="broadsword" id="2413" sellprice="270"/>
 		</itemlist> 
 
 	
@@ -45,11 +45,11 @@
 		compraveis e vendiveis
 		-->
 		<itemlist listid="axes_all">
-			<item keywords="hand;axe" id="2380" buyprice="8" sellprice="4"/>
-			<item keywords="axe" id="2386" buyprice="20" sellprice="7"/>
-			<item keywords="hatchet" id="2388" buyprice="85" sellprice="25"/>
-			<item keywords="battle;axe" id="2378" buyprice="235" sellprice="80"/>
-			<item keywords="barbarian;axe" id="2429" buyprice="590" sellprice="185"/>
+			<item keywords="hand;axe" id="2380" buyprice="8" sellprice="6"/>
+			<item keywords="axe" id="2386" buyprice="20" sellprice="10"/>
+			<item keywords="hatchet" id="2388" buyprice="85" sellprice="37"/>
+			<item keywords="battle;axe" id="2378" buyprice="235" sellprice="12"/>
+			<item keywords="barbarian;axe" id="2429" buyprice="590" sellprice="277"/>
 		</itemlist>
 
 		<!--
@@ -63,12 +63,12 @@
 		apenas vendiveis
 		-->
 		<itemlist listid="axes_sellable">
-			<item keywords="orcish;axe" id="2428" sellprice="55"/>
-			<item keywords="fire;axe" id="2432" sellprice="280"/>
-			<item keywords="ripper;lance" id="3964" sellprice="500"/>
-			<item keywords="halberd" id="2381" sellprice="400"/>
-			<item keywords="double;axe" id="2387" sellprice="260"/>
-			<item keywords="dragon;lance" id="2414" sellprice="660"/>
+			<item keywords="orcish;axe" id="2428" sellprice="82"/>
+			<item keywords="fire;axe" id="2432" sellprice="420"/>
+			<item keywords="ripper;lance" id="3964" sellprice="750"/>
+			<item keywords="halberd" id="2381" sellprice="600"/>
+			<item keywords="double;axe" id="2387" sellprice="390"/>
+			<item keywords="dragon;lance" id="2414" sellprice="990"/>
 		</itemlist> 
 
 	
@@ -80,21 +80,21 @@
 		compraveis e vendiveis
 		-->
 		<itemlist listid="clubs_all">
-			<item keywords="mace" id="2398" buyprice="90" sellprice="30"/>
-			<item keywords="battle;hammer" id="2417" buyprice="350" sellprice="120"/>
-			<item keywords="morning;star" id="2394" buyprice="430" sellprice="100"/>
-			<item keywords="clerical;mace" id="2423" buyprice="540" sellprice="170"/>
+			<item keywords="mace" id="2398" buyprice="90" sellprice="45"/>
+			<item keywords="battle;hammer" id="2417" buyprice="350" sellprice="180"/>
+			<item keywords="morning;star" id="2394" buyprice="430" sellprice="150"/>
+			<item keywords="clerical;mace" id="2423" buyprice="540" sellprice="255"/>
 		</itemlist>
 
 		<!--
 		apenas vendiveis
 		-->
 		<itemlist listid="clubs_sellable">
-			<item keywords="bone;club" id="2449" sellprice="5"/>
-			<item keywords="daramanian;mace" id="2439" sellprice="65"/>
-			<item keywords="banana;staff" id="3966" sellprice="1000"/>
-			<item keywords="war;hammer" id="2391" sellprice="470"/>
-			<item keywords="thunder;hammer" id="2421" sellprice="999"/>
+			<item keywords="bone;club" id="2449" sellprice="7"/>
+			<item keywords="daramanian;mace" id="2439" sellprice="97"/>
+			<item keywords="banana;staff" id="3966" sellprice="1500"/>
+			<item keywords="war;hammer" id="2391" sellprice="705"/>
+			<item keywords="thunder;hammer" id="2421" sellprice="1498"/>
 		</itemlist> 
 		
 
@@ -105,9 +105,9 @@
 		compraveis e vendiveis
 		-->
 		<itemlist listid="distance_all">
-			<item keywords="crossbow" id="2455" buyprice="500" sellprice="160"/>
-			<item keywords="bow" id="2456" buyprice="400" sellprice="130"/>
-			<item keywords="spear" id="2389" buyprice="10" sellprice="3"/>
+			<item keywords="crossbow" id="2455" buyprice="500" sellprice="240"/>
+			<item keywords="bow" id="2456" buyprice="400" sellprice="195"/>
+			<item keywords="spear" id="2389" buyprice="10" sellprice="4"/>
 		</itemlist>
 
 		<!--
@@ -123,7 +123,7 @@
 		apenas vendiveis
 		-->
 		<itemlist listid="distance_sellable">
-			<item keywords="hunting;spear" id="3965" sellprice="25"/>
+			<item keywords="hunting;spear" id="3965" sellprice="37"/>
 		</itemlist> 
 
 	<!--

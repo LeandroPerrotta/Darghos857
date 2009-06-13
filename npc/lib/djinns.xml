@@ -9,20 +9,20 @@
 		-->
 		<itemlist listid="djinn_alessar">
 			<item keywords="dragon;hammer" id="2434" sellprice="2000"/>	
-			<item keywords="giant;sword" id="2393" sellprice="17000"/>	
-			<item keywords="knight;axe" id="2430" sellprice="2000"/>	
-			<item keywords="serpent;sword" id="2409" sellprice="900"/>	
-			<item keywords="skull;staff" id="2436" sellprice="6000"/>	
+			<item keywords="giant;sword" id="2393" sellprice="25500"/>	
+			<item keywords="knight;axe" id="2430" sellprice="3000"/>	
+			<item keywords="serpent;sword" id="2409" sellprice="1350"/>	
+			<item keywords="skull;staff" id="2436" sellprice="9000"/>	
 			
-			<item keywords="knight;armor" id="2476" sellprice="5000"/>	
+			<item keywords="knight;armor" id="2476" sellprice="7500"/>	
 			
-			<item keywords="warrior;helmet" id="2475" sellprice="5000"/>	
+			<item keywords="warrior;helmet" id="2475" sellprice="7500"/>	
 			
-			<item keywords="knight;legs" id="2477" sellprice="5000"/>	
+			<item keywords="knight;legs" id="2477" sellprice="7500"/>	
 
-			<item keywords="black;shield" id="2529" sellprice="800"/>	
-			<item keywords="tower;shield" id="2528" sellprice="8000"/>	
-			<item keywords="vampire;shield" id="2534" sellprice="15000"/>	
+			<item keywords="black;shield" id="2529" sellprice="1200"/>	
+			<item keywords="tower;shield" id="2528" sellprice="12000"/>	
+			<item keywords="vampire;shield" id="2534" sellprice="22500"/>	
 		</itemlist>	
 		
 		<!--
@@ -55,43 +55,43 @@
 			<item keywords="spike;sword" id="2383" buyprice="8000"/>	
 			<item keywords="war;hammer" id="2391" buyprice="10000"/>	
 		
-			<item keywords="crown;shield" id="2519" sellprice="8000"/>	
-			<item keywords="dragon;shield" id="2516" sellprice="4000"/>	
-			<item keywords="guardian;shield" id="2515" sellprice="2000"/>	
-			<item keywords="phoenix;shield" id="2539" sellprice="16000"/>	
+			<item keywords="crown;shield" id="2519" sellprice="12000"/>	
+			<item keywords="dragon;shield" id="2516" sellprice="6000"/>	
+			<item keywords="guardian;shield" id="2515" sellprice="3000"/>	
+			<item keywords="phoenix;shield" id="2539" sellprice="24000"/>	
 
-			<item keywords="blue;robe" id="2656" sellprice="10000"/>	
-			<item keywords="crown;armor" id="2487" sellprice="12000"/>	
+			<item keywords="blue;robe" id="2656" sellprice="15000"/>	
+			<item keywords="crown;armor" id="2487" sellprice="18000"/>	
 
-			<item keywords="boots;of;haste" id="2195" sellprice="30000"/>	
+			<item keywords="boots;of;haste" id="2195" sellprice="45000"/>	
 
-			<item keywords="dragon;lance" id="2414" sellprice="9000"/>	
-			<item keywords="fire;axe" id="2432" sellprice="8000"/>	
-			<item keywords="fire;sword" id="2392" sellprice="4000"/>	
-			<item keywords="ice;rapier" id="2396" sellprice="1000"/>	
-			<item keywords="obsidian;lance" id="2425" sellprice="500"/>	
-			<item keywords="spike;sword" id="2383" sellprice="1000"/>	
-			<item keywords="war;hammer" id="2391" sellprice="1200"/>	
+			<item keywords="dragon;lance" id="2414" sellprice="13500"/>	
+			<item keywords="fire;axe" id="2432" sellprice="12000"/>	
+			<item keywords="fire;sword" id="2392" sellprice="6000"/>	
+			<item keywords="ice;rapier" id="2396" sellprice="1500"/>	
+			<item keywords="obsidian;lance" id="2425" sellprice="750"/>	
+			<item keywords="spike;sword" id="2383" sellprice="1500"/>	
+			<item keywords="war;hammer" id="2391" sellprice="1800"/>	
 		
-			<item keywords="crown;helmet" id="2419" sellprice="2500"/>	
-			<item keywords="crusader;helmet" id="2497" sellprice="6000"/>	
-			<item keywords="royal;helmet" id="2498" sellprice="30000"/>	
+			<item keywords="crown;helmet" id="2419" sellprice="3750"/>	
+			<item keywords="crusader;helmet" id="2497" sellprice="13500"/>	
+			<item keywords="royal;helmet" id="2498" sellprice="45000"/>	
 			
-			<item keywords="crown;legs" id="2488" sellprice="12000"/>	
+			<item keywords="crown;legs" id="2488" sellprice="18000"/>	
 		</itemlist>
 
 		<!--
 		HAROUN
 		-->
 		<itemlist listid="djinn_haroun">
-			<item keywords="wand;of;cosmic;energy" id="2189" sellprice="2000"/>	
-			<item keywords="wand;of;decay" id="2188" sellprice="1000"/>	
-			<item keywords="wand;of;draconia" id="8921" sellprice="1500"/>	
-			<item keywords="wand;of;dragonbreath" id="2191" sellprice="200"/>	
-			<item keywords="wand;of;inferno" id="2187" sellprice="3000"/>	
-			<item keywords="wand;of;starstorm" id="8920" sellprice="3600"/>	
-			<item keywords="wand;of;voodoo" id="8922" sellprice="4400"/>	
-			<item keywords="wand;of;vortex" id="2190" sellprice="100"/>	
+			<item keywords="wand;of;cosmic;energy" id="2189" sellprice="3000"/>	
+			<item keywords="wand;of;decay" id="2188" sellprice="2250"/>	
+			<item keywords="wand;of;draconia" id="8921" sellprice="2250"/>	
+			<item keywords="wand;of;dragonbreath" id="2191" sellprice="300"/>	
+			<item keywords="wand;of;inferno" id="2187" sellprice="4500"/>	
+			<item keywords="wand;of;starstorm" id="8920" sellprice="5400"/>	
+			<item keywords="wand;of;voodoo" id="8922" sellprice="6600"/>	
+			<item keywords="wand;of;vortex" id="2190" sellprice="150"/>	
 
 			<item keywords="axe;ring" id="2208" buyprice="500"/>	
 			<item keywords="club;ring" id="2209" buyprice="500"/>	
@@ -105,38 +105,38 @@
 		RASHID
 		-->
 		<itemlist listid="rashid">	
-			<item keywords="dragon;scale;mail" id="2492" sellprice="40000"/>	
-			<item keywords="glacier;robe" id="7897" sellprice="11000"/>	
-			<item keywords="golden;armor" id="2466" sellprice="20000"/>	
-			<item keywords="lightning;robe" id="7898" sellprice="11000"/>	
-			<item keywords="magma;coat" id="7899" sellprice="11000"/>	
+			<item keywords="dragon;scale;mail" id="2492" sellprice="60000"/>	
+			<item keywords="glacier;robe" id="7897" sellprice="16500"/>	
+			<item keywords="golden;armor" id="2466" sellprice="30000"/>	
+			<item keywords="lightning;robe" id="7898" sellprice="16500"/>	
+			<item keywords="magma;coat" id="7899" sellprice="16500"/>	
 			<item keywords="paladin;armor" id="8891" sellprice="15000"/>	
 			<item keywords="skullcracker;armor" id="8889" sellprice="18000"/>	
-			<item keywords="terra;mantle" id="7884" sellprice="11000"/>	
-			<item keywords="glacier;kilt" id="7896" sellprice="11000"/>	
-			<item keywords="lightning.legs" id="7895" sellprice="11000"/>	
-			<item keywords="magma;legs" id="7894" sellprice="11000"/>	
-			<item keywords="terra;legs" id="7885" sellprice="11000"/>	
-			<item keywords="demon;shield" id="2520" sellprice="30000"/>	
-			<item keywords="medusa;shield" id="2536" sellprice="9000"/>	
-			<item keywords="spellbook;of;enlightenment" id="8900" sellprice="4000"/>	
-			<item keywords="glacier;mask" id="7902" sellprice="2500"/>	
-			<item keywords="lightning;headband" id="7901" sellprice="2500"/>	
-			<item keywords="magma;monocle" id="7900" sellprice="2500"/>	
-			<item keywords="skull;helmet" id="5741" sellprice="40000"/>	
-			<item keywords="fur;boots" id="7457" sellprice="2000"/>	
-			<item keywords="glacier;shoes" id="7892" sellprice="2500"/>	
-			<item keywords="lightning;boots" id="7893" sellprice="2500"/>	
-			<item keywords="magma;boots" id="7891" sellprice="2500"/>	
-			<item keywords="steel;boots" id="2645" sellprice="30000"/>	
-			<item keywords="terra;boots" id="7886" sellprice="2500"/>	
-			<item keywords="amber;staff" id="7526" sellprice="8000"/>	
-			<item keywords="chaos;mace" id="7427" sellprice="12000"/>	
-			<item keywords="demonrage;sword" id="7382" sellprice="36000"/>	
-			<item keywords="dragon;slayer" id="7402" sellprice="15000"/>	
-			<item keywords="guardian;halberd" id="2427" sellprice="11000"/>	
-			<item keywords="wyvern;fang" id="7408" sellprice="9000"/>	
-			<item keywords="ring;of;the;sky" id="2123" sellprice="30000"/>
-			<item keywords="relic;sword" id="7383" sellprice="25000"/>
+			<item keywords="terra;mantle" id="7884" sellprice="16500"/>	
+			<item keywords="glacier;kilt" id="7896" sellprice="16500"/>	
+			<item keywords="lightning.legs" id="7895" sellprice="16500"/>	
+			<item keywords="magma;legs" id="7894" sellprice="16500"/>	
+			<item keywords="terra;legs" id="7885" sellprice="16500"/>	
+			<item keywords="demon;shield" id="2520" sellprice="45000"/>	
+			<item keywords="medusa;shield" id="2536" sellprice="13500"/>	
+			<item keywords="spellbook;of;enlightenment" id="8900" sellprice="6000"/>	
+			<item keywords="glacier;mask" id="7902" sellprice="3750"/>	
+			<item keywords="lightning;headband" id="7901" sellprice="3750"/>	
+			<item keywords="magma;monocle" id="7900" sellprice="3750"/>	
+			<item keywords="skull;helmet" id="5741" sellprice="60000"/>	
+			<item keywords="fur;boots" id="7457" sellprice="3000"/>	
+			<item keywords="glacier;shoes" id="7892" sellprice="3750"/>	
+			<item keywords="lightning;boots" id="7893" sellprice="3750"/>	
+			<item keywords="magma;boots" id="7891" sellprice="3750"/>	
+			<item keywords="steel;boots" id="2645" sellprice="45000"/>	
+			<item keywords="terra;boots" id="7886" sellprice="3750"/>	
+			<item keywords="amber;staff" id="7526" sellprice="12000"/>	
+			<item keywords="chaos;mace" id="7427" sellprice="18000"/>	
+			<item keywords="demonrage;sword" id="7382" sellprice="54000"/>	
+			<item keywords="dragon;slayer" id="7402" sellprice="22500"/>	
+			<item keywords="guardian;halberd" id="2427" sellprice="16500"/>	
+			<item keywords="wyvern;fang" id="7408" sellprice="13500"/>	
+			<item keywords="ring;of;the;sky" id="2123" sellprice="45000"/>
+			<item keywords="relic;sword" id="7383" sellprice="37500"/>
 		</itemlist>		
 </interaction>
