@@ -14846,10 +14846,7 @@
     <monster name="Eye of the seven" x="2" y="3" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="2599" centery="1061" centerz="11" radius="5">
-    <monster name="Dreadbeast" x="3" y="-1" z="11" spawntime="60"/>
     <monster name="Hellgorak" x="1" y="2" z="11" spawntime="60"/>
-    <monster name="Dreadbeast" x="-4" y="3" z="11" spawntime="60"/>
-    <monster name="Dreadbeast" x="2" y="4" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="2520" centery="1063" centerz="11" radius="5">
     <monster name="Madareth" x="-1" y="2" z="11" spawntime="60"/>
@@ -14871,10 +14868,10 @@
     <monster name="Flamethrower" x="3" y="2" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="2596" centery="1066" centerz="11" radius="5">
-    <monster name="Dreadbeast" x="1" y="1" z="11" spawntime="60"/>
+
   </spawn>
   <spawn centerx="2602" centery="1067" centerz="11" radius="5">
-    <monster name="Dreadbeast" x="3" y="-3" z="11" spawntime="60"/>
+
   </spawn>
   <spawn centerx="2554" centery="1071" centerz="11" radius="5">
     <monster name="Flamethrower" x="-5" y="1" z="11" spawntime="60"/>
