@@ -7,6 +7,7 @@
 	runPremiumSystem(cid)
 	setRateStage(cid)
 	checkItemShop(cid)
+	
 	if(getPlayerVocation(cid) <= 4) then
 		defineFirstItems(cid)	
 	end
