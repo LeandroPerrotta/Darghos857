@@ -2,7 +2,7 @@
 	--Register the kill/die event
 	registerCreatureEvent(cid, "AutoBan")
 	registerCreatureEvent(cid, "RemoveBlesses")
-	
+	registerCreatureEvent(cid, "Advance")	
 	
 	runPremiumSystem(cid)
 	setRateStage(cid)
