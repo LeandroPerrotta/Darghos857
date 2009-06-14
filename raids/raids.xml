@@ -1,2 +1,20 @@
-<?xml version="1.0"?>
-<raids/>
+<raids>
+	-- CITY INVASION Raids
+		-- Quendor
+		<raid name="quendor_troll" file="quendor/quendor_troll.xml" interval2="9000000" margin="1000"/>	
+		<raid name="quendor_ghoul" file="quendor/quendor_ghoul.xml" interval2="9000000" margin="1000"/>	
+		<raid name="quendor_rotworm" file="quendor/quendor_rotworm.xml" interval2="9000000" margin="1000"/>	
+		<raid name="quendor_goblin" file="quendor/quendor_goblin.xml" interval2="9000000" margin="1000"/>	
+		<raid name="quendor_minotaur" file="quendor/quendor_minotaur.xml" interval2="9000000" margin="1000"/>	
+		
+		
+		-- Thorn
+		<raid name="thorn_cyclops" file="thorn/thorn_cyclops.xml" interval2="9000000" margin="1000"/>	
+		
+		-- Aracura
+		
+		-- Others Areas
+		
+	-- SPECIAL Raids
+		
+</raids>
