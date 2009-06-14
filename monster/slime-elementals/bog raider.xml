@@ -62,6 +62,6 @@
       <item id="8472" chance="5000"/>
       <item id="8473" chance="3000"/>
       <item id="8873" chance="2500"/>
-      <item id="8891" chance="2800"/>
+      <item id="8891" chance="1350"/>
 	</loot>
 </monster>
