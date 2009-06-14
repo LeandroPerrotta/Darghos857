@@ -3,6 +3,7 @@
 	registerCreatureEvent(cid, "AutoBan")
 	registerCreatureEvent(cid, "RemoveBlesses")
 	registerCreatureEvent(cid, "Advance")	
+	registerCreatureEvent(cid, "Stages")
 	
 	runPremiumSystem(cid)
 	setRateStage(cid)
