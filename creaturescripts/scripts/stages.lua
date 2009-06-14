@@ -10,7 +10,6 @@ function onAdvance(cid, LEVEL_EXPERIENCE, oldlevel, newlevel)
 	six		= 1
 	}
 	
-		print(LEVEL_EXPERIENCE)
 	
 	if(LEVEL_EXPERIENCE+1 <= 40) then
 		setExperienceRate(cid, stages.first)
@@ -25,7 +24,7 @@ function onAdvance(cid, LEVEL_EXPERIENCE, oldlevel, newlevel)
 	elseif(LEVEL_EXPERIENCE+1 > 220) then
 		setExperienceRate(cid, stages.six)
 	else
-		print("Player "..name.." falhou durante o processo de setRateStage.")
+		print("Player "..name.." falhou durante o processo de setRateStage 2.")
 	end
 	
 
