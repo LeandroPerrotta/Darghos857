@@ -1,5 +1,10 @@
 local quests =
 	{
+		[aid.QUENDOR_10K] = {
+			storageId = sid.QUENDOR_10K,
+			rewardId = 2160,
+			count = 1
+		}	,
 		[aid.SERPENT_SWORDARACURA] = {
 			storageId = sid.SERPENT_SWORDARACURA,
 			rewardId = 2409,
