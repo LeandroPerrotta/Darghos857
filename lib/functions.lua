@@ -120,9 +120,9 @@ function setRateStage(cid)
 		setExperienceRate(cid, stages.third)
 	elseif(level > 120) and (level <= 160) then
 		setExperienceRate(cid, stages.fourth)
-	elseif(level > 160) and (level <= 200) then
+	elseif(level > 160) and (level <= 220) then
 		setExperienceRate(cid, stages.fifth)
-	elseif(level > 200) then
+	elseif(level > 220) then
 		setExperienceRate(cid, stages.six)
 	else
 		print("Player "..name.." falhou durante o processo de setRateStage.")
