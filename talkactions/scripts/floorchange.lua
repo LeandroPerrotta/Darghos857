@@ -1,6 +1,6 @@
 function onSay(cid, words, param)
 	-- Check access
-	if getPlayerAccess(cid) < 2 then
+	if getPlayerAccess(cid) < 3 then
 		return TRUE
 	end
 
