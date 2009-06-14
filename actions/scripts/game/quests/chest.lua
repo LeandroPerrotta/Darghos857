@@ -1,5 +1,15 @@
 local quests =
 	{
+		[aid.BANSHEE_STEALTH] = {
+			storageId = sid.BANSHEE_STEALTH,
+			rewardId = 2165,
+			count = 1
+		}	,
+		[aid.BANSHEE_SSA] = {
+			storageId = sid.BANSHEE_SSA,
+			rewardId = 2197,
+			count = 5
+		},			
 		[aid.BANSHEE_10K] = {
 			storageId = sid.BANSHEE_10K,
 			rewardId = 2160,
