@@ -17,17 +17,17 @@
 		<flag runonhealth="80"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" skill="55" attack="45"/>
-		<attack name="fire" interval="1000" chance="12" length="8" spread="3" min="-40" max="-110">
+		<attack name="melee" interval="2000" skill="50" attack="45"/>
+		<attack name="fire" interval="1000" chance="12" length="8" spread="3" min="-10" max="-110">
 			<attribute key="areaEffect" value="firearea"/>
 		</attack>
-		<attack name="lifedrain" interval="1000" chance="14" length="8" spread="3" min="-60" max="-90">
+		<attack name="lifedrain" interval="1000" chance="14" length="8" spread="3" min="-20" max="-90">
 			<attribute key="areaEffect" value="poff"/>
 		</attack>
 		<attack name="fire" interval="1000" chance="15" range="7" min="-40" max="-80">
 			<attribute key="shootEffect" value="fire"/>
 		</attack>
-		<attack name="fire" interval="1000" chance="17" range="7" radius="4" target="1" min="-80" max="-140">
+		<attack name="fire" interval="1000" chance="17" range="7" radius="4" target="1" min="-30" max="-140">
 			<attribute key="shootEffect" value="fire"/>
 			<attribute key="areaEffect" value="firearea"/>
 		</attack>
