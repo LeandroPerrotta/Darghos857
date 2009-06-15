@@ -45,7 +45,7 @@
 		<item id="1987" chance="100000">
 			<inside>
 				<item id="2559" chance="10000"/>
-				<item id="1294" countmax="4" chance1="30000" chancemax="0"/>
+				<item id="1294" countmax="4" chance1="30000" chancemax="5000"/>
 				<item id="2667" countmax="2" chance1="20000" chancemax="0"/>
 				<item id="2230" chance="10000"/>
 				<item id="2235" chance="10000"/>
