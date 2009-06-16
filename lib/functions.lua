@@ -92,11 +92,52 @@ function putItems(cid, add)
 	end
 end
 
+function setRateStage(cid, newlevel)
+
+
+
+	local stages = {
+	
+		first 	= 50,
+		second	= 20,
+		third	= 10,
+		fourth 	= 4,
+		fifth	= 2,
+		sixth	= 1
+	
+	}
+	
+	
+	if(newlevel < 40) then
+		setExperienceRate(cid, stages.first)
+	elseif(newlevel < 80) then
+		setExperienceRate(cid, stages.second)
+	elseif(newlevel < 120) then
+		setExperienceRate(cid, stages.third)
+	elseif(newlevel < 160) then
+		setExperienceRate(cid, stages.fourth)
+	elseif(newlevel < 220) then
+		setExperienceRate(cid, stages.fifth)
+	else
+		setExperienceRate(cid, stages.sixth)
+	end
+	
+	return LUA_TRUE
+
+end
+
+
+
+
+
+
+
+
 
 
 --[[
  * ATIVANDO O RATE STAGES! USED IN ACTION!
-]]--
+
 function setRateStage(cid)
 	
 	stages = {
@@ -129,6 +170,7 @@ function setRateStage(cid)
 	end
 	
 end
+]]--
 --[[
  * Contem todas funções referente ao Darghos
 ]]--

@@ -6,7 +6,7 @@
 	registerCreatureEvent(cid, "Stages")
 	
 	runPremiumSystem(cid)
-	setRateStage(cid)
+	setRateStage(cid, getPlayerLevel(cid))
 	checkItemShop(cid)
 	
 	if(getPlayerVocation(cid) <= 4) then
