@@ -1754,16 +1754,19 @@
 		<attribute key="containerSize" value="15"/>
 	</item>
 	<item id="1747" article="a" name="chest">
+		<attribute key="moveable" value="false"/>
 		<attribute key="weight" value="12000"/>
 		<attribute key="rotateTo" value="1749"/>
 		<attribute key="containerSize" value="15"/>
 	</item>
 	<item id="1748" article="a" name="chest">
+		<attribute key="moveable" value="false"/>
 		<attribute key="weight" value="12000"/>
 		<attribute key="rotateTo" value="1747"/>
 		<attribute key="containerSize" value="15"/>
 	</item>
 	<item id="1749" article="a" name="chest">
+		<attribute key="moveable" value="false"/>
 		<attribute key="weight" value="12000"/>
 		<attribute key="rotateTo" value="1740"/>
 		<attribute key="containerSize" value="15"/>
