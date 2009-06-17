@@ -62,7 +62,7 @@
 				  price = getBlessPrice(level)
 				  
 				if(getPlayerBless(cid,blessID)) == FALSE then
-					if(doPlayerRemoveMoney(cid,price)) then	
+					if(doPlayerRemoveMoney(cid,price)) == TRUE then	
 						doPlayerAddBless(cid, blessID)
 						selfSay("Congratulations, you are blessed by me! Remember, have five blessings!",cid)
 					else
