@@ -42,7 +42,7 @@
 		
 		if(getPlayerLevel(cid)) >= 20 then
 			if(getPlayerVocation(cid)) <= 4 then
-				if(doPlayerRemoveMoney(cid,20000)) then
+				if(doPlayerRemoveMoney(cid,20000)) == TRUE then
 					setPlayerStorageValue(cid,STORAGE_PROMOTION,1)
 					selfSay("Congratulations! Now you are promoted. You need relog your character!   {LONG LIFE TO THE KING!}",cid)
 				else
