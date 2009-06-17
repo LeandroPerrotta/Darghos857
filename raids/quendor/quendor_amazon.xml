@@ -1,0 +1,37 @@
+<raid>
+<announce delay="0" type="event" message="The rebel ladies plan an attack to Quendor."/>
+<announce delay="60000" type="event" message="Amazons and Valkyries attacking Quendor!"/>
+
+<areaspawn delay="60000" centerx="2011" centery="1871" centerz="7" radius="30">
+<monster name="Valkyrie" minamount="10" maxamount="20"/>
+</areaspawn>
+
+<areaspawn delay="60000" centerx="1990" centery="1871" centerz="7" radius="15">
+<monster name="Amazon" minamount="10" maxamount="50"/>
+</areaspawn>
+
+<areaspawn delay="60000" centerx="1986" centery="1861" centerz="7" radius="3">
+<monster name="Amazon" minamount="12" maxamount="20"/>
+</areaspawn>
+
+<areaspawn delay="60000" centerx="1981" centery="1876" centerz="7" radius="3">
+<monster name="Amazon" minamount="12" maxamount="20"/>
+</areaspawn>
+
+<areaspawn delay="68000" centerx="2011" centery="1871" centerz="7" radius="30">
+<monster name="Amazon" minamount="10" maxamount="20"/>
+</areaspawn>
+
+<areaspawn delay="70000" centerx="1990" centery="1871" centerz="7" radius="15">
+<monster name="Amazon" minamount="10" maxamount="50"/>
+</areaspawn>
+
+<areaspawn delay="90000" centerx="1986" centery="1861" centerz="7" radius="3">
+<monster name="Amazon" minamount="12" maxamount="20"/>
+</areaspawn>
+
+<areaspawn delay="100000" centerx="1981" centery="1876" centerz="7" radius="3">
+<monster name="Valkyrie" minamount="12" maxamount="20"/>
+</areaspawn>
+
+</raid>
