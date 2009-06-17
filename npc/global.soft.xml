@@ -90,7 +90,7 @@
         <action name="script">
         <![CDATA[
 			if(getPlayerItemCount(cid,6530)) >= 1 then
-				if(doPlayerRemoveMoney(cid,10000)) then
+				if(doPlayerRemoveMoney(cid,10000)) == TRUEthen
 					doPlayerRemoveItem(cid,6530,1)	
 					doPlayerAddItem(cid, 6132,1)
 					selfSay("Here is your new soft boots! Enjoy it.",cid)
@@ -122,7 +122,7 @@
         <action name="script">
         <![CDATA[
 			if(getPlayerItemCount(cid,9934)) >= 1 then
-				if(doPlayerRemoveMoney(cid,10000)) then
+				if(doPlayerRemoveMoney(cid,10000)) == TRUE then
 					doPlayerRemoveItem(cid,9934,1)
 					doPlayerAddItem(cid, 9933,1)
 					selfSay("Here is your new firewalker boots! Enjoy it.",cid)
