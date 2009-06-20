@@ -117,6 +117,8 @@
 		POI_VERIFY_5			= 4028,
 		POI_VERIFY_6			= 4029,
 		MINES_ELEVADOR			= 4030,
+		TRAINERS_WEST			= 4031,
+		TRAINER_EAST			= 4032,
 		
 
 		--@ POI LABIRINTO | Used small numbers for aids, because its better1!!

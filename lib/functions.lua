@@ -1,4 +1,50 @@
 --[[
+	* GLOBAL SERVER SAVE
+]]--
+function startGlobalSave()
+	
+	broadcastMessage("O servidor irá executar um Save Server em 5 minutos, por favor, vá para um local seguro.", MESSAGE_STATUS_WARNING)
+	
+	addEvent(sendSSMessage, 180000)
+	addEvent(saveTotal,300000)
+
+end
+function saveTotal()
+
+	broadcastMessage("Server Save executado. Aguarde....",MESSAGE_STATUS_WARNING)
+	doSaveServer(payHouses)
+
+end
+function sendSSMessage()
+
+	broadcastMessage("O servidor irá executar um Save Server em 2 minutos, por favor, vá para um local seguro.",MESSAGE_STATUS_WARNING)
+	
+end
+
+--[[
+	* TRAINERS
+]]--
+function addTrainer(actionid)
+
+	if(actionid == aid.TRAINERS_WEST) then
+		local pos = {
+			trainer1 = {x= item.x-1, y= item.y-1, z= item.z},
+			trainer2 = {x= item.x-1, y= item.y+1, z= item.z}				
+		}
+	end
+	
+	if(actionid == aid.TRAINERS_EAST) then
+		local pos = {
+			trainer1 = {x= item.x-1, y= item.y-1, z= item.z},
+			trainer2 = {x= item.x-1, y= item.y+1, z= item.z}				
+		}	
+	end
+	
+	
+
+end
+
+--[[
 	* SETAR NOVOS ITEMS PARA FIRST LOGIN
 ]]--
 function defineFirstItems(cid)
