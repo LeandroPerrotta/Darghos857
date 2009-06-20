@@ -69,6 +69,7 @@
 	<rune name="adevo mas grav vis" id="2279" lvl="41" maglv="9" blocktype="solid" charges="4" script="attack/energy_wall.lua">
 	</rune>
 	<rune name="adori gran mort" id="2268" lvl="45" maglv="15" needtarget="1" charges="3" script="attack/sudden_death.lua">
+		<vocation name="Master Sorcerer"/>   <vocation name="Sorcerer"/>
 	</rune>
 	<rune name="adana ani" id="2278" lvl="54" maglv="18" mana="1400" needtarget="1" charges="5" script="support/paralyze_rune.lua">
 		<vocation name="Druid"/>   <vocation name="Elder Druid"/>
