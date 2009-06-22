@@ -14,14 +14,14 @@
 	<monster name="Bazir" file="darghos/bazir.xml" />	
 	<monster name="Behemoth King" file="darghos/behemoth king.xml" />
 	<monster name="Behemoth Minion" file="darghos/Behemoth Minion.xml" />
-	<monster name="Dark warrior" file="darghos/dark warrior.xml" />
-	<monster name="Dark General" file="darghos/dark general.xml" />
+	<monster name="Dark warrior" file="darghos/Dark warrior.xml" />
+	<monster name="Dark General" file="darghos/Dark General.xml" />
 	<monster name="Dark Archer" file="darghos/dark archer.xml" />
-	<monster name="Dark Eye" file="darghos/dark eye.xml" />
+	<monster name="Dark Eye" file="darghos/Dark Eye.xml" />
 	<monster name="demonlegs" file="darghos/demonlegs.xml" />
 	<monster name="demonportal" file="darghos/demonportal.xml" />
 	<monster name="Durin" file="darghos/durin.xml" />
-	<monster name="Dwarf Miner" file="darghos/Dwarf Miner.xml" />
+	<monster name="Dwarf Miner" file="darghos/dwarf miner.xml" />
 	<monster name="ent" file="darghos/ent.xml" />
 	<monster name="Fallen Mooh tah Master Ghar" file="darghos/Fallen Mooh tah Master Ghar.xml" />
 	<monster name="High Inquisitor" file="darghos/High Inquisitor.xml" />
@@ -38,15 +38,15 @@
 	<monster name="orshabaalportal" file="darghos/orshabaalportal.xml" />
 	<monster name="Ragnaros" file="darghos/Ragnaros.xml" />
 	<monster name="Sand Dragon" file="darghos/sand dragon.xml" />
-	<monster name="son of ferumbras" file="darghos/son of ferumbras.xml" />
+	<monster name="son of ferumbras" file="darghos/Son of ferumbras.xml" />
 	<monster name="Tezrian" file="darghos/Tezrian.xml" />
-	<monster name="thashi aharon" file="darghos/thashi aharon.xml" />
+	<monster name="thashi aharon" file="darghos/Thashi Aharon.xml" />
 	<monster name="Tutankamun" file="darghos/tutankamun.xml" />
 	<monster name="Ukobach" file="darghos/Ukobach.xml" />
 	<monster name="Uruk-hai" file="darghos/uruk.xml" />
 	<monster name="Yojamba sentinel" file="darghos/Yojamba sentinel.xml" />
 	<monster name="Yojamba snakecharmer" file="darghos/Yojamba snakecharmer.xml" />
-	<monster name="Yojamba templar" file="darghos/Yojamba Templar.xml" />
+	<monster name="Yojamba templar" file="darghos/Yojamba templar.xml" />
 	<monster name="Yojamba King" file="darghos/Yojamba King.xml" />
 	<monster name="Yojamba Throne" file="darghos/Yojamba Throne.xml" />
 	<monster name="Zepar" file="darghos/Zepar.xml" />
@@ -154,13 +154,13 @@
 	<monster name="Foreman Kneebiter" file="bosses/foreman kneebiter.xml"/>
 	<monster name="General Murius" file="bosses/general murius.xml"/>
 	<monster name="Ghazbaran" file="bosses/ghazbaran.xml"/>
-	<monster name="Golgordan" file="Bosses/golgordan.xml"/>
+	<monster name="Golgordan" file="bosses/golgordan.xml"/>
 	<monster name="Grorlam" file="bosses/grorlam.xml"/>
 	<monster name="Grynch Clan Goblin" file="bosses/grynch clan goblin.xml"/>
 	<monster name="Hellgorak" file="bosses/hellgorak.xml"/>
 	<monster name="Latrivan" file="bosses/latrivan.xml"/>
 	<monster name="Lethal Lissy" file="bosses/lethal lissy.xml"/>
-	<monster name="Lord of the Elements" file="Bosses/lord of the elements.xml"/>
+	<monster name="Lord of the Elements" file="bosses/lord of the elements.xml"/>
 	<monster name="Mad Technomancer" file="bosses/mad technomancer.xml"/>
 	<monster name="Madareth" file="bosses/madareth.xml"/>
 	<monster name="Man In The Cave" file="bosses/man in the cave.xml"/>
@@ -410,7 +410,7 @@
 	<monster name="Nomad" file="outlaws/nomad.xml"/>
 	<monster name="Primitive" file="outlaws/primitive.xml"/>
 	<monster name="Smuggler" file="outlaws/smuggler.xml"/>
-	<monster name="Stalker" file="Outlaws/stalker.xml"/>
+	<monster name="Stalker" file="outlaws/stalker.xml"/>
 	<monster name="Wild Warrior" file="outlaws/wild warrior.xml"/>
 
 	<!-- Pharaohs -->
