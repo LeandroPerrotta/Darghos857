@@ -2,55 +2,55 @@
 <monsters>
 
 	<!-- Darghos -->
-	<monster name="Bad Bug" file="Darghos/bad bug.xml"/>
-	<monster name="Bad Rabbit" file="Darghos/bad rabbit.xml"/>
-	<monster name="Hero Hacker" file="Darghos/hero hacker.xml"/>
-	<monster name="Anamelech" file="Darghos/Anamelech.xml" />
-	<monster name="Ancient Demon" file="Darghos/ancient demon.xml" />
-	<monster name="Apocalypse" file="Darghos/apocalypse.xml" />
-	<monster name="Azathoth" file="Darghos/Azathoth.xml" />
-	<monster name="Balrog" file="Darghos/Balrog.xml" />
-	<monster name="Bayemon" file="Darghos/Bayemon.xml" />
-	<monster name="Bazir" file="Darghos/bazir.xml" />	
-	<monster name="Behemoth King" file="Darghos/behemoth king.xml" />
-	<monster name="Behemoth Minion" file="Darghos/Behemoth Minion.xml" />
-	<monster name="Dark warrior" file="Darghos/dark warrior.xml" />
-	<monster name="Dark General" file="Darghos/dark general.xml" />
-	<monster name="Dark Archer" file="Darghos/dark archer.xml" />
-	<monster name="Dark Eye" file="Darghos/dark eye.xml" />
-	<monster name="demonlegs" file="Darghos/demonlegs.xml" />
-	<monster name="demonportal" file="Darghos/demonportal.xml" />
-	<monster name="Durin" file="Darghos/durin.xml" />
-	<monster name="Dwarf Miner" file="Darghos/Dwarf Miner.xml" />
-	<monster name="ent" file="Darghos/ent.xml" />
-	<monster name="Fallen Mooh'tah Master Ghar" file="Darghos/Fallen Mooh'tah Master Ghar.xml" />
-	<monster name="High Inquisitor" file="Darghos/High Inquisitor.xml" />
-	<monster name="Incendius" file="Darghos/Incendius.xml" />
-	<monster name="Krapt-Kun" file="Darghos/krapt.xml" />
-	<monster name="Krish-Katul" file="Darghos/krish.xml" />
-	<monster name="Mechanical Catapult" file="Darghos/Mechanical Catapult.xml" />
-	<monster name="Mirage Guardian" file="Darghos/Mirage Guardian.xml" />
-	<monster name="Molten Guard" file="Darghos/Molten Guard.xml" />
-	<monster name="Nergal" file="Darghos/Nergal.xml" />
-	<monster name="Nosferatu" file="Darghos/Nosferatu.xml" />
-	<monster name="onyxia" file="Darghos/onyxia.xml" />
-	<monster name="onyxiab" file="Darghos/onyxiab.xml" />
-	<monster name="orshabaalportal" file="Darghos/orshabaalportal.xml" />
-	<monster name="Ragnaros" file="Darghos/Ragnaros.xml" />
-	<monster name="Sand Dragon" file="Darghos/sand dragon.xml" />
-	<monster name="son of ferumbras" file="Darghos/son of ferumbras.xml" />
-	<monster name="Tezrian" file="Darghos/Tezrian.xml" />
-	<monster name="thashi aharon" file="Darghos/thashi aharon.xml" />
-	<monster name="Tutankamun" file="Darghos/tutankamun.xml" />
-	<monster name="Ukobach" file="Darghos/Ukobach.xml" />
-	<monster name="Uruk-hai" file="Darghos/uruk.xml" />
-	<monster name="Yojamba sentinel" file="Darghos/Yojamba sentinel.xml" />
-	<monster name="Yojamba snakecharmer" file="Darghos/Yojamba snakecharmer.xml" />
-	<monster name="Yojamba templar" file="Darghos/Yojamba Templar.xml" />
-	<monster name="Yojamba King" file="Darghos/Yojamba King.xml" />
-	<monster name="Yojamba Throne" file="Darghos/Yojamba Throne.xml" />
-	<monster name="Zepar" file="Darghos/Zepar.xml" />
-	<monster name="Zunda-Burs" file="Darghos/zunda.xml" />
+	<monster name="Bad Bug" file="darghos/bad bug.xml"/>
+	<monster name="Bad Rabbit" file="darghos/bad rabbit.xml"/>
+	<monster name="Hero Hacker" file="darghos/hero hacker.xml"/>
+	<monster name="Anamelech" file="darghos/Anamelech.xml" />
+	<monster name="Ancient Demon" file="darghos/ancient demon.xml" />
+	<monster name="Apocalypse" file="darghos/apocalypse.xml" />
+	<monster name="Azathoth" file="darghos/Azathoth.xml" />
+	<monster name="Balrog" file="darghos/Balrog.xml" />
+	<monster name="Bayemon" file="darghos/Bayemon.xml" />
+	<monster name="Bazir" file="darghos/bazir.xml" />	
+	<monster name="Behemoth King" file="darghos/behemoth king.xml" />
+	<monster name="Behemoth Minion" file="darghos/Behemoth Minion.xml" />
+	<monster name="Dark warrior" file="darghos/dark warrior.xml" />
+	<monster name="Dark General" file="darghos/dark general.xml" />
+	<monster name="Dark Archer" file="darghos/dark archer.xml" />
+	<monster name="Dark Eye" file="darghos/dark eye.xml" />
+	<monster name="demonlegs" file="darghos/demonlegs.xml" />
+	<monster name="demonportal" file="darghos/demonportal.xml" />
+	<monster name="Durin" file="darghos/durin.xml" />
+	<monster name="Dwarf Miner" file="darghos/Dwarf Miner.xml" />
+	<monster name="ent" file="darghos/ent.xml" />
+	<monster name="Fallen Mooh tah Master Ghar" file="darghos/Fallen Mooh tah Master Ghar.xml" />
+	<monster name="High Inquisitor" file="darghos/High Inquisitor.xml" />
+	<monster name="Incendius" file="darghos/Incendius.xml" />
+	<monster name="Krapt-Kun" file="darghos/krapt.xml" />
+	<monster name="Krish-Katul" file="darghos/krish.xml" />
+	<monster name="Mechanical Catapult" file="darghos/Mechanical Catapult.xml" />
+	<monster name="Mirage Guardian" file="darghos/Mirage Guardian.xml" />
+	<monster name="Molten Guard" file="darghos/Molten Guard.xml" />
+	<monster name="Nergal" file="darghos/Nergal.xml" />
+	<monster name="Nosferatu" file="darghos/Nosferatu.xml" />
+	<monster name="onyxia" file="darghos/onyxia.xml" />
+	<monster name="onyxiab" file="darghos/onyxiab.xml" />
+	<monster name="orshabaalportal" file="darghos/orshabaalportal.xml" />
+	<monster name="Ragnaros" file="darghos/Ragnaros.xml" />
+	<monster name="Sand Dragon" file="darghos/sand dragon.xml" />
+	<monster name="son of ferumbras" file="darghos/son of ferumbras.xml" />
+	<monster name="Tezrian" file="darghos/Tezrian.xml" />
+	<monster name="thashi aharon" file="darghos/thashi aharon.xml" />
+	<monster name="Tutankamun" file="darghos/tutankamun.xml" />
+	<monster name="Ukobach" file="darghos/Ukobach.xml" />
+	<monster name="Uruk-hai" file="darghos/uruk.xml" />
+	<monster name="Yojamba sentinel" file="darghos/Yojamba sentinel.xml" />
+	<monster name="Yojamba snakecharmer" file="darghos/Yojamba snakecharmer.xml" />
+	<monster name="Yojamba templar" file="darghos/Yojamba Templar.xml" />
+	<monster name="Yojamba King" file="darghos/Yojamba King.xml" />
+	<monster name="Yojamba Throne" file="darghos/Yojamba Throne.xml" />
+	<monster name="Zepar" file="darghos/Zepar.xml" />
+	<monster name="Zunda-Burs" file="darghos/zunda.xml" />
 
 	<!-- Amazons -->
 	<monster name="Amazon" file="amazons/amazon.xml"/>
@@ -101,7 +101,7 @@
 	<!-- Warlord -->
 	<monster name="Darakan the Executioner" file="arena/warlord/darakan the executioner.xml"/>
 	<monster name="Deathbringer" file="arena/warlord/deathbringer.xml"/>
-	<monster name="Fallen Mooh'tah Master Ghar" file="arena/warlord/fallen mooh'tah master ghar.xml"/>
+	<monster name="Fallen Mooh tah Master Ghar" file="arena/warlord/fallen mooh tah master ghar.xml"/>
 	<monster name="Gnorre Chyllson" file="arena/warlord/gnorre chyllson.xml"/>
 	<monster name="Norgle Glacierbeard" file="arena/warlord/norgle glacierbeard.xml"/>
 	<monster name="Svoren the Mad" file="arena/warlord/svoren the mad.xml"/>
@@ -436,7 +436,7 @@
 	<monster name="Pirate Tad the Well-Tanned" file="Pirates/Pirate Tad the Well-Tanned.xml" />
 	<monster name="Pants-Down Elmer" file="Pirates/Pants-Down Elmer.xml" />
 	<monster name="Pirate Ron the Off-White" file="Pirates/Pirate Ron the Off-White.xml" />
-	<monster name="Shoutin' Wally Cutty" file="Pirates/Shoutin' Wally Cutty.xml" />
+	<monster name="Shoutin Wally Cutty" file="Pirates/Shoutin Wally Cutty.xml" />
 	<monster name="Sea Monkey Ferdinand" file="Pirates/Sea Monkey Ferdinand.xml" />
 	<monster name="Pirate Laszlo the Engorged" file="Pirates/Pirate Laszlo the Engorged.xml" />
 	<monster name="Epileptic Enrico Slaughter" file="Pirates/Epileptic Enrico Slaughter.xml" />
