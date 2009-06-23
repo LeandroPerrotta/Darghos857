@@ -69,7 +69,6 @@
 	<rune name="adevo mas grav vis" id="2279" lvl="41" maglv="9" blocktype="solid" charges="4" script="attack/energy_wall.lua">
 	</rune>
 	<rune name="adori gran mort" id="2268" lvl="45" maglv="15" needtarget="1" charges="3" script="attack/sudden_death.lua">
-		<vocation name="Master Sorcerer"/>   <vocation name="Sorcerer"/>
 	</rune>
 	<rune name="adana ani" id="2278" lvl="54" maglv="18" mana="1400" needtarget="1" charges="5" script="support/paralyze_rune.lua">
 		<vocation name="Druid"/>   <vocation name="Elder Druid"/>
@@ -107,7 +106,6 @@
 	</conjure>
 	<conjure name="Sudden Death" words="adori gran mort" lvl="45" mana="985" soul="5" reagentId="2260" conjureId="2268" conjureCount="3" function="conjureRune">
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/>
-		<vocation name="Druid"/>    <vocation name="Elder Druid"/>
 	</conjure>
 	<conjure name="Paralyze" words="adana ani" lvl="54" mana="1400" soul="3" prem="1" reagentId="2260" conjureId="2278" conjureCount="1" function="conjureRune">
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>
