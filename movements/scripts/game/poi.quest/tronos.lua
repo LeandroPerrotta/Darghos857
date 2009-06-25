@@ -1,7 +1,7 @@
 function onStepIn(cid, item, position, fromPosition)
 
 	--@ Ashfalors Throne
-	if item.actionid == aid.POI_TRONE1 and item.itemid == 4023 then
+	if item.actionid == aid.POI_TRONE1 and item.itemid == 5915 then
 		if getPlayerStorageValue(cid,cid,sid.POI_TRONE_1) ~= 1 then
 			setPlayerStorageValue(cid, sid.POI_TRONE_1,1)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You have touched Ashfalors throne and absorbed sobe of his sprit')
