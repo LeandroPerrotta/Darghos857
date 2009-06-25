@@ -51,7 +51,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end		
 	
 	--@ Verminor Throne
-	if item.actionid == aid.POI_TRONE6 and item.itemid == 5916 then
+	if item.actionid == aid.POI_TRONE6 and item.itemid == 5915 then
 		if getPlayerStorageValue(cid,sid.POI_TRONE_6) ~= 1 then
 			setPlayerStorageValue(cid, sid.POI_TRONE_6,1)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You have touched Verminors throne and absorbed sobe of his sprit')
