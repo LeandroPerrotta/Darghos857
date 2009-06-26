@@ -149,7 +149,8 @@ public:
 	  * Get a single tile of the map.
 	  * \return A pointer to the tile
 		*/
-	Tile* getTile(uint32_t x, uint32_t y, uint32_t z);
+	Tile* getTile(int32_t x, int32_t y, int32_t z);
+	Tile* getTile(const Position& pos);
 
 	/**
 	  * Set a single tile of the map, position is read from this tile
@@ -189,6 +190,35 @@ public:
 	  * \return A Pointer to the player
 	  */
 	Player* getPlayerByName(const std::string& s);
+
+	/**
+	  * Returns a player based on a string name identifier
+	  * this function returns a pointer even if the player is offline,
+	  * it is up to the caller of the function to delete the pointer - if the player is offline
+	  * use isOffline() to determine if the player was offline
+	  * \param s is the name identifier
+	  * \return A Pointer to the player
+	  */
+	Player* getPlayerByNameEx(const std::string& s);
+
+	/**
+	  * Returns a player based on a guid identifier
+	  * this function returns a pointer even if the player is offline,
+	  * it is up to the caller of the function to delete the pointer - if the player is offline
+	  * use isOffline() to determine if the player was offline
+	  * \param guid is the identifier
+	  * \return A Pointer to the player
+	  */
+	Player* getPlayerByGuid(uint32_t guid);
+
+	/**
+	  * Returns a player based on a guid identifier
+	  * this function returns a pointer even if the player is offline,
+	  * it is up to the caller of the function to delete the pointer - if the player is offline
+	  * use isOffline() to determine if the player was offline
+	  * \param guid is the identifier
+	  */
+	Player* getPlayerByGuidEx(uint32_t guid);
 
 	/**
 	  * Returns a player based on a string name identifier, with support for the "~" wildcard.
@@ -317,7 +347,7 @@ public:
 	  * \param flags optional flags to modifiy the default behaviour
 	  * \return true if the removal was successful
 	  */
-	bool removeMoney(Cylinder* cylinder, int32_t money, uint32_t flags = 0);
+	bool removeMoney(Cylinder* cylinder, uint32_t money, uint32_t flags = 0);
 
 	/**
 	  * Add item(s) with monetary value
@@ -326,7 +356,7 @@ public:
 	  * \param flags optional flags to modify default behavior
 	  * \return true
 	  */
-	bool addMoney(Cylinder* cylinder, int32_t money, uint32_t flags = 0);
+	bool addMoney(Cylinder* cylinder, uint32_t money, uint32_t flags = 0);
 
 	/**
 	  * Transform one item to another type/count
@@ -511,7 +541,6 @@ public:
 	void addCommandTag(std::string tag);
 	void resetCommandTag();
 
-	bool npcSpeakToPlayer(Npc* npc, Player* player, const std::string& text, bool publicize);
 	const RuleViolationsMap& getRuleViolations() const {return ruleViolations;}
 	bool cancelRuleViolation(Player* player);
 	bool closeRuleViolation(Player* player);

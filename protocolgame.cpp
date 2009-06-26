@@ -60,41 +60,22 @@ Chat g_chat;
 uint32_t ProtocolGame::protocolGameCount = 0;
 #endif
 
-#if defined __SERVER_PROTECTION__
-#error "You should not use __SERVER_PROTECTION__"
-#define ADD_TASK_INTERVAL 40
-#define CHECK_TASK_INTERVAL 5000
-#else
-#define ADD_TASK_INTERVAL -1
-#endif
-
 // Helping templates to add dispatcher tasks
 
 template<class FunctionType>
 void ProtocolGame::addGameTaskInternal(bool droppable, uint32_t delay, const FunctionType& func)
 {
-	if(m_now > m_nextTask || m_messageCount < 5){
-		if(droppable)
-			g_dispatcher.addTask(createTask(delay, func));
-		else
-			g_dispatcher.addTask(createTask(func));
-		m_nextTask = m_now + ADD_TASK_INTERVAL;
-	}
-	else{
-		m_rejectCount++;
-		//std::cout << "reject task" << std::endl;
-	}
+	if(droppable)
+		g_dispatcher.addTask(createTask(delay, func));
+	else
+		g_dispatcher.addTask(createTask(func));
 }
 
 ProtocolGame::ProtocolGame(Connection_ptr connection) :
 	Protocol(connection)
 {
 	player = NULL;
-	m_nextTask = 0;
 	m_nextPing = 0;
-	m_lastTaskCheck = 0;
-	m_messageCount = 0;
-	m_rejectCount = 0;
 	m_debugAssertSent = false;
 	m_acceptPackets = false;
 	eventConnect = 0;
@@ -444,25 +425,6 @@ void ProtocolGame::parsePacket(NetworkMessage &msg)
 	if(!m_acceptPackets || msg.getMessageLength() <= 0 || !player)
 		return;
 
-	m_now = OTSYS_TIME();
-
-	#ifdef __SERVER_PROTECTION__
-	int64_t interval = m_now - m_lastTaskCheck;
-	if(interval > CHECK_TASK_INTERVAL){
-		interval = 0;
-		m_lastTaskCheck = m_now;
-		m_messageCount = 1;
-		m_rejectCount = 0;
-	}
-	else{
-		m_messageCount++;
-		//std::cout << interval/m_messageCount << " " << m_rejectCount << "/" << m_messageCount << std::endl;
-		if(/*m_rejectCount > m_messageCount/2 ||*/ (interval > 800 && interval/m_messageCount < 25)){
-			getConnection()->closeConnection();
-		}
-	}
-	#endif
-
 	uint8_t recvbyte = msg.GetByte();
 	//a dead player can not performs actions
 	if((player->isRemoved() || player->getHealth() <= 0) && recvbyte != 0x14){
@@ -789,25 +751,25 @@ void ProtocolGame::GetTileDescription(const Tile* tile, NetworkMessage_ptr msg)
 	}
 }
 
-void ProtocolGame::GetMapDescription(uint16_t x, uint16_t y, unsigned char z,
-	uint16_t width, uint16_t height, NetworkMessage_ptr msg)
+void ProtocolGame::GetMapDescription(int32_t x, int32_t y, int32_t z,
+	int32_t width, int32_t height, NetworkMessage_ptr msg)
 {
-	int skip = -1;
-	int startz, endz, zstep = 0;
+	int32_t skip = -1;
+	int32_t startz, endz, zstep = 0;
 
-	if (z > 7) {
+	if(z > 7){
 		startz = z - 2;
-		endz = std::min(MAP_MAX_LAYERS - 1, z + 2);
+		endz = std::min((int32_t)MAP_MAX_LAYERS - 1, (int32_t)z + 2);
 		zstep = 1;
 	}
-	else {
+	else{
 		startz = 7;
 		endz = 0;
 
 		zstep = -1;
 	}
 
-	for(int nz = startz; nz != endz + zstep; nz += zstep){
+	for(int32_t nz = startz; nz != endz + zstep; nz += zstep){
 		GetFloorDescription(msg, x, y, nz, width, height, z - nz, skip);
 	}
 
@@ -821,14 +783,15 @@ void ProtocolGame::GetMapDescription(uint16_t x, uint16_t y, unsigned char z,
 #endif
 }
 
-void ProtocolGame::GetFloorDescription(NetworkMessage_ptr msg, int x, int y, int z,
-	int width, int height, int offset, int& skip)
+void ProtocolGame::GetFloorDescription(NetworkMessage_ptr msg, int32_t x, int32_t y, int32_t z,
+	int32_t width, int32_t height, int32_t offset, int32_t& skip)
 {
 	Tile* tile;
 
-	for(int nx = 0; nx < width; nx++){
-		for(int ny = 0; ny < height; ny++){
+	for(int32_t nx = 0; nx < width; nx++){
+		for(int32_t ny = 0; ny < height; ny++){
 			tile = g_game.getTile(x + nx + offset, y + ny + offset, z);
+
 			if(tile){
 				if(skip >= 0){
 					msg->AddByte(skip);
@@ -1045,11 +1008,12 @@ void ProtocolGame::parseDebug(NetworkMessage& msg)
 
 void ProtocolGame::parseRecievePing(NetworkMessage& msg)
 {
-	if(m_now > m_nextPing){
+	int64_t now = OTSYS_TIME();
+	if(now > m_nextPing){
 		g_dispatcher.addTask(
 			createTask(boost::bind(&Game::playerReceivePing, &g_game, player->getID())));
 
-		m_nextPing = m_now + 2000;
+		m_nextPing = now + 2000;
 	}
 }
 
@@ -2430,68 +2394,47 @@ void ProtocolGame::sendHouseWindow(uint32_t windowTextId, House* _house,
 }
 
 void ProtocolGame::sendOutfitWindow()
-{
-	#define MAX_NUMBER_OF_OUTFITS 25
-	//client 8.0 outfits limit is 25
-
-	NetworkMessage_ptr msg = getOutputBuffer();
-	if(msg){
-		TRACK_MESSAGE(msg);
-		msg->AddByte(0xC8);
-		AddCreatureOutfit(msg, player, player->getDefaultOutfit());
-
-		//get player's sex outfits and create iterators that will be used
-		const OutfitListType& sex_outfits = Outfits::getInstance()->getOutfits(player->getSex());
-		int32_t count_outfits = sex_outfits.size();
-		OutfitListType::const_iterator it, pit;
-		
-		//create a temporary list to remove outfits that should not be in the list
-		OTSERV_HASH_SET<uint32_t> removeList;
-		for(it = sex_outfits.begin(); it != sex_outfits.end(); ++it)
-		{
-			//Well, we could just check premium here
-			//But we would also show an outfit that might be removed from a lua function (m_list)
-			//So, we do need to check canWear
-			if(!player->canWear((*it)->looktype, 0))
-				removeList.insert((*it)->looktype);
-		}
-		
-		//we need to remove outfits that won't be in the list from count_outfits
-		count_outfits -= removeList.size();
-		if(count_outfits > MAX_NUMBER_OF_OUTFITS)
-			msg->AddByte(MAX_NUMBER_OF_OUTFITS);
-		else if(count_outfits <= 0)
-			return;
-		msg->AddByte(count_outfits);
-		
-		//create outfit list
-		for(it = sex_outfits.begin(); it != sex_outfits.end() && (count_outfits > 0); ++it){
-			if(removeList.find((*it)->looktype) != removeList.end())
-				continue;
-				
-			msg->AddU16((*it)->looktype);
-			msg->AddString(Outfits::getInstance()->getOutfitName((*it)->looktype));
-				
-			//Get addons
-			//TODO: Is this loop to get addons really necessary?
-			const OutfitListType& player_outfits = player->getPlayerOutfits();
-			bool removeAddon = true;
-			for(pit = player_outfits.begin(); pit != player_outfits.end(); ++pit){
-				if((*it)->looktype != (*pit)->looktype)
-					continue;
-					
-				msg->AddByte((*pit)->addons);
-				removeAddon = false;
-				break;
+ {
+ 	#define MAX_NUMBER_OF_OUTFITS 25
+ 	//client 8.0 outfits limit is 25
+ 
+ 	NetworkMessage_ptr msg = getOutputBuffer();
+ 	if(msg){
+ 		TRACK_MESSAGE(msg);
+ 		msg->AddByte(0xC8);
+ 		AddCreatureOutfit(msg, player, player->getDefaultOutfit());
+ 
+		std::list<Outfit> outfitList;
+		for(OutfitMap::iterator it = player->outfits.begin(); it != player->outfits.end(); ++it){
+			if(player->canWearOutfit(it->first, it->second.addons)){
+				outfitList.push_back(it->second);
 			}
-				
-			if(removeAddon)
-				msg->AddByte(0x00);
-					
-			count_outfits--;
 		}
-	}
-}
+ 
+ 		if(outfitList.size() > 0){
+			if(outfitList.size() > MAX_NUMBER_OF_OUTFITS){
+ 				msg->AddByte(MAX_NUMBER_OF_OUTFITS);
+ 			}
+			else{
+	 			msg->AddByte(outfitList.size());
+			}
+
+ 			uint32_t counter = 0;
+			std::list<Outfit>::iterator it;
+ 			for(it = outfitList.begin(); it != outfitList.end() && (counter < MAX_NUMBER_OF_OUTFITS); ++it, ++counter){
+ 				msg->AddU16(it->lookType);
+				msg->AddString(it->name);
+ 				msg->AddByte(it->addons);
+ 			}
+		}
+		else{
+			msg->AddByte(1);
+			msg->AddU16(player->getDefaultOutfit().lookType);
+			msg->AddString("");
+			msg->AddByte(player->getDefaultOutfit().lookAddons);
+		}
+ 	}
+ }
 
 void ProtocolGame::sendVIPLogIn(uint32_t guid)
 {
@@ -2837,7 +2780,7 @@ void ProtocolGame::MoveUpCreature(NetworkMessage_ptr msg, const Creature* creatu
 
 		//going to surface
 		if(newPos.z == 7){
-			int skip = -1;
+			int32_t skip = -1;
 			GetFloorDescription(msg, oldPos.x - 8, oldPos.y - 6, 5, 18, 14, 3, skip); //(floor 7 and 6 already set)
 			GetFloorDescription(msg, oldPos.x - 8, oldPos.y - 6, 4, 18, 14, 4, skip);
 			GetFloorDescription(msg, oldPos.x - 8, oldPos.y - 6, 3, 18, 14, 5, skip);
@@ -2852,7 +2795,7 @@ void ProtocolGame::MoveUpCreature(NetworkMessage_ptr msg, const Creature* creatu
 		}
 		//underground, going one floor up (still underground)
 		else if(newPos.z > 7){
-			int skip = -1;
+			int32_t skip = -1;
 			GetFloorDescription(msg, oldPos.x - 8, oldPos.y - 6, oldPos.z - 3, 18, 14, 3, skip);
 
 			if(skip >= 0){
@@ -2881,8 +2824,7 @@ void ProtocolGame::MoveDownCreature(NetworkMessage_ptr msg, const Creature* crea
 
 		//going from surface to underground
 		if(newPos.z == 8){
-			int skip = -1;
-
+			int32_t skip = -1;
 			GetFloorDescription(msg, oldPos.x - 8, oldPos.y - 6, newPos.z, 18, 14, -1, skip);
 			GetFloorDescription(msg, oldPos.x - 8, oldPos.y - 6, newPos.z + 1, 18, 14, -2, skip);
 			GetFloorDescription(msg, oldPos.x - 8, oldPos.y - 6, newPos.z + 2, 18, 14, -3, skip);
@@ -2894,7 +2836,7 @@ void ProtocolGame::MoveDownCreature(NetworkMessage_ptr msg, const Creature* crea
 		}
 		//going further down
 		else if(newPos.z > oldPos.z && newPos.z > 8 && newPos.z < 14){
-			int skip = -1;
+			int32_t skip = -1;
 			GetFloorDescription(msg, oldPos.x - 8, oldPos.y - 6, newPos.z + 2, 18, 14, -3, skip);
 
 			if(skip >= 0){

@@ -25,6 +25,9 @@
 #include "thing.h"
 #include "items.h"
 
+#include <libxml/xmlmemory.h>
+#include <libxml/parser.h>
+
 #include <iostream>
 #include <list>
 #include <vector>
@@ -104,6 +107,12 @@ enum AttrTypes_t{
 	// This is NOT stored in serializeAttr, but rather used by IOMapSerialize
 	// look at that code for the ugly hack that makes this work. :)
 	ATTR_CONTAINER_ITEMS = 23,
+};
+
+enum Attr_ReadValue{
+	ATTR_READ_CONTINUE,
+	ATTR_READ_ERROR,
+	ATTR_READ_END,
 };
 
 class ItemAttributes{
@@ -244,6 +253,9 @@ public:
 	//Factory member to create item of right type based on type
 	static Item* CreateItem(const uint16_t _type, uint16_t _count = 1);
 	static Item* CreateItem(PropStream& propStream);
+	static bool loadItem(xmlNodePtr node, Container* parent);
+	static bool loadContainer(xmlNodePtr node, Container* parent);
+
 	static Items items;
 
 	// Constructor for items
@@ -280,7 +292,7 @@ public:
 	static std::string getWeightDescription(const ItemType& it, double weight, uint32_t count = 1);
 
 	//serialization
-	virtual bool readAttr(AttrTypes_t attr, PropStream& propStream);
+	virtual Attr_ReadValue readAttr(AttrTypes_t attr, PropStream& propStream);
 	virtual bool unserializeAttr(PropStream& propStream);
 	virtual bool unserializeItemNode(FileLoader& f, NODE node, PropStream& propStream);
 	virtual bool serializeAttr(PropWriteStream& propWriteStream) const;
@@ -316,7 +328,7 @@ public:
 	bool canWriteText() const {return items[id].canWriteText;}
 	uint16_t getMaxWriteLength() const {return items[id].maxTextLen;}
 
-	int getWorth() const;
+	uint32_t getWorth() const;
 	void getLight(LightInfo& lightInfo);
 
 	bool hasProperty(enum ITEMPROPERTY prop) const;

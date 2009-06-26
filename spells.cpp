@@ -259,10 +259,11 @@ InstantSpell* Spells::getInstantSpellByIndex(const Player* player, uint32_t inde
 	return NULL;
 }
 
-InstantSpell* Spells::getInstantSpellByName(const std::string& name)
+InstantSpell* Spells::getInstantSpellByName(std::string name)
 {
+	toLowerCaseString(name);
 	for(InstantsMap::iterator it = instants.begin(); it != instants.end(); ++it){
-		if(strcasecmp(it->second->getName().c_str(), name.c_str()) == 0){
+		if(asLowerCaseString(it->second->getName()) == name){
 			return it->second;
 		}
 	}
@@ -852,7 +853,7 @@ void Spell::postCastSpell(Player* player, bool finishedCast /*= true*/, bool pay
 
 		if(!player->hasFlag(PlayerFlag_NotGainInFight)){
 			if(isAggressive){
-				player->addInFightTicks();
+				player->addInFightTicks(g_game.getInFightTicks());
 			}
 		}
 	}
@@ -2147,7 +2148,7 @@ bool RuneSpell::executeUse(Player* player, Item* item, const PositionEx& posFrom
 	if(m_scripted){
 		LuaVariant var;
 
-		if(creatureId != 0){
+		if(creatureId != 0 && needTarget){
 			var.type = VARIANT_NUMBER;
 			var.number = creatureId;
 		}

@@ -29,8 +29,9 @@ extern Game g_game;
 Container::Container(uint16_t _type) : Item(_type)
 {
 	//std::cout << "Container constructor " << this << std::endl;
-	maxSize = items[this->getID()].maxItems;
+	maxSize = items[_type].maxItems;
 	total_weight = 0.0;
+	serializationCount = 0;
 }
 
 Container::~Container()
@@ -68,6 +69,26 @@ void Container::addItem(Item* item)
 {
 	itemlist.push_back(item);
 	item->setParent(this);
+}
+
+Attr_ReadValue Container::readAttr(AttrTypes_t attr, PropStream& propStream)
+{
+	switch(attr){
+		case ATTR_CONTAINER_ITEMS:
+		{
+			uint32_t count;
+			if(!propStream.GET_ULONG(count)){
+				return ATTR_READ_ERROR;
+			}
+			serializationCount = count;
+			return ATTR_READ_END;
+		}
+
+		default:
+			break;
+	}
+
+	return Item::readAttr(attr, propStream);
 }
 
 bool Container::unserializeItemNode(FileLoader& f, NODE node, PropStream& propStream)
@@ -131,10 +152,7 @@ std::string Container::getContentDescription() const
 
 std::ostringstream& Container::getContentDescription(std::ostringstream& os) const
 {
-	std::list<const Container*> listContainer;
-	
 	bool firstitem = true;
-
 	Container* evil = const_cast<Container*>(this);
 	for(ContainerIterator cit = evil->begin(); cit != evil->end(); ++cit)
 	{
@@ -468,7 +486,7 @@ void Container::__addThing(int32_t index, Thing* thing)
 	}
 
 	//send change to client
-	if(getParent()){
+	if(getParent() && (getParent() != VirtualCylinder::virtualCylinder)){
 		onAddContainerItem(item);
 	}
 }

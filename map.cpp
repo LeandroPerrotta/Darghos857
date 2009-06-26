@@ -30,8 +30,6 @@
 #include <boost/bind.hpp>
 
 #include "iomap.h"
-
-#include "iomapxml.h"
 #include "iomapotbm.h"
 #include "iomapserialize.h"
 
@@ -64,14 +62,11 @@ bool Map::loadMap(const std::string& identifier, const std::string& type)
 {
 	IOMap* loader;
 
-	if(type == "XML"){
-		loader = new IOMapXML();
-	}
-	else if(type == "OTBM"){
+	if(type == "OTBM"){
 		loader = new IOMapOTBM();
 	}
 	else{
-		std::cout << "FATAL: Could not determine the map format!" << std::endl;
+		std::cout << "FATAL: Could not determine the map format." << std::endl;
 		return false;
 	}
 
@@ -93,9 +88,10 @@ bool Map::loadMap(const std::string& identifier, const std::string& type)
 	delete loader;
 
 	IOMapSerialize* IOMapSerialize = IOMapSerialize::getInstance();
+	IOMapSerialize->updateHouseInfo();
+	IOMapSerialize->processHouseAuctions();
 	IOMapSerialize->loadHouseInfo(this);
 	IOMapSerialize->loadMap(this);
-
 	return true;
 }
 
@@ -124,19 +120,18 @@ bool Map::saveMap()
 	return saved;
 }
 
-Tile* Map::getTile(uint16_t x, uint16_t y, uint16_t z)
+Tile* Map::getTile(int32_t x, int32_t y, int32_t z)
 {
-	if(z < MAP_MAX_LAYERS){
-		//QTreeLeafNode* leaf = getLeaf(x, y);
-		QTreeLeafNode* leaf = QTreeNode::getLeafStatic(&root, x, y);
-		if(leaf){
-			Floor* floor = leaf->getFloor(z);
-			if(floor){
-				return floor->tiles[x & FLOOR_MASK][y & FLOOR_MASK];
-			}
-			else{
-				return NULL;
-			}
+	if(x < 0 || x > 0xFFFF || y < 0 || y > 0xFFFF || z  < 0 || z > MAP_MAX_LAYERS){
+		return NULL;
+	}
+
+	//QTreeLeafNode* leaf = getLeaf(x, y);
+	QTreeLeafNode* leaf = QTreeNode::getLeafStatic(&root, x, y);
+	if(leaf){
+		Floor* floor = leaf->getFloor(z);
+		if(floor){
+			return floor->tiles[x & FLOOR_MASK][y & FLOOR_MASK];
 		}
 		else{
 			return NULL;
@@ -393,29 +388,88 @@ void Map::getSpectators(SpectatorVec& list, const Position& centerPos,
 	int32_t minRangeX /*= 0*/, int32_t maxRangeX /*= 0*/,
 	int32_t minRangeY /*= 0*/, int32_t maxRangeY /*= 0*/)
 {
-	bool foundCache = false;
-	bool cacheResult = false;
-	if(minRangeX == 0 && maxRangeX == 0 && minRangeY == 0 && maxRangeY == 0 && multifloor == true && checkforduplicate == false) {
-		SpectatorCache::iterator it = spectatorCache.find(centerPos);
-		if(it != spectatorCache.end()){
-			list = *it->second;
-			foundCache = true;
+	if(centerPos.z < MAP_MAX_LAYERS){
+		bool foundCache = false;
+		bool cacheResult = false;
+		if(minRangeX == 0 && maxRangeX == 0 && minRangeY == 0 && maxRangeY == 0 && multifloor == true && checkforduplicate == false) {
+			SpectatorCache::iterator it = spectatorCache.find(centerPos);
+			if(it != spectatorCache.end()){
+				list = *it->second;
+				foundCache = true;
+			}
+			else{
+				cacheResult = true;
+			}
 		}
-		else{
-			cacheResult = true;
+
+		if(!foundCache){
+			minRangeX = (minRangeX == 0 ? -maxViewportX : -minRangeX);
+			maxRangeX = (maxRangeX == 0 ? maxViewportX : maxRangeX);
+			minRangeY = (minRangeY == 0 ? -maxViewportY : -minRangeY);
+			maxRangeY = (maxRangeY == 0 ? maxViewportY : maxRangeY);
+
+			int32_t minRangeZ;
+			int32_t maxRangeZ;
+
+			if(multifloor){
+				if(centerPos.z > 7){
+					//underground
+
+					//8->15
+					minRangeZ = std::max(centerPos.z - 2, 0);
+					maxRangeZ = std::min(centerPos.z + 2, MAP_MAX_LAYERS - 1);
+				}
+				//above ground
+				else if(centerPos.z == 6){
+					minRangeZ = 0;
+					maxRangeZ = 8;
+				}
+				else if(centerPos.z == 7){
+					minRangeZ = 0;
+					maxRangeZ = 9;
+				}
+				else{
+					minRangeZ = 0;
+					maxRangeZ = 7;
+				}
+			}
+			else{
+				minRangeZ = centerPos.z;
+				maxRangeZ = centerPos.z;
+			}
+
+			getSpectatorsInternal(list, centerPos, true,
+				minRangeX, maxRangeX,
+				minRangeY, maxRangeY,
+				minRangeZ, maxRangeZ);
+
+			if(cacheResult){
+				spectatorCache[centerPos].reset(new SpectatorVec(list));
+			}
 		}
 	}
+}
 
-	if(!foundCache){
-		minRangeX = (minRangeX == 0 ? -maxViewportX : -minRangeX);
-		maxRangeX = (maxRangeX == 0 ? maxViewportX : maxRangeX);
-		minRangeY = (minRangeY == 0 ? -maxViewportY : -minRangeY);
-		maxRangeY = (maxRangeY == 0 ? maxViewportY : maxRangeY);
+const SpectatorVec& Map::getSpectators(const Position& centerPos)
+{
+	if(centerPos.z < MAP_MAX_LAYERS){
+		SpectatorCache::iterator it = spectatorCache.find(centerPos);
+		if(it != spectatorCache.end()){
+			return *it->second;
+		}
+		else{
+			boost::shared_ptr<SpectatorVec> p(new SpectatorVec());
+			spectatorCache[centerPos] = p;
+			SpectatorVec& list = *p;
 
-		int32_t minRangeZ;
-		int32_t maxRangeZ;
+			int32_t minRangeX = -maxViewportX;
+			int32_t maxRangeX = maxViewportX;
+			int32_t minRangeY = -maxViewportY;
+			int32_t maxRangeY = maxViewportY;
 
-		if(multifloor){
+			int32_t minRangeZ;
+			int32_t maxRangeZ;
+
 			if(centerPos.z > 7){
 				//underground
 
@@ -436,67 +490,18 @@ void Map::getSpectators(SpectatorVec& list, const Position& centerPos,
 				minRangeZ = 0;
 				maxRangeZ = 7;
 			}
-		}
-		else{
-			minRangeZ = centerPos.z;
-			maxRangeZ = centerPos.z;
-		}
+			
+			getSpectatorsInternal(list, centerPos, false,
+				minRangeX, maxRangeX,
+				minRangeY, maxRangeY,
+				minRangeZ, maxRangeZ);
 
-		getSpectatorsInternal(list, centerPos, true,
-			minRangeX, maxRangeX,
-			minRangeY, maxRangeY,
-			minRangeZ, maxRangeZ);
-
-		if(cacheResult){
-			spectatorCache[centerPos].reset(new SpectatorVec(list));
+			return list;
 		}
 	}
-}
-
-const SpectatorVec& Map::getSpectators(const Position& centerPos)
-{
-	SpectatorCache::iterator it = spectatorCache.find(centerPos);
-	if(it != spectatorCache.end()) {
-		return *it->second;
-	} else {
+	else{
 		boost::shared_ptr<SpectatorVec> p(new SpectatorVec());
-		spectatorCache[centerPos] = p;
 		SpectatorVec& list = *p;
-
-		int32_t minRangeX = -maxViewportX;
-		int32_t maxRangeX = maxViewportX;
-		int32_t minRangeY = -maxViewportY;
-		int32_t maxRangeY = maxViewportY;
-
-		int32_t minRangeZ;
-		int32_t maxRangeZ;
-
-		if(centerPos.z > 7){
-			//underground
-
-			//8->15
-			minRangeZ = std::max(centerPos.z - 2, 0);
-			maxRangeZ = std::min(centerPos.z + 2, MAP_MAX_LAYERS - 1);
-		}
-		//above ground
-		else if(centerPos.z == 6){
-			minRangeZ = 0;
-			maxRangeZ = 8;
-		}
-		else if(centerPos.z == 7){
-			minRangeZ = 0;
-			maxRangeZ = 9;
-		}
-		else{
-			minRangeZ = 0;
-			maxRangeZ = 7;
-		}
-		
-		getSpectatorsInternal(list, centerPos, false,
-			minRangeX, maxRangeX,
-			minRangeY, maxRangeY,
-			minRangeZ, maxRangeZ);
-
 		return list;
 	}
 }
@@ -1143,10 +1148,10 @@ int32_t AStarNodes::getTileWalkCost(const Creature* creature, const Tile* tile)
 	return cost;
 }
 
-int AStarNodes::getEstimatedDistance(int32_t x, int32_t y, int32_t xGoal, int32_t yGoal)
+int32_t AStarNodes::getEstimatedDistance(int32_t x, int32_t y, int32_t xGoal, int32_t yGoal)
 {
-	int h_diagonal = std::min(std::abs(x - xGoal), std::abs(y - yGoal));
-	int h_straight = (std::abs(x - xGoal) + std::abs(y - yGoal));
+	int32_t h_diagonal = std::min(std::abs(x - xGoal), std::abs(y - yGoal));
+	int32_t h_straight = (std::abs(x - xGoal) + std::abs(y - yGoal));
 
 	return MAP_DIAGONALWALKCOST * h_diagonal + MAP_NORMALWALKCOST * (h_straight - 2 * h_diagonal);
 	//return (std::abs(x - xGoal) + std::abs(y - yGoal)) * MAP_NORMALWALKCOST;
@@ -1156,8 +1161,8 @@ int AStarNodes::getEstimatedDistance(int32_t x, int32_t y, int32_t xGoal, int32_
 
 Floor::Floor()
 {
-	for(unsigned int i = 0; i < FLOOR_SIZE; ++i){
-		for(unsigned int j = 0; j < FLOOR_SIZE; ++j){
+	for(uint32_t i = 0; i < FLOOR_SIZE; ++i){
+		for(uint32_t j = 0; j < FLOOR_SIZE; ++j){
 			tiles[i][j] = 0;
 		}
 	}
@@ -1245,7 +1250,7 @@ QTreeLeafNode* QTreeNode::createLeaf(uint32_t x, uint32_t y, uint32_t level)
 bool QTreeLeafNode::newLeaf = false;
 QTreeLeafNode::QTreeLeafNode()
 {
-	for(unsigned int i = 0; i < MAP_MAX_LAYERS; ++i){
+	for(uint32_t i = 0; i < MAP_MAX_LAYERS; ++i){
 		m_array[i] = NULL;
 	}
 	m_isLeaf = true;
@@ -1255,7 +1260,7 @@ QTreeLeafNode::QTreeLeafNode()
 
 QTreeLeafNode::~QTreeLeafNode()
 {
-	for(unsigned int i = 0; i < MAP_MAX_LAYERS; ++i){
+	for(uint32_t i = 0; i < MAP_MAX_LAYERS; ++i){
 		delete m_array[i];
 	}
 }

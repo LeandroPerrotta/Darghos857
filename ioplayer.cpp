@@ -103,6 +103,29 @@ bool IOPlayer::loadPlayer(Player* player, const std::string& name, bool preload 
 	player->defaultOutfit.lookLegs = result->getDataInt("looklegs");
 	player->defaultOutfit.lookFeet = result->getDataInt("lookfeet");
 	player->defaultOutfit.lookAddons = result->getDataInt("lookaddons");
+
+	uint32_t outfitId = Outfits::getInstance()->getOutfitId(player->defaultOutfit.lookType);
+	bool canWearOutfit = true;
+	if(outfitId > 0){
+		//Check if the current outfit is right
+		Outfit outfit;
+		canWearOutfit = Outfits::getInstance()->getOutfit(outfitId, player->getSex(), outfit);
+		if(canWearOutfit){
+			if(player->defaultOutfit.lookType != outfit.lookType){
+				player->defaultOutfit.lookType = outfit.lookType;
+			}
+		}
+	}
+
+	if(!canWearOutfit){
+		//Just pick the first default outfit we can find
+		const OutfitMap& default_outfits = Outfits::getInstance()->getOutfits(player->getSex());
+		if(!default_outfits.empty()){
+			Outfit newOutfit = (*default_outfits.begin()).second;
+			player->defaultOutfit.lookType = newOutfit.lookType;
+		}
+	}
+
 	player->currentOutfit = player->defaultOutfit;
 
 #ifdef __SKULLSYSTEM__
@@ -803,7 +826,7 @@ bool IOPlayer::getAccountByName(std::string& account, std::string& name)
 }
 
 
-bool IOPlayer::getGuidByNameEx(uint32_t &guid, bool &specialVip, std::string& name)
+bool IOPlayer::getGuidByNameEx(uint32_t& guid, bool& specialVip, std::string& name)
 {
 	Database* db = Database::instance();
 	DBResult* result;
@@ -821,7 +844,21 @@ bool IOPlayer::getGuidByNameEx(uint32_t &guid, bool &specialVip, std::string& na
 	return true;
 }
 
-bool IOPlayer::getGuildIdByName(uint32_t &guildId, const std::string& guildName)
+bool IOPlayer::getDefaultTown(std::string& name, uint32_t& depotId)
+{
+	Database* db = Database::instance();
+	DBResult* result;
+	DBQuery query;
+
+	if(!(result = db->storeQuery("SELECT `town_id` FROM `players` WHERE `name`= " + db->escapeString(name))))
+		return false;
+
+	depotId = result->getDataInt("town_id");
+	db->freeResult(result);
+	return true;
+}
+
+bool IOPlayer::getGuildIdByName(uint32_t& guildId, const std::string& guildName)
 {
 	Database* db = Database::instance();
 	DBResult* result;

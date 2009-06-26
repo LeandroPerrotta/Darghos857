@@ -1155,7 +1155,7 @@ void Tile::__removeThing(Thing* thing, uint32_t count)
 			Player* tmpPlayer = NULL;
 			for(SpectatorVec::const_iterator it = list.begin(); it != list.end(); ++it){
 				if((tmpPlayer = (*it)->getPlayer())){
-					oldStackPosVector.push_back(getClientIndexOfThing(tmpPlayer, creature));
+					oldStackPosVector.push_back(getClientIndexOfThing(tmpPlayer, ground));
 				}
 			}
 			ground->setParent(NULL);

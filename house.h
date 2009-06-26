@@ -75,7 +75,7 @@ public:
 	House* getHouse(){return house;};
 
 	//serialization
-	virtual bool readAttr(AttrTypes_t attr, PropStream& propStream);
+	virtual Attr_ReadValue readAttr(AttrTypes_t attr, PropStream& propStream);
 	virtual bool serializeAttr(PropWriteStream& propWriteStream) const;
 
 	void setDoorId(uint32_t _doorId){ setIntAttr(ATTR_ITEM_DOORID, (uint32_t)_doorId);};
@@ -135,6 +135,14 @@ protected:
 class House
 {
 public:
+	enum syncflags_t{
+		HOUSE_SYNC_TOWNID		= 0,
+		HOUSE_SYNC_NAME			= 1 << 0,
+		HOUSE_SYNC_PRICE		= 1 << 1,
+		HOUSE_SYNC_RENT			= 1 << 2,
+		HOUSE_SYNC_GUILDHALL	= 1 << 3,
+	};
+
 	House(uint32_t _houseid);
 	~House();
 
@@ -161,11 +169,14 @@ public:
 	void setHouseOwner(uint32_t guid);
 	uint32_t getHouseOwner() const {return houseOwner;}
 
-	void setPaidUntil(uint32_t paid){paidUntil = paid;}
-	uint32_t getPaidUntil() const {return paidUntil;}
+	void setPaidUntil(time_t paid){paidUntil = paid;}
+	time_t getPaidUntil() const {return paidUntil;}
 
 	void setRent(uint32_t _rent){rent = _rent;}
 	uint32_t getRent() const {return rent;}
+
+	bool hasSyncFlag(syncflags_t flag) const {return ((syncFlags & (uint32_t)flag) == (uint32_t)flag);}
+	void resetSyncFlag(syncflags_t flag) {syncFlags &= ~(uint32_t)flag;}
 
 	void setLastWarning(time_t _lastWarning) {lastWarning = _lastWarning;}
 	time_t getLastWarning() {return lastWarning;}
@@ -178,6 +189,9 @@ public:
 
 	void setGuildHall(bool _guildHall) {guildHall = _guildHall;}
 	bool isGuildHall() const {return guildHall;}
+
+	void setPendingDepotTransfer(bool _pendingDepotTransfer) {pendingDepotTransfer = _pendingDepotTransfer;}
+	bool getPendingDepotTransfer() const {return pendingDepotTransfer;}
 
 	uint32_t getHouseId() const {return houseid;}
 
@@ -193,17 +207,17 @@ public:
 	void resetTransferItem();
 	bool executeTransfer(HouseTransferItem* item, Player* player);
 
-	HouseTileList::iterator getHouseTileBegin() {return houseTiles.begin();}
-	HouseTileList::iterator getHouseTileEnd() {return houseTiles.end();}
-	size_t getHouseTileSize() {return houseTiles.size();}
+	HouseTileList::iterator getTileBegin() {return houseTiles.begin();}
+	HouseTileList::iterator getTileEnd() {return houseTiles.end();}
+	size_t getTileCount() {return houseTiles.size();}
 
-	HouseDoorList::iterator getHouseDoorBegin() {return doorList.begin();}
-	HouseDoorList::iterator getHouseDoorEnd() {return doorList.end();}
-	size_t getHouseDoorCount() {return doorList.size();}
+	HouseDoorList::iterator getDoorBegin() {return doorList.begin();}
+	HouseDoorList::iterator getDoorEnd() {return doorList.end();}
+	size_t getDoorCount() {return doorList.size();}
 
-	HouseBedItemList::iterator getHouseBedsBegin() {return bedsList.begin();}
-	HouseBedItemList::iterator getHouseBedsEnd() {return bedsList.end();}
-	size_t getHouseBedCount() {return bedsList.size();}
+	HouseBedItemList::iterator getBedsBegin() {return bedsList.begin();}
+	HouseBedItemList::iterator getBedsEnd() {return bedsList.end();}
+	size_t getBedCount() {return bedsList.size();}
 
 	// Transfers all items to depot and clicks all players (useful for map updates, for example)
 	void cleanHouse();
@@ -223,12 +237,14 @@ private:
 	AccessList subOwnerList;
 	std::string houseName;
 	Position posEntry;
-	uint32_t paidUntil;
+	time_t paidUntil;
 	uint32_t rentWarnings;
 	time_t lastWarning;
 	uint32_t rent;
 	uint32_t townid;
 	bool guildHall;
+	uint32_t syncFlags;
+	bool pendingDepotTransfer;
 
 	HouseTransferItem* transferItem;
 	Container transfer_container;
@@ -283,11 +299,12 @@ public:
 	HouseMap::iterator getHouseBegin() {return houseMap.begin();}
 	HouseMap::iterator getHouseEnd() {return houseMap.end();}
 
+	bool payHouse(House* house, time_t time);
+
 private:
 	RentPeriod_t rentPeriod;
 	HouseMap houseMap;
-
-	bool payHouse(House* house, time_t time);
+	friend class IOMapSerialize;
 };
 
 #endif

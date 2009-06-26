@@ -185,6 +185,9 @@ public:
 	Vocation* getVocation() const {return vocation;};
 
 	playersex_t getSex() const {return sex;}
+	bool isMale() const {return getSex() % 2 != 0;}
+	bool isFemale() const {return getSex() % 2 == 0;}
+
 	void setSex(playersex_t);
 	int32_t getPlayerInfo(playerinfo_t playerinfo) const;
 	int64_t getExperience() const {return experience;}
@@ -195,7 +198,7 @@ public:
 	uint32_t getTown() const {return town;}
 	void setTown(uint32_t _town) {town = _town;}
 
-    bool isLoginAttackLocked(uint32_t attackerId) const;
+	bool isLoginAttackLocked(uint32_t attackerId) const;
 
 	virtual bool isPushable() const;
 	virtual int getThrowRange() const {return 1;};
@@ -310,6 +313,7 @@ public:
 	virtual void onWalkComplete();
 
 	void checkIdleTime(uint32_t ticks);
+	void resetIdle() {idleTime = 0; idleWarned = false;};
 	void setIdleTime(uint32_t value, bool warned){idleTime = value; idleWarned = warned;}
 
 	void setChaseMode(chaseMode_t mode);
@@ -356,7 +360,7 @@ public:
 
 	void addCombatExhaust(uint32_t ticks);
 	void addHealExhaust(uint32_t ticks);
-	void addInFightTicks(bool pzlock = false);
+	void addInFightTicks(uint32_t ticks, bool pzlock = false);
 	void addDefaultRegeneration(uint32_t addTicks);
 
 	virtual uint64_t getGainedExperience(Creature* attacker, bool useMultiplier = true) const;
@@ -409,10 +413,9 @@ public:
 #endif
 
 	void checkRecentlyGainedExperience(uint32_t interval);
-	const OutfitListType& getPlayerOutfits();
-	bool canWear(uint32_t _looktype, uint32_t _addons);
-	void addOutfit(uint32_t _looktype, uint32_t _addons);
-	bool remOutfit(uint32_t _looktype, uint32_t _addons);
+	bool canWearOutfit(uint32_t outfitId, uint32_t addons);
+	bool addOutfit(uint32_t outfitId, uint32_t addons);
+	bool removeOutfit(uint32_t outfitId, uint32_t addons);
 	bool canLogout();
 
 	//tile
@@ -814,7 +817,7 @@ protected:
 	StorageMap storageMap;
 	LightInfo itemsLight;
 
-	OutfitList m_playerOutfits;
+	OutfitMap outfits;
 	bool requestedOutfitWindow;
 
 	//read/write storage data

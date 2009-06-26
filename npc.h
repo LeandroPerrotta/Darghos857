@@ -111,6 +111,7 @@ class NpcScript : public NpcEventsHandler
 {
 public:
 	NpcScript(std::string file, Npc* npc);
+	NpcScript(Npc* npc);
 	virtual ~NpcScript();
 
 	virtual void onCreatureAppear(const Creature* creature);
@@ -136,23 +137,26 @@ private:
 };
 
 enum RespondParam_t{
-	RESPOND_DEFAULT = 0,
-	RESPOND_MALE = 1,
-	RESPOND_FEMALE = 2,
-	RESPOND_PZBLOCK = 4,
-	RESPOND_LOWMONEY = 8,
-	RESPOND_NOAMOUNT = 16,
-	RESPOND_LOWAMOUNT = 32,
-	RESPOND_PREMIUM = 64,
-	RESPOND_DRUID = 128,
-	RESPOND_KNIGHT = 256,
-	RESPOND_PALADIN = 512,
-	RESPOND_SORCERER = 1024,
-	#ifdef __DARGHOS__
-	RESPOND_LOWLEVEL = 2048,
-	RESPOND_FREE = 4096
-	#else
-	RESPOND_LOWLEVEL = 2048
+	RESPOND_DEFAULT      =  0x0000,
+	RESPOND_MALE         =  0x0001,
+	RESPOND_FEMALE       =  0x0002,
+	RESPOND_PZBLOCK      =  0x0004,
+	RESPOND_LOWMONEY     =  0x0008,
+	RESPOND_NOAMOUNT     =  0x0010,
+	RESPOND_LOWAMOUNT    =  0x0020,
+	RESPOND_PREMIUM      =  0x0040,
+	RESPOND_DRUID        =  0x0080,
+	RESPOND_KNIGHT       =  0x0100,
+	RESPOND_PALADIN      =  0x0200,
+	RESPOND_SORCERER     =  0x0400,
+	RESPOND_LOWLEVEL     =  0x0800,
+	RESPOND_ENOUGHMONEY  =  0x1000,
+	RESPOND_ENOUGHAMOUNT =  0x2000,
+	RESPOND_HIGHLEVEL    =  0x4000,
+	RESPOND_KNOWSPELL    =  0x8000,
+	RESPOND_CANNOTLEARNSPELL= 0x10000,
+	RESPOND_PROMOTED     = 0x20000,
+	RESPOND_NOTTOPIC     = 0x40000,
 	#endif
 };
 
@@ -162,6 +166,7 @@ enum ResponseType_t{
 };
 
 enum InteractType_t{
+	INTERACT_NONE,
 	INTERACT_TEXT,
 	INTERACT_EVENT
 };
@@ -199,9 +204,18 @@ enum StorageComparision_t{
 	STORAGE_LESS,
 	STORAGE_LESSOREQUAL,
 	STORAGE_EQUAL,
+	STORAGE_NOTEQUAL,
 	STORAGE_GREATEROREQUAL,
 	STORAGE_GREATER
 };
+
+struct StorageCondition {
+	int32_t id;
+	int32_t value;
+	StorageComparision_t op;
+};
+
+typedef std::vector<StorageCondition> StorageConditions;
 
 enum NpcEvent_t{
 	EVENT_NONE,
@@ -308,32 +322,41 @@ public:
 			topic = -1;
 			amount = -1;
 			focusStatus = -1;
+			haveItemId = 0;
+			dontHaveItemId = 0;
 			output = "";
-			interactType = INTERACT_TEXT;
+			eventType = EVENT_NONE;
 			responseType = RESPONSE_DEFAULT;
 			params = 0;
-			storageId = -1;
-			storageValue = -1;
-			storageComp = STORAGE_EQUAL;
+			level = 0;
 			knowSpell = "";
+			health = -1;
+			condition = CONDITION_NONE;
 			publicize = true;
+			time = 0;
+			singleEvent = false;
 		}
 
 		int32_t topic;
 		int32_t amount;
 		int32_t focusStatus;
+		uint16_t haveItemId;
+		uint16_t dontHaveItemId;
 		std::list<std::string> inputList;
 		std::string output;
-		InteractType_t interactType;
+		NpcEvent_t eventType;
 		ResponseType_t responseType;
 		uint32_t params;
-		int32_t storageId;
-		int32_t storageValue;
-		StorageComparision_t storageComp;
+		uint32_t level;
+		StorageConditions storageConditions;
 		std::string knowSpell;
 		ActionList actionList;
 		std::list<ListItem> itemList;
+		int32_t health;
+		ConditionType_t condition;
 		bool publicize;
+		uint32_t time;
+		bool singleEvent;
 	};
 
 	NpcResponse(const ResponseProperties& _prop,
@@ -368,16 +391,20 @@ public:
 	std::string getInputText() const {return (prop.inputList.empty() ? "" : *prop.inputList.begin());}
 	int32_t getTopic() const {return prop.topic;}
 	int32_t getFocusState() const {return prop.focusStatus;}
-	int32_t getStorageId() const {return prop.storageId;}
-	int32_t getStorageValue() const {return prop.storageValue;}
+	int32_t getHaveItemID() const {return prop.haveItemId;}
+	int32_t getDontHaveItemID() const {return prop.dontHaveItemId;}
+	ConditionType_t getCondition() const {return prop.condition;}
+	int32_t getHealth() const {return prop.health;}
+	int32_t getLevel() const {return prop.level;}
 	ResponseType_t getResponseType() const {return prop.responseType;}
-	InteractType_t getInteractType() const {return prop.interactType;}
-	StorageComparision_t getStorageComp() const {return prop.storageComp;}
+	NpcEvent_t getEventType() const {return prop.eventType;}
 	const std::string& getKnowSpell() const {return prop.knowSpell;}
 	const std::string& getText() const {return prop.output;}
 	int32_t getAmount() const {return prop.amount;}
 	void setAmount(int32_t _amount) { prop.amount = _amount;}
 	bool publicize() const {return prop.publicize;}
+	uint32_t getTime() const {return prop.time;}
+	uint32_t isSingleEvent() const {return prop.singleEvent;}
 
 	std::string formatResponseString(Creature* creature) const;
 	void addAction(ResponseAction action) {prop.actionList.push_back(action);}
@@ -395,8 +422,9 @@ public:
 };
 
 struct NpcState{
+	uint32_t playerId;
 	int32_t topic;
-	bool isIdle;
+	int32_t focusState;
 	bool isQueued;
 	int32_t price;
 	int32_t sellPrice;
@@ -410,11 +438,10 @@ struct NpcState{
 	std::string listName;
 	std::string listPluralName;
 	int32_t level;
-	int64_t prevInteraction;
 	std::string respondToText;
-	uint32_t respondToCreature;
-	std::string prevRespondToText;
 	const NpcResponse* lastResponse;
+	const NpcResponse* subResponse;
+	uint64_t lastResponseTime;
 
 	//script variables
 	ScriptVars scriptVars;
@@ -451,17 +478,25 @@ public:
 	virtual const std::string& getName() const {return name;};
 	virtual const std::string& getNameDescription() const {return name;};
 
-	void doSay(std::string msg, Player* focus = NULL, bool publicize = false);
+	void doSay(const std::string& text);
+	void doSayToPlayer(Player* player, const std::string& text);
+
 	void doMove(Direction dir);
 	void doTurn(Direction dir);
 	void doMoveTo(Position pos);
 	bool isLoaded(){return loaded;}
+	virtual void setMasterPos(const Position& pos, uint32_t radius = 1) {
+		masterPos = pos; 
+		if(masterRadius == -1)
+			masterRadius = radius;
+	}
 
 	void onPlayerCloseChannel(const Player* player);
 	void onPlayerTrade(Player* player, ShopEvent_t type, int32_t callback, uint16_t itemId,
 		uint8_t count, uint8_t amount, bool ignoreCapacity = false, bool buyWithBackpack = false);
 	void onPlayerEndTrade(Player* player, int32_t buyCallback, int32_t sellCallback);
 
+	void turnToCreature(Creature* creature);
 	void setCreatureFocus(Creature* creature);
 
 	NpcScriptInterface* getScriptInterface();
@@ -499,15 +534,18 @@ protected:
 	bool loadFromXml(const std::string& name);
 
 	const NpcResponse* getResponse(const ResponseList& list, const Player* player,
-		NpcState* npcState, const std::string& text, bool exactMatch = false);
-	const NpcResponse* getResponse(const Player* player, NpcState* npcState, const std::string& text);
+		NpcState* npcState, const std::string& text,
+		bool exactMatch = false, NpcEvent_t eventType = EVENT_NONE);
+	const NpcResponse* getResponse(const Player* player, NpcState* npcState, const std::string& text, bool checkLastResponse);
 	const NpcResponse* getResponse(const Player* player, NpcEvent_t eventType);
-	const NpcResponse* getResponse(const Player* player, NpcState* npcState, NpcEvent_t eventType);
-	std::string getEventResponseName(NpcEvent_t eventType);
+	const NpcResponse* getResponse(const Player* player, NpcState* npcState,
+		NpcEvent_t eventType, const std::string& text, bool checkLastResponse);
+	const NpcResponse* getResponse(const Player* player, NpcState* npcState,
+		NpcEvent_t eventType, bool checkLastResponse);
 
-	uint32_t getMatchCount(NpcResponse* response, std::vector<std::string> wordList,
-		bool exactMatch, int32_t& matchAllCount, int32_t& totalKeywordCount);
+	int32_t matchKeywords(NpcResponse* response, std::vector<std::string> wordList, bool exactMatch);
 
+	void processResponse(Player* player, NpcState* npcState, const NpcResponse* response, bool delayResponse = false);
 	void executeResponse(Player* player, NpcState* npcState, const NpcResponse* response);
 
 	std::string formatResponse(Creature* creature, const NpcState* npcState, const NpcResponse* response) const;
@@ -519,6 +557,7 @@ protected:
 	ParametersMap m_parameters;
 
 	uint32_t loadParams(xmlNodePtr node);
+	StorageCondition loadStorageCondition(xmlNodePtr node);
 	ResponseList loadInteraction(xmlNodePtr node);
 
 	NpcState* getState(const Player* player, bool makeNew = true);
@@ -536,11 +575,12 @@ protected:
 	bool floorChange;
 	bool attackable;
 	bool isIdle;
+	bool hasUsedIdleReply;
 	bool hasBusyReply;
 	bool hasScriptedFocus;
 	int32_t talkRadius;
-	int32_t idleTime;
-	int32_t idleInterval;
+	uint32_t idleTimeout;
+	uint64_t lastResponseTime;
 	bool defaultPublic;
 	int32_t focusCreature;
 

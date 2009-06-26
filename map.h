@@ -77,7 +77,7 @@ public:
 	int32_t getMapWalkCost(const Creature* creature, AStarNode* node,
 		const Tile* neighbourTile, const Position& neighbourPos);
 	static int32_t getTileWalkCost(const Creature* creature, const Tile* tile);
-	int getEstimatedDistance(int32_t x, int32_t y, int32_t xGoal, int32_t yGoal);
+	int32_t getEstimatedDistance(int32_t x, int32_t y, int32_t xGoal, int32_t yGoal);
 
 private:
 	AStarNode nodes[MAX_NODES];
@@ -185,7 +185,7 @@ public:
 	* Get a single tile.
 	* \return A pointer to that tile.
 	*/
-	Tile* getTile(uint16_t x, uint16_t y, uint16_t z);
+	Tile* getTile(int32_t x, int32_t y, int32_t z);
 	Tile* getTile(const Position& pos);
 
 	QTreeLeafNode* getLeaf(uint16_t x, uint16_t y){ return root.getLeaf(x, y);}
@@ -296,7 +296,6 @@ protected:
 	friend class Game;
 
 	friend class IOMapOTBM;
-	friend class IOMapXML;
 	friend class IOMap;
 	friend class IOMapSerialize;
 };

@@ -161,7 +161,8 @@ enum SpeakClasses {
 };
 
 enum MessageClasses {
-	MSG_STATUS_CONSOLE_RED		= 0x11, //Red message in the console
+	MSG_CLASS_FIRST				= 0x12,
+	MSG_STATUS_CONSOLE_RED		= MSG_CLASS_FIRST, //Red message in the console
 	MSG_STATUS_CONSOLE_ORANGE2	= 0x13, //Orange message in the console
 	MSG_STATUS_CONSOLE_ORANGE	= 0x14, //Orange message in the console
 	MSG_STATUS_WARNING			= 0x15, //Red message in game window and in the console
@@ -171,6 +172,7 @@ enum MessageClasses {
 	MSG_INFO_DESCR				= 0x19, //Green message in game window and in the console
 	MSG_STATUS_SMALL			= 0x1A, //White message at the bottom of the game window"
 	MSG_STATUS_CONSOLE_BLUE		= 0x1B, //Blue message in the console
+	MSG_CLASS_LAST				= MSG_STATUS_CONSOLE_BLUE,
 };
 
 enum FluidColors_t {
@@ -479,6 +481,10 @@ const int32_t violationStatements[5] =
 //[1000 - 1500]
 #define PSTRG_OUTFITS_RANGE_START   (PSTRG_RESERVED_RANGE_START + 1000)
 #define PSTRG_OUTFITS_RANGE_SIZE    500
+
+//[1500 - 2000]
+#define PSTRG_OUTFITSID_RANGE_START   (PSTRG_RESERVED_RANGE_START + 1500)
+#define PSTRG_OUTFITSID_RANGE_SIZE    500
 
 #define IS_IN_KEYRANGE(key, range) (key >= PSTRG_##range##_START && ((key - PSTRG_##range##_START) < PSTRG_##range##_SIZE))
 

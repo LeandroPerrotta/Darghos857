@@ -77,7 +77,6 @@ s_defcommands Commands::defined_commands[] = {
 	{"/s",&Commands::placeNpc},
 	{"/m",&Commands::placeMonster},
 	{"/summon",&Commands::placeSummon},
-	{"/B",&Commands::broadcastMessage},
 	{"/i",&Commands::createItemById},
 	{"/n",&Commands::createItemByName},
 	{"/reload",&Commands::reloadInfo},
@@ -243,6 +242,7 @@ bool Commands::placeNpc(Creature* creature, const std::string& cmd, const std::s
 	// Place the npc
 	if(g_game.placeCreature(npc, creature->getPosition())){
 		g_game.addMagicEffect(creature->getPosition(), NM_ME_MAGIC_BLOOD);
+		npc->setMasterPos(npc->getPosition());
 		return true;
 	}
 	else{
@@ -312,16 +312,6 @@ bool Commands::placeSummon(Creature* creature, const std::string& cmd, const std
 	}
 
 	return (ret == RET_NOERROR);
-}
-
-bool Commands::broadcastMessage(Creature* creature, const std::string& cmd, const std::string& param)
-{
-	Player* player = creature->getPlayer();
-	if(!player)
-		return false;
-
-	g_game.internalBroadcastMessage(player, param);
-	return true;
 }
 
 bool Commands::createItemById(Creature* creature, const std::string& cmd, const std::string& param)
