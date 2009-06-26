@@ -90,7 +90,7 @@
         <action name="script">
         <![CDATA[
 			if(getPlayerItemCount(cid,6530)) >= 1 then
-				if(doPlayerRemoveMoney(cid,10000)) == TRUEthen
+				if(doPlayerRemoveMoney(cid,10000)) == TRUE then
 					doPlayerRemoveItem(cid,6530,1)	
 					doPlayerAddItem(cid, 6132,1)
 					selfSay("Here is your new soft boots! Enjoy it.",cid)
