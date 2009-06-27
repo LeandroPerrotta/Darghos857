@@ -55,52 +55,52 @@
 		<list type="male" looktype="146" name="Oriental"/>
 	</outfit>
 
-	<outfit id="12" premium="1" default="0">
+	<outfit id="12" premium="1">
 		<list type="female" looktype="155" name="Pirate"/>
 		<list type="male" looktype="151" name="Pirate"/>
 	</outfit>
 
-	<outfit id="13" premium="1" default="0">
+	<outfit id="13" premium="1">
 		<list type="female" looktype="156" name="Assassin"/>
 		<list type="male" looktype="152" name="Assassin"/>
 	</outfit>
 
-	<outfit id="14" premium="1" default="0">
+	<outfit id="14" premium="1">
 		<list type="female" looktype="157" name="Beggar"/>
 		<list type="male" looktype="153" name="Beggar"/>
 	</outfit>
 
-	<outfit id="15" premium="1" default="0">
+	<outfit id="15" premium="1">
 		<list type="female" looktype="158" name="Shaman"/>
 		<list type="male" looktype="154" name="Shaman"/>
 	</outfit>
 
-	<outfit id="16" premium="1" default="0">
+	<outfit id="16" premium="1">
 		<list type="female" looktype="252" name="Norsewoman"/>
 		<list type="male" looktype="251" name="Norseman"/>
 	</outfit>
 
-	<outfit id="17" premium="1" default="0">
+	<outfit id="17" premium="1">
 		<list type="female" looktype="269" name="Nightmare"/>
 		<list type="male" looktype="268" name="Nightmare"/>
 	</outfit>
 
-	<outfit id="18" premium="1" default="0">
+	<outfit id="18" premium="1">
 		<list type="female" looktype="270" name="Jester"/>
 		<list type="male" looktype="273" name="Jester"/>
 	</outfit>
 
-	<outfit id="19" premium="1" default="0">
+	<outfit id="19" premium="1">
 		<list type="female" looktype="279" name="Brotherhood"/>
 		<list type="male" looktype="278" name="Brotherhood"/>
 	</outfit>
 
-	<outfit id="20" premium="1" default="0">
+	<outfit id="20" premium="1">
 		<list type="female" looktype="288" name="Demonhunter"/>
 		<list type="male" looktype="289" name="Demonhunter"/>
 	</outfit>
 
-	<outfit id="21" premium="1" default="0">
+	<outfit id="21" premium="1">
 		<list type="female" looktype="324" name="Yalaharian"/>
 		<list type="male" looktype="325" name="Yalaharian"/>
 	</outfit>
