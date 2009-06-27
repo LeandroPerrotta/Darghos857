@@ -264,7 +264,7 @@
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/>
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>
 	</instant>
-	<instant name="Ice Strike" words="exori frigo" lvl="15" range="3" mana="20" prem="1" casterTargetOrDirection="1" script="attack/ice_strike.lua">
+	<instant name="Ice Strike" words="exori frigo" lvl="15" range="3" mana="20" prem="0" casterTargetOrDirection="1" script="attack/ice_strike.lua">
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/>
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>
 	</instant>
