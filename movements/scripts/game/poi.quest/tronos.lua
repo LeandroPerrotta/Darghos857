@@ -11,7 +11,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end
 	
 	--@ Pumin Throne
-	if item.actionid == aid.POI_TRONE2 and item.itemid == 5916 then
+	if item.actionid == aid.POI_TRONE2 and item.itemid == 5915 then
 		if getPlayerStorageValue(cid,sid.POI_TRONE_2) ~= 1 then
 			setPlayerStorageValue(cid, sid.POI_TRONE_2,1)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You have touched Pumins throne and absorbed sobe of his sprit')
@@ -21,7 +21,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end	
 	
 	--@ Apocalypses Throne
-	if item.actionid == aid.POI_TRONE3 and item.itemid == 5916 then
+	if item.actionid == aid.POI_TRONE3 and item.itemid == 5915 then
 		if getPlayerStorageValue(cid,sid.POI_TRONE_3) ~= 1 then
 			setPlayerStorageValue(cid, sid.POI_TRONE_3,1)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You have touched Apocalypses throne and absorbed sobe of his sprit')
@@ -31,7 +31,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end		
 	
 	--@ Tafariels Throne
-	if item.actionid == aid.POI_TRONE4 and item.itemid == 5916 then
+	if item.actionid == aid.POI_TRONE4 and item.itemid == 5915 then
 		if getPlayerStorageValue(cid,sid.POI_TRONE_4) ~= 1 then
 			setPlayerStorageValue(cid, sid.POI_TRONE_4,1)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You have touched Tafariels throne and absorbed sobe of her sprit')
@@ -41,7 +41,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end	
 	
 	--@ Infernatils Throne
-	if item.actionid == aid.POI_TRONE5 and item.itemid == 5916 then
+	if item.actionid == aid.POI_TRONE5 and item.itemid == 5915 then
 		if getPlayerStorageValue(cid,sid.POI_TRONE_5) ~= 1 then
 			setPlayerStorageValue(cid, sid.POI_TRONE_5,1)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You have touched Infernatils throne and absorbed sobe of his sprit')

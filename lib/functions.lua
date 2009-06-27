@@ -3,7 +3,7 @@
 ]]--
 function startGlobalSave()
 	
-	broadcastMessage("O servidor irá executar um Save Server em 5 minutos, por favor, vá para um local seguro.", MESSAGE_STATUS_WARNING)
+	broadcastMessage("O servidor irá executar um Save Server em 5 minutos, por favor, vá para um local seguro.", MESSAGE_STATUS_CONSOLE_RED)
 	
 	addEvent(sendSSMessage, 180000)
 	addEvent(saveTotal,300000)
@@ -11,13 +11,13 @@ function startGlobalSave()
 end
 function saveTotal()
 
-	broadcastMessage("Server Save executado. Aguarde....",MESSAGE_STATUS_WARNING)
+	broadcastMessage("Server Save executado. Aguarde....",MESSAGE_STATUS_CONSOLE_RED)
 	doSaveServer(payHouses)
 
 end
 function sendSSMessage()
 
-	broadcastMessage("O servidor irá executar um Save Server em 2 minutos, por favor, vá para um local seguro.",MESSAGE_STATUS_WARNING)
+	broadcastMessage("O servidor irá executar um Save Server em 2 minutos, por favor, vá para um local seguro.",MESSAGE_STATUS_CONSOLE_RED)
 	
 end
 
