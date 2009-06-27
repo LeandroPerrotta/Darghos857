@@ -157,7 +157,7 @@ enum RespondParam_t{
 	RESPOND_CANNOTLEARNSPELL= 0x10000,
 	RESPOND_PROMOTED     = 0x20000,
 	RESPOND_NOTTOPIC     = 0x40000,
-	#endif
+	RESPOND_FREE         = 0x80000,
 };
 
 enum ResponseType_t{
@@ -486,7 +486,7 @@ public:
 	void doMoveTo(Position pos);
 	bool isLoaded(){return loaded;}
 	virtual void setMasterPos(const Position& pos, uint32_t radius = 1) {
-		masterPos = pos; 
+		masterPos = pos;
 		if(masterRadius == -1)
 			masterRadius = radius;
 	}
