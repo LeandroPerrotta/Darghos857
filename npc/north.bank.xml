@@ -29,7 +29,7 @@
     </interact>
     -->
 
-    <interact event="onIdle">
+    <interact event="onIdle" time="120" singleevent="1">
       <response text="Beatiful day is it not |NAME|?" public="1">
         <action name="idle" value="1"/>
       </response>

@@ -7,6 +7,9 @@ dofile(getDataDir() .. 'game_classes/house.lua')
 -- Load Calculator class
 dofile(getDataDir() .. "game_classes/calculator.lua")
 
+-- Load Darghos class
+dofile(getDataDir() .. "lib/gamelib.lua")
+
 -- Storages consts
 STORAGE_RUM_MACHINE = 100000
 STORAGE_PROMOTION = 15000
