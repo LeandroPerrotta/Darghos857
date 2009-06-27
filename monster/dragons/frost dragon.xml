@@ -41,7 +41,7 @@
 	</defense>
 	</defenses>
 	<elements>
-		<element physicalPercent="15"/>
+		<element physicalPercent="1"/>
 	</elements>
 	<immunities>
 		<immunity ice="1"/>
