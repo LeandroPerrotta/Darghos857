@@ -1,6 +1,6 @@
 <raids>
 	-- SAVE
-		<raid name="ServerSave" file="save.xml" interval2="240" margin="0"/>	
+		<!--<raid name="ServerSave" file="save.xml" interval2="240" margin="0"/> ISTO IREI FAZER POR OTADMIN--> 	
 	-- CITY INVASION Raids
 		-- Quendor
 		<raid name="quendor_troll" file="quendor/quendor_troll.xml" interval2="9000000" margin="1000"/>	
