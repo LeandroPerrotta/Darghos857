@@ -107,10 +107,10 @@
 			<!-- GEMS E PEDRAS -->
 			<item keywords="black;pearl" id="2144" subtype="1" buyprice="560" sellprice="420" />
 			<item keywords="small;amethyst" id="2150" subtype="1" buyprice="400" sellprice="270" />
-			<item keywords="small;diamond" id="2145" subtype="1" buyprice="600" sellprice="1005" />
+			<item keywords="small;diamond" id="2145" subtype="1" buyprice="600" sellprice="100" />
 			<item keywords="small;sapphire" id="2146" subtype="1" buyprice="500" sellprice="375" />
 			<item keywords="small;sapphire" id="2146" subtype="1" buyprice="500" sellprice="375" />
-			<item keywords="white;pearl" id="2143" subtype="1" buyprice="320" sellprice="1088" />
+			<item keywords="white;pearl" id="2143" subtype="1" buyprice="320" sellprice="300" />
 			<item keywords="small;ruby" id="2147" subtype="1" buyprice="500" sellprice="352" />
 			<item keywords="small;emerald" id="2149" subtype="1" buyprice="500" sellprice="352" />
 			
