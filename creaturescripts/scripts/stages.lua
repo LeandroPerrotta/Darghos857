@@ -1,4 +1,4 @@
-function onAdvance(cid, oldlevel, newlevel, type)
+function onAdvance(cid, type, oldlevel, newlevel)
 	
 	
 	if(type ~= LEVEL_EXPERIENCE) then
