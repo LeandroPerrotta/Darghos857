@@ -31,7 +31,7 @@ function onStepIn(cid, item, position, fromPosition)
 	end		
 	
 	--@ Tafariels Throne
-	if item.actionid == aid.POI_TRONE4 and item.itemid == 5915 then
+	if item.actionid == aid.POI_TRONE4 and item.itemid == 5916 then
 		if getPlayerStorageValue(cid,sid.POI_TRONE_4) ~= 1 then
 			setPlayerStorageValue(cid, sid.POI_TRONE_4,1)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You have touched Tafariels throne and absorbed sobe of her sprit')
