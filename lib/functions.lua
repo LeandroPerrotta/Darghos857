@@ -308,7 +308,7 @@ function checkItemShop(cid)
 		
 		if getItemWeight(addContainer) > getPlayerFreeCap(cid) then
 		
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You don't have capacity needed to receive the item purchased in our Item Shop. Please release " .. itemcap .. "o.z and re-log in to receive the item.")
+			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You don't have capacity needed to receive the item purchased in our Item Shop. Please release " .. getItemWeight(addContainer) .. "o.z and re-log in to receive the item.")
 		else
 		
 			if addContainer ~= LUA_ERROR then
