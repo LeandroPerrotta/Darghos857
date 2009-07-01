@@ -91,11 +91,11 @@
 			msg4 = "Only premium accounts can work for me."
 			itemid = getItemIdByName("shard")
 			
-		if getPlayerStorageValue(cid, sid.MISSION_MINES) ~= 1 then	
+		if getPlayerStorageValue(cid, sid.MISSION_MINES1) ~= 1 then	
 			if getPlayerItemCount(cid,itemid) >= 40 then
 				if doPlayerRemoveItem(cid, itemid,40) then
 					selfSay(msg1,cid)
-					setPlayerStorageValue(cid, sid.MISSION_MINES,1)
+					setPlayerStorageValue(cid, sid.MISSION_MINES1,1)
 				else
 					selfSay(msg2, cid)
 				end
