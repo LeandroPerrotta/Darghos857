@@ -413,6 +413,12 @@ uint32_t Npc::loadParams(xmlNodePtr node)
 			else if(asLowerCaseString(*it) == "sorcerer"){
 				params |= RESPOND_SORCERER;
 			}
+			else if(asLowerCaseString(*it) == "lowlevel"){
+				 params |= RESPOND_LOWLEVEL;
+			} 	 
+			else if(asLowerCaseString(*it) == "highlevel"){
+				 params |= RESPOND_HIGHLEVEL;
+			}
 			else if(asLowerCaseString(*it) == "knowspell"){
 				params |= RESPOND_KNOWSPELL;
 			}
@@ -1362,8 +1368,9 @@ void Npc::onCreatureSay(const Creature* creature, SpeakClasses type, const std::
 			if(canSee(pos)){
 				NpcState* npcState = getState(player);
 
+				npcState->respondToText = text;
 				if(!text.empty()){
-					if(hasBusyReply && focusCreature != 0 && focusCreature != player->getID()){
+					if(hasBusyReply && focusCreature != 0 && (uint32_t)focusCreature != player->getID()){
 						//Check if we have a busy reply
 						const NpcResponse* response = getResponse(player, npcState, EVENT_BUSY, text, false);
 						if(response){
@@ -1379,8 +1386,6 @@ void Npc::onCreatureSay(const Creature* creature, SpeakClasses type, const std::
 						}
 					}
 				}
-
-				npcState->respondToText = text;
 			}
 		}
 	}
@@ -1461,7 +1466,7 @@ void Npc::onThink(uint32_t interval)
 		}
 
 		if(closeConversation){
-			if(focusCreature == npcState->playerId && !hasScriptedFocus){
+			if((uint32_t)focusCreature == npcState->playerId && !hasScriptedFocus){
 				setCreatureFocus(NULL);
 			}
 
@@ -1837,8 +1842,8 @@ void Npc::processResponse(Player* player, NpcState* npcState, const NpcResponse*
 						std::stringstream scriptstream;
 						//attach various variables that could be interesting
 						scriptstream << "cid = " << env->addThing(player) << std::endl;
-						scriptstream << "text = \"" << npcState->respondToText << "\"" << std::endl;
-						scriptstream << "name = \"" << player->getName() << "\"" << std::endl;
+						scriptstream << "text = \"" << LuaScriptInterface::escapeString(npcState->respondToText) << "\"" << std::endl;
+						scriptstream << "name = \"" << LuaScriptInterface::escapeString(player->getName()) << "\"" << std::endl;
 						scriptstream << "idleTimeout = " << idleTimeout << std::endl;
 
 						scriptstream << "itemlist = {" << std::endl;
@@ -1865,9 +1870,9 @@ void Npc::processResponse(Player* player, NpcState* npcState, const NpcResponse*
 						scriptstream << "amount = " << npcState->amount << ',' << std::endl;
 						scriptstream << "price = " << npcState->price << ',' << std::endl;
 						scriptstream << "level = " << npcState->level << ',' << std::endl;
-						scriptstream << "spellname = \"" << npcState->spellName << "\"" << ',' << std::endl;
-						scriptstream << "listname = \"" << npcState->listName << "\"" << ',' << std::endl;
-						scriptstream << "listpname = \"" << npcState->listPluralName << "\"" << ',' << std::endl;
+						scriptstream << "spellname = \"" << LuaScriptInterface::escapeString(npcState->spellName) << "\"" << ',' << std::endl;
+						scriptstream << "listname = \"" << LuaScriptInterface::escapeString(npcState->listName) << "\"" << ',' << std::endl;
+						scriptstream << "listpname = \"" << LuaScriptInterface::escapeString(npcState->listPluralName) << "\"" << ',' << std::endl;
 
 						scriptstream << "n1 = " << npcState->scriptVars.n1 << ',' << std::endl;
 						scriptstream << "n2 = " << npcState->scriptVars.n2 << ',' << std::endl;
@@ -1877,9 +1882,9 @@ void Npc::processResponse(Player* player, NpcState* npcState, const NpcResponse*
 						scriptstream << "b2 = " << (npcState->scriptVars.b2 ? "true" : "false" ) << ',' << std::endl;
 						scriptstream << "b3 = " << (npcState->scriptVars.b3 ? "true" : "false" ) << ',' << std::endl;
 
-						scriptstream << "s1 = \"" << npcState->scriptVars.s1 << "\"" << ',' << std::endl;
-						scriptstream << "s2 = \"" << npcState->scriptVars.s2 << "\"" << ',' << std::endl;
-						scriptstream << "s3 = \"" << npcState->scriptVars.s3 << "\"" << std::endl;
+						scriptstream << "s1 = \"" << LuaScriptInterface::escapeString(npcState->scriptVars.s1) << "\"" << ',' << std::endl;
+						scriptstream << "s2 = \"" << LuaScriptInterface::escapeString(npcState->scriptVars.s2) << "\"" << ',' << std::endl;
+						scriptstream << "s3 = \"" << LuaScriptInterface::escapeString(npcState->scriptVars.s3) << "\"" << std::endl;
 						scriptstream << "}" << std::endl;
 
 						scriptstream << (*it).strValue;
@@ -2098,9 +2103,9 @@ void Npc::onPlayerEndTrade(Player* player, int32_t buyCallback, int32_t sellCall
 	}
 }
 
-bool Npc::getNextStep(Direction& dir)
+bool Npc::getNextStep(Direction& dir, uint32_t& flags)
 {
-	if(Creature::getNextStep(dir)){
+	if(Creature::getNextStep(dir, flags)){
 		return true;
 	}
 
@@ -2370,13 +2375,27 @@ const NpcResponse* Npc::getResponse(const ResponseList& list, const Player* play
 			}
 
 			if(hasBitSet(RESPOND_LOWLEVEL, params)){
-				if((int32_t)player->getLevel() >= iresponse->getLevel())
-					continue;
+				if(iresponse->getLevel() > 0){
+					if((int32_t)player->getLevel() >= iresponse->getLevel())
+						continue;
+				}
+				else{
+					if((int32_t)player->getLevel() >= npcState->level){
+						continue;
+					}
+				}
 			}
 
 			if(hasBitSet(RESPOND_HIGHLEVEL, params)){
-				if((int32_t)player->getLevel() < iresponse->getLevel())
-					continue;
+				if(iresponse->getLevel() > 0){
+					if((int32_t)player->getLevel() < iresponse->getLevel())
+						continue;
+				}
+				else{
+					if((int32_t)player->getLevel() < npcState->level){
+						continue;
+					}
+				}
 			}
 
 			if(hasBitSet(RESPOND_KNOWSPELL, params)){
@@ -2438,25 +2457,25 @@ const NpcResponse* Npc::getResponse(const ResponseList& list, const Player* play
 			}
 
 			if(iresponse->scriptVars.n1 != -1){
-				if(!npcState->scriptVars.n1){
+				if(npcState->scriptVars.n1 != iresponse->scriptVars.n1){
 					continue;
 				}
 			}
 
 			if(iresponse->scriptVars.n2 != -1){
-				if(!npcState->scriptVars.n2){
+				if(npcState->scriptVars.n2 != iresponse->scriptVars.n2){
 					continue;
 				}
 			}
 
 			if(iresponse->scriptVars.n3 != -1){
-				if(!npcState->scriptVars.n3){
+				if(npcState->scriptVars.n3 != iresponse->scriptVars.n3){
 					continue;
 				}
 			}
 
 			bool storageMatch = false;
-			for(StorageConditions::const_iterator iter = iresponse->prop.storageConditions.begin(); iter != iresponse->prop.storageConditions.begin(); ++iter){
+			for(StorageConditions::const_iterator iter = iresponse->prop.storageConditions.begin(); iter != iresponse->prop.storageConditions.end(); ++iter){
 				const StorageCondition& cs = *iter;
 
 				int32_t playerStorageValue = -1;
@@ -2611,7 +2630,7 @@ const NpcResponse* Npc::getResponse(const ResponseList& list, const Player* play
 					bestMatch = iresponse;
 			}
 			else{
-				// First match is always the bestmi
+				// First match is always the best
 				return iresponse;
 			}
 		}
@@ -2628,6 +2647,9 @@ int32_t Npc::matchKeywords(NpcResponse* response, std::vector<std::string> wordL
 {
 	int32_t bestMatchCount = 0;
 
+	if(wordList.empty())
+		return 0;
+
 	const std::list<std::string>& inputList = response->getInputList();
 	for(std::list<std::string>::const_iterator it = inputList.begin(); it != inputList.end(); ++it){
 		int32_t matchCount = 0;
@@ -2640,10 +2662,14 @@ int32_t Npc::matchKeywords(NpcResponse* response, std::vector<std::string> wordL
 				//Match anything.
 			}
 			else if((*keyIter) == "|amount|"){
+				if(lastWordMatchIter == wordList.end()){
+					continue;
+				}
+
 				//TODO: Should iterate through each word until a number or a new keyword is found.
-				int32_t amount = atoi((*lastWordMatchIter).c_str());
+				int32_t amount = atoi(lastWordMatchIter->c_str());
 				if(amount > 0){
-					response->setAmount(amount);
+					response->setAmount(std::min(amount, 500));
 				}
 				else{
 					response->setAmount(1);
@@ -2653,13 +2679,6 @@ int32_t Npc::matchKeywords(NpcResponse* response, std::vector<std::string> wordL
 			else{
 				std::vector<std::string>::iterator wordIter = wordList.end();
 				for(wordIter = lastWordMatchIter; wordIter != wordList.end(); ++wordIter){
-					/*
-					size_t pos = wordIter->find_first_of("!\"#?%&/()=?{[]}\\^*><,.-_~");
-					if(pos == std::string::npos || pos - keyIter->size() < wordIter->size()){
-						pos = 0;
-					}
-					*/
-
 					if(wordIter->find(*keyIter, 0) == 0){
 						break;
 					}
@@ -2675,7 +2694,7 @@ int32_t Npc::matchKeywords(NpcResponse* response, std::vector<std::string> wordL
 			++matchCount;
 		}
 
-		if(matchCount == keywordList.size() && matchCount > bestMatchCount)
+		if((size_t)matchCount == keywordList.size() && matchCount > bestMatchCount)
 			bestMatchCount = matchCount;
 	}
 

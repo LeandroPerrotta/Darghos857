@@ -52,7 +52,7 @@ enum LUA_RET_CODE{
 	LUA_ERROR = -1,
 	LUA_TRUE = 1,
 	LUA_FALSE = 0,
-	LUA_NULL = 0,
+	LUA_NULL = 0
 };
 
 enum LuaVariantType_t{
@@ -60,7 +60,7 @@ enum LuaVariantType_t{
 	VARIANT_NUMBER,
 	VARIANT_POSITION,
 	VARIANT_TARGETPOSITION,
-	VARIANT_STRING,
+	VARIANT_STRING
 };
 
 struct LuaVariant{
@@ -313,6 +313,7 @@ public:
 	static std::string getFieldString(lua_State *L, const char *key);
 	static void setFieldBool(lua_State *L, const char* index, bool val);
 	static bool getFieldBool(lua_State *L, const char *key);
+	static std::string escapeString(const std::string& string);
 
 protected:
 	virtual bool closeState();

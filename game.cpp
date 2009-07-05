@@ -190,8 +190,10 @@ void Game::saveGameState()
 	ScriptEnviroment::saveGameState();
 }
 
-bool Game::saveServer(bool payHouses)
+bool Game::saveServer(bool payHouses, bool shallowSave /*=false*/)
 {
+	uint64_t start = OTSYS_TIME();
+
 	saveGameState();
 
 	for(AutoList<Player>::listiterator it = Player::listPlayer.list.begin();
@@ -199,14 +201,22 @@ bool Game::saveServer(bool payHouses)
 		++it)
 	{
 		it->second->loginPosition = it->second->getPosition();
-		IOPlayer::instance()->savePlayer(it->second);
+		IOPlayer::instance()->savePlayer(it->second, shallowSave);
 	}
+
+	if(shallowSave)
+		return true;
 
 	if(payHouses){
 		Houses::getInstance().payHouses();
 	}
 
-	return map->saveMap();
+	bool ret = map->saveMap();
+
+	std::cout << "Notice: Server saved. Process took " <<
+		(OTSYS_TIME() - start)/(1000.) << "s." << std::endl;
+
+	return ret;
 }
 
 void Game::loadGameState()
@@ -365,6 +375,10 @@ Thing* Game::internalGetThing(Player* player, const Position& pos, int32_t index
 					if(thing == NULL){
 						//then last we check items with topOrder 3 (doors etc)
 						thing = tile->getTopTopItem();
+					}
+
+					if(thing == NULL){
+						thing = tile->ground;
 					}
 				}
 			}
@@ -3833,24 +3847,26 @@ void Game::checkCreatureAttack(uint32_t creatureId)
 
 void Game::addCreatureCheck(Creature* creature)
 {
-	if(creature->checkCreatureVectorIndex >= 0) {
-		// Already in a vector, or about to be added
+	creature->creatureCheck = true;
+
+	if(creature->checkCreatureVectorIndex >= 0){
+		// Already in a vector
 		return;
 	}
 
 	toAddCheckCreatureVector.push_back(creature);
-	creature->checkCreatureVectorIndex = 0;
+	creature->checkCreatureVectorIndex = random_range(0, EVENT_CREATURECOUNT - 1);
 	creature->useThing2();
 }
 
 void Game::removeCreatureCheck(Creature* creature)
 {
-	if(creature->checkCreatureVectorIndex == -1) {
+	if(creature->checkCreatureVectorIndex == -1){
 		// Not in any vector
 		return;
 	}
 
-	creature->checkCreatureVectorIndex = -1;
+	creature->creatureCheck = false;
 }
 
 void Game::checkCreatures()
@@ -3864,14 +3880,14 @@ void Game::checkCreatures()
 	//add any new creatures
 	for(it = toAddCheckCreatureVector.begin(); it != toAddCheckCreatureVector.end();){
 		creature = (*it);
-		if(creature->checkCreatureVectorIndex != -1){
-			int next_vector = (checkCreatureLastIndex + 1) % EVENT_CREATURECOUNT;
-			checkCreatureVectors[next_vector].push_back(creature);
-			creature->checkCreatureVectorIndex = next_vector + 1;
+
+		if(creature->creatureCheck){
+			checkCreatureVectors[creature->checkCreatureVectorIndex].push_back(creature);
 			++it;
 		}
 		else{
 			FreeThing(creature);
+			creature->checkCreatureVectorIndex = -1;
 			it = toAddCheckCreatureVector.erase(it);
 		}
 	}
@@ -3886,7 +3902,7 @@ void Game::checkCreatures()
 
 	for(it = checkCreatureVector.begin(); it != checkCreatureVector.end();){
 		creature = (*it);
-		if(creature->checkCreatureVectorIndex != -1){
+		if(creature->creatureCheck){
 			if(creature->getHealth() > 0){
 				creature->onThink(EVENT_CREATURE_THINK_INTERVAL);
 			}
@@ -3898,6 +3914,7 @@ void Game::checkCreatures()
 		}
 		else{
 			FreeThing(creature);
+			creature->checkCreatureVectorIndex = -1;
 			it = checkCreatureVector.erase(it);
 		}
 	}

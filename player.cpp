@@ -156,6 +156,7 @@ Creature()
 	premiumDays = 0;
 	balance = 0;
 
+	sex = PLAYERSEX_LAST;
  	vocation_id = (Vocation_t)0;
 
  	town = 0;
@@ -3601,7 +3602,7 @@ void Player::onCombatRemoveCondition(const Creature* attacker, Condition* condit
 
 	if(remove){
 		if(!canDoAction()){
-			uint32_t delay = getNextActionTime();
+			int32_t delay = getNextActionTime();
 			delay -= (delay % EVENT_CREATURE_THINK_INTERVAL);
 			if(delay < 0){
 				removeCondition(condition);

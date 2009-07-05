@@ -43,6 +43,7 @@
 #include "teleport.h"
 #include "ban.h"
 #include "movement.h"
+#include "tools.h"
 
 extern Game g_game;
 extern Monsters g_monsters;
@@ -53,7 +54,7 @@ extern Spells* g_spells;
 
 enum{
 	EVENT_ID_LOADING = 1,
-	EVENT_ID_USER = 1000,
+	EVENT_ID_USER = 1000
 };
 
 ScriptEnviroment::ThingMap ScriptEnviroment::m_globalMap;
@@ -221,7 +222,7 @@ void ScriptEnviroment::removeUniqueThing(Thing* thing)
 
 uint32_t ScriptEnviroment::addThing(Thing* thing)
 {
-	if(thing){
+	if(thing && !thing->isRemoved()){
 		ThingMap::iterator it;
 		for(it = m_localMap.begin(); it != m_localMap.end(); ++it){
 			if(it->second == thing){
@@ -3738,8 +3739,13 @@ int LuaScriptInterface::luaDoCreateTeleport(lua_State *L)
 	}
 
 	Item* newItem = Item::CreateItem(itemId);
-	Teleport* newTp = newItem->getTeleport();
+	if(!newItem){
+		reportErrorFunc(getErrorDesc(LUA_ERROR_ITEM_NOT_FOUND));
+		lua_pushnumber(L, LUA_ERROR);
+		return 1;
+	}
 
+	Teleport* newTp = newItem->getTeleport();
 	if(!newTp){
 		delete newItem;
 		reportErrorFunc("Wrong teleport id");
@@ -7682,7 +7688,7 @@ int LuaScriptInterface::luaAddPlayerBan(lua_State *L)
 	int32_t parameters = lua_gettop(L);
 
 	uint32_t reason = 0;
-	violationAction_t action;
+	violationAction_t action = ACTION_NOTATION;
 	std::string statement;
 	std::string comment = "No comment";
 	uint32_t admin = 0;
@@ -7740,7 +7746,7 @@ int LuaScriptInterface::luaAddAccountBan(lua_State *L)
 	int32_t parameters = lua_gettop(L);
 
 	uint32_t reason = 0;
-	violationAction_t action;
+	violationAction_t action = ACTION_NOTATION;
 	std::string statement;
 	std::string comment = "No comment";
 	uint32_t admin = 0;
@@ -7889,6 +7895,16 @@ int LuaScriptInterface::luaGetConfigValue(lua_State *L)
 	//getConfigValue(key)
 	g_config.getConfigValue(popString(L), L);
 	return 1;
+}
+
+std::string LuaScriptInterface::escapeString(const std::string& string)
+{
+	std::string s = string;
+	replaceString(s, "\\", "\\\\");
+	replaceString(s, "\"", "\\\"");
+	replaceString(s, "'", "\\'");
+	replaceString(s, "[[", "\\[[");
+	return s;
 }
 
 // Bit lib

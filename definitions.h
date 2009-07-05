@@ -24,7 +24,7 @@
 
 
 #define OTSERV_VERSION "0.6.3_SVN"
-#define OTSERV_NAME "Darghos"
+#define OTSERV_NAME "OTServ"
 #define OTSERV_CLIENT_VERSION "8.42"
 #define CURRENT_SCHEMA_VERSION 17
 
@@ -94,7 +94,7 @@
 enum passwordType_t{
 	PASSWORD_TYPE_PLAIN = 0,
 	PASSWORD_TYPE_MD5,
-	PASSWORD_TYPE_SHA1,
+	PASSWORD_TYPE_SHA1
 };
 
 #ifdef _WIN32

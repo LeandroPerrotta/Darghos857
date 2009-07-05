@@ -102,7 +102,7 @@ enum{
 	AP_MSG_ENCRYPTION_FAILED = 9,
 	AP_MSG_PING_OK = 10,
 	AP_MSG_MESSAGE = 11,
-	AP_MSG_ERROR = 12,
+	AP_MSG_ERROR = 12
 };
 
 enum{
@@ -120,16 +120,17 @@ enum{
 	//CMD_GETHOUSE = 12,
 	CMD_SAVE_SERVER = 13,
 	CMD_SEND_MAIL = 14,
+	CMD_SHALLOW_SAVE_SERVER = 15,
 };
 
 
 enum{
 	REQUIRE_LOGIN = 1,
-	REQUIRE_ENCRYPTION = 2,
+	REQUIRE_ENCRYPTION = 2
 };
 
 enum{
-	ENCRYPTION_RSA1024XTEA = 1,
+	ENCRYPTION_RSA1024XTEA = 1
 };
 
 class AdminProtocolConfig{
@@ -197,7 +198,7 @@ protected:
 	virtual void deleteProtocolTask();
 
 	void adminCommandOpenServer();
-	void adminCommandSaveServer();
+	void adminCommandSaveServer(bool shallow);
 	void adminCommandCloseServer();
 	void adminCommandPayHouses();
 	void adminCommandShutdownServer();
@@ -211,7 +212,7 @@ protected:
 		ENCRYPTION_NO_SET,
 		ENCRYPTION_OK,
 		NO_LOGGED_IN,
-		LOGGED_IN,
+		LOGGED_IN
 	};
 
 private:

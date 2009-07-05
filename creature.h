@@ -60,7 +60,7 @@ enum slots_t {
 	SLOT_TWO_HAND = SLOT_HAND, // alias
 
 	// Last real slot is depot
-	SLOT_LAST = SLOT_DEPOT,
+	SLOT_LAST = SLOT_DEPOT
 };
 
 struct FindPathParams{
@@ -91,7 +91,7 @@ struct DeathEntry{
 	// Fields are only counted if they are the final hit killer
 	DeathEntry(std::string name, int dmg) : data(name), damage(dmg) {}
 	DeathEntry(Creature* killer, int dmg) : data(killer), damage(dmg) {}
-	
+
 	bool isCreatureKill() const {return data.type() == typeid(Creature*);}
 	bool isNameKill() const {return !isCreatureKill();}
 
@@ -139,7 +139,7 @@ class FrozenPathingConditionCall {
 public:
 	FrozenPathingConditionCall(const Position& _targetPos);
 	virtual ~FrozenPathingConditionCall() {}
-	
+
 	virtual bool operator()(const Position& startPos, const Position& testPos,
 		const FindPathParams& fpp, int32_t& bestMatchDist) const;
 
@@ -169,7 +169,7 @@ public:
 	virtual const Npc* getNpc() const {return NULL;};
 	virtual Monster* getMonster() {return NULL;};
 	virtual const Monster* getMonster() const {return NULL;};
-	
+
 	void getPathToFollowCreature();
 
 	virtual const std::string& getName() const = 0;
@@ -193,7 +193,7 @@ public:
 
 	const Position& getMasterPos() const { return masterPos; }
 	virtual void setMasterPos(const Position& pos, uint32_t radius = 1) {
-		masterPos = pos; 
+		masterPos = pos;
 		masterRadius = radius;
 	}
 
@@ -306,7 +306,6 @@ public:
 	virtual uint32_t getConditionImmunities() const { return 0; }
 	virtual uint32_t getConditionSuppressions() const { return 0; }
 	virtual bool isAttackable() const { return true;}
-	bool isIdle() const { return checkCreatureVectorIndex == 0;}
 	virtual void changeHealth(int32_t healthChange);
 	virtual void changeMana(int32_t manaChange);
 
@@ -318,7 +317,7 @@ public:
 	virtual bool convinceCreature(Creature* creature) {return false;};
 
 	virtual void onDie();
-	
+
 	virtual uint64_t getGainedExperience(Creature* attacker, bool useMultiplier = true) const;
 	void addDamagePoints(Creature* attacker, int32_t damagePoints);
 	void addHealPoints(Creature* caster, int32_t healthPoints);
@@ -351,7 +350,7 @@ public:
 	virtual void onThink(uint32_t interval);
 	virtual void onAttacking(uint32_t interval);
 	virtual void onWalk();
-	virtual bool getNextStep(Direction& dir);
+	virtual bool getNextStep(Direction& dir, uint32_t& flags);
 
 	virtual void onAddTileItem(const Tile* tile, const Position& pos, const Item* item);
 	virtual void onUpdateTileItem(const Tile* tile, const Position& pos,
@@ -413,8 +412,8 @@ protected:
 	bool isUpdatingPath;
 	// The creature onThink event vector this creature belongs to
 	// -1 represents that the creature isn't in any vector
-	// 0 represents it's going to be added in the next checkCreature call
 	int32_t checkCreatureVectorIndex;
+	bool creatureCheck;
 
 	int32_t health, healthMax;
 	int32_t mana, manaMax;

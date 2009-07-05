@@ -62,7 +62,7 @@ enum ITEMPROPERTY{
 
 enum TradeEvents_t{
 	ON_TRADE_TRANSFER,
-	ON_TRADE_CANCEL,
+	ON_TRADE_CANCEL
 };
 
 enum ItemDecayState_t{
@@ -106,13 +106,13 @@ enum AttrTypes_t{
 	ATTR_CHARGES = 22,
 	// This is NOT stored in serializeAttr, but rather used by IOMapSerialize
 	// look at that code for the ugly hack that makes this work. :)
-	ATTR_CONTAINER_ITEMS = 23,
+	ATTR_CONTAINER_ITEMS = 23
 };
 
 enum Attr_ReadValue{
 	ATTR_READ_CONTINUE,
 	ATTR_READ_ERROR,
-	ATTR_READ_END,
+	ATTR_READ_END
 };
 
 class ItemAttributes{
@@ -385,7 +385,7 @@ public:
 
 	virtual bool canRemove() const {return true;}
 	virtual bool canTransform() const {return true;}
-	virtual void onRemoved() {};
+	virtual void onRemoved();
 	virtual bool onTradeEvent(TradeEvents_t event, Player* owner){return true;};
 
 	virtual void __startDecaying();

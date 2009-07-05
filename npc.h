@@ -162,7 +162,7 @@ enum RespondParam_t{
 
 enum ResponseType_t{
 	RESPONSE_DEFAULT,
-	RESPONSE_SCRIPT,
+	RESPONSE_SCRIPT
 };
 
 enum InteractType_t{
@@ -525,7 +525,7 @@ protected:
 	bool isImmune(CombatType_t type) const {return true;}
 	bool isImmune(ConditionType_t type) const {return true;}
 	virtual bool isAttackable() const { return attackable; }
-	virtual bool getNextStep(Direction& dir);
+	virtual bool getNextStep(Direction& dir, uint32_t& flags);
 
 	bool canWalkTo(const Position& fromPos, Direction dir);
 	bool getRandomStep(Direction& dir);
