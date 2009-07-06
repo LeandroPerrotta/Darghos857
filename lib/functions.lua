@@ -140,7 +140,9 @@ end
 
 function setRateStage(cid, newlevel)
 
-
+	if(getPlayerTown(cid) ~= 6 and getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == -1) then
+		setPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE, 1)
+	end
 
 	local stages = {
 	
