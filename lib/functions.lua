@@ -153,26 +153,35 @@ function setRateStage(cid, newlevel)
 	
 	}
 	
-	
-	if(newlevel < 40) then
-		setExperienceRate(cid, stages.first)
-	elseif(newlevel < 80) then
-		setExperienceRate(cid, stages.second)
-	elseif(newlevel < 120) then
-		setExperienceRate(cid, stages.third)
-	elseif(newlevel < 160) then
-		setExperienceRate(cid, stages.fourth)
-	elseif(newlevel < 220) then
-		setExperienceRate(cid, stages.fifth)
+	if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) ~= -1) then
+		if(newlevel < 40) then
+			setExperienceRate(cid, stages.first)
+		elseif(newlevel < 80) then
+			setExperienceRate(cid, stages.second)
+		elseif(newlevel < 120) then
+			setExperienceRate(cid, stages.third)
+		elseif(newlevel < 160) then
+			setExperienceRate(cid, stages.fourth)
+		elseif(newlevel < 220) then
+			setExperienceRate(cid, stages.fifth)
+		else
+			setExperienceRate(cid, stages.sixth)
+		end
 	else
-		setExperienceRate(cid, stages.sixth)
-	end
+		if(newlevel < 20) then
+			setExperienceRate(cid, stages.first)
+		elseif(newlevel < 60) then
+			setExperienceRate(cid, stages.second)
+		elseif(newlevel < 80) then
+			setExperienceRate(cid, stages.third)
+		else
+			setExperienceRate(cid, stages.sixth)
+		end		
+	end	
 	
 	return LUA_TRUE
 
 end
-
-
 
 
 

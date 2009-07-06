@@ -51,6 +51,10 @@
 	<monster name="Yojamba Throne" file="darghos/Yojamba Throne.xml" />
 	<monster name="Zepar" file="darghos/Zepar.xml" />
 	<monster name="Zunda-Burs" file="darghos/zunda.xml" />
+	<monster name="Marksman Target S" file="darghos/marksman target s.xml" />
+	<monster name="Marksman Target W" file="darghos/marksman target w.xml" />
+	<monster name="Hitdoll S" file="darghos/hitdoll s.xml" />
+	<monster name="Hitdoll W" file="darghos/hitdoll w.xml" />	
 
 	<!-- Amazons -->
 	<monster name="Amazon" file="amazons/amazon.xml"/>
