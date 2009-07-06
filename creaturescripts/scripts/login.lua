@@ -13,6 +13,10 @@
 		defineFirstItems(cid)	
 	end
 	
+	if(getPlayerTown(cid) != 6 and getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == -1) then
+		setPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE, 1)
+	end
+	
 	--Remove blesses if necessary
 	if getPlayerStorageValue(cid, STORAGE_REMOVE_BLESSES) == 1 then
 		local i = 0
