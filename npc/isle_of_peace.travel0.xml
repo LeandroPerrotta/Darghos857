@@ -47,13 +47,9 @@
 			if(getPlayerLevel(cid) < 60) then
 				selfSay("I see that you are very newbie to leave from island of peace, outside there is a dark and dangerous world and leaving from island of peace is impossible to return back. Do you are sure want to leave?", cid)
 				_state.topic = 1
-			else
-				local playerGUID = getPlayerGUID(cid)
-			
+			else			
 				if(getPlayerDepotItems(cid, 6) > 1) then
 					selfSay("You have items in your depot of island of peace. Please send your depot itens to city you want to travel!", cid)
-				elseif(getHouseByPlayerGUID(playerGUID) ~= nil) then
-					selfSay("You have an house on island of peace. To leave from here you need dispose from your house!", cid)
 				else
 					selfSay("You have learned all that is necessary to leave the island of peace! Do you like to travel to which city?", cid)
 					_state.topic = 2				
@@ -70,12 +66,8 @@
 			<action name="script">
 			<![CDATA[
 				
-			local playerGUID = getPlayerGUID(cid)	
-				
 			if(getPlayerDepotItems(cid, 6) > 1) then
-				selfSay("You have items in your depot of island of peace. Please send your depot itens to city you want to travel!", cid)
-			elseif(getHouseByPlayerGUID(playerGUID) ~= nil) then
-				selfSay("You have an house on island of peace. To leave from here you need dispose from your house!", cid)				
+				selfSay("You have items in your depot of island of peace. Please send your depot itens to city you want to travel!", cid)			
 			else
 				selfSay("Okay, you are very brave! Do you like to travel to which city?", cid)
 				_state.topic = 2	
