@@ -153,7 +153,7 @@ function setRateStage(cid, newlevel)
 	
 	}
 	
-	if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) ~= -1) then
+	if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == 1) then
 		if(newlevel < 40) then
 			setExperienceRate(cid, stages.first)
 		elseif(newlevel < 80) then
