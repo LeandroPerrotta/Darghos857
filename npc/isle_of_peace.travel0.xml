@@ -52,7 +52,7 @@
 			
 				if(getPlayerDepotItems(cid, 6) > 1) then
 					selfSay("You have items in your depot of island of peace. Please send your depot itens to city you want to travel!", cid)
-				elseif(getHouseByPlayerGUID(playerGUID) ~= -1) then
+				elseif(getHouseByPlayerGUID(playerGUID) ~= nil) then
 					selfSay("You have an house on island of peace. To leave from here you need dispose from your house!", cid)
 				else
 					selfSay("You have learned all that is necessary to leave the island of peace! Do you like to travel to which city?", cid)
@@ -70,9 +70,11 @@
 			<action name="script">
 			<![CDATA[
 				
+			local playerGUID = getPlayerGUID(cid)	
+				
 			if(getPlayerDepotItems(cid, 6) > 1) then
 				selfSay("You have items in your depot of island of peace. Please send your depot itens to city you want to travel!", cid)
-			elseif(getHouseByPlayerGUID(playerGUID) ~= LUA_NULL) then
+			elseif(getHouseByPlayerGUID(playerGUID) ~= nil) then
 				selfSay("You have an house on island of peace. To leave from here you need dispose from your house!", cid)				
 			else
 				selfSay("Okay, you are very brave! Do you like to travel to which city?", cid)
