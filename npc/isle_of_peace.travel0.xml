@@ -86,6 +86,7 @@
 			
 			<action name="script">
 			<![CDATA[
+			doPlayerSetTown(1)
 			setPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE, 1)
 			]]>
 			</action>			
@@ -100,6 +101,7 @@
 			
 			<action name="script">
 			<![CDATA[
+			doPlayerSetTown(4)
 			setPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE, 1)
 			]]>
 			</action>			
@@ -116,6 +118,7 @@
 			
 			<action name="script">
 			<![CDATA[
+			doPlayerSetTown(2)
 			setPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE, 1)
 			]]>
 			</action>			
@@ -132,6 +135,7 @@
 			
 			<action name="script">
 			<![CDATA[
+			doPlayerSetTown(5)
 			setPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE, 1)
 			]]>
 			</action>			
@@ -148,6 +152,7 @@
 			
 			<action name="script">
 			<![CDATA[
+			doPlayerSetTown(7)
 			setPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE, 1)
 			]]>
 			</action>			
