@@ -185,9 +185,83 @@ function setRateStage(cid, newlevel)
 
 end
 
+function setLoginSkillRateStages(cid)
 
+	if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == -1) then
+	
+		if(getPlayerSkill(cid, LEVEL_SKILL_FIST) >= 85) then
+			setSkillRate(cid, LEVEL_SKILL_FIST, 1)
+		else
+			setSkillRate(cid, LEVEL_SKILL_FIST, 30)
+		end	
+			
+		if(getPlayerSkill(cid, LEVEL_SKILL_CLUB) >= 85) then	
+			setSkillRate(cid, LEVEL_SKILL_CLUB, 1)
+		else
+			setSkillRate(cid, LEVEL_SKILL_CLUB, 30)
+		end		
+			
+		if(getPlayerSkill(cid, LEVEL_SKILL_SWORD) >= 85) then		
+			setSkillRate(cid, LEVEL_SKILL_SWORD, 1)
+		else	
+			setSkillRate(cid, LEVEL_SKILL_SWORD, 30)
+		end		
+			
+		if(getPlayerSkill(cid, LEVEL_SKILL_SWORD) >= 85) then		
+			setSkillRate(cid, LEVEL_SKILL_AXE, 1)
+		else	
+			setSkillRate(cid, LEVEL_SKILL_AXE, 30)
+		end		
+			
+		if(getPlayerSkill(cid, LEVEL_SKILL_DISTANCE) >= 85) then	
+			setSkillRate(cid, LEVEL_SKILL_DISTANCE, 1)
+		else	
+			setSkillRate(cid, LEVEL_SKILL_DISTANCE, 30)
+		end		
+			
+		if(getPlayerSkill(cid, LEVEL_SKILL_SHIELDING) >= 85) then		
+			setSkillRate(cid, LEVEL_SKILL_SHIELDING, 1)
+		else	
+			setSkillRate(cid, LEVEL_SKILL_SHIELDING, 30)
+		end		
+			
+		if(getPlayerSkill(cid, LEVEL_SKILL_FISHING) >= 85) then		
+			setSkillRate(cid, LEVEL_SKILL_FISHING, 1)	
+		else	
+			setSkillRate(cid, LEVEL_SKILL_FISHING, 30)	
+		end		
+	else
+	
+		setSkillRate(cid, LEVEL_SKILL_FIST, 30)
+		setSkillRate(cid, LEVEL_SKILL_CLUB, 30)
+		setSkillRate(cid, LEVEL_SKILL_SWORD, 30)
+		setSkillRate(cid, LEVEL_SKILL_AXE, 30)
+		setSkillRate(cid, LEVEL_SKILL_DISTANCE, 30)
+		setSkillRate(cid, LEVEL_SKILL_SHIELDING, 30)
+		setSkillRate(cid, LEVEL_SKILL_FISHING, 30)			
+	end	
+end
 
+function playerRecord()
 
+	local record = getGlobalStorageValue(gid.PLAYERS_RECORD)
+	
+	if(record ~= -1) then
+		
+		local playerson = getPlayersOnlineList()
+		local total = #playerson
+		
+		if(total > record) then
+		
+			setGlobalStorageValue(gid.PLAYERS_RECORD, total)
+			broadcastMessage("A marca de ".. total .." jogadores online é um novo recorde no Darghos!", MESSAGE_EVENT_DEFAULT)
+		end
+	else
+
+		setGlobalStorageValue(gid.PLAYERS_RECORD, 1)
+		broadcastMessage("A marca de 1 jogador online é um novo recorde no Darghos!", MESSAGE_EVENT_DEFAULT)
+	end
+end
 
 
 

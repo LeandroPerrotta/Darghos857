@@ -5,9 +5,12 @@
 	registerCreatureEvent(cid, "Advance")	
 	registerCreatureEvent(cid, "Stages")
 	
+	playerRecord()
 	runPremiumSystem(cid)
 	setRateStage(cid, getPlayerLevel(cid))
+	setLoginSkillRateStages(cid)
 	checkItemShop(cid)
+	
 	
 	if(getPlayerVocation(cid) <= 4) then
 		defineFirstItems(cid)	
