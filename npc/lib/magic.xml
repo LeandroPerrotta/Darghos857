@@ -42,7 +42,7 @@
 			<item keywords="light;magic;missile" id="2287" subtype="10" buyprice="40"/>
 			
 			<!-- OUTRAS -->
-			<item keywords="blank;rune" id="2260" subtype="1" buyprice="10"/>
+			<item keywords="blank;rune" id="2260" buyprice="10"/>
 		</itemlist>
 		
 		

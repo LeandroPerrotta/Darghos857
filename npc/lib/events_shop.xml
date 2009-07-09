@@ -7,21 +7,11 @@
 			<action name="price" value="|SELLPRICE|"/>
 			<action name="script">
 			<![CDATA[
-			if(isItemStackable(_state.itemid) == 1) then
-				if(doPlayerRemoveItem(cid, _state.itemid, _state.amount, _state.amount) == TRUE) then
-					doPlayerAddMoney(cid, _state.price * _state.amount)
-					selfSay("Here you are.", cid)
-				else
-					selfSay("Sorry, you do not have one.", cid)
-				end
+			if(doPlayerRemoveItem(cid, _state.itemid, _state.amount) == TRUE and doPlayerAddMoney(cid, _state.price * _state.amount) == TRUE) then
+				selfSay("Here you are.", cid)
 			else
-				if(doPlayerRemoveItem(cid, _state.itemid, _state.amount, _state.subtype) == TRUE) then
-					doPlayerAddMoney(cid, _state.price * _state.amount)
-					selfSay("Here you are.", cid)
-				else
-					selfSay("Sorry, you do not have one.", cid)
-				end			
-			end	
+				selfSay("Sorry, you do not have one.", cid)
+			end
 			]]>
 			</action>
 		</response>
@@ -34,9 +24,9 @@
 			<![CDATA[
 				if(getPlayerMoney(cid) >= _state.amount * _state.price) then
 				
-					if(isItemStackable(_state.itemid) == 1 and _state.subtype == 1) then
+					if(isItemStackable(_state.itemid) == TRUE) then
 				
-						local result = doPlayerAddItem(cid, _state.itemid, _state.amount, 0)
+						local result = doPlayerAddItem(cid, _state.itemid, _state.amount)
 							
 						if(result == -1) then
 								

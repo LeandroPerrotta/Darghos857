@@ -131,25 +131,25 @@
 	-->
 		<itemlist listid="ammunition">
 			<!-- para Bow's -->
-			<item keywords="arrow" id="2544" subtype="1" buyprice="3"/>
-			<item keywords="earth;arrow" id="7850" subtype="1" buyprice="5"/>
-			<item keywords="flaming;arrow" id="7840" subtype="1" buyprice="5"/>
-			<item keywords="flash;arrow" id="7838" subtype="1" buyprice="5"/>
-			<item keywords="onyx;arrow" id="7365" subtype="1" buyprice="7"/>
-			<item keywords="shiver;arrow" id="7839" subtype="1" buyprice="5"/>
-			<item keywords="sniper;arrow" id="7364" subtype="1" buyprice="5"/>
+			<item keywords="arrow" id="2544" buyprice="3"/>
+			<item keywords="earth;arrow" id="7850" buyprice="5"/>
+			<item keywords="flaming;arrow" id="7840" buyprice="5"/>
+			<item keywords="flash;arrow" id="7838" buyprice="5"/>
+			<item keywords="onyx;arrow" id="7365" buyprice="7"/>
+			<item keywords="shiver;arrow" id="7839" buyprice="5"/>
+			<item keywords="sniper;arrow" id="7364" buyprice="5"/>
 			
 			<!-- para Crossbow's -->
-			<item keywords="bolt" id="2543" subtype="1" buyprice="4"/>
-			<item keywords="piercing;bolt" id="7363" subtype="1" buyprice="5"/>
-			<item keywords="power;bolt" id="2547" subtype="1" buyprice="7"/>
+			<item keywords="bolt" id="2543" buyprice="4"/>
+			<item keywords="piercing;bolt" id="7363" buyprice="5"/>
+			<item keywords="power;bolt" id="2547" buyprice="7"/>
 		</itemlist>	
 		
 		<!--
 		ASSASSIN STAR
 		-->
 		<itemlist listid="assassin_star">
-			<item keywords="assassin;star" id="7368" subtype="1" buyprice="100"/>
+			<item keywords="assassin;star" id="7368" buyprice="100"/>
 		</itemlist> 	
 		
 		<!--

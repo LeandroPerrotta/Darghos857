@@ -4806,7 +4806,7 @@
     <monster name="Amazon" x="-8" y="9" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1978" centery="1844" centerz="7" radius="1">
-    <npc name="quendor.weapons" x="0" y="1" z="7" spawntime="60"/>
+    <npc name="quendor.joia" x="0" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2005" centery="1846" centerz="7" radius="1">
     <npc name="quendor.magic" x="0" y="0" z="7" spawntime="60"/>
@@ -5645,7 +5645,7 @@
     <monster name="Dragon" x="-4" y="2" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1164" centery="2240" centerz="7" radius="5">
-    <monster name="Dragon" x="1" y="-1" z="7" spawntime="60"/>
+    <monster name="Dragon" x="1" y="-2" z="7" spawntime="60"/>
     <monster name="Dragon" x="0" y="5" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1191" centery="2246" centerz="7" radius="5">
