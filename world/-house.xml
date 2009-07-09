@@ -399,11 +399,11 @@
   <house name="Goer's Refuge V" houseid="452" entryx="2872" entryy="1172" entryz="7" rent="0" townid="2" size="97"/>
   <house name="District of Flowers VIII" houseid="453" entryx="2898" entryy="1216" entryz="7" rent="0" townid="2" size="27"/>
   <house name="The Temples House" houseid="454" entryx="2021" entryy="1894" entryz="7" rent="6000" townid="1" size="31"/>
-  <house name="Blaze I" houseid="455" entryx="1254" entryy="2237" entryz="7" rent="900" townid="1" size="12"/>
-  <house name="Blaze II" houseid="456" entryx="1254" entryy="2242" entryz="7" rent="900" townid="1" size="12"/>
-  <house name="Blaze Shop" houseid="457" entryx="1249" entryy="2244" entryz="7" rent="2300" townid="1" size="31"/>
-  <house name="Central I" houseid="458" entryx="1249" entryy="2230" entryz="7" rent="700" townid="1" size="13"/>
-  <house name="Central Shop" houseid="459" entryx="1257" entryy="2223" entryz="7" rent="1650" townid="1" size="17"/>
-  <house name="Novice Eternum I" houseid="460" entryx="1223" entryy="2222" entryz="7" rent="3700" townid="1" size="43"/>
-  <house name="Novice Eternum II" houseid="461" entryx="1223" entryy="2227" entryz="7" rent="3700" townid="1" size="43"/>
+  <house name="Blaze I" houseid="455" entryx="1254" entryy="2237" entryz="7" rent="900" townid="6" size="13"/>
+  <house name="Blaze II" houseid="456" entryx="1254" entryy="2242" entryz="7" rent="900" townid="6" size="13"/>
+  <house name="Blaze Shop" houseid="457" entryx="1249" entryy="2244" entryz="7" rent="2300" townid="6" size="31"/>
+  <house name="Central I" houseid="458" entryx="1249" entryy="2230" entryz="7" rent="700" townid="6" size="13"/>
+  <house name="Central Shop" houseid="459" entryx="1257" entryy="2223" entryz="7" rent="1650" townid="6" size="17"/>
+  <house name="Novice Eternum I" houseid="460" entryx="1223" entryy="2222" entryz="7" rent="3700" townid="6" size="43"/>
+  <house name="Novice Eternum II" houseid="461" entryx="1223" entryy="2227" entryz="7" rent="3700" townid="6" size="43"/>
 </houses>
