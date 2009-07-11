@@ -22,4 +22,8 @@
 		
 	-- SPECIAL Raids
 		
+		
+		-- BOSSES
+		<raid name="demodras_poh" file="bosses/demodras_poh.xml" interval2="9000000" margin="1000"/>
+		<raid name="ferumbras" file="bosses/ferumbras.xml" interval2="9000000" margin="1000"/>
 </raids>
