@@ -16,7 +16,14 @@ function onUse(cid, item, frompos, item2, topos)
 	if(isPlayer(item2.uid) == FALSE) then
 		return FALSE
 	end
-
+	
+	local pos1 = getPlayerPosition(cid)
+	local pos2 = getPlayerPosition(item2.uid)
+	
+	if(getDistanceBetween(pos1, pos2)) >= 3 then
+		return FALSE
+	end
+	
 	if(hasCondition(cid, CONDITION_EXHAUSTED) == TRUE) then
 		doPlayerSendDefaultCancel(cid, RETURNVALUE_YOUAREEXHAUSTED)
 		return TRUE

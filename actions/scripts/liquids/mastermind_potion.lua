@@ -8,7 +8,14 @@ function onUse(cid, item, frompos, item2, topos)
 		doCreatureSay(cid, "Only sorcerers and druids may drink this fluid.", TALKTYPE_ORANGE_1)
 		return TRUE
 	end
-
+	
+	local pos1 = getPlayerPosition(cid)
+	local pos2 = getPlayerPosition(item2.uid)
+	
+	if(getDistanceBetween(pos1, pos2)) >= 3 then
+		return FALSE
+	end
+	
 	if(doTargetCombatCondition(0, cid, condition, CONST_ME_MAGIC_RED) == LUA_ERROR) then
 		return FALSE
 	end
