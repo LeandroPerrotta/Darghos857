@@ -2669,7 +2669,7 @@ int32_t Npc::matchKeywords(NpcResponse* response, std::vector<std::string> wordL
 				//TODO: Should iterate through each word until a number or a new keyword is found.
 				int32_t amount = atoi(lastWordMatchIter->c_str());
 				if(amount > 0){
-					response->setAmount(std::min(amount, 500));
+					response->setAmount(std::min((int32_t)amount, (int32_t)500));
 				}
 				else{
 					response->setAmount(1);
@@ -2677,11 +2677,20 @@ int32_t Npc::matchKeywords(NpcResponse* response, std::vector<std::string> wordL
 				}
 			}
 			else{
+				bool fullMatch = false;
+				if(!keyIter->empty()) {
+					if((*keyIter)[keyIter->size() - 1] == '$')
+						fullMatch = true;
+				}
+
 				std::vector<std::string>::iterator wordIter = wordList.end();
 				for(wordIter = lastWordMatchIter; wordIter != wordList.end(); ++wordIter){
-					if(wordIter->find(*keyIter, 0) == 0){
-						break;
+					if(fullMatch) {
+						if(keyIter->find(*wordIter) == 0)
+							break;
 					}
+					else if(wordIter->find(*keyIter, 0) == 0)
+						break;
 				}
 
 				if(wordIter == wordList.end()){
