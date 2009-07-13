@@ -121,14 +121,21 @@ Status::Status()
 
 void Status::addPlayer()
 {
-	m_playersonline++;
+    if(m_playersonline <= 200)
+        m_playersonline += 2;
+    else
+        m_playersonline++;
+
 	if(m_playerspeak < m_playersonline)
 		m_playerspeak = m_playersonline;
 }
 
 void Status::removePlayer()
 {
-	m_playersonline--;
+    if(m_playersonline <= 200)
+        m_playersonline -= 2;
+    else
+        m_playersonline--;
 }
 
 std::string Status::getStatusString() const
@@ -276,7 +283,7 @@ void Status::getInfo(uint32_t requestedInfo, OutputMessage_ptr output, NetworkMe
 		output->AddU16(mapHeight);
 	}
 
-	if(requestedInfo & REQUEST_EXT_PLAYERS_INFO){
+	/*if(requestedInfo & REQUEST_EXT_PLAYERS_INFO){
 		output->AddByte(0x21); // players info - online players list
 		output->AddU32(m_playersonline);
 		for(AutoList<Player>::listiterator it = Player::listPlayer.list.begin(); it != Player::listPlayer.list.end(); ++it){
@@ -284,7 +291,7 @@ void Status::getInfo(uint32_t requestedInfo, OutputMessage_ptr output, NetworkMe
 			output->AddString(it->second->getName());
 			output->AddU32(it->second->getLevel());
 		}
-	}
+	}*/
 
 	if(requestedInfo & REQUEST_PLAYER_STATUS_INFO){
 		output->AddByte(0x22); // players info - online status info of a player
