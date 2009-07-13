@@ -122,7 +122,7 @@ bool Map::saveMap()
 
 Tile* Map::getTile(int32_t x, int32_t y, int32_t z)
 {
-	if(x < 0 || x >= 0xFFFF || y < 0 || y >= 0xFFFF || z  < 0 || z >= MAP_MAX_LAYERS){
+	if(x < 0 || x > 0xFFFF || y < 0 || y > 0xFFFF || z  < 0 || z >= MAP_MAX_LAYERS){
 		return NULL;
 	}
 
@@ -416,8 +416,8 @@ void Map::getSpectators(SpectatorVec& list, const Position& centerPos,
 					//underground
 
 					//8->15
-					minRangeZ = std::max(centerPos.z - 2, (int32_t)0);
-					maxRangeZ = std::min(centerPos.z + 2, (int32_t)MAP_MAX_LAYERS - 1);
+					minRangeZ = std::max(centerPos.z - 2, 0);
+					maxRangeZ = std::min(centerPos.z + 2, MAP_MAX_LAYERS - 1);
 				}
 				//above ground
 				else if(centerPos.z == 6){
@@ -474,8 +474,8 @@ const SpectatorVec& Map::getSpectators(const Position& centerPos)
 				//underground
 
 				//8->15
-				minRangeZ = std::max(centerPos.z - 2, (int32_t)0);
-				maxRangeZ = std::min(centerPos.z + 2, (int32_t)MAP_MAX_LAYERS - 1);
+				minRangeZ = std::max(centerPos.z - 2, 0);
+				maxRangeZ = std::min(centerPos.z + 2, MAP_MAX_LAYERS - 1);
 			}
 			//above ground
 			else if(centerPos.z == 6){
@@ -490,7 +490,7 @@ const SpectatorVec& Map::getSpectators(const Position& centerPos)
 				minRangeZ = 0;
 				maxRangeZ = 7;
 			}
-
+			
 			getSpectatorsInternal(list, centerPos, false,
 				minRangeX, maxRangeX,
 				minRangeY, maxRangeY,
@@ -873,7 +873,7 @@ bool Map::getPathMatching(const Creature* creature, std::list<Direction>& dirLis
 
 	const Tile* tile = NULL;
 	AStarNode* found = NULL;
-
+	
 	while(fpp.maxSearchDist != -1 || nodes.countClosedNodes() < 100){
 		AStarNode* n = nodes.getBestNode();
 		if(!n){
@@ -885,7 +885,7 @@ bool Map::getPathMatching(const Creature* creature, std::list<Direction>& dirLis
 			dirList.clear();
 			return false; //no path found
 		}
-
+		
 		if(pathCondition(startPos, Position(n->x, n->y, startPos.z), fpp, bestMatch)){
 			found = n;
 			endPos = Position(n->x, n->y, startPos.z);
@@ -954,20 +954,20 @@ bool Map::getPathMatching(const Creature* creature, std::list<Direction>& dirLis
 
 		nodes.closeNode(n);
 	}
-
+	
 	int32_t prevx = endPos.x;
 	int32_t prevy = endPos.y;
 	int32_t dx, dy;
-
+	
 	if(!found){
 		return false;
 	}
-
+	
 	found = found->parent;
 	while(found){
 		pos.x = found->x;
 		pos.y = found->y;
-
+		
 		dx = pos.x - prevx;
 		dy = pos.y - prevy;
 
@@ -1272,4 +1272,5 @@ Floor* QTreeLeafNode::createFloor(uint32_t z)
 	}
 	return m_array[z];
 }
+
 
