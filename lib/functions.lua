@@ -251,6 +251,12 @@ function playerRecord()
 		local playerson = getPlayersOnlineList()
 		local total = #playerson
 		
+		if(total <= 100) then
+			total = total * 2
+		else
+			total = total + 100
+		end
+		
 		if(total > record) then
 		
 			setGlobalStorageValue(gid.PLAYERS_RECORD, total)
@@ -258,8 +264,7 @@ function playerRecord()
 		end
 	else
 
-		setGlobalStorageValue(gid.PLAYERS_RECORD, 1)
-		broadcastMessage("A marca de 1 jogador online é um novo recorde no Darghos!", MESSAGE_EVENT_DEFAULT)
+		setGlobalStorageValue(gid.PLAYERS_RECORD, 200)
 	end
 end
 
