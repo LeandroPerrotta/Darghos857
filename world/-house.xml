@@ -316,88 +316,88 @@
   <house name="Frozen Circle IV" houseid="366" entryx="1949" entryy="1223" entryz="7" rent="10500" townid="7" size="26"/>
   <house name="Frozen Circle V" houseid="367" entryx="1956" entryy="1219" entryz="7" rent="6500" townid="7" size="13"/>
   <house name="Frozen Circle VI" houseid="368" entryx="1962" entryy="1208" entryz="7" rent="12000" townid="7" size="35"/>
-  <house name="Aracura Flats A-I" houseid="369" entryx="2971" entryy="1118" entryz="7" rent="0" townid="2" size="36"/>
-  <house name="Aracura Flats A-II" houseid="370" entryx="2971" entryy="1124" entryz="7" rent="0" townid="2" size="29"/>
-  <house name="Aracura Flats A-III" houseid="371" entryx="2970" entryy="1120" entryz="6" rent="0" townid="2" size="16"/>
-  <house name="Aracura Flats A-IV" houseid="372" entryx="2970" entryy="1121" entryz="6" rent="0" townid="2" size="13"/>
-  <house name="Aracura Flats A-V" houseid="373" entryx="2975" entryy="1121" entryz="6" rent="0" townid="2" size="19"/>
-  <house name="Aracura Flats A-VI" houseid="374" entryx="2976" entryy="1121" entryz="6" rent="0" townid="2" size="22"/>
-  <house name="Aracura Flats A-VII" houseid="375" entryx="2974" entryy="1118" entryz="5" rent="0" townid="2" size="13"/>
-  <house name="Aracura Flats A-VIII" houseid="376" entryx="2975" entryy="1123" entryz="5" rent="0" townid="2" size="31"/>
-  <house name="Aracura Flats A-IX" houseid="377" entryx="2974" entryy="1124" entryz="5" rent="0" townid="2" size="12"/>
-  <house name="Aracura Flats A-X" houseid="378" entryx="2972" entryy="1121" entryz="4" rent="0" townid="2" size="34"/>
-  <house name="Aracura Flats A-XI" houseid="379" entryx="2972" entryy="1120" entryz="4" rent="0" townid="2" size="34"/>
-  <house name="Aracura Flats A-XIII" houseid="381" entryx="2974" entryy="1118" entryz="3" rent="0" townid="2" size="13"/>
-  <house name="Aracura Flats A-XIV" houseid="382" entryx="2974" entryy="1124" entryz="3" rent="0" townid="2" size="13"/>
-  <house name="Aracura Flats A-XV" houseid="383" entryx="2975" entryy="1121" entryz="2" rent="0" townid="2" size="116"/>
-  <house name="Aracura Flats B-I" houseid="384" entryx="2959" entryy="1118" entryz="7" rent="0" townid="2" size="36"/>
-  <house name="Aracura Flats B-II" houseid="385" entryx="2959" entryy="1124" entryz="7" rent="0" townid="2" size="29"/>
-  <house name="Aracura Flats B-III" houseid="386" entryx="2961" entryy="1120" entryz="6" rent="0" townid="2" size="16"/>
-  <house name="Aracura Flats B-IV" houseid="387" entryx="2960" entryy="1121" entryz="6" rent="0" townid="2" size="13"/>
-  <house name="Aracura Flats B-V" houseid="388" entryx="2956" entryy="1121" entryz="6" rent="0" townid="2" size="19"/>
-  <house name="Aracura Flats B-VI" houseid="389" entryx="2954" entryy="1121" entryz="6" rent="0" townid="2" size="22"/>
-  <house name="Aracura Flats B-VII" houseid="390" entryx="2955" entryy="1123" entryz="5" rent="0" townid="2" size="31"/>
-  <house name="Aracura Flats B-VIII" houseid="391" entryx="2956" entryy="1117" entryz="5" rent="0" townid="2" size="13"/>
-  <house name="Aracura Flats B-IX" houseid="392" entryx="2956" entryy="1124" entryz="5" rent="0" townid="2" size="12"/>
-  <house name="Aracura Flats B-X" houseid="393" entryx="2958" entryy="1121" entryz="4" rent="0" townid="2" size="34"/>
-  <house name="Aracura Flats B-XI" houseid="394" entryx="2958" entryy="1120" entryz="4" rent="0" townid="2" size="34"/>
-  <house name="Aracura Flats B-XIII" houseid="396" entryx="2956" entryy="1118" entryz="3" rent="0" townid="2" size="13"/>
-  <house name="Aracura Flats B-XIV" houseid="397" entryx="2956" entryy="1124" entryz="3" rent="0" townid="2" size="13"/>
-  <house name="Aracura Flats B-XV" houseid="398" entryx="2957" entryy="1121" entryz="2" rent="0" townid="2" size="112"/>
-  <house name="Strong House I" houseid="399" entryx="2958" entryy="1134" entryz="7" rent="0" townid="2" size="43"/>
-  <house name="Strong House II" houseid="400" entryx="2972" entryy="1129" entryz="7" rent="0" townid="2" size="101"/>
-  <house name="Strong House III" houseid="401" entryx="2990" entryy="1153" entryz="7" rent="0" townid="2" size="41"/>
-  <house name="Strong House IV" houseid="402" entryx="2990" entryy="1159" entryz="7" rent="0" townid="2" size="33"/>
-  <house name="Neighborhood Noble I" houseid="403" entryx="2975" entryy="1187" entryz="7" rent="0" townid="2" size="99"/>
-  <house name="Neighborhood Noble II" houseid="404" entryx="2986" entryy="1187" entryz="7" rent="0" townid="2" size="99"/>
-  <house name="Neighborhood Noble III" houseid="405" entryx="2993" entryy="1188" entryz="7" rent="0" townid="2" size="46"/>
-  <house name="GuildHall Noble " houseid="406" entryx="2983" entryy="1191" entryz="7" rent="0" townid="2" size="159"/>
-  <house name="Neighborhood Noble IV" houseid="407" entryx="2975" entryy="1194" entryz="7" rent="0" townid="2" size="76"/>
-  <house name="Street of Dwarfs I" houseid="408" entryx="2960" entryy="1180" entryz="7" rent="0" townid="2" size="53"/>
-  <house name="Street of Dwarfs II" houseid="409" entryx="2950" entryy="1187" entryz="7" rent="0" townid="2" size="77"/>
-  <house name="Street of Dwarfs III" houseid="410" entryx="2937" entryy="1187" entryz="7" rent="0" townid="2" size="77"/>
-  <house name="Street of Dwarfs IV" houseid="411" entryx="2940" entryy="1194" entryz="7" rent="0" townid="2" size="38"/>
-  <house name="Street of Dwarfs V" houseid="412" entryx="2943" entryy="1194" entryz="7" rent="0" townid="2" size="38"/>
-  <house name="Street of Dwarfs VI" houseid="413" entryx="2957" entryy="1200" entryz="7" rent="0" townid="2" size="69"/>
-  <house name="Street of Dwarfs VII" houseid="414" entryx="2964" entryy="1207" entryz="7" rent="0" townid="2" size="77"/>
-  <house name="Street of Dwarfs VIII" houseid="415" entryx="2962" entryy="1216" entryz="7" rent="0" townid="2" size="99"/>
-  <house name="Street of Dwarfs IX" houseid="416" entryx="2960" entryy="1216" entryz="7" rent="0" townid="2" size="80"/>
-  <house name="Street of Dwarfs X" houseid="417" entryx="2929" entryy="1199" entryz="7" rent="0" townid="2" size="37"/>
-  <house name="Street of Dwarfs XII" houseid="418" entryx="2927" entryy="1205" entryz="7" rent="0" townid="2" size="55"/>
-  <house name="Street of Dwarfs XIII" houseid="419" entryx="2929" entryy="1211" entryz="7" rent="0" townid="2" size="35"/>
-  <house name="Palace Green I" houseid="420" entryx="2924" entryy="1128" entryz="7" rent="0" townid="2" size="137"/>
-  <house name="Palace Green II" houseid="421" entryx="2914" entryy="1132" entryz="7" rent="0" townid="2" size="99"/>
-  <house name="Palace Green III" houseid="422" entryx="2904" entryy="1132" entryz="7" rent="0" townid="2" size="99"/>
-  <house name="Palace Green IV" houseid="423" entryx="2894" entryy="1132" entryz="7" rent="0" townid="2" size="99"/>
-  <house name="Palace Green V" houseid="424" entryx="2902" entryy="1137" entryz="7" rent="0" townid="2" size="127"/>
-  <house name="Palace Green VI" houseid="425" entryx="2894" entryy="1137" entryz="7" rent="0" townid="2" size="127"/>
-  <house name="Palace Green VII" houseid="426" entryx="2885" entryy="1133" entryz="7" rent="0" townid="2" size="81"/>
-  <house name="Palace Green VIII" houseid="427" entryx="2887" entryy="1142" entryz="7" rent="0" townid="2" size="94"/>
-  <house name="Condo Central I" houseid="428" entryx="2894" entryy="1160" entryz="7" rent="0" townid="2" size="41"/>
-  <house name="Condo Central II" houseid="429" entryx="2892" entryy="1160" entryz="7" rent="0" townid="2" size="41"/>
-  <house name="Condo Central III" houseid="430" entryx="2895" entryy="1159" entryz="6" rent="0" townid="2" size="33"/>
-  <house name="Condo Central IV" houseid="431" entryx="2891" entryy="1159" entryz="6" rent="0" townid="2" size="33"/>
-  <house name="Condo Central V" houseid="432" entryx="2895" entryy="1159" entryz="5" rent="0" townid="2" size="39"/>
-  <house name="Condo Central VI" houseid="433" entryx="2891" entryy="1159" entryz="5" rent="0" townid="2" size="39"/>
-  <house name="Hayloft Central I" houseid="434" entryx="2878" entryy="1166" entryz="7" rent="0" townid="2" size="35"/>
-  <house name="Hayloft Central II" houseid="435" entryx="2879" entryy="1163" entryz="6" rent="0" townid="2" size="31"/>
-  <house name="Hayloft Central III" houseid="436" entryx="2902" entryy="1171" entryz="7" rent="0" townid="2" size="31"/>
-  <house name="Hayloft Central IV" houseid="437" entryx="2899" entryy="1170" entryz="7" rent="0" townid="2" size="65"/>
-  <house name="District of Flowers I" houseid="439" entryx="2879" entryy="1195" entryz="7" rent="0" townid="2" size="109"/>
-  <house name="District of Flowers II" houseid="440" entryx="2859" entryy="1191" entryz="7" rent="0" townid="2" size="51"/>
-  <house name="District of Flowers III" houseid="441" entryx="2855" entryy="1206" entryz="7" rent="0" townid="2" size="43"/>
-  <house name="District of Flowers IV" houseid="442" entryx="2867" entryy="1207" entryz="7" rent="0" townid="2" size="13"/>
-  <house name="District of Flowers V" houseid="443" entryx="2880" entryy="1207" entryz="7" rent="0" townid="2" size="48"/>
-  <house name="District of Flowers VI" houseid="444" entryx="2856" entryy="1215" entryz="7" rent="0" townid="2" size="41"/>
-  <house name="District of Flowers VII" houseid="445" entryx="2880" entryy="1215" entryz="7" rent="0" townid="2" size="57"/>
-  <house name="House of Lake I" houseid="446" entryx="2916" entryy="1190" entryz="7" rent="0" townid="2" size="42"/>
-  <house name="House of Lake II" houseid="447" entryx="2909" entryy="1203" entryz="7" rent="0" townid="2" size="22"/>
-  <house name="Goer's Refuge I" houseid="448" entryx="2872" entryy="1151" entryz="7" rent="0" townid="2" size="40"/>
-  <house name="Goer's Refuge II" houseid="449" entryx="2871" entryy="1158" entryz="7" rent="0" townid="2" size="76"/>
-  <house name="Goer's Refuge III" houseid="450" entryx="2863" entryy="1164" entryz="7" rent="0" townid="2" size="37"/>
-  <house name="Goer's Refuge IV" houseid="451" entryx="2859" entryy="1177" entryz="7" rent="0" townid="2" size="43"/>
-  <house name="Goer's Refuge V" houseid="452" entryx="2872" entryy="1172" entryz="7" rent="0" townid="2" size="97"/>
-  <house name="District of Flowers VIII" houseid="453" entryx="2898" entryy="1216" entryz="7" rent="0" townid="2" size="27"/>
+  <house name="Aracura Flats A-I" houseid="369" entryx="2971" entryy="1118" entryz="7" rent="13500" townid="2" size="36"/>
+  <house name="Aracura Flats A-II" houseid="370" entryx="2971" entryy="1124" entryz="7" rent="8700" townid="2" size="29"/>
+  <house name="Aracura Flats A-III" houseid="371" entryx="2970" entryy="1120" entryz="6" rent="4200" townid="2" size="16"/>
+  <house name="Aracura Flats A-IV" houseid="372" entryx="2970" entryy="1121" entryz="6" rent="3400" townid="2" size="13"/>
+  <house name="Aracura Flats A-V" houseid="373" entryx="2975" entryy="1121" entryz="6" rent="6500" townid="2" size="19"/>
+  <house name="Aracura Flats A-VI" houseid="374" entryx="2976" entryy="1121" entryz="6" rent="6700" townid="2" size="22"/>
+  <house name="Aracura Flats A-VII" houseid="375" entryx="2974" entryy="1118" entryz="5" rent="3400" townid="2" size="13"/>
+  <house name="Aracura Flats A-VIII" houseid="376" entryx="2975" entryy="1123" entryz="5" rent="7000" townid="2" size="31"/>
+  <house name="Aracura Flats A-IX" houseid="377" entryx="2974" entryy="1124" entryz="5" rent="3200" townid="2" size="12"/>
+  <house name="Aracura Flats A-X" houseid="378" entryx="2972" entryy="1121" entryz="4" rent="6400" townid="2" size="34"/>
+  <house name="Aracura Flats A-XI" houseid="379" entryx="2972" entryy="1120" entryz="4" rent="6400" townid="2" size="34"/>
+  <house name="Aracura Flats A-XIII" houseid="381" entryx="2974" entryy="1118" entryz="3" rent="2400" townid="2" size="13"/>
+  <house name="Aracura Flats A-XIV" houseid="382" entryx="2974" entryy="1124" entryz="3" rent="2400" townid="2" size="13"/>
+  <house name="Aracura Flats A-XV" houseid="383" entryx="2975" entryy="1121" entryz="2" rent="14000" townid="2" size="116"/>
+  <house name="Aracura Flats B-I" houseid="384" entryx="2959" entryy="1118" entryz="7" rent="13500" townid="2" size="36"/>
+  <house name="Aracura Flats B-II" houseid="385" entryx="2959" entryy="1124" entryz="7" rent="8700" townid="2" size="29"/>
+  <house name="Aracura Flats B-III" houseid="386" entryx="2961" entryy="1120" entryz="6" rent="4200" townid="2" size="16"/>
+  <house name="Aracura Flats B-IV" houseid="387" entryx="2960" entryy="1121" entryz="6" rent="3400" townid="2" size="13"/>
+  <house name="Aracura Flats B-V" houseid="388" entryx="2956" entryy="1121" entryz="6" rent="6500" townid="2" size="19"/>
+  <house name="Aracura Flats B-VI" houseid="389" entryx="2954" entryy="1121" entryz="6" rent="6700" townid="2" size="22"/>
+  <house name="Aracura Flats B-VII" houseid="390" entryx="2955" entryy="1123" entryz="5" rent="7000" townid="2" size="31"/>
+  <house name="Aracura Flats B-VIII" houseid="391" entryx="2956" entryy="1117" entryz="5" rent="3400" townid="2" size="13"/>
+  <house name="Aracura Flats B-IX" houseid="392" entryx="2956" entryy="1124" entryz="5" rent="3200" townid="2" size="12"/>
+  <house name="Aracura Flats B-X" houseid="393" entryx="2958" entryy="1121" entryz="4" rent="6400" townid="2" size="34"/>
+  <house name="Aracura Flats B-XI" houseid="394" entryx="2958" entryy="1120" entryz="4" rent="6400" townid="2" size="34"/>
+  <house name="Aracura Flats B-XIII" houseid="396" entryx="2956" entryy="1118" entryz="3" rent="2400" townid="2" size="13"/>
+  <house name="Aracura Flats B-XIV" houseid="397" entryx="2956" entryy="1124" entryz="3" rent="2400" townid="2" size="13"/>
+  <house name="Aracura Flats B-XV" houseid="398" entryx="2957" entryy="1121" entryz="2" rent="14000" townid="2" size="112"/>
+  <house name="Strong House I" houseid="399" entryx="2958" entryy="1134" entryz="7" rent="14000" townid="2" size="43"/>
+  <house name="Strong House II" houseid="400" entryx="2972" entryy="1129" entryz="7" rent="20100" townid="2" size="101"/>
+  <house name="Strong House III" houseid="401" entryx="2990" entryy="1153" entryz="7" rent="18000" townid="2" size="41"/>
+  <house name="Strong House IV" houseid="402" entryx="2990" entryy="1159" entryz="7" rent="16500" townid="2" size="33"/>
+  <house name="Neighborhood Noble I" houseid="403" entryx="2975" entryy="1187" entryz="7" rent="18500" townid="2" size="99"/>
+  <house name="Neighborhood Noble II" houseid="404" entryx="2986" entryy="1187" entryz="7" rent="18500" townid="2" size="99"/>
+  <house name="Neighborhood Noble III" houseid="405" entryx="2993" entryy="1188" entryz="7" rent="10500" townid="2" size="46"/>
+  <house name="GuildHall Noble " houseid="406" entryx="2983" entryy="1191" entryz="7" rent="45600" townid="2" size="159"/>
+  <house name="Neighborhood Noble IV" houseid="407" entryx="2975" entryy="1194" entryz="7" rent="14500" townid="2" size="76"/>
+  <house name="Street of Dwarfs I" houseid="408" entryx="2960" entryy="1180" entryz="7" rent="14500" townid="2" size="53"/>
+  <house name="Street of Dwarfs II" houseid="409" entryx="2950" entryy="1187" entryz="7" rent="16500" townid="2" size="77"/>
+  <house name="Street of Dwarfs III" houseid="410" entryx="2937" entryy="1187" entryz="7" rent="16500" townid="2" size="77"/>
+  <house name="Street of Dwarfs IV" houseid="411" entryx="2940" entryy="1194" entryz="7" rent="11500" townid="2" size="38"/>
+  <house name="Street of Dwarfs V" houseid="412" entryx="2943" entryy="1194" entryz="7" rent="11500" townid="2" size="38"/>
+  <house name="Street of Dwarfs VI" houseid="413" entryx="2957" entryy="1200" entryz="7" rent="14750" townid="2" size="69"/>
+  <house name="Street of Dwarfs VII" houseid="414" entryx="2964" entryy="1207" entryz="7" rent="15600" townid="2" size="77"/>
+  <house name="Street of Dwarfs VIII" houseid="415" entryx="2962" entryy="1216" entryz="7" rent="17500" townid="2" size="99"/>
+  <house name="Street of Dwarfs IX" houseid="416" entryx="2960" entryy="1216" entryz="7" rent="18600" townid="2" size="80"/>
+  <house name="Street of Dwarfs X" houseid="417" entryx="2929" entryy="1199" entryz="7" rent="12000" townid="2" size="37"/>
+  <house name="Street of Dwarfs XII" houseid="418" entryx="2927" entryy="1205" entryz="7" rent="12500" townid="2" size="55"/>
+  <house name="Street of Dwarfs XIII" houseid="419" entryx="2929" entryy="1211" entryz="7" rent="12400" townid="2" size="35"/>
+  <house name="Palace Green I" houseid="420" entryx="2924" entryy="1128" entryz="7" rent="15600" townid="2" size="137"/>
+  <house name="Palace Green II" houseid="421" entryx="2914" entryy="1132" entryz="7" rent="17000" townid="2" size="99"/>
+  <house name="Palace Green III" houseid="422" entryx="2904" entryy="1132" entryz="7" rent="17000" townid="2" size="99"/>
+  <house name="Palace Green IV" houseid="423" entryx="2894" entryy="1132" entryz="7" rent="17000" townid="2" size="99"/>
+  <house name="Palace Green V" houseid="424" entryx="2902" entryy="1137" entryz="7" rent="23000" townid="2" size="127"/>
+  <house name="Palace Green VI" houseid="425" entryx="2894" entryy="1137" entryz="7" rent="23000" townid="2" size="127"/>
+  <house name="Palace Green VII" houseid="426" entryx="2885" entryy="1133" entryz="7" rent="12500" townid="2" size="81"/>
+  <house name="Palace Green VIII" houseid="427" entryx="2887" entryy="1142" entryz="7" rent="17500" townid="2" size="94"/>
+  <house name="Condo Central I" houseid="428" entryx="2894" entryy="1160" entryz="7" rent="14000" townid="2" size="41"/>
+  <house name="Condo Central II" houseid="429" entryx="2892" entryy="1160" entryz="7" rent="14000" townid="2" size="41"/>
+  <house name="Condo Central III" houseid="430" entryx="2895" entryy="1159" entryz="6" rent="13000" townid="2" size="33"/>
+  <house name="Condo Central IV" houseid="431" entryx="2891" entryy="1159" entryz="6" rent="13000" townid="2" size="33"/>
+  <house name="Condo Central V" houseid="432" entryx="2895" entryy="1159" entryz="5" rent="12500" townid="2" size="39"/>
+  <house name="Condo Central VI" houseid="433" entryx="2891" entryy="1159" entryz="5" rent="12500" townid="2" size="39"/>
+  <house name="Hayloft Central I" houseid="434" entryx="2878" entryy="1166" entryz="7" rent="8900" townid="2" size="35"/>
+  <house name="Hayloft Central II" houseid="435" entryx="2879" entryy="1163" entryz="6" rent="8200" townid="2" size="31"/>
+  <house name="Hayloft Central III" houseid="436" entryx="2902" entryy="1171" entryz="7" rent="5600" townid="2" size="31"/>
+  <house name="Hayloft Central IV" houseid="437" entryx="2899" entryy="1170" entryz="7" rent="9500" townid="2" size="65"/>
+  <house name="District of Flowers I" houseid="439" entryx="2879" entryy="1195" entryz="7" rent="34000" townid="2" size="109"/>
+  <house name="District of Flowers II" houseid="440" entryx="2859" entryy="1191" entryz="7" rent="16500" townid="2" size="51"/>
+  <house name="District of Flowers III" houseid="441" entryx="2855" entryy="1206" entryz="7" rent="16400" townid="2" size="43"/>
+  <house name="District of Flowers IV" houseid="442" entryx="2867" entryy="1207" entryz="7" rent="3000" townid="2" size="13"/>
+  <house name="District of Flowers V" houseid="443" entryx="2880" entryy="1207" entryz="7" rent="16400" townid="2" size="48"/>
+  <house name="District of Flowers VI" houseid="444" entryx="2856" entryy="1215" entryz="7" rent="7500" townid="2" size="41"/>
+  <house name="District of Flowers VII" houseid="445" entryx="2880" entryy="1215" entryz="7" rent="9500" townid="2" size="57"/>
+  <house name="House of Lake I" houseid="446" entryx="2916" entryy="1190" entryz="7" rent="7000" townid="2" size="42"/>
+  <house name="House of Lake II" houseid="447" entryx="2909" entryy="1203" entryz="7" rent="4200" townid="2" size="22"/>
+  <house name="Goer's Refuge I" houseid="448" entryx="2872" entryy="1151" entryz="7" rent="10500" townid="2" size="40"/>
+  <house name="Goer's Refuge II" houseid="449" entryx="2871" entryy="1158" entryz="7" rent="21000" townid="2" size="76"/>
+  <house name="Goer's Refuge III" houseid="450" entryx="2863" entryy="1164" entryz="7" rent="8500" townid="2" size="37"/>
+  <house name="Goer's Refuge IV" houseid="451" entryx="2859" entryy="1177" entryz="7" rent="8500" townid="2" size="43"/>
+  <house name="Goer's Refuge V" houseid="452" entryx="2872" entryy="1172" entryz="7" rent="22500" townid="2" size="97"/>
+  <house name="District of Flowers VIII" houseid="453" entryx="2898" entryy="1216" entryz="7" rent="5700" townid="2" size="27"/>
   <house name="The Temples House" houseid="454" entryx="2021" entryy="1894" entryz="7" rent="6000" townid="1" size="31"/>
   <house name="Blaze I" houseid="455" entryx="1254" entryy="2237" entryz="7" rent="900" townid="6" size="13"/>
   <house name="Blaze II" houseid="456" entryx="1254" entryy="2242" entryz="7" rent="900" townid="6" size="13"/>
