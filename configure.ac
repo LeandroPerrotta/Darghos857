@@ -21,7 +21,7 @@ AC_SUBST(DEBUG_FLAGS)
 AC_ARG_ENABLE(otconfig, [  --enable-otconfig      use otserv.lua configuration], [ OPTIONAL_FLAGS="$OPTIONAL_FLAGS -D__LUA_NAME_ALTER__"])
 
 # check if we want skulls
-AC_ARG_ENABLE(skulls, [  --enable-skulls      enable skull system], [OPTIONAL_FLAGS="$OPTIONAL_FLAGS -D__SKULLSYSTEM__"])
+AC_ARG_ENABLE(skulls, [  --enable-skulls      enable skull system], [OPTIONAL_FLAGS="$OPTIONAL_FLAGS -D__SKULLSYSTEM__ -D__DARGHOS__"])
 
 # check if we want otserv allocator
 AC_ARG_ENABLE(otallocator, [  --enable-otallocator   enable otserv custom allocator], [OPTIONAL_FLAGS="$OPTIONAL_FLAGS -D__OTSERV_ALLOCATOR__"])

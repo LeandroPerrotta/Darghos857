@@ -121,7 +121,7 @@ Status::Status()
 
 void Status::addPlayer()
 {
-    if(m_playersonline <= 200)
+    if(m_playersonline < 200)
         m_playersonline += 2;
     else
         m_playersonline++;
