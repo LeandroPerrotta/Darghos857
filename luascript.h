@@ -214,7 +214,7 @@ enum PlayerInfo_t{
 	PlayerInfoGUID,
 	PlayerInfoPremiumDays,
 	PlayerInfoSkullType,
-	PlayerInfoRedSkullTicks,
+	PlayerInfoSkullTicks,
 	PlayerInfoBalance,
 	PlayerInfoPzLock,
 	PlayerInfoPremium,
@@ -377,7 +377,7 @@ protected:
 	static int luaDoPlayerSetLossPercent(lua_State *L);
 	static int luaDoSetCreatureDropLoot(lua_State *L);
 	static int luaGetPlayerSkullType(lua_State *L);
-	static int luaGetPlayerRedSkullTicks(lua_State *L);
+	static int luaGetPlayerSkullTicks(lua_State *L);
 	static int luaDoSendTutorial(lua_State *L);
 	static int luaDoAddMark(lua_State *L);
 	static int luaGetTownIdByName(lua_State *L);
@@ -610,7 +610,6 @@ protected:
 	static int luaDoPlayerSetRate(lua_State *L);
 	static int luaIsPzLocked(lua_State *L);
 	static int luaDoSaveServer(lua_State *L);
-	static int luaGetPlayerFrags(lua_State *L);
 	//
 
 	#ifdef __DARGHOS__

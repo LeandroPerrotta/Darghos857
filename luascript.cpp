@@ -1126,7 +1126,9 @@ void LuaScriptInterface::registerFunctions()
 	lua_register(m_luaState, "getPlayerSkullType", LuaScriptInterface::luaGetPlayerSkullType);
 
 	//getPlayerRedSkullTicks(cid)
-	lua_register(m_luaState, "getPlayerRedSkullTicks", LuaScriptInterface::luaGetPlayerRedSkullTicks);
+	//getPlayerSkullTicks(cid)
+	lua_register(m_luaState, "getPlayerRedSkullTicks", LuaScriptInterface::luaGetPlayerSkullTicks);
+	lua_register(m_luaState, "getPlayerSkullTicks", LuaScriptInterface::luaGetPlayerSkullTicks);
 
 	//getPlayerAccountBalance(cid)
 	lua_register(m_luaState, "getPlayerBalance", LuaScriptInterface::luaGetPlayerBalance);
@@ -1778,9 +1780,6 @@ void LuaScriptInterface::registerFunctions()
 	//doSaveServer(payHouses)
 	lua_register(m_luaState, "doSaveServer", LuaScriptInterface::luaDoSaveServer);
 
-	//getPlayerFrags(cid)
-	lua_register(m_luaState, "getPlayerFrags", LuaScriptInterface::luaGetPlayerFrags);
-
 	//debugPrint(text)
 	lua_register(m_luaState, "debugPrint", LuaScriptInterface::luaDebugPrint);
 
@@ -1888,12 +1887,8 @@ int LuaScriptInterface::internalGetPlayerInfo(lua_State *L, PlayerInfo_t info)
 			value = 0;
 			#endif
 			break;
-		case PlayerInfoRedSkullTicks:
-			#ifdef __SKULLSYSTEM__
-			value = player->getRedSkullTicks();
-			#else
+		case PlayerInfoSkullTicks:
 			value = 0;
-			#endif
 			break;
 		case PlayerInfoBalance:
 		{
@@ -1992,8 +1987,8 @@ int LuaScriptInterface::luaGetPlayerPremiumDays(lua_State *L){
 int LuaScriptInterface::luaGetPlayerSkullType(lua_State *L){
 	return internalGetPlayerInfo(L, PlayerInfoSkullType);}
 
-int LuaScriptInterface::luaGetPlayerRedSkullTicks(lua_State *L){
-	return internalGetPlayerInfo(L, PlayerInfoRedSkullTicks);}
+int LuaScriptInterface::luaGetPlayerSkullTicks(lua_State *L){
+	return internalGetPlayerInfo(L, PlayerInfoSkullTicks);}
 
 int LuaScriptInterface::luaGetPlayerBalance(lua_State *L){
 	return internalGetPlayerInfo(L, PlayerInfoBalance);}
@@ -7299,26 +7294,6 @@ int LuaScriptInterface::luaDoSaveServer(lua_State *L)
 	}
 
 	lua_pushnumber(L, LUA_NO_ERROR);
-	return 1;
-}
-
-int LuaScriptInterface::luaGetPlayerFrags(lua_State *L)
-{
-	//getPlayerFrags(cid)
-	uint32_t cid = popNumber(L);
-
-	ScriptEnviroment* env = getScriptEnv();
-
-	Player* player = env->getPlayerByUID(cid);
-	if(player){
-		lua_pushnumber(L, player->getFrags());
-	}
-	else
-	{
-		reportErrorFunc(getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
-		lua_pushnumber(L, LUA_ERROR);
-	}
-
 	return 1;
 }
 

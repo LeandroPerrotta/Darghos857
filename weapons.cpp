@@ -847,6 +847,15 @@ bool WeaponDistance::interruptSwing() const
 }
 
 
+bool WeaponDistance::interruptSwing() const
+{
+	if(!g_config.getNumber(ConfigManager::DISTANCE_WEAPON_INTERRUPT_SWING)){
+		return false;
+	}
+	
+	return true;
+}
+
 int32_t WeaponDistance::playerWeaponCheck(Player* player, Creature* target) const
 {
 	//const ItemType& it = Item::items[id];
