@@ -2,7 +2,6 @@
 <creaturescripts>
 	<event name="PlayerLogin" type="login" script="login.lua"/>
 	<event name="SendLoginInfo" type="login" script="sendlogininfo.lua"/>
-	<event name="AutoBan" type="kill" script="autoban.lua"/>
 	<event name="RemoveBlesses" type="die" script="removeblesses.lua"/>
 	<event name="Stages" type="advance" script="stages.lua"/>
 	
