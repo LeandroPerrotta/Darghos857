@@ -836,23 +836,12 @@ bool WeaponDistance::configureWeapon(const ItemType& it)
 	return Weapon::configureWeapon(it);
 }
 
-/* CODIGO DEMPORAREO */
-bool WeaponDistance::interruptSwing() const
-{
-    //if(!g_config.getNumber(ConfigManager::DISTANCE_WEAPON_INTERRUPT_SWING)){
-        return false;
-    /*}
-
-    return true;*/
-}
-
-
 bool WeaponDistance::interruptSwing() const
 {
 	if(!g_config.getNumber(ConfigManager::DISTANCE_WEAPON_INTERRUPT_SWING)){
 		return false;
 	}
-	
+
 	return true;
 }
 
