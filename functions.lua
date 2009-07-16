@@ -132,7 +132,7 @@ end
 
 -- Other functions
 function isPlayer(cid)
-	if (isCreature(cid) == TRUE and cid >= PLAYER_ID_RANGE and cid < MONSTER_ID_RANGE) then
+	if (isCreature(cid) and cid >= PLAYER_ID_RANGE and cid < MONSTER_ID_RANGE) then
 		return TRUE
 	end
 
@@ -140,7 +140,7 @@ function isPlayer(cid)
 end
 
 function isMonster(cid)
-	if (isCreature(cid) == TRUE and cid >= MONSTER_ID_RANGE and cid < NPC_ID_RANGE) then
+	if (isCreature(cid) and cid >= MONSTER_ID_RANGE and cid < NPC_ID_RANGE) then
 		return TRUE
 	end
 
@@ -148,7 +148,7 @@ function isMonster(cid)
 end
 
 function isNPC(cid)
-	if (isCreature(cid) == TRUE and cid >= NPC_ID_RANGE) then
+	if (isCreature(cid) and cid >= NPC_ID_RANGE) then
 		return TRUE
 	end
 
@@ -618,22 +618,22 @@ function getBlessPrice(level)
 end
 
 function getPlayerRequiredExperience(cid, level)
-	if isPlayer(cid) == TRUE and level >= 1 then
+    if isPlayer(cid) == TRUE and level >= 1 then
 		local playerLevel = getPlayerLevel(cid)
 		local levelExp = Calculator:getLevelExp(playerLevel+level)
 		local experienceLeft = levelExp - getPlayerExperience(cid)
 		return experienceLeft
-	end
+    end
 
 	return LUA_ERROR
 end
 
 function doPlayerAddLevel(cid, level)
-	if isPlayer(cid) == TRUE and level >= 1 then
+    if isPlayer(cid) == TRUE and level >= 1 then
 		local experience = getPlayerRequiredExperience(cid, level)
 		doPlayerAddExp(cid, experience)
 		return LUA_NO_ERROR
-	end
+    end
 
 	return LUA_ERROR
 end
