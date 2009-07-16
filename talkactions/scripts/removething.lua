@@ -1,6 +1,6 @@
 function onSay (cid, words, param, channel)
 	local access = getPlayerAccess(cid)
-	if access < 3 then
+	if access < 4 then
 		return TRUE
 	end
 
