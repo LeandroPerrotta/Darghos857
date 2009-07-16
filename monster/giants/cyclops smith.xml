@@ -19,8 +19,8 @@
       <flag runonhealth="0"/>
     </flags>
     <attacks>
-      <attack name="melee" interval="2000" skill="70" attack="70"/>
-	  <attack name="strength" interval="1000" chance="11" min="0" max="-120">
+      <attack name="melee" interval="2000" skill="70" attack="35"/>
+	  <attack name="strength" interval="1000" chance="11" min="0" max="-70">
 		<attribute key="shootEffect" value="whirlwindclub"/>
 	  </attack>
     </attacks>
