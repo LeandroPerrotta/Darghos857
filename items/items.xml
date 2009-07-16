@@ -3118,9 +3118,9 @@
 		<attribute key="decayTo" value="0"/>
 		<attribute key="transformDeEquipTo" value="2168"/>
 		<attribute key="duration" value="1200"/>
-		<attribute key="healthGain" value="10"/>
+		<attribute key="healthGain" value="1"/>
 		<attribute key="healthTicks" value="3000"/>
-		<attribute key="manaGain" value="12"/>
+		<attribute key="manaGain" value="4"/>
 		<attribute key="manaTicks" value="3000"/>
 		<attribute key="showduration" value="1"/>
 	</item>
@@ -3209,10 +3209,10 @@
 		<attribute key="decayTo" value="0"/>
 		<attribute key="transformDeEquipTo" value="2214"/>
 		<attribute key="duration" value="480"/>
-		<attribute key="healthGain" value="7"/>
+		<attribute key="healthGain" value="1"/>
 		<attribute key="healthTicks" value="1000"/>
-		<attribute key="manaGain" value="10"/>
-		<attribute key="manaTicks" value="1500"/>
+		<attribute key="manaGain" value="4"/>
+		<attribute key="manaTicks" value="1000"/>
 		<attribute key="showduration" value="1"/>
 	</item>
 	<item id="2217" article="a" name="book">
@@ -3893,7 +3893,7 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="shootType" value="spear"/>
 		<attribute key="range" value="5"/>
-		<attribute key="breakChance" value="1"/>
+		<attribute key="breakChance" value="10"/>
 		<attribute key="ammoAction" value="moveback"/>
 	</item>
 	<item id="2390" article="a" name="magic longsword">
@@ -5107,9 +5107,9 @@
 		<attribute key="decayTo" value="6530"/>
 		<attribute key="transformDeEquipTo" value="6132"/>
 		<attribute key="duration" value="14400"/>
-		<attribute key="healthGain" value="12"/>
+		<attribute key="healthGain" value="1"/>
 		<attribute key="healthTicks" value="2000"/>
-		<attribute key="manaGain" value="18"/>
+		<attribute key="manaGain" value="2"/>
 		<attribute key="manaTicks" value="1000"/>
 		<attribute key="showduration" value="1"/>
 	</item>
