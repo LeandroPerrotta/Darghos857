@@ -3,22 +3,14 @@
 ]]--
 function startGlobalSave()
 	
-	broadcastMessage("O servidor irá executar um Save Server em 5 minutos, por favor, vá para um local seguro.", MESSAGE_STATUS_CONSOLE_RED)
+	broadcastMessage("Efetuando pause para auto save...", MESSAGE_STATUS_CONSOLE_RED)
 	
-	addEvent(sendSSMessage, 180000)
-	addEvent(saveTotal,300000)
+	if(doSaveServer(TRUE) ~= LUA_ERROR) then
+		broadcastMessage("Auto save concluido.", MESSAGE_STATUS_CONSOLE_RED)
+	end
 
-end
-function saveTotal()
+	print("[saveserver] Servidor salvo")
 
-	broadcastMessage("Server Save executado. Aguarde....",MESSAGE_STATUS_CONSOLE_RED)
-	doSaveServer(payHouses)
-
-end
-function sendSSMessage()
-
-	broadcastMessage("O servidor irá executar um Save Server em 2 minutos, por favor, vá para um local seguro.",MESSAGE_STATUS_CONSOLE_RED)
-	
 end
 
 --[[
