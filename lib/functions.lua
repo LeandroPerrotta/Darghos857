@@ -4,13 +4,19 @@
 function startGlobalSave()
 	
 	broadcastMessage("Efetuando pause para auto save...", MESSAGE_STATUS_CONSOLE_RED)
+	print("[autosave] Auto save iniciando...")
+	addEvent(endGlobalSave, 500)
 	
+end
+
+function endGlobalSave()
+
 	if(doSaveServer(TRUE) ~= LUA_ERROR) then
 		broadcastMessage("Auto save concluido.", MESSAGE_STATUS_CONSOLE_RED)
+		print("[autosave] Auto save concluido.")
+	else
+		print("[saveserver] Auto save falhou.")
 	end
-
-	print("[saveserver] Servidor salvo")
-
 end
 
 --[[
