@@ -43,7 +43,7 @@ function onStepIn(cid, item, position, fromPosition)
 	
 	
 	if item.actionid == aid.POI_MWALL_GO then
-		if getPlayerItemCount(cid,getItemIdByName("holy tible")) >= 1 then
+		if getPlayerItemCount(cid, 1970) >= 1 then
 			doTeleportThing(cid, getThingPos(uid.POI_MWALL_BACK))
 			doSendMagicEffect(getPlayerPosition(cid), 5)
 		else
