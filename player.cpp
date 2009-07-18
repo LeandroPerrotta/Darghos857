@@ -1266,8 +1266,8 @@ void Player::sendCancelMessage(ReturnValue message) const
 		sendCancel("You can not enter a pvp zone after attacking another player.");
 		break;
 
-	case RET_ACTIONNOTPERMITTEDINANOPVPZONE:
-		sendCancel("This action is not permitted in a none pvp zone.");
+	case RET_ACTIONNOTPERMITTEDINANONPVPZONE:
+		sendCancel("This action is not permitted in a non-pvp zone.");
 		break;
 
 	case RET_YOUCANNOTLOGOUTHERE:
@@ -3799,7 +3799,7 @@ void Player::onTargetCreatureGainHealth(Creature* target, int32_t points)
 	}
 }
 
-void Player::onKilledCreature(Creature* target, bool lastHit)
+void Player::onKilledCreature(Creature* target)
 {
 	if(hasFlag(PlayerFlag_NotGenerateLoot)){
 		target->setDropLoot(false);
@@ -3811,7 +3811,7 @@ void Player::onKilledCreature(Creature* target, bool lastHit)
 			targetPlayer->setLossSkill(false);
 		}
 		else if(!hasFlag(PlayerFlag_NotGainInFight)){
-			if(!Combat::isInPvpZone(this, targetPlayer) && hasCondition(CONDITION_INFIGHT) && lastHit){
+			if(!Combat::isInPvpZone(this, targetPlayer) && hasCondition(CONDITION_INFIGHT)){
 				if(checkPzBlockOnCombat(targetPlayer)){
 					addInFightTicks(g_config.getNumber(ConfigManager::UNJUST_SKULL_DURATION), true);
 				}
@@ -3824,7 +3824,7 @@ void Player::onKilledCreature(Creature* target, bool lastHit)
 		addCondition(condition);
 	}
 
-	Creature::onKilledCreature(target, lastHit);
+	Creature::onKilledCreature(target);
 }
 
 void Player::gainExperience(uint64_t& gainExp)
@@ -4201,8 +4201,8 @@ void Player::addUnjustifiedDead(const Player* attacked)
 void Player::checkSkullTicks(int32_t ticks)
 {
 	if(!hasCondition(CONDITION_INFIGHT) && getSkull() != SKULL_NONE){
-		if( (skullType == SKULL_RED && lastSkullTime >= std::time(NULL) + g_config.getNumber(ConfigManager::RED_SKULL_DURATION)) ||
-			(skullType == SKULL_BLACK && lastSkullTime >= std::time(NULL) + g_config.getNumber(ConfigManager::BLACK_SKULL_DURATION)) ){
+		if( (skullType == SKULL_RED && lastSkullTime >= lastSkullTime + g_config.getNumber(ConfigManager::RED_SKULL_DURATION)) ||
+			(skullType == SKULL_BLACK && lastSkullTime >= lastSkullTime + g_config.getNumber(ConfigManager::BLACK_SKULL_DURATION)) ){
 			lastSkullTime = 0;
 			setSkull(SKULL_NONE);
 			g_game.updateCreatureSkull(this);
