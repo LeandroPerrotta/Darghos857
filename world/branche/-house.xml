@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<houses>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="3" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="4" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="5" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="6" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="7" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="22"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="8" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="23"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="9" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="11"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="10" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="11"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="11" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="11"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="12" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="11"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="13" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="13"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="14" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="13"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="15" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="13"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="16" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="13"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="17" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="18" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="19" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="20" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="21" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="22" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="23" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="60"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="24" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="25" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="11"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="26" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="11"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="27" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="26"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="28" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="26"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="29" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="13"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="30" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="13"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="31" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="32" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="8"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="37" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="7"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="38" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="7"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="64" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="4"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="65" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="4"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="66" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="34"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="67" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="68" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="69" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="70" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="71" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="21"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="72" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="73" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="13"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="74" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="13"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="75" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="13"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="76" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="13"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="77" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="17"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="78" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="85" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="1250"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="86" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="14"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="87" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="88" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="89" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="59"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="90" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="22"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="91" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="22"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="92" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="66"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="93" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="59"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="94" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="37"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="95" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="118"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="96" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="116"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="97" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="170"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="98" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="72"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="99" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="100" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="21"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="101" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="102" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="103" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="104" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="105" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="106" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="21"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="107" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="108" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="109" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="110" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="111" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="112" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="23"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="113" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="114" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="115" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="116" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="117" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="118" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="119" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="14"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="120" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="14"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="121" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="122" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="123" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="124" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="125" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="126" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="128" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="129" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="130" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="131" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="132" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="133" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="134" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="135" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="136" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="48"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="137" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="32"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="139" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="140" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="141" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="142" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="143" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="144" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="155"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="148" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="149" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="150" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="151" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="21"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="152" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="153" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="154" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="155" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="156" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="157" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="158" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="71"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="160" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="49"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="161" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="59"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="162" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="49"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="163" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="164" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="165" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="166" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="167" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="168" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="169" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="170" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="67"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="171" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="77"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="172" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="83"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="173" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="23"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="174" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="53"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="175" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="38"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="176" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="146"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="177" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="101"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="178" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="28"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="179" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="8"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="180" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="21"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="181" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="46"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="182" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="183" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="188" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="189" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="190" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="191" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="192" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="193" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="194" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="195" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="196" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="197" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="198" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="199" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="200" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="201" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="202" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="203" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="204" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="205" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="6"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="208" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="116"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="209" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="40"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="210" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="211" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="212" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="6"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="214" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="215" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="216" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="217" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="28"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="218" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="219" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="31"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="220" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="221" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="222" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="223" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="224" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="225" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="48"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="226" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="227" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="228" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="6"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="229" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="6"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="230" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="8"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="231" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="8"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="232" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="233" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="234" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="235" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="236" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="237" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="238" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="39"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="239" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="240" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="57"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="241" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="48"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="242" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="53"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="243" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="244" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="11"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="245" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="246" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="247" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="248" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="249" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="250" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="251" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="252" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="28"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="253" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="6"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="254" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="68"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="255" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="42"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="256" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="257" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="258" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="259" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="260" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="261" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="262" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="27"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="263" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="23"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="264" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="265" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="28"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="266" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="6"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="267" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="268" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="269" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="270" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="271" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="198"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="272" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="273" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="274" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="275" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="276" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="21"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="277" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="28"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="278" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="279" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="280" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="27"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="281" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="282" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="6"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="283" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="92"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="284" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="285" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="52"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="286" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="287" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="288" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="289" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="290" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="291" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="292" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="294" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="295" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="31"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="296" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="32"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="297" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="298" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="299" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="300" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="301" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="302" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="118"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="303" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="304" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="305" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="32"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="306" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="307" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="41"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="308" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="309" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="310" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="312" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="313" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="55"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="314" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="315" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="47"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="316" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="317" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="58"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="318" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="4"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="319" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="8"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="320" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="321" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="51"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="322" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="51"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="323" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="31"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="324" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="37"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="325" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="37"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="326" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="37"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="327" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="37"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="328" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="26"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="329" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="330" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="331" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="33"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="332" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="35"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="333" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="23"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="334" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="59"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="335" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="106"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="336" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="64"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="337" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="64"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="338" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="339" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="340" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="14"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="341" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="342" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="343" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="166"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="344" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="26"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="345" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="60"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="346" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="65"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="347" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="348" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="349" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="350" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="351" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="352" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="353" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="354" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="355" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="356" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="21"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="357" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="358" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="66"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="359" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="46"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="360" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="361" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="33"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="362" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="67"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="363" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="47"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="364" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="365" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="46"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="366" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="25"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="367" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="368" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="34"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="369" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="35"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="370" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="28"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="371" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="372" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="373" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="374" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="21"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="375" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="376" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="27"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="377" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="11"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="378" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="379" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="381" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="382" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="383" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="102"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="384" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="35"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="385" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="28"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="386" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="15"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="387" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="388" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="389" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="21"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="390" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="27"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="391" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="392" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="11"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="393" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="394" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="396" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="397" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="398" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="102"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="399" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="37"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="400" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="88"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="401" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="402" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="32"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="403" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="81"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="404" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="81"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="405" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="45"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="406" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="128"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="407" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="61"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="408" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="48"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="409" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="66"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="410" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="66"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="411" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="29"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="412" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="29"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="413" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="60"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="414" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="70"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="415" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="96"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="416" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="62"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="417" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="27"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="418" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="46"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="419" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="33"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="420" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="110"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="421" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="91"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="422" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="91"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="423" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="91"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="424" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="106"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="425" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="106"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="426" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="73"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="427" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="76"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="428" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="35"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="429" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="35"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="430" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="28"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="431" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="28"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="432" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="35"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="433" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="35"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="434" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="34"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="435" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="436" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="437" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="60"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="439" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="91"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="440" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="43"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="441" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="35"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="442" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="12"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="443" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="40"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="444" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="40"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="445" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="52"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="446" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="41"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="447" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="448" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="33"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="449" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="75"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="450" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="30"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="451" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="37"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="452" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="80"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="453" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="454" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="455" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="456" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="457" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="28"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="458" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="10"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="460" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="0" size="43"/>
+  <house name="OTServ headquarter (Flat 1, Area 42)" houseid="461" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="43"/>
+</houses>
