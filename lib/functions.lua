@@ -335,7 +335,12 @@ end
 function runPremiumSystem(cid)
 
 	local name = getCreatureName(cid)
-	local message = "Dear "..name..",\nYour premium time is over!\nYou were automatically taken to the temple of Quendor City.\nContinue contributing to the Darghos Server and have a good game!\n\nYours,\nUltraXSoft Team."
+	if(getPlayerTown(cid) == getTownIdByName("Island of Peace") then
+		backCity = "Island of Peace"
+	else
+		backCity = "Quendor City"
+	end	
+	local message = "Dear "..name..",\nYour premium time is over!\nYou were automatically taken to the temple of "..backCity..".\nContinue contributing to the Darghos Server and have a good game!\n\nYours,\nUltraXSoft Team."
 	
 	if isPremium(cid) == TRUE then
 		
@@ -349,11 +354,19 @@ function runPremiumSystem(cid)
 	else
 	
 		if getPlayerStorageValue(cid, sid.PREMMY_VERIFY) == 1 then
-		
+			
+			if(getPlayerTown(cid) == getTownIdByName("Island of Peace") then
+				TP_CITY = ISLAND_PEACE
+				ID_NAME = "Island of Peace"
+			else
+				TP_CITY = QUENDOR
+				ID_NAME = "quendor"	
+			end
+			
 			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, message)
-			doTeleportThing(cid, QUENDOR)
+			doTeleportThing(cid, TP_CITY)
 			setPlayerStorageValue(cid, sid.PREMMY_VERIFY,0)
-			doPlayerSetTown(cid, getTownIdByName("quendor"))
+			doPlayerSetTown(cid, getTownIdByName(ID_NAME))
 			--Player is not premium - remove premium privileges
 			--Change outfit
 			local lookType = 128
