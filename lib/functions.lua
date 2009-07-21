@@ -335,7 +335,7 @@ end
 function runPremiumSystem(cid)
 
 	local name = getCreatureName(cid)
-	if(getPlayerTown(cid) == getTownIdByName("Island of Peace") then
+	if(getPlayerTown(cid) == getTownIdByName("Island of Peace")) then
 		backCity = "Island of Peace"
 	else
 		backCity = "Quendor City"
@@ -355,7 +355,7 @@ function runPremiumSystem(cid)
 	
 		if getPlayerStorageValue(cid, sid.PREMMY_VERIFY) == 1 then
 			
-			if(getPlayerTown(cid) == getTownIdByName("Island of Peace") then
+			if(getPlayerTown(cid) == getTownIdByName("Island of Peace")) then
 				TP_CITY = ISLAND_PEACE
 				ID_NAME = "Island of Peace"
 			else
