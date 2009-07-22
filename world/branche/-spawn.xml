@@ -1126,20 +1126,6 @@
   <spawn centerx="1185" centery="2253" centerz="5" radius="5">
     <monster name="Dragon" x="3" y="2" z="5" spawntime="60"/>
   </spawn>
-  <spawn centerx="1286" centery="2256" centerz="5" radius="10">
-    <monster name="Minotaur" x="0" y="-6" z="5" spawntime="60"/>
-    <monster name="Minotaur" x="5" y="-6" z="5" spawntime="60"/>
-    <monster name="Minotaur" x="-7" y="-3" z="5" spawntime="60"/>
-    <monster name="Minotaur" x="0" y="-3" z="5" spawntime="60"/>
-    <monster name="Minotaur" x="-5" y="-2" z="5" spawntime="60"/>
-    <monster name="Minotaur" x="2" y="0" z="5" spawntime="60"/>
-    <monster name="Minotaur" x="-2" y="2" z="5" spawntime="60"/>
-    <monster name="Minotaur" x="5" y="4" z="5" spawntime="60"/>
-    <monster name="Minotaur" x="-6" y="5" z="5" spawntime="60"/>
-    <monster name="Minotaur" x="6" y="6" z="5" spawntime="60"/>
-    <monster name="Minotaur" x="-4" y="7" z="5" spawntime="60"/>
-    <monster name="Minotaur" x="4" y="8" z="5" spawntime="60"/>
-  </spawn>
   <spawn centerx="2454" centery="2259" centerz="5" radius="10">
     <monster name="Hydra" x="-4" y="0" z="5" spawntime="60"/>
     <monster name="Hydra" x="9" y="5" z="5" spawntime="60"/>
@@ -2680,9 +2666,7 @@
     <monster name="Amazon" x="-1" y="0" z="6" spawntime="60"/>
     <monster name="Amazon" x="1" y="0" z="6" spawntime="60"/>
   </spawn>
-  <spawn centerx="1259" centery="2224" centerz="6" radius="2">
-    <npc name="isle_of_peace.distance" x="-1" y="-1" z="6" spawntime="60"/>
-  </spawn>
+  <spawn centerx="1259" centery="2224" centerz="6" radius="2"/>
   <spawn centerx="1154" centery="2240" centerz="6" radius="5">
     <monster name="Dragon" x="-1" y="0" z="6" spawntime="60"/>
   </spawn>
@@ -2699,17 +2683,6 @@
   <spawn centerx="1167" centery="2256" centerz="6" radius="5">
     <monster name="Dragon" x="1" y="-2" z="6" spawntime="60"/>
     <monster name="Dragon" x="1" y="4" z="6" spawntime="60"/>
-  </spawn>
-  <spawn centerx="1285" centery="2256" centerz="6" radius="10">
-    <monster name="Minotaur" x="5" y="-5" z="6" spawntime="60"/>
-    <monster name="Minotaur" x="-3" y="-4" z="6" spawntime="60"/>
-    <monster name="Minotaur" x="6" y="-4" z="6" spawntime="60"/>
-    <monster name="Minotaur" x="-3" y="-1" z="6" spawntime="60"/>
-    <monster name="Minotaur" x="3" y="1" z="6" spawntime="60"/>
-    <monster name="Minotaur" x="-2" y="2" z="6" spawntime="60"/>
-    <monster name="Minotaur" x="4" y="5" z="6" spawntime="60"/>
-    <monster name="Minotaur" x="-3" y="7" z="6" spawntime="60"/>
-    <monster name="Minotaur" x="5" y="7" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="1214" centery="2258" centerz="6" radius="5"/>
   <spawn centerx="1229" centery="2258" centerz="6" radius="5">
@@ -5831,16 +5804,12 @@
     <monster name="Orc Warrior" x="2" y="1" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1217" centery="2297" centerz="7" radius="10">
-    <monster name="Demon Skeleton" x="0" y="-5" z="7" spawntime="60"/>
-    <monster name="Ghoul" x="-1" y="-2" z="7" spawntime="60"/>
-    <monster name="Demon Skeleton" x="5" y="-2" z="7" spawntime="60"/>
-    <monster name="Ghoul" x="3" y="-1" z="7" spawntime="60"/>
-    <monster name="Ghoul" x="6" y="0" z="7" spawntime="60"/>
-    <monster name="Demon Skeleton" x="-5" y="1" z="7" spawntime="60"/>
-    <monster name="Ghoul" x="-2" y="2" z="7" spawntime="60"/>
-    <monster name="Ghoul" x="-6" y="3" z="7" spawntime="60"/>
-    <monster name="Ghoul" x="2" y="3" z="7" spawntime="60"/>
-    <monster name="Demon Skeleton" x="-1" y="6" z="7" spawntime="60"/>
+    <monster name="Demon Skeleton" x="0" y="-4" z="7" spawntime="60"/>
+    <monster name="Demon Skeleton" x="-2" y="-2" z="7" spawntime="60"/>
+    <monster name="Demon Skeleton" x="1" y="0" z="7" spawntime="60"/>
+    <monster name="Ghoul" x="5" y="0" z="7" spawntime="60"/>
+    <monster name="Demon Skeleton" x="-2" y="1" z="7" spawntime="60"/>
+    <monster name="Ghoul" x="-4" y="5" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1303" centery="2297" centerz="7" radius="5">
     <monster name="Orc" x="-3" y="-2" z="7" spawntime="60"/>
