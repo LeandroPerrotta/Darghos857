@@ -91,6 +91,7 @@ typedef std::map<uint32_t, Depot*> DepotMap;
 typedef std::map<uint32_t, int32_t> StorageMap;
 typedef std::set<uint32_t> VIPListSet;
 typedef std::map<uint32_t, uint32_t> MuteCountMap;
+typedef std::map<uint32_t, std::string> ChannelStatementMap;
 typedef std::list<std::string> LearnedInstantSpellList;
 typedef std::list<Party*> PartyList;
 
@@ -117,6 +118,8 @@ public:
 
 	static MuteCountMap muteCountMap;
 	static int32_t maxMessageBuffer;
+	static ChannelStatementMap channelStatementMap;
+	static uint32_t channelStatementGuid;
 
 	virtual const std::string& getName() const {return name;}
 	virtual const std::string& getNameDescription() const {return name;}
@@ -364,7 +367,7 @@ public:
 	void addInFightTicks(uint32_t ticks, bool pzlock = false);
 	void addDefaultRegeneration(uint32_t addTicks);
 
-	virtual uint64_t getGainedExperience(Creature* attacker, bool useMultiplier = true) const;
+	virtual uint64_t getGainedExperience(Creature* attacker) const;
 
 	//combat event functions
 	virtual void onAddCondition(ConditionType_t type, bool hadCondition);
@@ -381,8 +384,8 @@ public:
 	virtual void onSummonAttackedCreatureDrainMana(Creature* summon, Creature* target, int32_t points);
 	virtual void onTargetCreatureGainHealth(Creature* target, int32_t points);
 	virtual void onKilledCreature(Creature* target);
-	virtual void onGainExperience(uint64_t gainExp);
-	virtual void onGainSharedExperience(uint64_t gainExp);
+	virtual void onGainExperience(uint64_t gainExp, bool fromMonster);
+	virtual void onGainSharedExperience(uint64_t gainExp, bool fromMonster);
 	virtual void onAttackedCreatureBlockHit(Creature* target, BlockType_t blockType);
 	virtual void onBlockHit(BlockType_t blockType);
 	virtual void onChangeZone(ZoneType_t zone);
@@ -665,7 +668,7 @@ protected:
 	bool hasCapacity(const Item* item, uint32_t count) const;
 
 	std::string getSkillName(int skillid);
-	void gainExperience(uint64_t& exp);
+	void gainExperience(uint64_t& exp, bool fromMonster);
 	void addExperience(uint64_t exp);
 
 	void updateInventoryWeight();

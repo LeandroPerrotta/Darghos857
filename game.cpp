@@ -54,11 +54,6 @@
 #include "spawn.h"
 #include "quests.h"
 
-#if defined __EXCEPTION_TRACER__
-#include "exception.h"
-extern boost::recursive_mutex maploadlock;
-#endif
-
 extern ConfigManager g_config;
 extern Actions* g_actions;
 extern Commands commands;
@@ -4794,8 +4789,20 @@ bool Game::playerViolationWindow(uint32_t playerId, std::string targetName, uint
 		}
 
 		case ACTION_STATEMENT:
-			// this is not banishment, and shouldn't perform default action
+		{
+			ChannelStatementMap::iterator it = Player::channelStatementMap.find(channelId);
+			if(it != Player::channelStatementMap.end()){
+				g_bans.addPlayerStatement(guid, player->getGUID(), comment, it->second, reasonId, actionType);
+				Player::channelStatementMap.erase(it);
+			}
+			else{
+				player->sendCancel("Statement has already been reported.");
+				return false;
+			}
+
+			removeNotations = 0;
 			break;
+		}
 
 		case ACTION_BANISHMENT:
 		default:
@@ -4819,7 +4826,7 @@ bool Game::playerViolationWindow(uint32_t playerId, std::string targetName, uint
 	}
 
 	if(ipBanishment && ip > 0)
-		g_bans.addIpBan(ip, 0xFFFFFFFF, (time(NULL) + g_config.getNumber(ConfigManager::IPBANISHMENT_LENGTH)),
+		g_bans.addIpBan(ip, -1, (time(NULL) + g_config.getNumber(ConfigManager::IPBANISHMENT_LENGTH)),
 			player->getGUID(), comment);
 
 	if(removeNotations > 1)
