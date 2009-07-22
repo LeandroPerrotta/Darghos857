@@ -399,10 +399,19 @@
   <house name="Goer's Refuge V" houseid="452" entryx="2872" entryy="1172" entryz="7" rent="22500" townid="2" size="80"/>
   <house name="District of Flowers VIII" houseid="453" entryx="2898" entryy="1216" entryz="7" rent="5700" townid="2" size="24"/>
   <house name="The Temples House" houseid="454" entryx="2021" entryy="1894" entryz="7" rent="6000" townid="1" size="18"/>
-  <house name="Blaze I" houseid="455" entryx="1254" entryy="2237" entryz="7" rent="900" townid="6" size="5"/>
-  <house name="Blaze II" houseid="456" entryx="1254" entryy="2242" entryz="7" rent="900" townid="6" size="6"/>
-  <house name="Blaze Shop" houseid="457" entryx="1249" entryy="2244" entryz="7" rent="2300" townid="6" size="27"/>
-  <house name="Central I" houseid="458" entryx="1249" entryy="2230" entryz="7" rent="700" townid="6" size="10"/>
-  <house name="Novice Eternum I" houseid="460" entryx="1223" entryy="2222" entryz="7" rent="3700" townid="6" size="28"/>
-  <house name="Novice Eternum II" houseid="461" entryx="1223" entryy="2227" entryz="7" rent="3700" townid="6" size="26"/>
+  <house name="Real Street 1" houseid="462" entryx="1251" entryy="2236" entryz="7" rent="1400" townid="6" size="12"/>
+  <house name="Real Street 2" houseid="463" entryx="1251" entryy="2242" entryz="7" rent="1500" townid="6" size="16"/>
+  <house name="Real Street 3" houseid="464" entryx="1251" entryy="2248" entryz="7" rent="2200" townid="6" size="16"/>
+  <house name="Real Street 4" houseid="465" entryx="1249" entryy="2244" entryz="7" rent="2500" townid="6" size="28"/>
+  <house name="Central Circle 1" houseid="466" entryx="1233" entryy="2229" entryz="7" rent="5000" townid="6" size="32"/>
+  <house name="Central Circle 2" houseid="467" entryx="1233" entryy="2220" entryz="7" rent="5000" townid="6" size="32"/>
+  <house name="Central Circle 3" houseid="468" entryx="1233" entryy="2213" entryz="7" rent="3000" townid="6" size="20"/>
+  <house name="Central Circle 4" houseid="469" entryx="1221" entryy="2216" entryz="7" rent="3000" townid="6" size="18"/>
+  <house name="Central Circle 5" houseid="470" entryx="1221" entryy="2222" entryz="7" rent="3000" townid="6" size="16"/>
+  <house name="Central Circle 6" houseid="471" entryx="1221" entryy="2229" entryz="7" rent="3000" townid="6" size="18"/>
+  <house name="General Depot 1" houseid="472" entryx="1254" entryy="2217" entryz="7" rent="1500" townid="6" size="16"/>
+  <house name="General Depot 2" houseid="473" entryx="1260" entryy="2217" entryz="7" rent="1500" townid="6" size="32"/>
+  <house name="General Depot 3" houseid="474" entryx="1266" entryy="2217" entryz="7" rent="1500" townid="6" size="16"/>
+  <house name="General Depot 4" houseid="475" entryx="1250" entryy="2213" entryz="6" rent="1500" townid="6" size="16"/>
+  <house name="General Depot 5" houseid="476" entryx="1269" entryy="2213" entryz="6" rent="1500" townid="6" size="16"/>
 </houses>
