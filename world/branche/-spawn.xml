@@ -8733,8 +8733,8 @@
   <spawn centerx="1247" centery="2193" centerz="8" radius="5">
     <monster name="Troll" x="0" y="-3" z="8" spawntime="60"/>
     <monster name="Troll" x="-3" y="-2" z="8" spawntime="60"/>
+    <monster name="Troll" x="-5" y="1" z="8" spawntime="60"/>
     <monster name="Troll" x="2" y="1" z="8" spawntime="60"/>
-    <monster name="Troll" x="-3" y="2" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1268" centery="2199" centerz="8" radius="5">
     <monster name="Troll" x="2" y="-2" z="8" spawntime="60"/>
