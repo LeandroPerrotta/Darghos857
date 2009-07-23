@@ -1157,11 +1157,6 @@
     <monster name="Cyclops" x="-1" y="-1" z="5" spawntime="60"/>
     <monster name="Cyclops" x="3" y="2" z="5" spawntime="60"/>
   </spawn>
-  <spawn centerx="1269" centery="2296" centerz="5" radius="5">
-    <monster name="Orc Rider" x="-1" y="0" z="5" spawntime="60"/>
-    <monster name="Orc Rider" x="2" y="0" z="5" spawntime="60"/>
-    <monster name="Orc Berserker" x="0" y="1" z="5" spawntime="60"/>
-  </spawn>
   <spawn centerx="1314" centery="2311" centerz="5" radius="5">
     <monster name="Orc Shaman" x="-3" y="-1" z="5" spawntime="60"/>
     <monster name="Orc Shaman" x="-3" y="0" z="5" spawntime="60"/>
@@ -2731,10 +2726,6 @@
   </spawn>
   <spawn centerx="2394" centery="2295" centerz="6" radius="5">
     <monster name="Sibang" x="2" y="0" z="6" spawntime="60"/>
-  </spawn>
-  <spawn centerx="1269" centery="2296" centerz="6" radius="5">
-    <monster name="Orc Rider" x="-1" y="0" z="6" spawntime="60"/>
-    <monster name="Orc Rider" x="2" y="0" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2136" centery="2298" centerz="6" radius="5">
     <monster name="Stone Golem" x="-2" y="-3" z="6" spawntime="60"/>
@@ -5797,11 +5788,6 @@
     <monster name="Orc Rider" x="-1" y="-1" z="7" spawntime="60"/>
     <monster name="Orc Rider" x="1" y="1" z="7" spawntime="60"/>
     <monster name="Orc Berserker" x="-3" y="5" z="7" spawntime="60"/>
-  </spawn>
-  <spawn centerx="1269" centery="2296" centerz="7" radius="5">
-    <monster name="Orc Warrior" x="0" y="-1" z="7" spawntime="60"/>
-    <monster name="Orc Warrior" x="-1" y="1" z="7" spawntime="60"/>
-    <monster name="Orc Warrior" x="2" y="1" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1217" centery="2297" centerz="7" radius="10">
     <monster name="Demon Skeleton" x="0" y="-4" z="7" spawntime="60"/>
