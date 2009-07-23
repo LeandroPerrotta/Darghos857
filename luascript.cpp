@@ -1273,7 +1273,8 @@ void LuaScriptInterface::registerFunctions()
 	//doPlayerAddSoul(cid, soul)
 	lua_register(m_luaState, "doPlayerAddSoul", LuaScriptInterface::luaDoPlayerAddSoul);
 
-	//doPlayerAddItem(uid, itemid, <optional> count/subtype)
+	//doPlayerAddItem(uid, itemid, <optional: default: 1> count/subtype)
+	//doPlayerAddItem(cid, itemid, <optional: default: 1> count, <optional: default: 1> canDropOnMap, <optional: default: 1>subtype)
 	//Returns uid of the created item
 	lua_register(m_luaState, "doPlayerAddItem", LuaScriptInterface::luaDoPlayerAddItem);
 
@@ -2711,15 +2712,21 @@ int LuaScriptInterface::luaDoPlayerAddMana(lua_State *L)
 
 int LuaScriptInterface::luaDoPlayerAddItem(lua_State *L)
 {
-	//doPlayerAddItem(cid, itemid, <optional> count/subtype, <optional: default: 1> canDropOnMap)
+	//doPlayerAddItem(cid, itemid, <optional: default: 1> count/subtype, <optional: default: 1> canDropOnMap)
+	//doPlayerAddItem(cid, itemid, <optional: default: 1> count, <optional: default: 1> canDropOnMap, <optional: default: 1>subtype)
 	int32_t parameters = lua_gettop(L);
+
+	int32_t subType = 1;
+	if(parameters > 4){
+		subType = popNumber(L);
+	}
 
 	bool canDropOnMap = true;
 	if(parameters > 3){
 		canDropOnMap = (popNumber(L) == 1);
 	}
 
-	uint32_t count = 0;
+	uint32_t count = 1;
 	if(parameters > 2){
 		count = popNumber(L);
 	}
@@ -2737,16 +2744,22 @@ int LuaScriptInterface::luaDoPlayerAddItem(lua_State *L)
 
 	const ItemType& it = Item::items[itemId];
 
-	int32_t itemCount;
-	int32_t subType;
-
-	if(it.stackable){
-		itemCount = (int32_t)std::ceil((float)count / 100);
-		subType = count;
+	int32_t itemCount = 1;
+	if(parameters > 4){
+		//subtype already supplied, count then is the amount
+		itemCount = count;
 	}
 	else{
-		itemCount = count;
-		subType = 1;
+		if(it.hasSubType()){
+			if(it.stackable){
+				itemCount = (int32_t)std::ceil((float)count / 100);
+			}
+
+			subType = count;
+		}
+		else{
+			itemCount = count;
+		}
 	}
 
 	while(itemCount > 0){
@@ -3577,7 +3590,7 @@ int LuaScriptInterface::luaDoCreateItem(lua_State *L)
 	PositionEx pos;
 	popPosition(L, pos);
 
-	uint32_t count = 0;
+	uint32_t count = 1;
 	if(parameters > 2){
 		count = popNumber(L);
 	}
@@ -3597,16 +3610,19 @@ int LuaScriptInterface::luaDoCreateItem(lua_State *L)
 
 	const ItemType& it = Item::items[itemId];
 
-	int32_t itemCount;
-	int32_t subType;
+	int32_t itemCount = 1;
+	int32_t subType = 1;
 
-	if(it.stackable){
-		itemCount = (int32_t)std::ceil((float)count / 100);
+	if(it.hasSubType()){
+		
+		if(it.stackable){
+			itemCount = (int32_t)std::ceil((float)count / 100);
+		}
+
 		subType = count;
 	}
 	else{
 		itemCount = count;
-		subType = 1;
 	}
 
 	while(itemCount > 0){
@@ -3656,7 +3672,7 @@ int LuaScriptInterface::luaDoCreateItemEx(lua_State *L)
 
 	int32_t parameters = lua_gettop(L);
 
-	uint32_t count = 0;
+	uint32_t count = 1;
 	if(parameters > 1){
 		count = popNumber(L);
 	}
@@ -6642,7 +6658,7 @@ int LuaScriptInterface::luaDoAddContainerItem(lua_State *L)
 	//doAddContainerItem(uid, itemid, <optional> count/subtype)
 	int32_t parameters = lua_gettop(L);
 
-	uint32_t count = 0;
+	uint32_t count = 1;
 	if(parameters > 2){
 		count = popNumber(L);
 	}
@@ -6659,16 +6675,20 @@ int LuaScriptInterface::luaDoAddContainerItem(lua_State *L)
 	}
 
 	const ItemType& it = Item::items[itemId];
-	int32_t itemCount;
-	int32_t subType;
 
-	if(it.stackable){
-		itemCount = (int32_t)std::ceil((float)count / 100);
+	int32_t itemCount = 1;
+	int32_t subType = 1;
+
+	if(it.hasSubType()){
+		
+		if(it.stackable){
+			itemCount = (int32_t)std::ceil((float)count / 100);
+		}
+
 		subType = count;
 	}
 	else{
 		itemCount = count;
-		subType = 1;
 	}
 
 	while(itemCount > 0){
