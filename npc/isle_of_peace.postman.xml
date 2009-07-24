@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <npc name="Yinne" floorchange="0" walkinterval="2500">
 	<health now="150" max="150"/>
-	<look type="132" head="111" body="78" legs="90" feet="40" addons="2"/>
+	<look type="128" head="114" body="94" legs="95" feet="120" addons="0"/>
 
   <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
     <include file="postman.xml"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <npc name="Captain Georgeus" floorchange="0" walkinterval="4000">
 	<health now="150" max="150"/>
-	<look type="129" head="11" body="87" legs="11" feet="87"/>
+	<look type="146" head="79" body="114" legs="76" feet="0" addons="0"/>
   
 <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
     

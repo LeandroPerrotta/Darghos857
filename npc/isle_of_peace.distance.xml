@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <npc name="Heldin" floorchange="0" walkinterval="2000" speed="220">
 	<health now="150" max="150"/>
-	<look type="142" head="79" body="118" legs="115" feet="114" addons="3" corpse="2212"/>
+	<look type="129" head="95" body="1" legs="76" feet="94" addons="0"/>
   
   <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
 

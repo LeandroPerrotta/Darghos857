@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <npc name="Bradrok" floorchange="0" walkinterval="2000" speed="220">
 	<health now="150" max="150"/>
-	<look type="143" head="114" body="54" legs="54" feet="20" addons="0" corpse="2212"/>
+	<look type="131" head="120" body="95" legs="114" feet="102" addons="0"/>
   
   <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
 
