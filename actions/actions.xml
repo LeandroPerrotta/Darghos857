@@ -683,7 +683,20 @@
 	<action itemid="9283" script="doors/gateofexp_closed.lua"/>
 	<action itemid="9284" script="doors/door_open_horizontal.lua"/>
 
+	<!-- DOORS FIXED BY BARA -->
+	
+	<action itemid="10274" script="increment.lua"/>
+	<action itemid="10275" script="doors/door_open_vertical.lua"/>
+	<action itemid="10276" script="increment.lua"/>
+	<action itemid="10277" script="doors/door_open_horizontal.lua"/>	
+	
+	
 	<!-- Windows -->
+	<action itemid="10264" script="doors/window_open.lua"/>
+	<action itemid="10265" script="doors/window_open.lua"/>
+	<action itemid="10266" script="doors/window_close.lua"/>
+	<action itemid="10267" script="doors/window_close.lua"/>
+
 	<action itemid="6436" script="doors/window_open.lua"/>
 	<action itemid="6437" script="doors/window_open.lua"/>
 	<action itemid="6438" script="doors/window_close.lua"/>

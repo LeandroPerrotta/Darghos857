@@ -21300,6 +21300,23 @@
 		<attribute key="charges" value="5"/>
 		<attribute key="weight" value="700"/>
 	</item>
+	<!--
+	DOORS - FIXED BY BARA
+	-->
+	<item id="10274" article="an" name="closed door"><!-- VERTICAL FECHADA-->
+		<attribute key="type" value="door"/>
+	</item>
+	<item id="10275" article="an" name="open door"><!-- VERTICAL ABERTA-->
+		<attribute key="type" value="door"/>
+	</item>	
+	
+	<item id="10276" article="an" name="closed door"><!-- HORIZONTAL FECHADA-->
+		<attribute key="type" value="door"/>
+	</item>
+	<item id="10277" article="an" name="open door"><!-- HORIZONTAL ABERTA-->
+		<attribute key="type" value="door"/>
+	</item>		
+	
 	<item id="10291" article="an" name="odd hat">
 		<attribute key="description" value="It has to be one of the fabled helmets of light."/>
 		<attribute key="slottype" value="head"/>
