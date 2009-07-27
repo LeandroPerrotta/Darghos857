@@ -67,7 +67,7 @@
 							
 								local result = doAddContainerItem(backpacks[toBackpack], _state.itemid, _state.subtype)							
 							else
-								local result = doPlayerAddItem(cid, _state.itemid,_state.amout, _state.subtype)
+								local result = doPlayerAddItem(cid, _state.itemid, _state.subtype)
 							end	
 
 							if(_state.buywithbackpack == 0 and result == -1) then
