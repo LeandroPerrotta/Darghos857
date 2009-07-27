@@ -133,6 +133,71 @@
         </response>
     </interact>
 
+	<!-- INICIO - PEGANDO OB KNIFE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="obsidian;knife">
+      <response text="You bringing me a dragon shield and obsidian lance in exchange for obsidian knife?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			
+			dshield = getItemIdByName("dragon shield")
+			obsidian = getItemIdByName("obsidian lance")
+			
+			if getPlayerItemCount(cid,dshield) >= 1 and getPlayerItemCount(cid, obsidian) >= 1 then
+					doPlayerRemoveItem(cid,dshield,1)
+					doPlayerRemoveItem(cid,obsidian,1)					
+					doPlayerAddItem(cid, 5908,1)
+					selfSay("Thanks to this trade!",cid)
+			else
+				selfSay("You dont have nescessary itens for this.",cid)
+			end
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>	
+	
+	<!-- INICIO - PEGANDO WOODENSTAKE @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="blessed;wooden;stake">
+      <response text="You bringing me 40 skulls, 100 demonic essences and 20 vampire dusts in exchange for obsidian knife?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			
+			i = getItemIdByName("skull")
+			a = getItemIdByName("vampire dust")
+			b = getItemIdByName("demonic essence")			
+			
+			if getPlayerItemCount(cid,i) >= 40 and getPlayerItemCount(cid, a) >= 20 and getPlayerItemCount(cid, b) >= 100 then
+					doPlayerRemoveItem(cid,i,40)
+					doPlayerRemoveItem(cid,a,20)
+					doPlayerRemoveItem(cid,b,100)					
+					doPlayerAddItem(cid, 5942,1)
+					selfSay("Thanks to this trade!",cid)
+			else
+				selfSay("You dont have nescessary itens for this.",cid)
+			end
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>	
 	
   </interaction>
   

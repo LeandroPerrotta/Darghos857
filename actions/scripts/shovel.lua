@@ -3,7 +3,7 @@ local ITEM_SCARAB_COIN 		= 	2159
 local TUMB_ENTRANCE		= 	100
 local SCARAB_TILE		=	101
 local SCARAB_COIN_TILE		= 	102
-		
+local GRAMA					= 233		
 function onUse(cid, item, frompos, item2, topos)
 	if (isInArray(CLOSED_HOLE, item2.itemid) == TRUE) then
 		if item2.itemid == 8579 then
@@ -34,6 +34,11 @@ function onUse(cid, item, frompos, item2, topos)
 			if (math.random(1, 40) == 1) then
 				doSetItemActionId(item2.uid, SCARAB_COIN_TILE)
 			end
+		elseif (item2.itemid == 4526) then
+			if (item.actionid == 233) then
+				doTransformItem(item2.uid, 469)
+			end
+						
 		end
 		doSendMagicEffect(topos, CONST_ME_POFF)
 	else
