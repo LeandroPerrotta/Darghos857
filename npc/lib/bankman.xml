@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 
 <interaction>
-
+    
+	<!--
   <interact keywords="bank">
     <response text="The depots are very easy to use. Just step in front of them and you will find your items in them. They are free for all tibian citizens."/>
   </interact>
-    
-	<!--
+
 	DEPOSIT MONEY
-	-->
+
   <interact keywords="deposit">
     <response text="Please tell me how much gold it is you would like to deposit.">
 
@@ -45,7 +45,7 @@
 	
 	<!--
 	WITHDRAW MONEY
-	-->
+
   <interact keywords="withdraw">
     <response text="Please tell me how much gold you would like to withdraw.">
 
@@ -80,7 +80,7 @@
   
  	<!--
 	BALANCE MONEY
-	-->
+
   <interact keywords="balance">
     <response text="You want to see your account balance?">
 
@@ -104,7 +104,7 @@
   
 	<!--
 	DEPOSIT ALL MONEY
-	-->
+
   <interact keywords="deposit;all">
     <response text="">
               <action name="script">
@@ -178,5 +178,5 @@
 
     </response>
   </interact>
- 	-->
+	-->
 </interaction>
