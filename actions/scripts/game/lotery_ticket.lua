@@ -5,7 +5,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	
 		a = math.random(1,100)
 		
-		if(a < 20) then
+		if(a < 5) then
 				doPlayerAddItem(cid,5958,1)
 				doSendMagicEffect(fromPosition, 30)
 				doPlayerRemoveItem(cid,item.itemid,1)				
