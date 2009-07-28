@@ -10,6 +10,7 @@
 	<action actionid="4014" script="game/poi.quest/levers/lever.createstair.lua"/>
 	<action actionid="4015" script="game/poi.quest/levers/lever.firestone.lua"/>
 	<action actionid="4011" script="game/quara_stone.lua"/>	
+	<action itemid="5957" script="game/lotery_ticket.lua"/>		
 	<!-- Quests -->
 	<action actionid="2001" script="game/quests/chest.lua"/>
 	<action actionid="2002" script="game/quests/chest.lua"/>

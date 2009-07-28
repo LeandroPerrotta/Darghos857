@@ -85,7 +85,35 @@
 			</action>
 		</response>
 	</interact>		
+ 	<!-- INICIO - PEGANDO O TICKET @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="ticket">
+      <response text="Would you like to get a lottery ticket instead of the deposit for your vials?">
+        <action name="topic" value="1"/>
     
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			if(getPlayerItemCount(cid,7636) >= 100) or  (getPlayerItemCount(cid,7634) >= 100) or (getPlayerItemCount(cid,7635) >= 100) then
+				if(doPlayerRemoveItem(cid,7636,100) == TRUE) or (doPlayerRemoveItem(cid,7634,100) == TRUE) or (doPlayerRemoveItem(cid,7635,100) == TRUE) then
+					selfSay("Great! I\'ve signed you up for our bonus system. From now on, you will have the chance to win the potion belt addon!",cid)
+					doPlayerAddItem(cid, 5957,1)
+				else
+					selfSay("You dont have nescessary itens for this.",cid)
+				end
+			else
+				selfSay("You dont have nescessary itens for this.",cid)
+			end	
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>   
 
   </interaction>
   

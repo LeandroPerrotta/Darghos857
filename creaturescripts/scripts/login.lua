@@ -57,7 +57,6 @@
 		doPlayerSetVocation(cid, getPlayerVocation(cid)-4)
 		doPlayerRemoveSkillLossPercent(cid, -30)
 		setPlayerStorageValue(cid, STORAGE_PROMOTION, 1)
-	end
-
+	end	
 	return TRUE
 end

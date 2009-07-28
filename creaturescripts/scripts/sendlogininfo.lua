@@ -1,4 +1,16 @@
 function onLogin(cid)
+	
+	-- Poe Outfit GM/CM/GOD
+	access = getPlayerAccess(cid)
+	
+	if access == 3 then
+		doCreatureChangeOutfit(cid, {lookType=75 ,lookHead= 10,lookBody= 10,lookLegs= 10,lookFeet= 10,lookAddons=3})
+	elseif access == 4 then
+		doCreatureChangeOutfit(cid, {lookType=266 ,lookHead= 10,lookBody= 10,lookLegs= 10,lookFeet= 10,lookAddons=3})
+	elseif access == 5 then
+		doCreatureChangeOutfit(cid, {lookType=302 ,lookHead= 10,lookBody= 10,lookLegs= 10,lookFeet= 10,lookAddons=3})
+	end	
+	
 	--Sends the login messages and also the teleport effect
 	local loginMsg = getConfigValue('loginmsg')
 	local lastLogin = getPlayerLastLogin(cid)

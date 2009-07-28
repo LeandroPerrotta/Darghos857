@@ -43,7 +43,7 @@
     </response>
   </interact>
 	
-	<!--
+
 	WITHDRAW MONEY
 
   <interact keywords="withdraw">
@@ -78,7 +78,7 @@
     </response>
   </interact>
   
- 	<!--
+
 	BALANCE MONEY
 
   <interact keywords="balance">
@@ -102,7 +102,7 @@
     </response>
   </interact>
   
-	<!--
+
 	DEPOSIT ALL MONEY
 
   <interact keywords="deposit;all">
@@ -133,7 +133,7 @@
     </response>
   </interact>  
  
-	<!--
+
 	TRANSFER MONEY
 
   <interact keywords="transfer">
