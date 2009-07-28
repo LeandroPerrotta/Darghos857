@@ -74,7 +74,7 @@
         <action name="script">
         <![CDATA[
 		
-		items 	= {{5527,100}}
+		items 	= {{5906,100}}
 		conf  	= 
 		{
 			typeFemale		= 148,
