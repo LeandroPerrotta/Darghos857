@@ -16,7 +16,7 @@
         <![CDATA[
 		
 		if(getPlayerSex(cid)) == 0 then
-			items 	= {{4842,1}}
+			items 	= {{5958,1}}
 		else
 			items  	= {{5904,10} , {2193,20} , {5809,1}}
 		end
