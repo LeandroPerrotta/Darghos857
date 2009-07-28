@@ -5552,6 +5552,9 @@
     <monster name="Amazon" x="3" y="-1" z="7" spawntime="60"/>
     <monster name="Amazon" x="5" y="0" z="7" spawntime="60"/>
   </spawn>
+  <spawn centerx="1251" centery="2204" centerz="7" radius="1">
+    <npc name="isle_of_peace.distance" x="-1" y="0" z="7" spawntime="10"/>
+  </spawn>
   <spawn centerx="1229" centery="2205" centerz="7" radius="2">
     <monster name="Deer" x="-2" y="-2" z="7" spawntime="10"/>
     <monster name="Deer" x="0" y="1" z="7" spawntime="10"/>
