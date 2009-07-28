@@ -69,8 +69,11 @@
     <item id="2195" chance="800"/>
     <item id="3976" countmax="10" chance1="50000" chancemax="0"/>
     <item id="2148" countmax="50" chance1="100000" chancemax="0"/>
-    <item id="2476" chance="500"/> --knight armor
-    <item id="1976" countmax="1" chance="9000"/>
+    <item id="8880" chance="100"/> --Swamplair Armor
+	<item id="8902" chance="300"/> --Spellbook of Mind Control
+    <item id="2487" chance="700"/> --knight armor
+    <item id="2476" chance="700"/> --knight armor
+	<item id="1976" countmax="1" chance="9000"/>
     <item id="3971" countmax="1" chance="2000"/>
     <item id="2492" countmax="1" chance="200"/>
     <item id="2167" countmax="1" chance="3000"/>

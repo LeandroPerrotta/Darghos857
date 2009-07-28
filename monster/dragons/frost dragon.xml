@@ -70,9 +70,9 @@
       <inside>
         <item id="2148" countmax="100" chance1="100000" chancemax="0"/>
         <item id="2146" countmax="2" chance1="2222" chancemax="0"/>
-        <item id="2528" chance="1333"/>
+        <item id="2528" chance="1000"/>
 		<item id="7441" chance="2222"/>
-        <item id="7402" chance="1666"/>
+        <item id="7402" chance="1266"/>
 		<item id="2498" chance="500"/>
 		<item id="2492" chance="200"/>
       </inside>

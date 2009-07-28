@@ -63,6 +63,7 @@
         <item id="2181" chance="1333"/> -- quagmire rod
         <item id="2168" chance="1428"/>
         <item id="5810" chance="555"/>
+		<item id="5801" chance="100"/>
         <item id="2652" chance="1666"/>
         <item id="5801" chance="909"/>
       </inside>
