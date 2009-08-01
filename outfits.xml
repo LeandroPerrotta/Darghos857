@@ -95,7 +95,7 @@
 		<list type="male" looktype="278" name="Brotherhood"/>
 	</outfit>
 
-	<outfit id="20" premium="1">
+	<outfit id="20" premium="1" default="0">
 		<list type="female" looktype="288" name="Demonhunter"/>
 		<list type="male" looktype="289" name="Demonhunter"/>
 	</outfit>

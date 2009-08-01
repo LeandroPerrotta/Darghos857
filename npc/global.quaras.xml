@@ -198,7 +198,45 @@
 
         </response>
     </interact>	
-	
+
+	<!-- INICIO - ACESSO MEDUSAS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="access;medusas">
+	      <keywords>medusa</keywords>
+	      <keywords>medusas</keywords>
+      <response text="You bringing me 40 ape fur, 20 hydra eggs and 50 giant spider silk in exchange for access to {Medusas Hall}?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			
+			i = getItemIdByName("ape fur")
+			a = getItemIdByName("hydra egg")
+			b = getItemIdByName("giant spider silk")			
+			if(getPlayerStorageValue(cid, sid.SALAZART_MEDUSAS_ACCESS) ~= 1) then
+				if getPlayerItemCount(cid,i) >= 40 and getPlayerItemCount(cid, a) >= 20 and getPlayerItemCount(cid, b) >= 50 then
+						doPlayerRemoveItem(cid,i,40)
+						doPlayerRemoveItem(cid,a,20)
+						doPlayerRemoveItem(cid,b,50)					
+						setPlayerStorageValue(cid, sid.SALAZART_MEDUSAS_ACCESS,1)
+						selfSay("Nice!, now you can enter in {Meduas Hall}, using the teleports of Monkeys Cave, in east of here.",cid)
+				else
+					selfSay("You dont have nescessary itens for this.",cid)
+				end
+			else
+				selfSay("You already have the access to {Medusas Hall}.", cid)
+			end
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>		
   </interaction>
   
 </npc>

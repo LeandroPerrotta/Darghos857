@@ -1,6 +1,25 @@
 <?xml version="1.0"?>
 <movements>
 	<!-- Geral Map Tiles! Quests etc -->		
+		<!-- INQUISITION QUEST -->
+		
+		<movevent event="StepIn" actionid="4033" script="game/inquisition_hall.lua"/>		
+		<movevent event="StepIn" actionid="4034" script="game/inquisition_hall.lua"/>		
+		<movevent event="StepIn" actionid="4035" script="game/inquisition_hall.lua"/>		
+		<movevent event="StepIn" actionid="4036" script="game/inquisition_hall.lua"/>		
+		<movevent event="StepIn" actionid="4037" script="game/inquisition_hall.lua"/>		
+		<movevent event="StepIn" uniqueid="1017" script="game/inquisition_hall.lua"/>		
+		<movevent event="StepIn" uniqueid="1019" script="game/inquisition_hall.lua"/>		
+		<movevent event="StepIn" uniqueid="1021" script="game/inquisition_hall.lua"/>		
+		<movevent event="StepIn" uniqueid="1023" script="game/inquisition_hall.lua"/>		
+		<movevent event="StepIn" uniqueid="1025" script="game/inquisition_hall.lua"/>		
+		<movevent event="StepIn" uniqueid="1027" script="game/inquisition_hall.lua"/>		
+		<movevent event="StepIn" uniqueid="1034" script="game/inquisition_hall.lua"/>
+
+		<!-- MEDUSA TP -->	
+		<movevent event="StepIn" actionid="4040" script="game/medusa_tp.lua"/>
+		
+		
 		<!-- POI QUEST -->
 		<movevent event="StepIn" actionid="250" script="game/poi.quest/tps.lua"/>
 		<movevent event="StepIn" actionid="251" script="game/poi.quest/tps.lua"/>

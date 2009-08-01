@@ -3,6 +3,7 @@
 
 	<!-- Darghos -->
 	<monster name="Bad Bug" file="darghos/bad bug.xml"/>
+	<monster name="Medusa" file="darghos/Medusa.xml"/>	
 	<monster name="Bad Rabbit" file="darghos/bad rabbit.xml"/>
 	<monster name="Hero Hacker" file="darghos/hero hacker.xml"/>
 	<monster name="Anamelech" file="darghos/Anamelech.xml" />

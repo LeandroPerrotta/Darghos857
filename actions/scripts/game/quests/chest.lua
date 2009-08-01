@@ -1,10 +1,55 @@
 local quests =
 	{
+		[aid.INQ_ROBE] = {
+			storageId = sid.INQ_CHESTS,
+			rewardId = 8890,
+			count = 1
+		},
+		[aid.INQ_FIREBORN] = {
+			storageId = sid.INQ_CHESTS,
+			rewardId = 8881,
+			count = 1
+		},
+		[aid.INQ_MASTER_ARCHER] = {
+			storageId = sid.INQ_CHESTS,
+			rewardId = 8888,
+			count = 1
+		},
+		[aid.INQ_CLUB] = {
+			storageId = sid.INQ_CHESTS,
+			rewardId = 8928,
+			count = 1
+		},
+		[aid.INQ_AXE] = {
+			storageId = sid.INQ_CHESTS,
+			rewardId = 8924,
+			count = 1
+		},
+		[aid.INQ_SWORD] = {
+			storageId = sid.INQ_CHESTS,
+			rewardId = 8930,
+			count = 1
+		},
+		[aid.INQ_BOOK] = {
+			storageId = sid.INQ_CHESTS,
+			rewardId = 8918,
+			count = 1
+		},
+		[aid.INQ_BOW] = {
+			storageId = sid.INQ_CHESTS,
+			rewardId = 8854,
+			count = 1
+		},
+		[aid.INQ_X_BOW] = {
+			storageId = sid.INQ_CHESTS,
+			rewardId = 8851,
+			count = 1
+		},
 		[aid.BANSHEE_STEALTH] = {
 			storageId = sid.BANSHEE_STEALTH,
 			rewardId = 2165,
 			count = 1
-		}	,
+		},
 		[aid.BANSHEE_SSA] = {
 			storageId = sid.BANSHEE_SSA,
 			rewardId = 2197,

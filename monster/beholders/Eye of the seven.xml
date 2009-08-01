@@ -18,11 +18,11 @@
     <flag runonhealth="0"/>
   </flags>
   <attacks>
-    <attack name="ice" interval="1000" chance="50" range="10" min="-250" max="-350">
+    <attack name="ice" interval="1000" chance="50" range="10" min="-350" max="-550">
       <attribute key="areaEffect" value="iceattack"/>
 	  <attribute key="shootEffect" value="ice"/>
     </attack>
-    <attack name="fire" interval="1000" chance="50" range="10" min="-250" max="-350">
+    <attack name="fire" interval="1000" chance="50" range="10" min="-350" max="-550">
       <attribute key="areaEffect" value="fireattack"/>
 	  <attribute key="shootEffect" value="fire"/>
     </attack>

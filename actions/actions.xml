@@ -10,7 +10,10 @@
 	<action actionid="4014" script="game/poi.quest/levers/lever.createstair.lua"/>
 	<action actionid="4015" script="game/poi.quest/levers/lever.firestone.lua"/>
 	<action actionid="4011" script="game/quara_stone.lua"/>	
-	<action itemid="5957" script="game/lotery_ticket.lua"/>		
+	<action itemid="5957" script="game/lotery_ticket.lua"/>	
+	<action itemid="7488" script="game/inquisition_fim.lua"/>	
+
+	
 	<!-- Quests -->
 	<action actionid="2001" script="game/quests/chest.lua"/>
 	<action actionid="2002" script="game/quests/chest.lua"/>
@@ -82,6 +85,15 @@
 	<action actionid="2068" script="game/quests/chest.lua"/>
 	<action actionid="2069" script="game/quests/chest.lua"/>
 	<action actionid="2070" script="game/quests/chest.lua"/>
+	<action actionid="2071" script="game/quests/chest.lua"/>
+	<action actionid="2072" script="game/quests/chest.lua"/>
+	<action actionid="2073" script="game/quests/chest.lua"/>
+	<action actionid="2074" script="game/quests/chest.lua"/>
+	<action actionid="2075" script="game/quests/chest.lua"/>
+	<action actionid="2076" script="game/quests/chest.lua"/>
+	<action actionid="2077" script="game/quests/chest.lua"/>
+	<action actionid="2078" script="game/quests/chest.lua"/>
+	<action actionid="2079" script="game/quests/chest.lua"/>
 
 
 	
