@@ -1,5 +1,6 @@
 function onKill(cid, target)
 
+	
 	creature = getCreatureName(target)
 
 	
