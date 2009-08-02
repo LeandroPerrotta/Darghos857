@@ -35,7 +35,7 @@ function onKill(cid, target)
 	
 	config = 
 	{
-		timeTo 		= 15,
+		timeTo 		= 180,
 		tpID		= 1387,
 		doEffect 	= 10,
 		message 	= "You now have 3 minutes to exit this room through the teleporter. It will bring you to the next room only during his time or the teleporter will disappear"
