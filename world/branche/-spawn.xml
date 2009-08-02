@@ -4837,6 +4837,7 @@
     <monster name="Amazon" x="3" y="2" z="7" spawntime="60"/>
     <monster name="Amazon" x="-1" y="3" z="7" spawntime="60"/>
   </spawn>
+  <spawn centerx="2024" centery="1851" centerz="7" radius="5"/>
   <spawn centerx="2341" centery="1853" centerz="7" radius="1">
     <npc name="thorn.magic" x="-1" y="0" z="7" spawntime="60"/>
   </spawn>
@@ -4847,12 +4848,6 @@
     <monster name="Amazon" x="2" y="-2" z="7" spawntime="120"/>
     <monster name="Amazon" x="-1" y="1" z="7" spawntime="120"/>
     <monster name="Amazon" x="4" y="1" z="7" spawntime="120"/>
-  </spawn>
-  <spawn centerx="2013" centery="1856" centerz="7" radius="5">
-    <monster name="Chicken" x="-2" y="-3" z="7" spawntime="60"/>
-    <monster name="Pig" x="0" y="2" z="7" spawntime="60"/>
-    <monster name="Chicken" x="2" y="2" z="7" spawntime="60"/>
-    <npc name="quendor.food" x="1" y="5" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2109" centery="1856" centerz="7" radius="5">
     <monster name="Amazon" x="0" y="-1" z="7" spawntime="120"/>
@@ -4931,20 +4926,20 @@
   <spawn centerx="2108" centery="1872" centerz="7" radius="5">
     <monster name="Amazon" x="3" y="0" z="7" spawntime="120"/>
   </spawn>
-  <spawn centerx="1984" centery="1873" centerz="7" radius="1">
-    <npc name="quendor.distance" x="1" y="0" z="7" spawntime="60"/>
+  <spawn centerx="1983" centery="1873" centerz="7" radius="1">
+    <npc name="quendor.distance" x="0" y="1" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2154" centery="1873" centerz="7" radius="5">
     <monster name="Valkyrie" x="-2" y="-1" z="7" spawntime="120"/>
     <monster name="Amazon" x="3" y="0" z="7" spawntime="120"/>
     <monster name="Amazon" x="0" y="2" z="7" spawntime="120"/>
   </spawn>
+  <spawn centerx="1978" centery="1877" centerz="7" radius="1">
+    <npc name="quendor.acessorios" x="1" y="0" z="7" spawntime="60"/>
+  </spawn>
   <spawn centerx="2136" centery="1877" centerz="7" radius="5">
     <monster name="Amazon" x="2" y="-2" z="7" spawntime="120"/>
     <monster name="Valkyrie" x="-1" y="0" z="7" spawntime="120"/>
-  </spawn>
-  <spawn centerx="1977" centery="1879" centerz="7" radius="1">
-    <npc name="quendor.acessorios" x="0" y="-1" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2349" centery="1879" centerz="7" radius="1">
     <npc name="thorn.armors" x="1" y="0" z="7" spawntime="60"/>
