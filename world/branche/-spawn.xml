@@ -2014,9 +2014,7 @@
     <monster name="Bat" x="-11" y="2" z="6" spawntime="59"/>
     <monster name="Bat" x="-7" y="3" z="6" spawntime="59"/>
   </spawn>
-  <spawn centerx="2005" centery="1846" centerz="6" radius="1">
-    <npc name="quendor.bank" x="0" y="0" z="6" spawntime="60"/>
-  </spawn>
+  <spawn centerx="2005" centery="1846" centerz="6" radius="1"/>
   <spawn centerx="2407" centery="1848" centerz="6" radius="1">
     <npc name="thorn.postman" x="0" y="0" z="6" spawntime="60"/>
   </spawn>
@@ -4821,7 +4819,7 @@
     <npc name="quendor.joia" x="0" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2010" centery="1844" centerz="7" radius="5">
-    <npc name="quendor.magic" x="-5" y="2" z="7" spawntime="60"/>
+    <npc name="quendor.magic" x="-4" y="2" z="7" spawntime="60"/>
     <npc name="global.soft" x="2" y="4" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2005" centery="1846" centerz="7" radius="1"/>
