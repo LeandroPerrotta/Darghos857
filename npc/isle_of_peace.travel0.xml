@@ -61,7 +61,7 @@
 		</response>			
 	</interact>	
 
-	<interact keywords="yes" topic="1">
+	<interact keywords="yes" topic="2">
 		<response>
 			<action name="script">
 			<![CDATA[
