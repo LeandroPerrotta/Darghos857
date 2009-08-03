@@ -51,7 +51,7 @@
   <house name="Rua um I" houseid="86" entryx="1984" entryy="1864" entryz="7" rent="4000" townid="1" size="14"/>
   <house name="Rua um II" houseid="87" entryx="1984" entryy="1858" entryz="7" rent="5000" townid="1" size="18"/>
   <house name="Rua um III" houseid="88" entryx="1984" entryy="1852" entryz="7" rent="5000" townid="1" size="18"/>
-  <house name="Rua um IV" houseid="89" entryx="1989" entryy="1841" entryz="7" rent="7500" townid="1" size="59"/>
+  <house name="Rua um IV" houseid="89" entryx="1989" entryy="1841" entryz="7" rent="7500" townid="1" size="48"/>
   <house name="Vila um I" houseid="90" entryx="1955" entryy="1829" entryz="7" rent="6000" townid="1" size="22"/>
   <house name="Vila um II" houseid="91" entryx="1960" entryy="1829" entryz="7" rent="6000" townid="1" size="22"/>
   <house name="Vila um III" houseid="92" entryx="1954" entryy="1833" entryz="7" rent="12000" townid="1" size="66"/>
@@ -60,7 +60,7 @@
   <house name="Rua dois II" houseid="95" entryx="1997" entryy="1834" entryz="7" rent="20000" townid="1" size="118"/>
   <house name="Rua dois III" houseid="96" entryx="2008" entryy="1834" entryz="7" rent="20000" townid="1" size="116"/>
   <house name="Rua dois IV" houseid="97" entryx="2018" entryy="1834" entryz="7" rent="22000" townid="1" size="170"/>
-  <house name="Rua dois V" houseid="98" entryx="2024" entryy="1838" entryz="7" rent="14000" townid="1" size="72"/>
+  <house name="Rua dois V" houseid="98" entryx="2024" entryy="1838" entryz="7" rent="14000" townid="1" size="71"/>
   <house name="Edificio um I" houseid="99" entryx="2029" entryy="1828" entryz="7" rent="4000" townid="1" size="16"/>
   <house name="Edificio um II" houseid="100" entryx="2035" entryy="1829" entryz="7" rent="4000" townid="1" size="21"/>
   <house name="Edificio um III" houseid="101" entryx="2038" entryy="1829" entryz="7" rent="3500" townid="1" size="18"/>

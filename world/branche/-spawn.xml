@@ -4815,9 +4815,7 @@
     <monster name="Amazon" x="-6" y="8" z="7" spawntime="60"/>
     <monster name="Amazon" x="-8" y="9" z="7" spawntime="60"/>
   </spawn>
-  <spawn centerx="1978" centery="1844" centerz="7" radius="1">
-    <npc name="quendor.joia" x="0" y="0" z="7" spawntime="60"/>
-  </spawn>
+  <spawn centerx="1978" centery="1844" centerz="7" radius="1"/>
   <spawn centerx="2010" centery="1844" centerz="7" radius="5">
     <npc name="quendor.magic" x="-4" y="2" z="7" spawntime="60"/>
     <npc name="global.soft" x="2" y="4" z="7" spawntime="60"/>
