@@ -4,7 +4,7 @@
   <house name="Black Borne IV" houseid="4" entryx="1984" entryy="1858" entryz="6" rent="8000" townid="1" size="20"/>
   <house name="Black Borne V" houseid="5" entryx="1985" entryy="1852" entryz="6" rent="6000" townid="1" size="15"/>
   <house name="Black Borne VI" houseid="6" entryx="1985" entryy="1858" entryz="6" rent="6000" townid="1" size="15"/>
-  <house name="Sevage Town I" houseid="7" entryx="2027" entryy="1858" entryz="7" rent="5000" townid="1" size="22"/>
+  <house name="Sevage Town I" houseid="7" entryx="2027" entryy="1858" entryz="7" rent="5000" townid="1" size="23"/>
   <house name="Sevage Town II" houseid="8" entryx="2027" entryy="1864" entryz="7" rent="5000" townid="1" size="23"/>
   <house name="Green Apartment I" houseid="9" entryx="2033" entryy="1857" entryz="7" rent="2200" townid="1" size="11"/>
   <house name="Green Apartment II" houseid="10" entryx="2036" entryy="1857" entryz="7" rent="2200" townid="1" size="11"/>
@@ -19,7 +19,7 @@
   <house name="State Avenue I" houseid="19" entryx="2034" entryy="1874" entryz="7" rent="1800" townid="1" size="10"/>
   <house name="State Avenue II" houseid="20" entryx="2043" entryy="1874" entryz="7" rent="1800" townid="1" size="10"/>
   <house name="State Avenue III" houseid="21" entryx="2034" entryy="1874" entryz="6" rent="4500" townid="1" size="12"/>
-  <house name="State Avenue IV" houseid="22" entryx="2043" entryy="1874" entryz="6" rent="4500" townid="1" size="12"/>
+  <house name="State Avenue IV" houseid="22" entryx="2043" entryy="1874" entryz="6" rent="4500" townid="1" size="3"/>
   <house name="State Paradise" houseid="23" entryx="2033" entryy="1878" entryz="7" rent="6000" townid="1" size="60"/>
   <house name="State Champion" houseid="24" entryx="2039" entryy="1878" entryz="7" rent="2000" townid="1" size="16"/>
   <house name="Berg Town I" houseid="25" entryx="2013" entryy="1875" entryz="7" rent="800" townid="1" size="11"/>
@@ -60,7 +60,7 @@
   <house name="Rua dois II" houseid="95" entryx="1997" entryy="1834" entryz="7" rent="20000" townid="1" size="118"/>
   <house name="Rua dois III" houseid="96" entryx="2008" entryy="1834" entryz="7" rent="20000" townid="1" size="116"/>
   <house name="Rua dois IV" houseid="97" entryx="2018" entryy="1834" entryz="7" rent="22000" townid="1" size="170"/>
-  <house name="Rua dois V" houseid="98" entryx="2024" entryy="1838" entryz="7" rent="14000" townid="1" size="71"/>
+  <house name="Rua dois V" houseid="98" entryx="2024" entryy="1838" entryz="7" rent="14000" townid="1" size="62"/>
   <house name="Edificio um I" houseid="99" entryx="2029" entryy="1828" entryz="7" rent="4000" townid="1" size="16"/>
   <house name="Edificio um II" houseid="100" entryx="2035" entryy="1829" entryz="7" rent="4000" townid="1" size="21"/>
   <house name="Edificio um III" houseid="101" entryx="2038" entryy="1829" entryz="7" rent="3500" townid="1" size="18"/>
