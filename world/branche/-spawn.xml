@@ -4904,7 +4904,7 @@
     <monster name="Dog" x="0" y="2" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2029" centery="1869" centerz="7" radius="5">
-    <monster name="Dog" x="2" y="0" z="7" spawntime="60"/>
+    <monster name="Dog" x="1" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2125" centery="1870" centerz="7" radius="5">
     <monster name="Valkyrie" x="2" y="-2" z="7" spawntime="120"/>
