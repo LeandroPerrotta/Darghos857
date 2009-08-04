@@ -412,14 +412,16 @@ function checkItemShop(cid)
 			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You don't have capacity needed to receive the item purchased in our Item Shop. Please release " .. getItemWeight(addContainer) .. "o.z and re-log in to receive the item.")
 		else
 		
-			if addContainer ~= LUA_ERROR then
-			
-				sendEnvolveEffect(cid, CONST_ME_ENERGYHIT)
-			
-				setPlayerStorageValue(cid, sid.ITEM_SHOP_ID, -1)
-				doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You received in your inventory the item purchased in our Item Shop with success!")
-				setPlayerShopReceived(idFromShop)
+			if addContainer == LUA_ERROR then
+				print("[itemshopsys] Item falhou ao ser adicionado (shopid: " .. idFromShop .. ")")
 			end
+			
+			sendEnvolveEffect(cid, CONST_ME_ENERGYHIT)
+		
+			setPlayerStorageValue(cid, sid.ITEM_SHOP_ID, -1)
+			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You received in your inventory the item purchased in our Item Shop with success!")
+			setPlayerShopReceived(idFromShop)
+			
 		end		
 	end 
 	
