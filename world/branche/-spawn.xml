@@ -2065,7 +2065,7 @@
     <monster name="Valkyrie" x="1" y="0" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="1926" centery="1865" centerz="6" radius="2">
-    <npc name="quendor.travel0" x="-1" y="0" z="6" spawntime="60"/>
+    <npc name="quendor.travel0" x="-1" y="-1" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2313" centery="1865" centerz="6" radius="5">
     <monster name="Cyclops" x="2" y="0" z="6" spawntime="60"/>
