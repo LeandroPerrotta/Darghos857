@@ -2107,9 +2107,6 @@
   <spawn centerx="2267" centery="1898" centerz="6" radius="5">
     <monster name="Cyclops" x="-1" y="-1" z="6" spawntime="60"/>
   </spawn>
-  <spawn centerx="2066" centery="1903" centerz="6" radius="5">
-    <monster name="Cyclops" x="1" y="3" z="6" spawntime="60"/>
-  </spawn>
   <spawn centerx="1986" centery="1904" centerz="6" radius="11">
     <monster name="Minotaur" x="4" y="-9" z="6" spawntime="60"/>
     <monster name="Minotaur" x="7" y="-8" z="6" spawntime="60"/>
@@ -2145,22 +2142,18 @@
   </spawn>
   <spawn centerx="2092" centery="1910" centerz="6" radius="10">
     <monster name="Cyclops" x="7" y="-10" z="6" spawntime="60"/>
-    <monster name="Cyclops" x="5" y="-7" z="6" spawntime="60"/>
+    <monster name="Cyclops" x="6" y="-7" z="6" spawntime="60"/>
     <monster name="Cyclops" x="9" y="-6" z="6" spawntime="60"/>
     <monster name="Cyclops Drone" x="4" y="-3" z="6" spawntime="60"/>
     <monster name="Cyclops" x="0" y="0" z="6" spawntime="60"/>
-    <monster name="Cyclops" x="-4" y="1" z="6" spawntime="60"/>
-    <monster name="Cyclops Drone" x="-2" y="2" z="6" spawntime="60"/>
+    <monster name="Cyclops Drone" x="-3" y="1" z="6" spawntime="60"/>
+    <monster name="Cyclops" x="-7" y="5" z="6" spawntime="60"/>
     <monster name="Cyclops" x="-9" y="8" z="6" spawntime="60"/>
     <monster name="Cyclops" x="-5" y="9" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2329" centery="1916" centerz="6" radius="5">
     <monster name="Cyclops" x="3" y="-2" z="6" spawntime="60"/>
     <monster name="Cyclops" x="-4" y="1" z="6" spawntime="60"/>
-  </spawn>
-  <spawn centerx="2062" centery="1917" centerz="6" radius="5">
-    <monster name="Cyclops Drone" x="0" y="-5" z="6" spawntime="60"/>
-    <monster name="Cyclops" x="-4" y="0" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2342" centery="1917" centerz="6" radius="5">
     <monster name="Cyclops" x="0" y="-2" z="6" spawntime="60"/>
@@ -8192,6 +8185,10 @@
     <monster name="Bandit" x="2" y="-1" z="8" spawntime="120"/>
     <monster name="Bandit" x="-4" y="2" z="8" spawntime="120"/>
   </spawn>
+  <spawn centerx="2065" centery="1927" centerz="8" radius="5">
+    <monster name="Ghoul" x="-1" y="-1" z="8" spawntime="60"/>
+    <monster name="Ghoul" x="2" y="3" z="8" spawntime="60"/>
+  </spawn>
   <spawn centerx="2054" centery="1928" centerz="8" radius="5">
     <monster name="Ghoul" x="4" y="-3" z="8" spawntime="60"/>
     <monster name="Ghoul" x="-1" y="0" z="8" spawntime="60"/>
@@ -8204,11 +8201,6 @@
     <monster name="Cyclops" x="-13" y="15" z="8" spawntime="60"/>
     <monster name="Behemoth" x="-11" y="19" z="8" spawntime="240"/>
     <monster name="Cyclops Smith" x="-12" y="23" z="8" spawntime="60"/>
-  </spawn>
-  <spawn centerx="2064" centery="1932" centerz="8" radius="5">
-    <monster name="Ghoul" x="1" y="-1" z="8" spawntime="60"/>
-    <monster name="Ghoul" x="0" y="4" z="8" spawntime="60"/>
-    <monster name="Ghoul" x="2" y="4" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2343" centery="1932" centerz="8" radius="10">
     <monster name="Dragon" x="7" y="0" z="8" spawntime="60"/>
@@ -8232,6 +8224,9 @@
     <monster name="Minotaur guard" x="0" y="-2" z="8" spawntime="60"/>
     <monster name="Minotaur guard" x="-1" y="-1" z="8" spawntime="60"/>
     <monster name="Minotaur guard" x="1" y="-1" z="8" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2065" centery="1934" centerz="8" radius="5">
+    <monster name="Ghoul" x="-1" y="1" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2005" centery="1936" centerz="8" radius="5">
     <monster name="Wild Warrior" x="0" y="0" z="8" spawntime="120"/>
@@ -11680,7 +11675,7 @@
     <monster name="Rotworm" x="2" y="1" z="9" spawntime="90"/>
   </spawn>
   <spawn centerx="2098" centery="1892" centerz="9" radius="5">
-    <monster name="Vampire" x="0" y="-5" z="9" spawntime="60"/>
+    <monster name="Vampire" x="0" y="0" z="9" spawntime="60"/>
     <monster name="Vampire" x="0" y="4" z="9" spawntime="60"/>
   </spawn>
   <spawn centerx="2119" centery="1894" centerz="9" radius="5">
