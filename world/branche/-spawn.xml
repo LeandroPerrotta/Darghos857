@@ -4730,7 +4730,6 @@
   </spawn>
   <spawn centerx="2004" centery="1811" centerz="7" radius="5">
     <monster name="Wolf" x="1" y="-2" z="7" spawntime="60"/>
-    <monster name="Wolf" x="-3" y="1" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2140" centery="1812" centerz="7" radius="5">
     <monster name="Minotaur guard" x="4" y="-4" z="7" spawntime="60"/>
