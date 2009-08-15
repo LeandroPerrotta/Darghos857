@@ -14990,6 +14990,7 @@
     <monster name="Rotworm" x="-3" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1205" centery="2246" centerz="10" radius="5">
+    <monster name="Rotworm" x="0" y="-3" z="10" spawntime="60"/>
     <monster name="Rotworm" x="1" y="-2" z="10" spawntime="60"/>
     <monster name="Rotworm" x="0" y="-1" z="10" spawntime="60"/>
     <monster name="Rotworm" x="0" y="2" z="10" spawntime="60"/>
@@ -15015,6 +15016,7 @@
   <spawn centerx="1216" centery="2261" centerz="10" radius="5">
     <monster name="Rotworm" x="-2" y="-2" z="10" spawntime="60"/>
     <monster name="Rotworm" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Rotworm" x="-1" y="-1" z="10" spawntime="60"/>
     <monster name="Rotworm" x="1" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1805" centery="2282" centerz="10" radius="5">
@@ -16703,11 +16705,14 @@
     <monster name="Minotaur guard" x="-4" y="7" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="1254" centery="2259" centerz="11" radius="30">
+    <monster name="Rotworm" x="-21" y="-13" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-16" y="-12" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-26" y="-7" z="11" spawntime="60"/>
     <monster name="Rotworm" x="4" y="-5" z="11" spawntime="60"/>
     <monster name="Rotworm" x="6" y="-2" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-9" y="8" z="11" spawntime="60"/>
+    <monster name="Rotworm" x="-30" y="9" z="11" spawntime="60"/>
+    <monster name="Rotworm" x="-10" y="10" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-10" y="12" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-23" y="15" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-18" y="15" z="11" spawntime="60"/>
@@ -16716,12 +16721,14 @@
     <monster name="Rotworm" x="-29" y="29" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="1201" centery="2261" centerz="11" radius="30">
+    <monster name="Rotworm" x="8" y="-16" z="11" spawntime="60"/>
     <monster name="Rotworm" x="8" y="-15" z="11" spawntime="60"/>
     <monster name="Rotworm" x="7" y="-10" z="11" spawntime="60"/>
     <monster name="Rotworm" x="15" y="-3" z="11" spawntime="60"/>
     <monster name="Rotworm" x="19" y="0" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-6" y="1" z="11" spawntime="60"/>
     <monster name="Rotworm" x="17" y="1" z="11" spawntime="60"/>
+    <monster name="Rotworm" x="-13" y="3" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-14" y="4" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-15" y="6" z="11" spawntime="60"/>
     <monster name="Rotworm" x="5" y="8" z="11" spawntime="60"/>
