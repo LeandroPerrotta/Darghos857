@@ -4,7 +4,7 @@
   <house name="Black Borne IV" houseid="4" entryx="1984" entryy="1858" entryz="6" rent="8000" townid="1" size="20"/>
   <house name="Black Borne V" houseid="5" entryx="1985" entryy="1852" entryz="6" rent="6000" townid="1" size="15"/>
   <house name="Black Borne VI" houseid="6" entryx="1985" entryy="1858" entryz="6" rent="6000" townid="1" size="15"/>
-  <house name="Sevage Town I" houseid="7" entryx="2027" entryy="1858" entryz="7" rent="5000" townid="1" size="23"/>
+  <house name="Sevage Town I" houseid="7" entryx="2027" entryy="1858" entryz="7" rent="5000" townid="1" size="22"/>
   <house name="Sevage Town II" houseid="8" entryx="2027" entryy="1864" entryz="7" rent="5000" townid="1" size="23"/>
   <house name="Green Apartment I" houseid="9" entryx="2033" entryy="1857" entryz="7" rent="2200" townid="1" size="11"/>
   <house name="Green Apartment II" houseid="10" entryx="2036" entryy="1857" entryz="7" rent="2200" townid="1" size="11"/>
@@ -19,7 +19,7 @@
   <house name="State Avenue I" houseid="19" entryx="2034" entryy="1874" entryz="7" rent="1800" townid="1" size="10"/>
   <house name="State Avenue II" houseid="20" entryx="2043" entryy="1874" entryz="7" rent="1800" townid="1" size="10"/>
   <house name="State Avenue III" houseid="21" entryx="2034" entryy="1874" entryz="6" rent="4500" townid="1" size="12"/>
-  <house name="State Avenue IV" houseid="22" entryx="2043" entryy="1874" entryz="6" rent="4500" townid="1" size="3"/>
+  <house name="State Avenue IV" houseid="22" entryx="2043" entryy="1874" entryz="6" rent="4500" townid="1" size="12"/>
   <house name="State Paradise" houseid="23" entryx="2033" entryy="1878" entryz="7" rent="6000" townid="1" size="60"/>
   <house name="State Champion" houseid="24" entryx="2039" entryy="1878" entryz="7" rent="2000" townid="1" size="16"/>
   <house name="Berg Town I" houseid="25" entryx="2013" entryy="1875" entryz="7" rent="800" townid="1" size="11"/>
@@ -34,7 +34,7 @@
   <house name="Beach Apartment V" houseid="38" entryx="1957" entryy="1870" entryz="6" rent="1100" townid="1" size="7"/>
   <house name="Beach Apartment VI" houseid="64" entryx="1957" entryy="1876" entryz="6" rent="400" townid="1" size="4"/>
   <house name="Beach Apartment VII" houseid="65" entryx="1967" entryy="1876" entryz="6" rent="400" townid="1" size="4"/>
-  <house name="Beach Apartment VIII" houseid="66" entryx="1967" entryy="1878" entryz="6" rent="1800" townid="1" size="31"/>
+  <house name="Beach Apartment VIII" houseid="66" entryx="1967" entryy="1878" entryz="6" rent="1800" townid="1" size="34"/>
   <house name="Green Park I" houseid="67" entryx="1948" entryy="1859" entryz="7" rent="1400" townid="1" size="15"/>
   <house name="Green Park II" houseid="68" entryx="1948" entryy="1855" entryz="7" rent="1400" townid="1" size="15"/>
   <house name="Green Park III" houseid="69" entryx="1950" entryy="1859" entryz="7" rent="1400" townid="1" size="15"/>
@@ -51,7 +51,7 @@
   <house name="Rua um I" houseid="86" entryx="1984" entryy="1864" entryz="7" rent="4000" townid="1" size="14"/>
   <house name="Rua um II" houseid="87" entryx="1984" entryy="1858" entryz="7" rent="5000" townid="1" size="18"/>
   <house name="Rua um III" houseid="88" entryx="1984" entryy="1852" entryz="7" rent="5000" townid="1" size="18"/>
-  <house name="Rua um IV" houseid="89" entryx="1989" entryy="1841" entryz="7" rent="7500" townid="1" size="48"/>
+  <house name="Rua um IV" houseid="89" entryx="1989" entryy="1841" entryz="7" rent="7500" townid="1" size="59"/>
   <house name="Vila um I" houseid="90" entryx="1955" entryy="1829" entryz="7" rent="6000" townid="1" size="22"/>
   <house name="Vila um II" houseid="91" entryx="1960" entryy="1829" entryz="7" rent="6000" townid="1" size="22"/>
   <house name="Vila um III" houseid="92" entryx="1954" entryy="1833" entryz="7" rent="12000" townid="1" size="66"/>
@@ -60,7 +60,7 @@
   <house name="Rua dois II" houseid="95" entryx="1997" entryy="1834" entryz="7" rent="20000" townid="1" size="118"/>
   <house name="Rua dois III" houseid="96" entryx="2008" entryy="1834" entryz="7" rent="20000" townid="1" size="116"/>
   <house name="Rua dois IV" houseid="97" entryx="2018" entryy="1834" entryz="7" rent="22000" townid="1" size="170"/>
-  <house name="Rua dois V" houseid="98" entryx="2024" entryy="1838" entryz="7" rent="14000" townid="1" size="63"/>
+  <house name="Rua dois V" houseid="98" entryx="2024" entryy="1838" entryz="7" rent="14000" townid="1" size="72"/>
   <house name="Edificio um I" houseid="99" entryx="2029" entryy="1828" entryz="7" rent="4000" townid="1" size="16"/>
   <house name="Edificio um II" houseid="100" entryx="2035" entryy="1829" entryz="7" rent="4000" townid="1" size="21"/>
   <house name="Edificio um III" houseid="101" entryx="2038" entryy="1829" entryz="7" rent="3500" townid="1" size="18"/>
@@ -329,7 +329,7 @@
   <house name="Aracura Flats A-XI" houseid="379" entryx="2972" entryy="1120" entryz="4" rent="6400" townid="2" size="30"/>
   <house name="Aracura Flats A-XIII" houseid="381" entryx="2974" entryy="1118" entryz="3" rent="2400" townid="2" size="12"/>
   <house name="Aracura Flats A-XIV" houseid="382" entryx="2974" entryy="1124" entryz="3" rent="2400" townid="2" size="12"/>
-  <house name="Aracura Flats A-XV" houseid="383" entryx="2975" entryy="1121" entryz="2" rent="14000" townid="2" size="122"/>
+  <house name="Aracura Flats A-XV" houseid="383" entryx="2975" entryy="1121" entryz="2" rent="14000" townid="2" size="102"/>
   <house name="Aracura Flats B-I" houseid="384" entryx="2959" entryy="1118" entryz="7" rent="13500" townid="2" size="35"/>
   <house name="Aracura Flats B-II" houseid="385" entryx="2959" entryy="1124" entryz="7" rent="8700" townid="2" size="28"/>
   <house name="Aracura Flats B-III" houseid="386" entryx="2961" entryy="1120" entryz="6" rent="4200" townid="2" size="15"/>
@@ -343,7 +343,7 @@
   <house name="Aracura Flats B-XI" houseid="394" entryx="2958" entryy="1120" entryz="4" rent="6400" townid="2" size="30"/>
   <house name="Aracura Flats B-XIII" houseid="396" entryx="2956" entryy="1118" entryz="3" rent="2400" townid="2" size="12"/>
   <house name="Aracura Flats B-XIV" houseid="397" entryx="2956" entryy="1124" entryz="3" rent="2400" townid="2" size="12"/>
-  <house name="Aracura Flats B-XV" houseid="398" entryx="2957" entryy="1121" entryz="2" rent="14000" townid="2" size="122"/>
+  <house name="Aracura Flats B-XV" houseid="398" entryx="2957" entryy="1121" entryz="2" rent="14000" townid="2" size="102"/>
   <house name="Strong House I" houseid="399" entryx="2958" entryy="1134" entryz="7" rent="14000" townid="2" size="37"/>
   <house name="Strong House II" houseid="400" entryx="2972" entryy="1129" entryz="7" rent="20100" townid="2" size="88"/>
   <house name="Strong House III" houseid="401" entryx="2990" entryy="1153" entryz="7" rent="18000" townid="2" size="36"/>
@@ -408,7 +408,7 @@
   <house name="Central Circle 3" houseid="468" entryx="1233" entryy="2213" entryz="7" rent="3000" townid="6" size="20"/>
   <house name="Central Circle 4" houseid="469" entryx="1221" entryy="2216" entryz="7" rent="3000" townid="6" size="18"/>
   <house name="Central Circle 5" houseid="470" entryx="1221" entryy="2222" entryz="7" rent="3000" townid="6" size="16"/>
-  <house name="Central Circle 6" houseid="471" entryx="1221" entryy="2229" entryz="7" rent="3000" townid="6" size="18"/>
+  <house name="Central Circle 6" houseid="471" entryx="1221" entryy="2229" entryz="7" rent="3000" townid="6" size="20"/>
   <house name="General Depot 1" houseid="472" entryx="1254" entryy="2217" entryz="7" rent="1500" townid="6" size="16"/>
   <house name="General Depot 2" houseid="473" entryx="1260" entryy="2217" entryz="7" rent="1500" townid="6" size="32"/>
   <house name="General Depot 3" houseid="474" entryx="1266" entryy="2217" entryz="7" rent="1500" townid="6" size="16"/>
