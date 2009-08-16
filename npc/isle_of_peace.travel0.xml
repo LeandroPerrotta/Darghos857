@@ -70,7 +70,7 @@
 				selfSay("You have items in your depot of island of peace. Please send your depot itens to city you want to travel!", cid)			
 			else
 				selfSay("Okay, you are very brave! Do you want to go to {Quendor}, {Thorn}, {Aracura}, {Salazart} or {Northrend} city?", cid)
-				_state.topic = 2	
+				_state.topic = 3	
 			end
 
 			]]>
@@ -78,7 +78,7 @@
 		</response>
 	</interact>	
 		
-	<interact keywords="quendor" topic="2">	
+	<interact keywords="quendor" topic="3">	
 		<response text="Have a good luck in your new journey!">
 			<action name="idle" value="1"/>
 			<action name="teleport" value="1925;1865;6"/>
@@ -93,7 +93,7 @@
 		</response>
 	</interact>
 	
-	<interact keywords="thorn" topic="2">	
+	<interact keywords="thorn" topic="3">	
 		<response text="Have a good luck in your new journey!">
 			<action name="idle" value="1"/>
 			<action name="teleport" value="2455;1861;6"/>
@@ -108,7 +108,7 @@
 		</response>
 	</interact>		
 	
-	<interact keywords="aracura" topic="2">	
+	<interact keywords="aracura" topic="3">	
 		<response param="free" text="Only premium players can travel to this city."/>
 		
 		<response text="Have a good luck in your new journey!">
@@ -125,7 +125,7 @@
 		</response>
 	</interact>		
 
-	<interact keywords="salazart" topic="2">
+	<interact keywords="salazart" topic="3">
 		<response param="free" text="Only premium players can travel to this city."/>		
 		
 		<response text="Have a good luck in your new journey!">
@@ -142,7 +142,7 @@
 		</response>
 	</interact>		
 
-	<interact keywords="northrend" topic="2">
+	<interact keywords="northrend" topic="3">
 		<response param="free" text="Only premium players can travel to this city."/>	
 		
 		<response text="Have a good luck in your new journey!">
