@@ -46,7 +46,7 @@
 				
 			if(getPlayerLevel(cid) < 60) then
 				selfSay("I see that you are very newbie to leave from island of peace, outside there is a dark and dangerous world and leaving from island of peace is impossible to return back. Are you sure that you want to leave?", cid)
-				_state.topic = 1
+				_state.topic = 2
 			else			
 				if(getPlayerDepotItems(cid, 6) > 1) then
 					selfSay("You have items in your depot of island of peace. Please send your depot itens to city you want to travel!", cid)
