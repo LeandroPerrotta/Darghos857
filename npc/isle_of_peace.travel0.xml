@@ -47,7 +47,7 @@
 			if(getPlayerLevel(cid) < 60) then
 				selfSay("I see that you are very newbie to leave from island of peace, outside there is a dark and dangerous world and leaving from island of peace is impossible to return back. Are you sure that you want to leave?", cid)
 			else
-				selfSay("Do you want to leave of here?, cid)
+				selfSay("Do you want to leave of here?", cid)
 			end
 				_state.topic = 2
 			]]>
