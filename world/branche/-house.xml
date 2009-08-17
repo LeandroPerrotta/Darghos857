@@ -329,7 +329,7 @@
   <house name="Aracura Flats A-XI" houseid="379" entryx="2972" entryy="1120" entryz="4" rent="6400" townid="2" size="30"/>
   <house name="Aracura Flats A-XIII" houseid="381" entryx="2974" entryy="1118" entryz="3" rent="2400" townid="2" size="12"/>
   <house name="Aracura Flats A-XIV" houseid="382" entryx="2974" entryy="1124" entryz="3" rent="2400" townid="2" size="12"/>
-  <house name="Aracura Flats A-XV" houseid="383" entryx="2975" entryy="1121" entryz="2" rent="14000" townid="2" size="122"/>
+  <house name="Aracura Flats A-XV" houseid="383" entryx="2975" entryy="1121" entryz="2" rent="14000" townid="2" size="102"/>
   <house name="Aracura Flats B-I" houseid="384" entryx="2959" entryy="1118" entryz="7" rent="13500" townid="2" size="35"/>
   <house name="Aracura Flats B-II" houseid="385" entryx="2959" entryy="1124" entryz="7" rent="8700" townid="2" size="28"/>
   <house name="Aracura Flats B-III" houseid="386" entryx="2961" entryy="1120" entryz="6" rent="4200" townid="2" size="15"/>
@@ -343,7 +343,7 @@
   <house name="Aracura Flats B-XI" houseid="394" entryx="2958" entryy="1120" entryz="4" rent="6400" townid="2" size="30"/>
   <house name="Aracura Flats B-XIII" houseid="396" entryx="2956" entryy="1118" entryz="3" rent="2400" townid="2" size="12"/>
   <house name="Aracura Flats B-XIV" houseid="397" entryx="2956" entryy="1124" entryz="3" rent="2400" townid="2" size="12"/>
-  <house name="Aracura Flats B-XV" houseid="398" entryx="2957" entryy="1121" entryz="2" rent="14000" townid="2" size="122"/>
+  <house name="Aracura Flats B-XV" houseid="398" entryx="2957" entryy="1121" entryz="2" rent="14000" townid="2" size="102"/>
   <house name="Strong House I" houseid="399" entryx="2958" entryy="1134" entryz="7" rent="14000" townid="2" size="37"/>
   <house name="Strong House II" houseid="400" entryx="2972" entryy="1129" entryz="7" rent="20100" townid="2" size="88"/>
   <house name="Strong House III" houseid="401" entryx="2990" entryy="1153" entryz="7" rent="18000" townid="2" size="36"/>
@@ -408,7 +408,7 @@
   <house name="Central Circle 3" houseid="468" entryx="1233" entryy="2213" entryz="7" rent="3000" townid="6" size="20"/>
   <house name="Central Circle 4" houseid="469" entryx="1221" entryy="2216" entryz="7" rent="3000" townid="6" size="18"/>
   <house name="Central Circle 5" houseid="470" entryx="1221" entryy="2222" entryz="7" rent="3000" townid="6" size="16"/>
-  <house name="Central Circle 6" houseid="471" entryx="1221" entryy="2229" entryz="7" rent="3000" townid="6" size="18"/>
+  <house name="Central Circle 6" houseid="471" entryx="1221" entryy="2229" entryz="7" rent="3000" townid="6" size="20"/>
   <house name="General Depot 1" houseid="472" entryx="1254" entryy="2217" entryz="7" rent="1500" townid="6" size="16"/>
   <house name="General Depot 2" houseid="473" entryx="1260" entryy="2217" entryz="7" rent="1500" townid="6" size="32"/>
   <house name="General Depot 3" houseid="474" entryx="1266" entryy="2217" entryz="7" rent="1500" townid="6" size="16"/>
