@@ -22,7 +22,7 @@ function onUse(cid, item, frompos, item2, topos)
 	end
 
 	doAddCondition(cid, exhaust)
-	doCreatureSay(item2.uid, "Aaaah...", TALKTYPE_ORANGE_1) 
+	doCreatureSay(item2.uid, "Aaaah...", TALKTYPE_ORANGE_1)
 	doTransformItem(item.uid, EMPTY_POTION)
 	return TRUE
 end

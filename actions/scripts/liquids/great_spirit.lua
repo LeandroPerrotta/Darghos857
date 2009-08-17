@@ -20,7 +20,7 @@ local exhaust = createConditionObject(CONDITION_EXHAUSTED)
 setConditionParam(exhaust, CONDITION_PARAM_TICKS, getConfigInfo('exhausted'))
 
 function onUse(cid, item, frompos, item2, topos)
-	if(isPlayer(item2.uid) == FALSE) then
+	if(isPlayer(item2.uid) == FALSE)then
 		return FALSE
 	end
 	
@@ -47,7 +47,7 @@ function onUse(cid, item, frompos, item2, topos)
 	end
 
 	doAddCondition(cid, exhaust)
-	doCreatureSay(item2.uid, "Aaaah...", TALKTYPE_ORANGE_1) 
+	doCreatureSay(item2.uid, "Aaaah...", TALKTYPE_ORANGE_1)
 	doTransformItem(item.uid, EMPTY_POTION)
 	return TRUE
 end
