@@ -25,6 +25,10 @@
 
 extern Dispatcher g_dispatcher;
 
+#ifdef __ENABLE_SERVER_DIAGNOSTIC__
+uint32_t OutputMessagePool::OutputMessagePoolCount = OUTPUT_POOL_SIZE;
+#endif
+
 OutputMessage::OutputMessage()
 {
 	freeMessage();
@@ -97,8 +101,8 @@ void OutputMessagePool::sendAll()
 	OutputMessageMessageList::iterator it;
 
 	for(it = m_toAddQueue.begin(); it != m_toAddQueue.end();){
-		//drop messages that are older than 10 seconds
-		if(OTSYS_TIME() - (*it)->getFrame() > 10000){
+		//drop messages that are older than Connection::read_timeout seconds
+		if(OTSYS_TIME() - (*it)->getFrame() > Connection::read_timeout * 1000 ){
 			(*it)->getProtocol()->onSendMessage(*it);
 			it = m_toAddQueue.erase(it);
 			continue;
@@ -205,6 +209,10 @@ OutputMessage_ptr OutputMessagePool::getOutputMessage(Protocol* protocol, bool a
 		OutputMessage* msg = new OutputMessage();
 		m_outputMessages.push_back(msg);
 
+#ifdef __ENABLE_SERVER_DIAGNOSTIC__
+	OutputMessagePoolCount++;
+#endif
+
 #ifdef __TRACK_NETWORK__
 		m_allOutputMessages.push_back(msg);
 #endif
@@ -250,5 +258,7 @@ void OutputMessagePool::configureOutputMessage(OutputMessage_ptr msg, Protocol* 
 
 void OutputMessagePool::addToAutoSend(OutputMessage_ptr msg)
 {
+	m_outputPoolLock.lock();
 	m_toAddQueue.push_back(msg);
+	m_outputPoolLock.unlock();
 }

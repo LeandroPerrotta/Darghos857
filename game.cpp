@@ -89,9 +89,6 @@ Game::~Game()
 	if(map){
 		delete map;
 	}
-	g_scheduler.stopEvent(checkLightEvent);
-	g_scheduler.stopEvent(checkCreatureEvent);
-	g_scheduler.stopEvent(checkDecayEvent);
 }
 
 void Game::start(ServiceManager* servicer)
@@ -4792,7 +4789,8 @@ bool Game::playerViolationWindow(uint32_t playerId, std::string targetName, uint
 		{
 			ChannelStatementMap::iterator it = Player::channelStatementMap.find(channelId);
 			if(it != Player::channelStatementMap.end()){
-				g_bans.addPlayerStatement(guid, player->getGUID(), comment, it->second, reasonId, actionType);
+				statement = it->second;
+				g_bans.addPlayerStatement(guid, player->getGUID(), comment, statement, reasonId, actionType);
 				Player::channelStatementMap.erase(it);
 			}
 			else{
@@ -4826,7 +4824,7 @@ bool Game::playerViolationWindow(uint32_t playerId, std::string targetName, uint
 	}
 
 	if(ipBanishment && ip > 0)
-		g_bans.addIpBan(ip, -1, (time(NULL) + g_config.getNumber(ConfigManager::IPBANISHMENT_LENGTH)),
+		g_bans.addIpBan(ip, 0xFFFFFFFF, (time(NULL) + g_config.getNumber(ConfigManager::IPBANISHMENT_LENGTH)),
 			player->getGUID(), comment);
 
 	if(removeNotations > 1)
@@ -4890,7 +4888,7 @@ bool Game::playerReportBug(uint32_t playerId, std::string comment)
 		return false;
 	}
 
-	std::ofstream of("player reports.txt", std::ios_base::out | std::ios_base::app);
+	std::ofstream of("player_reports.txt", std::ios_base::out | std::ios_base::app);
 
 	if(of){
 		const Position& pos = player->getPosition();

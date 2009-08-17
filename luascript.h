@@ -46,6 +46,7 @@ class AreaCombat;
 class Combat;
 class Condition;
 class Npc;
+class Spell;
 
 enum LUA_RET_CODE{
 	LUA_NO_ERROR = 0,
@@ -125,6 +126,9 @@ public:
 	void setNpc(Npc* npc) {m_curNpc = npc;}
 	Npc* getNpc() const {return m_curNpc;}
 
+	void setSpell(Spell* spell) {m_curSpell = spell;}
+	Spell* getSpell() const {return m_curSpell;}
+
 	Thing* getThingByUID(uint32_t uid);
 	Item* getItemByUID(uint32_t uid);
 	Container* getContainerByUID(uint32_t uid);
@@ -190,6 +194,9 @@ private:
 
 	//for npc scripts
 	Npc* m_curNpc;
+
+	//for spell initialization
+	Spell* m_curSpell;
 };
 
 class Position;
@@ -214,7 +221,8 @@ enum PlayerInfo_t{
 	PlayerInfoGUID,
 	PlayerInfoPremiumDays,
 	PlayerInfoSkullType,
-	PlayerInfoSkullTicks,
+	PlayerInfoSkullEndTime,
+	PlayerInfoUnjustKills,
 	PlayerInfoBalance,
 	PlayerInfoPzLock,
 	PlayerInfoPremium,
@@ -249,8 +257,8 @@ public:
 	virtual bool initState();
 	bool reInitState();
 
-	int32_t loadFile(const std::string& file, Npc* npc = NULL);
-	int32_t loadBuffer(const std::string& text, Npc* npc /* = NULL*/);
+	int32_t loadFile(const std::string& file, bool reserveEnviroment = true);
+	int32_t loadBuffer(const std::string& text, bool reserveEnviroment = true);
 	const std::string& getFileById(int32_t scriptId);
 
 	int32_t getEvent(const std::string& eventName);
@@ -303,7 +311,7 @@ public:
 	static void popPosition(lua_State *L, Position& position, uint32_t& stackpos);
 	static uint32_t popNumber(lua_State *L);
 	static double popFloatNumber(lua_State *L);
-	static const char* popString(lua_State *L);
+	static std::string popString(lua_State *L);
 	static int32_t popCallback(lua_State *L);
 
 	static int32_t getField(lua_State *L, const char *key);
@@ -377,7 +385,8 @@ protected:
 	static int luaDoPlayerSetLossPercent(lua_State *L);
 	static int luaDoSetCreatureDropLoot(lua_State *L);
 	static int luaGetPlayerSkullType(lua_State *L);
-	static int luaGetPlayerSkullTicks(lua_State *L);
+	static int luaGetPlayerSkullEndTime(lua_State *L);
+	static int luaGetPlayerUnjustKills(lua_State *L);
 	static int luaDoSendTutorial(lua_State *L);
 	static int luaDoAddMark(lua_State *L);
 	static int luaGetTownIdByName(lua_State *L);
@@ -457,7 +466,8 @@ protected:
 	static int luaGetPlayerFlagValue(lua_State *L);
 	static int luaGetPlayerLossPercent(lua_State *L);
 	static int luaGetPlayerPremiumDays(lua_State *L);
-	static int luaGetPlayerBalance(lua_State *L);
+	static int luaGetPlayerAccountBalance(lua_State *L);
+	static int luaGetPlayerByNameWildcard(lua_State *L);
 	static int luaGetPlayerLastLogin(lua_State *L);
 	static int luaGetPlayerExperience(lua_State *L);
 
@@ -608,6 +618,8 @@ protected:
 	static int luaRegisterCreatureEvent(lua_State *L);
 	static int luaGetDataDirectory(lua_State *L);
 	static int luaDoPlayerSetRate(lua_State *L);
+	static int luaDoPlayerSetVipLimit(lua_State *L);
+	static int luaDoPlayerSetDepotLimit(lua_State *L);
 	static int luaIsPzLocked(lua_State *L);
 	static int luaDoSaveServer(lua_State *L);
 	//

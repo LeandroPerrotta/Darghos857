@@ -157,4 +157,3 @@ uninstall-local:
 	  rm -f $(DESTDIR)$(pkgdatadir)/$$f; \
 	done
 	@echo Data uninstalled
-

@@ -147,10 +147,10 @@ Tile* Map::getTile(const Position& pos)
 	return getTile(pos.x, pos.y, pos.z);
 }
 
-void Map::setTile(uint16_t x, uint16_t y, uint16_t z, Tile* newtile)
+void Map::setTile(int32_t x, int32_t y, int32_t z, Tile* newtile)
 {
-	if(z >= MAP_MAX_LAYERS) {
-		std::cout << "ERROR: Attempt to set tile on invalid Z coordinate " << int(z) << "!" << std::endl;
+	if(x < 0 || x >= 0xFFFF || y < 0 || y >= 0xFFFF || z  < 0 || z >= MAP_MAX_LAYERS){
+		std::cout << "ERROR: Attempt to set tile on invalid coordinate " << Position(x, y, z) << "!" << std::endl;
 		return;
 	}
 
@@ -547,16 +547,16 @@ bool Map::checkSightLine(const Position& fromPos, const Position& toPos) const
 	Position start = fromPos;
 	Position end = toPos;
 
-	int x, y, z;
-	int dx, dy, dz;
-	int sx, sy, sz;
-	int ey, ez;
+	int32_t x, y, z;
+	int32_t dx, dy, dz;
+	int32_t sx, sy, sz;
+	int32_t ey, ez;
 
 	dx = abs(start.x - end.x);
 	dy = abs(start.y - end.y);
 	dz = abs(start.z - end.z);
 
-	int max = dx, dir = 0;
+	int32_t max = dx, dir = 0;
 	if(dy > max){
 		max = dy;
 		dir = 1;
@@ -599,10 +599,10 @@ bool Map::checkSightLine(const Position& fromPos, const Position& toPos) const
 	y = start.y;
 	z = start.z;
 
-	int lastrx = x, lastry = y, lastrz = z;
+	int32_t lastrx = 0, lastry = 0, lastrz = 0;
 
 	for( ; x != end.x + sx; x += sx){
-		int rx, ry, rz;
+		int32_t rx, ry, rz;
 		switch(dir){
 		case 1:
 			rx = y; ry = x; rz = z;
@@ -615,8 +615,15 @@ bool Map::checkSightLine(const Position& fromPos, const Position& toPos) const
 			break;
 		}
 
-		if(!(toPos.x == rx && toPos.y == ry && toPos.z == rz) &&
-		  !(fromPos.x == rx && fromPos.y == ry && fromPos.z == rz)){
+		if(lastrx == 0 && lastry == 0 && lastrz == 0){
+			//first time initialization
+			lastrx = rx; lastry = ry; lastrz = rz;
+		}
+
+		if(	lastrz != rz ||
+			( !(toPos.x == rx && toPos.y == ry && toPos.z == rz) &&
+			  !(fromPos.x == rx && fromPos.y == ry && fromPos.z == rz) ) ){
+
 			if(lastrz != rz){
 				if(const_cast<Map*>(this)->getTile(lastrx, lastry, std::min(lastrz, rz))){
 					return false;
@@ -625,10 +632,8 @@ bool Map::checkSightLine(const Position& fromPos, const Position& toPos) const
 			lastrx = rx; lastry = ry; lastrz = rz;
 
 			const Tile* tile = const_cast<Map*>(this)->getTile(rx, ry, rz);
-			if(tile)
-			{
-				if(tile->hasProperty(BLOCKPROJECTILE))
-				{
+			if(tile){
+				if(tile->hasProperty(BLOCKPROJECTILE)){
 					return false;
 				}
 			}
@@ -646,6 +651,7 @@ bool Map::checkSightLine(const Position& fromPos, const Position& toPos) const
 
 		}
 	}
+
 	return true;
 }
 

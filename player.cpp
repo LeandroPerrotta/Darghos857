@@ -1554,6 +1554,8 @@ void Player::onCreatureAppear(const Creature* creature, bool isLogin)
 					addStamina(gain);
 				}
 			}
+
+			sendStats();
 		}
 	}
 }
@@ -2384,6 +2386,8 @@ void Player::die()
 		//and if player died out of a pvp zone
 		sendReLoginWindow();
 	}
+
+	Creature::die();
 }
 
 Item* Player::dropCorpse()
@@ -2412,7 +2416,7 @@ Item* Player::createCorpse()
 		ss << "You recognize " << getNameDescription() << ".";
 
 		DeathList killers = getKillers(0);
-		if(!killers.empty() && (*killers.begin()).isCreatureKill() ){
+		if(!killers.empty() && (*killers.begin()).isCreatureKill()){
 			ss << " " << playerSexSubjectString(getSex()) << " was killed by "
 				<< ((*killers.begin()).getKillerCreature())->getNameDescription() << ".";
 		}
@@ -3483,12 +3487,8 @@ uint64_t Player::getGainedExperience(Creature* attacker) const
 				uint32_t b = getLevel();
 				uint64_t c = getExperience();
 
-				uint64_t result = std::max((uint64_t)0, (uint64_t)std::floor( getDamageRatio(attacker) * std::max((double)0, ((double)(1 - (((double)a / b))))) * 0.05 * c ) );
-				if(g_config.getNumber(ConfigManager::RATES_FOR_PLAYER_KILLING)){
-					result = result * g_config.getNumber(ConfigManager::RATE_EXPERIENCE);
-				}
-
-				return result;
+				uint64_t result = std::max((uint64_t)0, (uint64_t)std::floor(getDamageRatio(attacker) * std::max((double)0, ((double)(1 - (((double)a / b))))) * 0.05 * c ));
+				return result * g_config.getNumber(ConfigManager::RATE_EXPERIENCE_PVP);
 		}
 	}
 
@@ -4153,7 +4153,7 @@ void Player::addUnjustifiedDead(const Player* attacked)
 	}
 
 	//day
-	int32_t unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, std::time(NULL) - 24 * 60 * 60 );
+	int32_t unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, UNJUST_KILL_PERIOD_DAY);
 	if(g_config.getNumber(ConfigManager::KILLS_PER_DAY_BLACK_SKULL) > 0 &&
 		g_config.getNumber(ConfigManager::KILLS_PER_DAY_BLACK_SKULL) <= unjustKills){
 		setSkull(SKULL_BLACK);
@@ -4165,7 +4165,7 @@ void Player::addUnjustifiedDead(const Player* attacked)
 	}
 
 	//week
-	unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, std::time(NULL) - 7 * 24 * 60 * 60 );
+	unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, UNJUST_KILL_PERIOD_WEEK);
 	if(g_config.getNumber(ConfigManager::KILLS_PER_WEEK_BLACK_SKULL) > 0 &&
 		g_config.getNumber(ConfigManager::KILLS_PER_WEEK_BLACK_SKULL) <= unjustKills){
 		setSkull(SKULL_BLACK);
@@ -4177,7 +4177,7 @@ void Player::addUnjustifiedDead(const Player* attacked)
 	}
 
 	//month
-	unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, std::time(NULL) - 30 * 24 * 60 * 60 );
+	unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, UNJUST_KILL_PERIOD_MONTH);
 	if(g_config.getNumber(ConfigManager::KILLS_PER_MONTH_BLACK_SKULL) > 0 &&
 		g_config.getNumber(ConfigManager::KILLS_PER_MONTH_BLACK_SKULL) <= unjustKills){
 		setSkull(SKULL_BLACK);

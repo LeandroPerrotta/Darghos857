@@ -650,7 +650,7 @@ bool Monsters::deserializeSpell(xmlNodePtr node, spellBlock_t& sb, const std::st
 			Condition* condition = getDamageCondition(conditionType, maxDamage, minDamage, startDamage, tickInterval);
 			combat->setCondition(condition);
 		}
-		else if(asLowerCaseString(name) == "strength"){
+		else if(asLowerCaseString(name) == "strength" || asLowerCaseString(name) == "effect"){
 			//
 		}
 		else{
@@ -1205,9 +1205,6 @@ bool Monsters::loadMonster(const std::string& file, const std::string& monster_n
 				xmlNodePtr tmpNode = p->children;
 				while(tmpNode){
 					if(xmlStrcmp(tmpNode->name, (const xmlChar*)"element") == 0){
-						//CombatType_t type = COMBAT_NONE;
-						//int32_t percent = 0;
-
 						if(readXMLInteger(tmpNode, "physicalPercent", intValue)){
 							mType->elementMap[COMBAT_PHYSICALDAMAGE] = intValue;
 						}

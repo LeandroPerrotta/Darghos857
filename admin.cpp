@@ -390,9 +390,14 @@ void ProtocolAdmin::parsePacket(NetworkMessage& msg)
 			};
 			break;
 		}
+
 		case AP_MSG_PING:
 			output->AddByte(AP_MSG_PING_OK);
 			break;
+
+		case AP_MSG_KEEP_ALIVE:
+			break;
+
 		default:
 			output->AddByte(AP_MSG_ERROR);
 			output->AddString("not known command byte");
@@ -408,13 +413,11 @@ void ProtocolAdmin::parsePacket(NetworkMessage& msg)
 void ProtocolAdmin::adminCommandOpenServer()
 {
 	g_game.setGameState(GAME_STATE_NORMAL);
+	addLogLine(this, LOGTYPE_EVENT, 1, "open server ok");
 
 	OutputMessage_ptr output = OutputMessagePool::getInstance()->getOutputMessage(this, false);
 	if(output){
 		TRACK_MESSAGE(output);
-
-		addLogLine(this, LOGTYPE_EVENT, 1, "open server ok");
-
 		output->AddByte(AP_MSG_COMMAND_OK);
 		OutputMessagePool::getInstance()->send(output);
 	}
@@ -423,6 +426,8 @@ void ProtocolAdmin::adminCommandOpenServer()
 void ProtocolAdmin::adminCommandCloseServer()
 {
 	g_game.setGameState(GAME_STATE_CLOSED);
+	addLogLine(this, LOGTYPE_EVENT, 1, "close server ok");
+
 	AutoList<Player>::listiterator it = Player::listPlayer.list.begin();
 	while(it != Player::listPlayer.list.end()){
 		if(!(*it).second->hasFlag(PlayerFlag_CanAlwaysLogin)){
@@ -433,11 +438,10 @@ void ProtocolAdmin::adminCommandCloseServer()
 			++it;
 		}
 	}
-	
+
 	OutputMessage_ptr output = OutputMessagePool::getInstance()->getOutputMessage(this, false);
 	if(output){
 		TRACK_MESSAGE(output);
-		addLogLine(this, LOGTYPE_EVENT, 1, "close server ok");
 		output->AddByte(AP_MSG_COMMAND_OK);
 		OutputMessagePool::getInstance()->send(output);
 	}
@@ -458,25 +462,15 @@ void ProtocolAdmin::adminCommandShutdownServer()
 
 void ProtocolAdmin::adminCommandPayHouses()
 {
+	Houses::getInstance().payHouses();
+	addLogLine(this, LOGTYPE_EVENT, 1, "pay houses ok");
+
 	OutputMessage_ptr output = OutputMessagePool::getInstance()->getOutputMessage(this, false);
 	if(output){
 		TRACK_MESSAGE(output);
-
-		if(Houses::getInstance().payHouses()){
-			addLogLine(this, LOGTYPE_EVENT, 1, "pay houses ok");
-
-			output->AddByte(AP_MSG_COMMAND_OK);
-		}
-		else{
-			addLogLine(this, LOGTYPE_WARNING, 1, "pay houses fail");
-
-			output->AddByte(AP_MSG_COMMAND_FAILED);
-			output->AddString(" ");
-		}
+		output->AddByte(AP_MSG_COMMAND_OK);
 		OutputMessagePool::getInstance()->send(output);
 	}
-
-	return ;
 }
 
 Item* ProtocolAdmin::createMail(const std::string xmlData, std::string& name, uint32_t& depotId)
@@ -594,13 +588,11 @@ void ProtocolAdmin::adminCommandKickPlayer(const std::string& name)
 void ProtocolAdmin::adminCommandSaveServer(bool shallow)
 {
 	g_game.saveServer(false, shallow);
+	addLogLine(this, LOGTYPE_EVENT, 1, "save server ok");
 
 	OutputMessage_ptr output = OutputMessagePool::getInstance()->getOutputMessage(this, false);
 	if(output){
 		TRACK_MESSAGE(output);
-
-		addLogLine(this, LOGTYPE_EVENT, 1, "save server ok");
-
 		output->AddByte(AP_MSG_COMMAND_OK);
 		OutputMessagePool::getInstance()->send(output);
 	}
@@ -612,13 +604,11 @@ void ProtocolAdmin::adminCommandRelationalSaveServer()
 	g_config.setString(ConfigManager::MAP_STORAGE_TYPE, "relational");
 	g_game.saveServer(false);
 	g_config.setString(ConfigManager::MAP_STORAGE_TYPE, old_type);
+	addLogLine(this, LOGTYPE_EVENT, 1, "relational save server ok");
 
 	OutputMessage_ptr output = OutputMessagePool::getInstance()->getOutputMessage(this, false);
 	if(output){
 		TRACK_MESSAGE(output);
-
-		addLogLine(this, LOGTYPE_EVENT, 1, "relational save server ok");
-
 		output->AddByte(AP_MSG_COMMAND_OK);
 		OutputMessagePool::getInstance()->send(output);
 	}
