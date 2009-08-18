@@ -400,29 +400,26 @@ function checkItemShop(cid)
 	local idFromShop = getPlayerStorageValue(cid, sid.ITEM_SHOP_ID)
 	
 	if idFromShop ~= LUA_ERROR then
-		
-		local shop_itemid = getPlayerShopItemId(idFromShop)
-		local shop_itemcount = getPlayerShopItemCount(idFromShop)
-		
-		local presentBoxShop = doPlayerAddItem(cid, 1990, 1)
-		local addContainer = doAddContainerItem(presentBoxShop, shop_itemid, shop_itemcount)
-		
-		if getItemWeight(addContainer) > getPlayerFreeCap(cid) then
-		
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You don't have capacity needed to receive the item purchased in our Item Shop. Please release " .. getItemWeight(addContainer) .. "o.z and re-log in to receive the item.")
+		if(getPlayerFreeCap(cid) > 350) then
+			local shop_itemid = getPlayerShopItemId(idFromShop)
+			local shop_itemcount = getPlayerShopItemCount(idFromShop)
+			
+			local presentBoxShop = doPlayerAddItem(cid, 1990, 1)
+			local addContainer = doAddContainerItem(presentBoxShop, shop_itemid, shop_itemcount)
+			
+				if addContainer == LUA_ERROR then
+					print("[itemshopsys] Item falhou ao ser adicionado (shopid: " .. idFromShop .. ")")
+				end
+				
+				sendEnvolveEffect(cid, CONST_ME_ENERGYHIT)
+			
+				setPlayerStorageValue(cid, sid.ITEM_SHOP_ID, -1)
+				doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You received in your inventory the item purchased in our Item Shop with success!")
+				setPlayerShopReceived(idFromShop)
+				
 		else
-		
-			if addContainer == LUA_ERROR then
-				print("[itemshopsys] Item falhou ao ser adicionado (shopid: " .. idFromShop .. ")")
-			end
-			
-			sendEnvolveEffect(cid, CONST_ME_ENERGYHIT)
-		
-			setPlayerStorageValue(cid, sid.ITEM_SHOP_ID, -1)
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You received in your inventory the item purchased in our Item Shop with success!")
-			setPlayerShopReceived(idFromShop)
-			
-		end		
+			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You don't have capacity needed to receive the item purchased in our Item Shop. Please release 350oz and re-log in to receive the item.")
+		end
 	end 
 	
 end
