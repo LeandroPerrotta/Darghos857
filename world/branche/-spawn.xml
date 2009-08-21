@@ -409,9 +409,6 @@
     <monster name="Goblin Scavenger" x="2" y="0" z="4" spawntime="60"/>
     <monster name="Goblin Assassin" x="3" y="0" z="4" spawntime="60"/>
   </spawn>
-  <spawn centerx="2042" centery="1935" centerz="4" radius="5">
-    <monster name="Dragon" x="-2" y="2" z="4" spawntime="60"/>
-  </spawn>
   <spawn centerx="2052" centery="1959" centerz="4" radius="5">
     <monster name="dragon hatchling" x="-1" y="-1" z="4" spawntime="60"/>
     <monster name="Dragon" x="2" y="0" z="4" spawntime="60"/>
@@ -926,9 +923,6 @@
   <spawn centerx="1967" centery="1928" centerz="5" radius="5">
     <monster name="Minotaur mage" x="-1" y="0" z="5" spawntime="60"/>
     <monster name="Minotaur mage" x="1" y="0" z="5" spawntime="60"/>
-  </spawn>
-  <spawn centerx="2045" centery="1935" centerz="5" radius="5">
-    <monster name="Dragon" x="1" y="0" z="5" spawntime="60"/>
   </spawn>
   <spawn centerx="2332" centery="1936" centerz="5" radius="1">
     <monster name="Dragon Lord" x="1" y="-1" z="5" spawntime="60"/>
