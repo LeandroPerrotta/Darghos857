@@ -89,11 +89,14 @@
        <response>
         <action name="script">
         <![CDATA[
-			if(getPlayerItemCount(cid,6530)) >= 1 then
+			if(getPlayerItemCount(cid,6530)) >= 1 or (getPlayerItemCount(cid,10021)) >= 1 then
 				if(doPlayerRemoveMoney(cid,10000)) == TRUE then
-					doPlayerRemoveItem(cid,6530,1)	
-					doPlayerAddItem(cid, 6132,1)
-					selfSay("Here is your new soft boots! Enjoy it.",cid)
+					if(doPlayerRemoveItem(cid,6530,1)) or (doPlayerRemoveItem(cid,10021,1)) then
+						doPlayerAddItem(cid, 6132,1)
+						selfSay("Here is your new soft boots! Enjoy it.",cid)
+					else
+						selfSay("ou dont have a worn soft boots for recharge!",cid)
+					end					
 				else
 					selfSay("You no have suficient money!",cid)
 				end
