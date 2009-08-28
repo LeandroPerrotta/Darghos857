@@ -91,7 +91,8 @@
         <![CDATA[
 			if(getPlayerItemCount(cid,6530)) >= 1 or (getPlayerItemCount(cid,10021)) >= 1 then
 				if(doPlayerRemoveMoney(cid,10000)) == TRUE then
-					if(doPlayerRemoveItem(cid,6530,1)) or (doPlayerRemoveItem(cid,10021,1)) then
+						doPlayerRemoveItem(cid,6530,1)
+						doPlayerRemoveItem(cid,10021,1)
 						doPlayerAddItem(cid, 6132,1)
 						selfSay("Here is your new soft boots! Enjoy it.",cid)
 					else
