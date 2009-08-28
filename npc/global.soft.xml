@@ -95,9 +95,6 @@
 						doPlayerRemoveItem(cid,10021,1)
 						doPlayerAddItem(cid, 6132,1)
 						selfSay("Here is your new soft boots! Enjoy it.",cid)
-					else
-						selfSay("ou dont have a worn soft boots for recharge!",cid)
-					end					
 				else
 					selfSay("You no have suficient money!",cid)
 				end
