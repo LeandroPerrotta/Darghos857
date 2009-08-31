@@ -4,7 +4,7 @@
 	registerCreatureEvent(cid, "Advance")	
 	registerCreatureEvent(cid, "Stages")
 	registerCreatureEvent(cid, "Inquisition")
-
+	
 	playerRecord()
 	runPremiumSystem(cid)
 	setRateStage(cid, getPlayerLevel(cid))
