@@ -10,5 +10,4 @@ function onKill(cid, target)
 		end
 	end
 	
-	return LUA_TRUE
 end
