@@ -12,7 +12,7 @@
 	setLoginSkillRateStages(cid)
 	--checkItemShop(cid)
 
-	if(isOfWar(cid) == TRUE)
+	if(isOfWar(cid) == TRUE) then
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Warning! Your guild is in war mode, and its very dangerous for you! Have a nice War MAN!")	
 	end
 	
