@@ -13,7 +13,7 @@
 	--checkItemShop(cid)
 
 	if(isOfWar(cid) == TRUE) then
-		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Warning! Your guild is in war mode, and its very dangerous for you! Have a nice War MAN!")	
+		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Warning! Your guild is in war mode, and its very dangerous for you! Have a nice War MAN!")
 	end
 	
 	if(getPlayerVocation(cid) <= 4) then
