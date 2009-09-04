@@ -146,6 +146,7 @@ public:
 		RATE_EXPERIENCE_PVP,
 		MIN_WAR_LEVEL,
 		ADDONS_ONLY_FOR_PREMIUM,
+		ADDONS_ONLY_FOR_PREMIUM,
 		LAST_INTEGER_CONFIG /* this must be the last one */
 	};
 
