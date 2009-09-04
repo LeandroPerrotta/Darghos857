@@ -72,6 +72,7 @@ public:
 	bool addPlayerDeath(Player* dying_player, const DeathList& dl);
 	int32_t getPlayerUnjustKillCount(const Player* player, UnjustKillPeriod_t period);
 
+    bool isOnWar(Player* attackedGuid);
 	bool getGuidByName(uint32_t& guid, std::string& name);
 	bool getAccountByName(uint32_t& acc, std::string& name);
 	bool getAccountByName(std::string& acc, std::string& name);

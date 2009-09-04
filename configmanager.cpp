@@ -181,11 +181,12 @@ bool ConfigManager::loadFile(const std::string& _filename)
 	m_confInteger[IPBANISHMENT_LENGTH] = getGlobalNumber(L, "ip_banishment_length", 86400);
 	m_confInteger[ALLOW_GAMEMASTER_MULTICLIENT] = getGlobalBoolean(L, "allow_gamemaster_multiclient", false);
 	m_confInteger[DEATH_ASSIST_COUNT] = getGlobalNumber(L, "death_assist_count", 1);
-	m_confInteger[DEFENSIVE_PZ_LOCK] = getGlobalBoolean(L, "defensive_pz_lock", false);	
+	m_confInteger[DEFENSIVE_PZ_LOCK] = getGlobalBoolean(L, "defensive_pz_lock", false);
 	m_confInteger[NPC_MAX_NONESTACKABLE_SELL_AMOUNT] = getGlobalNumber(L, "npc_max_nonestackable_sell_amount", 100);
 	m_confInteger[DISTANCE_WEAPON_INTERRUPT_SWING] = getGlobalBoolean(L, "distance_weapon_interrupt_swing", true);
 	m_confInteger[RATES_FOR_PLAYER_KILLING] = getGlobalBoolean(L, "rates_for_player_killing", false);
 	m_confInteger[RATE_EXPERIENCE_PVP] = getGlobalNumber(L, "rate_exp_pvp", 1);
+	m_confInteger[MIN_WAR_LEVEL] = getGlobalNumber(L, "min_war_level", 135);
 
 	m_confInteger[PASSWORD_TYPE] = PASSWORD_TYPE_PLAIN;
 	m_confInteger[STATUSQUERY_TIMEOUT] = getGlobalNumber(L, "statustimeout", 30 * 1000);

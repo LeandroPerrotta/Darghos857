@@ -639,6 +639,8 @@ bool IOPlayer::savePlayer(Player* player, bool shallow)
 	return transaction.commit();
 }
 
+
+
 bool IOPlayer::storeNameByGuid(Database &db, uint32_t guid)
 {
 	DBQuery query;
@@ -661,12 +663,12 @@ bool IOPlayer::storeNameByGuid(Database &db, uint32_t guid)
 bool IOPlayer::addPlayerDeath(Player* dying_player, const DeathList& dlist)
 {
 	Database* db = Database::instance();
-	
+
 	DBQuery q;
 	DBTransaction transaction(db);
 	transaction.begin();
 	std::ostringstream query;
-	
+
 	// First insert the actual death
 	{
 		DBInsert death_stmt(db);
@@ -678,7 +680,7 @@ bool IOPlayer::addPlayerDeath(Player* dying_player, const DeathList& dlist)
 		if(!death_stmt.execute())
 			return false;
 	}
-	
+
 	uint64_t death_id = db->getLastInsertedRowID();
 
 	// Then insert the killers...
@@ -696,7 +698,7 @@ bool IOPlayer::addPlayerDeath(Player* dying_player, const DeathList& dlist)
 		uint64_t kill_id = db->getLastInsertedRowID();
 
 		const DeathEntry& de = *dli;
-		
+
 		std::string name;
 		if(de.isCreatureKill()){
 			Creature* c = de.getKillerCreature();
@@ -1088,12 +1090,12 @@ void IOPlayer::updateLoginInfo(Player* player)
 {
 	Database* db = Database::instance();
 	DBQuery query;
-	
+
 	query << "UPDATE `players` SET `lastlogin` = " << player->lastLoginSaved
 			<< ", `lastip` = " << player->lastip
 			<< ", `online` = 1"
 			<< " WHERE `id` = " << player->getGUID();
-			
+
 	db->executeQuery(query.str());
 }
 
@@ -1101,11 +1103,11 @@ void IOPlayer::updateLogoutInfo(Player* player)
 {
 	Database* db = Database::instance();
 	DBQuery query;
-	
+
 	query << "UPDATE `players` SET `lastlogout` = " << player->lastLogout
 			<< ", `online` = 0"
 			<< " WHERE `id` = " << player->getGUID();
-			
+
 	db->executeQuery(query.str());
 }
 

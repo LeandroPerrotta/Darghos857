@@ -204,6 +204,10 @@ public:
 	bool isLoginAttackLocked(uint32_t attackerId) const;
 
 	virtual bool isPushable() const;
+
+
+    bool isWarPlayer() const;
+
 	virtual int getThrowRange() const {return 1;};
 	virtual bool canSeeInvisibility() const;
 	uint32_t isMuted();

@@ -630,6 +630,8 @@ protected:
 	static int luaSetPlayerShopReceived(lua_State *L);
 	#endif
 
+    static int luaisOfWar(lua_State *L);
+
 	static int internalGetPlayerInfo(lua_State *L, PlayerInfo_t info);
 
 	static const luaL_Reg luaBitReg[13];

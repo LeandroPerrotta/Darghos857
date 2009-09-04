@@ -1824,6 +1824,23 @@ void LuaScriptInterface::registerFunctions()
 	//setPlayerShopReceived(itemshopid)
 	lua_register(m_luaState, "setPlayerShopReceived", LuaScriptInterface::luaSetPlayerShopReceived);
 	#endif
+
+	//isOfWar(cid)
+	lua_register(m_luaState, "isOfWar", LuaScriptInterface::luaisOfWar);
+}
+int LuaScriptInterface::luaisOfWar(lua_State *L)
+{
+    uint32_t cid = popNumber(L);
+    ScriptEnviroment* env = getScriptEnv();
+    const Player* player = env->getPlayerByUID(cid);
+
+    if(!player->isWarPlayer()){
+        lua_pushnumber(L, LUA_FALSE);
+        return 1;
+    }
+
+    lua_pushnumber(L, LUA_TRUE);
+	return 1;
 }
 
 int LuaScriptInterface::internalGetPlayerInfo(lua_State *L, PlayerInfo_t info)

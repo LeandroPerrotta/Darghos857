@@ -237,6 +237,33 @@ uint32_t Player::getVocationId() const
 	return vocation_id;
 }
 
+bool Player::isWarPlayer() const
+{
+    uint32_t his_guild = guildId;
+    uint32_t min_war   = g_config.getNumber(ConfigManager::MIN_WAR_LEVEL);
+
+	Database* db = Database::instance();
+	DBResult* result;
+	DBQuery query;
+
+    query << "SELECT * FROM `war_system` WHERE `guild_id`= " << his_guild;
+
+    if(level < min_war){
+        return false;
+    }
+
+    if(his_guild != 0)
+    {
+    if(!(result = db->storeQuery(query.str())))
+        return false;
+
+    db->freeResult(result);
+    return true;
+    }
+
+    return false;
+}
+
 bool Player::isPushable() const
 {
 	bool ret = Creature::isPushable();
@@ -3843,7 +3870,7 @@ void Player::gainExperience(uint64_t& gainExp, bool fromMonster)
 				condition->setParam(CONDITIONPARAM_SOULTICKS, vocSoulTicks * 1000);
 				addCondition(condition);
 			}
-			
+
 			//check stamina, player rate and other values
 			getGainExperience(gainExp, fromMonster);
 
@@ -4158,7 +4185,7 @@ void Player::addUnjustifiedDead(const Player* attacked)
 		g_config.getNumber(ConfigManager::KILLS_PER_DAY_BLACK_SKULL) <= unjustKills){
 		setSkull(SKULL_BLACK);
 	}
-	else if(getSkull() != SKULL_BLACK && 
+	else if(getSkull() != SKULL_BLACK &&
 			g_config.getNumber(ConfigManager::KILLS_PER_DAY_RED_SKULL) > 0 &&
 			g_config.getNumber(ConfigManager::KILLS_PER_DAY_RED_SKULL) <= unjustKills){
 		setSkull(SKULL_RED);
@@ -4170,7 +4197,7 @@ void Player::addUnjustifiedDead(const Player* attacked)
 		g_config.getNumber(ConfigManager::KILLS_PER_WEEK_BLACK_SKULL) <= unjustKills){
 		setSkull(SKULL_BLACK);
 	}
-	else if(getSkull() != SKULL_BLACK && 
+	else if(getSkull() != SKULL_BLACK &&
 			g_config.getNumber(ConfigManager::KILLS_PER_WEEK_RED_SKULL) > 0 &&
 			g_config.getNumber(ConfigManager::KILLS_PER_WEEK_RED_SKULL) <= unjustKills){
 		setSkull(SKULL_RED);
@@ -4182,7 +4209,7 @@ void Player::addUnjustifiedDead(const Player* attacked)
 		g_config.getNumber(ConfigManager::KILLS_PER_MONTH_BLACK_SKULL) <= unjustKills){
 		setSkull(SKULL_BLACK);
 	}
-	else if(getSkull() != SKULL_BLACK && 
+	else if(getSkull() != SKULL_BLACK &&
 			g_config.getNumber(ConfigManager::KILLS_PER_MONTH_RED_SKULL) > 0 &&
 			g_config.getNumber(ConfigManager::KILLS_PER_MONTH_RED_SKULL) <= unjustKills){
 		setSkull(SKULL_RED);
