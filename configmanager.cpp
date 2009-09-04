@@ -97,6 +97,7 @@ bool ConfigManager::loadFile(const std::string& _filename)
 			std::cout << "Warning: [ConfigManager] md5passwords is deprecated. Use passwordtype instead." << std::endl;
 		}
 		m_confString[PASSWORD_TYPE_STR] = getGlobalString(L, "passwordtype");
+		m_confString[PASSWORD_SALT] = getGlobalString(L, "passwordsalt", "");
 		m_confString[WORLD_TYPE] = getGlobalString(L, "worldtype");
 		m_confString[SQL_HOST] = getGlobalString(L, "sql_host");
 		m_confString[SQL_USER] = getGlobalString(L, "sql_user");
@@ -187,6 +188,7 @@ bool ConfigManager::loadFile(const std::string& _filename)
 	m_confInteger[RATES_FOR_PLAYER_KILLING] = getGlobalBoolean(L, "rates_for_player_killing", false);
 	m_confInteger[RATE_EXPERIENCE_PVP] = getGlobalNumber(L, "rate_exp_pvp", 1);
 	m_confInteger[MIN_WAR_LEVEL] = getGlobalNumber(L, "min_war_level", 135);
+	m_confInteger[ADDONS_ONLY_FOR_PREMIUM] = getGlobalBoolean(L, "addons_only_for_premium", true);
 
 	m_confInteger[PASSWORD_TYPE] = PASSWORD_TYPE_PLAIN;
 	m_confInteger[STATUSQUERY_TIMEOUT] = getGlobalNumber(L, "statustimeout", 30 * 1000);

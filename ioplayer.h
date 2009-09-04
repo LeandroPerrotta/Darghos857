@@ -26,14 +26,6 @@
 #include "player.h"
 #include "database.h"
 
-struct PlayerGroup
-{
-	std::string name;
-	uint64_t flags;
-	uint16_t access, violation;
-	uint32_t maxDepotItems, maxVip;
-};
-
 enum UnjustKillPeriod_t{
 	UNJUST_KILL_PERIOD_DAY,
 	UNJUST_KILL_PERIOD_WEEK,
@@ -90,8 +82,6 @@ public:
 protected:
 	bool storeNameByGuid(Database &mysql, uint32_t guid);
 
-	const PlayerGroup getPlayerGroup(uint32_t groupid);
-
 	struct StringCompareCase
 	{
 		bool operator()(const std::string& l, const std::string& r) const
@@ -108,7 +98,6 @@ protected:
 
 	typedef std::map<uint32_t, std::string> NameCacheMap;
 	typedef std::map<std::string, uint32_t, StringCompareCase> GuidCacheMap;
-	typedef std::map<uint32_t, PlayerGroup> PlayerGroupMap;
 
 	struct UnjustKillBlock{
 		uint32_t dayUnjustCount;
@@ -141,7 +130,6 @@ protected:
 
 	typedef std::map<uint32_t, UnjustKillBlock > UnjustCacheMap;
 
-	PlayerGroupMap playerGroupMap;
 	NameCacheMap nameCacheMap;
 	GuidCacheMap guidCacheMap;
 	UnjustCacheMap unjustKillCacheMap;

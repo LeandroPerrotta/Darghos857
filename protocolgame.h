@@ -91,7 +91,7 @@ private:
 	void parseLogout(NetworkMessage& msg);
 	void parseCancelMove(NetworkMessage& msg);
 
-	void parseRecievePing(NetworkMessage& msg);
+	void parseReceivePing(NetworkMessage& msg);
 	void parseAutoWalk(NetworkMessage& msg);
 	void parseStopAutoWalk(NetworkMessage& msg);
 	void parseMove(NetworkMessage& msg, Direction dir);
@@ -311,14 +311,7 @@ private:
 
 	Player* player;
 
-	int64_t m_nextTask;
-	int64_t m_nextPing;
-
-	int64_t m_lastTaskCheck;
-	int32_t m_messageCount;
-	int32_t m_rejectCount;
 	uint32_t eventConnect;
-
 	bool m_debugAssertSent;
 	bool m_acceptPackets;
 };

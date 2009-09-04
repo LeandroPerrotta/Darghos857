@@ -358,6 +358,7 @@ protected:
 	static int luaDoCreatureAddHealth(lua_State *L);
 	static int luaGetCreatureLight(lua_State *L);
 	static int luaGetCreatureLookDir(lua_State *L);
+<<<<<<< .working
 
 	static int luaDoPlayerAddSkillTry(lua_State *L);
 	static int luaDoPlayerAddManaSpent(lua_State *L);
@@ -385,6 +386,36 @@ protected:
 	static int luaDoPlayerSetLossPercent(lua_State *L);
 	static int luaDoSetCreatureDropLoot(lua_State *L);
 	static int luaGetPlayerSkullType(lua_State *L);
+=======
+
+	static int luaDoPlayerAddSkillTry(lua_State *L);
+	static int luaDoPlayerAddManaSpent(lua_State *L);
+	static int luaDoPlayerAddMana(lua_State *L);
+	static int luaDoPlayerAddItem(lua_State *L);
+	static int luaDoPlayerAddItemEx(lua_State *L);
+	static int luaDoTileAddItemEx(lua_State *L);
+	static int luaAddContainerItemEx(lua_State *L);
+	static int luaDoRelocate(lua_State *L);
+	static int luaDoPlayerSendTextMessage(lua_State *L);
+	static int luaDoPlayerRemoveMoney(lua_State *L);
+	static int luaDoPlayerAddMoney(lua_State *L);
+	static int luaDoPlayerWithdrawMoney(lua_State *L);
+	static int luaDoPlayerDepositMoney(lua_State *L);
+	static int luaDoPlayerTransferMoneyTo(lua_State *L);
+	static int luaDoPlayerSetMasterPos(lua_State *L);
+	static int luaDoPlayerSetTown(lua_State *L);
+	static int luaDoPlayerSetVocation(lua_State *L);
+	static int luaDoPlayerRemoveItem(lua_State *L);
+	static int luaDoPlayerAddSoul(lua_State *L);
+	static int luaDoPlayerAddExp(lua_State *L);
+	static int luaDoPlayerRemoveExp(lua_State *L);
+	static int luaDoPlayerSetGuildRank(lua_State *L);
+	static int luaDoPlayerSetGuildNick(lua_State *L);
+	static int luaDoSetCreatureLight(lua_State *L);
+	static int luaDoPlayerSetLossPercent(lua_State *L);
+	static int luaDoSetCreatureDropLoot(lua_State *L);
+	static int luaGetPlayerSkullType(lua_State *L);
+>>>>>>> .merge-right.r4869
 	static int luaGetPlayerSkullEndTime(lua_State *L);
 	static int luaGetPlayerUnjustKills(lua_State *L);
 	static int luaDoSendTutorial(lua_State *L);

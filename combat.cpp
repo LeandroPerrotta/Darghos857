@@ -381,7 +381,8 @@ bool Combat::isUnjustKill(const Creature* attacker, const Creature* target)
 		attackerPlayer->isPartner(targetPlayer) ||
 		Combat::isInPvpZone(attackerPlayer, targetPlayer) ||
 		targetPlayer->hasAttacked(attackerPlayer) ||
-		targetPlayer->getSkull() != SKULL_NONE){
+		targetPlayer->getSkull() != SKULL_NONE ||
+		targetPlayer == attackerPlayer){
 		return false;
 	}
 
@@ -625,7 +626,11 @@ bool Combat::CombatHealthFunc(Creature* caster, Creature* target, const CombatPa
 	}
 
 	if(healthChange < 0){
+		#ifdef __SKULLSYSTEM__
 		if(caster && caster->getPlayer() && target->getPlayer() && target->getPlayer()->getSkull() != SKULL_BLACK){
+		#else
+		if(caster && caster->getPlayer() && target->getPlayer()){
+		#endif
 			healthChange = healthChange/2;
 		}
 	}
@@ -1251,9 +1256,15 @@ bool AreaCombat::getList(const Position& centerPos, const Position& targetPos, s
 		for(size_t x = 0; x < cols; ++x){
 
 			if(area->getValue(y, x) != 0){
+<<<<<<< .working
 				if(	tmpPosX >= 0 && tmpPosX < 0xFFFF &&
 					tmpPosY >= 0 && tmpPosY < 0xFFFF &&
 					tmpPosZ  >= 0 && tmpPosZ < MAP_MAX_LAYERS)
+=======
+				if(	tmpPosX >= 0 && tmpPosX < 0xFFFF &&
+					tmpPosY >= 0 && tmpPosY < 0xFFFF &&
+					tmpPosZ >= 0 && tmpPosZ < MAP_MAX_LAYERS)
+>>>>>>> .merge-right.r4869
 				{
 					if(g_game.isSightClear(targetPos, Position(tmpPosX, tmpPosY, tmpPosZ), true)){
 						tile = g_game.getTile(tmpPosX, tmpPosY, tmpPosZ);

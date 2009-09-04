@@ -225,8 +225,10 @@ int Game::loadMap(std::string filename, std::string filekind)
 	maxPlayers = g_config.getNumber(ConfigManager::MAX_PLAYERS);
 	inFightTicks = g_config.getNumber(ConfigManager::IN_FIGHT_DURATION);
 	exhaustionTicks = g_config.getNumber(ConfigManager::EXHAUSTED);
+	addExhaustionTicks = g_config.getNumber(ConfigManager::EXHAUSTED_ADD);
 	fightExhaustionTicks = g_config.getNumber(ConfigManager::COMBAT_EXHAUSTED);
 	healExhaustionTicks = g_config.getNumber(ConfigManager::HEAL_EXHAUSTED);
+	stairhopExhaustion = g_config.getNumber(ConfigManager::STAIRHOP_EXHAUSTED);
 	Player::maxMessageBuffer = g_config.getNumber(ConfigManager::MAX_MESSAGEBUFFER);
 	Monster::despawnRange = g_config.getNumber(ConfigManager::DEFAULT_DESPAWNRANGE);
 	Monster::despawnRadius = g_config.getNumber(ConfigManager::DEFAULT_DESPAWNRADIUS);
@@ -777,8 +779,7 @@ bool Game::removeCreature(Creature* creature, bool isLogout /*= true*/)
 	creature->getParent()->postRemoveNotification(creature, NULL, oldIndex, true);
 
 	listCreature.removeList(creature->getID());
-	creature->removeList();
-	creature->setRemoved();
+	creature->onRemoved();
 	FreeThing(creature);
 
 	removeCreatureCheck(creature);
@@ -1031,6 +1032,12 @@ ReturnValue Game::internalMoveCreature(Creature* creature, Cylinder* fromCylinde
 		uint32_t n = 0;
 		while((subCylinder = toCylinder->__queryDestination(index, creature, &toItem, flags)) != toCylinder){
 			toCylinder->getTile()->moveCreature(creature, subCylinder);
+
+			if(creature->getParent() != subCylinder){
+				//could happen if a script move the creature
+				break;
+			}
+
 			toCylinder = subCylinder;
 			flags = 0;
 
@@ -3014,10 +3021,6 @@ bool Game::playerPurchaseItem(uint32_t playerId, uint16_t spriteId, uint8_t coun
 		return false;
 	}
 
-	if(!player->hasShopItemForSale(it.id)){
-		return false;
-	}
-
 	uint8_t subType = 0;
 	if(it.isFluidContainer()){
 		int32_t maxFluidType = sizeof(reverseFluidMap) / sizeof(uint8_t);
@@ -3027,6 +3030,10 @@ bool Game::playerPurchaseItem(uint32_t playerId, uint16_t spriteId, uint8_t coun
 	}
 	else{
 		subType = count;
+	}
+
+	if(!player->hasShopItemForSale(it.id, subType)){
+		return false;
 	}
 
 	merchant->onPlayerTrade(player, SHOPEVENT_BUY, onBuy, it.id, subType, amount, ignoreCapacity, buyWithBackpack);
@@ -3452,16 +3459,17 @@ bool Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type,
 	if(!player || player->isRemoved())
 		return false;
 
-	uint32_t muteTime = player->isMuted();
-	if(muteTime > 0){
+	bool isMuteableChannel = g_chat.isMuteableChannel(channelId, type);
+	uint32_t muteTime = player->getMuteTime();
+
+	if(isMuteableChannel && muteTime > 0){
 		std::stringstream ss;
 		ss << "You are still muted for " << muteTime << " seconds.";
 		player->sendTextMessage(MSG_STATUS_SMALL, ss.str());
 		return false;
 	}
 
-	TalkActionResult_t result;
-	result = g_talkactions->onPlayerSpeak(player, type, text);
+	TalkActionResult_t result = g_talkactions->onPlayerSpeak(player, type, text);
 	if(result == TALKACTION_BREAK){
 		return true;
 	}
@@ -3470,11 +3478,15 @@ bool Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type,
 		return true;
 	}
 
-	if(playerSaySpell(player, type, text)){
-		return true;
+	if(isMuteableChannel || muteTime == 0){
+		if(playerSaySpell(player, type, text)){
+			return true;
+		}
 	}
 
-	player->removeMessageBuffer();
+	if(isMuteableChannel){
+		player->removeMessageBuffer();
+	}
 
 	switch(type){
 		case SPEAK_SAY:
@@ -3538,8 +3550,7 @@ bool Game::playerSayCommand(Player* player, SpeakClasses type, const std::string
 
 bool Game::playerSaySpell(Player* player, SpeakClasses type, const std::string& text)
 {
-	TalkActionResult_t result;
-	result = g_spells->playerSaySpell(player, type, text);
+	TalkActionResult_t result = g_spells->playerSaySpell(player, type, text);
 	if(result == TALKACTION_BREAK){
 		return internalCreatureSay(player, SPEAK_SAY, text);
 	}
@@ -3581,15 +3592,15 @@ bool Game::playerWhisper(Player* player, const std::string& text)
 
 bool Game::playerYell(Player* player, const std::string& text)
 {
-	int32_t addExhaustion = 0;
+	uint32_t addExhaustion = 0;
 	bool isExhausted = false;
 	if(!player->hasCondition(CONDITION_EXHAUSTED)){
-		addExhaustion = g_config.getNumber(ConfigManager::EXHAUSTED);
+		addExhaustion = getExhaustionTicks();
 		internalCreatureSay(player, SPEAK_YELL, asUpperCaseString(text));
 	}
 	else{
 		isExhausted = true;
-		addExhaustion = g_config.getNumber(ConfigManager::EXHAUSTED_ADD);
+		addExhaustion = getAddExhaustionTicks();
 		player->sendCancelMessage(RET_YOUAREEXHAUSTED);
 	}
 
@@ -3839,6 +3850,10 @@ void Game::checkCreatureAttack(uint32_t creatureId)
 
 void Game::addCreatureCheck(Creature* creature)
 {
+	if(creature->isRemoved()){
+		return;
+	}
+
 	creature->creatureCheck = true;
 
 	if(creature->checkCreatureVectorIndex >= 0){
@@ -3870,18 +3885,9 @@ void Game::checkCreatures()
 	std::vector<Creature*>::iterator it;
 
 	//add any new creatures
-	for(it = toAddCheckCreatureVector.begin(); it != toAddCheckCreatureVector.end();){
+	for(it = toAddCheckCreatureVector.begin(); it != toAddCheckCreatureVector.end(); ++it){
 		creature = (*it);
-
-		if(creature->creatureCheck){
-			checkCreatureVectors[creature->checkCreatureVectorIndex].push_back(creature);
-			++it;
-		}
-		else{
-			FreeThing(creature);
-			creature->checkCreatureVectorIndex = -1;
-			it = toAddCheckCreatureVector.erase(it);
-		}
+		checkCreatureVectors[creature->checkCreatureVectorIndex].push_back(creature);
 	}
 	toAddCheckCreatureVector.clear();
 
@@ -3894,6 +3900,7 @@ void Game::checkCreatures()
 
 	for(it = checkCreatureVector.begin(); it != checkCreatureVector.end();){
 		creature = (*it);
+
 		if(creature->creatureCheck){
 			if(creature->getHealth() > 0){
 				creature->onThink(EVENT_CREATURE_THINK_INTERVAL);
@@ -3901,13 +3908,12 @@ void Game::checkCreatures()
 			else{
 				creature->onDie();
 			}
-
 			++it;
 		}
 		else{
-			FreeThing(creature);
 			creature->checkCreatureVectorIndex = -1;
 			it = checkCreatureVector.erase(it);
+			FreeThing(creature);
 		}
 	}
 
