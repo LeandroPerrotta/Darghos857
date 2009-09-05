@@ -651,7 +651,7 @@ bool Commands::sellHouse(Creature* creature, const std::string& cmd, const std::
 		}
 
 		if(!Houses::getInstance().payRent(player, house)){
-			player->sendCancel("You have to pay the rent before selling your house and you do not have enough money.");
+			player->sendCancel("You have to pay the rent first.");
 			return false;
 		}
 
@@ -695,7 +695,6 @@ bool Commands::sellHouse(Creature* creature, const std::string& cmd, const std::
 			house->resetTransferItem();
 		}
 	}
-
 	return false;
 }
 
@@ -755,7 +754,7 @@ bool Commands::serverDiag(Creature* creature, const std::string& cmd, const std:
 	text << "--------------------\n";
 	text << "asio: " << BOOST_ASIO_VERSION << "\n";
 	text << "libxml: " << XML_DEFAULT_VERSION << "\n";
-	text << "lua: " << LUA_RELEASE << "\n";
+	text << "lua: " << LUA_VERSION << "\n";
 
 	//TODO: more information that could be useful
 

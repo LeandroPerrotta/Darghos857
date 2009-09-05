@@ -132,7 +132,6 @@ CommandLineOptions g_command_opts;
 
 bool parseCommandLine(CommandLineOptions& opts, std::vector<std::string> args);
 void mainLoader(const CommandLineOptions& command_opts, ServiceManager* servicer);
-void badAllocationHandler();
 
 #if !defined(__WINDOWS__)
 // Runfile, for running OT as daemon in the background. If the server is shutdown by internal
@@ -147,16 +146,11 @@ void closeRunfile(void)
 
 int main(int argc, char *argv[])
 {
-	// Parse any command line (and display help text)
 	if(parseCommandLine(g_command_opts, std::vector<std::string>(argv, argv + argc)) == false){
 		return 0;
 	}
 
-	// Setup bad allocation handler
-	std::set_new_handler(badAllocationHandler);
-
 #if !defined(__WINDOWS__)
-	// Create the runfile
 	if(g_command_opts.runfile != ""){
 		std::ofstream f(g_command_opts.runfile.c_str(), std::ios::trunc | std::ios::out);
 		f << getpid();
@@ -165,8 +159,6 @@ int main(int argc, char *argv[])
 	}
 #endif
 
-	// Redirect streams if we need to
-	// use shared_ptr to guarantee file closing no matter what happens
 	boost::shared_ptr<std::ofstream> logfile;
 	boost::shared_ptr<std::ofstream> errfile;
 	if(g_command_opts.logfile != ""){
@@ -189,19 +181,17 @@ int main(int argc, char *argv[])
 	}
 
 #if !defined(__WINDOWS__)
+	// TODO: find something better than this hack. :|
 	time(&start_time);
 #endif
 #ifdef __OTSERV_ALLOCATOR_STATS__
-	// This keeps track of all allocations, can be used to find memory leak
 	boost::thread(boost::bind(&allocatorStatsThread, (void*)NULL));
 #endif
 
-	// Provides stack traces when the server crashes, if compiled in.
 #if defined __EXCEPTION_TRACER__
 	ExceptionHandler mainExceptionHandler;
 	mainExceptionHandler.InstallHandler();
 #endif
-
 	std::cout << ":: " OTSERV_NAME " Version " OTSERV_VERSION << std::endl;
 	std::cout << ":: ============================================================================" << std::endl;
 	std::cout << "::" << std::endl;
@@ -378,15 +368,6 @@ bool parseCommandLine(CommandLineOptions& opts, std::vector<std::string> args)
 		++argi;
 	}
 	return true;
-}
-
-void badAllocationHandler()
-{
-	// Use functions that only use stack allocation
-	puts("Allocation failed, server out of memory.\nDecrese the size of your map or compile in 64-bit mode.");
-	char buf[1024];
-	fgets(buf, 1024, stdin);
-	exit(-1);
 }
 
 void mainLoader(const CommandLineOptions& command_opts, ServiceManager* service_manager)
@@ -568,7 +549,7 @@ void mainLoader(const CommandLineOptions& command_opts, ServiceManager* service_
 
 	// load monster data
 	filename.str("");
-	filename << g_config.getString(ConfigManager::DATA_DIRECTORY) << "monster/monsters.xml";
+	filename << g_config.getString(ConfigManager::DATA_DIRECTORY) << "monsters/monsters.xml";
 	std::cout << ":: Loading " << filename.str() << "... " << std::flush;
 	if(!g_monsters.loadFromXml(g_config.getString(ConfigManager::DATA_DIRECTORY))){
 		std::stringstream errormsg;
@@ -635,24 +616,20 @@ void mainLoader(const CommandLineOptions& command_opts, ServiceManager* service_
 	std::string passwordType = g_config.getString(ConfigManager::PASSWORD_TYPE_STR);
 	if(passwordType.empty() || asLowerCaseString(passwordType) == "plain"){
 		g_config.setNumber(ConfigManager::PASSWORD_TYPE, PASSWORD_TYPE_PLAIN);
-		std::cout << ":: Use plain passwords";
+		std::cout << ":: Use plain passwords" << std::endl;
 	}
 	else if(asLowerCaseString(passwordType) == "md5"){
 		g_config.setNumber(ConfigManager::PASSWORD_TYPE, PASSWORD_TYPE_MD5);
-		std::cout << ":: Use MD5 passwords";
+		std::cout << ":: Use MD5 passwords" << std::endl;
 	}
 	else if(asLowerCaseString(passwordType) == "sha1"){
 		g_config.setNumber(ConfigManager::PASSWORD_TYPE, PASSWORD_TYPE_SHA1);
-		std::cout << ":: Use SHA1 passwords";
+		std::cout << ":: Use SHA1 passwords" << std::endl;
 	}
 	else{
 		ErrorMessage("Unknown password type!");
 		exit(-1);
 	}
-
-	if(g_config.getString(ConfigManager::PASSWORD_SALT) != "")
-		std::cout << " [salted]";
-	std::cout << std::endl;
 
 	if(!g_game.loadMap(g_config.getString(ConfigManager::MAP_FILE),
 		g_config.getString(ConfigManager::MAP_KIND))){

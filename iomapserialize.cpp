@@ -891,11 +891,6 @@ bool IOMapSerialize::saveHouseInfo(Map* map)
 		}
 	}
 
-	query.str("DELETE FROM `house_lists`");
-	if(!db->executeQuery(query.str())) {
-		return false;
-	}
-
 	DBInsert stmt(db);
 	stmt.setQuery("INSERT INTO `house_lists` (`house_id`, `listid`, `list`) VALUES ");
 

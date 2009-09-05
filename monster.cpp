@@ -230,10 +230,9 @@ void Monster::onCreatureMove(const Creature* creature, const Tile* newTile, cons
 			if(canSeeNewPos){
 				//Turn the summon on again
 				isMasterInRange = true;
+				updateIdleStatus();
 			}
 		}
-
-		updateIdleStatus();
 
 		if(!followCreature && !isSummon()){
 			//we have no target lets try pick this one
@@ -309,10 +308,10 @@ void Monster::onCreatureFound(Creature* creature, bool pushFront /*= false*/)
 			else{
 				targetList.push_back(creature);
 			}
+
+			updateIdleStatus();
 		}
 	}
-
-	updateIdleStatus();
 }
 
 void Monster::onCreatureEnter(Creature* creature)
@@ -551,10 +550,6 @@ bool Monster::selectTarget(Creature* creature)
 
 void Monster::setIdle(bool _idle)
 {
-	if(isRemoved() || getHealth() <= 0){
-		return;
-	}
-
 	isIdle = _idle;
 
 	if(!isIdle){
@@ -562,8 +557,6 @@ void Monster::setIdle(bool _idle)
 	}
 	else{
 		onIdleStatus();
-		clearTargetList();
-		clearFriendList();
 		g_game.removeCreatureCheck(this);
 	}
 }
@@ -1205,7 +1198,7 @@ void Monster::die()
 	destroySummons();
 	clearTargetList();
 	clearFriendList();
-	onIdleStatus();
+	setIdle(true);
 	Creature::die();
 }
 

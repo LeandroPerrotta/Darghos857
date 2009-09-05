@@ -1611,9 +1611,6 @@ void Tile::updateTileFlags(Item* item, bool removed)
 		if(item->hasProperty(IMMOVABLENOFIELDBLOCKPATH)){
 			setFlag(TILESTATE_IMMOVABLENOFIELDBLOCKPATH);
 		}
-		if(item->hasProperty(BLOCKSOLID)){
-			setFlag(TILESTATE_BLOCKSOLID);
-		}
 		if(item->getTeleport()){
 			setFlag(TILESTATE_TELEPORT);
 		}
@@ -1626,11 +1623,11 @@ void Tile::updateTileFlags(Item* item, bool removed)
 		if(item->getTrashHolder()){
 			setFlag(TILESTATE_TRASHHOLDER);
 		}
+		if(item->hasProperty(BLOCKSOLID)){
+			setFlag(TILESTATE_BLOCKSOLID);
+		}
 		if(item->getBed()){
 			setFlag(TILESTATE_BED);
-		}
-		if(item->getContainer() && item->getContainer()->getDepot()){
-			setFlag(TILESTATE_DEPOT);
 		}
 	}
 	else{
@@ -1686,9 +1683,6 @@ void Tile::updateTileFlags(Item* item, bool removed)
 		}
 		if(item->getBed()){
 			resetFlag(TILESTATE_BED);
-		}
-		if(item->getContainer() && item->getContainer()->getDepot()){
-			resetFlag(TILESTATE_DEPOT);
 		}
 	}
 }
