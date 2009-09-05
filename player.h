@@ -210,7 +210,7 @@ public:
 
 	virtual int getThrowRange() const {return 1;};
 	virtual bool canSeeInvisibility() const;
-	uint32_t isMuted();
+	uint32_t getMuteTime();
 	void addMessageBuffer();
 	void removeMessageBuffer();
 
@@ -269,6 +269,8 @@ public:
 
 	Depot* getDepot(uint32_t depotId, bool autoCreateDepot);
 	bool addDepot(Depot* depot, uint32_t depotId);
+	void onReceiveMail(uint32_t depotId);
+	bool isNearDepotBox(uint32_t depotId);
 
 	virtual bool canSee(const Position& pos) const;
 	virtual bool canSeeCreature(const Creature* creature) const;
@@ -570,7 +572,6 @@ public:
 	void sendIcons() const;
 	void sendMagicEffect(const Position& pos, unsigned char type) const
 		{if(client) client->sendMagicEffect(pos,type);}
-	void sendPing(uint32_t interval);
 	void sendStats();
 	void sendSkills() const
 		{if(client) client->sendSkills();}
@@ -623,7 +624,7 @@ public:
 	void sendAddMarker(const Position& pos, uint8_t markType, const std::string& desc)
 		{if (client) client->sendAddMarker(pos, markType, desc);}
 
-	void receivePing() {if(npings > 0) npings--;}
+	void receivePing() {last_pong = OTSYS_TIME();}
 
 	virtual void onThink(uint32_t interval);
 	virtual void onAttacking(uint32_t interval);
@@ -648,7 +649,7 @@ public:
 	void openShopWindow(const std::list<ShopInfo>& shop);
 	void closeShopWindow();
 	void updateSaleShopList(uint32_t itemId);
-	bool hasShopItemForSale(uint32_t itemId);
+	bool hasShopItemForSale(uint32_t itemId, uint8_t subType);
 
 	VIPListSet VIPList;
 	uint32_t maxVipLimit;
@@ -675,6 +676,7 @@ protected:
 	std::string getSkillName(int skillid);
 	void gainExperience(uint64_t& gainExp, bool fromMonster);
 	void addExperience(uint64_t exp);
+	void removeExperience(uint64_t exp, bool updateStats = true);
 
 	void updateInventoryWeight();
 
@@ -750,8 +752,8 @@ protected:
 	double inventoryWeight;
 	double capacity;
 
-	uint32_t internal_ping;
-	uint32_t npings;
+	int64_t last_ping;
+	int64_t last_pong;
 	int64_t nextAction;
 
 	bool pzLocked;

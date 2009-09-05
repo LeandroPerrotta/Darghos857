@@ -55,6 +55,7 @@ public:
 		IP,
 		MOTD,
 		PASSWORD_TYPE_STR,
+		PASSWORD_SALT,
 		WORLD_TYPE,
 		SQL_HOST,
 		SQL_USER,
@@ -144,6 +145,7 @@ public:
 		RATES_FOR_PLAYER_KILLING,
 		RATE_EXPERIENCE_PVP,
 		MIN_WAR_LEVEL,
+		ADDONS_ONLY_FOR_PREMIUM,
 		LAST_INTEGER_CONFIG /* this must be the last one */
 	};
 

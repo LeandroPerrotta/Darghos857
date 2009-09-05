@@ -487,6 +487,8 @@ ResponseList Npc::loadInteraction(xmlNodePtr node)
 								continue;
 							}
 
+							const ItemType& it = Item::items[li.itemId];
+
 							if(readXMLInteger(tmpNode, "sellprice", intValue)){
 								li.sellPrice = intValue;
 							}
@@ -507,6 +509,17 @@ ResponseList Npc::loadInteraction(xmlNodePtr node)
 							//optional
 							if(readXMLInteger(tmpNode, "subtype", intValue)){
 								li.subType = intValue;
+							}
+							else{
+								if(it.isRune()){
+									li.subType = it.charges;
+								}
+								else if(it.stackable){
+									li.subType = 1;
+								}
+								else if(it.isFluidContainer() || it.isSplash()){
+									li.subType = 0;
+								}
 							}
 
 							if(readXMLString(tmpNode, "name", strValue)){
@@ -547,55 +560,55 @@ ResponseList Npc::loadInteraction(xmlNodePtr node)
 			}
 		}
 		else if(xmlStrcmp(node->name, (const xmlChar*)"interact") == 0){
-			NpcResponse::ResponseProperties prop;
-			prop.publicize = defaultPublic;
+			NpcResponse::ResponseProperties iprop;
+			iprop.publicize = defaultPublic;
 
 			if(readXMLString(node, "keywords", strValue)){
-				prop.inputList.push_back(asLowerCaseString(strValue));
+				iprop.inputList.push_back(asLowerCaseString(strValue));
 			}
 
-			prop.eventType = EVENT_NONE;
+			iprop.eventType = EVENT_NONE;
 
 			if(readXMLString(node, "event", strValue)){
 				strValue = asLowerCaseString(strValue);
 				if(strValue == "onbusy"){
 					hasBusyReply = true;
-					prop.eventType = EVENT_BUSY;
+					iprop.eventType = EVENT_BUSY;
 				}
 				else if(strValue == "onthink"){
-					prop.eventType = EVENT_THINK;
+					iprop.eventType = EVENT_THINK;
 				}
 				else if(strValue == "onidle"){
 					if(readXMLInteger(node, "time", intValue)){
-						prop.time = intValue;
+						iprop.time = intValue;
 					}
 					else{
 						std::cout << "Warning: [Npc::loadInteraction] Missing time attribute for onidle event" << std::endl;
 					}
 
 					if(readXMLInteger(node, "singleevent", intValue)){
-						prop.singleEvent = (intValue == 1);
+						iprop.singleEvent = (intValue == 1);
 					}
 
-					prop.eventType = EVENT_IDLE;
+					iprop.eventType = EVENT_IDLE;
 				}
 				else if(strValue == "onplayerenter"){
-					prop.eventType = EVENT_PLAYER_ENTER;
+					iprop.eventType = EVENT_PLAYER_ENTER;
 				}
 				else if(strValue == "onplayermove"){
-					prop.eventType = EVENT_PLAYER_MOVE;
+					iprop.eventType = EVENT_PLAYER_MOVE;
 				}
 				else if(strValue == "onplayerleave"){
-					prop.eventType = EVENT_PLAYER_LEAVE;
+					iprop.eventType = EVENT_PLAYER_LEAVE;
 				}
 				else if(strValue == "onplayershopsell"){
-					prop.eventType = EVENT_PLAYER_SHOPSELL;
+					iprop.eventType = EVENT_PLAYER_SHOPSELL;
 				}
 				else if(strValue == "onplayershopbuy"){
-					prop.eventType = EVENT_PLAYER_SHOPBUY;
+					iprop.eventType = EVENT_PLAYER_SHOPBUY;
 				}
 				else if(strValue == "onplayershopclose"){
-					prop.eventType = EVENT_PLAYER_SHOPCLOSE;
+					iprop.eventType = EVENT_PLAYER_SHOPCLOSE;
 				}
 				else{
 					std::cout << "Warning: [Npc::loadInteraction] Invalid event type -" << strValue << std::endl;
@@ -607,39 +620,39 @@ ResponseList Npc::loadInteraction(xmlNodePtr node)
 					std::cout << "Warning: [Npc::loadInteraction] Invalid topic value -" << intValue << std::endl;
 				}
 
-				prop.topic = intValue;
+				iprop.topic = intValue;
 			}
 			else if(readXMLInteger(node, "nottopic", intValue)){
-				prop.topic = intValue;
-				prop.params |= RESPOND_NOTTOPIC;
+				iprop.topic = intValue;
+				iprop.params |= RESPOND_NOTTOPIC;
 			}
 
 			if(readXMLInteger(node, "focus", intValue)){
-				prop.focusStatus = intValue;
+				iprop.focusStatus = intValue;
 			}
 
 			if(readXMLInteger(node, "haveitem", intValue)){
-				prop.haveItemId = intValue;
+				iprop.haveItemId = intValue;
 			}
 
 			if(readXMLInteger(node, "donthaveitem", intValue)){
-				prop.dontHaveItemId = intValue;
+				iprop.dontHaveItemId = intValue;
 			}
 
 			if(readXMLInteger(node, "lowlevel", intValue)){
-				prop.params |= RESPOND_LOWLEVEL;
-				prop.level = intValue;
+				iprop.params |= RESPOND_LOWLEVEL;
+				iprop.level = intValue;
 			}
 			else if(readXMLInteger(node, "highlevel", intValue)){
-				prop.params |= RESPOND_HIGHLEVEL;
-				prop.level = intValue;
+				iprop.params |= RESPOND_HIGHLEVEL;
+				iprop.level = intValue;
 			}
 
 			uint32_t interactParams = loadParams(node);
 
 			StorageCondition sc = loadStorageCondition(node);
 			if(sc.id != -1)
-				prop.storageConditions.push_back(sc);
+				iprop.storageConditions.push_back(sc);
 
 			xmlNodePtr tmpNode = node->children;
 			while(tmpNode){
@@ -649,7 +662,7 @@ ResponseList Npc::loadInteraction(xmlNodePtr node)
 					while(altKeyNode){
 						if(xmlStrcmp(altKeyNode->name, (const xmlChar*)"text") == 0){
 							if(readXMLContentString(altKeyNode, strValue)){
-								prop.inputList.push_back(asLowerCaseString(strValue));
+								iprop.inputList.push_back(asLowerCaseString(strValue));
 							}
 						}
 
@@ -659,7 +672,7 @@ ResponseList Npc::loadInteraction(xmlNodePtr node)
 				else if(xmlStrcmp(tmpNode->name, (const xmlChar*)"storage") == 0){
 					StorageCondition sc = loadStorageCondition(tmpNode);
 					if(sc.id != -1)
-						prop.storageConditions.push_back(sc);
+						iprop.storageConditions.push_back(sc);
 				}
 				else if(xmlStrcmp(tmpNode->name, (const xmlChar*)"list") == 0){
 					xmlNodePtr listNode = tmpNode->children;
@@ -668,7 +681,7 @@ ResponseList Npc::loadInteraction(xmlNodePtr node)
 							if(readXMLContentString(listNode, strValue)){
 								ItemListMap::iterator it = itemListMap.find(strValue);
 								if(it != itemListMap.end()){
-									prop.itemList.insert(prop.itemList.end(), it->second.begin(), it->second.end());
+									iprop.itemList.insert(iprop.itemList.end(), it->second.begin(), it->second.end());
 								}
 								else{
 									std::cout << "Warning: [Npc::loadInteraction] Could not find a list id called " << strValue << std::endl;
@@ -686,9 +699,9 @@ ResponseList Npc::loadInteraction(xmlNodePtr node)
 			tmpNode = node->children;
 			while(tmpNode){
 				if(xmlStrcmp(tmpNode->name, (const xmlChar*)"response") == 0){
+					//copy the properties from the interaction
+					NpcResponse::ResponseProperties prop = iprop;
 
-					prop.output = "";
-					prop.knowSpell = "";
 					prop.params = interactParams | loadParams(tmpNode);
 					ScriptVars scriptVars;
 
@@ -2051,11 +2064,17 @@ uint32_t Npc::getListItemPrice(uint16_t itemId, ShopEvent_t type)
 void Npc::onPlayerTrade(Player* player, ShopEvent_t type, int32_t callback, uint16_t itemId,
 		uint8_t count, uint8_t amount, bool ignoreCapacity, bool buyWithBackpack)
 {
+	int8_t subType = -1;
+	const ItemType& it = Item::items[itemId];
+	if(it.hasSubType() && !it.stackable){
+		subType = count;
+	}
+
 	if(type == SHOPEVENT_BUY){
 		NpcState* npcState = getState(player, true);
 		if(npcState){
 			npcState->amount = amount;
-			npcState->subType = count;
+			npcState->subType = subType;
 			npcState->itemId = itemId;
 			npcState->buyPrice = getListItemPrice(itemId, SHOPEVENT_BUY);
 			npcState->ignoreCapacity = ignoreCapacity;
@@ -2068,7 +2087,7 @@ void Npc::onPlayerTrade(Player* player, ShopEvent_t type, int32_t callback, uint
 		NpcState* npcState = getState(player, true);
 		if(npcState){
 			npcState->amount = amount;
-			npcState->subType = count;
+			npcState->subType = subType;
 			npcState->itemId = itemId;
 			npcState->sellPrice = getListItemPrice(itemId, SHOPEVENT_SELL);
 			const NpcResponse* response = getResponse(player, npcState, EVENT_PLAYER_SHOPSELL, false);

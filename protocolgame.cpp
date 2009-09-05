@@ -74,7 +74,6 @@ ProtocolGame::ProtocolGame(Connection_ptr connection) :
 	Protocol(connection)
 {
 	player = NULL;
-	m_nextPing = 0;
 	m_debugAssertSent = false;
 	m_acceptPackets = false;
 	eventConnect = 0;
@@ -355,7 +354,7 @@ bool ProtocolGame::parseFirstPacket(NetworkMessage& msg)
 	}
 
 	std::string acc_pass;
-	if(!(IOAccount::instance()->getPassword(accname, name, acc_pass) && passwordTest(password,acc_pass))){
+	if(!(IOAccount::instance()->getPassword(accname, name, acc_pass) && passwordTest(password, acc_pass))){
 		g_bans.addLoginAttempt(getIP(), false);
 		getConnection()->closeConnection();
 		return false;
@@ -435,7 +434,7 @@ void ProtocolGame::parsePacket(NetworkMessage &msg)
 		break;
 
 	case 0x1E: // keep alive / ping response
-		parseRecievePing(msg);
+		parseReceivePing(msg);
 		break;
 
 	case 0x64: // move with steps
@@ -1004,15 +1003,10 @@ void ProtocolGame::parseDebug(NetworkMessage& msg)
 	}
 }
 
-void ProtocolGame::parseRecievePing(NetworkMessage& msg)
+void ProtocolGame::parseReceivePing(NetworkMessage& msg)
 {
-	int64_t now = OTSYS_TIME();
-	if(now > m_nextPing){
-		g_dispatcher.addTask(
-			createTask(boost::bind(&Game::playerReceivePing, &g_game, player->getID())));
-
-		m_nextPing = now + 2000;
-	}
+	g_dispatcher.addTask(
+		createTask(boost::bind(&Game::playerReceivePing, &g_game, player->getID())));
 }
 
 void ProtocolGame::parseAutoWalk(NetworkMessage& msg)
@@ -1747,7 +1741,12 @@ void ProtocolGame::sendSaleItemList(const std::list<ShopInfo>& shop)
 			for(std::list<ShopInfo>::const_iterator it = shop.begin(); it != shop.end(); ++it){
 				const ShopInfo& sInfo = *it;
 				if(sInfo.sellPrice > 0){
-					int8_t subtype = (sInfo.subType == 0 ? -1 :sInfo.subType);
+					int8_t subtype = -1;
+					const ItemType& it = Item::items[sInfo.itemId];
+					if(it.hasSubType() && !it.stackable){
+						subtype = (sInfo.subType == 0 ? -1 :sInfo.subType);
+					}
+
 					uint32_t count = player->__getItemTypeCount(sInfo.itemId, subtype);
 					if(count > 0){
 						saleMap[sInfo.itemId] = count;
@@ -1768,7 +1767,12 @@ void ProtocolGame::sendSaleItemList(const std::list<ShopInfo>& shop)
 			for(std::list<ShopInfo>::const_iterator it = shop.begin(); it != shop.end(); ++it){
 				const ShopInfo& sInfo = *it;
 				if(sInfo.sellPrice > 0){
-					int8_t subtype = (sInfo.subType == 0 ? -1 :sInfo.subType);
+					int8_t subtype = -1;
+					const ItemType& it = Item::items[sInfo.itemId];
+					if(it.hasSubType() && !it.stackable){
+						subtype = (sInfo.subType == 0 ? -1 :sInfo.subType);
+					}
+
 					if(subtype != -1){
 						// This shop item requires extra checks
 						uint32_t count = player->__getItemTypeCount(sInfo.itemId, subtype);
@@ -2421,7 +2425,12 @@ void ProtocolGame::sendOutfitWindow()
  			for(it = outfitList.begin(); it != outfitList.end() && (counter < MAX_NUMBER_OF_OUTFITS); ++it, ++counter){
  				msg->AddU16(it->lookType);
 				msg->AddString(it->name);
- 				msg->AddByte(it->addons);
+				if(g_config.getNumber(ConfigManager::ADDONS_ONLY_FOR_PREMIUM) && !player->isPremium()){
+ 					msg->AddByte(0);
+				}
+				else{
+					msg->AddByte(it->addons);
+				}
  			}
 		}
 		else{
@@ -2926,7 +2935,7 @@ void ProtocolGame::AddShopItem(NetworkMessage_ptr msg, const ShopInfo item)
 		msg->AddByte(1);
 	}
 
-	msg->AddString(Item::getDescription(it, -1, NULL, item.subType, false));
+	msg->AddString(it.name);
 	msg->AddU32((uint32_t)(it.weight*100));
 	msg->AddU32(item.buyPrice);
 	msg->AddU32(item.sellPrice);
