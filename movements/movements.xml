@@ -66,7 +66,7 @@
 		<movevent event="StepIn" itemid="1387" script="game/citizen.lua"/>		
 		
 
-	<!-- You should not be able to walk thru quest chests -->
+	<!-- You should not be able to walk through quest chests -->
 
 	<moveevent event="StepIn" itemid="1738" script="quest_chest_walk.lua"/>
 	<moveevent event="StepIn" itemid="1740" script="quest_chest_walk.lua"/>
