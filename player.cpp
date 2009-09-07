@@ -3791,15 +3791,19 @@ void Player::onAttackedCreature(Creature* target)
 					addAttacked(targetPlayer);
 
 					if(targetPlayer->getSkull() == SKULL_NONE && getSkull() == SKULL_NONE){
-						//add a white skull
-						setSkull(SKULL_WHITE);
-						g_game.updateCreatureSkull(this);
+						if(!(targetPlayer->isWarPlayer() && isWarPlayer())){
+                            //add a white skull
+                            setSkull(SKULL_WHITE);
+                            g_game.updateCreatureSkull(this);
+						}
 					}
 
 
 					if(getSkull() == SKULL_NONE){
+                        if(!(targetPlayer->isWarPlayer() && isWarPlayer())){
 						//yellow skull
 						targetPlayer->sendCreatureSkull(this);
+                        }
 					}
 				}
 #endif

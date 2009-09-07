@@ -115,7 +115,7 @@ void OutputMessagePool::sendAll()
 
 	m_toAddQueue.clear();
 
-	for(it = m_autoSendOutputMessages.begin(); it != m_autoSendOutputMessages.end()){
+	for(it = m_autoSendOutputMessages.begin(); it != m_autoSendOutputMessages.end();){
 		OutputMessage_ptr omsg = *it;
 		#ifdef __NO_PLAYER_SENDBUFFER__
 		//use this define only for debugging
@@ -183,7 +183,7 @@ void OutputMessagePool::internalReleaseMessage(OutputMessage* msg)
 #ifdef __TRACK_NETWORK__
 	msg->clearTrack();
 #endif
-	
+
 	m_outputPoolLock.lock();
 	m_outputMessages.push_back(msg);
 	m_outputPoolLock.unlock();
