@@ -1,5 +1,5 @@
 function onStepIn(cid, item, position, fromPosition)
-	if(isPlayer(cid)) then
+	if(isPlayer(cid) == TRUE) then
 		if item.actionid == aid.POI_VERIFY_1 then
 			if getPlayerStorageValue(cid, sid.POI_TRONE_1) == 1 then
 				return TRUE

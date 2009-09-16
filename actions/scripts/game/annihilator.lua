@@ -96,6 +96,38 @@ function anihi_timmer()
 
 			setGlobalStorageValue(gid.ANIHI_TIMER,0)
 			
+			local POSITIONS = {
+				getThingPos(uid.ANIHI_DEMON1),
+				getThingPos(uid.ANIHI_DEMON2),
+				getThingPos(uid.ANIHI_DEMON3),
+				getThingPos(uid.ANIHI_DEMON4),
+				getThingPos(uid.ANIHI_DEMON5),
+				getThingPos(uid.ANIHI_DEMON6),
+				getThingPos(uid.ANIHI_NPOS1),
+				getThingPos(uid.ANIHI_NPOS2),
+				getThingPos(uid.ANIHI_NPOS3),
+				getThingPos(uid.ANIHI_NPOS4)								
+			}
+			
+			local i = 0
+			
+			while(i <= 9) do
+			
+				local objectPosition = POSITIONS[i]
+				
+				objectPosition.stackpos = 253
+				
+				local theThingOfPos = getThingfromPos(objectPosition)
+				
+				if(isMonster(theThingOfPos) == TRUE --[[or  isPlayer(theThingOfPos) == TRUE ]]) then
+				
+					doRemoveCreature(theThingOfPos.uid)	
+				end
+				
+				i = i + 1
+			end
+			
+			--[[
 			demon_1		= getThingPos(uid.ANIHI_DEMON1)
 			demon_1.stackpos = 253
 			demon_2		= getThingPos(uid.ANIHI_DEMON2)
@@ -140,5 +172,5 @@ function anihi_timmer()
 			doRemoveCreature(player_pos2.uid)
 			doRemoveCreature(player_pos3.uid)
 			doRemoveCreature(player_pos4.uid)
-
-end
+			]]
+end 
