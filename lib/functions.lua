@@ -349,7 +349,7 @@ function runPremiumSystem(cid)
 			setPlayerStorageValue(cid, sid.PREMMY_VERIFY,1)
 			doSendMagicEffect(getPlayerPosition(cid),11)
 			
-			print("[premiumsystem] Configurou o Premium Status no Storage Value (Player:"..name..")")
+			--print("[premiumsystem] Configurou o Premium Status no Storage Value (Player:"..name..")")
 		end
 	else
 	
@@ -419,6 +419,7 @@ function checkItemShop(cid)
 				
 		else
 			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You don't have capacity needed to receive the item purchased in our Item Shop. Please release 350oz and re-log in to receive the item.")
+			--print("[itemshopsys] Nao possui cap sulficiente (shopid: " .. idFromShop .. ")")
 		end
 	end 
 	

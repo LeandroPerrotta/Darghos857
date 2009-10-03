@@ -96,7 +96,7 @@ function anihi_timmer()
 
 			setGlobalStorageValue(gid.ANIHI_TIMER,0)
 			
-			local POSITIONS = {
+			--[[ local POSITIONS = {
 				getThingPos(uid.ANIHI_DEMON1),
 				getThingPos(uid.ANIHI_DEMON2),
 				getThingPos(uid.ANIHI_DEMON3),
@@ -110,6 +110,7 @@ function anihi_timmer()
 			}
 			
 			local i = 0
+			local removeds = 0
 			
 			while(i <= 9) do
 			
@@ -119,15 +120,17 @@ function anihi_timmer()
 				
 				local theThingOfPos = getThingfromPos(objectPosition)
 				
-				if(isMonster(theThingOfPos) == TRUE --[[or  isPlayer(theThingOfPos) == TRUE ]]) then
+				if(isMonster(theThingOfPos) == TRUE) then
 				
 					doRemoveCreature(theThingOfPos.uid)	
+					removeds = removeds + 1
 				end
 				
 				i = i + 1
-			end
+			end 
 			
-			--[[
+			print("[annihilator] Demons removidos: " .. removeds .. ".") ]]--
+			
 			demon_1		= getThingPos(uid.ANIHI_DEMON1)
 			demon_1.stackpos = 253
 			demon_2		= getThingPos(uid.ANIHI_DEMON2)
@@ -162,15 +165,43 @@ function anihi_timmer()
 			demon5 		= getThingfromPos(demon_5)
 			demon6 		= getThingfromPos(demon_6)
 				
-			doRemoveCreature(demon1.uid)
-			doRemoveCreature(demon2.uid)
-			doRemoveCreature(demon3.uid)
-			doRemoveCreature(demon4.uid)
-			doRemoveCreature(demon5.uid)
-			doRemoveCreature(demon6.uid)
-			doRemoveCreature(player_pos1.uid)
-			doRemoveCreature(player_pos2.uid)
-			doRemoveCreature(player_pos3.uid)
-			doRemoveCreature(player_pos4.uid)
-			]]
+			if(demon1.type == 2) then	
+				doRemoveCreature(demon1.uid)
+			end
+				
+			if(demon2.type == 2) then	
+				doRemoveCreature(demon2.uid)
+			end		
+			
+			if(demon3.type == 2) then	
+				doRemoveCreature(demon3.uid)
+			end		
+			
+			if(demon4.type == 2) then	
+				doRemoveCreature(demon4.uid)
+			end		
+			
+			if(demon5.type == 2) then	
+				doRemoveCreature(demon5.uid)
+			end	
+			
+			if(demon6.type == 2) then	
+				doRemoveCreature(demon6.uid)
+			end
+			
+			if(player_pos1.type == 2) then	
+				doRemoveCreature(player_pos1.uid)
+			end
+			
+			if(player_pos2.type == 2) then	
+				doRemoveCreature(player_pos2.uid)
+			end
+			
+			if(player_pos3.type == 2) then	
+				doRemoveCreature(player_pos3.uid)
+			end
+			
+			if(player_pos4.type == 2) then	
+				doRemoveCreature(player_pos4.uid)
+			end
 end 

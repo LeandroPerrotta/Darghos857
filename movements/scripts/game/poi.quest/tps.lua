@@ -43,17 +43,21 @@ function onStepIn(cid, item, position, fromPosition)
 	
 	
 	if item.actionid == aid.POI_MWALL_GO then
-		if getPlayerItemCount(cid, 1970) >= 1 then
-			doTeleportThing(cid, getThingPos(uid.POI_MWALL_BACK))
-			doSendMagicEffect(getPlayerPosition(cid), 5)
-		else
-			doTeleportThing(cid, getThingPos(uid.POI_MWALL_GO))
-			doSendMagicEffect(getPlayerPosition(cid), 14)
+		if(isPlayer(cid) == TRUE) then
+			if getPlayerItemCount(cid, 1970) >= 1 then
+				doTeleportThing(cid, getThingPos(uid.POI_MWALL_BACK))
+				doSendMagicEffect(getPlayerPosition(cid), 5)
+			else
+				doTeleportThing(cid, getThingPos(uid.POI_MWALL_GO))
+				doSendMagicEffect(getPlayerPosition(cid), 14)
+			end
 		end
 	end
 	
 	if item.actionid == aid.POI_MWALL_BACK then
-		doTeleportThing(cid, getThingPos(uid.POI_MWALL_GO))
-		doSendMagicEffect(getPlayerPosition(cid), 14)
+		if(isPlayer(cid) == TRUE) then
+			doTeleportThing(cid, getThingPos(uid.POI_MWALL_GO))
+			doSendMagicEffect(getPlayerPosition(cid), 14)
+		end
 	end
 end
