@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Clyde" script="Sell/food.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="128" head="0" body="58" legs="20" feet="39" addons="2"/>
+	<parameters>
+		    <parameter key="message_greet" value="Some fruits?" />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="quest;help;item;food;fruit" />
+		<parameter key="keyword_reply1" value="Ehh, fruits?" />
+		<parameter key="keyword_reply2" value="I am selling the most delicious fruits in those lands!" />
+		<parameter key="keyword_reply3" value="What fruit would you like to buy? Cherrys, apples, pears or bananas?" />
+		<parameter key="keyword_reply4" value="What fruit would you like to buy? Cherrys, apples, pears or bananas?" />
+		<parameter key="keyword_reply5" value="What fruit would you like to buy? Cherrys, apples, pears or bananas?" />
+	</parameters>
+</npc>

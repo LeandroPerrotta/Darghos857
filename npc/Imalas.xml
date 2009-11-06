@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Imalas" script="Sell/food.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="128" head="115" body="10" legs="39" feet="114" addons="0"/>
+    <parameters>
+        <parameter key="message_greet" value="Hello |PLAYERNAME|! What do you need? If it's {food}, you've come to the right place."/>
+        <parameter key="message_farewell" value="Good bye."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="job;" />
+        <parameter key="keyword_reply1" value="I'm a shopkeeper. You can buy food here." />
+    </parameters>
+</npc>

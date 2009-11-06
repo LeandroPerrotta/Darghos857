@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Quero" script="default.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="128" head="55" body="30" legs="23" feet="115" addons="0"/>
+    <parameters>
+        <parameter key="message_greet" value="Welcome |PLAYERNAME|! Can I help you? I'm selling {instruments}."/>
+        <parameter key="message_farewell" value="Good bye."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="instruments;job;" />
+        <parameter key="keyword_reply1" value="You can buy a lyre, lute, drum, and simple fanfare. If you'd like to see my offers, ask me for a {trade}." />
+        <parameter key="keyword_reply2" value="I make instruments and sometimes I'm wandering through the lands of Tibia as a bard." />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="drum,2073,140;lute,2072,195;lyre,2071,120;simple fanfare,2075,150;" />
+        <parameter key="shop_sellable" value="" />
+    </parameters>
+</npc>

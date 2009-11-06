@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Paige" script="Sell/food.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="148" head="113" body="19" legs="60" feet="58"/>
+	<parameters>
+		    <parameter key="message_greet" value="Ahh, a visitor!" />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="quest;help;item;food" />
+		<parameter key="keyword_reply1" value="Im not the right person to talk to." />
+		<parameter key="keyword_reply2" value="You must be hungry, as you can see I have food for you." />
+		<parameter key="keyword_reply3" value="I got loads for sale! Meat, ham, bananas or maybe white mushrooms? Anything?" />
+		<parameter key="keyword_reply4" value="I got loads for sale! Meat, ham, bananas or maybe white mushrooms? Anything?" />
+	</parameters>
+</npc>

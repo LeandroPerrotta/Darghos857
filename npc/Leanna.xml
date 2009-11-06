@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Leanna" script="default.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="138" head="59" body="95" legs="94" feet="113" addons="0"/>
+    <parameters>
+        <parameter key="message_greet" value="Greetings, |PLAYERNAME|."/>
+        <parameter key="message_farewell" value="Take care on your journeys."/>
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_sellable" value="" />
+        <parameter key="shop_buyable" value="" />
+    </parameters>
+</npc>

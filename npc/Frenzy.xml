@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Frenzy" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="142" head="58" body="69" legs="50" feet="58" addons="1"/>
+	<parameters>
+		 <parameter key="message_greet" value="Hello |PLAYERNAME|! If you're in need of weapons or armor, ask me for a trade." />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="heavy machete,2442,7000;knight axe,2430,8000;dragon hammer,2434,6000;steel helmet,2457,800;plate armor,2463,1500;plate legs,2647,2000;guardian shield,2515,4000" />
+	</parameters>
+</npc>

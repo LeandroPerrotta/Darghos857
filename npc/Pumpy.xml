@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Pumpy" script="default.lua" walkinterval="2000" floorchange="0">
+  <health now="100" max="100" />
+  <look itemid="2096"/>
+  <parameters>
+    <parameter key="message_greet" value="BOO! HAPPY HALLOWEEN! Ehh, or...? Schh! Want something!?" />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="quest;help;" />
+		<parameter key="keyword_reply1" value="Go east from here and visit the Hunted Mansion, its quite scary. The basement Ehh..." />
+		<parameter key="keyword_reply2" value="Check the blackboard?" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="candy,6569,5;pumpkinhead,2096,50;skull candle,5813,100;bat decoration,6492,1000;skeleton decoration,6526,2000" />
+  </parameters>
+</npc>

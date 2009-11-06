@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Puffels" script="default.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="21" head="20" body="30" legs="40" feet="0" addons="0"/>
+    <parameters>
+        <parameter key="message_greet" value="Greetings, |PLAYERNAME|. Right now, I cannot offer you anything. Please come back later!"/>
+        <parameter key="message_farewell" value="Take care on your journeys."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="job;" />
+        <parameter key="keyword_reply1" value="I am a Spell Instructor." />
+
+        <parameter key="module_shop" value="0"/>
+        <parameter key="shop_buyable" value="" />
+        <parameter key="shop_sellable" value="" />
+    </parameters>
+</npc>

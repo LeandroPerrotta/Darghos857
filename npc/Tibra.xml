@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Tibra" script="default.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="138" head="60" body="92" legs="90" feet="95" addons="0"/>
+    <parameters>
+        <parameter key="message_greet" value="Welcome in the name of the gods, pilgrim |PLAYERNAME|!"/>
+        <parameter key="message_farewell" value="Good bye, |PLAYERNAME|. May the gods be with you to guard and guide you, my child!"/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="job;" />
+        <parameter key="keyword_reply1" value="I am a priest of the great pantheon." />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_sellable" value="" />
+        <parameter key="shop_buyable" value="" />
+    </parameters>
+</npc>

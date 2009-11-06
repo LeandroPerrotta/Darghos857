@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Ivan" script="Sell/jewels.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="132" head="78" body="79" legs="79" feet="58" corpse="2131"/>
+	<parameters>
+		    <parameter key="message_greet" value="Welcome, Welcome! I love jewels! Got any jewel that you want me to take a look at?" />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="quest;help;item;jewels" />
+		<parameter key="keyword_reply1" value="Maybe later." />
+		<parameter key="keyword_reply2" value="Want to get rich? Bring me the Jewels!" />
+		<parameter key="keyword_reply3" value="I buy white and black pearls 200gp, small diamond, small sapphire, small ruby and small emeralds 400gp, talons 500gp, small amethyst 600gp and all kind of gems 15.000gp each." />
+	</parameters>
+</npc>

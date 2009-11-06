@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Boozer" script="Sell/food.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="128" head="76" body="20" legs="116" feet="76" addons="0"/>
+	<parameters>
+		<parameter key="message_greet" value="Welcome to the Hard Rock Racing Track, |PLAYERNAME|" />
+		<parameter key="message_farewell" value="You'll be back." />
+		<parameter key="message_walkaway" value="You'll be back." />
+		<parameter key="message_onsendtrade" value="Sure, take what you want." />
+	</parameters>
+</npc>

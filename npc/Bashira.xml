@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Bashira" script="Sell/runes.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="136" head="58" body="62" legs="87" feet="39" addons="1"/>
+    <parameters>
+        <parameter key="message_greet" value="Welcome to our piecefull little village." />
+        <parameter key="message_needmoremoney" value="You dont have enough gold coins." />
+        <parameter key="message_decline" value=" |TOTALCOST| is a very good price |PLAYERNAME|." />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="quest;help;rune" />
+		<parameter key="keyword_reply1" value="What are you talking about?" />
+		<parameter key="keyword_reply2" value="I am selling runes. We are actually the cheapest at healing runes." />
+		<parameter key="keyword_reply3" value="Name a kind. I sell Hmms, Explosions, Gfbs, Firebombs, Sds, Ihs, Uhs, Magic walls, Destroy fields, Blank runes and allot more. 'Trade' if you'd wish to browse through my wares." />
+    </parameters>
+</npc>  

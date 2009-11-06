@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="King Tibianus" script="Sell/promotion.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="332" head="21" body="87" legs="107" feet="95" addons="0"/>
+    <parameters>
+        <parameter key="message_greet" value="Hi there, how's it hanging, |PLAYERNAME|!"/>
+        <parameter key="message_farewell" value="Good bye, |PLAYERNAME|!"/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="hail king;job;promotion;" />
+        <parameter key="keyword_reply1" value="I greet thee, my loyal subject |PLAYERNAME|." />
+        <parameter key="keyword_reply2" value="I am your sovereign, King Tibianus III, and it's my duty to provide justice and guidance for my subjects." />
+        <parameter key="keyword_reply3" value="Do you want to be promoted in your vocation for 20000 gold?" />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_sellable" value="" />
+        <parameter key="shop_buyable" value="" />
+    </parameters>
+</npc>

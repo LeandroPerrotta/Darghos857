@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Willy" script="Sell/tools.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="128" head="21" body="41" legs="62" feet="116" addons="2"/>
+    <parameters>
+        <parameter key="message_greet" value="Hi |PLAYERNAME|. How can I help you?" />
+        <parameter key="message_needmoremoney" value="I also need to make a living..." />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="quest;help;items;bread guide" />
+		<parameter key="keyword_reply1" value="I can tell you something about quests, if you buy a scythe from me and start to cut in the fields to the west, you will find something." />
+		<parameter key="keyword_reply2" value="I can give you a bread guide?" />
+		<parameter key="keyword_reply3" value="I can sell you a Scythe?" />
+		<parameter key="keyword_reply4" value="First of all you need a scythe. Cut some wheat, the use it on a millstone and you have produced flour. Combine the floor with water and you\'ll get a lump of dough. Find an oven and you made yourself some bread! Easy, isn\'t it?" />
+    </parameters>
+</npc>  

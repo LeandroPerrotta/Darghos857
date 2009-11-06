@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<npc name="Chondur" script="default.lua" walkinterval="2000">
+  <health now="200" max="200" />
+  <look type="154" head="76" body="94" legs="120" feet="0" addons="3"/>
+  <parameters>
+    <parameter key="message_greet" value="Be greeted, child." />
+	<parameter key="message_walkaway" value="Good bye." />
+	<parameter key="message_farewell" value="Good bye." />
+  </parameters>
+</npc>

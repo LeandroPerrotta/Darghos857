@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Lailene" script="default.lua" walkinterval="2000" floorchange="0">
+    <health now="100" max="100"/>
+    <look type="279" head="114" body="113" legs="113" feet="0" addons="0"/>
+    <parameters>
+        <parameter key="message_greet" value="Greetings, |PLAYERNAME|."/>
+        <parameter key="message_farewell" value="Take care on your journeys."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="job;" />
+        <parameter key="keyword_reply1" value="I am the Magic Robe Shopkeeper of Edron. I keep the secrets of our order." />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_buyable" value="magician's robe,8819,450;spirit cloak,8870,1000;" />
+        <parameter key="shop_sellable" value="batwing hat,10016,8000;focus cape,8871,6000;spirit cloak,8870,350;" />
+    </parameters>
+</npc>

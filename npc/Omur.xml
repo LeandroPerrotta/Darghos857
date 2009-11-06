@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Omur" script="Sell/food.lua" walkinterval="2000" floorchange="0">
+	<health now="150" max="150"/>
+	<look type="128" head="0" body="58" legs="20" feet="39" addons="2"/>
+	<parameters>
+		    <parameter key="message_greet" value="Hi! Best food in town!" />
+		<parameter key="module_keywords" value="1" />
+		<parameter key="keywords" value="quest;help;item;food" />
+		<parameter key="keyword_reply1" value="Quest? Maybe in troll cave?" />
+		<parameter key="keyword_reply2" value="I sell food?" />
+		<parameter key="keyword_reply3" value="This is all I have. Strawberrys, blueberrys, white mushrooms and grapes." />
+		<parameter key="keyword_reply4" value="This is all I have. Strawberrys, blueberrys, white mushrooms and grapes." />
+	</parameters>
+</npc>

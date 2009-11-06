@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Addoner" script="addon.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="134" head="78" body="88" legs="0" feet="88" addons="3"/>
+	<parameters>
+	<parameter key="message_greet" value="Greetings |PLAYERNAME|. I can sell you many nice addons! Just say 'addons'." />
+	</parameters>
+</npc>

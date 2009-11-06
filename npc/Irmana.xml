@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<npc name="Irmana" script="default.lua" walkinterval="2000">
+  <health now="100" max="100" />
+  <look type="140" head="78" body="90" legs="13" feet="14" addons="3"/>
+  <parameters>
+    <parameter key="message_greet" value="Welcome to the house of fashion, |PLAYERNAME|!" />
+	<parameter key="message_farewell" value="Good bye, |PLAYERNAME|."/>
+	<parameter key="message_walkaway" value="Good bye, |PLAYERNAME|."/>
+	<parameter key="message_onsendtrade" value="I'm currently interested in these materials."/>
+	<parameter key="module_shop" value="1" />
+	<parameter key="shop_sellable" value="blue piece of cloth,5912,200;brown piece of cloth,5913,100;green dragon leather,5877,100;green piece of cloth,5910,200;lizard leather,5876,150;minotaur leather,5878,80;red dragon leather,5948,200;red piece of cloth,5911,300;spool of yarn,5886,1000;white piece of cloth,5909,100;yellow piece of cloth,5914,150" />
+  </parameters>
+</npc>
