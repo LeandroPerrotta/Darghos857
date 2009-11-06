@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<npc name="Elane" script="default.lua" walkinterval="2000">
-
-  <health now="200" max="200" />
-<look type="137" head="113" body="100" legs="119" feet="119" addons="3"/>
-  <parameters>
-    <parameter key="message_greet" value="Hi, |PLAYERNAME|! What can I do for you?" />
-  </parameters>
-</npc>

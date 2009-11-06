@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<npc name="Buddel" script="TP/boat_buddel.lua" walkinterval="2000">
-<health now="100" max="100"/>
-<look type="143" head="19" body="57" legs="22" feet="20" addons="0"/>
-<parameters>
-<parameter key="message_greet" value="Hey big guys. *HICKS*" />		
-<parameter key="message_farewell" value="LALALALA ... an' a bottle of RUM !!!" />	
-</parameters>
-</npc>

@@ -1,9 +1,0 @@
-<npc name="Morpel" script="Sell/morpel.lua" walkinterval="2000">
-	<health now="150" max="150"/>
-	<look type="160" head="58" body="119" legs="57" feet="96" addons="0"/>
-	<parameters>
-		<parameter key="message_greet" value="Welcome! I'm in charge of selling weapons and armor. Are you here for a trade?" />
-		<parameter key="message_needmoremoney" value="You need more money."/>
-		<parameter key="message_decline" value="Fine!"/>
-	</parameters>
-</npc>

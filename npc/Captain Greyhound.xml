@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="Captain Greyhound" script="TP/boat_carlin.lua" walkinterval="2000" loorchange="0">
-<health now="100" max="100"/>
-<look type="129" head="96" body="113" legs="95" feet="115" addons="0"/>
-</npc>

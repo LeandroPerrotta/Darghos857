@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<npc name="Trisha" script="default.lua" walkinterval="2000">
-  <health now="200" max="200" />
-  <look type="142" head="94" body="68" legs="76" feet="114" addons="1"/>
-  <parameters>
-    <parameter key="message_greet" value="Welcome back, knight |PLAYERNAME|!" />
-  </parameters>
-</npc>

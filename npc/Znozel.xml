@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="Znozel" script="bank.lua" walkinterval="2000">
-	<health now="150" max="150"/>
-<look type="297" head="78" body="86" legs="114" feet="116" addons="0"/>
-<include file="bankman.xml"/>
-</npc>

@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<npc name="Zoltan" script="default.lua" walkinterval="2000">
-
-  <health now="200" max="200" />
-  <look type="130" head="95" body="113" legs="95" feet="76" addons="0"/>
-  <parameters>
-    <parameter key="message_greet" value="Welcome |PLAYERNAME|, student of the arcane arts. " />
-  </parameters>
-</npc>

@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="Clark" script="TP/Boat.lua" walkinterval="2000" floorchange="0">
-<health now="100" max="100"/>
-<look type="125" head="81" body="12" legs="129" feet="129" addons="0"/>
-</npc>
