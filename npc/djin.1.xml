@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<npc name="Hab Duhz" floorchange="0" walkinterval="4000">
+	<health now="150" max="150"/>
+    <look type="103" head="66" body="73" legs="121" feet="6" addons="3"/>
+  
+<interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+    
+    <interact keywords="hi" focus="1">
+      <!--These are the keywords will trigger this interaction-->
+      <keywords>hello</keywords>
+
+      <response>
+        <action name="script">
+        <![CDATA[
+          if(getPlayerSex(cid)) == 0 then
+            selfSay("Haaaym, Madam " .. getCreatureName(cid) .. ".", cid)
+          else
+            selfSay("Haaaym, Sir " .. getCreatureName(cid) .. ".", cid)
+          end
+        ]]>
+        </action>
+      </response>
+      
+    </interact>
+
+    <interact keywords="bye" focus="0">
+      <keywords>farewell</keywords>
+      <response text="Good bye. Recommend us, if you were satisfied with our service.">
+        <!--
+        <action name="script">
+          doRemoveCreature(getNpcCid());
+        </action>
+        -->
+      </response>
+    </interact>
+    
+    <!--
+    If the event onBusy exists, the npc will make a queue like Tibia, if the event is removed
+    the npc will be able to talk to all customers at the same time without problems.
+    -->
+
+
+
+    <!--This event triggers if the player goes to far away from the npc/logout/idle timeout-->
+    <interact event="onPlayerLeave" focus="0">
+      <response text="Good bye. Recommend us, if you were satisfied with our service."/>
+    </interact>
+
+    <!---Example of calling a script function, check ruby.lua-->
+    <interact focus="1">
+      <!--These are the keywords will trigger this interaction-->
+      <keywords>asshole</keywords>
+      <keywords>stupid</keywords>
+      <keywords>idiot</keywords>
+      <keywords>fuck</keywords>
+      <keywords>fag</keywords>
+
+      <response function="onSayCurse">
+        <action name="idle" value="1"/>
+        <action name="scriptparam" value="|PLAYER|"/>
+        <action name="scriptparam" value="|TEXT|"/>
+      </response>
+    </interact>
+
+    <interact focus="0">
+      <!--These are the keywords will trigger this interaction-->
+      <keywords>asshole</keywords>
+      <keywords>stupid</keywords>
+      <keywords>idiot</keywords>
+      <keywords>fuck</keywords>
+      <keywords>fag</keywords>
+
+      <response function="onSayCurse">
+        <action name="idle" value="1"/>
+        <action name="scriptparam" value="|PLAYER|"/>
+        <action name="scriptparam" value="|TEXT|"/>
+      </response>
+    </interact>
+	<!-- INICIO - PRIMEIRA MISSAO DJINS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="mission">
+      <response text="Do you want, to make the djinns mission, for enter in the big house?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			msg1 = "Ok, now you need to enter in the djinns place and complete the mission, talking with my brother!"
+			msg2 = "Wow! You have completed all missions! Now you can enter and talk with djinns of shop."
+			
+		if(getPlayerStorageValue(cid, sid.DJIN_QUEST_1)) ~= 1 then
+			selfSay(msg1,cid)
+			setPlayerStorageValue(cid, sid.DJIN_QUEST_2, 1)
+		else
+			selfSay(msg2,cid)
+		end			
+	
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>
+
+	
+  </interaction>
+  
+</npc>

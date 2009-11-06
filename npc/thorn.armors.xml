@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<npc name="Oracio" floorchange="0" walkinterval="2000" speed="220">
+	<health now="150" max="150"/>
+	<look type="143" head="124" body="104" legs="17" feet="87" addons="1" corpse="2212"/>
+  
+  <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+
+	<include file="events_shop.xml"/>
+    <include file="armors.xml"/>
+    
+    <interact keywords="hi" focus="1">
+      <keywords>hello</keywords>
+      
+      <response text="Hello. How may I help you |NAME|?"/>
+    </interact>
+
+    <interact keywords="bye" focus="0">
+      <keywords>farewell</keywords>
+
+      <response text="It was a pleasure to help you."/>
+    </interact>
+
+    <interact event="onPlayerLeave" focus="0">
+      <response text="It was a pleasure to help you |NAME|."/>
+    </interact>
+    
+    <interact keywords="name">
+      <response text="My name is |NPCNAME|."/>
+    </interact>
+
+    <interact keywords="job">
+      <response text="I am a merchant, my job is to serve you!"/>
+    </interact>
+
+    <interact keywords="wares">
+		<keywords>trade</keywords>
+
+		<response text="I sell and buy equipments in general, as {armors}, {legs}, {helmets} and {boots} also {shields}."/>
+    </interact>
+	
+	<interact keywords="armors">
+		<list>armor_all</list>
+		<list>armor_sellable</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>
+	
+	<interact keywords="legs">
+		<list>legs_all</list>
+		<list>legs_sellable</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>	
+	
+	<interact keywords="helmets">
+		<list>helmet_all</list>
+		<list>helmet_sellable</list>
+		
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>	
+	
+	<interact keywords="boots">
+		<list>boots_all</list>
+		<list>boots_sellable</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>		
+	
+	<interact keywords="shields">
+		<list>shields_all</list>
+		<list>shields_sellable</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>	
+    
+
+  </interaction>
+  
+</npc>

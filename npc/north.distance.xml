@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<npc name="Michelo" floorchange="0" walkinterval="2000" speed="220">
+	<health now="150" max="150"/>
+	<look type="142" head="17" body="65" legs="33" feet="114" addons="0" corpse="2212"/>
+  
+  <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+
+	<include file="events_shop.xml"/>
+    <include file="weapons.xml"/>
+    
+    <interact keywords="hi" focus="1">
+      <keywords>hello</keywords>
+      
+      <response text="Hello. How may I help you |NAME|?"/>
+    </interact>
+
+    <interact keywords="bye" focus="0">
+      <keywords>farewell</keywords>
+
+      <response text="It was a pleasure to help you."/>
+    </interact>
+
+    <interact event="onPlayerLeave" focus="0">
+      <response text="It was a pleasure to help you |NAME|."/>
+    </interact>
+    
+    <interact keywords="name">
+      <response text="My name is |NPCNAME|."/>
+    </interact>
+
+    <interact keywords="job">
+      <response text="I am a merchant, my job is to serve you!"/>
+    </interact>
+
+    <interact keywords="wares">
+		<keywords>trade</keywords>
+
+		<response text="I sell and buy {distance} weapons and {ammunition} in general."/>
+    </interact>
+	
+	<interact keywords="distance">
+		<list>distance_all</list>
+		<list>distance_sellable</list>
+		<list>distance_buyable</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>
+	
+	<interact keywords="ammunition">
+		<list>ammunition</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>		
+    
+    <interact keywords="sell;|AMOUNT|;|LIST|">
+		<list>distance_all</list>
+		<list>distance_sellable</list>
+		<list>distance_buyable</list>
+		<list>ammunition</list>
+
+      <response>
+        <action name="amount" value="|AMOUNT|"/>
+        <action name="price" value="|SELLPRICE|"/>
+
+        <action name="script">
+        <![CDATA[
+          if(_state.amount > 1) then
+            selfSay("Do you want to sell " .. _state.amount .. " " .. _state.listpname .. " for " ..  _state.price * _state.amount .. " gold?", cid)
+          else
+            selfSay("Do you want to sell " .. _state.listname .. " for " .. _state.price .. " gold?", cid)
+          end
+        ]]>
+        </action>
+
+        <interact keywords="yes">
+          <response param="noamount" text="Sorry, you do not have one."/>
+          <response param="lowamount" text="Sorry, you do not have that many."/>
+          <response text="Ok. Here is your money.">
+            <action name="sell" value="|PRICE|"/>
+          </response>
+        </interact>
+        
+      </response>
+    </interact>
+
+    <interact keywords="buy;|AMOUNT|;|LIST|">
+		<list>distance_all</list>
+		<list>distance_sellable</list>
+		<list>distance_buyable</list>
+		<list>ammunition</list>
+
+      <response>
+        <action name="amount" value="|AMOUNT|"/>
+        <action name="price" value="|BUYPRICE|"/>
+
+        <action name="script">
+        <![CDATA[
+          if(_state.amount > 1) then
+            selfSay("Do you want to buy " .. _state.amount .. " " .. _state.listpname .. " for " ..  _state.price * _state.amount .. " gold?", cid)
+          else
+            selfSay("Do you want to buy " .. _state.listname .. " for " .. _state.price .. " gold?", cid)
+          end
+        ]]>
+        </action>
+
+        <interact keywords="yes">
+          <response param="lowmoney" text="Sorry, you do not have enough gold."/>
+          <response text="Thank you. Here it is.">
+            <action name="buy" value="|PRICE|"/>
+          </response>
+        </interact>
+
+      </response>
+    </interact>
+  </interaction>
+  
+</npc>
