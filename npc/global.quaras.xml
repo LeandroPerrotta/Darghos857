@@ -115,7 +115,7 @@
 			
 			sk = getItemIdByName("giant spider silk")
 			
-			if getPlayerItemCount(cid,sk) >= 1 then
+			if getPlayerItemCount(cid,sk) >= 10 then
 					doPlayerRemoveItem(cid,sk,10)
 					doPlayerAddItem(cid, 5886,1)
 					selfSay("Thanks to this trade!",cid)
