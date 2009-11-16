@@ -144,6 +144,38 @@
         </response>
     </interact>	
 	
+	<!-- INICIO - BLESS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="bless">
+      <response text="Do you want buy the Inquisition Blesses?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+				if(getPlayerStorageValue(cid, sid.INQ_CHESTS) == 1) then
+					if(doPlayerRemoveMoney(cid, 130000) == TRUE) then
+						doPlayerAddBless(cid, 1)
+						doPlayerAddBless(cid, 2)
+						doPlayerAddBless(cid, 3)
+						doPlayerAddBless(cid, 4)
+						doPlayerAddBless(cid, 5)
+						selfSay("Now you are blessed man! Use the command !blesses to see your protection stats!", cid)
+					end
+				else
+					selfSay("You need done Inquisition Quest to buy this blesses", cid)
+				end
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>	
+	
   </interaction>
   
 </npc>
