@@ -155,11 +155,11 @@
         <![CDATA[
 				if(getPlayerStorageValue(cid, sid.INQ_CHESTS) == 1) then
 					if(doPlayerRemoveMoney(cid, 130000) == TRUE) then
+						doPlayerAddBless(cid, 0)
 						doPlayerAddBless(cid, 1)
 						doPlayerAddBless(cid, 2)
 						doPlayerAddBless(cid, 3)
 						doPlayerAddBless(cid, 4)
-						doPlayerAddBless(cid, 5)
 						selfSay("Now you are blessed man! Use the command !blesses to see your protection stats!", cid)
 					end
 				else
