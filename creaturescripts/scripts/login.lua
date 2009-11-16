@@ -4,7 +4,7 @@
 	registerCreatureEvent(cid, "Advance")	
 	registerCreatureEvent(cid, "Stages")
 	registerCreatureEvent(cid, "Inquisition")
-	registerCreatureEvent(cid, "WarSystem")
+	--registerCreatureEvent(cid, "WarSystem")
 	
 	playerRecord()
 	runPremiumSystem(cid)
@@ -12,9 +12,9 @@
 	setLoginSkillRateStages(cid)
 	checkItemShop(cid)
 
-	if(isOfWar(cid) == TRUE) then
+	--[[ if(isOfWar(cid) == TRUE) then
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Warning! Your guild is in war mode, and its very dangerous for you! Have a nice War MAN!")
-	end
+	end ]]--
 	
 	if(getPlayerVocation(cid) <= 4) then
 		defineFirstItems(cid)	
