@@ -18,7 +18,7 @@ local HOUSE_CONFIG =
 	needPremium = getConfigValue('house_only_premium'),
 	levelToBuyHouse = getConfigValue('house_level')
 }
-	
+
 House = {
 	id = 0
 }
@@ -189,7 +189,7 @@ end
 
 		if self:getOwner() ~= 0 then
 			doPlayerSendCancel(cid, 'Someone already owns this house.')
-			return false		
+			return false
 		end
 
 		if House.getHouseByOwnerGUID(guid) ~= nil then

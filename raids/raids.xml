@@ -1,20 +1,21 @@
 <raids>
-	-- SAVE
-		<!-- <raid name="ServerSave" file="save.xml" interval2="60" margin="0"/> -->
+	-- MISC
+		<raid name="Test" file="test.xml" interval2="60000000" margin="1"/> -->
+		
 	-- CITY INVASION Raids
 		-- Quendor
-		<raid name="quendor_troll" file="quendor/quendor_troll.xml" interval2="9000000" margin="1000"/>	
-		<raid name="quendor_ghoul" file="quendor/quendor_ghoul.xml" interval2="9000000" margin="1000"/>	
-		<raid name="quendor_rotworm" file="quendor/quendor_rotworm.xml" interval2="9000000" margin="1000"/>	
-		<raid name="quendor_goblin" file="quendor/quendor_goblin.xml" interval2="9000000" margin="1000"/>	
-		<raid name="quendor_minotaur" file="quendor/quendor_minotaur.xml" interval2="9000000" margin="1000"/>
-		<raid name="quendor_dragon" file="quendor/quendor_dragon.xml" interval2="9000000" margin="1000"/>
-		<raid name="quendor_amazon" file="quendor/quendor_amazon.xml" interval2="9000000" margin="1000"/>
-		<raid name="quendor_skeleton" file="quendor/quendor_skeleton.xml" interval2="9000000" margin="1000"/>
+		<raid name="quendor_troll" file="quendor/quendor_troll.xml" interval2="3000000" margin="120"/>	
+		<raid name="quendor_ghoul" file="quendor/quendor_ghoul.xml" interval2="1680000" margin="120"/>	
+		<raid name="quendor_rotworm" file="quendor/quendor_rotworm.xml" interval2="2700000" margin="120"/>
+		<raid name="quendor_goblin" file="quendor/quendor_goblin.xml" interval2="2700000" margin="120"/>	
+		<raid name="quendor_minotaur" file="quendor/quendor_minotaur.xml" interval2="3000000" margin="120"/>
+		<raid name="quendor_dragon" file="quendor/quendor_dragon.xml" interval2="4150000" margin="120"/>
+		<raid name="quendor_amazon" file="quendor/quendor_amazon.xml" interval2="1900000" margin="120"/>
+		<raid name="quendor_skeleton" file="quendor/quendor_skeleton.xml" interval2="2700000" margin="120"/>
 		
 		-- Thorn
-		<raid name="thorn_cyclops" file="thorn/thorn_cyclops.xml" interval2="9000000" margin="1000"/>
-		<raid name="thorn_elf" file="thorn/thorn_elf.xml" interval2="9000000" margin="1000"/>
+		<raid name="thorn_cyclops" file="thorn/thorn_cyclops.xml" interval2="3100000" margin="120"/>
+		<raid name="thorn_elf" file="thorn/thorn_elf.xml" interval2="3000000" margin="120"/>
 		
 		-- Aracura
 		
@@ -24,7 +25,7 @@
 		
 		
 		-- BOSSES
-		<raid name="demodras_poh" file="bosses/demodras_poh.xml" interval2="9000000" margin="1000"/>
+		<raid name="demodras_poh" file="bosses/demodras_poh.xml" interval2="15000000" margin="180"/>
 		<raid name="ferumbras" file="bosses/ferumbras.xml" interval2="9000000" margin="1000"/>
-		<raid name="orshabaal" file="bosses/orshabaal.xml" interval2="9000000" margin="1000"/>		
+		<raid name="orshabaal" file="bosses/orshabaal.xml" interval2="30000000" margin="240"/>		
 </raids>

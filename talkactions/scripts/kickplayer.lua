@@ -1,7 +1,7 @@
 function onSay(cid, words, param)
-	local access = getPlayerAccess(cid)
-	if access < 4 then
-		return TRUE
+	if(param == "") then
+		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "You need to type the parameter.")
+		return FALSE
 	end
 
 	local playerKick = getPlayerByName(param)
@@ -9,9 +9,9 @@ function onSay(cid, words, param)
 		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "This player does not exist.")
 		return FALSE
 	end
-	
+
 	local playerKickAccess = getPlayerAccess(playerKick)
-	if playerKickAccess < access then
+	if playerKickAccess < getPlayerAccess(cid) then
 		if(doRemoveCreature(playerKick) ~= LUA_ERROR) then
 			doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Player kicked.")
 		else
