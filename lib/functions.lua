@@ -249,11 +249,11 @@ function playerRecord()
 		local playerson = getPlayersOnlineList()
 		local total = #playerson
 		
-		if(total <= 100) then
+		--[[if(total <= 100) then
 			total = total * 2
 		else
 			total = total + 100
-		end
+		end]]--
 		
 		if(total > record) then
 		

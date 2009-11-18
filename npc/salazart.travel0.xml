@@ -77,29 +77,25 @@
       </response>
     </interact>
 	<!-- INICIO - DESTINO: ARACURA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-    <interact keywords="aracura">
-      <response text="Do you want a passage to Aracura for |PRICE| gold?">
-        <action name="topic" value="1"/>
-        <action name="price" value="150"/>
-
-    
-    <interact keywords="yes" topic="1">
-	  <response param="free" text="Only premium players can travel with me."/>
-      <response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
-      <response param="lowmoney" text="You don't have enough money."/>
-      <response text="Have a nice trip!">
-        <action name="idle" value="1"/>
-        <action name="takemoney" value="|PRICE|"/>
-        <action name="teleport" value="3005;1119;6"/>
-        <action name="effect" value="teleport"/>
-      </response>
-    </interact> 
-        <interact keywords="|*|">
-          <response text="Maybe some other time."/>
-        </interact>
-
-        </response>
-    </interact>
+	<interact keywords="aracura">
+		<response text="Do you want a passage to Aracura for |PRICE| gold?">
+			<action name="topic" value="1"/>
+			<action name="price" value="90"/>
+			<interact keywords="yes" topic="1">
+				<response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
+				<response param="lowmoney" text="You don't have enough money."/>
+				<response param="premium" text="Have a nice trip!">
+					<action name="idle" value="1"/>
+					<action name="takemoney" value="|PRICE|"/>
+					<action name="teleport" value="3005;1119;6"/>
+					<action name="effect" value="teleport"/>
+				</response>
+				<response text="Only premium players can travel with me."/>	
+			</interact>   
+			<interact keywords="|*|">
+				<response text="Maybe some other time."/>
+			</interact>		</response>
+	</interact>
 
 	
   </interaction>
