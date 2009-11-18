@@ -1,6 +1,6 @@
 <raids>
 	-- MISC
-		<raid name="Test" file="test.xml" interval2="60000000" margin="1"/> -->
+		<raid name="Test" file="test.xml" interval2="60" margin="1"/> -->
 		
 	-- CITY INVASION Raids
 		-- Quendor
