@@ -45,4 +45,5 @@
 	<talkaction words="!houseinfo" access="0" script="houseinfo.lua"/>
 	<talkaction words="!online" access="0" script="onlinelist.lua"/>
 	<talkaction words="!unjustkills" access="0" script="unjustkills.lua"/>
+	<talkaction words="!blesses" access="0" script="game/bless.lua"/>	
 </talkactions>
