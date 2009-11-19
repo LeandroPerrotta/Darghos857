@@ -4571,7 +4571,7 @@
 		<attribute key="slotType" value="legs"/>
 	</item>
 	<item id="2470" name="golden legs">
-		<attribute key="weight" value="65000"/>
+		<attribute key="weight" value="6500"/>
 		<attribute key="armor" value="9"/>
 		<attribute key="slotType" value="legs"/>
 	</item>
