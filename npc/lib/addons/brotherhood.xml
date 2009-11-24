@@ -7,7 +7,7 @@
 	-->
 	
     <interact keywords="first;brotherhood;addon">
-      <response text="For this addon you need 400 demonic essences and 5 magic sulphur, do you have this?">
+      <response text="For this addon you need 100 demonic essences and 5 magic sulphur, do you have this?">
         <action name="topic" value="1"/>
     
     <interact keywords="yes" topic="1">
@@ -15,7 +15,7 @@
         <action name="script">
         <![CDATA[
 
-		items 	= {{5904,5} , {6500,400}}
+		items 	= {{5904,5} , {6500,100}}
 		conf  	= 
 		{
 			typeFemale		= 279,
