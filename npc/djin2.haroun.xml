@@ -139,7 +139,7 @@
     </interact>	
 
 	<!-- INICIO - TROCAR CHICKEN WING @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-    <interact keywords="enchanted;chicken wing">
+    <interact keywords="enchanted;chicken;wing">
       <response text="Do you want to trade 1 boots of haste for a Enchanted Chicken Wing?">
         <action name="topic" value="1"/>
     
