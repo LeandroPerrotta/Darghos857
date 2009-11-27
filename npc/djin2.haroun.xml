@@ -138,7 +138,7 @@
         </response>
     </interact>	
 
-	<!-- INICIO - TROCAR CHICKEN WING @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+	<!-- INICIO - TROCAR CHICKEN W222ING @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
     <interact keywords="enchanted;chicken;wing">
       <response text="Do you want to trade 1 boots of haste for a Enchanted Chicken Wing?">
         <action name="topic" value="1"/>
