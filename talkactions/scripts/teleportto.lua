@@ -21,14 +21,18 @@ function onSay(cid, words, param)
 	end
 
 	if creatureAccess < getPlayerAccess(cid) then
-		local oldPlayerPos = getPlayerPosition(cid)
-		if(doTeleportThing(cid, destPos) ~= LUA_ERROR) then
-			if(getPlayerFlagValue(cid, PLAYERFLAG_CANNOTBESEEN) == FALSE) then
-				doSendMagicEffect(oldPlayerPos, CONST_ME_POFF)
-				doSendMagicEffect(destPos, CONST_ME_TELEPORT)
+		if (isNPC(creature) or isMonster(creature)) and getPlayerAccess(cid) >= 4 then
+			local oldPlayerPos = getPlayerPosition(cid)
+			if(doTeleportThing(cid, destPos) ~= LUA_ERROR) then
+				if(getPlayerFlagValue(cid, PLAYERFLAG_CANNOTBESEEN) == FALSE) then
+					doSendMagicEffect(oldPlayerPos, CONST_ME_POFF)
+					doSendMagicEffect(destPos, CONST_ME_TELEPORT)
+				end
+			else
+				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Can not teleport to that position.")
 			end
 		else
-			doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Can not teleport to that position.")
+			doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "You do not have access to do that.")
 		end
 	else
 		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "You do not have access to do that.")
@@ -36,3 +40,4 @@ function onSay(cid, words, param)
 
 	return FALSE
 end
+
