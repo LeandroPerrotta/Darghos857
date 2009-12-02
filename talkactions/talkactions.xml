@@ -3,7 +3,7 @@
 	<!-- Gods -->
 	<talkaction words="/i" access="5" filter="first word" script="createitembyid.lua"/>
 	<talkaction words="/n" access="5" filter="first word" script="createitembyname.lua"/>
-	<talkaction words="/a" access="5" filter="first word" script="teleportntiles.lua"/>
+
 	<talkaction words="/cleanhouses" access="5" filter="first word" script="housecleaning.lua"/>
 	<talkaction words="/raid" access="5" filter="first word" function="forceRaid"/>
 	<talkaction words="/s" access="5" filter="first word" function="placeNpc"/>
@@ -28,6 +28,7 @@
 	<talkaction words="/up" access="3" filter="first word" script="floorchange.lua"/>
 	<talkaction words="/down" access="3" filter="first word" script="floorchange.lua"/>
 	<talkaction words="/t" access="3" script="teleportmasterpos.lua"/>
+	<talkaction words="/a" access="3" filter="first word" script="teleportntiles.lua"/>
 	<talkaction words="/town" access="3" filter="first word" script="teleporttotown.lua"/>
 	<talkaction words="/goto" access="3" filter="first word" script="teleportto.lua"/>
 	<talkaction words="/bc" access="3" filter="first word" script="broadcastclass.lua"/>
