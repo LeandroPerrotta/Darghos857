@@ -25,9 +25,12 @@
 				if(getPlayerMoney(cid) >= _state.amount * _state.price) then
 				
 					if(isItemStackable(_state.itemid) == TRUE) then
-				
-						local result = doPlayerAddItem(cid, _state.itemid, _state.amount)
-							
+						if(_state.itemid == 2197) then
+							local result = doPlayerGiveItem(cid, _state.itemid, 1, 5)
+						else
+							local result = doPlayerAddItem(cid, _state.itemid, _state.amount)
+						end
+						
 						if(result == -1) then
 								
 							selfSay("Sorry, but you don't have room to take it.", cid)

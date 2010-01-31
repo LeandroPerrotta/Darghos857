@@ -237,6 +237,58 @@
 
         </response>
     </interact>		
+	
+	<!-- INICIO - STONE SKIN BPS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="stone;skin;amulet">
+	      <keywords>ssa</keywords>
+      <response text="Do you wanna buy a backpack of stone skin amulet for 100 000 golds?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			
+		if(getPlayerMoney(cid) >= 100000) then
+			if(doPlayerRemoveMoney(cid, 100000) == TRUE) then
+			i = doPlayerAddItem(cid, 2003,1)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+				doAddContainerItem(i, 2197, 5)
+			end
+		else
+			selfSay("You no have money for this!", cid)
+		end
+
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>	
+	
+	
   </interaction>
   
 </npc>

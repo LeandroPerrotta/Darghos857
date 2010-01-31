@@ -98,7 +98,6 @@
 			<item keywords="sword;ring" id="2207" buyprice="500"/>	
 			<item keywords="stealth;ring" id="2165" buyprice="5000"/>	
 			<item keywords="power;ring" id="2166" buyprice="100"/>	
-			<item keywords="stone;skin;amulet" subtype="5" id="2197" buyprice="5000"/>	
 		</itemlist>
 					
 		<!--
