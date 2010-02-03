@@ -27,7 +27,6 @@
 	<!-- Gamemasters -->
 	<talkaction words="/up" access="3" filter="first word" script="floorchange.lua"/>
 	<talkaction words="/down" access="3" filter="first word" script="floorchange.lua"/>
-	<talkaction words="/t" access="3" script="teleportmasterpos.lua"/>
 	<talkaction words="/a" access="3" filter="first word" script="teleportntiles.lua"/>
 	<talkaction words="/town" access="3" filter="first word" script="teleporttotown.lua"/>
 	<talkaction words="/goto" access="3" filter="first word" script="teleportto.lua"/>
@@ -37,6 +36,8 @@
 	<talkaction words="/getonline" access="3" filter="first word" script="accessonlinelist.lua"/>
 
 	<!-- Senior Tutors -->
+	<talkaction words="/t" access="2" script="teleportmasterpos.lua"/>
+	
 	<!-- Tutors -->
 	<talkaction words="/serverinfo" access="1" script="serverinfo.lua"/>
 	<talkaction words="/gethouse" access="1" filter="first word" script="gethouse.lua"/>
