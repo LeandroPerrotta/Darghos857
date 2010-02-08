@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <items>
 	<item id="100" name="void"/>
 	<item id="101" name="earth"/>
@@ -511,7 +511,6 @@
 	<item id="1091" article="a" name="metal wall"/>
 	<item id="1092" article="a" name="metal wall"/>
 	<item id="1093" article="a" name="metal wall"/>
-	<item id="1094" editorsuffix=" (Blank)"/>
 	<item id="1095" article="a" name="metal wall"/>
 	<item id="1096" article="a" name="metal wall"/>
 	<item id="1097" article="a" name="metal wall"/>
@@ -1164,7 +1163,6 @@
 	<item id="1486" article="a" name="stone coal basin"/>
 	<item id="1487" article="a" name="fire field" editorsuffix=" (Not decaying)">
 		<attribute key="type" value="magicfield"/>
-		<attribute key="replaceable" value="0"/>
 		<attribute key="field" value="fire">
 			<attribute key="damage" value="20"/>
 			<attribute key="ticks" value="10000"/>
@@ -1174,7 +1172,6 @@
 	</item>
 	<item id="1488" article="a" name="fire field" editorsuffix=" (Not decaying)">
 		<attribute key="type" value="magicfield"/>
-		<attribute key="replaceable" value="0"/>
 		<attribute key="field" value="fire">
 			<attribute key="ticks" value="10000"/>
 			<attribute key="count" value="7"/>
@@ -1183,12 +1180,10 @@
 	</item>
 	<item id="1489" article="a" name="fire field" editorsuffix=" (Not decaying)">
 		<attribute key="type" value="magicfield"/>
-		<attribute key="replaceable" value="0"/>
 		<attribute key="field" value="fire"/>
 	</item>
 	<item id="1490" article="a" name="poison field" editorsuffix=" (Not decaying)">
 		<attribute key="type" value="magicfield"/>
-		<attribute key="replaceable" value="0"/>
 		<attribute key="field" value="poison">
 			<attribute key="ticks" value="5000"/>
 			<attribute key="start" value="5"/>
@@ -1197,7 +1192,6 @@
 	</item>
 	<item id="1491" article="an" name="energy field" editorsuffix=" (Not decaying)">
 		<attribute key="type" value="magicfield"/>
-		<attribute key="replaceable" value="0"/>
 		<attribute key="field" value="energy">
 			<attribute key="damage" value="30"/>
 			<attribute key="ticks" value="10000"/>
@@ -2481,27 +2475,27 @@
 	<item id="2015" article="a" name="beer bottle">
 		<attribute key="weight" value="250"/>
 	</item>
-	<item id="2016" article="a" name="pool">
+	<item id="2016" article="a" name="water splash">
 		<attribute key="decayTo" value="2017"/>
 		<attribute key="duration" value="45"/>
 	</item>
-	<item id="2017" article="a" name="pool">
+	<item id="2017" article="a" name="water splash">
 		<attribute key="decayTo" value="2018"/>
 		<attribute key="duration" value="45"/>
 	</item>
-	<item id="2018" article="a" name="pool">
+	<item id="2018" article="a" name="water splash">
 		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="600"/>
 	</item>
-	<item id="2019" article="a" name="pool">
+	<item id="2019" article="a" name="water splash">
 		<attribute key="decayTo" value="2020"/>
 		<attribute key="duration" value="45"/>
 	</item>
-	<item id="2020" article="a" name="pool">
+	<item id="2020" article="a" name="water splash">
 		<attribute key="decayTo" value="2021"/>
 		<attribute key="duration" value="45"/>
 	</item>
-	<item id="2021" article="a" name="pool">
+	<item id="2021" article="a" name="water splash">
 		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="60"/>
 	</item>
@@ -2514,30 +2508,12 @@
 	<item id="2024" article="a" name="broken brown glass">
 		<attribute key="weight" value="100"/>
 	</item>
-	<item id="2025" article="a" name="pool">
-		<attribute key="decayTo" value="2026"/>
-		<attribute key="duration" value="45"/>
-	</item>
-	<item id="2026" article="a" name="pool">
-		<attribute key="decayTo" value="2027"/>
-		<attribute key="duration" value="45"/>
-	</item>
-	<item id="2027" article="a" name="pool">
-		<attribute key="decayTo" value="0"/>
-		<attribute key="duration" value="60"/>
-	</item>
-	<item id="2028" article="a" name="pool">
-		<attribute key="decayTo" value="2029"/>
-		<attribute key="duration" value="45"/>
-	</item>
-	<item id="2029" article="a" name="pool">
-		<attribute key="decayTo" value="2030"/>
-		<attribute key="duration" value="45"/>
-	</item>
-	<item id="2030" article="a" name="pool">
-		<attribute key="decayTo" value="0"/>
-		<attribute key="duration" value="60"/>
-	</item>
+	<item id="2025" article="a" name="pool"/>
+	<item id="2026" article="a" name="pool"/>
+	<item id="2027" article="a" name="pool"/>
+	<item id="2028" article="a" name="pool"/>
+	<item id="2029" article="a" name="pool"/>
+	<item id="2030" article="a" name="pool"/>
 	<item id="2031" article="a" name="waterskin">
 		<attribute key="weight" value="700"/>
 	</item>
@@ -4176,7 +4152,6 @@
 		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="1"/>
 		<attribute key="elementEarth" value="8"/>
-		<attribute key="charges" value="5" />
 	</item>
 	<item id="2410" article="a" name="throwing knife" plural="throwing knives">
 		<attribute key="weight" value="500"/>
@@ -4397,6 +4372,7 @@
 		<attribute key="defense" value="15"/>
 		<attribute key="attack" value="39"/>
 		<attribute key="weaponType" value="axe"/>
+		<attribute key="slotType" value="two-handed"/>
 	</item>
 	<item id="2442" article="a" name="heavy machete">
 		<attribute key="weight" value="1840"/>
@@ -5271,7 +5247,7 @@
 		<attribute key="slotType" value="feet"/>
 	</item>
 	<item id="2646" name="golden boots">
-		<attribute key="weight" value="31000"/>
+		<attribute key="weight" value="3100"/>
 		<attribute key="armor" value="4"/>
 		<attribute key="slotType" value="feet"/>
 	</item>
