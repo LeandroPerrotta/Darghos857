@@ -397,25 +397,30 @@ end
 -- Usado em creaturescripts/login.lua
 function checkItemShop(cid)
 
-	local idFromShop = getPlayerStorageValue(cid, sid.ITEM_SHOP_ID)
+	local shop_id = getPlayerStorageValue(cid, sid.SHOPSYS_ID)
 	
-	if idFromShop ~= LUA_ERROR then
+	if shop_id ~= -1 then
 		if(getPlayerFreeCap(cid) > 350) then
-			local shop_itemid = getPlayerShopItemId(idFromShop)
-			local shop_itemcount = getPlayerShopItemCount(idFromShop)
+			local shop_itemid = getPlayerStorageValue(cid, sid.SHOPSYS_ITEM_ID)
+			local shop_itemcount = getPlayerStorageValue(cid, sid.SHOPSYS_ITEM_COUNT)
 			
 			local presentBoxShop = doPlayerAddItem(cid, 1990, 1)
 			local addContainer = doAddContainerItem(presentBoxShop, shop_itemid, shop_itemcount)
 			
 				if addContainer == LUA_ERROR then
-					print("[itemshopsys] Item falhou ao ser adicionado (shopid: " .. idFromShop .. ")")
+					print("[itemshopsys] Item falhou ao ser adicionado (shopid: " .. shop_id .. ")")
+					doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Ouve um erro ao entregar seu item, por favor, entre em contato com um Tutor ou Gamemaster.")
+					
+					return
 				end
 				
 				sendEnvolveEffect(cid, CONST_ME_ENERGYHIT)
 			
-				setPlayerStorageValue(cid, sid.ITEM_SHOP_ID, -1)
+				setPlayerStorageValue(cid, sid.SHOPSYS_ID, 0)
+				setPlayerStorageValue(cid, sid.SHOPSYS_ITEM_ID, -1)
+				setPlayerStorageValue(cid, sid.SHOPSYS_ITEM_COUNT, -1)
+				
 				doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You received in your inventory the item purchased in our Item Shop with success!")
-				setPlayerShopReceived(idFromShop)
 				
 		else
 			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "You don't have capacity needed to receive the item purchased in our Item Shop. Please release 350oz and re-log in to receive the item.")
