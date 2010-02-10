@@ -411,12 +411,13 @@ function checkItemShop(cid)
 					print("[itemshopsys] Item falhou ao ser adicionado (shopid: " .. shop_id .. ")")
 					doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Ouve um erro ao entregar seu item, por favor, entre em contato com um Tutor ou Gamemaster.")
 					
+					setPlayerStorageValue(cid, sid.SHOPSYS_ID, 0)
 					return
 				end
 				
 				sendEnvolveEffect(cid, CONST_ME_ENERGYHIT)
 			
-				setPlayerStorageValue(cid, sid.SHOPSYS_ID, 0)
+				setPlayerStorageValue(cid, sid.SHOPSYS_ID, -1)
 				setPlayerStorageValue(cid, sid.SHOPSYS_ITEM_ID, -1)
 				setPlayerStorageValue(cid, sid.SHOPSYS_ITEM_COUNT, -1)
 				
