@@ -610,4 +610,9 @@
 	<monster name="Vampire" file="undead humanoids/vampire.xml"/>
 	<monster name="Vampire Bride" file="undead humanoids/vampire bride.xml"/>
 	<monster name="Zombie" file="undead humanoids/zombie.xml"/>
+	
+	<!-- Ariadne -->
+	<monster name="Ariadne Adept" file="ariadne/ariadne adept.xml"/>
+	<monster name="Macrocheira" file="ariadne/macrocheira.xml"/>
+	<monster name="Ooze" file="ariadne/ooze.xml"/>
 </monsters>
