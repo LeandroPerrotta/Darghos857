@@ -38,7 +38,7 @@
 						end			
 					else
 					
-						if(_state.buyWithBackpack == 1) then
+						if(_state.buywithbackpack == TRUE) then
 						
 							local backpacksneeded = 1
 							
@@ -63,7 +63,7 @@
 						local count
 						for count = 0, _state.amount - 1 do
 							
-							if(_state.buyWithBackpack == 1) then
+							if(_state.buywithbackpack == TRUE) then
 
 								itemnumber = count + 1
 								toBackpack = math.ceil(itemnumber / 20) 				
@@ -73,7 +73,7 @@
 								local result = doPlayerAddItem(cid, _state.itemid, _state.subtype)
 							end	
 
-							if(_state.buyWithBackpack == 0 and result == -1) then
+							if(_state.buywithbackpack == FALSE and result == -1) then
 							
 								if(count == 0) then
 									elfSay("Sorry, but you don't have room to take it.", cid)
