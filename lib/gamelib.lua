@@ -9,5 +9,3 @@ dofile(getDataDir() .. "lib/gids.lua")
 dofile(getDataDir() .. "lib/uids.lua")
 
 dofile(getDataDir() .. "lib/specialQuests.lua")
-
-DarghosQuest.onServerStart()

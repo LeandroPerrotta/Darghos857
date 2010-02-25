@@ -1,6 +1,7 @@
 local cannotContinue = {}
 local _done = false
 local _hasCreature = false
+local _serverStart = false
 
 local function doTeleportPlayerBack(cid, position)
 
@@ -64,6 +65,14 @@ function onCreatureDisappear(id)
 end
 
 function onThink()
+
+	-- FUNÇOES QUE SERAM CHAMADAS QUANDO O SERVER INCIAR, NAO TEM A VER COM O NPC, É UMA GAMBIARRA TEMPORAREA
+	if(not _serverStart) then
+	
+		DarghosQuest.onServerStart()
+		_serverStart = true
+	end
+	-- FIM DA GAMBIARRA
 
 	if(not _done) then
 		doSetCannotContinue()
