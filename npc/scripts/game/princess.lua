@@ -14,7 +14,7 @@ function onThink()
 
 	if(_hasCreature) then
 
-		if(math.random(1, 100000) <= 2000) then
+		if(math.random(1, 100000) <= 3500) then
 		
 			local talkRandom = math.random(1, 3)
 		
