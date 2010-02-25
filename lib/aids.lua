@@ -136,6 +136,9 @@
 		INQ_HALL_HELLGORAK		= 4038,
 		INQ_MAGIC_WALL			= 4039,
 		SALAZART_MEDUSAS_TP		= 4040,
+		
+		-- Quests especiais (7400~7500)
+		DEMON_HELMET_QUEST		= 7400,
 
 		--@ POI LABIRINTO | Used small numbers for aids, because its better1!!
 		POI_MOVE_TP1			= 250,

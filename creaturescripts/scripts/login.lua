@@ -1,6 +1,7 @@
 	function onLogin(cid)
 	--Register the kill/die event
 	registerCreatureEvent(cid, "RemoveBlesses")
+	registerCreatureEvent(cid, "PlayerDie")
 	registerCreatureEvent(cid, "Advance")	
 	registerCreatureEvent(cid, "Stages")
 	registerCreatureEvent(cid, "Inquisition")

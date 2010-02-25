@@ -44,6 +44,4 @@
 	INQ_TO_REWARDS				= 1034,
 	MEDUSA_TP_GO				= 1035,
 	MEDUSA_TP_BACK				= 1036
-	
-	
 	}

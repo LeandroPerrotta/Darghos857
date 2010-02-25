@@ -7,3 +7,7 @@ dofile(getDataDir() .. "lib/functions.lua")
 dofile(getDataDir() .. "lib/mcord.lua")
 dofile(getDataDir() .. "lib/gids.lua")
 dofile(getDataDir() .. "lib/uids.lua")
+
+dofile(getDataDir() .. "lib/specialQuests.lua")
+
+DarghosQuest.onServerStart()

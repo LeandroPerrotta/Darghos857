@@ -132,8 +132,7 @@
   <house name="Beach Apartment I" houseid="173" entryx="1957" entryy="1876" entryz="7" rent="3200" townid="1" size="23"/>
   <house name="Glory Apartment, Flat 1" houseid="174" entryx="2388" entryy="1864" entryz="7" rent="9000" townid="4" size="53"/>
   <house name="Glory Apartment, Flat 2" houseid="175" entryx="2392" entryy="1868" entryz="6" rent="4700" townid="4" size="38"/>
-  <house name="Bach Mansion" houseid="176" entryx="2423" entryy="1877" entryz="7" rent="12400" townid="4" size="146"/>
-  <house name="Livinstone" houseid="177" entryx="2435" entryy="1872" entryz="6" rent="11000" townid="4" size="101"/>
+  <house name="Bach Mansion" houseid="176" entryx="2423" entryy="1877" entryz="7" rent="12400" townid="4" size="145"/>
   <house name="Seahome 1" houseid="178" entryx="2420" entryy="1841" entryz="7" rent="4800" townid="4" size="28"/>
   <house name="Entrance Villager 1" houseid="179" entryx="2355" entryy="1792" entryz="7" rent="700" townid="4" size="8"/>
   <house name="Entrance Villager 2" houseid="180" entryx="2367" entryy="1794" entryz="7" rent="3700" townid="4" size="21"/>

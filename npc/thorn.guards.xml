@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<npc name="Guarda de Thorn" floorchange="0" walkradius="2" walkinterval="800" speed="220" script="game/guard.lua">
+	<health now="150" max="150"/>
+    <look type="268" head="80" body="95" legs="80" feet="95" addons="0"/>
+  
+	<interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="1">	
+	
+	</interaction>
+  
+</npc>

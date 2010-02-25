@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<npc name="Rufoud" floorchange="0" walkinterval="4000" speed="220">
+	<health now="400" max="400"/>
+	<look type="134" head="95" body="94" legs="114" feet="0" addons="0"/>
+  
+<interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+    
+    <interact keywords="hi" focus="1">
+		<keywords>hello</keywords>
+		<keywords>ola</keywords>
+
+		<response text="Olá |NAME|! Aqui está muito quente! {Tankya} ainda está muito selvagem!" />
+      
+    </interact>
+
+    <interact keywords="bye" focus="0">
+      <keywords>farewell</keywords>
+      <keywords>adeus</keywords>
+	  
+      <response text="Até mais |NAME|, poderá contar com meus serviços em breve!" />
+    </interact>
+
+    <interact keywords="name">
+		<keywords>nome</keywords>
+	
+		<response text="Meu nome é |NPCNAME|."/>
+    </interact>
+	
+    <interact keywords="job">
+		<keywords>cargo</keywords>
+	
+		<response text="Eu sou um adestrador de dragões."/>
+    </interact>	
+	
+    <interact keywords="tankya">
+	
+		<response text="Tankya foi capturada nos arredores de Thorn. Ela ainda é selvagem mas estou tentando domar-la. Em algum tempo poderemos fazer viagens transportando guerreiros para outros lugares e ganharei algum dinheiro com isto!"/>
+    </interact>	
+
+	
+  </interaction>
+  
+</npc>

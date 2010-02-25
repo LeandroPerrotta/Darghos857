@@ -612,7 +612,17 @@
 	<monster name="Zombie" file="undead humanoids/zombie.xml"/>
 	
 	<!-- Ariadne -->
+	<monster name="Thorn Citizen" file="ariadne/thorn citizen.xml"/>
 	<monster name="Ariadne Adept" file="ariadne/ariadne adept.xml"/>
 	<monster name="Macrocheira" file="ariadne/macrocheira.xml"/>
 	<monster name="Ooze" file="ariadne/ooze.xml"/>
+	<monster name="Sen Gan Troll" file="ariadne/troll-wing/sen gan troll.xml"/>
+	<monster name="Sen Gan Totem Summoner" file="ariadne/troll-wing/sen gan totem summoner.xml"/>
+	<monster name="Shaman Totem" file="ariadne/troll-wing/shaman totem.xml"/>
+	<monster name="Sen Gan Hydra" file="ariadne/troll-wing/sen gan hydra.xml"/>
+	<monster name="Sen Gan Spearman" file="ariadne/troll-wing/sen gan spearman.xml"/>
+	<monster name="Bone Wall" file="ariadne/troll-wing/bone wall.xml"/>
+	<monster name="Swamp Thing" file="ariadne/troll-wing/swamp thing.xml"/>
+	<monster name="Big Ooze" file="ariadne/troll-wing/big ooze.xml"/>
+	<monster name="Ghazran" file="ariadne/troll-wing/ghazran.xml"/>
 </monsters>

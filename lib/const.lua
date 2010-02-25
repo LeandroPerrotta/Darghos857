@@ -24,3 +24,10 @@
 		ARACURA = {x=2897 ,y=1185, z=7}
 		ISLAND_PEACE = {x=1234 ,y=2234 ,z=7}
 
+	QUESTLOG = {
+	
+		ARIADNE = {
+		
+			STORAGE_ID = 3600
+		}
+	}

@@ -30,7 +30,7 @@
     <immunity paralyze="0"/>
     <immunity outfit="0"/>
     <immunity drunk="0"/>
-    <immunity invisible="0"/>
+    <immunity invisible="1"/>
   </immunities>
   <voices interval="7000" chance="50">
     <voice sentence="Hail My General!"/>
