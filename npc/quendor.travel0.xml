@@ -102,7 +102,7 @@
 	</interact>
 
 	<!-- INICIO - DESTINO: THORN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-	<interact keywords="thorn">
+	<!-- <interact keywords="thorn">
 		<response text="Do you want a passage to Thorn for |PRICE| gold?">
 			<action name="topic" value="1"/>
 			<action name="price" value="190"/>
@@ -121,7 +121,7 @@
 				<response text="Maybe some other time."/>
 			</interact>
 		</response>
-	</interact>
+	</interact> -->
 
 	<!-- INICIO - DESTINO: NORTHREND @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
 	<interact keywords="northrend">
