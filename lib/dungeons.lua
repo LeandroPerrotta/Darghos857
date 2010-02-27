@@ -6,7 +6,7 @@ dungeonList =
 	{
 		maxPlayers = 6,
 		maxTimeIn = 25
-	}
+	},
 	
 	[gid.DUNGEONS_ARIDANE] =
 	{
