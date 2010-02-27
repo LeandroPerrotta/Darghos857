@@ -24,7 +24,7 @@ dungeonStatus =
 
 dungeonEntranceUids =
 {
-	7400 7401
+	7400, 7401
 }
 
 -- Construtor nao necessario?! Talvez nao...
