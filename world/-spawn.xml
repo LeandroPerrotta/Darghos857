@@ -4137,6 +4137,9 @@
   <spawn centerx="1925" centery="1462" centerz="7" radius="8">
     <monster name="Frost Dragon" x="5" y="5" z="7" spawntime="20"/>
   </spawn>
+  <spawn centerx="1981" centery="1519" centerz="7" radius="1">
+    <npc name="server_start" x="0" y="0" z="7" spawntime="20"/>
+  </spawn>
   <spawn centerx="1895" centery="1688" centerz="7" radius="15">
     <monster name="Black Sheep" x="-9" y="-9" z="7" spawntime="60"/>
     <monster name="Sheep" x="-13" y="-7" z="7" spawntime="60"/>

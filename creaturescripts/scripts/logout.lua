@@ -1,9 +1,9 @@
 function onLogout(cid)
 	
-	local player_questStatus = getPlayerStorageValue(cid, sid.QUESTS_STATUS)
+	local player_dungeonStatus = getPlayerStorageValue(cid, sid.DUNGEON_STATUS)
 	
-	if(player_questStatus == questStatus.IN_QUEST) then
-		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Não pode abandonar sua missão no meio do caminho!")
+	if(player_dungeonStatus == dungeonStatus.IN_DUNGEON) then
+		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Não pode sair no meio de uma Dungeon!")
 		return FALSE
 	end	
 	
