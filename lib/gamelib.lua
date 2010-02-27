@@ -8,4 +8,4 @@ dofile(getDataDir() .. "lib/mcord.lua")
 dofile(getDataDir() .. "lib/gids.lua")
 dofile(getDataDir() .. "lib/uids.lua")
 
-dofile(getDataDir() .. "lib/specialQuests.lua")
+dofile(getDataDir() .. "lib/dungeons.lua")

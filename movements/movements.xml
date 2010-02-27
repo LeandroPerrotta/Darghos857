@@ -3,7 +3,8 @@
 	<!-- Geral Map Tiles! Quests etc -->	
 		
 		<!-- SPECIAL QUEST TILES -->
-		<movevent event="StepIn" actionid="7400" script="game/specialQuests.lua"/>		
+		<movevent event="StepIn" actionid="7400" script="game/dungeons.lua"/>		
+		<movevent event="StepIn" actionid="7401" script="game/dungeons.lua"/>		
 	
 		<!-- INQUISITION QUEST -->
 		
