@@ -136,15 +136,17 @@ function Dungeons.onTimeStart(cid)
 	
 	local dungeonInfo = dungeonList[playerDungeon]
 	
-	if(playerDungeonTime < dungeonInfo.maxTimeIn) then
-	
-		local leftTime = dungeonInfo.maxTimeIn - playerDungeonTime
-		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você possui " .. dungeonInfo.maxTimeIn .. " minutos para concluir a dungeon...")
+	if(playerDungeon ~= -1) then
+		if(playerDungeonTime < dungeonInfo.maxTimeIn) then
 		
-		setPlayerStorageValue(cid, sid.DUNGEON_TIME, playerDungeonTime + 5)
-		addEvent(Dungeons.onTimeStart, 1000 * 60 * 5, cid)		
-	elseif(playerDungeonTime == dungeonInfo.maxTimeIn) then
-		Dungeons.onTimeEnd(cid)
+			local leftTime = dungeonInfo.maxTimeIn - playerDungeonTime
+			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você possui " .. leftTime .. " minutos para concluir a dungeon...")
+			
+			setPlayerStorageValue(cid, sid.DUNGEON_TIME, playerDungeonTime + 5)
+			addEvent(Dungeons.onTimeStart, 1000 * 60 * 5, cid)		
+		elseif(playerDungeonTime == dungeonInfo.maxTimeIn) then
+			Dungeons.onTimeEnd(cid)
+		end
 	end
 end
 
