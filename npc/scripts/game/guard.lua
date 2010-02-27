@@ -69,7 +69,7 @@ function onThink()
 	-- FUNÇOES QUE SERAM CHAMADAS QUANDO O SERVER INCIAR, NAO TEM A VER COM O NPC, É UMA GAMBIARRA TEMPORAREA
 	if(not _serverStart) then
 	
-		DarghosQuest.onServerStart()
+		Dungeons.onServerStart()
 		_serverStart = true
 	end
 	-- FIM DA GAMBIARRA
