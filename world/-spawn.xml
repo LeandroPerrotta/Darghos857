@@ -12114,6 +12114,33 @@
     <monster name="Ghoul" x="0" y="-1" z="9" spawntime="60"/>
     <monster name="Ghoul" x="3" y="0" z="9" spawntime="60"/>
   </spawn>
+  <spawn centerx="2535" centery="1918" centerz="9" radius="25">
+    <monster name="Ariadne Adept" x="-17" y="-15" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-18" y="-13" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-1" y="-13" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-13" y="-12" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-18" y="-11" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-2" y="-11" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-9" y="-10" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="9" y="-9" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="11" y="-7" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="14" y="-4" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="12" y="-3" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-18" y="1" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="18" y="7" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-20" y="9" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="2" y="9" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-19" y="10" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-18" y="10" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="1" y="11" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-20" y="12" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-10" y="16" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="12" y="16" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-11" y="17" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="-9" y="17" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="14" y="17" z="9" spawntime="20"/>
+    <monster name="Ariadne Adept" x="6" y="18" z="9" spawntime="20"/>
+  </spawn>
   <spawn centerx="2029" centery="1919" centerz="9" radius="5">
     <monster name="Dwarf Soldier" x="-3" y="0" z="9" spawntime="120"/>
     <monster name="Dwarf Soldier" x="2" y="0" z="9" spawntime="120"/>
