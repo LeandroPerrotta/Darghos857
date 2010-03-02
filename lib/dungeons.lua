@@ -154,7 +154,7 @@ function Dungeons.onTimeEnd(cid)
 
 	local dungeonStatus = getPlayerStorageValue(cid, sid.DUNGEON_STATUS)
 	
-	if(dungeonStatus == questStatus.IN_DUNGEON) then
+	if(dungeonStatus == dungeonStatus.IN_DUNGEON) then
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "O tempo para você cumprir esta dungeon acabou. Você agora será jugado no INFERNO!")
 		doTeleportThing(cid, HELL_POS)
 		
@@ -174,7 +174,7 @@ function Dungeons.onPlayerDeath(cid)
 	Dungeons.decreasePlayers(playerDungeon)
 	
 	setPlayerStorageValue(cid, sid.ON_DUNGEON, -1)
-	setPlayerStorageValue(cid, sid.DUNGEON_STATUS, questStatus.OUT_DUNGEON)
+	setPlayerStorageValue(cid, sid.DUNGEON_STATUS, dungeonStatus.OUT_DUNGEON)
 	setPlayerStorageValue(cid, sid.DUNGEON_TIME, -1)
 	
 	Dungeons.updateEntranceDescription(playerDungeon)
@@ -207,7 +207,7 @@ function Dungeons.onPlayerLeave(cid)
 	
 	setPlayerStorageValue(cid, sid.ON_DUNGEON, -1)
 	setPlayerStorageValue(cid, playerDungeon, 1)
-	setPlayerStorageValue(cid, sid.DUNGEON_STATUS, questStatus.OUT_DUNGEON)
+	setPlayerStorageValue(cid, sid.DUNGEON_STATUS, dungeonStatus.OUT_DUNGEON)
 	setPlayerStorageValue(cid, sid.DUNGEON_TIME, -1)
 	
 	Dungeons.updateEntranceDescription(playerDungeon)
