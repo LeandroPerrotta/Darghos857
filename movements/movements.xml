@@ -70,6 +70,9 @@
 
 		<movevent event="StepIn" itemid="1387" script="game/citizen.lua"/>		
 		
+		<!-- FIELD DAMAGE SYSTEM 
+		<moveevent event="StepIn" itemid="1490"  />-->
+		
 
 	<!-- You should not be able to walk through quest chests -->
 
@@ -127,7 +130,7 @@
 	<moveevent event="StepIn" itemid="1489" function="onStepInField" />
 	<moveevent event="AddItem" itemid="1489" function="onAddField" />
 
-	<moveevent event="StepIn" itemid="1490" function="onStepInField" />
+	<moveevent event="StepIn" itemid="1490" function="onStepInField" script="game/field_damage.lua"/>
 	<moveevent event="AddItem" itemid="1490" function="onAddField" />
 
 	<moveevent event="StepIn" itemid="1491" function="onStepInField" />

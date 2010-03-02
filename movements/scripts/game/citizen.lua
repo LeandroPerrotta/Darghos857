@@ -1,6 +1,6 @@
 function onStepIn(cid, item, position, fromPosition)
 
-	if(item.actionid > 30020 and item.actionid < 30100) then
+	if(item.actionid >= 30020 and item.actionid < 30100) then
 	
 		local city = getTownNameById(item.actionid - 30020)
 		doPlayerSetTown(cid, item.actionid - 30020)
