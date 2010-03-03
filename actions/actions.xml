@@ -2,7 +2,7 @@
 <actions>
 
 	<!-- Ariadne Quest -->
-	<action itemid="5631" script="game/bone_totem.lua"/>
+	<action itemid="6972" script="game/bone_totem.lua"/>
 
 	<!-- Map Actions -->
 	<action itemid="6387" script="game/item_nightmare1.lua"/>
