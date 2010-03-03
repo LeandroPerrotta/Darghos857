@@ -46,6 +46,8 @@ function onStepIn(cid, item, position, fromPosition)
 
 			doSendMagicEffect(position, CONST_ME_HITBYPOISON)	
 			doSendMagicEffect(position, CONST_ME_POISONAREA)	
+			
+			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você não tem as doze benções de Ghazran!!")
 		end
 	end
 	

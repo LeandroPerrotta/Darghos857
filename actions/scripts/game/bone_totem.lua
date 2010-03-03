@@ -8,7 +8,7 @@ function onUse(cid, item, frompos, item2, topos)
 		
 		if(hasBlessed ~= -1) then
 		
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você já mecheu aqui.")
+			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você já recebeu esta benção de Ghazran.")
 			return TRUE
 		end
 		
@@ -28,10 +28,10 @@ function onUse(cid, item, frompos, item2, topos)
 		
 		if(playerTotems < 12) then
 				
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você conseguiu um pouco de coragem!")
+			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você ganhou uma das doze benções de Ghazran!")
 		elseif(playerTotems == 12) then
 		
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você conseguiu toda coragem necessária!")
+			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você conseguiu todas benções de Ghazran!")
 		end
 
 	end
