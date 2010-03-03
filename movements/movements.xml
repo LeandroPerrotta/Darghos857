@@ -6,6 +6,14 @@
 		<movevent event="StepIn" actionid="7400" script="game/dungeons.lua"/>		
 		<movevent event="StepIn" actionid="7401" script="game/dungeons.lua"/>		
 	
+		<!-- FIELD DAMAGE -->
+		<movevent event="StepIn" actionid="8300" script="game/field_damage.lua"/>	
+		<movevent event="StepIn" actionid="8301" script="game/field_damage.lua"/>	
+		<movevent event="StepIn" actionid="8302" script="game/field_damage.lua"/>	
+		<movevent event="StepIn" actionid="8303" script="game/field_damage.lua"/>	
+		<movevent event="StepIn" actionid="8304" script="game/field_damage.lua"/>	
+		<movevent event="StepIn" actionid="8305" script="game/field_damage.lua"/>
+	
 		<!-- INQUISITION QUEST -->
 		
 		<movevent event="StepIn" actionid="4033" script="game/inquisition_hall.lua"/>		
@@ -130,7 +138,7 @@
 	<moveevent event="StepIn" itemid="1489" function="onStepInField" />
 	<moveevent event="AddItem" itemid="1489" function="onAddField" />
 
-	<moveevent event="StepIn" itemid="1490" function="onStepInField" script="game/field_damage.lua"/>
+	<moveevent event="StepIn" itemid="1490" function="onStepInField"/>
 	<moveevent event="AddItem" itemid="1490" function="onAddField" />
 
 	<moveevent event="StepIn" itemid="1491" function="onStepInField" />

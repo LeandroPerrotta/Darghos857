@@ -1,10 +1,32 @@
 function onStepIn(cid, item, position, fromPosition)
 
-	if(item.actionid > ACTION_ID_RANGES.MIN_FIELD_DAMAGE and item.actionid < ACTION_ID_RANGES.MAX_FIELD_DAMAGE) then
+	if(item.actionid >= ACTION_ID_RANGES.MIN_FIELD_DAMAGE and item.actionid <= ACTION_ID_RANGES.MAX_FIELD_DAMAGE) then
 	
-		local needDamagePlayer = getPlayerStorageValue(cid, item.actionid)
+		local playerTotems = 0
 		
-		if(needDamagePlayer <= 0) then
+		for key, value in ipairs(sid.ARIADNE_TOTEMS) do
+		
+			local totemStatus = getPlayerStorageValue(cid, sid.ARIADNE_TOTEMS[key])
+			
+			if(totemStatus == 1) then
+			
+				playerTotems = playerTotems + 1
+			end		
+		end	
+		
+		if(playerTotems == 12) then
+		
+			doPlayerAddHealth(cid, -10)
+			
+			doSendMagicEffect(position, CONST_ME_HITBYPOISON)	
+			doSendMagicEffect(position, CONST_ME_POISONAREA)	
+			
+			return TRUE			
+		end
+	
+		local needDamagePlayer = getPlayerStorageValue(cid, ACTION_ID_RANGES.MIN_FIELD_DAMAGE)
+		
+		if(needDamagePlayer <= 5) then
 			
 			local damage = item.actionid - ACTION_ID_RANGES.MIN_FIELD_DAMAGE
 			
@@ -20,7 +42,10 @@ function onStepIn(cid, item, position, fromPosition)
 				doPlayerAddHealth(cid, -5500)	
 			elseif(damage >= 5) then
 				doPlayerAddHealth(cid, -12500)	
-			end			
+			end		
+
+			doSendMagicEffect(position, CONST_ME_HITBYPOISON)	
+			doSendMagicEffect(position, CONST_ME_POISONAREA)	
 		end
 	end
 	
