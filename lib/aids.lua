@@ -151,7 +151,7 @@
 		
 		-- Dungeons (7400~7500)
 		DUNGEONS_DEMON_HELMET		= 7400,
-		DUNGEONS_ARIADNE			= 7401,
+		DUNGEONS_ARIADNE_GHAZRAN	= 7401,
 
 		--@ POI LABIRINTO | Used small numbers for aids, because its better1!!
 		POI_MOVE_TP1			= 250,

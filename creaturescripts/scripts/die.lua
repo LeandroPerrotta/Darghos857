@@ -3,5 +3,11 @@ function onDie(cid, corpse)
 		--FunçÕes que serão chamadas quando um jogador morrer...
 		
 		Dungeons.onPlayerDeath(cid)
+	else
+		
+		if(getCreatureName(cid) == "Ghazran") then
+		
+			onGhazranDie()
+		end
 	end
 end 

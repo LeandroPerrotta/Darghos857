@@ -1,14 +1,15 @@
 --[[
 	* ARIADNE QUEST
 ]]--
-function OnKillGhazran(killer, creature)
+function onGhazranDie()
 
-	if(getCreatureName(creature) ~= "Ghazran") then
+	local dungeonInfo = dungeonList[gid.DUNGEONS_ARIADNE_GHAZRAN]
+	local dungeonPlayers = dungeonInfo.players
+
+	for	key, cid in ipairs(dungeonPlayers) do
 	
-		return
+		print("O jogador " .. getCreatureName(cid) .. " está na quest.")
 	end
-	
-	
 end
 
 --[[

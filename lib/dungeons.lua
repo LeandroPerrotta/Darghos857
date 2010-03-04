@@ -9,7 +9,7 @@ dungeonList =
 		players = {}
 	},
 	
-	[gid.DUNGEONS_ARIADNE] =
+	[gid.DUNGEONS_ARIADNE_GHAZRAN] =
 	{
 		maxPlayers = 6,
 		maxTimeIn = 300,
@@ -33,7 +33,6 @@ dungeonEntranceUids =
 --function Dungeons.New()
 --end
 	
-dungeonPlayers = { }	
 Dungeons = { }	
 	
 function Dungeons.onPlayerEnter(cid, item, position)
@@ -42,7 +41,7 @@ function Dungeons.onPlayerEnter(cid, item, position)
 	
 	local canEnter = (getPlayerStorageValue(cid, dungeonId) == -1)
 	
-	-- Verificamos se o Player já fez a quest
+	-- Verificamos se o Player já fez a Dungeon
 	if not(canEnter) then
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você já concluiu está dungeon. Não pode passar novamente por aqui.")
 		
@@ -61,7 +60,7 @@ function Dungeons.onPlayerEnter(cid, item, position)
 	end
 	
 	-- Incrementamos o numero de jogadores na quest
-	Dungeons.increasePlayers(dungeonId)
+	Dungeons.increasePlayers(dungeonId, cid)
 	
 	setPlayerStorageValue(cid, sid.DUNGEON_STATUS, dungeonStatus.IN_DUNGEON)
 	setPlayerStorageValue(cid, sid.ON_DUNGEON, dungeonId)
@@ -70,26 +69,29 @@ function Dungeons.onPlayerEnter(cid, item, position)
 	Dungeons.updateEntranceDescription(dungeonId)
 	Dungeons.onTimeStart(cid)
 	
-	table.insert(dungeonList[dungeonId].players, cid)
-
 	return TRUE	
 end 
 
-function Dungeons.increasePlayers(dungeonId)
+function Dungeons.increasePlayers(dungeonId, cid)
 
-	setGlobalStorageValue(dungeonId, Dungeons.getPlayersIn(dungeonId) + 1)
+	--setGlobalStorageValue(dungeonId, Dungeons.getPlayersIn(dungeonId) + 1)
+	local dungeonInfo = dungeonList[dungeonId]
+	table.insert(dungeonInfo.players, cid)
 end
 
-function Dungeons.decreasePlayers(dungeonId)
+function Dungeons.decreasePlayers(dungeonId, cid)
 
-	setGlobalStorageValue(dungeonId, Dungeons.getPlayersIn(dungeonId) - 1)
+	--setGlobalStorageValue(dungeonId, Dungeons.getPlayersIn(dungeonId) - 1)
+	local dungeonInfo = dungeonList[dungeonId]
+	table.remove(dungeonInfo.players, cid)
 end
 
 function Dungeons.getPlayersIn(dungeonId)
 	
-	local playersOnDungeon = getGlobalStorageValue(dungeonId) == -1 and 0 or getGlobalStorageValue(dungeonId)
+	--local playersOnDungeon = getGlobalStorageValue(dungeonId) == -1 and 0 or getGlobalStorageValue(dungeonId)
 	
-	return playersOnDungeon
+	local dungeonInfo = dungeonList[dungeonId]
+	return #dungeonInfo.players
 end
 
 function Dungeons.doTeleportPlayer(cid, position)
@@ -176,15 +178,13 @@ function Dungeons.onPlayerDeath(cid)
 		return TRUE
 	end
 	
-	Dungeons.decreasePlayers(playerDungeon)
+	Dungeons.decreasePlayers(playerDungeon, cid)
 	
 	setPlayerStorageValue(cid, sid.ON_DUNGEON, -1)
 	setPlayerStorageValue(cid, sid.DUNGEON_STATUS, dungeonStatus.OUT_DUNGEON)
 	setPlayerStorageValue(cid, sid.DUNGEON_TIME, -1)
 	
 	Dungeons.updateEntranceDescription(playerDungeon)
-	
-	table.remove(dungeonList[playerDungeon].players, cid)
 end
 
 function Dungeons.onServerStart()
@@ -198,19 +198,19 @@ function Dungeons.onServerStart()
 	end
 end
 
-function Dungeons.updateEntranceDescription(uid)
+function Dungeons.updateEntranceDescription(dungeonId)
 	
 	-- Atualizamos a descrição da porta
-	local dungeonInfo = dungeonList[uid]	
-	print("jogadores na quest: " .. #dungeonList[uid].players .. "/" .. dungeonInfo.maxPlayers .. ", uid: " .. uid)
-	doSetItemSpecialDescription(uid, "[Esta dungeon possui " .. Dungeons.getPlayersIn(uid) .. " jogadores de um maximo de " .. dungeonInfo.maxPlayers .. ".]")
+	local dungeonInfo = dungeonList[dungeonId]
+	print("jogadores na quest: " .. Dungeons.getPlayersIn(dungeonId) .. "/" .. dungeonInfo.maxPlayers .. ", uid: " .. dungeonId)
+	doSetItemSpecialDescription(dungeonId, "[Esta dungeon possui " .. Dungeons.getPlayersIn(dungeonId) .. " jogadores de um maximo de " .. dungeonInfo.maxPlayers .. ".]")
 end
 
 function Dungeons.onPlayerLeave(cid)
 
 	local playerDungeon = tonumber(getPlayerStorageValue(cid, sid.ON_DUNGEON))
 	
-	Dungeons.decreasePlayers(playerDungeon)
+	Dungeons.decreasePlayers(playerDungeon, cid)
 	
 	setPlayerStorageValue(cid, sid.ON_DUNGEON, -1)
 	setPlayerStorageValue(cid, playerDungeon, 1)
@@ -218,6 +218,4 @@ function Dungeons.onPlayerLeave(cid)
 	setPlayerStorageValue(cid, sid.DUNGEON_TIME, -1)
 	
 	Dungeons.updateEntranceDescription(playerDungeon)
-	
-	table.remove(dungeonList[playerDungeon].players, cid)
 end 
