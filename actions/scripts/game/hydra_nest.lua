@@ -15,7 +15,7 @@ local ITEM_HYDRA_EGG = 4850
 
 function onUse(cid, item, frompos, item2, topos)
 
-	if(not(_GhazranSummoned)) then
+	if(_GhazranSummoned) then
 		
 		doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Não pode mais mecher no ninho.")
 		return TRUE
