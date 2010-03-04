@@ -5,6 +5,7 @@
 	<event name="PlayerLogout" type="logout" script="logout.lua"/>
 	<event name="RemoveBlesses" type="die" script="removeblesses.lua"/>
 	<event name="PlayerDie" type="die" script="die.lua"/>
+	<event name="PlayerKill" type="kill" script="kill.lua"/>
 	<event name="Stages" type="advance" script="stages.lua"/>
 	<event name="Inquisition" type="kill" script="inquisition.lua"/>		
 </creaturescripts>

@@ -5,13 +5,15 @@ dungeonList =
 	[gid.DUNGEONS_DEMON_HELMET] =
 	{
 		maxPlayers = 6,
-		maxTimeIn = 25
+		maxTimeIn = 25,
+		players = {}
 	},
 	
 	[gid.DUNGEONS_ARIADNE] =
 	{
 		maxPlayers = 6,
-		maxTimeIn = 300
+		maxTimeIn = 300,
+		players = {}
 	}	
 }
 
@@ -31,6 +33,7 @@ dungeonEntranceUids =
 --function Dungeons.New()
 --end
 	
+dungeonPlayers = { }	
 Dungeons = { }	
 	
 function Dungeons.onPlayerEnter(cid, item, position)
@@ -66,6 +69,8 @@ function Dungeons.onPlayerEnter(cid, item, position)
 	Dungeons.doTeleportPlayer(cid, position)
 	Dungeons.updateEntranceDescription(dungeonId)
 	Dungeons.onTimeStart(cid)
+	
+	table.insert(dungeonList[dungeonId].players, cid)
 
 	return TRUE	
 end 
@@ -178,6 +183,8 @@ function Dungeons.onPlayerDeath(cid)
 	setPlayerStorageValue(cid, sid.DUNGEON_TIME, -1)
 	
 	Dungeons.updateEntranceDescription(playerDungeon)
+	
+	table.remove(dungeonList[playerDungeon].players, cid)
 end
 
 function Dungeons.onServerStart()
@@ -195,7 +202,7 @@ function Dungeons.updateEntranceDescription(uid)
 	
 	-- Atualizamos a descrição da porta
 	local dungeonInfo = dungeonList[uid]	
-	print("jogadores na quest: " .. Dungeons.getPlayersIn(uid) .. "/" .. dungeonInfo.maxPlayers .. ", uid: " .. uid)
+	print("jogadores na quest: " .. #dungeonList[uid].players .. "/" .. dungeonInfo.maxPlayers .. ", uid: " .. uid)
 	doSetItemSpecialDescription(uid, "[Esta dungeon possui " .. Dungeons.getPlayersIn(uid) .. " jogadores de um maximo de " .. dungeonInfo.maxPlayers .. ".]")
 end
 
@@ -211,4 +218,6 @@ function Dungeons.onPlayerLeave(cid)
 	setPlayerStorageValue(cid, sid.DUNGEON_TIME, -1)
 	
 	Dungeons.updateEntranceDescription(playerDungeon)
+	
+	table.remove(dungeonList[playerDungeon].players, cid)
 end 

@@ -1,4 +1,17 @@
 --[[
+	* ARIADNE QUEST
+]]--
+function OnKillGhazran(killer, creature)
+
+	if(getCreatureName(creature) ~= "Ghazran") then
+	
+		return
+	end
+	
+	
+end
+
+--[[
 	* GLOBAL SERVER SAVE
 ]]--
 function startGlobalSave()
