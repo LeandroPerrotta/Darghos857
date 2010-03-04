@@ -14158,13 +14158,7 @@
     <monster name="Orc Warrior" x="0" y="-1" z="10" spawntime="60"/>
     <monster name="Orc Warrior" x="2" y="0" z="10" spawntime="60"/>
   </spawn>
-  <spawn centerx="2768" centery="1795" centerz="10" radius="5">
-    <monster name="Sen Gan Hydra" x="-3" y="-2" z="10" spawntime="60"/>
-    <monster name="Sen Gan Hydra" x="-3" y="5" z="10" spawntime="60"/>
-  </spawn>
-  <spawn centerx="2784" centery="1795" centerz="10" radius="5">
-    <monster name="Ghazran" x="4" y="0" z="10" spawntime="60"/>
-  </spawn>
+  <spawn centerx="2768" centery="1795" centerz="10" radius="5"/>
   <spawn centerx="1925" centery="1796" centerz="10" radius="5">
     <monster name="Rotworm" x="-4" y="-4" z="10" spawntime="120"/>
     <monster name="Rotworm" x="0" y="-4" z="10" spawntime="120"/>
