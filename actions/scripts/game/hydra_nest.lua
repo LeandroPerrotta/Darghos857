@@ -47,5 +47,6 @@ end
 
 function summonGhazran()
 	
-	doSummonCreature("ghazran", _GhazranPos)
+	local _creatureCid = doSummonCreature("ghazran", _GhazranPos)
+	registerCreatureEvent(_creatureCid, "CreatureDie")
 end
