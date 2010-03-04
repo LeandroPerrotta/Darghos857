@@ -1,6 +1,6 @@
 _EggsGained = 0
 
-local _HydraEggChance = 5400
+local _HydraEggChance = 12500
 local _HydraMessages = {
 	"<GROARGGHHHTTTTTT!!!! ... um rugido de longe pode ser ouvido...>",
 	"<o chão parece estar tremendo. Algo se aproxima!>"
@@ -17,7 +17,7 @@ function onUse(cid, item, frompos, item2, topos)
 
 	if(_GhazranSummoned) then
 		
-		doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Não pode mais mecher no ninho.")
+		doPlayerSendCancel(cid, "Não pode mais mecher no ninho.")
 		return TRUE
 	end
 
@@ -33,7 +33,7 @@ function onUse(cid, item, frompos, item2, topos)
 			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, _HydraMessages[msgRandom])
 		else
 		
-			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Nada encontrado neste ninho, talvez deva procurar mais.")
+			doPlayerSendCancel(cid, "Nada encontrado neste ninho, talvez deva procurar mais.")
 		end	
 		
 		if(_EggsGained > 10 and math.random(1, 50) >= 50) then

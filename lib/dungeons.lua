@@ -1,22 +1,5 @@
 HELL_POS = {x=2777, y=1367, z=13, stackpos=253}
 
-dungeonList =
-{
-	[gid.DUNGEONS_DEMON_HELMET] =
-	{
-		maxPlayers = 6,
-		maxTimeIn = 25,
-		players = {}
-	},
-	
-	[gid.DUNGEONS_ARIADNE_GHAZRAN] =
-	{
-		maxPlayers = 6,
-		maxTimeIn = 300,
-		players = {}
-	}	
-}
-
 dungeonStatus = 
 {
 	NONE = -1,

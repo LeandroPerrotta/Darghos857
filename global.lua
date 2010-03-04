@@ -10,6 +10,23 @@ dofile(getDataDir() .. "game_classes/calculator.lua")
 -- Load Darghos class
 dofile(getDataDir() .. "lib/gamelib.lua")
 
+dungeonList =
+{
+	[gid.DUNGEONS_DEMON_HELMET] =
+	{
+		maxPlayers = 6,
+		maxTimeIn = 25,
+		players = {}
+	},
+	
+	[gid.DUNGEONS_ARIADNE_GHAZRAN] =
+	{
+		maxPlayers = 6,
+		maxTimeIn = 300,
+		players = {}
+	}	
+}
+
 -- Storages consts
 STORAGE_RUM_MACHINE = 100000
 STORAGE_PROMOTION = 15000
