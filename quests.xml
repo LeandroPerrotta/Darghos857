@@ -7,8 +7,8 @@
 		</mission>
 		
 		<mission name="Trolls Wing" storageid="3600" startvalue="3" endvalue="4">
-			<missionstate id="3" description="Encontrar e derrotar o Ghazran, o Deus Dragão dos Trolls, e obter sua Lingua como um dos ingredientes." />
-			<missionstate id="4" description="Levar a Lingua de Ghazran até o Rei Ordon de Thorn." />
+			<missionstate id="3" description="Encontrar e derrotar o Ghazran, o Deus Dragão dos Trolls. Para chegar nele é necessário obter as benções procurando nos bone totem ao longo da Dungeon. Ao derrotar Ghazran use um Obsidian Knife em seu corpo para obter sua língua, um dos ingredientes do antidoto." />
+			<missionstate id="4" description="Leve a língua de Ghazran até o Rei Ordon de Thorn." />
 		</mission>		
 	</quest>
 

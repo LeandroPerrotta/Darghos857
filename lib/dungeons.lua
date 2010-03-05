@@ -1,5 +1,20 @@
 HELL_POS = {x=2777, y=1367, z=13, stackpos=253}
 
+dungeonList =
+{
+	[gid.DUNGEONS_DEMON_HELMET] =
+	{
+		maxPlayers = 6,
+		maxTimeIn = 25,
+	},
+	
+	[gid.DUNGEONS_ARIADNE_GHAZRAN] =
+	{
+		maxPlayers = 6,
+		maxTimeIn = 300
+	}	
+}
+
 dungeonStatus = 
 {
 	NONE = -1,
@@ -12,11 +27,18 @@ dungeonEntranceUids =
 	7400, 7401
 }
 
+Dungeons = {
+	--_singleton = nil
+}	
+
 -- Construtor nao necessario?! Talvez nao...
---function Dungeons.New()
+--function Dungeons:New(o)
+
+--	local o = o or {}
+--	setmetatable(o, self)
+--	self.__index = self
+--	return o
 --end
-	
-Dungeons = { }	
 	
 function Dungeons.onPlayerEnter(cid, item, position)
 
@@ -26,7 +48,7 @@ function Dungeons.onPlayerEnter(cid, item, position)
 	
 	-- Verificamos se o Player já fez a Dungeon
 	if not(canEnter) then
-		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você já concluiu está dungeon. Não pode passar novamente por aqui.")
+		doPlayerSendCancel(cid, "Você já concluiu está dungeon. Não pode passar novamente por aqui.")
 		
 		Dungeons.doTeleportPlayerBack(cid, position)
 		return FALSE
@@ -36,14 +58,14 @@ function Dungeons.onPlayerEnter(cid, item, position)
 	
 	-- Verificamos se há espaço na quest
 	if(Dungeons.getPlayersIn(dungeonId) == dungeonInfo.maxPlayers) then
-		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Está dungeon já está com o numero maximo de jogadores a tentar realiza-la. Tente novamente mais tarde.")
+		doPlayerSendCancel(cid, "Está dungeon já está com o numero maximo de jogadores a tentar realiza-la. Tente novamente mais tarde.")
 		
 		Dungeons.doTeleportPlayerBack(cid, position)
 		return FALSE		
 	end
 	
 	-- Incrementamos o numero de jogadores na quest
-	Dungeons.increasePlayers(dungeonId, cid)
+	Dungeons.increasePlayers(dungeonId)
 	
 	setPlayerStorageValue(cid, sid.DUNGEON_STATUS, dungeonStatus.IN_DUNGEON)
 	setPlayerStorageValue(cid, sid.ON_DUNGEON, dungeonId)
@@ -55,26 +77,20 @@ function Dungeons.onPlayerEnter(cid, item, position)
 	return TRUE	
 end 
 
-function Dungeons.increasePlayers(dungeonId, cid)
+function Dungeons.increasePlayers(dungeonId)
 
-	--setGlobalStorageValue(dungeonId, Dungeons.getPlayersIn(dungeonId) + 1)
-	local dungeonInfo = dungeonList[dungeonId]
-	table.insert(dungeonInfo.players, cid)
+	setGlobalStorageValue(dungeonId, Dungeons.getPlayersIn(dungeonId) + 1)
 end
 
-function Dungeons.decreasePlayers(dungeonId, cid)
+function Dungeons.decreasePlayers(dungeonId)
 
-	--setGlobalStorageValue(dungeonId, Dungeons.getPlayersIn(dungeonId) - 1)
-	local dungeonInfo = dungeonList[dungeonId]
-	table.remove(dungeonInfo.players, cid)
+	setGlobalStorageValue(dungeonId, Dungeons.getPlayersIn(dungeonId) - 1)
 end
 
 function Dungeons.getPlayersIn(dungeonId)
 	
-	--local playersOnDungeon = getGlobalStorageValue(dungeonId) == -1 and 0 or getGlobalStorageValue(dungeonId)
-	
-	local dungeonInfo = dungeonList[dungeonId]
-	return #dungeonInfo.players
+	local playersOnDungeon = getGlobalStorageValue(dungeonId) == -1 and 0 or getGlobalStorageValue(dungeonId)
+	return playersOnDungeon
 end
 
 function Dungeons.doTeleportPlayer(cid, position)
@@ -161,7 +177,7 @@ function Dungeons.onPlayerDeath(cid)
 		return TRUE
 	end
 	
-	Dungeons.decreasePlayers(playerDungeon, cid)
+	Dungeons.decreasePlayers(playerDungeon)
 	
 	setPlayerStorageValue(cid, sid.ON_DUNGEON, -1)
 	setPlayerStorageValue(cid, sid.DUNGEON_STATUS, dungeonStatus.OUT_DUNGEON)
@@ -193,7 +209,7 @@ function Dungeons.onPlayerLeave(cid)
 
 	local playerDungeon = tonumber(getPlayerStorageValue(cid, sid.ON_DUNGEON))
 	
-	Dungeons.decreasePlayers(playerDungeon, cid)
+	Dungeons.decreasePlayers(playerDungeon)
 	
 	setPlayerStorageValue(cid, sid.ON_DUNGEON, -1)
 	setPlayerStorageValue(cid, playerDungeon, 1)

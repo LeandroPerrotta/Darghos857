@@ -7,7 +7,7 @@ function onDie(cid, corpse)
 		
 		if(getCreatureName(cid) == "Ghazran") then
 		
-			onGhazranDie()
+			onGhazranDie(corpse)
 		end
 	end
 end 

@@ -57,6 +57,11 @@ local knife = {
 }
 
 function onUse(cid, item, frompos, item2, topos)
+	if(item2.actionid == aid.ARIADNE_GHAZRAN_CORPSE) then
+		obsidianKnifeOnGhazranCorpse(cid, item2)
+		return TRUE
+	end
+
 	if isInArray(ICE_CUBE, item2.itemid) == TRUE and ICE_CUBE.last ~= item2.itemid then
 		local random = math.random(1, 10)
 		doSendMagicEffect(getThingPos(item2.uid), CONST_ME_BLOCKHIT)

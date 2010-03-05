@@ -1,15 +1,16 @@
 --[[
 	* ARIADNE QUEST
 ]]--
-function onGhazranDie()
+function onGhazranDie(corpse)
 
-	local dungeonInfo = dungeonList[gid.DUNGEONS_ARIADNE_GHAZRAN]
-	local dungeonPlayers = dungeonInfo.players
+	doSetItemActionId(corpse, aid.ARIADNE_GHAZRAN_CORPSE)
+end
 
-	for	key, cid in ipairs(dungeonPlayers) do
-	
-		print("O jogador " .. getCreatureName(cid) .. " está na quest.")
-	end
+function obsidianKnifeOnGhazranCorpse(cid, corpse)
+
+	doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você conseguiu obter a língua de Ghazran. Seu questlog foi atualizado.")
+	setPlayerStorageValue(cid, sid.ARIADNE_GHAZRAN_TONGUE, 1)
+	setPlayerStorageValue(cid, QUESTLOG.ARIADNE.STORAGE_ID, 5)
 end
 
 --[[

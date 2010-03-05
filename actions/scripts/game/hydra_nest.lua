@@ -1,5 +1,3 @@
-_EggsGained = 0
-
 local _HydraEggChance = 12500
 local _HydraMessages = {
 	"<GROARGGHHHTTTTTT!!!! ... um rugido de longe pode ser ouvido...>",
@@ -11,6 +9,8 @@ local _GhazranPos = {x=2811, y=1806, z=10, stackpos=253}
 local _GhazranSummoned = false
 
 local ITEM_HYDRA_EGG = 4850
+
+_EggsGained = 0
 
 
 function onUse(cid, item, frompos, item2, topos)
