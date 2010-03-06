@@ -36,7 +36,7 @@ function onUse(cid, item, frompos, item2, topos)
 			doPlayerSendCancel(cid, "Nada encontrado neste ninho, talvez deva procurar mais.")
 		end	
 		
-		if(_EggsGained > 10 and math.random(1, 50) >= 50) then
+		if(_EggsGained > 10 and math.random(1, 100) >= 50) then
 			
 			doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, _SummonHydraMessage)
 			addEvent(summonGhazran, 1000 * 5)

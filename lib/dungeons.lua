@@ -64,14 +64,23 @@ function Dungeons.onPlayerEnter(cid, item, position)
 		return FALSE		
 	end
 	
-	-- Incrementamos o numero de jogadores na quest
+	-- Daqui em diante dispararemos eventos que irão configurar o jogador dentro da dungeon
+	
+	-- Incrementamos o numero de jogadores na dungeon
 	Dungeons.increasePlayers(dungeonId)
 	
+	-- Informamos em storage values que o jogador está em uma dungeon e em qual dungeon ele está
 	setPlayerStorageValue(cid, sid.DUNGEON_STATUS, dungeonStatus.IN_DUNGEON)
 	setPlayerStorageValue(cid, sid.ON_DUNGEON, dungeonId)
 	
+	-- Transportamos o jogador para dentro da dungeon
 	Dungeons.doTeleportPlayer(cid, position)
+	
+	-- Atualizamos a descrição da entrada (o teleport)
 	Dungeons.updateEntranceDescription(dungeonId)
+	
+	-- Resetamos qualquer cronometro possivel existente e disparamos o cronometro
+	Dungeons.TimeReset(cid)
 	Dungeons.onTimeStart(cid)
 	
 	return TRUE	
@@ -133,6 +142,10 @@ function Dungeons.doTeleportPlayerBack(cid, position)
 	
 	doTeleportThing(cid, destPos)
 	doSendMagicEffect(destPos, CONST_ME_MAGIC_BLUE)
+end
+
+function Dungeons.TimeReset(cid)
+	setPlayerStorageValue(cid, sid.DUNGEON_TIME, -1)
 end
 
 function Dungeons.onTimeStart(cid)

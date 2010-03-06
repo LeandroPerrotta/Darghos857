@@ -12,6 +12,8 @@ function onUse(cid, item, frompos, item2, topos)
 			return TRUE
 		end
 		
+		setPlayerStorageValue(cid, sid.ARIADNE_TOTEMS[totemId], 1)
+		
 		local playerTotems = 0
 		
 		for key, value in ipairs(sid.ARIADNE_TOTEMS) do
@@ -23,9 +25,7 @@ function onUse(cid, item, frompos, item2, topos)
 				playerTotems = playerTotems + 1
 			end		
 		end
-		
-		setPlayerStorageValue(cid, sid.ARIADNE_TOTEMS[totemId], 1)
-		
+			
 		if(playerTotems < 12) then
 				
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você ganhou uma das doze benções de Ghazran!")
