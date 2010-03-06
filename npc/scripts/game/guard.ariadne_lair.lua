@@ -18,7 +18,7 @@ function onCreatureMove(creature, oldPos, newPos)
 	
 		if(distanceDiff <= 8) then
 	
-			local _questStats = getPlayerStorageValue(creature, QUESTLOG.ARIADNE.STORAGE_ID)
+			local _questStats = getPlayerStorageValue(creature, QUESTLOG.ARIADNE.LAIR)
 			
 			if(_questStats == 2) then	
 			
@@ -31,7 +31,8 @@ function onCreatureMove(creature, oldPos, newPos)
 					_lastMessage = os.time()
 				end
 				
-				setPlayerStorageValue(creature, QUESTLOG.ARIADNE.STORAGE_ID, 3)
+				setPlayerStorageValue(creature, QUESTLOG.ARIADNE.LAIR, 3)
+				setPlayerStorageValue(creature, QUESTLOG.ARIADNE.GHAZRAN_WING, 1)
 			end	
 		
 		end

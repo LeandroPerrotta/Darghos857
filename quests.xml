@@ -2,13 +2,16 @@
 <quests>
 
 	<quest name="Ariadne's Quest" startstorageid="3600" startstoragevalue="1">
-		<mission name="Ariadne Lair" storageid="3600" startvalue="2" endvalue="3">
-			<missionstate id="2" description="Encontre a entrada do Ariadne Lair no pantano ao Leste da cidade de Thorn." />
+		<mission name="The Lair" storageid="3600" startvalue="2" endvalue="3">
+			<missionstate id="2" description="Encontre a entrada do Ariadne Lair no pantano ao Leste da cidade de Thorn." /> 
+			<missionstate id="3" description="Ariadne Lair encontrado." />
 		</mission>
 		
-		<mission name="Trolls Wing" storageid="3600" startvalue="3" endvalue="4">
-			<missionstate id="3" description="Encontrar e derrotar o Ghazran, o Deus Dragão dos Trolls. Para chegar nele é necessário obter as benções procurando nos bone totem ao longo da Dungeon. Ao derrotar Ghazran use um Obsidian Knife em seu corpo para obter sua língua, um dos ingredientes do antidoto." />
-			<missionstate id="4" description="Leve a língua de Ghazran até o Rei Ordon de Thorn." />
+		<mission name="Sen Gan Trolls Wing" storageid="3601" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Mecha nos doze bone totem's e obtenha as  benções necessárias para passar pela ponte envenenada e chegar ao hall de Ghazran, o deus dragão dos trolls." />
+			<missionstate id="2" description="Derrote Ghazran e use sua Obsidian Knife no corpo para remover sua língua, um dos ingredientes do antidoto." />
+			<missionstate id="3" description="Leve a língua de Ghazran até o Rei Ordon de Thorn." />
+			<missionstate id="4" description="Wing completa." />
 		</mission>		
 	</quest>
 

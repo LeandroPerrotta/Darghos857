@@ -28,7 +28,8 @@
 	
 		ARIADNE = {
 		
-			STORAGE_ID = 3600
+			LAIR 			= 3600,
+			GHAZRAN_WING 	= 3601
 		}
 	}
 	

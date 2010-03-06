@@ -11,7 +11,7 @@
 			
 			<response>
 			<action name="script">  
-				_state.b1 = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.STORAGE_ID) >= 1 and 1 or 0
+				_state.b1 = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR) >= 1 and 1 or 0
 				
 				if(_state.b1 == 1) then
 					selfSay("Tome cuidado com Ariadne, ela é extremamente habilidosa e impiedosa!", cid)
@@ -47,7 +47,7 @@
 		<interact keywords="perigo">
 			<response>
 			<action name="script">  	
-				_state.b1 = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.STORAGE_ID) >= 1 and 1 or 0
+				_state.b1 = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR) >= 1 and 1 or 0
 				
 				if(_state.b1 == 0) then
 					selfSay("A velha bruxa Ariadne está a assombrar a paz em Thorn, sua ultima vitima foi a {princesa}! Como pode!!", cid)
@@ -89,7 +89,7 @@
 						selfSay("Otimo! Estou profundamente contente que você irá nos ajudar! Meus guardas já recebam ordens para que permitam você a entrar no Pantano. Muito cuidado, este lugar é traiçoeiro! Consigas o antidoto e lhe re-compensarei por esta brava atitude!", cid)	
 						doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Nova Quest aberta em seu QuestLog: Ariadne's Quest.")
 						
-						setPlayerStorageValue(cid, 3600, 2)
+						setPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR, 2)
 					end	
 			]]>
 			</action>

@@ -42,7 +42,7 @@ function onCreatureMove(creature, oldPos, newPos)
 	
 	if(isPlayer(creature) == TRUE) then		
 	
-		if(getPlayerStorageValue(creature, QUESTLOG.ARIADNE.STORAGE_ID) < 1) then
+		if(getPlayerStorageValue(creature, QUESTLOG.ARIADNE.LAIR) < 1) then
 	
 			if(newPos.x == cannotContinue.x and newPos.y == cannotContinue.y and newPos.z == cannotContinue.z) then
 			

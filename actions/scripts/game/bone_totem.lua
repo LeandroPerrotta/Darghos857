@@ -31,7 +31,8 @@ function onUse(cid, item, frompos, item2, topos)
 			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você ganhou uma das doze benções de Ghazran!")
 		elseif(playerTotems == 12) then
 		
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você conseguiu todas benções de Ghazran!")
+			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você conseguiu todas benções de Ghazran! Seu questlog foi atualizado!")
+			setPlayerStorageValue(cid, QUESTLOG.ARIADNE.GHAZRAN_WING, 2)
 		end
 
 	end
