@@ -8,13 +8,15 @@ end
 
 function obsidianKnifeOnGhazranCorpse(cid, corpse)
 
-	local canRemoveTongue = (getPlayerStorageValue(cid, sid.ARIADNE_GHAZRAN_TONGUE) == 1)
+	local hasRemovedTongue = (getPlayerStorageValue(cid, sid.ARIADNE_GHAZRAN_TONGUE) == 1)
 	
-	if (canRemoveTongue) then
+	if not(hasRemovedTongue) then
 
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você conseguiu obter a língua de Ghazran. Seu questlog foi atualizado.")
 		setPlayerStorageValue(cid, sid.ARIADNE_GHAZRAN_TONGUE, 1)
 		setPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR, 3)
+	else
+		doPlayerSendCancel(cid, "Você já obteve a língua de Ghazran.")
 	end
 end
 
