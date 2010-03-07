@@ -23932,7 +23932,8 @@
 		<attribute key="weight" value="10000"/>
 		<attribute key="armor" value="10"/>
 		<attribute key="slotType" value="head"/>
-		<attribute key="speed" value="-5"/>
+		<attribute key="absorbPercentPhysical" value="5"/>
+		<attribute key="speed" value="-10"/>
 	</item>
 	<item id="10547" article="a" name="durin armor">
 		<attribute key="weight" value="19500"/>
@@ -23946,14 +23947,14 @@
 		<attribute key="absorbPercentDeath" value="2"/>
 		<attribute key="absorbPercentLifeDrain" value="2"/>
 		<attribute key="absorbPercentManaDrain" value="2"/>		
-		<attribute key="speed" value="-10"/>
+		<attribute key="speed" value="-20"/>
 	</item>
 	<item id="10548" name="durin legs">
 		<attribute key="weight" value="11000"/>
 		<attribute key="armor" value="9"/>
 		<attribute key="slotType" value="legs"/>
 		<attribute key="absorbPercentPhysical" value="5"/>
-		<attribute key="speed" value="-5"/>
+		<attribute key="speed" value="-10"/>
 	</item>	
 	<item id="10549" article="a" name="durin shield">
 		<attribute key="weight" value="16000"/>
@@ -23967,7 +23968,38 @@
 		<attribute key="absorbPercentDeath" value="3"/>
 		<attribute key="absorbPercentLifeDrain" value="3"/>
 		<attribute key="absorbPercentManaDrain" value="3"/>				
-		<attribute key="speed" value="-10"/>
+		<attribute key="speed" value="-20"/>
+	</item>	
+	<item id="10551" article="a" name="tashi aharon helmet">
+		<attribute key="weight" value="3150"/>
+		<attribute key="armor" value="9"/>
+		<attribute key="slotType" value="head"/>
+		<attribute key="absorbPercentPhysical" value="-10"/>
+		<attribute key="healthGain" value="50"/>
+		<attribute key="healthTicks" value="1000"/>			
+	</item>
+	<item id="10552" article="a" name="tashi aharon armor">
+		<attribute key="weight" value="6950"/>
+		<attribute key="armor" value="13"/>
+		<attribute key="slotType" value="body"/>
+		<attribute key="absorbPercentPhysical" value="-10"/>
+		<attribute key="healthGain" value="100"/>
+		<attribute key="healthTicks" value="1000"/>				
+	</item>
+	<item id="10553" name="tashi aharon legs">
+		<attribute key="weight" value="6000"/>
+		<attribute key="armor" value="8"/>
+		<attribute key="slotType" value="legs"/>
+		<attribute key="absorbPercentPhysical" value="-10"/>
+		<attribute key="healthGain" value="50"/>
+		<attribute key="healthTicks" value="1000"/>	
+	</item>	
+	<item id="10554" article="a" name="tashi aharon boots">
+		<attribute key="weight" value="800"/>
+		<attribute key="weaponType" value="feet"/>
+		<attribute key="absorbPercentPhysical" value="-10"/>
+		<attribute key="healthGain" value="100"/>
+		<attribute key="healthTicks" value="1000"/>	
 	</item>	
 	
 </items>
