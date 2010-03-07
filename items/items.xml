@@ -23926,4 +23926,48 @@
 	<item id="20026" name="lava"/>
 	<item id="20027" name="rum"/>
 	<item id="20028" name="swamp"/>
+	
+	<!-- Custom Items -->
+	<item id="10546" article="a" name="durin helmet">
+		<attribute key="weight" value="10000"/>
+		<attribute key="armor" value="10"/>
+		<attribute key="slotType" value="head"/>
+		<attribute key="speed" value="-5"/>
+	</item>
+	<item id="10547" article="a" name="durin armor">
+		<attribute key="weight" value="19500"/>
+		<attribute key="armor" value="15"/>
+		<attribute key="slotType" value="body"/>
+		<attribute key="absorbPercentPhysical" value="10"/>
+		<attribute key="absorbPercentEnergy" value="2"/>
+		<attribute key="absorbPercentFire" value="2"/>
+		<attribute key="absorbPercentEarth" value="2"/>
+		<attribute key="absorbPercentHoly" value="2"/>
+		<attribute key="absorbPercentDeath" value="2"/>
+		<attribute key="absorbPercentLifeDrain" value="2"/>
+		<attribute key="absorbPercentManaDrain" value="2"/>		
+		<attribute key="speed" value="-10"/>
+	</item>
+	<item id="10548" name="durin legs">
+		<attribute key="weight" value="11000"/>
+		<attribute key="armor" value="9"/>
+		<attribute key="slotType" value="legs"/>
+		<attribute key="absorbPercentPhysical" value="5"/>
+		<attribute key="speed" value="-5"/>
+	</item>	
+	<item id="10549" article="a" name="durin shield">
+		<attribute key="weight" value="16000"/>
+		<attribute key="defense" value="35"/>
+		<attribute key="weaponType" value="shield"/>
+		<attribute key="absorbPercentPhysical" value="10"/>
+		<attribute key="absorbPercentEnergy" value="3"/>
+		<attribute key="absorbPercentFire" value="3"/>
+		<attribute key="absorbPercentEarth" value="3"/>
+		<attribute key="absorbPercentHoly" value="3"/>
+		<attribute key="absorbPercentDeath" value="3"/>
+		<attribute key="absorbPercentLifeDrain" value="3"/>
+		<attribute key="absorbPercentManaDrain" value="3"/>				
+		<attribute key="speed" value="-10"/>
+	</item>	
+	
 </items>

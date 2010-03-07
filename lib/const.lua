@@ -29,7 +29,8 @@
 		ARIADNE = {
 		
 			LAIR 			= 3600,
-			GHAZRAN_WING 	= 3601
+			GHAZRAN_WING 	= 3601,
+			CULTISTS_WING 	= 3602,
 		}
 	}
 	

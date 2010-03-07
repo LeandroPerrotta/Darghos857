@@ -11,12 +11,22 @@
 			
 			<response>
 			<action name="script">  
-				_state.b1 = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR) >= 1 and 1 or 0
 				
-				if(_state.b1 == 1) then
-					selfSay("Tome cuidado com Ariadne, ela é extremamente habilidosa e impiedosa!", cid)
-				elseif(_state.b1 == 0) then
-					selfSay("A cidade está sob {perigo}, se não puder ajudar-nos se vá!", cid)
+				local ariadneLairStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR)
+				local ghazranWingStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.GHAZRAN_WING)
+				
+				if(ghazranWingStatus >= 1) then
+				
+					selfSay("Está em posse da língua de Ghazran?", cid)
+					_state.topic = 5
+				elseif(ariadneLairStatus >= 1)	
+				
+					if(ariadneLairStatus == 2) then
+						selfSay("Encontre a entrada do Lair de Ariadne, um de meus Guardas o espera lá!", cid)
+					end
+				else
+				
+					selfSay("A cidade está sob {perigo}, se não puder ajudar-nos se vá!", cid)	
 				end
 			</action>
 			</response>			
@@ -47,9 +57,9 @@
 		<interact keywords="perigo">
 			<response>
 			<action name="script">  	
-				_state.b1 = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR) >= 1 and 1 or 0
+				local ariadneLairStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR)
 				
-				if(_state.b1 == 0) then
+				if(_state.b1 == -1) then
 					selfSay("A velha bruxa Ariadne está a assombrar a paz em Thorn, sua ultima vitima foi a {princesa}! Como pode!!", cid)
 					_state.topic = 1
 				end
@@ -75,21 +85,45 @@
 			</response>	
 		</interact>			
 		
-		<interact keywords="yes" topic="4">
+		<interact keywords="yes" >
 			<keywords>sim</keywords>
 			
 			<response>
 			<action name="script">
 			<![CDATA[
-					  level = getPlayerLevel(cid)
-					  
-					if(level < 220) then
-						selfSay("Estou impressionado com sua brava coragem meu rapaz, mas esta missão requer maior conhecimento e habilidade.", cid)
-					else
-						selfSay("Otimo! Estou profundamente contente que você irá nos ajudar! Meus guardas já recebam ordens para que permitam você a entrar no Pantano. Muito cuidado, este lugar é traiçoeiro! Consigas o antidoto e lhe re-compensarei por esta brava atitude!", cid)	
-						doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Nova Quest aberta em seu QuestLog: Ariadne's Quest.")
+			
+					-- Inicio da quest
+					if(_state.topic == 4) then
+					
+						level = getPlayerLevel(cid)
+						  
+						if(level < 220) then
+							selfSay("Estou impressionado com sua brava coragem meu rapaz, mas esta missão requer maior conhecimento e habilidade.", cid)
+						else
+							selfSay("Otimo! Estou profundamente contente que você irá nos ajudar! Meus guardas já recebam ordens para que permitam você a entrar no Pantano. Muito cuidado, este lugar é traiçoeiro! Consigas o antidoto e lhe re-compensarei por esta brava atitude!", cid)	
+							doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Nova Quest aberta em seu QuestLog: Ariadne's Quest.")
+							
+							setPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR, 2)
+						end	
+					
+					-- Verifica se o jogador matou Ghazran e pegou sua língua
+					elseif(_state.topic == 5) then
 						
-						setPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR, 2)
+						local haveGhazranTongue = (getPlayerStorageValue(cid, sid.ARIADNE_GHAZRAN_TONGUE) == 1)
+						
+						if not(haveGhazranTongue) then
+							
+							selfSay("Você ainda não conseguiu a língua de Ghazran, seja rápido em conseguir-la!", cid)
+						else
+							selfSay("Magnifico! Esta língua será guardada para fazermos o antidoto quando tivermos os outros ingredientes. Aqui está sua recompensa!", cid)	
+							
+							--adicionamos o item com a função doPlayerAddItem()
+							
+							setPlayerStorageValue(cid, QUESTLOG.ARIADNE.GHAZRAN_WING, 4)
+							setPlayerStorageValue(cid, QUESTLOG.ARIADNE.CULTISTS_WING, 1)
+							
+							_state.topic = nil
+						end
 					end	
 			]]>
 			</action>

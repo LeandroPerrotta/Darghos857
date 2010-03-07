@@ -12,7 +12,11 @@
 			<missionstate id="2" description="Derrote Ghazran e use sua Obsidian Knife no corpo para remover sua língua, um dos ingredientes do antidoto." />
 			<missionstate id="3" description="Leve a língua de Ghazran até o Rei Ordon de Thorn." />
 			<missionstate id="4" description="Wing completa." />
-		</mission>		
+		</mission>	
+		
+		<mission name="Cultists Wing" storageid="3602" startvalue="1" endvalue="4">	
+			<missionstate id="1" description="Dungeon sendo desenvolvida..." />
+		</mission>	
 	</quest>
 
 </quests>
