@@ -23996,7 +23996,7 @@
 	</item>	
 	<item id="10554" article="a" name="tashi aharon boots">
 		<attribute key="weight" value="800"/>
-		<attribute key="weaponType" value="feet"/>
+		<attribute key="slotType" value="feet"/>
 		<attribute key="absorbPercentPhysical" value="-10"/>
 		<attribute key="healthGain" value="100"/>
 		<attribute key="healthTicks" value="1000"/>	
