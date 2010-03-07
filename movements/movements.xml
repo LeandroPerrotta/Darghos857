@@ -86,8 +86,8 @@
 		<!-- Durin Set -->
 		<moveevent event="Equip" itemid="10546" slot="head" function="onEquipItem"/>
 		<moveevent event="DeEquip" itemid="10546" slot="head" function="onDeEquipItem"/>
-		<moveevent event="Equip" itemid="10547" slot="body" function="onEquipItem"/>
-		<moveevent event="DeEquip" itemid="10547" slot="body" function="onDeEquipItem"/>
+		<moveevent event="Equip" itemid="10547" slot="armor" function="onEquipItem"/>
+		<moveevent event="DeEquip" itemid="10547" slot="armor" function="onDeEquipItem"/>
 		<moveevent event="Equip" itemid="10548" slot="legs" function="onEquipItem"/>
 		<moveevent event="DeEquip" itemid="10548" slot="legs" function="onDeEquipItem"/>		
 		<moveevent event="Equip" itemid="10549" slot="hand" function="onEquipItem"/>
@@ -96,8 +96,8 @@
 		<!-- Tashi Aharon Set  -->
 		<moveevent event="Equip" itemid="10551" slot="head" function="onEquipItem"/>
 		<moveevent event="DeEquip" itemid="10551" slot="head" function="onDeEquipItem"/>
-		<moveevent event="Equip" itemid="10552" slot="body" function="onEquipItem"/>
-		<moveevent event="DeEquip" itemid="10552" slot="body" function="onDeEquipItem"/>
+		<moveevent event="Equip" itemid="10552" slot="armor" function="onEquipItem"/>
+		<moveevent event="DeEquip" itemid="10552" slot="armor" function="onDeEquipItem"/>
 		<moveevent event="Equip" itemid="10553" slot="legs" function="onEquipItem"/>
 		<moveevent event="DeEquip" itemid="10553" slot="legs" function="onDeEquipItem"/>
 		<moveevent event="Equip" itemid="10554" slot="feet" function="onEquipItem"/>
