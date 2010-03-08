@@ -84,23 +84,53 @@
 		<!-- CUSTOM ITEMS --> 
 		
 		<!-- Durin Set -->
-		<moveevent event="Equip" itemid="10546" slot="head" function="onEquipItem"/>
+		<moveevent event="Equip" itemid="10546" level="220" slot="head" function="onEquipItem">
+			<vocation name="Knight"/>
+			<vocation name="Elite Knight" showInDescription="0"/>	
+		</movevent>
 		<moveevent event="DeEquip" itemid="10546" slot="head" function="onDeEquipItem"/>
-		<moveevent event="Equip" itemid="10547" slot="armor" function="onEquipItem"/>
+		
+		<moveevent event="Equip" itemid="10547" level="220" slot="armor" function="onEquipItem">
+			<vocation name="Knight"/>
+			<vocation name="Elite Knight" showInDescription="0"/>	
+		</movevent>		
 		<moveevent event="DeEquip" itemid="10547" slot="armor" function="onDeEquipItem"/>
-		<moveevent event="Equip" itemid="10548" slot="legs" function="onEquipItem"/>
-		<moveevent event="DeEquip" itemid="10548" slot="legs" function="onDeEquipItem"/>		
-		<moveevent event="Equip" itemid="10549" slot="hand" function="onEquipItem"/>
+		
+		<moveevent event="Equip" itemid="10548" level="220" slot="legs" function="onEquipItem">
+			<vocation name="Knight"/>
+			<vocation name="Elite Knight" showInDescription="0"/>	
+		</movevent>		
+		<moveevent event="DeEquip" itemid="10548" slot="legs" function="onDeEquipItem"/>	
+			
+		<moveevent event="Equip" itemid="10549" level="220" slot="hand" function="onEquipItem">
+			<vocation name="Knight"/>
+			<vocation name="Elite Knight" showInDescription="0"/>	
+		</movevent>		
 		<moveevent event="DeEquip" itemid="10549" slot="hand" function="onDeEquipItem"/>		
 		
 		<!-- Tashi Aharon Set  -->
-		<moveevent event="Equip" itemid="10551" slot="head" function="onEquipItem"/>
+		<moveevent event="Equip" itemid="10551" level="220" slot="head" function="onEquipItem">
+			<vocation name="Paladin"/>
+			<vocation name="Royal Paladin" showInDescription="0"/>	
+		</movevent>				
 		<moveevent event="DeEquip" itemid="10551" slot="head" function="onDeEquipItem"/>
-		<moveevent event="Equip" itemid="10552" slot="armor" function="onEquipItem"/>
+		
+		<moveevent event="Equip" itemid="10552" level="220" slot="armor" function="onEquipItem">
+			<vocation name="Paladin"/>
+			<vocation name="Royal Paladin" showInDescription="0"/>	
+		</movevent>			
 		<moveevent event="DeEquip" itemid="10552" slot="armor" function="onDeEquipItem"/>
-		<moveevent event="Equip" itemid="10553" slot="legs" function="onEquipItem"/>
+		
+		<moveevent event="Equip" itemid="10553" level="220" slot="legs" function="onEquipItem">
+			<vocation name="Paladin"/>
+			<vocation name="Royal Paladin" showInDescription="0"/>	
+		</movevent>			
 		<moveevent event="DeEquip" itemid="10553" slot="legs" function="onDeEquipItem"/>
-		<moveevent event="Equip" itemid="10554" slot="feet" function="onEquipItem"/>
+		
+		<moveevent event="Equip" itemid="10554" level="220" slot="feet" function="onEquipItem">
+			<vocation name="Paladin"/>
+			<vocation name="Royal Paladin" showInDescription="0"/>	
+		</movevent>			
 		<moveevent event="DeEquip" itemid="10554" slot="feet" function="onDeEquipItem"/>
 		
 
