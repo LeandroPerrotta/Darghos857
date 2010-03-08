@@ -24001,5 +24001,24 @@
 		<attribute key="healthGain" value="100"/>
 		<attribute key="healthTicks" value="1000"/>	
 	</item>	
+	<item id="10555" article="a" name="warden helmet (heal friend +15%)">
+		<attribute key="weight" value="450"/>
+		<attribute key="armor" value="5"/>
+		<attribute key="slotType" value="head"/>	
+	</item>
+	<item id="10556" article="a" name="warden armor (heal friend +15%)">
+		<attribute key="weight" value="2000"/>
+		<attribute key="armor" value="10"/>
+		<attribute key="slotType" value="body"/>		
+	</item>
+	<item id="10557" name="warden legs (heal friend +10%)">
+		<attribute key="weight" value="1250"/>
+		<attribute key="armor" value="7"/>
+		<attribute key="slotType" value="legs"/>
+	</item>	
+	<item id="10558" article="a" name="warden boots (heal friend +10%)">
+		<attribute key="weight" value="600"/>
+		<attribute key="slotType" value="feet"/>
+	</item>		
 	
 </items>
