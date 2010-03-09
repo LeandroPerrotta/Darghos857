@@ -19,7 +19,7 @@
 				
 					selfSay("Está em posse da língua de Ghazran?", cid)
 					_state.topic = 5
-				elseif(ariadneLairStatus >= 1)	
+				elseif(ariadneLairStatus >= 1) then
 				
 					if(ariadneLairStatus == 2) then
 						selfSay("Encontre a entrada do Lair de Ariadne, um de meus Guardas o espera lá!", cid)
