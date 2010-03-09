@@ -121,16 +121,16 @@
 							
 							local reward = nil 
 							
-							if(isKnight(cid) == TRUE) then
+							if(isKnight(cid)) then
 							
 								reward = 10546 -- Durin Helmet
-							elseif(isPaladin(cid) == TRUE) then
+							elseif(isPaladin(cid)) then
 							
 								reward = 10551 -- Tashi Aharon Helmet
-							elseif(isDruid(cid) == TRUE) then
+							elseif(isDruid(cid)) then
 							
 								reward = 10558 -- Warden Boots
-							elseif(isSorcerer(cid) == TRUE) then
+							elseif(isSorcerer(cid)) then
 								
 								reward = 10561 -- Deathface Legs
 							end
