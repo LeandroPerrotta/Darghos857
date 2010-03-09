@@ -11,7 +11,7 @@
 			
 			<response>
 			<action name="script">  
-				
+				<![CDATA[
 				local ariadneLairStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR)
 				local ghazranWingStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.GHAZRAN_WING)
 				
@@ -28,6 +28,7 @@
 				
 					selfSay("A cidade está sob {perigo}, se não puder ajudar-nos se vá!", cid)	
 				end
+				]]>
 			</action>
 			</response>			
 		</interact>
@@ -57,12 +58,14 @@
 		<interact keywords="perigo">
 			<response>
 			<action name="script">  
+				<![CDATA[
 				local ariadneLairStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR)
 				
 				if(_state.b1 == -1) then
 					selfSay("A velha bruxa Ariadne está a assombrar a paz em Thorn, sua ultima vitima foi a {princesa}! Como pode!!", cid)
 					_state.topic = 1
 				end
+				]]>
 			</action>
 			</response>			
 		</interact>		
