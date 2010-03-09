@@ -156,7 +156,32 @@
 			<vocation name="Druid"/>
 			<vocation name="Elder Druid" showInDescription="0"/>	
 		</moveevent>			
-		<moveevent event="DeEquip" itemid="10558" slot="feet" function="onDeEquipItem"/>		
+		<moveevent event="DeEquip" itemid="10558" slot="feet" function="onDeEquipItem"/>	
+		
+		<!-- Deathface Set  -->
+		<moveevent event="Equip" itemid="10559" level="220" slot="head" function="onEquipItem">
+			<vocation name="Sorcerer"/>
+			<vocation name="Master Sorcerer" showInDescription="0"/>	
+		</moveevent>				
+		<moveevent event="DeEquip" itemid="10559" slot="head" function="onDeEquipItem"/>
+		
+		<moveevent event="Equip" itemid="10560" level="220" slot="armor" function="onEquipItem">
+			<vocation name="Sorcerer"/>
+			<vocation name="Master Sorcerer" showInDescription="0"/>	
+		</moveevent>			
+		<moveevent event="DeEquip" itemid="10560" slot="armor" function="onDeEquipItem"/>
+		
+		<moveevent event="Equip" itemid="10561" level="220" slot="legs" function="onEquipItem">
+			<vocation name="Sorcerer"/>
+			<vocation name="Master Sorcerer" showInDescription="0"/>	
+		</moveevent>			
+		<moveevent event="DeEquip" itemid="10561" slot="legs" function="onDeEquipItem"/>
+		
+		<moveevent event="Equip" itemid="10562" level="220" slot="feet" function="onEquipItem">
+			<vocation name="Sorcerer"/>
+			<vocation name="Master Sorcerer" showInDescription="0"/>	
+		</moveevent>			
+		<moveevent event="DeEquip" itemid="10562" slot="feet" function="onDeEquipItem"/>			
 		
 
 	<!-- You should not be able to walk through quest chests -->
