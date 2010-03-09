@@ -133,6 +133,31 @@
 		</moveevent>			
 		<moveevent event="DeEquip" itemid="10554" slot="feet" function="onDeEquipItem"/>
 		
+		<!-- Warden Set  -->
+		<moveevent event="Equip" itemid="10555" level="220" slot="head" function="onEquipItem">
+			<vocation name="Druid"/>
+			<vocation name="Elder Druid" showInDescription="0"/>	
+		</moveevent>				
+		<moveevent event="DeEquip" itemid="10555" slot="head" function="onDeEquipItem"/>
+		
+		<moveevent event="Equip" itemid="10556" level="220" slot="armor" function="onEquipItem">
+			<vocation name="Druid"/>
+			<vocation name="Elder Druid" showInDescription="0"/>	
+		</moveevent>			
+		<moveevent event="DeEquip" itemid="10556" slot="armor" function="onDeEquipItem"/>
+		
+		<moveevent event="Equip" itemid="10557" level="220" slot="legs" function="onEquipItem">
+			<vocation name="Druid"/>
+			<vocation name="Elder Druid" showInDescription="0"/>	
+		</moveevent>			
+		<moveevent event="DeEquip" itemid="10557" slot="legs" function="onDeEquipItem"/>
+		
+		<moveevent event="Equip" itemid="10558" level="220" slot="feet" function="onEquipItem">
+			<vocation name="Druid"/>
+			<vocation name="Elder Druid" showInDescription="0"/>	
+		</moveevent>			
+		<moveevent event="DeEquip" itemid="10558" slot="feet" function="onDeEquipItem"/>		
+		
 
 	<!-- You should not be able to walk through quest chests -->
 

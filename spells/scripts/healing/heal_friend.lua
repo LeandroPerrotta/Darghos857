@@ -8,6 +8,9 @@ function onGetFormulaValues(cid, level, maglevel)
 	local min = ((level/5)+(maglevel*10))
 	local max = ((level/5)+(maglevel*14))
 	
+	local baseMin = min
+	local baseMax = max
+	
 	local head = getPlayerSlotItem(cid, CONST_SLOT_HEAD)
 	local armor = getPlayerSlotItem(cid, CONST_SLOT_ARMOR)
 	local legs = getPlayerSlotItem(cid, CONST_SLOT_LEGS)
@@ -30,23 +33,23 @@ function onGetFormulaValues(cid, level, maglevel)
 	}
 	
 	if(head ~= FALSE and HELMET_BONUS[head.itemid] ~= nil) then
-		min = min * (1 + (HELMET_BONUS[head.itemid] / 100))
-		max = max * (1 + (HELMET_BONUS[head.itemid] / 100))
+		min = min + ((baseMin * (1 + (HELMET_BONUS[head.itemid] / 100))) - baseMin)
+		max = max + ((baseMax * (1 + (HELMET_BONUS[head.itemid] / 100))) - baseMax)
 	end
 	
-	if(armor ~= FALSE and ARMOR_BONUS[head.itemid] ~= nil) then
-		min = min * (1 + (ARMOR_BONUS[head.itemid] / 100))
-		max = max * (1 + (ARMOR_BONUS[head.itemid] / 100))	
+	if(armor ~= FALSE and ARMOR_BONUS[armor.itemid] ~= nil) then
+		min = min + ((baseMin * (1 + (ARMOR_BONUS[armor.itemid] / 100))) - baseMin)
+		max = max + ((baseMax * (1 + (ARMOR_BONUS[armor.itemid] / 100))) - baseMax)
 	end
 	
-	if(legs ~= FALSE and LEGS_BONUS[head.itemid] ~= nil) then
-		min = min * (1 + (LEGS_BONUS[head.itemid] / 100))
-		max = max * (1 + (LEGS_BONUS[head.itemid] / 100))	
+	if(legs ~= FALSE and LEGS_BONUS[legs.itemid] ~= nil) then
+		min = min + ((baseMin * (1 + (LEGS_BONUS[legs.itemid] / 100))) - baseMin)
+		max = max + ((baseMax * (1 + (LEGS_BONUS[legs.itemid] / 100))) - baseMax)	
 	end
 	
-	if(boots ~= FALSE and BOOTS_BONUS[head.itemid] ~= nil) then
-		min = min * (1 + (BOOTS_BONUS[head.itemid] / 100))
-		max = max * (1 + (BOOTS_BONUS[head.itemid] / 100))	
+	if(boots ~= FALSE and BOOTS_BONUS[boots.itemid] ~= nil) then
+		min = min + ((baseMin * (1 + (BOOTS_BONUS[boots.itemid] / 100))) - baseMin)
+		max = max + ((baseMax * (1 + (BOOTS_BONUS[boots.itemid] / 100))) - baseMax)	
 	end
 	
 	return min, max

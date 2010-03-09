@@ -24020,5 +24020,24 @@
 		<attribute key="weight" value="600"/>
 		<attribute key="slotType" value="feet"/>
 	</item>		
+	<item id="10559" article="a" name="deathface helmet (sudden death +10%)">
+		<attribute key="weight" value="3200"/>
+		<attribute key="armor" value="8"/>
+		<attribute key="slotType" value="head"/>	
+	</item>
+	<item id="10560" article="a" name="deathface armor (sudden death +15%)">
+		<attribute key="weight" value="3100"/>
+		<attribute key="armor" value="11"/>
+		<attribute key="slotType" value="body"/>		
+	</item>
+	<item id="10561" name="deathface legs (sudden death +5%)">
+		<attribute key="weight" value="1450"/>
+		<attribute key="armor" value="7"/>
+		<attribute key="slotType" value="legs"/>
+	</item>	
+	<item id="10562" article="a" name="deathface boots (sudden death +5%)">
+		<attribute key="weight" value="1000"/>
+		<attribute key="slotType" value="feet"/>
+	</item>		
 	
 </items>
