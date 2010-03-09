@@ -61,7 +61,7 @@
 				<![CDATA[
 				local ariadneLairStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR)
 				
-				if(_state.b1 == -1) then
+				if(ariadneLairStatus == -1) then
 					selfSay("A velha bruxa Ariadne está a assombrar a paz em Thorn, sua ultima vitima foi a {princesa}! Como pode!!", cid)
 					_state.topic = 1
 				end
