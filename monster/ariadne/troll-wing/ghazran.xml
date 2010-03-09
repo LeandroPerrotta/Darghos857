@@ -2,7 +2,7 @@
 <monster name="Ghazran" nameDescription="a ghazran" race="blood" experience="1" speed="290" manacost="0">
   <health now="15500" max="15500"/>
   <look type="121" head="20" body="30" legs="40" feet="50" corpse="6048"/>
-  <targetchange interval="2000" chance="30"/>
+  <targetchange interval="15000" chance="25"/>
   <strategy attack="100" defense="0"/>
   <flags>
     <flag summonable="0"/>
@@ -31,6 +31,10 @@
     <attack name="earth" interval="2000" chance="20" length="9" spread="4" min="-1100" max="-1600">
     	<attribute key="areaEffect" value="plantattack"/>
     </attack>
+	
+	<attack name="earth" interval="2000" chance="25" radius="5" target="0" min="-700" max="-1200">
+		<attribute key="areaEffect" value="blackspark"/>
+	</attack>	
 
 	<!-- Jamais fique de frente pro bixo -->
     <attack name="death" interval="2000" chance="12" length="1" spread="0" min="-1700" max="-2600">
@@ -39,9 +43,13 @@
 
 </attacks>
 <defenses armor="50" defense="100">
-	<defense name="healing" interval="1000" chance="45" min="2000" max="4800">
+	<defense name="healing" interval="1000" chance="60" min="3200" max="4800">
 		<attribute key="areaEffect" value="blueshimmer"/>
 	</defense>
+	
+	<defense name="healing" interval="1000" chance="25" min="400" max="1000">
+		<attribute key="areaEffect" value="blueshimmer"/>
+	</defense>	
 	
 	<defense name="speed" interval="1000" chance="15" speedchange="400" duration="10000">
       <attribute key="areaEffect" value="redshimmer"/>
