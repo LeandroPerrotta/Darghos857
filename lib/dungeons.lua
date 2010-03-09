@@ -210,8 +210,8 @@ function Dungeons.onServerStart()
 	for key,dungeonValue in ipairs(dungeonEntranceUids) do
 		
 		if(getThing(dungeonValue) ~= nil) then
-			Dungeons.updateEntranceDescription(dungeonValue)
 			Dungeons.resetPlayersIn(dungeonValue)
+			Dungeons.updateEntranceDescription(dungeonValue)		
 		end
 	end
 end
