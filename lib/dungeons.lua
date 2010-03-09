@@ -102,6 +102,11 @@ function Dungeons.getPlayersIn(dungeonId)
 	return playersOnDungeon
 end
 
+function Dungeons.resetPlayersIn(dungeonId)
+	
+	setGlobalStorageValue(dungeonId, 0)
+end
+
 function Dungeons.doTeleportPlayer(cid, position)
 	
 	local playerLookTo = getPlayerLookDir(cid)
@@ -206,6 +211,7 @@ function Dungeons.onServerStart()
 		
 		if(getThing(dungeonValue) ~= nil) then
 			Dungeons.updateEntranceDescription(dungeonValue)
+			Dungeons.resetPlayersIn(dungeonValue)
 		end
 	end
 end

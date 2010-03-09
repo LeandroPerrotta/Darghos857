@@ -23976,7 +23976,7 @@
 		<attribute key="slotType" value="head"/>
 		<attribute key="absorbPercentPhysical" value="-10"/>
 		<attribute key="healthGain" value="50"/>
-		<attribute key="healthTicks" value="1000"/>			
+		<attribute key="healthTicks" value="1200"/>			
 	</item>
 	<item id="10552" article="a" name="tashi aharon armor">
 		<attribute key="weight" value="6950"/>
@@ -23984,7 +23984,7 @@
 		<attribute key="slotType" value="body"/>
 		<attribute key="absorbPercentPhysical" value="-10"/>
 		<attribute key="healthGain" value="100"/>
-		<attribute key="healthTicks" value="1000"/>				
+		<attribute key="healthTicks" value="1200"/>				
 	</item>
 	<item id="10553" name="tashi aharon legs">
 		<attribute key="weight" value="6000"/>
@@ -23992,14 +23992,14 @@
 		<attribute key="slotType" value="legs"/>
 		<attribute key="absorbPercentPhysical" value="-10"/>
 		<attribute key="healthGain" value="50"/>
-		<attribute key="healthTicks" value="1000"/>	
+		<attribute key="healthTicks" value="1200"/>	
 	</item>	
 	<item id="10554" article="a" name="tashi aharon boots">
 		<attribute key="weight" value="800"/>
 		<attribute key="slotType" value="feet"/>
 		<attribute key="absorbPercentPhysical" value="-10"/>
 		<attribute key="healthGain" value="100"/>
-		<attribute key="healthTicks" value="1000"/>	
+		<attribute key="healthTicks" value="1200"/>	
 	</item>	
 	<item id="10555" article="a" name="warden helmet (heal friend +15%)">
 		<attribute key="weight" value="450"/>

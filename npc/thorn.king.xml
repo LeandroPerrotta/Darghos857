@@ -15,7 +15,7 @@
 				local ariadneLairStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR)
 				local ghazranWingStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.GHAZRAN_WING)
 				
-				if(ghazranWingStatus >= 1) then
+				if(ghazranWingStatus >= 1 and ghazranWingStatus < 4) then
 				
 					selfSay("Está em posse da língua de Ghazran?", cid)
 					_state.topic = 5
@@ -56,7 +56,7 @@
 		
 		<interact keywords="perigo">
 			<response>
-			<action name="script">  	
+			<action name="script">  
 				local ariadneLairStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR)
 				
 				if(_state.b1 == -1) then
@@ -90,9 +90,8 @@
 			
 			<response>
 			<action name="script">
-			<![CDATA[
-			
-					-- Inicio da quest
+			<![CDATA[	
+					-- topico de abertura da quest
 					if(_state.topic == 4) then
 					
 						level = getPlayerLevel(cid)
@@ -106,7 +105,7 @@
 							setPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR, 2)
 						end	
 					
-					-- Verifica se o jogador matou Ghazran e pegou sua língua
+					-- topico da conclusão da primeira wing (língua de ghazran)
 					elseif(_state.topic == 5) then
 						
 						local haveGhazranTongue = (getPlayerStorageValue(cid, sid.ARIADNE_GHAZRAN_TONGUE) == 1)
@@ -117,7 +116,23 @@
 						else
 							selfSay("Magnifico! Esta língua será guardada para fazermos o antidoto quando tivermos os outros ingredientes. Aqui está sua recompensa!", cid)	
 							
-							--adicionamos o item com a função doPlayerAddItem()
+							local reward = nil 
+							
+							if(isKnight(cid) == TRUE) then
+							
+								reward = 10546 -- Durin Helmet
+							elseif(isPaladin(cid) == TRUE) then
+							
+								reward = 10551 -- Tashi Aharon Helmet
+							elseif(isDruid(cid) == TRUE) then
+							
+								reward = 10558 -- Warden Boots
+							elseif(isSorcerer(cid) == TRUE) then
+								
+								reward = 10561 -- Deathface Legs
+							end
+							
+							doPlayerAddItem(cid, reward, 1)
 							
 							setPlayerStorageValue(cid, QUESTLOG.ARIADNE.GHAZRAN_WING, 4)
 							setPlayerStorageValue(cid, QUESTLOG.ARIADNE.CULTISTS_WING, 1)
