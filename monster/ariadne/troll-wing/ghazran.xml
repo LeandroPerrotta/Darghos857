@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Ghazran" nameDescription="a ghazran" race="blood" experience="1" speed="290" manacost="0">
-  <health now="15500" max="15500"/>
+  <health now="50050" max="50050"/>
   <look type="121" head="20" body="30" legs="40" feet="50" corpse="6048"/>
   <targetchange interval="15000" chance="25"/>
   <strategy attack="100" defense="0"/>
@@ -20,7 +20,7 @@
 <attacks>
     <attack name="melee" interval="2000" skill="350" attack="90"/>
     
-    <attack name="speed" interval="2000" chance="20" range="10" radius="10" target="1" speedchange="-1000" duration="55000">
+    <attack name="speed" interval="2000" chance="20" range="10" radius="10" target="1" speedchange="-100" duration="55000">
     	<attribute key="areaEffect" value="sleep"/>
     </attack>
     
@@ -43,14 +43,10 @@
 
 </attacks>
 <defenses armor="50" defense="100">
-	<defense name="healing" interval="1000" chance="60" min="3200" max="4800">
+	<defense name="healing" interval="6000" chance="100" min="2500" max="5000">
 		<attribute key="areaEffect" value="blueshimmer"/>
 	</defense>
-	
-	<defense name="healing" interval="1000" chance="25" min="400" max="1000">
-		<attribute key="areaEffect" value="blueshimmer"/>
-	</defense>	
-	
+
 	<defense name="speed" interval="1000" chance="15" speedchange="400" duration="10000">
       <attribute key="areaEffect" value="redshimmer"/>
     </defense>	
