@@ -7819,8 +7819,8 @@
     <monster name="Bug" x="-2" y="1" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2504" centery="1850" centerz="8" radius="5">
-    <monster name="ooze" x="-1" y="1" z="8" spawntime="60"/>
-    <monster name="ooze" x="0" y="3" z="8" spawntime="60"/>
+    <monster name="Ooze" x="-1" y="1" z="8" spawntime="60"/>
+    <monster name="Ooze" x="0" y="3" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2215" centery="1851" centerz="8" radius="5">
     <monster name="Warlock" x="0" y="2" z="8" spawntime="300"/>
@@ -7888,8 +7888,8 @@
     <monster name="Carrion Worm" x="4" y="2" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2454" centery="1855" centerz="8" radius="5">
-    <monster name="ooze" x="2" y="-3" z="8" spawntime="60"/>
-    <monster name="ooze" x="4" y="2" z="8" spawntime="60"/>
+    <monster name="Ooze" x="2" y="-3" z="8" spawntime="60"/>
+    <monster name="Ooze" x="4" y="2" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2322" centery="1856" centerz="8" radius="5">
     <monster name="Rotworm" x="-3" y="-2" z="8" spawntime="60"/>
@@ -7897,8 +7897,8 @@
     <monster name="Rotworm" x="2" y="1" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2488" centery="1856" centerz="8" radius="5">
-    <monster name="ooze" x="-1" y="-2" z="8" spawntime="60"/>
-    <monster name="ooze" x="-1" y="1" z="8" spawntime="60"/>
+    <monster name="Ooze" x="-1" y="-2" z="8" spawntime="60"/>
+    <monster name="Ooze" x="-1" y="1" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2489" centery="1856" centerz="8" radius="5"/>
   <spawn centerx="1990" centery="1857" centerz="8" radius="5">
@@ -7911,12 +7911,12 @@
     <monster name="Rotworm" x="1" y="-1" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2474" centery="1857" centerz="8" radius="5">
-    <monster name="ooze" x="-2" y="2" z="8" spawntime="60"/>
-    <monster name="ooze" x="1" y="2" z="8" spawntime="60"/>
+    <monster name="Ooze" x="-2" y="2" z="8" spawntime="60"/>
+    <monster name="Ooze" x="1" y="2" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2521" centery="1857" centerz="8" radius="5">
-    <monster name="ooze" x="0" y="-2" z="8" spawntime="60"/>
-    <monster name="ooze" x="-2" y="0" z="8" spawntime="60"/>
+    <monster name="Ooze" x="0" y="-2" z="8" spawntime="60"/>
+    <monster name="Ooze" x="-2" y="0" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2118" centery="1858" centerz="8" radius="5">
     <monster name="Ghoul" x="-2" y="-2" z="8" spawntime="60"/>
@@ -7955,7 +7955,7 @@
     <monster name="Troll" x="-2" y="3" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2491" centery="1867" centerz="8" radius="5">
-    <monster name="ooze" x="1" y="1" z="8" spawntime="60"/>
+    <monster name="Ooze" x="1" y="1" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2238" centery="1868" centerz="8" radius="5">
     <monster name="Warlock" x="0" y="-3" z="8" spawntime="300"/>
@@ -7965,8 +7965,8 @@
     <monster name="Slime" x="2" y="5" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2505" centery="1868" centerz="8" radius="5">
-    <monster name="ooze" x="-1" y="-3" z="8" spawntime="60"/>
-    <monster name="ooze" x="3" y="0" z="8" spawntime="60"/>
+    <monster name="Ooze" x="-1" y="-3" z="8" spawntime="60"/>
+    <monster name="Ooze" x="3" y="0" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2088" centery="1869" centerz="8" radius="5">
     <monster name="Ghoul" x="1" y="2" z="8" spawntime="60"/>
@@ -8022,7 +8022,7 @@
     <monster name="Troll" x="1" y="5" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2483" centery="1878" centerz="8" radius="5">
-    <monster name="ooze" x="0" y="2" z="8" spawntime="60"/>
+    <monster name="Ooze" x="0" y="2" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2008" centery="1879" centerz="8" radius="5">
     <monster name="Troll" x="-1" y="-4" z="8" spawntime="60"/>
@@ -8061,13 +8061,13 @@
     <monster name="Ghoul" x="2" y="0" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2507" centery="1886" centerz="8" radius="5">
-    <monster name="ooze" x="-3" y="0" z="8" spawntime="60"/>
-    <monster name="ooze" x="-2" y="1" z="8" spawntime="60"/>
-    <monster name="ooze" x="0" y="2" z="8" spawntime="60"/>
-    <monster name="ooze" x="2" y="2" z="8" spawntime="60"/>
-    <monster name="ooze" x="1" y="3" z="8" spawntime="60"/>
-    <monster name="ooze" x="0" y="4" z="8" spawntime="60"/>
-    <monster name="ooze" x="2" y="4" z="8" spawntime="60"/>
+    <monster name="Ooze" x="-3" y="0" z="8" spawntime="60"/>
+    <monster name="Ooze" x="-2" y="1" z="8" spawntime="60"/>
+    <monster name="Ooze" x="0" y="2" z="8" spawntime="60"/>
+    <monster name="Ooze" x="2" y="2" z="8" spawntime="60"/>
+    <monster name="Ooze" x="1" y="3" z="8" spawntime="60"/>
+    <monster name="Ooze" x="0" y="4" z="8" spawntime="60"/>
+    <monster name="Ooze" x="2" y="4" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2245" centery="1888" centerz="8" radius="10">
     <monster name="Rotworm" x="10" y="-4" z="8" spawntime="60"/>
@@ -14111,13 +14111,17 @@
     <monster name="Necromancer" x="0" y="-1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2670" centery="1764" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="0" y="-5" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="5" y="-5" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="3" y="0" z="10" spawntime="60"/>
     <monster name="Sen Gan Spearman" x="1" y="2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-3" y="4" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2659" centery="1774" centerz="10" radius="5">
     <monster name="Sen Gan Troll" x="5" y="-3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="1" z="10" spawntime="60"/>
     <monster name="Sen Gan Hydra" x="2" y="2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="4" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="5" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1975" centery="1776" centerz="10" radius="5">
@@ -14135,8 +14139,11 @@
     <monster name="Orc Berserker" x="0" y="0" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2666" centery="1789" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="0" y="-5" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="2" y="-5" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="0" y="2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="2" y="2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="2" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1961" centery="1791" centerz="10" radius="5">
     <monster name="Rotworm" x="-3" y="-5" z="10" spawntime="120"/>
@@ -14193,9 +14200,12 @@
     <monster name="Orc Warrior" x="-2" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2667" centery="1802" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="1" y="-5" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="2" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2615" centery="1803" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="-4" y="0" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="0" y="1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2750" centery="1804" centerz="10" radius="5">
@@ -14203,9 +14213,11 @@
   </spawn>
   <spawn centerx="2602" centery="1806" centerz="10" radius="5">
     <monster name="Sen Gan Troll" x="2" y="-5" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="-5" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="2" y="-2" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="0" y="-1" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="3" y="-1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-5" y="1" z="10" spawntime="60"/>
     <monster name="Sen Gan Spearman" x="-5" y="3" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2554" centery="1808" centerz="10" radius="5">
@@ -14214,33 +14226,48 @@
     <monster name="Sen Gan Totem Summoner" x="-1" y="1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2706" centery="1808" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="3" y="-1" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="-1" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-4" y="2" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="-5" y="4" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2573" centery="1809" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="2" y="-5" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="2" y="-3" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="0" y="0" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="1" y="3" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2025" centery="1811" centerz="10" radius="5">
     <monster name="Orc Warrior" x="1" y="-1" z="10" spawntime="60"/>
     <monster name="Orc Warrior" x="-1" y="1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2588" centery="1812" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="5" y="-5" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="1" y="-3" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="4" y="-3" z="10" spawntime="60"/>
-    <monster name="ooze" x="-3" y="1" z="10" spawntime="60"/>
+    <monster name="Ooze" x="-3" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-4" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2001" centery="1813" centerz="10" radius="5">
     <monster name="Skeleton" x="1" y="0" z="10" spawntime="60"/>
     <monster name="Skeleton" x="-1" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2677" centery="1813" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="-5" y="-2" z="10" spawntime="60"/>
     <monster name="Sen Gan Hydra" x="1" y="0" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="0" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="2" y="2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-5" y="3" z="10" spawntime="2560"/>
+    <monster name="Sen Gan Troll" x="2" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2661" centery="1815" centerz="10" radius="5">
-    <monster name="ooze" x="3" y="-1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="-4" z="10" spawntime="60"/>
+    <monster name="Ooze" x="3" y="-1" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="0" y="0" z="10" spawntime="60"/>
     <monster name="Sen Gan Spearman" x="-2" y="2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-4" y="4" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-5" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2103" centery="1816" centerz="10" radius="5">
     <monster name="Orc Shaman" x="-2" y="-2" z="10" spawntime="60"/>
@@ -14268,8 +14295,11 @@
     <monster name="Bone Wall" x="0" y="1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2578" centery="1826" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="1" y="-3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-2" y="-1" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="0" y="-1" z="10" spawntime="60"/>
     <monster name="Sen Gan Spearman" x="0" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="0" y="4" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="0" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1984" centery="1829" centerz="10" radius="5">
@@ -14279,29 +14309,45 @@
     <monster name="Bone Wall" x="4" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2644" centery="1830" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="5" y="-5" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="-1" y="-3" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="2" y="-3" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="-1" y="-1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-4" y="1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2527" centery="1831" centerz="10" radius="5">
     <monster name="Sen Gan Hydra" x="-2" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-3" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-3" y="2" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="1" y="2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="1" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2731" centery="1831" centerz="10" radius="5">
     <monster name="Sen Gan Hydra" x="1" y="-2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2605" centery="1832" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="-3" y="-2" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="1" y="-2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-5" y="1" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="0" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="4" y="1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2591" centery="1835" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="4" y="-4" z="10" spawntime="60"/>
     <monster name="Sen Gan Spearman" x="-1" y="-3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="4" y="-3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-2" y="0" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="0" y="0" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2628" centery="1836" centerz="10" radius="5">
     <monster name="Big Ooze" x="3" y="-1" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="-4" y="0" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="-1" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="3" y="2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-2" y="5" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-1" y="5" z="10" spawntime="2560"/>
+    <monster name="Sen Gan Troll" x="3" y="5" z="10" spawntime="2560"/>
+    <monster name="Sen Gan Troll" x="4" y="5" z="10" spawntime="2560"/>
   </spawn>
   <spawn centerx="2692" centery="1838" centerz="10" radius="5">
     <monster name="Swamp Thing" x="1" y="-1" z="10" spawntime="60"/>
@@ -14310,15 +14356,21 @@
     <monster name="Sen Gan Hydra" x="0" y="-2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2565" centery="1842" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="4" y="-4" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="-2" y="-3" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="0" y="-2" z="10" spawntime="60"/>
     <monster name="Sen Gan Totem Summoner" x="4" y="-2" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-2" y="2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="3" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2534" centery="1847" centerz="10" radius="5">
     <monster name="Swamp Thing" x="-4" y="-5" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-3" y="-2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-2" y="-1" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="-1" y="1" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="4" y="4" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="2" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2629" centery="1850" centerz="10" radius="5">
     <monster name="Sen Gan Troll" x="-2" y="-2" z="10" spawntime="60"/>
@@ -14337,14 +14389,28 @@
   </spawn>
   <spawn centerx="2561" centery="1855" centerz="10" radius="5">
     <monster name="Big Ooze" x="5" y="-5" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="3" y="-4" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="-3" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="0" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="3" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-4" y="2" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="-5" y="4" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2465" centery="1857" centerz="10" radius="5">
     <monster name="Sen Gan Hydra" x="-1" y="-1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-5" y="3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="4" y="3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-1" y="4" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="0" y="4" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="1" y="4" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2618" centery="1857" centerz="10" radius="5">
     <monster name="Big Ooze" x="1" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="4" z="10" spawntime="2560"/>
+    <monster name="Sen Gan Troll" x="5" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2702" centery="1857" centerz="10" radius="5">
     <monster name="Sen Gan Spearman" x="-1" y="-5" z="10" spawntime="60"/>
@@ -14361,32 +14427,43 @@
   </spawn>
   <spawn centerx="2546" centery="1860" centerz="10" radius="5">
     <monster name="Sen Gan Troll" x="1" y="-3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="4" y="-3" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="-3" y="-1" z="10" spawntime="60"/>
     <monster name="Sen Gan Hydra" x="2" y="0" z="10" spawntime="60"/>
     <monster name="Sen Gan Spearman" x="4" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-4" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2683" centery="1861" centerz="10" radius="5">
     <monster name="Swamp Thing" x="-3" y="2" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="5" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2531" centery="1862" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="3" y="-2" z="10" spawntime="60"/>
     <monster name="Sen Gan Spearman" x="5" y="-2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-2" y="1" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="3" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="3" y="2" z="10" spawntime="60"/>
     <monster name="Sen Gan Spearman" x="-4" y="4" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2578" centery="1862" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="-5" y="-5" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-4" y="-5" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="-2" y="-3" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="2" y="0" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="4" y="1" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="2" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2447" centery="1863" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="4" y="0" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="3" y="1" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="1" y="3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-1" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2518" centery="1863" centerz="10" radius="5">
     <monster name="Sen Gan Troll" x="3" y="0" z="10" spawntime="60"/>
     <monster name="Sen Gan Totem Summoner" x="-1" y="2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="2" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="3" y="3" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2655" centery="1863" centerz="10" radius="5">
@@ -14406,8 +14483,13 @@
     <monster name="Sen Gan Spearman" x="-1" y="4" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2592" centery="1869" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="-4" y="-2" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="0" y="0" z="10" spawntime="60"/>
-    <monster name="ooze" x="-4" y="4" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="1" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-2" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="1" y="1" z="10" spawntime="60"/>
+    <monster name="Ooze" x="-4" y="4" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="0" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2616" centery="1869" centerz="10" radius="5">
     <monster name="Swamp Thing" x="1" y="-1" z="10" spawntime="60"/>
@@ -14444,41 +14526,65 @@
     <monster name="Bone Wall" x="0" y="-3" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2446" centery="1878" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="-3" y="-4" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="1" y="-1" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="1" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="4" y="4" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2473" centery="1880" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="5" y="-5" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="2" y="-4" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="0" y="-3" z="10" spawntime="60"/>
     <monster name="Sen Gan Hydra" x="0" y="2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-5" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2494" centery="1880" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="-5" y="-5" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-3" y="-2" z="10" spawntime="60"/>
     <monster name="Sen Gan Totem Summoner" x="0" y="-1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2590" centery="1880" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="-1" y="-5" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="3" y="-3" z="10" spawntime="2560"/>
+    <monster name="Sen Gan Troll" x="4" y="-3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-3" y="-1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-4" y="0" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="-1" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-2" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-4" y="3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-4" y="4" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2604" centery="1883" centerz="10" radius="5">
-    <monster name="ooze" x="5" y="-3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-5" y="-5" z="10" spawntime="60"/>
+    <monster name="Ooze" x="5" y="-3" z="10" spawntime="60"/>
     <monster name="Sen Gan Hydra" x="-3" y="-2" z="10" spawntime="60"/>
     <monster name="Sen Gan Hydra" x="3" y="2" z="10" spawntime="60"/>
-    <monster name="ooze" x="2" y="3" z="10" spawntime="60"/>
+    <monster name="Ooze" x="2" y="3" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2515" centery="1884" centerz="10" radius="5">
     <monster name="Bone Wall" x="0" y="-5" z="10" spawntime="60"/>
     <monster name="Sen Gan Hydra" x="0" y="-1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-5" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="1" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="0" y="2" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="2" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2460" centery="1886" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="-5" y="-5" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-3" y="-3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="2" y="-3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="-2" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="0" y="-1" z="10" spawntime="60"/>
     <monster name="Bone Wall" x="0" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2540" centery="1888" centerz="10" radius="5">
     <monster name="Sen Gan Troll" x="-1" y="-2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-4" y="-1" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="-3" y="-1" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="3" y="-1" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="3" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="5" y="1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2577" centery="1888" centerz="10" radius="5">
     <monster name="Sen Gan Spearman" x="4" y="-4" z="10" spawntime="60"/>
@@ -14486,7 +14592,10 @@
     <monster name="Sen Gan Troll" x="-3" y="1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2556" centery="1890" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="-5" y="-2" z="10" spawntime="60"/>
     <monster name="Swamp Thing" x="-1" y="0" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="2" y="0" z="10" spawntime="2304"/>
+    <monster name="Sen Gan Troll" x="5" y="1" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="4" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2566" centery="1890" centerz="10" radius="5">
@@ -14494,6 +14603,7 @@
     <monster name="Sen Gan Troll" x="2" y="2" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="4" y="2" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="-3" y="5" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="1" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2395" centery="1895" centerz="10" radius="2">
     <npc name="global.inquisition" x="0" y="1" z="10" spawntime="10"/>
@@ -14503,11 +14613,16 @@
     <monster name="Big Ooze" x="-2" y="-1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2562" centery="1903" centerz="10" radius="5">
+    <monster name="Sen Gan Troll" x="5" y="-5" z="10" spawntime="60"/>
     <monster name="Big Ooze" x="0" y="-4" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="-1" y="-3" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="4" y="-2" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="3" y="-1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-3" y="0" z="10" spawntime="60"/>
     <monster name="Sen Gan Totem Summoner" x="-1" y="1" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="1" y="2" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="-3" y="3" z="10" spawntime="60"/>
+    <monster name="Sen Gan Troll" x="-5" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2483" centery="1907" centerz="10" radius="5">
     <monster name="Sen Gan Troll" x="3" y="-2" z="10" spawntime="60"/>
