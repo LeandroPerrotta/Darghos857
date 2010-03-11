@@ -1820,13 +1820,13 @@
     <monster name="Orc Warrior" x="3" y="1" z="6" spawntime="60"/>
     <monster name="Orc Warrior" x="4" y="5" z="6" spawntime="60"/>
   </spawn>
-  <spawn centerx="2379" centery="1765" centerz="6" radius="1">
-    <npc name="thorn.dragon_tamer" x="0" y="0" z="6" spawntime="20"/>
-  </spawn>
   <spawn centerx="2277" centery="1766" centerz="6" radius="5">
     <monster name="Tarantula" x="3" y="-2" z="6" spawntime="60"/>
     <monster name="Tarantula" x="1" y="0" z="6" spawntime="60"/>
     <monster name="Giant Spider" x="-1" y="1" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2380" centery="1766" centerz="6" radius="1">
+    <npc name="thorn.dragon_tamer" x="-1" y="-1" z="6" spawntime="20"/>
   </spawn>
   <spawn centerx="2441" centery="1766" centerz="6" radius="5">
     <monster name="Elf" x="2" y="-3" z="6" spawntime="60"/>
@@ -7818,10 +7818,6 @@
     <monster name="Bug" x="5" y="0" z="8" spawntime="60"/>
     <monster name="Bug" x="-2" y="1" z="8" spawntime="60"/>
   </spawn>
-  <spawn centerx="2504" centery="1850" centerz="8" radius="5">
-    <monster name="Ooze" x="-1" y="1" z="8" spawntime="60"/>
-    <monster name="Ooze" x="0" y="3" z="8" spawntime="60"/>
-  </spawn>
   <spawn centerx="2215" centery="1851" centerz="8" radius="5">
     <monster name="Warlock" x="0" y="2" z="8" spawntime="300"/>
   </spawn>
@@ -7896,11 +7892,6 @@
     <monster name="Rotworm" x="1" y="-2" z="8" spawntime="60"/>
     <monster name="Rotworm" x="2" y="1" z="8" spawntime="60"/>
   </spawn>
-  <spawn centerx="2488" centery="1856" centerz="8" radius="5">
-    <monster name="Ooze" x="-1" y="-2" z="8" spawntime="60"/>
-    <monster name="Ooze" x="-1" y="1" z="8" spawntime="60"/>
-  </spawn>
-  <spawn centerx="2489" centery="1856" centerz="8" radius="5"/>
   <spawn centerx="1990" centery="1857" centerz="8" radius="5">
     <monster name="Troll" x="-1" y="0" z="8" spawntime="60"/>
     <monster name="Troll" x="-3" y="1" z="8" spawntime="60"/>
@@ -7909,14 +7900,6 @@
   <spawn centerx="2064" centery="1857" centerz="8" radius="5">
     <monster name="Rotworm" x="-1" y="-1" z="8" spawntime="60"/>
     <monster name="Rotworm" x="1" y="-1" z="8" spawntime="60"/>
-  </spawn>
-  <spawn centerx="2474" centery="1857" centerz="8" radius="5">
-    <monster name="Ooze" x="-2" y="2" z="8" spawntime="60"/>
-    <monster name="Ooze" x="1" y="2" z="8" spawntime="60"/>
-  </spawn>
-  <spawn centerx="2521" centery="1857" centerz="8" radius="5">
-    <monster name="Ooze" x="0" y="-2" z="8" spawntime="60"/>
-    <monster name="Ooze" x="-2" y="0" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2118" centery="1858" centerz="8" radius="5">
     <monster name="Ghoul" x="-2" y="-2" z="8" spawntime="60"/>
@@ -7963,10 +7946,6 @@
   <spawn centerx="2382" centery="1868" centerz="8" radius="5">
     <monster name="Rotworm" x="1" y="-4" z="8" spawntime="60"/>
     <monster name="Slime" x="2" y="5" z="8" spawntime="60"/>
-  </spawn>
-  <spawn centerx="2505" centery="1868" centerz="8" radius="5">
-    <monster name="Ooze" x="-1" y="-3" z="8" spawntime="60"/>
-    <monster name="Ooze" x="3" y="0" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2088" centery="1869" centerz="8" radius="5">
     <monster name="Ghoul" x="1" y="2" z="8" spawntime="60"/>
@@ -8021,9 +8000,6 @@
     <monster name="Troll" x="1" y="1" z="8" spawntime="90"/>
     <monster name="Troll" x="1" y="5" z="8" spawntime="60"/>
   </spawn>
-  <spawn centerx="2483" centery="1878" centerz="8" radius="5">
-    <monster name="Ooze" x="0" y="2" z="8" spawntime="60"/>
-  </spawn>
   <spawn centerx="2008" centery="1879" centerz="8" radius="5">
     <monster name="Troll" x="-1" y="-4" z="8" spawntime="60"/>
     <monster name="Troll" x="1" y="-4" z="8" spawntime="60"/>
@@ -8059,15 +8035,6 @@
   <spawn centerx="2103" centery="1886" centerz="8" radius="5">
     <monster name="Ghoul" x="1" y="0" z="8" spawntime="60"/>
     <monster name="Ghoul" x="2" y="0" z="8" spawntime="60"/>
-  </spawn>
-  <spawn centerx="2507" centery="1886" centerz="8" radius="5">
-    <monster name="Ooze" x="-3" y="0" z="8" spawntime="60"/>
-    <monster name="Ooze" x="-2" y="1" z="8" spawntime="60"/>
-    <monster name="Ooze" x="0" y="2" z="8" spawntime="60"/>
-    <monster name="Ooze" x="2" y="2" z="8" spawntime="60"/>
-    <monster name="Ooze" x="1" y="3" z="8" spawntime="60"/>
-    <monster name="Ooze" x="0" y="4" z="8" spawntime="60"/>
-    <monster name="Ooze" x="2" y="4" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2245" centery="1888" centerz="8" radius="10">
     <monster name="Rotworm" x="10" y="-4" z="8" spawntime="60"/>
