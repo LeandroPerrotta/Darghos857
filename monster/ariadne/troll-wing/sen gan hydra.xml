@@ -24,10 +24,10 @@
       <attribute key="shootEffect" value="poison"/>
       <attribute key="areaEffect" value="greenbubble"/>
     </attack>
-    <attack name="ice" interval="2000" chance="30" length="8" spread="3" min="-1015" max="-350">
+    <attack name="ice" interval="2000" chance="30" length="8" spread="3" min="-115" max="-350">
       <attribute key="areaEffect" value="bluebubble"/>
     </attack>
-    <attack name="earth" interval="2000" chance="30" length="8" spread="3" min="-1060" max="-950">
+    <attack name="earth" interval="2000" chance="30" length="8" spread="3" min="-160" max="-950">
       <attribute key="areaEffect" value="plantattack"/>
     </attack>
 
