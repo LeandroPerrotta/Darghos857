@@ -136,5 +136,12 @@
 		<itemlist listid="magic_acessories">		
 			<item keywords="magician's;robe" id="8819" buyprice="2000" />
 			<item keywords="spirit;cloack" id="8870" buyprice="4000" />
-		</itemlist>			
+		</itemlist>		
+		
+	<!--
+	AOL THAUN
+	-->
+	<itemlist listid="thaun_aol">
+		<item keywords="amulet;of;loss" id="2173" subtype="1" buyprice="50000"/>
+	</itemlist> 			
 </interaction>

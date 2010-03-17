@@ -19,7 +19,7 @@
   <house name="State Avenue I" houseid="19" entryx="2034" entryy="1874" entryz="7" rent="1800" townid="1" size="10"/>
   <house name="State Avenue II" houseid="20" entryx="2043" entryy="1874" entryz="7" rent="1800" townid="1" size="10"/>
   <house name="State Avenue III" houseid="21" entryx="2034" entryy="1874" entryz="6" rent="4500" townid="1" size="12"/>
-  <house name="State Avenue IV" houseid="22" entryx="2043" entryy="1874" entryz="6" rent="4500" townid="1" size="3"/>
+  <house name="State Avenue IV" houseid="22" entryx="2043" entryy="1874" entryz="6" rent="4500" townid="1" size="12"/>
   <house name="State Paradise" houseid="23" entryx="2033" entryy="1878" entryz="7" rent="6000" townid="1" size="60"/>
   <house name="State Champion" houseid="24" entryx="2039" entryy="1878" entryz="7" rent="2000" townid="1" size="16"/>
   <house name="Berg Town I" houseid="25" entryx="2013" entryy="1875" entryz="7" rent="800" townid="1" size="11"/>
@@ -242,7 +242,7 @@
   <house name="Salazart A34P2" houseid="291" entryx="2231" entryy="2623" entryz="7" rent="2000" townid="5" size="36"/>
   <house name="Salazart A34P4" houseid="292" entryx="2220" entryy="2634" entryz="7" rent="2000" townid="5" size="36"/>
   <house name="Salazart A34P5" houseid="294" entryx="2227" entryy="2634" entryz="7" rent="2000" townid="5" size="36"/>
-  <house name="Salazart A34P6" houseid="295" entryx="2224" entryy="2620" entryz="6" rent="2000" townid="5" size="31"/>
+  <house name="Salazart A34P6" houseid="295" entryx="2224" entryy="2620" entryz="6" rent="2000" townid="5" size="32"/>
   <house name="Salazart A34P3" houseid="296" entryx="2217" entryy="2629" entryz="6" rent="2000" townid="5" size="32"/>
   <house name="Salazart A34P7" houseid="297" entryx="2227" entryy="2627" entryz="5" rent="2000" townid="5" size="25"/>
   <house name="Salazart A35P1" houseid="298" entryx="2238" entryy="2626" entryz="7" rent="1200" townid="5" size="16"/>
