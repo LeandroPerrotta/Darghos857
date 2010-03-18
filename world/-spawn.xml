@@ -2001,6 +2001,9 @@
     <monster name="Bat" x="-11" y="2" z="6" spawntime="59"/>
     <monster name="Bat" x="-7" y="3" z="6" spawntime="59"/>
   </spawn>
+  <spawn centerx="1980" centery="1845" centerz="6" radius="1">
+    <npc name="salazart.joia" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
   <spawn centerx="2005" centery="1846" centerz="6" radius="1"/>
   <spawn centerx="2407" centery="1848" centerz="6" radius="1">
     <npc name="thorn.postman" x="0" y="0" z="6" spawntime="60"/>
@@ -4808,13 +4811,8 @@
     <monster name="Thorn Citizen" x="-4" y="-5" z="7" spawntime="60"/>
     <monster name="Thorn Citizen" x="1" y="2" z="7" spawntime="60"/>
   </spawn>
-  <spawn centerx="1978" centery="1844" centerz="7" radius="1"/>
   <spawn centerx="2010" centery="1844" centerz="7" radius="5">
     <npc name="quendor.magic" x="-4" y="2" z="7" spawntime="60"/>
-    <npc name="global.soft" x="2" y="4" z="7" spawntime="60"/>
-  </spawn>
-  <spawn centerx="1981" centery="1845" centerz="7" radius="5">
-    <npc name="salazart.joia" x="0" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2005" centery="1846" centerz="7" radius="1"/>
   <spawn centerx="2341" centery="1846" centerz="7" radius="1">
@@ -7792,6 +7790,9 @@
     <monster name="Swamp Troll" x="-2" y="-2" z="8" spawntime="60"/>
     <monster name="Swamp Troll" x="-1" y="1" z="8" spawntime="60"/>
     <monster name="Swamp Troll" x="1" y="4" z="8" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2019" centery="1840" centerz="8" radius="1">
+    <npc name="global.soft" x="1" y="-1" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2215" centery="1840" centerz="8" radius="5">
     <monster name="Warlock" x="3" y="0" z="8" spawntime="300"/>
