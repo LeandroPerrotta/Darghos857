@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Nieruzad" nameDescription="a lich" race="blood" experience="4000000" speed="1" manacost="100">
-  <health now="1000000" max="1000000"/>
+  <health now="800000" max="800000"/>
   <look type="287" head="20" body="30" legs="40" feet="50" corpse="6006"/>
   <targetchange interval="5000" chance="8"/>
   <strategy attack="100" defense="0"/>
