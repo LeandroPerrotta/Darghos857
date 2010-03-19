@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Nieruzad Banshee" nameDescription="a nieruzad summon" race="blood" experience="900" speed="300" manacost="0">
+<monster name="Nieruzad Banshee" nameDescription="a nieruzad summon" race="blood" experience="4000" speed="300" manacost="0">
   <health now="10000" max="10000"/>
   <look type="78" head="20" body="30" legs="40" feet="50" corpse="6019"/>
   <targetchange interval="5000" chance="8"/>
