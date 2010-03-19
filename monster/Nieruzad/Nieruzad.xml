@@ -19,12 +19,12 @@
   </flags>
   <attacks>
     <attack name="melee" interval="2000" min="-250" max="-380"/>
-	<attack name="melee" interval="2000" chance="50" range="7" radius="3" target="0" min="-1500" max="-2000">
+	<attack name="melee" interval="2000" chance="50" range="7" radius="3" target="0" min="-2000" max="-3000">
 		<attribute key="areaEffect" value="icearea"/>
 	</attack>
     <attack name="fire" interval="1000" chance="90" range="7" radius="3" target="1" min="-50" max="-70">
-			<attribute key="areaEffect" value="icearea"/>
-			<attribute key="shootEffect" value="redshimmer"/>
+			<attribute key="areaEffect" value="redshimmer"/>
+			<attribute key="shootEffect" value="fire"/>
 	</attack>
     <attack name="lifedrain" interval="2000" chance="20" range="8" min="-655" max="-1200">
       <attribute key="areaEffect" value="redshimmer"/>
