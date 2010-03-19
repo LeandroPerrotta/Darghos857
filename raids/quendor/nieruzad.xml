@@ -7,35 +7,35 @@
 
 <singlespawn delay="600000" name="Nieruzad" x="2043" y="1867" z="7" />
 
-<areaspawn delay="800000" centerx="2043" y="1867" z="7" radius="10">
+<areaspawn delay="800000" centerx="2043" centery="1867" centerz="7" radius="10">
 <monster name="nieruzad banshee" minamount="1" maxamount="5"/>
 </areaspawn>
 
-<areaspawn delay="1000000" centerx="2043" y="1867" z="7" radius="10">
+<areaspawn delay="1000000" centerx="2043" centery="1867" centerz="7" radius="10">
 <monster name="nieruzad banshee" minamount="1" maxamount="5"/>
 </areaspawn>
 
-<areaspawn delay="1300000" centerx="2043" y="1867" z="7" radius="10">
+<areaspawn delay="1300000" centerx="2043" centery="1867" centerz="7" radius="10">
 <monster name="nieruzad ghost" minamount="5" maxamount="10"/>
 </areaspawn>
 
-<areaspawn delay="1800000" centerx="2043" y="1867" z="7" radius="10">
+<areaspawn delay="1800000" centerx="2043" centery="1867" centerz="7" centerradius="10">
 <monster name="nieruzad zombie" minamount="5" maxamount="10"/>
 </areaspawn>
 
-<areaspawn delay="2000000" centerx="2043" y="1867" z="7" radius="10">
+<areaspawn delay="2000000" centerx="2043" centery="1867" centerz="7" radius="10">
 <monster name="nieruzad ghoul" minamount="5" maxamount="10"/>
 </areaspawn>
 
-<areaspawn delay="2300000" centerx="2043" y="1867" z="7" radius="10">
+<areaspawn delay="2300000" centerx="2043" centery="1867" centerz="7" radius="10">
 <monster name="nieruzad banshee" minamount="10" maxamount="15"/>
 </areaspawn>
 
-<areaspawn delay="2700000" centerx="2043" y="1867" z="7" radius="10">
+<areaspawn delay="2700000" centerx="2043" centery="1867" centerz="7" radius="10">
 <monster name="nieruzad banshee" minamount="10" maxamount="15"/>
 </areaspawn>
 
-<areaspawn delay="3000000" centerx="2043" y="1867" z="7" radius="10">
+<areaspawn delay="3000000" centerx="2043" centery="1867" centerz="7" radius="10">
 <monster name="nieruzad ghoul" minamount="15" maxamount="30"/>
 </areaspawn>
 
