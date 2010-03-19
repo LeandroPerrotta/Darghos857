@@ -19,7 +19,7 @@
 <monster name="nieruzad ghost" minamount="5" maxamount="10"/>
 </areaspawn>
 
-<areaspawn delay="1800000" centerx="2043" centery="1867" centerz="7" centerradius="10">
+<areaspawn delay="1800000" centerx="2043" centery="1867" centerz="7" radius="10">
 <monster name="nieruzad zombie" minamount="5" maxamount="10"/>
 </areaspawn>
 
