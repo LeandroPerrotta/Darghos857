@@ -625,4 +625,10 @@
 	<monster name="Swamp Thing" file="ariadne/troll-wing/swamp thing.xml"/>
 	<monster name="Big Ooze" file="ariadne/troll-wing/big ooze.xml"/>
 	<monster name="Ghazran" file="ariadne/troll-wing/ghazran.xml"/>
+
+	<monster name="Nieruzad" file="nieruzad/nieruzad.xml"/>	
+	<monster name="Nieruzad Ghost" file="nieruzad/nieruzad ghost.xml"/>
+	<monster name="Nieruzad Ghoul" file="nieruzad/nieruzad ghoul.xml"/>
+	<monster name="Nieruzad Zombie" file="nieruzad/nieruzad zombie.xml"/>
+	<monster name="Nieruzad Banshee" file="nieruzad/nieruzad banshee.xml"/>
 </monsters>
