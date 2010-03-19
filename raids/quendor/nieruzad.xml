@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
 <raid>
 <announce delay="0" type="event" message="Um silencio, um frio e sussurros tomaram conta da Cidade de Quendor."/>
 <announce delay="200000" type="event" message="Uma intensa neblina faz com que seja dificil ver o que há na Cidade de Quendor."/>
