@@ -9,6 +9,7 @@
 		<raid name="quendor_dragon" file="quendor/quendor_dragon.xml" interval2="4500" margin="240"/>
 		<raid name="quendor_amazon" file="quendor/quendor_amazon.xml" interval2="4500" margin="240"/>
 		<raid name="quendor_skeleton" file="quendor/quendor_skeleton.xml" interval2="4500" margin="240"/>
+		<raid name="nieruzad" file="quendor/nieruzad.xml" interval2="4500" margin="0"/>
 		
 		-- Thorn
 		<raid name="thorn_cyclops" file="thorn/thorn_cyclops.xml" interval2="4500" margin="240"/>
