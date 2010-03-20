@@ -4927,7 +4927,14 @@
     <monster name="Thorn Citizen" x="2" y="-5" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2476" centery="1867" centerz="7" radius="5">
+    <monster name="Scorpion" x="4" y="-5" z="7" spawntime="60"/>
+    <monster name="Scorpion" x="-4" y="0" z="7" spawntime="60"/>
     <monster name="Scorpion" x="-3" y="2" z="7" spawntime="60"/>
+    <monster name="Scorpion" x="0" y="2" z="7" spawntime="60"/>
+    <monster name="Scorpion" x="1" y="2" z="7" spawntime="60"/>
+    <monster name="Scorpion" x="0" y="3" z="7" spawntime="60"/>
+    <monster name="Scorpion" x="-2" y="4" z="7" spawntime="60"/>
+    <monster name="Scorpion" x="-4" y="5" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1961" centery="1869" centerz="7" radius="5">
     <monster name="Dog" x="0" y="2" z="7" spawntime="60"/>
@@ -8349,7 +8356,7 @@
   </spawn>
   <spawn centerx="2533" centery="1944" centerz="8" radius="5">
     <monster name="Ariadne Adept" x="-1" y="-1" z="8" spawntime="60"/>
-    <monster name="Ariadne Adept" x="2" y="0" z="8" spawntime="60"/>
+    <monster name="Ariadne Adept" x="1" y="0" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2303" centery="1950" centerz="8" radius="5">
     <monster name="Dragon" x="-1" y="-1" z="8" spawntime="60"/>
@@ -14620,6 +14627,16 @@
     <monster name="Sen Gan Troll" x="-3" y="3" z="10" spawntime="60"/>
     <monster name="Sen Gan Troll" x="-5" y="5" z="10" spawntime="60"/>
   </spawn>
+  <spawn centerx="2527" centery="1904" centerz="10" radius="5">
+    <monster name="Blightwalker" x="-2" y="-3" z="10" spawntime="60"/>
+    <monster name="Betrayed Wraith" x="3" y="-3" z="10" spawntime="60"/>
+    <monster name="Dark Torturer" x="-1" y="-2" z="10" spawntime="60"/>
+    <monster name="Destroyer" x="2" y="-2" z="10" spawntime="60"/>
+    <monster name="Hand of Cursed Fate" x="0" y="-1" z="10" spawntime="60"/>
+    <monster name="Lost Soul" x="1" y="-1" z="10" spawntime="60"/>
+    <monster name="Banshee" x="-1" y="0" z="10" spawntime="60"/>
+    <monster name="Banshee" x="2" y="0" z="10" spawntime="60"/>
+  </spawn>
   <spawn centerx="2483" centery="1907" centerz="10" radius="5">
     <monster name="Sen Gan Troll" x="3" y="-2" z="10" spawntime="60"/>
     <monster name="Sen Gan Totem Summoner" x="-2" y="1" z="10" spawntime="60"/>
@@ -14674,6 +14691,12 @@
     <monster name="Minotaur" x="1" y="-2" z="10" spawntime="60"/>
     <monster name="Minotaur" x="1" y="1" z="10" spawntime="60"/>
     <monster name="Minotaur" x="0" y="2" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2528" centery="1919" centerz="10" radius="5">
+    <monster name="Diabolic Imp" x="-4" y="5" z="10" spawntime="60"/>
+    <monster name="Hellfire Fighter" x="-1" y="5" z="10" spawntime="0"/>
+    <monster name="Hellfire Fighter" x="0" y="5" z="10" spawntime="60"/>
+    <monster name="Diabolic Imp" x="3" y="5" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1860" centery="1925" centerz="10" radius="3">
     <monster name="Minotaur" x="0" y="-2" z="10" spawntime="60"/>
