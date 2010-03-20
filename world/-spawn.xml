@@ -406,7 +406,7 @@
     <monster name="Goblin Assassin" x="3" y="0" z="4" spawntime="60"/>
   </spawn>
   <spawn centerx="2042" centery="1935" centerz="4" radius="5">
-    <monster name="Dragon" x="-2" y="2" z="4" spawntime="60"/>
+    <monster name="Dragon" x="-1" y="1" z="4" spawntime="60"/>
   </spawn>
   <spawn centerx="2052" centery="1959" centerz="4" radius="5">
     <monster name="dragon hatchling" x="-1" y="-1" z="4" spawntime="60"/>
@@ -16128,6 +16128,15 @@
     <monster name="Bayemon" x="3" y="2" z="11" spawntime="60"/>
     <monster name="Dwarf Miner" x="0" y="4" z="11" spawntime="60"/>
   </spawn>
+  <spawn centerx="2675" centery="1290" centerz="11" radius="5">
+    <monster name="Necromancer" x="0" y="-2" z="11" spawntime="60"/>
+    <monster name="Hero" x="3" y="-2" z="11" spawntime="60"/>
+    <monster name="Hero" x="1" y="0" z="11" spawntime="60"/>
+    <monster name="Hero" x="1" y="1" z="11" spawntime="60"/>
+    <monster name="Necromancer" x="2" y="1" z="11" spawntime="60"/>
+    <monster name="Rat" x="0" y="5" z="11" spawntime="60"/>
+    <monster name="Rat" x="1" y="5" z="11" spawntime="60"/>
+  </spawn>
   <spawn centerx="2798" centery="1294" centerz="11" radius="8">
     <monster name="Energy Elemental" x="4" y="-2" z="11" spawntime="60"/>
     <monster name="Energy Elemental" x="-3" y="0" z="11" spawntime="60"/>
@@ -16151,12 +16160,37 @@
     <monster name="Behemoth" x="-2" y="9" z="11" spawntime="60"/>
     <monster name="Demon" x="18" y="21" z="11" spawntime="60"/>
   </spawn>
-  <spawn centerx="2678" centery="1306" centerz="11" radius="5">
-    <monster name="Hero" x="-3" y="-5" z="11" spawntime="60"/>
-    <monster name="Necromancer" x="-4" y="-4" z="11" spawntime="60"/>
-    <monster name="Hero" x="-1" y="2" z="11" spawntime="60"/>
-    <monster name="Necromancer" x="4" y="3" z="11" spawntime="60"/>
-    <monster name="Hero" x="4" y="5" z="11" spawntime="60"/>
+  <spawn centerx="2664" centery="1300" centerz="11" radius="1">
+    <monster name="Rat" x="0" y="-1" z="11" spawntime="60"/>
+    <monster name="Rat" x="-1" y="1" z="11" spawntime="60"/>
+    <monster name="Cave Rat" x="0" y="1" z="11" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2698" centery="1307" centerz="11" radius="1">
+    <monster name="Rat" x="-1" y="-1" z="11" spawntime="60"/>
+    <monster name="Cave Rat" x="0" y="-1" z="11" spawntime="60"/>
+    <monster name="Cave Rat" x="0" y="1" z="11" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2710" centery="1307" centerz="11" radius="1">
+    <monster name="Cave Rat" x="1" y="0" z="11" spawntime="60"/>
+    <monster name="Rat" x="-1" y="1" z="11" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2671" centery="1310" centerz="11" radius="1">
+    <monster name="Rat" x="0" y="-1" z="11" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2682" centery="1310" centerz="11" radius="1">
+    <monster name="Cave Rat" x="0" y="-1" z="11" spawntime="60"/>
+    <monster name="Rat" x="-1" y="1" z="11" spawntime="60"/>
+    <monster name="Rat" x="1" y="1" z="11" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2704" centery="1318" centerz="11" radius="1">
+    <monster name="Rat" x="1" y="-1" z="11" spawntime="60"/>
+    <monster name="Rat" x="1" y="0" z="11" spawntime="60"/>
+    <monster name="Rat" x="-1" y="1" z="11" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2666" centery="1320" centerz="11" radius="1">
+    <monster name="Rat" x="0" y="-1" z="11" spawntime="60"/>
+    <monster name="Rat" x="-1" y="1" z="11" spawntime="60"/>
+    <monster name="Cave Rat" x="1" y="1" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="1827" centery="1323" centerz="11" radius="30">
     <monster name="Plaguesmith" x="6" y="-10" z="11" spawntime="60"/>
@@ -16166,6 +16200,10 @@
     <monster name="Dwarf Miner" x="7" y="7" z="11" spawntime="60"/>
     <monster name="Dwarf Miner" x="8" y="9" z="11" spawntime="60"/>
     <monster name="Bayemon" x="18" y="17" z="11" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2694" centery="1324" centerz="11" radius="1">
+    <monster name="Rat" x="1" y="0" z="11" spawntime="60"/>
+    <monster name="Cave Rat" x="-1" y="1" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="2927" centery="1335" centerz="11" radius="6">
     <monster name="Fire Elemental" x="1" y="-1" z="11" spawntime="60"/>
