@@ -413,4 +413,6 @@
   <house name="General Depot 3" houseid="474" entryx="1266" entryy="2217" entryz="7" rent="1500" townid="6" size="16"/>
   <house name="General Depot 4" houseid="475" entryx="1250" entryy="2213" entryz="6" rent="1500" townid="6" size="16"/>
   <house name="General Depot 5" houseid="476" entryx="1269" entryy="2213" entryz="6" rent="1500" townid="6" size="16"/>
+  <house name="Vertnihar House I" houseid="477" entryx="2173" entryy="2467" entryz="7" rent="0" townid="5" size="46"/>
+  <house name="Vertnihar House II" houseid="478" entryx="2140" entryy="2473" entryz="7" rent="0" townid="5" size="47"/>
 </houses>
