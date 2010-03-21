@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<monster name="Nieruzad Ghoul" nameDescription="a nieruzad summon" race="blood" experience="85" speed="2000" manacost="450">
+<monster name="Nieruzad Ghoul" nameDescription="a nieruzad summon" race="blood" experience="85" speed="200" manacost="450">
   <health now="1000" max="1000"/>
   <look type="18" head="20" body="30" legs="40" feet="50" corpse="5976"/>
   <targetchange interval="2000" chance="0"/>
