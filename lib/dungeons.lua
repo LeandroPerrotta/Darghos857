@@ -10,7 +10,7 @@ dungeonList =
 	
 	[gid.DUNGEONS_ARIADNE_GHAZRAN] =
 	{
-		maxPlayers = 6,
+		maxPlayers = 8,
 		maxTimeIn = 300
 	}	
 }
