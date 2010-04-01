@@ -8,7 +8,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 		if(a < 5) then
 				doPlayerAddItem(cid,5958,1)
 				doSendMagicEffect(fromPosition, 30)
-				doPlayerRemoveItem(cid,item.itemid,1)				
+				doRemoveItem(item.uid)				
 				doCreatureSay(cid, "Winning Ticket!! OmG!1!1!", TALKTYPE_ORANGE_1)
 		else
 			doCreatureSay(cid, "Try again, never give up.", TALKTYPE_ORANGE_1)	
