@@ -148,7 +148,7 @@
         <action name="script">
         <![CDATA[
 			
-			boh = getItemIdByName("boots of haste")
+			boh = 2195
 			
 			if getPlayerItemCount(cid,boh) >= 1 then
 					doPlayerRemoveItem(cid,boh,1)
