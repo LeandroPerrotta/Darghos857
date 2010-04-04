@@ -210,7 +210,7 @@
   <house name="Salazart A20P6" houseid="259" entryx="2269" entryy="2712" entryz="6" rent="500" townid="5" size="16"/>
   <house name="Salazart A20P7" houseid="260" entryx="2274" entryy="2712" entryz="6" rent="500" townid="5" size="16"/>
   <house name="Salazart A20P8" houseid="261" entryx="2267" entryy="2706" entryz="5" rent="1500" townid="5" size="25"/>
-  <house name="Salazart A21" houseid="262" entryx="2211" entryy="2612" entryz="7" rent="1000" townid="5" size="27"/>
+  <house name="Salazart A21" houseid="262" entryx="2211" entryy="2612" entryz="7" rent="1000" townid="5" size="25"/>
   <house name="Salazart A22" houseid="263" entryx="2220" entryy="2613" entryz="7" rent="1200" townid="5" size="23"/>
   <house name="Salazart A23" houseid="264" entryx="2233" entryy="2613" entryz="7" rent="1200" townid="5" size="25"/>
   <house name="Salazart A24A1" houseid="265" entryx="2307" entryy="2654" entryz="7" rent="3000" townid="5" size="28"/>
@@ -413,6 +413,4 @@
   <house name="General Depot 3" houseid="474" entryx="1266" entryy="2217" entryz="7" rent="1500" townid="6" size="16"/>
   <house name="General Depot 4" houseid="475" entryx="1250" entryy="2213" entryz="6" rent="1500" townid="6" size="16"/>
   <house name="General Depot 5" houseid="476" entryx="1269" entryy="2213" entryz="6" rent="1500" townid="6" size="16"/>
-  <house name="Vertnihar House I" houseid="477" entryx="2173" entryy="2467" entryz="7" rent="0" townid="5" size="56"/>
-  <house name="Vertnihar House II" houseid="478" entryx="2140" entryy="2473" entryz="7" rent="0" townid="5" size="36"/>
 </houses>
