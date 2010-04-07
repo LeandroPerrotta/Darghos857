@@ -3413,14 +3413,17 @@
     <npc name="salazart.postman" x="0" y="-1" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2191" centery="2586" centerz="6" radius="1">
-    <npc name="bless.5" x="-1" y="0" z="6" spawntime="60"/>
+    <npc name="bless.5" x="-1" y="-1" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2340" centery="2586" centerz="6" radius="5">
     <monster name="Dragon" x="-3" y="3" z="6" spawntime="60"/>
     <monster name="Dragon Hatchling" x="-1" y="3" z="6" spawntime="60"/>
   </spawn>
-  <spawn centerx="2186" centery="2591" centerz="6" radius="1">
-    <npc name="salazart.magic" x="0" y="-1" z="6" spawntime="60"/>
+  <spawn centerx="2180" centery="2591" centerz="6" radius="1">
+    <npc name="salazart.distance" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2191" centery="2591" centerz="6" radius="1">
+    <npc name="salazart.magic" x="0" y="0" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2200" centery="2646" centerz="6" radius="1">
     <npc name="salazart.acessorios" x="1" y="0" z="6" spawntime="60"/>
@@ -7852,6 +7855,12 @@
     <monster name="Swamp Troll" x="-2" y="-2" z="8" spawntime="60"/>
     <monster name="Swamp Troll" x="-1" y="1" z="8" spawntime="60"/>
     <monster name="Swamp Troll" x="1" y="4" z="8" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1977" centery="1835" centerz="8" radius="1">
+    <npc name="quendor.train" x="0" y="0" z="8" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2410" centery="1837" centerz="8" radius="1">
+    <npc name="thorn.train" x="0" y="0" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2019" centery="1840" centerz="8" radius="1">
     <npc name="global.soft" x="1" y="-1" z="8" spawntime="60"/>

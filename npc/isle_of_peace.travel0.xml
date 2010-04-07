@@ -119,8 +119,9 @@
 		<response text="Only premium players can travel to this city."/>
 	</interact>		
 
-	<interact keywords="salazart" topic="3">		
-		<response param="premium" text="Have a good luck in your new journey!">
+	<interact keywords="salazart" topic="3">
+		<response text="Não é possivel ir para Salazart no momento, escolha outra cidade."/>		
+		<!-- <response param="premium" text="Have a good luck in your new journey!">
 			<action name="idle" value="1"/>
 			<action name="teleport" value="2166;2718;6"/>
 			<action name="effect" value="teleport"/>
@@ -132,8 +133,8 @@
 			]]>
 			</action>			
 		</response>
-		<response text="Only premium players can travel to this city."/>
-	</interact>		
+		<response text="Only premium players can travel to this city."/> -->
+	</interact>	
 
 	<interact keywords="northrend" topic="3">		
 		<response param="premium" text="Have a good luck in your new journey!">
