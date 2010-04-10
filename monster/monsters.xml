@@ -635,4 +635,5 @@
 
 	<!-- Quest da Igreja -->
 	<monster name="Lord Vankyner" file="darghos/lord vankyner.xml"/>
+	<monster name="vampirequest" file="darghos/vampirequest.xml"/>
 </monsters>
