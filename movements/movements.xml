@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <movements>
-	<!-- Geral Map Tiles! Quests etc -->	
+	<!-- Geral Map Tiles! Quests etc -->				
 		
 		<!-- SPECIAL QUEST TILES -->
 		<movevent event="StepIn" actionid="7400" script="game/dungeons.lua"/>		
@@ -76,7 +76,7 @@
 		
 		<!-- BANSHEE QUEST -->
 
-		<movevent event="StepIn" itemid="1387" script="game/citizen.lua"/>		
+		<movevent event="StepIn" itemid="1387" script="game/teleport.lua"/>		
 		
 		<!-- FIELD DAMAGE SYSTEM 
 		<moveevent event="StepIn" itemid="1490"  />-->

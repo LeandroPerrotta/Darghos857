@@ -5,9 +5,15 @@ function onDie(cid, corpse)
 		Dungeons.onPlayerDeath(cid)
 	else
 		
-		if(getCreatureName(cid) == "Ghazran") then
+		local cName = getCreatureName(cid)
+		
+		if(cName == "Ghazran") then
 		
 			onGhazranDie(corpse)
+			
+		elseif(cName == "Lord Vankyner") then
+		
+			onLordVankynerDie()
 		end
 	end
 end 

@@ -57,6 +57,5 @@
   </voices>
   <loot>
     <item id="2172" chance="200"/> --bronze amulet
-    </item>
   </loot>
 </monster>

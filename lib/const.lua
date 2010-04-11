@@ -3,7 +3,7 @@
 ]]--
 
 
-	-->> Posições de area para checagem ao login {creaturescripts/login.lua} (expulsa jogadores free de area premium)
+	-->> Posiï¿½ï¿½es de area para checagem ao login {creaturescripts/login.lua} (expulsa jogadores free de area premium)
 	areaCheck = 
 	{
 		ARACURA_START = {x=2627 ,y=1043 ,z=7},
@@ -16,7 +16,7 @@
 		SALAZART_END = {x=2773 ,y=2660 ,z=7}
 	}
 	
-	-->> Posições dos templos
+	-->> Posiï¿½ï¿½es dos templos
 
 		QUENDOR = {x=2020 ,y=1903, z=7}
 		THORN = {x=2383 ,y=1856, z=7}
@@ -30,7 +30,12 @@
 		
 			LAIR 			= 3600,
 			GHAZRAN_WING 	= 3601,
-			CULTISTS_WING 	= 3602,
+			CULTISTS_WING 	= 3602
+		},
+
+		DIVINE_ANKH = {
+			COURSE_CHURCH	= 3610,
+			CHAMBER_TEMPTATION = 3611
 		}
 	}
 	

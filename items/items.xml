@@ -1,4 +1,4 @@
-ï»¿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="iso-8859-1" ?>
 <items>
 	<item id="100" name="void"/>
 	<item id="101" name="earth"/>
@@ -20390,7 +20390,7 @@
 	<item id="8843" article="an" name="onion" plural="onions">
 		<attribute key="weight" value="140"/>
 	</item>
-	<item id="8844" article="a" name="jalapeÃ±o pepper" plural="jalapeÃ±o peppers">
+	<item id="8844" article="a" name="jalapeño pepper" plural="jalapeño peppers">
 		<attribute key="weight" value="30"/>
 	</item>
 	<item id="8845" article="a" name="beetroot" plural="beetroots">
@@ -23002,7 +23002,7 @@
 		<attribute key="description" value="This one would be quite healthy if it wasn't for all the melted cheese on top."/>
 		<attribute key="weight" value="1100"/>
 	</item>
-	<item id="9998" article="a" name="filled jalapeÃ±o peppers">
+	<item id="9998" article="a" name="filled jalapeño peppers">
 		<attribute key="description" value="The creamy cheese makes a great combination with spicy peppers."/>
 		<attribute key="weight" value="650"/>
 	</item>
@@ -24039,5 +24039,8 @@
 		<attribute key="weight" value="1000"/>
 		<attribute key="slotType" value="feet"/>
 	</item>		
+	<item id="10563" article="a" name="unholy sword">
+		<attribute key="weight" value="2300"/>
+	</item>	
 	
 </items>

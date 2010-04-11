@@ -1,6 +1,10 @@
 <?xml version="1.0"?>
 <actions>
 
+	<!-- Divine Ankh -->
+	<action itemid="2193" script="game/ankh.lua"/>
+	<action itemid="10563" script="game/unholy_sword.lua"/>
+
 	<!-- Ariadne Quest -->
 	<action itemid="4875" script="game/hydra_nest.lua"/>
 	<action itemid="6972" script="game/bone_totem.lua"/>

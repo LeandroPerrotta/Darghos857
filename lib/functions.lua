@@ -6,6 +6,27 @@ function onGhazranDie(corpse)
 	doSetItemActionId(corpse, aid.ARIADNE_GHAZRAN_CORPSE)
 end
 
+function onLordVankynerDie()
+
+	local door = getThingPos(uid.CHURCH_CHAMBER_DOOR)
+	
+	doSetItemActionId(door, 0)
+	
+	addEvent(LordVankynerEvent, 1000 * 60 * 10)		
+end
+
+function LordVankynerEvent()
+
+	local door = getThingPos(uid.CHURCH_CHAMBER_DOOR)
+	
+	doSetItemActionId(door, 10000)
+	
+	local ALTAR_ID = 1643
+	
+	local altar = doCreateItem(ALTAR_ID, 1, mcord.CHURCH_ALTAR)
+	doSetItemActionId(altar, aid.CHURCH_ALTAR)
+end
+
 function obsidianKnifeOnGhazranCorpse(cid, corpse)
 
 	local hasRemovedTongue = (getPlayerStorageValue(cid, sid.ARIADNE_GHAZRAN_TONGUE) == 1)

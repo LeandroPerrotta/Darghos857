@@ -62,11 +62,10 @@
   <voices interval="5000" chance="10">
     <voice sentence="How did you come here?!" yell="1"/>
   </voices>
-  <loot>
- 	<item id="2514" chance="1900"/> --mastermind shield
-    <item id="2164" chance="2100"/> --might ring
-    <item id="2176" chance="3500"/> --orb
-    <item id="2165" chance="2300"/> --stealth ring
- 	</item>
-</loot>
+	<loot>
+	 	<item id="2514" chance="1900"/> --mastermind shield
+	    <item id="2164" chance="2100"/> --might ring
+	    <item id="2176" chance="3500"/> --orb
+	    <item id="2165" chance="2300"/> --stealth ring
+	</loot>
 </monster>
