@@ -635,5 +635,6 @@
 
 	<!-- Quest da Igreja -->
 	<monster name="Lord Vankyner" file="darghos/lord vankyner.xml"/>
-	<monster name="vampirequest" file="darghos/vampirequest.xml"/>
+	<monster name="Reborn Vampire" file="darghos/reborn_vampire.xml"/>
+	<monster name="Reborn Ghoul" file="darghos/reborn_ghoul.xml"/>
 </monsters>

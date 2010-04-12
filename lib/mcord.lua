@@ -26,8 +26,6 @@
 	MINES_TP_2					= {x = 1912, y = 1229, z = 11}, -- local para aonde o teleport irá levar no segundo andar
 	MINES_TP_CREATE				= {x = 1912, y = 1230, z = 10, stackpos=1}, -- posição aonde será criado/deletado o teleport do elevador
 	POI_AFTER_ENERGYS			= {x=382, y=344, z=10},
-	CHURCH_ALTAR				= {x = 2147, y = 1826, z = 9, stackpos = 1}
-	
-	
+	CHURCH_ALTAR				= {x = 2147, y = 1826, z = 9, stackpos = 1}	
 	
 	}

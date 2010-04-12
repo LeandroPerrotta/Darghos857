@@ -4,7 +4,7 @@ function onThink()
 
 	if(not _serverStart) then
 	
-		Dungeons.onServerStart()
+		onServerStart()
 		_serverStart = true
 	end
 end 

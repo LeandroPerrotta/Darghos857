@@ -1,7 +1,7 @@
 -- Player with storage value of the item's actionid set to 1 can open
 
 function onUse(cid, item, frompos, item2, topos)
-	if(item.actionid == 0) then
+	if(item.actionid == 0 or item.actionid == 100) then
 		-- Make it a normal door
 		doTransformItem(item.uid, item.itemid+1)
 		return TRUE

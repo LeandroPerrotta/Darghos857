@@ -11509,7 +11509,6 @@
   <spawn centerx="2147" centery="1810" centerz="9" radius="5">
     <monster name="Vampire" x="-2" y="-3" z="9" spawntime="60"/>
     <monster name="Vampire" x="5" y="-1" z="9" spawntime="60"/>
-    <monster name="Lord Vankyner" x="4" y="2" z="9" spawntime="60"/>
     <monster name="Vampire" x="-4" y="3" z="9" spawntime="60"/>
     <monster name="Vampire" x="1" y="4" z="9" spawntime="60"/>
   </spawn>

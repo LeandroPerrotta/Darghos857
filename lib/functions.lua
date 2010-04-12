@@ -1,30 +1,42 @@
 --[[
-	* ARIADNE QUEST
+	* DIVINE ANKH QUEST
 ]]--
-function onGhazranDie(corpse)
-
-	doSetItemActionId(corpse, aid.ARIADNE_GHAZRAN_CORPSE)
-end
-
 function onLordVankynerDie()
 
-	local door = getThingPos(uid.CHURCH_CHAMBER_DOOR)
+	local door = getThing(uid.CHURCH_CHAMBER_DOOR)
 	
-	doSetItemActionId(door, 0)
+	doSetItemActionId(door.uid, 0)
 	
 	addEvent(LordVankynerEvent, 1000 * 60 * 10)		
 end
 
 function LordVankynerEvent()
 
-	local door = getThingPos(uid.CHURCH_CHAMBER_DOOR)
+	local door = getThing(uid.CHURCH_CHAMBER_DOOR)
 	
-	doSetItemActionId(door, 10000)
+	doSetItemActionId(door.uid, 10000)
 	
 	local ALTAR_ID = 1643
 	
 	local altar = doCreateItem(ALTAR_ID, 1, mcord.CHURCH_ALTAR)
 	doSetItemActionId(altar, aid.CHURCH_ALTAR)
+	
+	summonLordVankyner()
+end
+
+function summonLordVankyner()
+
+	local creaturePos = getThingPos(uid.LORD_VANKYNER)
+	local creature = doSummonCreature("Lord Vankyner", creaturePos)
+	registerCreatureEvent(creature, "CreatureDie")
+end
+
+--[[
+	* ARIADNE QUEST
+]]--
+function onGhazranDie(corpse)
+
+	doSetItemActionId(corpse, aid.ARIADNE_GHAZRAN_CORPSE)
 end
 
 function obsidianKnifeOnGhazranCorpse(cid, corpse)
@@ -40,6 +52,27 @@ function obsidianKnifeOnGhazranCorpse(cid, corpse)
 		doPlayerSendCancel(cid, "Você já obteve a língua de Ghazran.")
 	end
 end
+
+--[[
+	@ Chama scripts customizados para quests em chests.lua
+]]--
+function chestScripts(cid, questActionId)
+
+	if(questActionId == aid.CHEST_DIVINE_ANKH) then
+		setPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.CHAMBER_TEMPTATION, 4)
+	end
+end
+
+--[[
+	@ Função chamada quando o server é iniciado
+]]--
+function onServerStart()
+
+	Dungeons.onServerStart()
+	
+	summonLordVankyner()
+end
+
 
 --[[
 	* GLOBAL SERVER SAVE

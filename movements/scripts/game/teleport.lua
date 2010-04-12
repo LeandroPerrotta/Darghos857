@@ -11,19 +11,24 @@ function onStepIn(cid, item, position, fromPosition)
 	
 	if(item.actionid == aid.CHURCH_PORTAL) then
 	
-		local chamberTemptation = getPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.CHAMBER_TEMPTATION)
+		local destPos = getThingPos(uid.CHURCH_PORTAL_DEST)
 	
-		if(chamberTemptation ~= 3) then
+		local chamberTemptation = getPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.CHAMBER_TEMPTATION)
 		
-			doPlayerSendCancel(cid, "Você não pode passar por aqui.")
-			
-			local destPos = position
-			
-			destPos.y = destPos.y + 5
-			
+		if(chamberTemptation == 3) then
 			doTeleportThing(cid, destPos)
-			doSendMagicEffect(destPos, CONST_ME_MAGIC_BLUE)			
+			doSendMagicEffect(destPos, CONST_ME_MAGIC_BLUE)
+			return TRUE
 		end
+		
+		print("Church portal")
+		
+		destPos = getThingPos(uid.CHURCH_PORTAL_FAIL)
+		
+		doTeleportThing(cid, destPos)
+		doSendMagicEffect(destPos, CONST_ME_MAGIC_BLUE)	
+		
+		doPlayerSendCancel(cid, "Você não pode passar por aqui.")
 	end
 	
 	return TRUE

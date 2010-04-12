@@ -1,5 +1,46 @@
+-- Reward Container Model:
+-- rewardContainer = containerId
+-- rewardItems = {[itemid] = { count, subtype }}
+
+-- Reward exp
+-- rewardExp = static exp
+-- rewardExpLevel = {minlevel, maxlevel}
+-- rewardIncrementLevels = levels to increment
+
 local quests =
 	{
+		[aid.CHEST_DIVINE_ANKH] = {
+			storageId = sid.CHEST_DIVINE_ANKH,
+			rewardExpLevel = { min = 60, max = 64},
+			rewardContainer = 1990,
+			rewardContainerItems = { 
+				{ itemid = 2152, count = 100 },
+				{ itemid = 2152, count = 100 }
+			}
+		},	
+	
+		[aid.XP_PIRATE] = {
+			storageId = sid.PIRATE_EXPQUEST,
+			rewardExp = 1800000,
+			rewardContainer = 5927,
+			rewardContainerItems = { 
+				[6099] = { count = 1 },
+				[6100] = { count = 1 },
+				[6101] = { count = 1 },
+				[6102] = { count = 1 }
+			}
+		},
+		
+		[aid.XP_HELHEIM] = {
+			storageId = sid.HELHEIM_EXPQUEST,
+			rewardExp = 1000000,
+		},		
+		
+		[aid.XP_MINES] = {
+			storageId = sid.MINES_EXPQUEST,
+			rewardExp = 4000000,
+		},		
+	
 		[aid.INQ_ROBE] = {
 			storageId = sid.INQ_CHESTS,
 			rewardId = 8890,
@@ -374,12 +415,71 @@ local quests =
 		},
 	}
 
-function useQuestChest(cid, quest)
+function useQuestChest(cid, quest, questActionId)
 	local queststatus = getPlayerStorageValue(cid, quest.storageId)
 	if queststatus == -1 then
-		doPlayerSendTextMessage(cid, 25, "You have found a " .. getItemName(quest.rewardId) .. ".")
-		doPlayerAddItem(cid, quest.rewardId, quest.count)
-		setPlayerStorageValue(cid, quest.storageId, 1)
+	
+		if(quest.rewardId) then
+		
+			doPlayerSendTextMessage(cid, 25, "You have found a " .. getItemName(quest.rewardId) .. ".")
+			doPlayerAddItem(cid, quest.rewardId, quest.count)
+		elseif(quest.rewardContainer) then
+			
+			-- Verificamos se o container de reward items está em ordem!!
+			if(quest.rewardContainerItems == nil) then
+			
+				debugPrint("QuestChest: Reward container items not found.")
+				return
+			end		
+			
+			local containerItems = quest.rewardContainerItems
+			local container = doPlayerAddItem(cid, quest.rewardContainer, 1)
+			
+			for key, value in pairs(containerItems) do
+			
+				if(containerItems[key].itemid == nil) then
+				
+					debugPrint("QuestChest: container item [" .. value.itemid .. "] not have proprieties found.")
+					return				
+				end
+					
+				doAddContainerItem(container, value.itemid, value.count)
+				
+				doPlayerSendTextMessage(cid, 25, "You have found a " .. getItemName(value.itemid) .. ".")
+			end
+		end
+		
+		if(quest.rewardExp ~= nil or quest.rewardExpLevel ~= nil or quest.rewardIncrementLevels ~= nil) then
+		
+			local expToAdd = 0
+		
+			if(quest.rewardExp ~= nil) then
+			
+				expToAdd = quest.rewardExp
+			elseif(quest.rewardExpLevel.min ~= nil and quest.rewardExpLevel.max ~= nil)	then
+			
+				local min = quest.rewardExpLevel.min
+				local max = quest.rewardExpLevel.max
+			
+				expToAdd = Calculator.getExpLeft(min, max)
+			elseif(quest.rewardIncrementLevels ~= nil) then	
+			
+				expToAdd = Calculator.getExpLeft(getPlayerLevel(cid), getPlayerLevel(cid) + quest.rewardIncrementLevels)
+			end
+		
+			doPlayerAddExp(cid, expToAdd)
+			doSendAnimatedText(getCreaturePosition(cid), expToAdd, TEXTCOLOR_YELLOW)
+			
+			local position = getCreaturePosition(cid)
+			local i = 0
+			while i <= 100 do
+				doSendDistanceShoot(position, {x = position.x + math.random(-7, 7), y = position.y + math.random(-5, 5), z = position.z}, 33)
+				i = i + 1
+			end				
+		end
+		
+		setPlayerStorageValue(cid, quest.storageId, 1)	
+		chestScripts(cid, questActionId)
 	else
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "It is empty.")
 	end
@@ -387,7 +487,7 @@ end
 
 function onUse(cid, item, frompos, item2, topos)
 	if quests[item.actionid] ~= nil then
-		useQuestChest(cid, quests[item.actionid])
+		useQuestChest(cid, quests[item.actionid], item.actionid)
 	end
 	return TRUE
 end

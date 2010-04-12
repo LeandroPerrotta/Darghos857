@@ -24039,8 +24039,14 @@
 		<attribute key="weight" value="1000"/>
 		<attribute key="slotType" value="feet"/>
 	</item>		
-	<item id="10563" article="a" name="unholy sword">
-		<attribute key="weight" value="2300"/>
+	<item id="10563" article="a" name="dark dust">
+		<attribute key="description" value="­You feel weak when you hold this dust"/>
+		<attribute key="weight" value="500"/>
+		<attribute key="showcount" value="0"/>
 	</item>	
+	<item id="10564" article="a" name="unholy sword">
+		<attribute key="description" value="Nothing in life is to be feared. It is only to be understood."/>
+		<attribute key="weight" value="2300"/>
+	</item>		
 	
 </items>

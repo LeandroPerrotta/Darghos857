@@ -1,26 +1,39 @@
 function onUse(cid, item, frompos, item2, topos)
 
 	-- Divine Ankh Configurations
-	local _divineAnkhCorpses = {6006, 5976}
-	local DARK_ESSENCE_ID = 10563
+	local _vampireCorpses = {6006, 2956}
+	local _ghoulCorpses = {5976, 3113}
+	local DARK_DUST_ID = 10563
 
-	if(item.actionid == aid.DIVINE_ANKH) then
+	local courseChurch = getPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.COURSE_CHURCH)
+
+	if(courseChurch == 2) then
 	
-		if(isInArray(_divineAnkhCorpses, item2.itemid)) then
+		local creatureToSummon = ""
+	
+		if(isInArray(_vampireCorpses, item2.itemid) == TRUE) then
 		
-			if (math.random(1, 10) <= 4) then
-			
-				doPlayerAddItem(cid, DARK_ESSENCE_ID, 1)
-				doSendMagicEffect(getThingPos(item2.uid), CONST_ME_HOLYAREA)
-				
-			else
-			
-				doSummonCreature("vampirequest", getThingPos(item2.uid))
-				doSendMagicEffect(getThingPos(item2.uid), CONST_ME_BLOCKHIT)		
-			end
-			
-			doTransformItem(item2.uid, item2.itemid + 1)
-			doDecayItem(item2.uid)			
+			creatureToSummon = "Reborn Vampire"				
+		elseif(isInArray(_ghoulCorpses, item2.itemid) == TRUE) then
+		
+			creatureToSummon = "Reborn Ghoul"
+		else
+		
+			return TRUE
 		end
+		
+		if (math.random(1, 10) <= 4) then
+		
+			doPlayerAddItem(cid, DARK_DUST_ID, 1)
+			doSendMagicEffect(getThingPos(item2.uid), CONST_ME_HOLYAREA)
+			doPlayerSay(cid, "Esta pobre alma agora encontrou a luz!", TALKTYPE_ORANGE_1)
+			doRemoveItem(item2.uid)
+			
+		else
+		
+			doSummonCreature(creatureToSummon, getThingPos(item2.uid))
+			doSendMagicEffect(getThingPos(item2.uid), CONST_ME_MORTAREA)		
+			doRemoveItem(item2.uid)
+		end		
 	end
 end

@@ -3,7 +3,7 @@
 
 	<!-- Divine Ankh -->
 	<action itemid="2193" script="game/ankh.lua"/>
-	<action itemid="10563" script="game/unholy_sword.lua"/>
+	<action itemid="10564" script="game/unholy_sword.lua"/>
 
 	<!-- Ariadne Quest -->
 	<action itemid="4875" script="game/hydra_nest.lua"/>
@@ -49,9 +49,9 @@
 	<action actionid="2023" script="game/quests/chest.lua"/>
 	<action actionid="2024" script="game/quests/chest.lua"/>
 	<action actionid="2025" script="game/quests/chest.lua"/>
-	<action actionid="2026" script="game/quests/system.lua"/>
-	<action actionid="2027" script="game/quests/system.lua"/>
-	<action actionid="2028" script="game/quests/system.lua"/>
+	<action actionid="2026" script="game/quests/chest.lua"/>
+	<action actionid="2027" script="game/quests/chest.lua"/>
+	<action actionid="2028" script="game/quests/chest.lua"/>
 	<action actionid="2029" script="game/quests/chest.lua"/>
 	<action actionid="2030" script="game/quests/chest.lua"/>
 	<action actionid="2031" script="game/quests/chest.lua"/>
@@ -103,6 +103,7 @@
 	<action actionid="2077" script="game/quests/chest.lua"/>
 	<action actionid="2078" script="game/quests/chest.lua"/>
 	<action actionid="2079" script="game/quests/chest.lua"/>
+	<action actionid="2080" script="game/quests/chest.lua"/>
 
 
 	
