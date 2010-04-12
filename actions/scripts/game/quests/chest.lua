@@ -11,7 +11,7 @@ local quests =
 	{
 		[aid.CHEST_DIVINE_ANKH] = {
 			storageId = sid.CHEST_DIVINE_ANKH,
-			rewardExpLevel = { min = 60, max = 64},
+			rewardExp = 3000000,
 			rewardContainer = 1990,
 			rewardContainerItems = { 
 				{ itemid = 2152, count = 100 },
