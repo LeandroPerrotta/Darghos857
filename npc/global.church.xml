@@ -134,11 +134,19 @@
 			
 					if(_state.topic == 5) then
 					
-						selfSay("Desca até a igreja amaldicoada mate as criaturas que hoje moram nela e tire 1000 areias negras de seus corpos com esta cruz divina.", cid)		
-
-						doPlayerAddItem(cid, ANKH_ID, 1)
-						setPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.COURSE_CHURCH, 2)
-						_state.topic = 0
+						local QUEST_MIN_LEVEL = 60
+					
+						if(getPlayerLevel(cid) >= QUEST_MIN_LEVEL) then
+					
+							selfSay("Desca até a igreja amaldicoada mate as criaturas que hoje moram nela e tire 1000 areias negras de seus corpos com esta cruz divina.", cid)		
+	
+							doPlayerAddItem(cid, ANKH_ID, 1)
+							setPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.COURSE_CHURCH, 2)
+							_state.topic = 0
+						else
+							
+							selfSay("Fico agradecido pela sua ajuda " .. playerName .. "! Mas não é aconselhavel permitir esta missão a guerreiros com nivel inferior a 60.", cid)
+						end
 					elseif(_state.topic == 6) then
 					
 						local DARK_DUST_ID = 10563			
