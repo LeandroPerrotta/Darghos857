@@ -24,10 +24,10 @@ local quests =
 			rewardExp = 1800000,
 			rewardContainer = 5927,
 			rewardContainerItems = { 
-				[6099] = { count = 1 },
-				[6100] = { count = 1 },
-				[6101] = { count = 1 },
-				[6102] = { count = 1 }
+				{itemid = 6099, count = 1},
+				{itemid = 6100, count = 1},
+				{itemid = 6101, count = 1},
+				{itemid = 6101, count = 1}
 			}
 		},
 		

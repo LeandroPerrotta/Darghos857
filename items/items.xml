@@ -24041,7 +24041,7 @@
 	</item>		
 	<item id="10563" article="a" name="dark dust">
 		<attribute key="description" value="­You feel weak when you hold this dust"/>
-		<attribute key="weight" value="500"/>
+		<attribute key="weight" value="5"/>
 		<attribute key="showcount" value="0"/>
 	</item>	
 	<item id="10564" article="a" name="unholy sword">
