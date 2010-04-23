@@ -27,6 +27,9 @@
 	<element earthPercent="-10"/>
 	<element deathPercent="-5"/>
   </elements>
+  <immunities>
+    <immunity invisible="1"/>
+  </immunities> 
   <loot>
     <item id="3976" countmax="10" chance1="50000" chancemax="0"/>
   </loot>

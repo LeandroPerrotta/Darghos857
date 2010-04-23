@@ -44,6 +44,9 @@
 	<element earthPercent="20"/>
 	<element firePercent="-10"/>
   </elements>
+  <immunities>
+    <immunity invisible="1"/>
+  </immunities>   
   <summons maxSummons="3">
     <summon name="Shaman Totem" interval="500" chance="100" max="4"/>
   </summons>

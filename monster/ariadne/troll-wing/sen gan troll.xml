@@ -28,6 +28,9 @@
 	<element earthPercent="20"/>
 	<element firePercent="-10"/>
   </elements>
+  <immunities>
+    <immunity invisible="1"/>
+  </immunities>   
   <voices interval="5000" chance="10">
     <voice sentence="Me eat me mom!"/>
     <voice sentence="Ariadne good! Thorn bad!"/>

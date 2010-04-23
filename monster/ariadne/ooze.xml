@@ -27,6 +27,9 @@
 	<element firePercent="-10"/>
 	<element energyPercent="-10"/>
   </elements>
+  <immunities>
+    <immunity invisible="1"/>
+  </immunities>   
   <summons maxSummons="3">
     <summon name="slime summon" interval="1000" chance="10" max="3"/>
   </summons>

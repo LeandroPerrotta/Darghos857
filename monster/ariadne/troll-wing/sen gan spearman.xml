@@ -30,6 +30,9 @@
 	<element earthPercent="-10"/>
 	<element deathPercent="-5"/>
   </elements>
+  <immunities>
+    <immunity invisible="1"/>
+  </immunities>   
   <voices interval="5000" chance="10">
     <voice sentence="Me put spear on your chest!"/>
   </voices>
