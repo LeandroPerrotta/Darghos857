@@ -27,7 +27,7 @@ local quests =
 				{itemid = 6099, count = 1},
 				{itemid = 6100, count = 1},
 				{itemid = 6101, count = 1},
-				{itemid = 6101, count = 1}
+				{itemid = 6102, count = 1}
 			}
 		},
 		
