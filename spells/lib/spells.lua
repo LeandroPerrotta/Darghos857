@@ -1,6 +1,8 @@
 --Formulas based on formula page at http://tibia.wikia.com/wiki/Formula written at 4.06.2009 
 --All these spells were written/modified by Pietia with the right formulas
 
+DESINTEGRATE_UNREMOVABLE = {3058, 3059, 3060, 3061, 3062, 3063, 3064, 3065, 3066}
+
 --Pre-made areas
 
 --Waves
@@ -50,7 +52,8 @@ AREA_BEAM5 = {
 {3}
 }
 
-AREA_BEAM7 = {
+AREA_BEAM8 = {
+{1},
 {1},
 {1},
 {1},
@@ -69,14 +72,15 @@ AREADIAGONAL_BEAM5 = {
 {0, 0, 0, 0, 3}
 }
 
-AREADIAGONAL_BEAM7 = {
-{1, 0, 0, 0, 0, 0, 0},
-{0, 1, 0, 0, 0, 0, 0},
-{0, 0, 1, 0, 0, 0, 0},
-{0, 0, 0, 1, 0, 0, 0},
-{0, 0, 0, 0, 1, 0, 0},
-{0, 0, 0, 0, 0, 1, 0},
-{0, 0, 0, 0, 0, 0, 3}
+AREADIAGONAL_BEAM8 = {
+{1, 0, 0, 0, 0, 0, 0, 0},
+{0, 1, 0, 0, 0, 0, 0, 0},
+{0, 0, 1, 0, 0, 0, 0, 0},
+{0, 0, 0, 1, 0, 0, 0, 0},
+{0, 0, 0, 0, 1, 0, 0, 0},
+{0, 0, 0, 0, 0, 1, 0, 0},
+{0, 0, 0, 0, 0, 0, 1, 0},
+{0, 0, 0, 0, 0, 0, 0, 3}
 }
 
 --Circles
