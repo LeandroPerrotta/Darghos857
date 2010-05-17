@@ -28,7 +28,7 @@
 				
 					selfSay("Caro " .. playerName .. "! Conseguiu a espada que lhe pedi?", cid)
 					_state.topic = 11	
-				elseif(chamberTemptation == -1 && courseChurch == 3) then
+				elseif(chamberTemptation == -1 and courseChurch == 3) then
 
 					selfSay("Olá " .. playerName .. "! Hoje a luz brilhou nesta terra! Mas, por hora, seu {trabalho} ainda nao esta terminado.", cid)
 					_state.topic = 7		
