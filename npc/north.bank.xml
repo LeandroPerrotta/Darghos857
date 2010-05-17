@@ -1,100 +1,17 @@
-<?xml version="1.0"?>
-<npc name="Bankman Fruendithas" floorchange="0" walkinterval="4000">
-	<health now="150" max="150"/>
-	<look type="136" head="67" body="22" legs="56" feet="87" addons="3"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Bankman Fruendithas" floorchange="0" walkinterval="4000" script="game/bank.lua">
+    <health now="100" max="100"/>
+    <look type="136" head="67" body="22" legs="56" feet="87" addons="3"/>
+    <parameters>
+        <parameter key="message_greet" value="Welcome to the Darghos {bank}, |PLAYERNAME|! What can I do for you?"/>
+        <parameter key="message_farewell" value="Good bye."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="bank;job;" />
+        <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
+        <parameter key="keyword_reply2" value="I work in this bank. I can change money for you and help you with your bank account." />
 
-  <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
-    <!--This will include the bankman interaction, in this way several npc can use the same interaction-->
-    <include file="bankman.xml"/>
-    
-    <interact keywords="hi" focus="1">
-      <!--These are the alternative keywords-->
-      <keywords>hello</keywords>
-      
-      <response text="Hello. How may I help you |NAME|?"/>
-    </interact>
-
-    <interact keywords="bye" focus="0">
-      <!--These are the alternative keywords-->
-      <keywords>farewell</keywords>
-      
-      <response text="It was a pleasure to help you."/>
-    </interact>
-
-    <!--
-    <interact event="onBusy">
-      <response text="One moment please, |NAME|.">
-        <action name="addqueue" value="|PLAYER|"/>
-      </response>
-    </interact>
-    -->
-
-    <interact event="onIdle" time="120" singleevent="1">
-      <response text="Beatiful day is it not |NAME|?" public="1">
-        <action name="idle" value="1"/>
-      </response>
-
-      <response>
-        <action name="script">
-        <![CDATA[
-          -- The npc will just say this on average once every 4 hours (240 minutes)
-          local interval = 240 * 60
-
-          local p = math.random(0, 10000000)
-          local r = (10000000 * idleinterval) / interval
-          --selfSay("r: " .. r .. ", p: " .. p)
-          
-          if(r >= p) then
-            selfSay("Hey " .. name .. " can you help me?")
-            _state.topic = 999
-          end
-        ]]>  
-        </action>
-
-        <interact keywords="yes" topic="999">
-          <response text="Ah great, would you mind holding this for me while I use the bathroom?">
-            <action name="topic" value="-1"/>
-
-            <interact keywords="yes">
-              <response>
-                <action name="script">
-                <![CDATA[
-                  local result = doPlayerAddItem(cid, 2157, 3, 0)
-                  if(result == -1) then
-                    selfSay("Never mind, I'll have to hold it in until I quit work.")
-                  else
-                    selfSay("Thanks alot! I'll be right back.")
-                    _state.b1 = true
-                  end
-                ]]>
-                </action>
-              </response>
-            </interact>
-            
-          </response>
-
-          <interact keywords="|*|">
-            <response text="Hmpf."/>
-          </interact>
-          
-        </interact>
-        
-      </response>
-    </interact>
-
-    <interact event="onPlayerLeave" focus="0">
-      <response text="It was a pleasure to help you |NAME|."/>
-      <response b1="1" text="Hey hey give back my gold nuggets! POLICE HELP!"/>
-    </interact>
-    
-    <interact keywords="name">
-      <response text="My name is |NPCNAME|."/>
-    </interact>
-
-    <interact keywords="job">
-      <response text="I am a banker, my job is to exchange coins."/>
-    </interact>
-   
-  </interaction>
-  
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_sellable" value="" />
+        <parameter key="shop_buyable" value="" />
+    </parameters>
 </npc>

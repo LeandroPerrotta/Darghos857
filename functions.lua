@@ -2,7 +2,6 @@
 getConfigInfo = getConfigValue
 doPlayerRemOutfit = doPlayerRemoveOutfit
 doPlayerRemOutfitEx = doPlayerRemoveOutfitEx
-broadcastMessageEx = broadcastMessage
 getThingfromPos = getThingFromPos
 getPlayerBalance = getPlayerAccountBalance
 
@@ -134,7 +133,7 @@ end
 
 -- Other functions
 function isPlayer(cid)
-	if (isCreature(cid) and cid >= PLAYER_ID_RANGE and cid < MONSTER_ID_RANGE) then
+	if (isCreature(cid) == TRUE and cid >= PLAYER_ID_RANGE and cid < MONSTER_ID_RANGE) then
 		return TRUE
 	end
 
@@ -142,7 +141,7 @@ function isPlayer(cid)
 end
 
 function isMonster(cid)
-	if (isCreature(cid) and cid >= MONSTER_ID_RANGE and cid < NPC_ID_RANGE) then
+	if (isCreature(cid) == TRUE and cid >= MONSTER_ID_RANGE and cid < NPC_ID_RANGE) then
 		return TRUE
 	end
 
@@ -150,7 +149,7 @@ function isMonster(cid)
 end
 
 function isNPC(cid)
-	if (isCreature(cid) and cid >= NPC_ID_RANGE) then
+	if (isCreature(cid) == TRUE and cid >= NPC_ID_RANGE) then
 		return TRUE
 	end
 
@@ -406,16 +405,19 @@ string.separate = function(separator, string)
 	return a
 end
 
-function string.explode(p, d)
-	local t, ll
+function string.explode(p, d, m)
+	local limit = m or 0
+	local t, ll, j
 	t={}
 	ll=0
+	j=0
 	if(#p == 1) then return p end
 		while true do
 			l=string.find(p,d,ll+1,true) -- find the next d in the string
-			if l~=nil then -- if "not not" found then..
+			if l~=nil and (j < limit or limit == 0) then -- if "not not" found then..
 				table.insert(t, string.sub(p,ll,l-1)) -- Save it in our array.
 				ll=l+1 -- save just after where we found it for searching next time.
+				j=j+1 -- number of explosions
 			else
 				table.insert(t, string.sub(p,ll)) -- Save what's left in our array.
 				break -- Break at end, as it should be, according to the lua manual.
@@ -626,7 +628,7 @@ function getBlessPrice(level)
 end
 
 function getPlayerRequiredExperience(cid, level)
-    if isPlayer(cid) == TRUE and level >= 1 then
+	if isPlayer(cid) == TRUE and level >= 1 then
 		local playerLevel = getPlayerLevel(cid)
 		local experienceLeft = 0
 		local levelExp = 0
@@ -639,16 +641,16 @@ function getPlayerRequiredExperience(cid, level)
 			experienceLeft = levelExp - getPlayerExperience(cid)
 		end
 		return experienceLeft
-    end
+	end
 
 	return LUA_ERROR
 end
 
 function doPlayerAddLevel(cid, level)
-    if isPlayer(cid) == TRUE and level >= 1 then
+	if isPlayer(cid) == TRUE and level >= 1 then
 		local experience = getPlayerRequiredExperience(cid, getPlayerLevel(cid)+level)
 		return doPlayerAddExp(cid, experience)
-    end
+	end
 
 	return LUA_FALSE
 end
@@ -724,9 +726,9 @@ function doPlayerTakeItem(cid, itemid, count)
 end
 
 function doPlayerBuyItem(cid, itemid, count, cost, charges)
-    if(doPlayerRemoveMoney(cid, cost) == TRUE) then
-    	return doPlayerGiveItem(cid, itemid, count, charges)
-    end
+	if(doPlayerRemoveMoney(cid, cost) == TRUE) then
+		return doPlayerGiveItem(cid, itemid, count, charges)
+	end
 	return LUA_ERROR
 end
 
@@ -752,3 +754,78 @@ function getContainerCapById(itemid)
 		return LUA_ERROR
 	end
 end
+
+function isThingMoveable(uid)
+	if(isMoveable(uid) == TRUE and uid > 65535) then
+		return TRUE
+	end
+
+	return FALSE
+end
+
+function isThingDestroyable(thing)
+	if(thing.uid <= 0 or isCreature(thing.uid) == TRUE or isThingMoveable(thing.uid) == FALSE) then
+		return FALSE
+	end
+
+	return TRUE
+end
+
+function doCleanTileItemsByPos(pos, ignore)
+	local ignore = ignore or {}
+	local removed_items = 0
+	local stackpos = 1
+
+	while true do
+		pos.stackpos = stackpos
+		local thing = getTileThingByPos(pos)
+
+		if(isThingDestroyable(thing) == TRUE and isInArray(ignore, thing.itemid) == FALSE) then
+			doRemoveItem(thing.uid)
+			removed_items = removed_items + 1
+		else
+			if thing.uid > 0 then
+				stackpos = stackpos + 1
+			else
+				break
+			end
+		end
+	end
+	
+	return removed_items
+end
+
+function isInArray(array, value, isCaseSensitive)
+	local compareLowerCase = FALSE
+	if type(value) == "string" and isCaseSensitive ~= TRUE then
+		value = string.lower(value)
+		compareLowerCase = TRUE
+	end
+	for k,v in pairs(array) do
+		local newV
+		if compareLowerCase == TRUE and type(v) == "string" then
+			newV = string.lower(v)
+		else
+			newV = v
+		end
+		if newV == value then 
+			return TRUE, k
+		end
+	end
+	return FALSE
+end
+
+function doBroadcastMessage(message, class)
+	local messageClass = class or MESSAGE_STATUS_WARNING
+	if messageClass < MESSAGE_CLASS_FIRST or messageClass > MESSAGE_CLASS_LAST then
+		return LUA_ERROR
+	end
+
+	for i, cid in ipairs(getPlayersOnlineList()) do
+		doPlayerSendTextMessage(cid, messageClass, message)
+	end
+	return LUA_NO_ERROR
+end
+
+broadcastMessage = doBroadcastMessage
+broadcastMessageEx = broadcastMessage

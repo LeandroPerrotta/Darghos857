@@ -3,7 +3,6 @@ function onUse(cid, item, frompos, item2, topos)
 	-- Divine Ankh Configurations
 	local _vampireCorpses = {6006, 2956}
 	local _ghoulCorpses = {5976, 3113}
-	local DARK_DUST_ID = 10563
 
 	local courseChurch = getPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.COURSE_CHURCH)
 
@@ -24,7 +23,7 @@ function onUse(cid, item, frompos, item2, topos)
 		
 		if (math.random(1, 10) <= 4) then
 		
-			doPlayerAddItem(cid, DARK_DUST_ID, 1)
+			doPlayerAddItem(cid, CUSTOM_ITEMS.DARK_DUST, 1)
 			doSendMagicEffect(getThingPos(item2.uid), CONST_ME_HOLYAREA)
 			doPlayerSay(cid, "Esta pobre alma agora encontrou a luz!", TALKTYPE_ORANGE_1)
 			doRemoveItem(item2.uid)

@@ -342,7 +342,9 @@ function playerRecord()
 	end
 end
 
-
+function msgcontains(txt, str)
+      return (string.find(txt, str) and not string.find(txt, '(%w+)' .. str) and not string.find(txt, str .. '(%w+)'))
+end
 
 
 --[[

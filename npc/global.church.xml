@@ -27,19 +27,21 @@
 				elseif(chamberTemptation == 1) then	
 				
 					selfSay("Caro " .. playerName .. "! Conseguiu a espada que lhe pedi?", cid)
-					_state.topic = 11
+					_state.topic = 11	
+				elseif(chamberTemptation == -1 && courseChurch == 3) then
+
+					selfSay("Olá " .. playerName .. "! Hoje a luz brilhou nesta terra! Mas, por hora, seu {trabalho} ainda nao esta terminado.", cid)
+					_state.topic = 7		
 				elseif(chamberTemptation == 2) then	
 				
 					local _timer = getPlayerStorageValue(cid, sid.PRIEST_UNHOLY_SWORD_TIMER)	
 					
 					
 					if(os.time() >= _timer) then
-					
-						local UNHOLY_SWORD_ID = 10564;
 						
 						selfSay("Caro " .. playerName .. "! Está pronta a arma! Com ela agora você pode deslacrar a camara. Meu antigo tesouro está na ultima sala, leve-o contigo! Ele so me trara más lembranças...", cid)	
 						
-						doPlayerAddItem(cid, UNHOLY_SWORD_ID, 1)
+						doPlayerAddItem(cid, CUSTOM_ITEMS.UNHOLY_SWORD, 1)
 						setPlayerStorageValue(cid, sid.PRIEST_UNHOLY_SWORD_TIMER, -1)
 						setPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.CHAMBER_TEMPTATION, 3)
 					else
@@ -147,13 +149,11 @@
 							
 							selfSay("Fico agradecido pela sua ajuda " .. playerName .. "! Mas não é aconselhavel permitir esta missão a guerreiros com nivel inferior a 60.", cid)
 						end
-					elseif(_state.topic == 6) then
+					elseif(_state.topic == 6) then	
 					
-						local DARK_DUST_ID = 10563			
-					
-						if(getPlayerItemCount(cid, DARK_DUST_ID) >= 1000) then
+						if(getPlayerItemCount(cid, CUSTOM_ITEMS.DARK_DUST) >= 1000) then
 						
-							doPlayerRemoveItem(cid, DARK_DUST_ID, 1000)
+							doPlayerRemoveItem(cid, CUSTOM_ITEMS.DARK_DUST, 1000)
 							
 							setPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.COURSE_CHURCH, 3)
 							

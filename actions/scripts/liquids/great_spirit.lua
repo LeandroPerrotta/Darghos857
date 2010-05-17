@@ -7,7 +7,7 @@ setCombatParam(combatHealth, COMBAT_PARAM_TYPE, COMBAT_HEALING)
 setCombatParam(combatHealth, COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_BLUE)
 setCombatParam(combatHealth, COMBAT_PARAM_TARGETCASTERORTOPMOST, TRUE)
 setCombatParam(combatHealth, COMBAT_PARAM_AGGRESSIVE, FALSE)
-
+setCombatParam(combatHealth, COMBAT_PARAM_DISPEL, CONDITION_PARALYZE)
 setCombatFormula(combatHealth, COMBAT_FORMULA_DAMAGE, HEALTH_REGEN[1], 0, HEALTH_REGEN[2], 0)
 
 local combatMana = createCombatObject()
@@ -16,22 +16,15 @@ setCombatParam(combatMana, COMBAT_PARAM_TARGETCASTERORTOPMOST, TRUE)
 setCombatParam(combatMana, COMBAT_PARAM_AGGRESSIVE, FALSE)
 setCombatFormula(combatMana, COMBAT_FORMULA_DAMAGE, MANA_REGEN[1], 0, MANA_REGEN[2], 0)
 
-local exhaust = createConditionObject(CONDITION_EXHAUSTED)
-setConditionParam(exhaust, CONDITION_PARAM_TICKS, getConfigInfo('exhausted'))
+local exhaust = createConditionObject(CONDITION_EXHAUST_POTION)
+setConditionParam(exhaust, CONDITION_PARAM_TICKS, getConfigInfo('minactionexinterval'))
 
 function onUse(cid, item, frompos, item2, topos)
 	if(isPlayer(item2.uid) == FALSE)then
 		return FALSE
 	end
-	
-	local pos1 = getPlayerPosition(cid)
-	local pos2 = getPlayerPosition(item2.uid)
-	
-	if(getDistanceBetween(pos1, pos2)) >= 3 then
-		return FALSE
-	end
-	
-	if(hasCondition(cid, CONDITION_EXHAUSTED) == TRUE) then
+
+	if(hasCondition(cid, CONDITION_EXHAUST_POTION) == TRUE) then
 		doPlayerSendDefaultCancel(cid, RETURNVALUE_YOUAREEXHAUSTED)
 		return TRUE
 	end

@@ -84,104 +84,104 @@
 		<!-- CUSTOM ITEMS --> 
 		
 		<!-- Durin Set -->
-		<moveevent event="Equip" itemid="10546" level="220" slot="head" function="onEquipItem">
+		<moveevent event="Equip" itemid="11736" level="220" slot="head" function="onEquipItem">
 			<vocation name="Knight"/>
 			<vocation name="Elite Knight" showInDescription="0"/>	
 		</moveevent>
-		<moveevent event="DeEquip" itemid="10546" slot="head" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11736" slot="head" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="10547" level="220" slot="armor" function="onEquipItem">
+		<moveevent event="Equip" itemid="11737" level="220" slot="armor" function="onEquipItem">
 			<vocation name="Knight"/>
 			<vocation name="Elite Knight" showInDescription="0"/>	
 		</moveevent>		
-		<moveevent event="DeEquip" itemid="10547" slot="armor" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11737" slot="armor" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="10548" level="220" slot="legs" function="onEquipItem">
+		<moveevent event="Equip" itemid="11738" level="220" slot="legs" function="onEquipItem">
 			<vocation name="Knight"/>
 			<vocation name="Elite Knight" showInDescription="0"/>	
 		</moveevent>		
-		<moveevent event="DeEquip" itemid="10548" slot="legs" function="onDeEquipItem"/>	
+		<moveevent event="DeEquip" itemid="11738" slot="legs" function="onDeEquipItem"/>	
 			
-		<moveevent event="Equip" itemid="10549" level="220" slot="hand" function="onEquipItem">
+		<moveevent event="Equip" itemid="11739" level="220" slot="hand" function="onEquipItem">
 			<vocation name="Knight"/>
 			<vocation name="Elite Knight" showInDescription="0"/>	
 		</moveevent>		
-		<moveevent event="DeEquip" itemid="10549" slot="hand" function="onDeEquipItem"/>		
+		<moveevent event="DeEquip" itemid="11739" slot="hand" function="onDeEquipItem"/>		
 		
 		<!-- Tashi Aharon Set  -->
-		<moveevent event="Equip" itemid="10551" level="220" slot="head" function="onEquipItem">
+		<moveevent event="Equip" itemid="11740" level="220" slot="head" function="onEquipItem">
 			<vocation name="Paladin"/>
 			<vocation name="Royal Paladin" showInDescription="0"/>	
 		</moveevent>				
-		<moveevent event="DeEquip" itemid="10551" slot="head" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11740" slot="head" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="10552" level="220" slot="armor" function="onEquipItem">
+		<moveevent event="Equip" itemid="11741" level="220" slot="armor" function="onEquipItem">
 			<vocation name="Paladin"/>
 			<vocation name="Royal Paladin" showInDescription="0"/>	
 		</moveevent>			
-		<moveevent event="DeEquip" itemid="10552" slot="armor" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11741" slot="armor" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="10553" level="220" slot="legs" function="onEquipItem">
+		<moveevent event="Equip" itemid="11742" level="220" slot="legs" function="onEquipItem">
 			<vocation name="Paladin"/>
 			<vocation name="Royal Paladin" showInDescription="0"/>	
 		</moveevent>			
-		<moveevent event="DeEquip" itemid="10553" slot="legs" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11742" slot="legs" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="10554" level="220" slot="feet" function="onEquipItem">
+		<moveevent event="Equip" itemid="11743" level="220" slot="feet" function="onEquipItem">
 			<vocation name="Paladin"/>
 			<vocation name="Royal Paladin" showInDescription="0"/>	
 		</moveevent>			
-		<moveevent event="DeEquip" itemid="10554" slot="feet" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11743" slot="feet" function="onDeEquipItem"/>
 		
 		<!-- Warden Set  -->
-		<moveevent event="Equip" itemid="10555" level="220" slot="head" function="onEquipItem">
+		<moveevent event="Equip" itemid="11744" level="220" slot="head" function="onEquipItem">
 			<vocation name="Druid"/>
 			<vocation name="Elder Druid" showInDescription="0"/>	
 		</moveevent>				
-		<moveevent event="DeEquip" itemid="10555" slot="head" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11744" slot="head" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="10556" level="220" slot="armor" function="onEquipItem">
+		<moveevent event="Equip" itemid="11745" level="220" slot="armor" function="onEquipItem">
 			<vocation name="Druid"/>
 			<vocation name="Elder Druid" showInDescription="0"/>	
 		</moveevent>			
-		<moveevent event="DeEquip" itemid="10556" slot="armor" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11745" slot="armor" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="10557" level="220" slot="legs" function="onEquipItem">
+		<moveevent event="Equip" itemid="11746" level="220" slot="legs" function="onEquipItem">
 			<vocation name="Druid"/>
 			<vocation name="Elder Druid" showInDescription="0"/>	
 		</moveevent>			
-		<moveevent event="DeEquip" itemid="10557" slot="legs" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11746" slot="legs" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="10558" level="220" slot="feet" function="onEquipItem">
+		<moveevent event="Equip" itemid="11747" level="220" slot="feet" function="onEquipItem">
 			<vocation name="Druid"/>
 			<vocation name="Elder Druid" showInDescription="0"/>	
 		</moveevent>			
-		<moveevent event="DeEquip" itemid="10558" slot="feet" function="onDeEquipItem"/>	
+		<moveevent event="DeEquip" itemid="11747" slot="feet" function="onDeEquipItem"/>	
 		
 		<!-- Deathface Set  -->
-		<moveevent event="Equip" itemid="10559" level="220" slot="head" function="onEquipItem">
+		<moveevent event="Equip" itemid="11748" level="220" slot="head" function="onEquipItem">
 			<vocation name="Sorcerer"/>
 			<vocation name="Master Sorcerer" showInDescription="0"/>	
 		</moveevent>				
-		<moveevent event="DeEquip" itemid="10559" slot="head" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11748" slot="head" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="10560" level="220" slot="armor" function="onEquipItem">
+		<moveevent event="Equip" itemid="11749" level="220" slot="armor" function="onEquipItem">
 			<vocation name="Sorcerer"/>
 			<vocation name="Master Sorcerer" showInDescription="0"/>	
 		</moveevent>			
-		<moveevent event="DeEquip" itemid="10560" slot="armor" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11749" slot="armor" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="10561" level="220" slot="legs" function="onEquipItem">
+		<moveevent event="Equip" itemid="11750" level="220" slot="legs" function="onEquipItem">
 			<vocation name="Sorcerer"/>
 			<vocation name="Master Sorcerer" showInDescription="0"/>	
 		</moveevent>			
-		<moveevent event="DeEquip" itemid="10561" slot="legs" function="onDeEquipItem"/>
+		<moveevent event="DeEquip" itemid="11750" slot="legs" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="10562" level="220" slot="feet" function="onEquipItem">
+		<moveevent event="Equip" itemid="11751" level="220" slot="feet" function="onEquipItem">
 			<vocation name="Sorcerer"/>
 			<vocation name="Master Sorcerer" showInDescription="0"/>	
 		</moveevent>			
-		<moveevent event="DeEquip" itemid="10562" slot="feet" function="onDeEquipItem"/>			
+		<moveevent event="DeEquip" itemid="11751" slot="feet" function="onDeEquipItem"/>			
 		
 
 	<!-- You should not be able to walk through quest chests -->
@@ -547,6 +547,8 @@
 	<moveevent event="StepOut" itemid="447" script="switch_tile.lua" />
 	<moveevent event="StepIn" itemid="3216" script="switch_tile.lua" />
 	<moveevent event="StepOut" itemid="3217" script="switch_tile.lua" />
+	<moveevent event="StepIn" itemid="11062" script="switch_tile.lua" />
+	<moveevent event="StepOut" itemid="11063" script="switch_tile.lua" />
 
 	<!-- Traps -->
 	<moveevent event="StepIn" itemid="1510" script="trap.lua" />

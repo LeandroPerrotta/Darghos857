@@ -7,17 +7,17 @@
 	<talkaction words="/cleanhouses" access="5" filter="first word" script="housecleaning.lua"/>
 	<talkaction words="/raid" access="5" filter="first word" function="forceRaid"/>
 	<talkaction words="/s" access="5" filter="first word" function="placeNpc"/>
-	<talkaction words="/shutdown" access="5" filter="first word" function="shutdownServer"/>
+	<talkaction words="/shutdown" access="5" filter="first word" script="shutdown.lua"/>
 	<talkaction words="/serverdiag" access="5" filter="first word" function="serverDiagnostic"/>
-	<talkaction words="/reload" access="5" filter="first word" function="reloadInfo"/>
+	<talkaction words="/reload" access="5" filter="first word" script="reload.lua"/>
 	<talkaction words="/m" access="5" filter="first word" script="placemonster.lua"/>
 	
 	<!-- Comunity Managers -->
-	<talkaction words="/openserver" access="4" filter="first word" function="openServer"/>
-	<talkaction words="/closeserver" access="4" filter="first word" function="closeServer"/>	
+	<talkaction words="/openserver" access="4" filter="first word" script="openserver.lua"/>
+	<talkaction words="/closeserver" access="4" filter="first word" script="closeserver.lua"/>	
 	<talkaction words="/save" access="4" script="saveserver.lua"/>
 	<talkaction words="/owner" access="4" filter="first word" script="sethouseowner.lua"/>	
-	<talkaction words="/refreshmap" access="4" filter="first word" function="refreshmap"/>	
+	<talkaction words="/refreshmap" access="4" filter="first word" script="refreshmap.lua"/>	
 	<talkaction words="/c" access="4" filter="first word" script="teleporthere.lua"/>
 	<talkaction words="/checkconfig" access="4" filter="first word" script="configval.lua"/>
 	<talkaction words="/r" access="4" filter="first word" script="removething.lua"/>

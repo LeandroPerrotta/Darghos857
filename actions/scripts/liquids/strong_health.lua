@@ -10,8 +10,8 @@ setCombatParam(combat, COMBAT_PARAM_AGGRESSIVE, FALSE)
 setCombatParam(combat, COMBAT_PARAM_DISPEL, CONDITION_PARALYZE)
 setCombatFormula(combat, COMBAT_FORMULA_DAMAGE, MIN, 0, MAX, 0)
 
-local exhaust = createConditionObject(CONDITION_EXHAUSTED)
-setConditionParam(exhaust, CONDITION_PARAM_TICKS, getConfigInfo('exhausted'))
+local exhaust = createConditionObject(CONDITION_EXHAUST_POTION)
+setConditionParam(exhaust, CONDITION_PARAM_TICKS, getConfigInfo('minactionexinterval'))
 
 function onUse(cid, item, frompos, item2, topos)
 	if(isPlayer(item2.uid) == FALSE) then
@@ -30,7 +30,7 @@ function onUse(cid, item, frompos, item2, topos)
 		return TRUE
 	end
 
-	if(hasCondition(cid, CONDITION_EXHAUSTED) == TRUE) then
+	if(hasCondition(cid, CONDITION_EXHAUST_POTION) == TRUE) then
 		doPlayerSendDefaultCancel(cid, RETURNVALUE_YOUAREEXHAUSTED)
 		return TRUE
 	end

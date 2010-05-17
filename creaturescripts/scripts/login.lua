@@ -25,13 +25,11 @@
 		end
 		setPlayerStorageValue(cid, STORAGE_REMOVE_BLESSES, -1)
 	end
-
+	
 	--Promotes player if necessary
 	if(isPremium(cid) == TRUE) then
-		if(getPlayerStorageValue(cid, STORAGE_PROMOTION) == 1) then
-			if(getPlayerVocation(cid) <= 4) then
-				doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
-			end
+		if(getPlayerStorageValue(cid, STORAGE_PROMOTION) == 1 and getPlayerVocation(cid) <= 4) then
+			doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
 			doPlayerRemoveSkillLossPercent(cid, 30)
 			setPlayerStorageValue(cid, STORAGE_PROMOTION, -1)
 		end

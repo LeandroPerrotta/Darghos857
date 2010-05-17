@@ -2,49 +2,76 @@
 
 <interaction>
     
-	<!--
   <interact keywords="bank">
     <response text="The depots are very easy to use. Just step in front of them and you will find your items in them. They are free for all tibian citizens."/>
   </interact>
 
-	DEPOSIT MONEY
+	--DEPOSIT MONEY
 
-  <interact keywords="deposit">
-    <response text="Please tell me how much gold it is you would like to deposit.">
+<!-- <interact keywords="deposit">
+	<response text="Please tell me how much gold it is you would like to deposit.">
+	
+		<interact keywords="|N1|">
+			<response text="Would you really like to deposit |N1| gold?">
+				<action name="n1" value="|N1|"/>
+				
+				<interact keywords="yes">
+					<response>
+						<action name="script">
+						<![CDATA[
+						total = _state.n1
+			            if(getPlayerMoney(cid)) < _state.amount then
+							selfSay("Sorry, you don't have enough sucifient golds for deposit.",cid)
+						else
+								doPlayerDepositMoney(cid, _state.n1)
+								selfSay("Alright, we have added the amount of ".._state.n1.." gold to your balance. You can withdraw your money anytime you want to.",cid)
+						end
+						
+						]]>
+						</action>
+					</response>
+				</interact>
+				
+				<interact keywords="|*|">
+					<response text="Well, can I help you with something else?"/>
+				</interact>
+			
+			</response>
+		</interact>
+	
+	</response>
+</interact> -->
 
-      <interact keywords="|AMOUNT|">
-        <response text="Would you really like to deposit |AMOUNT| gold?">
+<interact keywords="deposit;|AMOUNT|">
+
+	<response text="Would you really like to deposit |AMOUNT| gold?">
 		<action name="amount" value="|AMOUNT|"/>
-
-          <interact keywords="yes">
-            <response>
-              <action name="script">
-              <![CDATA[
-				total = _state.amount
-                if(getPlayerMoney(cid)) < _state.amount then
+		
+		<interact keywords="yes">
+			<response>
+				<action name="script">
+				<![CDATA[
+	            if(getPlayerMoney(cid)) < _state.amount then
 					selfSay("Sorry, you don't have enough sucifient golds for deposit.",cid)
 				else
-					doPlayerDepositMoney(cid, total)
+					doPlayerDepositMoney(cid, _state.amount)
 					selfSay("Alright, we have added the amount of ".._state.amount.." gold to your balance. You can withdraw your money anytime you want to.",cid)
 				end
-
-              ]]>
-              </action>
-              </response>
-          </interact>
-
-          <interact keywords="|*|">
-            <response text="Well, can I help you with something else?"/>
-          </interact>
-
-        </response>
-      </interact>
-
-    </response>
-  </interact>
+				
+				]]>
+				</action>
+			</response>
+		</interact>
+		
+		<interact keywords="|*|">
+			<response text="Well, can I help you with something else?"/>
+		</interact>
+	
+	</response>
+</interact>
 	
 
-	WITHDRAW MONEY
+	--WITHDRAW MONEY
 
   <interact keywords="withdraw">
     <response text="Please tell me how much gold you would like to withdraw.">
@@ -79,7 +106,7 @@
   </interact>
   
 
-	BALANCE MONEY
+	--BALANCE MONEY
 
   <interact keywords="balance">
     <response text="You want to see your account balance?">
@@ -103,7 +130,7 @@
   </interact>
   
 
-	DEPOSIT ALL MONEY
+	--DEPOSIT ALL MONEY
 
   <interact keywords="deposit;all">
     <response text="">
@@ -134,7 +161,7 @@
   </interact>  
  
 
-	TRANSFER MONEY
+	--TRANSFER MONEY
 
   <interact keywords="transfer">
     <response text="Please tell me how much gold you would like to transfer.">
@@ -178,5 +205,5 @@
 
     </response>
   </interact>
-	-->
+
 </interaction>

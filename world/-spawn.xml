@@ -1570,6 +1570,9 @@
     <monster name="Frost Troll" x="3" y="-1" z="6" spawntime="60"/>
     <monster name="Frost Troll" x="-1" y="1" z="6" spawntime="60"/>
   </spawn>
+  <spawn centerx="1984" centery="1260" centerz="6" radius="1">
+    <npc name="north.bank" x="0" y="0" z="6" spawntime="60"/>
+  </spawn>
   <spawn centerx="2938" centery="1262" centerz="6" radius="5">
     <monster name="Bog Raider" x="0" y="-1" z="6" spawntime="60"/>
   </spawn>
@@ -2035,6 +2038,9 @@
     <monster name="Amazon" x="2" y="-1" z="6" spawntime="120"/>
     <monster name="Amazon" x="-2" y="1" z="6" spawntime="120"/>
     <monster name="Valkyrie" x="7" y="2" z="6" spawntime="120"/>
+  </spawn>
+  <spawn centerx="1996" centery="1854" centerz="6" radius="1">
+    <npc name="quendor.bank" x="0" y="0" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2124" centery="1854" centerz="6" radius="5">
     <monster name="Witch" x="1" y="0" z="6" spawntime="60"/>

@@ -123,16 +123,16 @@
 							
 							if(isKnight(cid)) then
 							
-								reward = 10546 -- Durin Helmet
+								reward = CUSTOM_ITEMS.DURIN_HELMT
 							elseif(isPaladin(cid)) then
 							
-								reward = 10551 -- Tashi Aharon Helmet
+								reward = CUSTOM_ITEMS.TASHI_AHARON_HELMET
 							elseif(isDruid(cid)) then
 							
-								reward = 10558 -- Warden Boots
+								reward = CUSTOM_ITEMS.WARDEN_BOOTS
 							elseif(isSorcerer(cid)) then
 								
-								reward = 10561 -- Deathface Legs
+								reward = CUSTOM_ITEMS.DEATHFACE_LEGS
 							end
 							
 							doPlayerAddItem(cid, reward, 1)
