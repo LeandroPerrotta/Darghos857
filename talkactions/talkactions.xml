@@ -5,7 +5,7 @@
 	<talkaction words="/n" access="5" filter="first word" script="createitembyname.lua"/>
 
 	<talkaction words="/cleanhouses" access="5" filter="first word" script="housecleaning.lua"/>
-	<talkaction words="/raid" access="5" filter="first word" function="forceRaid"/>
+	
 	<talkaction words="/s" access="5" filter="first word" function="placeNpc"/>
 	<talkaction words="/shutdown" access="5" filter="first word" script="shutdown.lua"/>
 	<talkaction words="/serverdiag" access="5" filter="first word" function="serverDiagnostic"/>
@@ -13,6 +13,7 @@
 	<talkaction words="/m" access="5" filter="first word" script="placemonster.lua"/>
 	
 	<!-- Comunity Managers -->
+	<talkaction words="/raid" access="4" filter="first word" function="forceRaid"/>
 	<talkaction words="/openserver" access="4" filter="first word" script="openserver.lua"/>
 	<talkaction words="/closeserver" access="4" filter="first word" script="closeserver.lua"/>	
 	<talkaction words="/save" access="4" script="saveserver.lua"/>

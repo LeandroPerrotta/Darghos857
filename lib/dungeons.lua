@@ -226,7 +226,7 @@ end
 
 function Dungeons.onPlayerLeave(cid)
 
-	local playerDungeon = tonumber(getPlayerStorageValue(cid, sid.ON_DUNGEON))
+	local playerDungeon = getPlayerStorageValue(cid, sid.ON_DUNGEON)
 	
 	Dungeons.decreasePlayers(playerDungeon)
 	
