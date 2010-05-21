@@ -1,0 +1,18 @@
+Darghos Changelog
+[
+	A+ (Adicionado)
+	[
+		* Evento para criaturas - onCombat(cid, target)
+		* Opções para limpeza da casa no campo "clear" na tabela "houses"
+	]
+
+	E (Editado)
+	[
+		//
+	]
+
+	R- (Removido)
+	[
+		//
+	]
+]
