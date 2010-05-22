@@ -8,7 +8,7 @@ Darghos Changelog
 
 	E (Editado)
 	[
-		//
+		* Trigger ao deletar player nao seta owner = 0, e sim clear = 3
 	]
 
 	R- (Removido)
