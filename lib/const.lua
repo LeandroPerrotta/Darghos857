@@ -16,6 +16,11 @@
 		SALAZART_END = {x=2773 ,y=2660 ,z=7}
 	}
 	
+	towns =
+	{
+		ISLAND_OF_PEACE = 6
+	}
+	
 	-->> Posi��es dos templos
 
 		QUENDOR = {x=2020 ,y=1903, z=7}

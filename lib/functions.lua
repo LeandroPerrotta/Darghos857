@@ -214,7 +214,7 @@ end
 
 function setRateStage(cid, newlevel)
 
-	if(getPlayerTown(cid) ~= 6 and getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) ~= 1) then
+	if(getPlayerTown(cid) ~= towns.ISLAND_OF_PEACE and getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) ~= 1) then
 		setPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE, 1)
 	end
 
@@ -304,6 +304,12 @@ function setLoginSkillRateStages(cid)
 		else	
 			setSkillRate(cid, LEVEL_SKILL_FISHING, 30)	
 		end		
+		
+		if(getPlayerSkill(cid, LEVEL_MAGIC) >= 50) then		
+			setSkillRate(cid, LEVEL_MAGIC, 1)	
+		else	
+			setSkillRate(cid, LEVEL_MAGIC, 7)	
+		end			
 	else
 	
 		setSkillRate(cid, LEVEL_SKILL_FIST, 30)
@@ -312,7 +318,8 @@ function setLoginSkillRateStages(cid)
 		setSkillRate(cid, LEVEL_SKILL_AXE, 30)
 		setSkillRate(cid, LEVEL_SKILL_DISTANCE, 30)
 		setSkillRate(cid, LEVEL_SKILL_SHIELDING, 30)
-		setSkillRate(cid, LEVEL_SKILL_FISHING, 30)			
+		setSkillRate(cid, LEVEL_SKILL_FISHING, 30)	
+		setSkillRate(cid, LEVEL_MAGIC, 7)			
 	end	
 end
 

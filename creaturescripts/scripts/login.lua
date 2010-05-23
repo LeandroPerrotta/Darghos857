@@ -5,6 +5,7 @@
 	registerCreatureEvent(cid, "Advance")	
 	registerCreatureEvent(cid, "Stages")
 	registerCreatureEvent(cid, "Inquisition")
+	registerCreatureEvent(cid, "Combat")
 	
 	playerRecord()
 	runPremiumSystem(cid)

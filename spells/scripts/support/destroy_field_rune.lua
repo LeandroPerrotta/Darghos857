@@ -5,7 +5,7 @@ local function doRemoveField(cid, pos)
 	local playerPos = getPlayerPosition(cid)
 
 	local field = getTileItemByType(pos, ITEM_TYPE_MAGICFIELD)
-	if(field.itemid ~= 0 and (field.itemid < ITEM_SEARINGFIRE_STAGE_FIRST or field.itemid > ITEM_SEARINGFIRE_STAGE_LAST)) then
+	if(field.itemid ~= 0 and field.actionid == 0 and (field.itemid < ITEM_SEARINGFIRE_STAGE_FIRST or field.itemid > ITEM_SEARINGFIRE_STAGE_LAST)) then
 		doRemoveItem(field.uid)
 		doSendMagicEffect(pos, CONST_ME_POFF)
 		return LUA_NO_ERROR

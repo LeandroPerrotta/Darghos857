@@ -6,5 +6,6 @@
 	<event name="RemoveBlesses" type="die" script="removeblesses.lua"/>
 	<event name="CreatureDie" type="die" script="die.lua"/>
 	<event name="Stages" type="advance" script="stages.lua"/>
-	<event name="Inquisition" type="kill" script="inquisition.lua"/>	
+	<event name="Inquisition" type="kill" script="inquisition.lua"/>
+	<event name="Combat" type="combat" script="combat.lua"/>
 </creaturescripts>
