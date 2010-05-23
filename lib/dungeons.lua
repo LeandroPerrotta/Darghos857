@@ -176,9 +176,9 @@ end
 
 function Dungeons.onTimeEnd(cid)
 
-	local dungeonStatus = getPlayerStorageValue(cid, sid.DUNGEON_STATUS)
+	local dungeonStorage = getPlayerStorageValue(cid, sid.DUNGEON_STATUS)
 	
-	if(dungeonStatus == dungeonStatus.IN_DUNGEON) then
+	if(dungeonStorage == dungeonStatus.IN_DUNGEON) then
 		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "O tempo para você cumprir esta dungeon acabou. Você agora será jugado no INFERNO!")
 		doTeleportThing(cid, HELL_POS)
 		
