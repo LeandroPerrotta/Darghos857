@@ -305,7 +305,7 @@ function setLoginSkillRateStages(cid)
 			setSkillRate(cid, LEVEL_SKILL_FISHING, 30)	
 		end		
 		
-		if(getPlayerSkill(cid, LEVEL_MAGIC) >= 50) then		
+		if(getPlayerMagLevel(cid) >= 50) then		
 			setSkillRate(cid, LEVEL_MAGIC, 1)	
 		else	
 			setSkillRate(cid, LEVEL_MAGIC, 7)	
