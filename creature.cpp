@@ -1701,6 +1701,11 @@ bool FrozenPathingConditionCall::operator()(const Position& startPos, const Posi
 //[[--Darghos
 bool Creature::onCombatEvent(Creature* target)
 {
+	if(getMaster()){
+		if(!getMaster()->onCombatEvent(target))
+			return false;
+	}
+
 	CreatureEventList combatEvents = getCreatureEvents(CREATURE_EVENT_COMBAT);
 	for(CreatureEventList::iterator it = combatEvents.begin(); it != combatEvents.end(); ++it){
 		if(!(*it)->executeOnCombat(this, target))
