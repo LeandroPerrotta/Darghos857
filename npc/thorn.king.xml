@@ -99,7 +99,7 @@
 					
 						level = getPlayerLevel(cid)
 						  
-						if(level < 220) then
+						if(level < 180) then
 							selfSay("Estou impressionado com sua brava coragem meu rapaz, mas esta missão requer maior conhecimento e habilidade.", cid)
 						else
 							selfSay("Otimo! Estou profundamente contente que você irá nos ajudar! Meus guardas já recebam ordens para que permitam você a entrar no Pantano. Muito cuidado, este lugar é traiçoeiro! Consigas o antidoto e lhe re-compensarei por esta brava atitude!", cid)	

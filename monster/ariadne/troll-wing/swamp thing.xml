@@ -19,29 +19,29 @@
       <flag runonhealth="1000"/>
     </flags>
     <attacks>
-      <attack name="melee" interval="2000" min="-500" max="-800" poison="40"/>
-      <attack name="lifedrain" interval="2000" min="-100" max="-800" target="1">
+      <attack name="melee" interval="2000" skill="220" attack="75" poison="40"/>
+      <attack name="lifedrain" interval="2000" hance="50" min="0" max="-800" target="1">
 		<attribute key="areaEffect" value="redshimmer"/>
 	  </attack>
-      <attack name="physical" interval="1000" chance="40" radius="2" target="0" min="-1000" max="-1750">
+      <attack name="physical" interval="2000" chance="40" radius="3" target="0" min="-700" max="-1350">
 		<attribute key="shootEffect" value="smallearth"/>
 	  </attack>
-      <attack name="paralyze" interval="3000" chance="50" target="1">
+      <attack name="paralyze" interval="2000" chance="50" target="1">
 		<attribute key="areaEffect" value="redshimmer"/>
 	  </attack>
     </attacks>
 	<defenses armor="10" defense="15">
-      <defense name="speed" interval="10000" chance="40" speedchange="310" duration="20000">
+      <defense name="speed" interval="2000" chance="10" speedchange="310" duration="20000">
 		<attribute key="areaEffect" value="greenshimmer"/>
 	  </defense>
-      <defense name="healing" interval="5000" chance="50" min="500" max="800">
+      <defense name="healing" interval="2000" chance="50" min="1200" max="4000">
 		<attribute key="areaEffect" value="blueshimmer"/>
 	  </defense>
 	</defenses>
 	<elements>
-	  <element energyPercent="10"/>
+	  <element energyPercent="45"/>
 	  <element earthPercent="-25"/>
-	  <element icePercent="10"/>
+	  <element icePercent="-10"/>
 	  <element holyPercent="10"/>
 	  <element deathPercent="-20"/>
 	  <element firePercent="-80"/>

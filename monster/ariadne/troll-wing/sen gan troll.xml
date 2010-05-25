@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Sen Gan Troll" nameDescription="a troll" race="VENOM" experience="1" speed="320" manacost="1">
+<monster name="Sen Gan Troll" nameDescription="a sen gan troll" race="VENOM" experience="1" speed="320" manacost="1">
   <health now="11205" max="11205"/>
-  <look type="76" head="20" body="30" legs="40" feet="50" corpse="6018"/>
+  <look type="281" head="0" body="0" legs="0" feet="0" corpse="7926"/>
   <targetchange interval="2000" chance="50"/>
   <strategy attack="100" defense="0"/>
   <flags>
@@ -18,8 +18,8 @@
     <flag runonhealth="1500"/>
   </flags>
   <attacks>
-      <attack name="melee" interval="2000" min="-760" max="-1000"/>
-    <attack name="poisoncondition" interval="3000" chance="17" radius="7" target="0" min="-300" max="-600">
+      <attack name="melee" interval="2000" skill="250" attack="75"/>
+    <attack name="poisoncondition" interval="2000" chance="17" radius="7" target="0" min="-300" max="-600">
       <attribute key="areaEffect" value="poison"/>
     </attack>
   </attacks>
