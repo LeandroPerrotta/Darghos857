@@ -19,7 +19,7 @@
   </flags>
   <attacks>
     <attack name="melee" interval="2000" skill="60" attack="35"/>
-    <attack name="fire" interval="2000" chance="15" range="7" radius="4" target="1" min="-65" max="-115">
+    <attack name="fire" interval="2000" chance="18" range="7" radius="4" target="1" min="-60" max="-110">
       <attribute key="shootEffect" value="fire"/>
       <attribute key="areaEffect" value="firearea"/>
     </attack>
@@ -28,7 +28,7 @@
     </attack>
   </attacks>
   <defenses armor="25" defense="25">
-    <defense name="healing" interval="1000" chance="13" min="34" max="56">
+    <defense name="healing" interval="1000" chance="13" min="50" max="120">
       <attribute key="areaEffect" value="blueshimmer"/>
     </defense>
   </defenses>
@@ -47,29 +47,33 @@
     <voice sentence="FCHHHHH" yell="1"/>
   </voices>
   <loot>
-    <item id="2672" countmax="3" chance1="20000" chancemax="0"/>
-    <item id="2148" countmax="100" chance1="100000" chancemax="0"/>
-    <item id="2455" chance="6666"/>
-    <item id="2434" chance="1333"/>
-    <item id="2509" chance="1818"/>
-    <item id="2406" chance="20000"/>
-    <item id="2647" chance="2222"/>
-    <item id="2457" chance="3333"/>
-    <item id="2387" chance="4000"/>
-    <item id="7430" chance="2000"/>
-    <item id="2397" chance="5000"/>
-    <item id="2546" countmax="10" chance1="4000" chancemax="0"/>
-    <item id="5877" countmax="1" chance1="4000" chancemax="0"/>
+    <item id="2148" countmax="60" chance1="100000"/> -- Gold
+    <item id="2148" countmax="50" chance1="20000"/>
+    
+    <item id="2672" countmax="3" chance1="50000"/> -- Dragon Ham
+    
+    <item id="2455" chance="9000"/> -- crossbow
+    <item id="2434" chance="550"/> -- dragon hammer
+    <item id="2509" chance="13000"/> -- steel shield
+    <item id="2406" chance="25000"/> -- short sword
+    <item id="2647" chance="2250"/> -- plate legs
+    <item id="2457" chance="2530"/> -- steel helmet
+    <item id="2387" chance="610"/> -- double axe
+    <item id="7430" chance="140"/> -- dragonbone staff
+    <item id="2397" chance="4000"/> -- longsword
+    <item id="2546" countmax="12" chance1="33333"/> -- burst arrow
+    <item id="5877" countmax="1" chance1="890"/> -- green dragon leather
+    <item id="7588" chance1="1000"/> -- strong health potion
     <item id="1987" chance="100000">
       <inside>
-	    <item id="2398" chance="90000"/>
-        <item id="2187" chance="2222" /> -- wand of Inferno
-        <item id="2516" chance="1300"/>
-        <item id="2145" countmax="3" chance1="1538" chancemax="0"/>
-        <item id="2177" chance="2000"/>
-        <item id="2413" chance="3200"/>
-        <item id="2409" chance="1800"/>
-        <item id="5920" countmax="2" chance1="5000" chancemax="0"/>
+	    <item id="2398" chance="19000"/> -- mace
+        <item id="2187" chance="1000" /> -- wand of Inferno
+        <item id="2516" chance="510"/> -- dragon shield
+        <item id="2145" countmax="3" chance1="480"/> -- small diamond
+        <item id="2177" chance="240"/> -- life crystal
+        <item id="2413" chance="2000"/> -- broad sword
+        <item id="2409" chance="340"/> -- serpent sword
+        <item id="5920" countmax="2" chance1="1116" chancemax="0"/> -- green dragon scale
       </inside>
     </item>
   </loot>
