@@ -1,0 +1,105 @@
+<?xml version="1.0"?>
+
+<interaction>
+
+    <interact event="onPlayerShopSell">
+		<response>
+			<action name="price" value="|SELLPRICE|"/>
+			<action name="script">
+			<![CDATA[
+			if(doPlayerRemoveItem(cid, _state.itemid, _state.amount) == TRUE and doPlayerAddMoney(cid, _state.price * _state.amount) == TRUE) then
+				selfSay("Here you are.", cid)
+			else
+				selfSay("Sorry, you do not have one.", cid)
+			end
+			]]>
+			</action>
+		</response>
+    </interact>
+
+	<interact event="onPlayerShopBuy">
+		<response>
+			<action name="price" value="|BUYPRICE|"/>
+			<action name="script">
+			<![CDATA[
+				if(getPlayerMoney(cid) >= _state.amount * _state.price) then
+				
+					if(isItemStackable(_state.itemid) == TRUE) then
+						if(_state.itemid == 2197) then
+							local result = doPlayerGiveItem(cid, _state.itemid, 1, 5)
+						else
+							local result = doPlayerAddItem(cid, _state.itemid, _state.amount)
+						end
+						
+						if(result == -1) then
+								
+							selfSay("Sorry, but you don't have room to take it.", cid)
+							return
+						end			
+					else
+					
+						if(_state.buywithbackpack == TRUE) then
+						
+							local backpacksneeded = 1
+							
+							if(_state.amount > 20) then
+							
+								backpacksneeded = math.ceil(_state.amount / 20)	
+							end	
+							
+							backpacks = {}
+							
+							bpcount = 1
+							while bpcount <= backpacksneeded do
+								
+								backpacks[bpcount] = doPlayerAddItem(cid, 1988, 1)
+								
+								bpcount = bpcount + 1
+							end
+							
+							toBackpack = 1
+						end				
+					
+						local count
+						for count = 0, _state.amount - 1 do
+							
+							if(_state.buywithbackpack == TRUE) then
+
+								itemnumber = count + 1
+								toBackpack = math.ceil(itemnumber / 20) 				
+							
+								local result = doAddContainerItem(backpacks[toBackpack], _state.itemid, _state.subtype)							
+							else
+								local result = doPlayerAddItem(cid, _state.itemid, _state.subtype)
+							end	
+
+							if(_state.buywithbackpack == FALSE and result == -1) then
+							
+								if(count == 0) then
+									elfSay("Sorry, but you don't have room to take it.", cid)
+									return
+								else
+							
+									selfSay("I've sold some for you, but it seems you can't carry more than this. I won't take more money than necessary.", cid)
+									doPlayerRemoveMoney(cid, count * _state.price)
+									return
+								end
+							end
+						end			
+					end	
+					
+					selfSay("Here you are.", cid)
+					doPlayerRemoveMoney(cid, _state.price * _state.amount)						
+				else
+				
+					selfSay("Sorry, you do not have enough gold.", cid)
+				end
+			]]>
+			</action>
+		</response>
+	</interact>
+	
+    <interact event="onPlayerShopClose">
+		<response text="It was a pleasure to help you."/>
+    </interact>	
+</interaction>

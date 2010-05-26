@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+	<otadmin enabled="1">
+	<security onlylocalhost="0" maxconnections="2" loginrequired="1" loginpassword="051190a1" />
+	<encryption required="0" >
+		<!-- key type="RSA1024XTEA" file="rsakey.private" -->
+	</encryption>
+</otadmin>

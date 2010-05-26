@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Shaman Totem" nameDescription="a shaman totem" race="blood" experience="150" speed="0" manacost="0">
+  <health now="2000" max="2000"/>
+<look typeex="6972" corpse="2255" />
+  <targetchange interval="5000" chance="0"/>
+  <strategy attack="100" defense="0"/>
+   <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="1"/>
+    <flag pushable="1"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="0"/>
+    <flag targetdistance="10"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-0" max="-1"/>
+    <attack name="physical" interval="500" chance="8" range="30" min="-50" max="-420">
+      <attribute key="shootEffect" value="suddendeath"/>
+      <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+  </attacks>
+  <defenses armor="8" defense="10"/>
+  <elements>
+	<element holyPercent="20"/>
+	<element physicalPercent="-20"/>
+  </elements>
+  <immunities>
+    <immunity invisible="1"/>
+  </immunities>   
+  <loot>
+    <item id="2148" countmax="20" chance1="100000" chancemax="0"/>
+    <item id="2465" chance="10000"/>
+    <item id="2461" chance="10000"/>
+    <item id="2649" chance="10000"/>
+    <item id="2671" countmax="2" chance1="20000" chancemax="0"/>
+    <item id="5875" chance="5000"/>
+    <item id="1987" chance="100000">
+      <inside>
+        <item id="2456" chance="6666"/>
+        <item id="2544" countmax="15" chance1="10000" chancemax="0"/>
+        <item id="2546" countmax="5" chance1="10000" chancemax="0"/>
+        <item id="2147" countmax="2" chance1="3333" chancemax="0"/>
+        <item id="2675" countmax="4" chance1="6666" chancemax="0"/>
+        <item id="2690" countmax="4" chance1="6666" chancemax="0"/>
+        <item id="2050" chance="20000"/>
+        <item id="2478" chance="3333"/>
+        <item id="2652" chance="2222"/>
+        <item id="2201" chance="2500"/>
+      </inside>
+    </item>
+  </loot>
+</monster>

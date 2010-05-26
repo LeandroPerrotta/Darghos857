@@ -1,0 +1,21 @@
+<raid>
+	<announce delay="0" type="event" message="The general boss of dragons and dragon lords is comming to plains of death in Quendor. Beware!"/>
+	<announce delay="60000" type="event" message="The plains of death are under attack! Some dragons have taken all!"/>
+	<announce delay="120000" type="event" message="Plains of Death need your help! DEMODRAS is in here!"/>
+	<announce delay="180000" type="event" message="Demodras is in a small dragon cave at plains of death."/>
+
+	<areaspawn delay="60000" centerx="1960" centery="2074" centerz="7" radius="5">
+		<monster name="Dragon Lord" minamount="1" maxamount="3"/>
+	</areaspawn>
+
+	<areaspawn delay="120000" centerx="1960" centery="2074" centerz="7" radius="5">
+		<monster name="Dragon Lord" minamount="1" maxamount="4"/>
+	</areaspawn>
+
+	<areaspawn delay="180000" centerx="1960" centery="2074" centerz="7" radius="5">
+		<monster name="Dragon Lord" minamount="3" maxamount="5"/>
+	</areaspawn>
+	
+	<singlespawn delay="180000" name="Demodras" x="1948" y="2078" z="8" />
+	
+</raid>

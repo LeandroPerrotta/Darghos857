@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<npc name="Kayra, the Queen" floorchange="0" walkinterval="2000" speed="220">
+	<health now="150" max="150"/>
+	<look type="332" head="87" body="2" legs="18" feet="90" addons="3"/>
+  
+  <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+
+	<include file="events_shop.xml"/>
+    
+    <interact keywords="hi" focus="1">
+      <keywords>hello</keywords>
+      
+      <response text="Hello. How may I help you |NAME|?"/>
+    </interact>
+
+    <interact keywords="bye" focus="0">
+      <keywords>farewell</keywords>
+
+      <response text="It was a pleasure to help you."/>
+    </interact>
+
+    <interact event="onPlayerLeave" focus="0">
+      <response text="It was a pleasure to help you |NAME|."/>
+    </interact>
+    
+    <interact keywords="name">
+      <response text="My name is |NPCNAME|."/>
+    </interact>
+
+    <interact keywords="job">
+      <response text="I am a king!"/>
+    </interact>
+	
+    <interact keywords="promot">
+      <response text="Do you want to be a {promoted} people? If you is promoted, you have some privillegies. Do you want to pay 20000 golds for this?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+		
+		if(getPlayerLevel(cid)) >= 20 then
+			if(getPlayerVocation(cid)) <= 4 then
+				if(doPlayerRemoveMoney(cid,20000)) == TRUE then
+					setPlayerStorageValue(cid,STORAGE_PROMOTION,1)
+					selfSay("Congratulations! Now you are promoted. You need relog your character!   {LONG LIFE TO THE KING!}",cid)
+				else
+					selfSay("Sorry, you do not have enough gold.",cid)
+				end
+			else
+				selfSay("You already is promoted, your vocation is promoted!",cid)
+			end
+		else
+			selfSay("Only players level 20+ can buy PROMOTION!",cid)
+		end
+		
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>
+	
+  </interaction>
+  
+</npc>

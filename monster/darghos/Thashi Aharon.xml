@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Thashi Aharon" nameDescription="an loyal elf" race="blood" experience="300000" speed="170" manacost="0">
+  <health now="400000" max="400000"/>
+  <look type="63" head="20" body="30" legs="40" feet="50" corpse="6011"/>
+  <targetchange interval="2000" chance="100"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="0"/>
+    <flag targetdistance="4"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="1" attack="1"/>
+    <attack name="energy" interval="1000" chance="8" range="7" min="-45" max="-200">
+      <attribute key="shootEffect" value="energy"/>
+    </attack>
+    <attack name="fire" interval="2000" chance="20" range="7" radius="7" target="1" min="-100" max="-20">
+      <attribute key="shootEffect" value="fire"/>
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+    <attack name="physical" interval="1000" chance="9" range="7" min="-100" max="-200">
+      <attribute key="shootEffect" value="suddendeath"/>
+      <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+    <attack name="poison" interval="1000" chance="8" range="7" min="-200" max="-250">
+      <attribute key="shootEffect" value="poison"/>
+    </attack>
+    <attack name="lifedrain" interval="1000" chance="6" range="7" min="-105" max="-205">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+    <attack name="lifedrain" interval="1000" chance="6" range="7" min="-200" max="-205">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+    <attack name="manadrain" interval="1000" chance="6" range="7" min="-220" max="-200">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+  </attacks>
+  <defenses armor="45" defense="60">
+    <defense name="healing" interval="1000" chance="100" min="2" max="5">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="speed" interval="1000" chance="8" speedchange="280" duration="6000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <summons maxSummons="15">
+    <summon name="thashi aharon" interval="1000" chance="100" max="5"/>
+  </summons>
+  <voices interval="5000" chance="10">
+    <voice sentence="Who is the real one?!"/>
+  </voices>
+  <loot capacity="400">
+    <item id="6529" countmax="1" chance="100"/>
+    <item id="6529" countmax="1" chance="100"/>
+    <item id="6529" countmax="24" chance="90000"/>
+    <item id="6529" countmax="32" chance="80000"/>
+    <item id="6529" countmax="35" chance="70000"/>
+    <item id="6529" countmax="1" chance="12000"/>
+    <item id="7438" countmax="1" chance="12000"/> 
+ <item id="2394" countmax="1" chance="10000"/>
+    <item id="6529" countmax="1" chance="1000"/>
+    <item id="6529" countmax="1" chance="6000"/>
+    <item id="6529" countmax="1" chance="6000"/>
+  </loot>
+</monster>

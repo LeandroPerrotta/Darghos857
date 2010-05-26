@@ -1,0 +1,54 @@
+<raid>
+	<announce delay="0" type="event" message="Elf Scouts have been sighted near Thorn!"/>
+	<announce delay="180000" type="event" message="The elves are comming to Thorn, seams to be a huge attack!"/>
+	<announce delay="300000" type="event" message="Thorn is under attack!"/>
+
+	<areaspawn delay="250000" centerx="2384" centery="1838" centerz="7" radius="25">
+	<monster name="Elf" minamount="45" maxamount="70"/>
+	<monster name="Elf Scout" minamount="35" maxamount="50"/>
+	<monster name="Elf Arcanist" minamount="15" maxamount="25"/>
+	</areaspawn>
+	
+	<areaspawn delay="260000" centerx="2384" centery="1848" centerz="7" radius="25">
+	<monster name="Elf" minamount="45" maxamount="70"/>
+	<monster name="Elf Scout" minamount="15" maxamount="50"/>
+	</areaspawn>
+
+	<areaspawn delay="270000" centerx="2384" centery="1863" centerz="7" radius="25">
+	<monster name="Elf" minamount="45" maxamount="70"/>
+	<monster name="Elf Scout" minamount="15" maxamount="50"/>
+	</areaspawn>
+	
+	<areaspawn delay="280000" centerx="2384" centery="1877" centerz="7" radius="25">
+	<monster name="Elf" minamount="45" maxamount="70"/>
+	<monster name="Elf Scout" minamount="35" maxamount="50"/>
+	<monster name="Elf Arcanist" minamount="15" maxamount="25"/>
+	</areaspawn>
+	
+	<areaspawn delay="290000" centerx="2384" centery="1899" centerz="7" radius="25">
+	<monster name="Elf" minamount="45" maxamount="70"/>
+	<monster name="Elf Scout" minamount="15" maxamount="50"/>
+	</areaspawn>
+
+	<areaspawn delay="300000" centerx="2354" centery="1877" centerz="7" radius="25">
+	<monster name="Elf" minamount="45" maxamount="70"/>
+	<monster name="Elf Scout" minamount="15" maxamount="50"/>
+	</areaspawn>
+
+	<areaspawn delay="300000" centerx="2334" centery="1863" centerz="7" radius="25">
+	<monster name="Elf" minamount="45" maxamount="70"/>
+	<monster name="Elf Scout" minamount="15" maxamount="50"/>
+	</areaspawn>
+	
+	<areaspawn delay="320000" centerx="2304" centery="1848" centerz="7" radius="25">
+	<monster name="Elf" minamount="45" maxamount="70"/>
+	<monster name="Elf Scout" minamount="15" maxamount="50"/>
+	</areaspawn>
+	
+	<areaspawn delay="330000" centerx="2380" centery="1838" centerz="7" radius="25">
+	<monster name="Elf" minamount="45" maxamount="70"/>
+	<monster name="Elf Scout" minamount="15" maxamount="50"/>
+	</areaspawn>
+	
+	
+</raid>

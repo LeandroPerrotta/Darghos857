@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Hellgorak" nameDescription="Hellgorak" race="blood" experience="70000" speed="360" manacost="0">
+<health now="40000" max="40000"/>
+<look type="12" head="19" body="96" legs="21" feet="81" corpse="6324"/>
+<targetchange interval="5000" chance="8"/>
+<strategy attack="100" defense="0"/>
+<flags>
+	<flag summonable="0"/>
+	<flag attackable="1"/>
+	<flag hostile="1"/>
+	<flag illusionable="0"/>
+	<flag convinceable="0"/>
+	<flag pushable="0"/>
+	<flag canpushitems="1"/>
+	<flag canpushcreatures="1"/>
+	<flag targetdistance="1"/>
+	<flag staticattack="85"/>
+	<flag runonhealth="0"/>
+</flags>
+<script>
+
+</script>
+<attacks>
+<attack name="melee" interval="2000" skill="140" attack="130"/>
+<attack name="energy" interval="1000" chance="11" length="8" spread="0" min="-750" max="-819">
+<attribute key="areaEffect" value="purpleenergy"/>
+</attack>
+<attack name="lifedrain" interval="2000" chance="14" radius="5" target="0" min="-400" max="-500">
+<attribute key="areaEffect" value="stun"/>
+</attack>
+<attack name="fire" interval="1000" chance="11" radius="5" target="1" min="-320" max="-520">
+<attribute key="areaEffect" value="firearea"/>
+</attack>
+<attack name="lifedrain" interval="2000" chance="5" radius="7" target="0" min="0" max="-150">
+<attribute key="areaEffect" value="poff"/>
+</attack>
+</attacks>
+<defenses armor="70" defense="65">
+<defense name="healing" interval="1000" chance="11" min="400" max="900">
+<attribute key="areaEffect" value="greenshimmer"/>
+</defense>
+</defenses>
+<elements>
+<element energyPercent="99"/>
+<element physicalPercent="99"/>
+<element earthPercent="99"/>
+<element holyPercent="99"/>
+<element deathPercent="99"/>
+<element firePercent="99"/>
+<element icePercent="-30"/>
+</elements>
+<immunities>
+<immunity lifedrain="1"/>
+<immunity paralyze="1"/>
+<immunity invisible="1"/>
+</immunities>
+<voices interval="5000" chance="0">
+<voice sentence="??" yell="1"/>
+<voice sentence="??" yell="1"/>
+</voices>
+<summons maxSummons="10">
+    <summon name="Dreadbeast" interval="120" chance="40"/>
+</summons>
+<loot>
+<item id="2148" countmax="100" chance1="80000" chancemax="8"/>
+<item id="2148" countmax="100" chance1="20000" chancemax="10"/>
+<item id="2150" countmax="50" chance1="4000" chancemax="10"/> small amethyst
+<item id="2148" countmax="83" chance1="40000" chancemax="0"/>
+<item id="7388" chance="1200" /> --vile axe
+<item id="2130" chance="1200" /> --golden amulet
+<item id="2208" chance="3200" /> --axe ring
+<item id="8871" chance="6100" /> --focus cape
+<item id="9808" chance="6100" /> --rusty armor
+<item id="9811" chance="6100" /> --rusty legs
+<item id="2520" chance="4100" /> --demon shield
+<item id="2656" chance="5500" /> --blue robe
+<item id="3962" chance="7500" /> --best slayer axe
+<item id="2158" chance="1500" /> --blue gem
+<item id="2477" chance="5500" /> --knight legs
+<item id="7894" chance="4500" /> --magma legs
+<item id="2155" chance="1500" /> --green gem
+<item id="2210" chance="3200" /> --sword ring
+<item id="2487" chance="5200" /> --crown armor
+<item id="2208" chance="3200" /> --axe ring
+<item id="9970" countmax="50" chance1="6000" chancemax="0"/> small topaz
+<item id="6500" countmax="2" chance1="6000" chancemax="0"/> demonic ess
+<item id="2143" countmax="50" chance1="5000" chancemax="0"/> --White pearl
+<item id="2470" chance="2000" /> --golden legs
+<item id="7368" countmax="25" chance="8000"/> --stars
+<item id="2144" countmax="50" chance1="4000" chancemax="0"/> --black pearl
+<item id="2145" countmax="50" chance1="3000" chancemax="0"/> --small diamond
+<item id="8870" chance="5650"/> --spirt cloak
+<item id="8903" chance="1700" /> --spellbook of lost souls
+<item id="2466" chance="8100"/> --golden armor
+<item id="7412" chance="4200" /> --butcher's axe
+<item id="7590" chance="7000"/> --great mana potion
+<item id="7591" chance="8000"/> --great health potion
+<item id="1987" chance="100000">
+<inside>
+<item id="2148" countmax="100" chance1="80000" chancemax="0"/>
+<item id="2148" countmax="100" chance1="20000" chancemax="0"/>
+<item id="8901" chance="7400"/> --spellbook of warding
+<item id="2415" chance="100"/> --great axe
+<item id="2208" chance="3200" /> --axe ring
+<item id="2471" chance="80" /> --golden helmet
+<item id="8926" chance="200"/> --demonwing axe
+<item id="7453" chance="2150"/> --executioner
+<item id="2645" chance="3500"/> --steel boots
+<item id="6500" countmax="2" chance1="6000" chancemax="0"/> demonic ess
+<item id="8902" chance="6500"/> spellbook of mind control
+<item id="2136" chance1="3000"/> demonbone amulet
+<item id="2488" chance1="4000"/> crown legs
+<item id="2143" countmax="50" chance1="7000" chancemax="0"/> --White pearl
+<item id="7590" chance="5000"/> --great mana potion
+<item id="8879" chance="800"/> --voltage armor
+<item id="2146" countmax="50" chance1="9000" chancemax="0"/> --small sapphire
+<item id="2195" chance="5000"/> --boh
+<item id="8918" chance="1000"/> --spellbook of dark mysteries
+<item id="7591" chance="7000"/> --great health potion
+</inside>
+</item>
+</loot>
+</monster>

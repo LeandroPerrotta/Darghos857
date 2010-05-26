@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Bayemon" nameDescription="a Bayemon" race="blood" experience="6900" speed="270" manacost="0">
+	<health now="3700" max="3700"/>
+	<look type="236" corpse="6320"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="3"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="physical" interval="2000" min="-320" max="-580">
+			<attribute key="shootEffect" value="etherealspear"/>
+		</attack>
+		<attack name="physical" interval="2000" chance="15" range="7" min="-320" max="-750">
+			<attribute key="shootEffect" value="redstar"/>
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="35">
+		<defense name="speed" interval="1000" chance="7" speedchange="380" duration="8000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity physical="0"/>
+		<immunity energy="1"/>
+		<immunity fire="1"/>
+		<immunity poison="1"/>
+		<immunity lifedrain="1"/>
+		<immunity paralyze="1"/>
+		<immunity outfit="1"/>
+		<immunity drunk="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Destructiooooon!"/>
+		<voice sentence="It's a good day to destroy!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="82" chance="100000"/> --Gold Coins
+		<item id="2645" chance="700"/> --Steel Boots
+		<item id="2152" countmax="3" chance="200000"/> --Platinum Coins
+		<item id="2393" chance="660"/> --Giant Sword
+		<item id="5741" chance="1000"/> --Skull Helmet
+		<item id="6500" chance="10000" />--demonic essence
+		<item id="2178" chance="10000" />--mind stone
+		<item id="2546" countmax="15" chance="5000" />--burst arrows
+		<item id="2666" countmax="5" chance="30000"/> --Meat
+		<item id="1987" chance="100000"> --Bag
+		<inside>
+			<item id="2463" chance="6666"/> --Plate Armor
+			<item id="7419" chance="400"/> --dreaded cleaver
+			<item id="7427" chance="300"/> --chaos mace
+			<item id="2416" chance="9999"/> --Crowbar
+			<item id="2489" chance="2500"/> --Dark Armor
+			<item id="6300" chance="600"/> --death ring
+			<item id="2150" countmax="2" chance="7500"/> --Small Amethyst
+		</inside>
+		</item>
+	</loot>
+</monster>

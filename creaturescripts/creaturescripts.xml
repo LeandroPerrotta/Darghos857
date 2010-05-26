@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<creaturescripts>
+	<event name="PlayerLogin" type="login" script="login.lua"/>
+	<event name="SendLoginInfo" type="login" script="sendlogininfo.lua"/>
+	<event name="PlayerLogout" type="logout" script="logout.lua"/>
+	<event name="RemoveBlesses" type="die" script="removeblesses.lua"/>
+	<event name="CreatureDie" type="die" script="die.lua"/>
+	<event name="Stages" type="advance" script="stages.lua"/>
+	<event name="Inquisition" type="kill" script="inquisition.lua"/>
+	<event name="Combat" type="combat" script="combat.lua"/>
+</creaturescripts>

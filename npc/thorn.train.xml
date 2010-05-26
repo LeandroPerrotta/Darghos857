@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<npc name="Kufret" floorchange="0" walkinterval="4000">
+	<health now="150" max="150"/>
+	<look type="69" head="20" body="30" legs="40" feet="50"/>
+  
+<interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+    
+    <interact keywords="hi" focus="1">
+      <!--These are the keywords will trigger this interaction-->
+      <keywords>hello</keywords>
+     
+  
+	<response text="Bem vindo a nova estação de trem caro |NAME|! Já estamos operando para alguns {destinos}!"/>	     	
+    </interact>
+
+    <interact keywords="bye" focus="0">
+      <keywords>farewell</keywords>
+      <response text="Até mais, espero que tenha gostado de nossos serviços!"/>
+    </interact>
+    
+
+    <!--This event triggers if the player goes to far away from the npc/logout/idle timeout-->
+    <interact event="onPlayerLeave" focus="0">
+      <response text="Está apressado? Até mais!"/>
+    </interact>
+
+    <interact keywords="name">
+	<keywords>nome</keywords>
+	<response text="Meu nome é |NPCNAME|."/>
+    </interact>
+
+    <interact keywords="job">
+	<keywords>cargo</keywords>
+	<response text="Meu trabalho é organizar o embarque de passageiros."/>
+    </interact>
+
+    <interact keywords="destinos">
+	
+	<response text="No momento nossos trens só vão rumo a cidade de {Quendor}."/>
+    </interact>
+
+	<!-- INICIO - DESTINO: THORN @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+	<interact keywords="quendor">
+		<response text="Você gostaria de embarcar neste instante com destino a estação de Quendor por |PRICE| moedas?">
+			<action name="topic" value="1"/>
+			<action name="price" value="470"/>
+			<interact keywords="yes" topic="1">
+				<response param="pzblock" text="Você tem sangue nas mãos! Não pode embarcar!"/>
+				<response param="lowmoney" text="Descupe, mas você não possui dinheiro sulficiente."/>
+				<response param="premium" text="Boa viagem!">
+					<action name="idle" value="1"/>
+					<action name="takemoney" value="|PRICE|"/>
+					<action name="teleport" value="1976;1831;8"/>
+					<action name="effect" value="teleport"/>
+				</response>
+				<response text="Descupe, apénas jogadores premium podem embarcar."/>	
+			</interact>   
+			<interact keywords="|*|">
+				<response text="Talvez na proxima..."/>
+			</interact>		</response>
+	</interact>
+	
+  </interaction>
+  
+</npc>

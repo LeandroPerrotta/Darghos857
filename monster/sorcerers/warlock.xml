@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="warlock" nameDescription="a warlock" race="blood" experience="4000" speed="265" manacost="0">
+  <health now="3500" max="3500"/>
+  <look type="130" head="19" body="71" legs="128" feet="128" addons="1" corpse="6080"/>
+  <targetchange interval="5000" chance="30"/>
+  <strategy attack="90" defense="10"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="4"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="1000"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="50" attack="50"/>
+    <attack name="ice" interval="1000" chance="12" range="7" target="1" min="-120" attack="-170">
+      <attribute key="shootEffect" value="ice"/>
+	  <attribute key="areaEffect" value="iceattack"/>
+    </attack>
+	<attack name="energy" interval="2000" chance="20" range="7" target="1" min="-90" max="-170">
+	  <attribute key="shootEffect" value="energyball"/>
+	  <attribute key="areaEffect" value="energy"/>
+	  </attack>
+    <attack name="manadrain" interval="2000" chance="24" range="7" min="-35" max="-115">
+	<attribute key="shootEffect" value="ice"/>
+	</attack>
+    <attack name="speed" interval="2000" chance="18" range="7" speedchange="-750" duration="40000">
+	  <attribute key="shootEffect" value="smallice"/>
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </attack>
+    <attack name="fire" interval="2000" chance="28" range="7" radius="3" target="1" min="-80" max="-180">
+      <attribute key="shootEffect" value="burstarrow"/>
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+    <attack name="firefield" interval="2000" chance="20" range="7" radius="2" target="1">
+      <attribute key="shootEffect" value="fire"/>
+    </attack>
+    <attack name="energy" interval="3000" chance="18" length="8" spread="0" min="-150" max="-230">
+      <attribute key="areaEffect" value="bigclouds"/>
+    </attack>
+
+  </attacks>
+  <defenses armor="20" defense="20">
+    <defense name="healing" interval="1000" chance="25" min="60" max="100">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="invisible" interval="2000" chance="10" duration="4000">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+
+  </defenses>
+  <elements>
+	<element physicalPercent="-10"/>
+	<element holyPercent="-10"/>
+	<element earthPercent="90"/>
+  </elements>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="1"/>
+    <immunity fire="1"/>
+    <immunity ice="1"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <summons maxSummons="1">
+    <summon name="stone golem" interval="1000" chance="10" />
+  </summons>
+  <voices interval="5000" chance="10">
+    <voice sentence="Learn the secret of our magic! YOUR death!"/>
+    <voice sentence="Even a rat is a better mage than you."/>
+    <voice sentence="We don't like intruders!"/>
+  </voices>
+  <loot>
+    <item id="2148" countmax="100" chance1="100000" chancemax="0"/>
+    <item id="2185" chance="993" /> -- volcanic rod
+    <item id="1986" chance="777"/>
+    <item id="2600" chance="10000"/>
+    <item id="2124" chance="1000"/>
+    <item id="2689" countmax="1" chance="11000"/>
+    <item id="2167" chance="3000"/>
+    <item id="2197" chance="1999"/>
+    <item id="2151" countmax="2" chance="1100"/>
+    <item id="1987" chance="100000">
+      <inside>
+        <item id="2148" countmax="50" chance1="80000" chancemax="0"/>
+        <item id="2146" countmax="2" chance="1400"/>
+        <item id="2178" countmax="1" chance="2500"/>
+        <item id="2679" countmax="4" chance="20000"/>
+        <item id="2047" chance="15000"/>
+        <item id="2411" chance="5000"/>
+        <item id="2792" countmax="5" chance1="6666" chancemax="0"/>
+        <item id="2793" countmax="2" chance1="6666" chancemax="0"/>
+        <item id="2656" chance="2000"/>
+        <item id="7898" chance="1444"/>
+        <item id="7895" chance="1222"/>
+        <item id="2466" chance="1111"/>
+        <item id="2436" chance="1428"/>
+        <item id="2123" chance="1000"/>
+      </inside>
+    </item>
+  </loot>
+</monster>

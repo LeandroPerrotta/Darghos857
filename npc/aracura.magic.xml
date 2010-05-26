@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<npc name="Eron" floorchange="0" walkinterval="2000" speed="220">
+	<health now="150" max="150"/>
+	<look type="130" head="39" body="122" legs="125" feet="57" addons="0"/>
+  
+  <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+
+	<include file="events_shop.xml"/>
+    <include file="magic.xml"/>
+    
+    <interact keywords="hi" focus="1">
+      <keywords>hello</keywords>
+      
+      <response text="Hello. How may I help you |NAME|?"/>
+    </interact>
+
+    <interact keywords="bye" focus="0">
+      <keywords>farewell</keywords>
+
+      <response text="It was a pleasure to help you."/>
+    </interact>
+
+    <interact event="onPlayerLeave" focus="0">
+      <response text="It was a pleasure to help you |NAME|."/>
+    </interact>
+    
+    <interact keywords="name">
+      <response text="My name is |NPCNAME|."/>
+    </interact>
+
+    <interact keywords="job">
+      <response text="I am a merchant, my job is to serve you!"/>
+    </interact>
+
+    <interact keywords="wares">
+		<keywords>trade</keywords>
+
+		<response text="I have some magic items to negotiate, as {wands}, {rods} and {potions} also {runes}."/>
+    </interact>
+	
+	<interact keywords="wands">
+		<list>wands</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>
+	
+	<interact keywords="rods">
+		<list>rods</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>	
+	
+	<interact keywords="potions">
+		<list>potions</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>		
+	
+	<interact keywords="runes">
+		<list>runes</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>		
+ 	<!-- INICIO - PEGANDO O TICKET @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="ticket">
+      <response text="Would you like to get a lottery ticket instead of the deposit for your vials?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			if(getPlayerItemCount(cid,7636) >= 100) or  (getPlayerItemCount(cid,7634) >= 100) or (getPlayerItemCount(cid,7635) >= 100) then
+				if(doPlayerRemoveItem(cid,7636,100) == TRUE) or (doPlayerRemoveItem(cid,7634,100) == TRUE) or (doPlayerRemoveItem(cid,7635,100) == TRUE) then
+					selfSay("Great! I\'ve signed you up for our bonus system. From now on, you will have the chance to win the potion belt addon!",cid)
+					doPlayerAddItem(cid, 5957,1)
+				else
+					selfSay("You dont have nescessary itens for this.",cid)
+				end
+			else
+				selfSay("You dont have nescessary itens for this.",cid)
+			end	
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>   
+
+  </interaction>
+  
+</npc>

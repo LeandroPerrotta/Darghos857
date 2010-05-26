@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<raid>
+<announce delay="0" type="event" message="Um silencio, um frio e sussurros tomaram conta da Cidade de Quendor."/>
+<announce delay="200000" type="event" message="Uma intensa neblina faz com que seja dificil ver o que há na Cidade de Quendor."/>
+<announce delay="400000" type="event" message="Algo entrou na cidade de Quendor!"/>
+<announce delay="600000" type="event" message="O Necromancer Nieruzad ataca a cidade de Quendor! Precisamos bani-lo da cidade antes que seja tarde!"/>
+
+<singlespawn delay="600000" name="Nieruzad" x="2043" y="1867" z="7" />
+
+<areaspawn delay="600000" centerx="2043" centery="1867" centerz="7" radius="10">
+<monster name="nieruzad banshee" minamount="5" maxamount="8"/>
+</areaspawn>
+
+<areaspawn delay="700000" centerx="2043" centery="1867" centerz="7" radius="10">
+<monster name="nieruzad ghoul" minamount="5" maxamount="15"/>
+</areaspawn>
+
+<areaspawn delay="700000" centerx="2043" centery="1867" centerz="7" radius="10">
+<monster name="nieruzad ghost" minamount="5" maxamount="10"/>
+</areaspawn>
+
+<areaspawn delay="700000" centerx="2043" centery="1867" centerz="7" radius="10">
+<monster name="nieruzad zombie" minamount="5" maxamount="10"/>
+</areaspawn>
+
+<areaspawn delay="700000" centerx="2043" centery="1867" centerz="7" radius="10">
+<monster name="nieruzad ghoul" minamount="5" maxamount="10"/>
+</areaspawn>
+
+<areaspawn delay="800000" centerx="2043" centery="1867" centerz="7" radius="10">
+<monster name="nieruzad banshee" minamount="10" maxamount="15"/>
+</areaspawn>
+
+<areaspawn delay="800000" centerx="2043" centery="1867" centerz="7" radius="10">
+<monster name="nieruzad banshee" minamount="10" maxamount="15"/>
+</areaspawn>
+
+<areaspawn delay="800000" centerx="2043" centery="1867" centerz="7" radius="10">
+<monster name="nieruzad ghoul" minamount="15" maxamount="30"/>
+</areaspawn>
+
+</raid>

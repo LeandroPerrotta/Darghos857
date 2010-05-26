@@ -1,0 +1,32 @@
+<raids>		
+	-- CITY INVASION Raids
+		-- Quendor
+		<raid name="quendor_troll" file="quendor/quendor_troll.xml" interval2="4500" margin="240"/>	
+		<raid name="quendor_ghoul" file="quendor/quendor_ghoul.xml" interval2="4500" margin="240"/>	
+		<raid name="quendor_rotworm" file="quendor/quendor_rotworm.xml" interval2="4500" margin="240"/>
+		<raid name="quendor_goblin" file="quendor/quendor_goblin.xml" interval2="4500" margin="240"/>	
+		<raid name="quendor_minotaur" file="quendor/quendor_minotaur.xml" interval2="4500" margin="240"/>
+		<raid name="quendor_dragon" file="quendor/quendor_dragon.xml" interval2="4500" margin="240"/>
+		<raid name="quendor_amazon" file="quendor/quendor_amazon.xml" interval2="4500" margin="240"/>
+		<raid name="quendor_skeleton" file="quendor/quendor_skeleton.xml" interval2="4500" margin="240"/>
+		<raid name="nieruzad" file="quendor/nieruzad.xml" interval2="9999999" margin="240"/>
+		
+		-- Thorn
+		<raid name="thorn_cyclops" file="thorn/thorn_cyclops.xml" interval2="4500" margin="240"/>
+		<raid name="thorn_elf" file="thorn/thorn_elf.xml" interval2="4500" margin="240"/>
+		<raid name="thorn_ariadne" file="thorn/thorn_ariadne.xml" interval2="4500" margin="0"/>
+		
+		
+		-- Aracura
+		
+		-- Others Areas
+		
+	-- SPECIAL Raids
+		
+		
+		-- BOSSES
+		<raid name="demodras_poh" file="bosses/demodras_poh.xml" interval2="5000" margin="0"/>
+		<raid name="ferumbras" file="bosses/ferumbras.xml" interval2="25000" margin="0"/>
+		<raid name="orshabaal" file="bosses/orshabaal.xml" interval2="8500" margin="0"/>			
+		<raid name="behemoth_king" file="bosses/behemoth_king.xml" interval2="9999999" margin="0"/>
+</raids>

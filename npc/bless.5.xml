@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<npc name="Nemir, the Havengk" floorchange="0" walkinterval="2000" speed="220">
+	<health now="150" max="150"/>
+	<look type="136" head="12" body="47" legs="34" feet="7" addons="2"/>
+  
+  <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+
+	<include file="events_shop.xml"/>
+    
+    <interact keywords="hi" focus="1">
+      <keywords>hello</keywords>
+      
+      <response text="Hello. How may I help you |NAME|?"/>
+    </interact>
+
+    <interact keywords="bye" focus="0">
+      <keywords>farewell</keywords>
+
+      <response text="It was a pleasure to help you."/>
+    </interact>
+
+    <interact event="onPlayerLeave" focus="0">
+      <response text="It was a pleasure to help you |NAME|."/>
+    </interact>
+    
+    <interact keywords="name">
+      <response text="My name is |NPCNAME|."/>
+    </interact>
+
+    <interact keywords="job">
+      <response text="I am a blesser, my job is to bless you!"/>
+    </interact>
+	
+    <interact keywords="bless">
+      <response text="Do you want to buy mine bless? Its is based on your level!	">
+        <action name="topic" value="1"/>
+         <action name="script">
+        <![CDATA[   
+			level = getPlayerLevel(cid)
+			price = getBlessPrice(level)	
+				selfSay(price,cid)			
+        ]]>		
+          </action>  
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+				  blessID = 4
+				  level = getPlayerLevel(cid)
+				  price = getBlessPrice(level)
+				  
+				if(getPlayerBless(cid,blessID)) == FALSE then
+					if(doPlayerRemoveMoney(cid,price)) == TRUE then	
+						doPlayerAddBless(cid, blessID)
+						selfSay("Congratulations, you are blessed by me! Remember, have five blessings!",cid)
+					else
+						selfSay("Sorry, you do not have enough gold.", cid)
+					end
+				else
+					selfSay("Sorry, you already have this bless!", cid)	
+			
+				end	
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>
+	
+  </interaction>
+  
+</npc>

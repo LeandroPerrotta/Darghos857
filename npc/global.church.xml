@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<npc name="Benedictus" floorchange="0" walkradius="2" walkinterval="4000" speed="220">
+	<health now="150" max="150"/>
+    <look type="57" head="20" body="30" legs="40" feet="50"/>
+  
+	<interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+    
+		<interact keywords="hi" focus="1">
+			<keywords>hello</keywords>
+			<keywords>ola</keywords>
+			
+			<response>
+			<action name="script">  
+				<![CDATA[
+				local playerName = getCreatureName(cid)				
+				local courseChurch = getPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.COURSE_CHURCH)
+				local chamberTemptation = getPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.CHAMBER_TEMPTATION)
+				
+				if(courseChurch == -1) then
+	
+					selfSay("Boa tarde " .. playerName .. "... A luz que reinava nesta {igreja} já não existe mais...", cid)
+					_state.topic = 1
+				elseif(courseChurch == 2) then
+				
+					selfSay("Olá " .. playerName .. "! Conseguiu as 1000 areias negras?", cid)
+					_state.topic = 6			
+				elseif(chamberTemptation == 1) then	
+				
+					selfSay("Caro " .. playerName .. "! Conseguiu a espada que lhe pedi?", cid)
+					_state.topic = 11	
+				elseif(chamberTemptation == -1 and courseChurch == 3) then
+
+					selfSay("Olá " .. playerName .. "! Hoje a luz brilhou nesta terra! Mas, por hora, seu {trabalho} ainda nao esta terminado.", cid)
+					_state.topic = 7		
+				elseif(chamberTemptation == 2) then	
+				
+					local _timer = getPlayerStorageValue(cid, sid.PRIEST_UNHOLY_SWORD_TIMER)	
+					
+					
+					if(os.time() >= _timer) then
+						
+						selfSay("Caro " .. playerName .. "! Está pronta a arma! Com ela agora você pode deslacrar a camara. Meu antigo tesouro está na ultima sala, leve-o contigo! Ele so me trara más lembranças...", cid)	
+						
+						doPlayerAddItem(cid, CUSTOM_ITEMS.UNHOLY_SWORD, 1)
+						setPlayerStorageValue(cid, sid.PRIEST_UNHOLY_SWORD_TIMER, -1)
+						setPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.CHAMBER_TEMPTATION, 3)
+					else
+					
+						selfSay("Caro " .. playerName .. "! Ainda não passou 1 hora! Me de mais tempo!", cid)
+					end
+				elseif(chamberTemptation == 3) then
+					
+					selfSay("Lord Vankyner pode estar em qualquer lugar " .. playerName .. "... Muito mais perto do que imaginamos.", cid)
+					
+				elseif(chamberTemptation == 4) then
+				
+					selfSay("Parabens " .. playerName .. "! Além de trazer um pouco de luz a este lugar vazio e sombrio trouxe justiça matando o Lord!", cid)	
+				end
+				]]>
+			</action>
+			</response>			
+		</interact>
+		
+		<interact keywords="bye" focus="0">
+			<keywords>adeus</keywords>
+
+			<response text="Siga pela luz!"/>
+		</interact>		
+		
+		<interact event="onPlayerLeave" focus="0">
+			<response text="Siga pela luz!"/>
+		</interact>		
+		
+		<interact keywords="name">
+			<keywords>nome</keywords>
+			
+			<response text="Meu nome é |NPCNAME|."/>
+		</interact>
+
+		<interact keywords="job">
+			<keywords>cargo</keywords>
+
+			<response text="Eu sou o padre desta igreja!"/>
+		</interact>
+		
+		<interact keywords="igreja" topic="1">
+			<response text="A algum tempo atras era aqui que eu realizava as missas para o povo de Quendor, era aqui onde as pessoas depositavam sua fé... isso foi antes da {escuridão} baixar nesta terra.">
+				<action name="topic" value="2"/>
+			</response>			
+		</interact>		
+		
+		<interact keywords="escuridão" topic="2">
+			<response text="Sim... nao sao todos que seguiam o caminho de Deus |NAME|. Existiam {cultistas} que queriam espalhar o medo... mal... escuridao no nosso mundo.">
+				<action name="topic" value="3"/>	
+			</response>					
+		</interact>
+			
+		<interact keywords="cultistas" topic="3">
+			<response text="Nao faz muito tempo que eles foram expulsos desta regiao, mas o corpo do seu lider Lord Vankyner nao foi encontrado... Porem ainda assim minha igreja foi transformada em um territorio amaldicoado, mas eu acredito que tenham coisas que possamos fazer para {limpar} esse solo desta maldicao.">
+				<action name="topic" value="4"/>
+			</response>				
+		</interact>
+	
+		<interact keywords="limpar" topic="4">
+			<response text="|NAME|, voce tem interesse em me ajudar a limpar esta regiao deste mal?"> 
+				<action name="topic" value="5"/>
+			</response>	
+		</interact>			
+		
+		<interact keywords="trabalho" topic="7">
+			<response text="Bem, eu sou padre, mas nao sou santo. Quando eu morava aqui, eu escondia meus pertences enterrado em uma camara secreta, porem a camara foi {lacrada} com esta maldicao dos cultistas."> 
+				<action name="topic" value="8"/>
+			</response>	
+		</interact>			
+		
+		<interact keywords="lacrada" topic="8">
+			<response text="Para que possamos quebrar este lacre, eu precisava destas areias negras e uma {arma} muito forte para quebrar o altar."> 
+				<action name="topic" value="9"/>
+			</response>	
+		</interact>			
+		
+		<interact keywords="arma" topic="9">
+			<response text="Sim, uma Fire Sword. Você pode trazer uma para que eu possa mergulhar ela nas areias negras?"> 
+				<action name="topic" value="10"/>
+			</response>	
+		</interact>			
+		
+		<interact keywords="yes" >
+			<keywords>sim</keywords>
+			
+			<response>
+			<action name="script">
+			<![CDATA[	
+					local playerName = getCreatureName(cid)	
+					local ANKH_ID = 2193
+			
+					if(_state.topic == 5) then
+					
+						local QUEST_MIN_LEVEL = 60
+					
+						if(getPlayerLevel(cid) >= QUEST_MIN_LEVEL) then
+					
+							selfSay("Desca até a igreja amaldicoada mate as criaturas que hoje moram nela e tire 1000 areias negras de seus corpos com esta cruz divina.", cid)		
+	
+							doPlayerAddItem(cid, ANKH_ID, 1)
+							setPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.COURSE_CHURCH, 2)
+							_state.topic = 0
+						else
+							
+							selfSay("Fico agradecido pela sua ajuda " .. playerName .. "! Mas não é aconselhavel permitir esta missão a guerreiros com nivel inferior a 60.", cid)
+						end
+					elseif(_state.topic == 6) then	
+					
+						if(getPlayerItemCount(cid, CUSTOM_ITEMS.DARK_DUST) >= 1000) then
+						
+							doPlayerRemoveItem(cid, CUSTOM_ITEMS.DARK_DUST, 1000)
+							
+							setPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.COURSE_CHURCH, 3)
+							
+							local playerVocation = ""
+							
+							if(isSorcerer(cid)) then
+								playerVocation = "feitiçeiro"
+							elseif(isDruid(cid)) then
+								plauerVocation = "druida"
+							elseif(isKnight(cid)) then
+								playerVocation = "cavaleiro"
+							elseif(isPaladin(cid)) then
+								playerVocation = "paladino"
+							end		
+							
+							selfSay("Muito obrigado nobre " .. playerVocation .. "! Hoje a luz brilhou nesta terra! Mas, por hora, seu {trabalho} ainda nao esta terminado.", cid)					
+							_state.topic = 7
+						else
+							selfSay("Você ainda não possui as 1000 areias negras!", cid)					
+							_state.topic = 0							
+						end
+					elseif(_state.topic == 10) then
+						
+						selfSay("Otimo! Retorne quando tiver em posse da arma!", cid)	
+						setPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.CHAMBER_TEMPTATION, 1)
+						_state.topic = 0
+						
+					elseif(_state.topic == 11) then
+					
+						local FIRE_SWORD_ID = 2392
+											
+						if(getPlayerItemCount(cid, FIRE_SWORD_ID) >= 1) then
+						
+							doPlayerRemoveItem(cid, FIRE_SWORD_ID, 1)
+							setPlayerStorageValue(cid, QUESTLOG.DIVINE_ANKH.CHAMBER_TEMPTATION, 2)			
+							
+							selfSay("Otimo! Irei preparar a arma para podermos destruir o altar! ... Volte aqui em 1 hora e a arma estara pronta!", cid)		
+							
+							setPlayerStorageValue(cid, sid.PRIEST_UNHOLY_SWORD_TIMER, os.time() + (60 * 60))	
+						else
+							selfSay("Você não possui uma Fire Sword! Arrume uma e volte aqui.", cid)	
+							_state.topic = 0
+						end
+					end	
+			]]>
+			</action>
+			</response>			
+		</interact>		
+	
+	</interaction>
+  
+</npc>

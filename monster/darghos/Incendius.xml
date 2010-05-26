@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Incendius" nameDescription="a Ragnaros Creation" race="fire" experience="1" speed="100" manacost="0">
+  <health now="2500" max="2500"/>
+  <look type="49" corpse="1492"/>
+  <targetchange interval="5000" chance="90"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="0"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="90" attack="70"/>
+    <attack name="fire" interval="2000" chance="14" range="7" radius="7" target="1" min="-700" max="-1150">
+      <attribute key="shootEffect" value="fire"/>
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+	<attack name="manadrain" interval="1000" chance="5" range="7" min="-20" max="-40"/>
+    <attack name="fire" interval="1000" chance="20" range="10" radius="4" target="1" min="-500" max="-1200">
+      <attribute key="shootEffect" value="fire"/>
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+    <attack name="firefield" interval="1000" chance="10" range="7" radius="30" target="1">
+      <attribute key="shootEffect" value="fire"/>
+    </attack>
+    <attack name="fire" interval="1000" chance="16" length="8" spread="3" min="-500" max="-1000">
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+	</attacks>
+  <defenses armor="35" defense="35">
+
+  </defenses>
+  <elements>
+		<element physicalPercent="75"/>
+		<element energyPercent="25"/>
+		<element icePercent="-15"/>
+		<element deathPercent="20"/>
+</elements>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <voices interval="5000" chance="10">
+    <voice sentence="Fire!"/>
+
+  </voices>
+	<loot>
+		<item id="2187" chance="2111" /> -- wand of Inferno
+	</loot>
+</monster>
