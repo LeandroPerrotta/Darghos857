@@ -19,19 +19,19 @@
   </flags>
   <attacks>
     <attack name="melee" interval="2000" skill="80" attack="50"/>
-    <attack name="fire" interval="2000" chance="22" range="7" radius="4" target="1" min="-100" max="-200">
+    <attack name="fire" interval="2000" chance="26" range="7" radius="4" target="1" min="-100" max="-200">
       <attribute key="shootEffect" value="fire"/>
       <attribute key="areaEffect" value="firearea"/>
     </attack>
     <attack name="firefield" interval="1000" chance="15" range="7" radius="4" target="1">
       <attribute key="shootEffect" value="fire"/>
     </attack>
-    <attack name="fire" interval="2000" chance="18" length="8" spread="3" min="-150" max="-250">
+    <attack name="fire" interval="2000" chance="21" length="8" spread="3" min="-150" max="-250">
       <attribute key="areaEffect" value="firearea"/>
     </attack>
   </attacks>
   <defenses armor="30" defense="35">
-    <defense name="healing" interval="2000" chance="25" min="70" max="110">
+    <defense name="healing" interval="1000" chance="20" min="70" max="110">
       <attribute key="areaEffect" value="blueshimmer"/>
     </defense>
   </defenses>

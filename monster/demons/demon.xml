@@ -19,21 +19,21 @@
   </flags>
   <attacks>
     <attack name="melee" interval="2000" skill="120" attack="80"/>
-    <attack name="manadrain" interval="2000" chance="13" range="7" min="0" max="-120"/>
-    <attack name="fire" interval="2000" chance="30" range="7" radius="7" target="1" min="-150" max="-250">
+    <attack name="manadrain" interval="2000" chance="22" range="7" min="0" max="-120"/>
+    <attack name="fire" interval="2000" chance="34" range="7" radius="7" target="1" min="-150" max="-250">
 		<attribute key="shootEffect" value="fire"/>
 		<attribute key="areaEffect" value="firearea"/>
 	</attack>
     <attack name="firefield" interval="2000" chance="12" range="7" radius="1" target="1">
 		<attribute key="shootEffect" value="fire"/>
 	</attack>
-    <attack name="lifedrain" interval="1000" chance="12" length="8" spread="0" min="-300" max="-467">
+    <attack name="lifedrain" interval="2000" chance="25" length="8" spread="0" min="-300" max="-467">
 		<attribute key="areaEffect" value="purpleenergy"/>
 	</attack>
 	<attack name="speed" interval="2000" chance="15" target="1" speedchange="-750" duration="30000">
 		<attribute key="shootEffect" value="suddendeath"/>
 	</attack>
-	<attack name="energy" interval="3000" chance="10" range="1" target="1" min="-210" max="-300">
+	<attack name="energy" interval="3000" chance="18" range="1" target="1" min="-210" max="-300">
 		<attribute key="areaEffect" value="purpleenergy"/>
 	</attack>
   </attacks>
