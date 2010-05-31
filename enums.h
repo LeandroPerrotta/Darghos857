@@ -307,6 +307,16 @@ enum houseCleanOptions_t {
 	HOUSE_CLEAN_TRANSFER_ITEMS = 1, //transfer items
 	HOUSE_CLEAN_EXPROPRIATE_OWNER = 2 //expropriate the owner
 };
+
+enum towns_t {
+	TOWN_QUENDOR = 1,
+	TOWN_ARACURA = 2,
+	TOWN_ROOKGAARD = 3,
+	TOWN_THORN = 4,
+	TOWN_SALAZART = 5,
+	TOWN_ISLAND_OF_PEACE = 6,
+	TOWN_NORTHREND = 7
+};
 //--]]
 
 #endif

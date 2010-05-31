@@ -1029,13 +1029,12 @@ bool Player::canWalkthrough(const Creature* creature) const
 		return true;
 	}
 
-	if(g_game.getWorldType() == WORLD_TYPE_OPTIONAL_PVP){
-		if(isGuildEnemy(creature->getPlayer())){
-			return false;
-		}
-
+	//[[--Darghos
+	if((g_game.getWorldType() == WORLD_TYPE_OPTIONAL_PVP && !isGuildEnemy(creature->getPlayer())) ||
+		creature->getPlayer()->getTown() == TOWN_ISLAND_OF_PEACE){
 		return (getTile() && getTile()->ground->getID() != ITEM_GLOWING_SWITCH);
 	}
+	//--]]
 
 	return false;
 }
