@@ -5,7 +5,10 @@
 	registerCreatureEvent(cid, "Advance")	
 	registerCreatureEvent(cid, "Stages")
 	registerCreatureEvent(cid, "Inquisition")
-	registerCreatureEvent(cid, "Combat")
+	
+	if(getPlayerTown(cid) == towns.ISLAND_OF_PEACE) then
+		registerCreatureEvent(cid, "Combat")
+	end
 	
 	playerRecord()
 	runPremiumSystem(cid)
@@ -34,6 +37,7 @@
 			doPlayerRemoveSkillLossPercent(cid, 30)
 			setPlayerStorageValue(cid, STORAGE_PROMOTION, -1)
 		end
+		
 		if(getPlayerStorageValue(cid, STORAGE_PREMIUM_ACCOUNT) == 1) then
 			setPlayerStorageValue(cid, STORAGE_PREMIUM_ACCOUNT, -1)
 		end
@@ -42,20 +46,20 @@
 
 	--Player is not premium - remove premium privileges
 	--Change outfit
-	if(getPlayerStorageValue(cid, STORAGE_PREMIUM_ACCOUNT) == -1) then
+	--[[ if(getPlayerStorageValue(cid, STORAGE_PREMIUM_ACCOUNT) == -1) then
 		local lookType = 128
 		if(getPlayerSex(cid) == 0) then
 			lookType = 136
 		end
 		doCreatureChangeOutfit(cid, {lookType = lookType, lookHead = 78, lookBody = 69, lookLegs = 97, lookFeet = 95, lookAddons = 0})
 		setPlayerStorageValue(cid, STORAGE_PREMIUM_ACCOUNT, 1)
-	end
+	end ]]--
 
 	--Remove house
-	local house = House.getHouseByOwner(cid)
+	--[[ local house = House.getHouseByOwner(cid)
 	if(house) then
 		house:setOwner(0) --Remove the house from the player, the server takes care of the rest
-	end
+	end ]]--
 
 	--Teleport to free town, change here
 	--[[
