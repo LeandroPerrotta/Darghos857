@@ -7194,7 +7194,6 @@
   <spawn centerx="2954" centery="1299" centerz="8" radius="5">
     <monster name="Monk" x="0" y="-1" z="8" spawntime="60"/>
   </spawn>
-  <spawn centerx="2887" centery="1300" centerz="8" radius="1"/>
   <spawn centerx="2966" centery="1310" centerz="8" radius="5">
     <monster name="Monk" x="-4" y="-2" z="8" spawntime="60"/>
     <monster name="Monk" x="2" y="-2" z="8" spawntime="60"/>
