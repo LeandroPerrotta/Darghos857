@@ -59,6 +59,7 @@
     <monster name="Barbarian Bloodwalker" x="1" y="0" z="2" spawntime="220"/>
     <monster name="Ice Witch" x="0" y="1" z="2" spawntime="300"/>
   </spawn>
+  <spawn centerx="2734" centery="1328" centerz="2" radius="3"/>
   <spawn centerx="2172" centery="1795" centerz="2" radius="2">
     <monster name="Minotaur archer" x="-2" y="-2" z="2" spawntime="60"/>
     <monster name="Minotaur archer" x="1" y="1" z="2" spawntime="60"/>
@@ -152,6 +153,12 @@
     <monster name="Ice Witch" x="1" y="1" z="3" spawntime="300"/>
     <monster name="Barbarian Bloodwalker" x="-1" y="2" z="3" spawntime="220"/>
     <monster name="Ice Witch" x="0" y="4" z="3" spawntime="300"/>
+  </spawn>
+  <spawn centerx="2734" centery="1328" centerz="3" radius="3">
+    <monster name="Mummy" x="-2" y="-2" z="3" spawntime="60"/>
+    <monster name="Ghost" x="0" y="-1" z="3" spawntime="60"/>
+    <monster name="Ghost" x="2" y="-1" z="3" spawntime="60"/>
+    <monster name="Lost Soul" x="-2" y="0" z="3" spawntime="60"/>
   </spawn>
   <spawn centerx="2842" centery="1352" centerz="3" radius="3">
     <monster name="Dark Monk" x="1" y="-1" z="3" spawntime="60"/>
@@ -338,6 +345,13 @@
   </spawn>
   <spawn centerx="2860" centery="1275" centerz="4" radius="1">
     <npc name="global.rashid" x="0" y="1" z="4" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2734" centery="1328" centerz="4" radius="3">
+    <monster name="Vampire" x="1" y="-2" z="4" spawntime="60"/>
+    <monster name="Ghost" x="0" y="-1" z="4" spawntime="60"/>
+    <monster name="Vampire" x="-3" y="0" z="4" spawntime="60"/>
+    <monster name="Mummy" x="-1" y="2" z="4" spawntime="60"/>
+    <monster name="Ghost" x="0" y="2" z="4" spawntime="60"/>
   </spawn>
   <spawn centerx="2852" centery="1339" centerz="4" radius="3">
     <monster name="Witch" x="-2" y="-1" z="4" spawntime="60"/>
@@ -761,6 +775,13 @@
   </spawn>
   <spawn centerx="2967" centery="1312" centerz="5" radius="5">
     <monster name="Monk" x="-2" y="1" z="5" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2734" centery="1328" centerz="5" radius="3">
+    <monster name="Ghoul" x="-1" y="-1" z="5" spawntime="60"/>
+    <monster name="Mummy" x="1" y="-1" z="5" spawntime="60"/>
+    <monster name="Vampire" x="-2" y="0" z="5" spawntime="60"/>
+    <monster name="Ghost" x="0" y="0" z="5" spawntime="60"/>
+    <monster name="Crypt shambler" x="-1" y="2" z="5" spawntime="60"/>
   </spawn>
   <spawn centerx="2805" centery="1332" centerz="5" radius="4">
     <monster name="Dark Monk" x="0" y="0" z="5" spawntime="60"/>
@@ -1641,6 +1662,13 @@
   </spawn>
   <spawn centerx="2893" centery="1327" centerz="6" radius="5">
     <monster name="Bog Raider" x="-1" y="0" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2734" centery="1328" centerz="6" radius="3">
+    <monster name="Ghoul" x="-2" y="-2" z="6" spawntime="60"/>
+    <monster name="Ghoul" x="0" y="-2" z="6" spawntime="60"/>
+    <monster name="Mummy" x="-3" y="0" z="6" spawntime="60"/>
+    <monster name="Crypt shambler" x="1" y="0" z="6" spawntime="60"/>
+    <monster name="Ghost" x="0" y="2" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2798" centery="1332" centerz="6" radius="2">
     <monster name="Hunter" x="0" y="1" z="6" spawntime="60"/>
@@ -3468,9 +3496,6 @@
     <monster name="Chicken" x="2" y="2" z="7" spawntime="30"/>
     <monster name="Chicken" x="-2" y="4" z="7" spawntime="30"/>
   </spawn>
-  <spawn centerx="2907" centery="1151" centerz="7" radius="1">
-    <npc name="aracura.postman" x="1" y="0" z="7" spawntime="60"/>
-  </spawn>
   <spawn centerx="2974" centery="1154" centerz="7" radius="2">
     <npc name="aracura.promotion" x="0" y="0" z="7" spawntime="60"/>
   </spawn>
@@ -3525,6 +3550,9 @@
     <monster name="Chakoya Tribewarden" x="8" y="17" z="7" spawntime="60"/>
     <monster name="Chakoya Toolshaper" x="-19" y="19" z="7" spawntime="60"/>
     <monster name="Chakoya Toolshaper" x="2" y="19" z="7" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2930" centery="1163" centerz="7" radius="1">
+    <npc name="aracura.postman" x="1" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2806" centery="1167" centerz="7" radius="20">
     <monster name="Dragon Hatchling" x="3" y="-14" z="7" spawntime="60"/>
@@ -3942,6 +3970,9 @@
   <spawn centerx="1964" centery="1322" centerz="7" radius="1">
     <npc name="okolnir.go" x="0" y="0" z="7" spawntime="60"/>
   </spawn>
+  <spawn centerx="2733" centery="1322" centerz="7" radius="3">
+    <monster name="Demon Skeleton" x="0" y="-1" z="7" spawntime="60"/>
+  </spawn>
   <spawn centerx="1938" centery="1323" centerz="7" radius="20">
     <monster name="Frost Giantess" x="-9" y="-8" z="7" spawntime="60"/>
     <monster name="Frost Giant" x="-16" y="-6" z="7" spawntime="60"/>
@@ -3949,15 +3980,15 @@
     <monster name="Frost Giantess" x="-13" y="-3" z="7" spawntime="60"/>
     <monster name="Frost Giant" x="-13" y="5" z="7" spawntime="60"/>
   </spawn>
-  <spawn centerx="2738" centery="1323" centerz="7" radius="8">
-    <monster name="Wyvern" x="-1" y="-2" z="7" spawntime="60"/>
-  </spawn>
   <spawn centerx="1826" centery="1328" centerz="7" radius="20">
     <monster name="Frost Giantess" x="-4" y="5" z="7" spawntime="60"/>
     <monster name="Frost Giantess" x="2" y="7" z="7" spawntime="60"/>
     <monster name="Frost Giantess" x="10" y="8" z="7" spawntime="60"/>
     <monster name="Frost Giant" x="15" y="9" z="7" spawntime="60"/>
     <monster name="Frost Giant" x="9" y="14" z="7" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2733" centery="1328" centerz="7" radius="3">
+    <monster name="Dark Torturer" x="0" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2955" centery="1332" centerz="7" radius="5">
     <monster name="Wyvern" x="0" y="2" z="7" spawntime="60"/>
@@ -6948,6 +6979,7 @@
   </spawn>
   <spawn centerx="2897" centery="1151" centerz="8" radius="4">
     <monster name="Rotworm" x="2" y="-3" z="8" spawntime="30"/>
+    <monster name="Rotworm Queen" x="2" y="-1" z="8" spawntime="60"/>
     <monster name="Rotworm" x="4" y="0" z="8" spawntime="30"/>
     <monster name="Rotworm" x="-3" y="1" z="8" spawntime="30"/>
   </spawn>
@@ -6961,6 +6993,7 @@
     <monster name="Rotworm" x="3" y="0" z="8" spawntime="30"/>
   </spawn>
   <spawn centerx="2897" centery="1163" centerz="8" radius="4">
+    <monster name="Rotworm Queen" x="-2" y="0" z="8" spawntime="60"/>
     <monster name="Rotworm" x="1" y="0" z="8" spawntime="30"/>
     <monster name="Rotworm" x="3" y="1" z="8" spawntime="30"/>
   </spawn>
@@ -7015,6 +7048,7 @@
   <spawn centerx="2872" centery="1180" centerz="8" radius="4">
     <monster name="Rotworm" x="0" y="1" z="8" spawntime="30"/>
     <monster name="Rotworm" x="2" y="1" z="8" spawntime="30"/>
+    <monster name="Rotworm Queen" x="-1" y="2" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="2924" centery="1182" centerz="8" radius="4">
     <monster name="Rotworm" x="-1" y="-2" z="8" spawntime="30"/>
@@ -7029,6 +7063,7 @@
   <spawn centerx="2925" centery="1192" centerz="8" radius="4">
     <monster name="Rotworm" x="3" y="-3" z="8" spawntime="30"/>
     <monster name="Rotworm" x="3" y="1" z="8" spawntime="30"/>
+    <monster name="Rotworm Queen" x="-3" y="2" z="8" spawntime="60"/>
     <monster name="Rotworm" x="-1" y="3" z="8" spawntime="30"/>
   </spawn>
   <spawn centerx="2868" centery="1193" centerz="8" radius="4">
@@ -7046,6 +7081,7 @@
   <spawn centerx="2898" centery="1200" centerz="8" radius="4">
     <monster name="Rotworm" x="4" y="-2" z="8" spawntime="30"/>
     <monster name="Rotworm" x="-1" y="-1" z="8" spawntime="30"/>
+    <monster name="Rotworm Queen" x="0" y="2" z="8" spawntime="60"/>
     <monster name="Rotworm" x="0" y="4" z="8" spawntime="30"/>
   </spawn>
   <spawn centerx="1710" centery="1203" centerz="8" radius="5">
@@ -17753,6 +17789,19 @@
     <monster name="Demon" x="2" y="0" z="12" spawntime="60"/>
     <monster name="Warlock" x="-2" y="3" z="12" spawntime="60"/>
   </spawn>
+  <spawn centerx="2822" centery="1244" centerz="12" radius="1">
+    <monster name="Grim Reaper" x="-1" y="-1" z="12" spawntime="60"/>
+    <monster name="Skeleton" x="1" y="-1" z="12" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2810" centery="1245" centerz="12" radius="1">
+    <monster name="Grim Reaper" x="1" y="-1" z="12" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2811" centery="1261" centerz="12" radius="1">
+    <monster name="Skeleton" x="0" y="-1" z="12" spawntime="60"/>
+    <monster name="Skeleton" x="-1" y="0" z="12" spawntime="60"/>
+    <monster name="Skeleton" x="1" y="0" z="12" spawntime="60"/>
+    <monster name="Skeleton" x="0" y="1" z="12" spawntime="60"/>
+  </spawn>
   <spawn centerx="1877" centery="1264" centerz="12" radius="30">
     <monster name="Nergal" x="-26" y="-24" z="12" spawntime="60"/>
     <monster name="Azathoth" x="6" y="-23" z="12" spawntime="60"/>
@@ -17792,6 +17841,9 @@
     <monster name="Tezrian" x="8" y="4" z="12" spawntime="60"/>
     <monster name="Dwarf Miner" x="-7" y="5" z="12" spawntime="60"/>
     <monster name="Dwarf Miner" x="-8" y="7" z="12" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2820" centery="1265" centerz="12" radius="1">
+    <monster name="Grim Reaper" x="1" y="-1" z="12" spawntime="60"/>
   </spawn>
   <spawn centerx="1935" centery="1266" centerz="12" radius="30">
     <monster name="Zepar" x="-2" y="-23" z="12" spawntime="60"/>
@@ -18676,6 +18728,38 @@
     <monster name="Blightwalker" x="-3" y="1" z="13" spawntime="60"/>
     <monster name="Defiler" x="1" y="1" z="13" spawntime="60"/>
   </spawn>
+  <spawn centerx="2822" centery="1273" centerz="13" radius="26">
+    <monster name="Grim Reaper" x="-3" y="-22" z="13" spawntime="60"/>
+    <monster name="Grim Reaper" x="11" y="-18" z="13" spawntime="60"/>
+    <monster name="Skeleton" x="4" y="-11" z="13" spawntime="60"/>
+    <monster name="Ghoul" x="5" y="-10" z="13" spawntime="60"/>
+    <monster name="Ghost" x="4" y="-9" z="13" spawntime="60"/>
+    <monster name="Mummy" x="5" y="-9" z="13" spawntime="60"/>
+    <monster name="Grim Reaper" x="6" y="-7" z="13" spawntime="60"/>
+    <monster name="Grim Reaper" x="-23" y="-5" z="13" spawntime="60"/>
+    <monster name="Ghoul" x="-19" y="-1" z="13" spawntime="60"/>
+    <monster name="Mummy" x="-18" y="-1" z="13" spawntime="60"/>
+    <monster name="Ghost" x="-18" y="0" z="13" spawntime="60"/>
+    <monster name="Skeleton" x="-16" y="0" z="13" spawntime="60"/>
+    <monster name="Grim Reaper" x="-7" y="0" z="13" spawntime="60"/>
+    <monster name="Grim Reaper" x="3" y="0" z="13" spawntime="60"/>
+    <monster name="Grim Reaper" x="19" y="2" z="13" spawntime="60"/>
+    <monster name="Skeleton" x="15" y="5" z="13" spawntime="60"/>
+    <monster name="Ghost" x="16" y="6" z="13" spawntime="60"/>
+    <monster name="Ghoul" x="15" y="7" z="13" spawntime="60"/>
+    <monster name="Mummy" x="15" y="8" z="13" spawntime="60"/>
+    <monster name="Ghoul" x="-4" y="13" z="13" spawntime="60"/>
+    <monster name="Grim Reaper" x="-22" y="14" z="13" spawntime="60"/>
+    <monster name="Skeleton" x="-5" y="14" z="13" spawntime="60"/>
+    <monster name="Mummy" x="-4" y="14" z="13" spawntime="60"/>
+    <monster name="Ghost" x="-3" y="14" z="13" spawntime="60"/>
+    <monster name="Grim Reaper" x="-7" y="18" z="13" spawntime="60"/>
+    <monster name="Grim Reaper" x="9" y="19" z="13" spawntime="60"/>
+    <monster name="Mummy" x="1" y="23" z="13" spawntime="60"/>
+    <monster name="Ghoul" x="-1" y="24" z="13" spawntime="60"/>
+    <monster name="Ghost" x="0" y="25" z="13" spawntime="60"/>
+    <monster name="Skeleton" x="1" y="25" z="13" spawntime="60"/>
+  </spawn>
   <spawn centerx="2710" centery="1275" centerz="13" radius="16">
     <monster name="Demon" x="8" y="-5" z="13" spawntime="60"/>
     <monster name="Demon" x="-12" y="-1" z="13" spawntime="60"/>
@@ -18968,6 +19052,19 @@
   <spawn centerx="2000" centery="1253" centerz="14" radius="2">
     <monster name="Destroyer" x="0" y="0" z="14" spawntime="60"/>
   </spawn>
+  <spawn centerx="2832" centery="1257" centerz="14" radius="10">
+    <monster name="Grim Reaper" x="-2" y="-5" z="14" spawntime="60"/>
+    <monster name="Skeleton" x="-3" y="-4" z="14" spawntime="60"/>
+    <monster name="Skeleton" x="-1" y="-4" z="14" spawntime="60"/>
+    <monster name="Ghost" x="1" y="-3" z="14" spawntime="60"/>
+    <monster name="Ghost" x="1" y="-2" z="14" spawntime="60"/>
+    <monster name="Skeleton" x="-1" y="-1" z="14" spawntime="60"/>
+    <monster name="Mummy" x="1" y="1" z="14" spawntime="60"/>
+    <monster name="Skeleton" x="3" y="2" z="14" spawntime="60"/>
+    <monster name="Ghoul" x="-3" y="3" z="14" spawntime="60"/>
+    <monster name="Skeleton" x="-3" y="4" z="14" spawntime="60"/>
+    <monster name="Skeleton" x="-3" y="5" z="14" spawntime="256"/>
+  </spawn>
   <spawn centerx="1958" centery="1260" centerz="14" radius="2">
     <monster name="Nightmare" x="0" y="0" z="14" spawntime="60"/>
   </spawn>
@@ -18980,11 +19077,18 @@
   <spawn centerx="1997" centery="1271" centerz="14" radius="2">
     <monster name="Destroyer" x="1" y="0" z="14" spawntime="60"/>
   </spawn>
+  <spawn centerx="2804" centery="1274" centerz="14" radius="1">
+    <monster name="Grim Reaper" x="0" y="1" z="14" spawntime="60"/>
+  </spawn>
   <spawn centerx="1972" centery="1276" centerz="14" radius="2">
     <monster name="Destroyer" x="-1" y="0" z="14" spawntime="60"/>
   </spawn>
+  <spawn centerx="2809" centery="1276" centerz="14" radius="1"/>
   <spawn centerx="1991" centery="1279" centerz="14" radius="2">
     <monster name="Nightmare" x="0" y="0" z="14" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2803" centery="1279" centerz="14" radius="1">
+    <monster name="Grim Reaper" x="0" y="0" z="14" spawntime="60"/>
   </spawn>
   <spawn centerx="1972" centery="1289" centerz="14" radius="2">
     <monster name="Nightmare" x="0" y="0" z="14" spawntime="60"/>
