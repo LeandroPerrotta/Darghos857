@@ -561,8 +561,7 @@
 	<moveevent event="StepIn" itemid="8072" script="yellow_pillow.lua" />
 
 	<!-- Darghos -->
-	<moveevent event="StepIn" itemid="11062" script="depot_tile_walk.lua" />
-	<moveevent event="StepIn" itemid="11063" script="depot_tile_walk.lua" />
+	<moveevent event="StepIn" itemid="11063" script="switch_tile.lua" />
 	<!-- End Darghos -->
 
 	<!-- Items -->
