@@ -15,11 +15,12 @@ function onStepIn(cid, item, pos, frompos)
 		return TRUE
 	end
 
+	doTransformTile(item)
+
 	if(item.itemid == 11063) then
 		doTeleportThing(cid, frompos)
+		return TRUE
 	end
-
-	doTransformTile(item)
 	
 	if(isPlayer(cid) == TRUE) then
 		local depot = {}
@@ -48,14 +49,6 @@ function onStepIn(cid, item, pos, frompos)
 end
 
 function onStepOut(cid, item, pos, frompos)
-	if(item.itemid == 11063) then
-		local pos = frompos
-		pos.stackpos = 253
-		if(isPlayer(getThingFromPos(pos)) == TRUE) then
-			return TRUE
-		end
-	end
-
 	doTransformTile(item)
 	return TRUE
 end

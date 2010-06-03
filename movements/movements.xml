@@ -562,6 +562,7 @@
 
 	<!-- Darghos -->
 	<moveevent event="StepIn" itemid="11063" script="switch_tile.lua" />
+	<moveevent event="StepOut" itemid="11062" script="switch_tile.lua" />
 	<!-- End Darghos -->
 
 	<!-- Items -->
