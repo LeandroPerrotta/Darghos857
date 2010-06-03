@@ -15,9 +15,11 @@ function onStepIn(cid, item, pos, frompos)
 		return TRUE
 	end
 
+	local itemid = item.itemid
+
 	doTransformTile(item)
 
-	if(item.itemid == 11063) then
+	if(itemid == 11063) then
 		doTeleportThing(cid, frompos)
 		return TRUE
 	end
