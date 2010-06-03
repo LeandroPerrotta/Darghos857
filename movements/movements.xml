@@ -185,7 +185,6 @@
 		
 
 	<!-- You should not be able to walk through quest chests -->
-
 	<moveevent event="StepIn" itemid="1738" script="quest_chest_walk.lua"/>
 	<moveevent event="StepIn" itemid="1740" script="quest_chest_walk.lua"/>
 	<moveevent event="StepIn" itemid="1746" script="quest_chest_walk.lua"/>
@@ -327,6 +326,7 @@
 	<!-- Walkable waters -->
 	<moveevent event="StepIn" itemid="4820" script="swimmingpool_swim.lua" />
 	<moveevent event="StepOut" itemid="4820" script="swimmingpool_swim.lua" />
+
 	<moveevent event="AddItem" itemid="4820" tileitem="1" script="swimmingpool_item.lua" />
 
 	<!-- Underwater -->
@@ -549,6 +549,9 @@
 	<moveevent event="StepOut" itemid="3217" script="switch_tile.lua" />
 	<moveevent event="StepIn" itemid="11062" script="switch_tile.lua" />
 	<moveevent event="StepOut" itemid="11063" script="switch_tile.lua" />
+
+	<!-- You should not be able to walk through dp tile items -->
+	<moveevent event="StepIn" itemid="11063" script="depot_tile_walk.lua"/>
 
 	<!-- Traps -->
 	<moveevent event="StepIn" itemid="1510" script="trap.lua" />
