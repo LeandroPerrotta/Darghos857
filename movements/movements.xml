@@ -549,10 +549,7 @@
 	<moveevent event="StepOut" itemid="3217" script="switch_tile.lua" />
 	<moveevent event="StepIn" itemid="11062" script="switch_tile.lua" />
 	<moveevent event="StepOut" itemid="11063" script="switch_tile.lua" />
-
-	<!-- You should not be able to walk through dp tile items -->
-	<moveevent event="StepIn" itemid="11063" script="depot_tile_walk.lua"/>
-
+	
 	<!-- Traps -->
 	<moveevent event="StepIn" itemid="1510" script="trap.lua" />
 	<moveevent event="StepOut" itemid="1511" script="trap.lua" />
@@ -562,6 +559,11 @@
 	<moveevent event="RemoveItem" itemid="2579" script="trap.lua" />
 	<moveevent event="AddItem" tileitem="1" itemid="2579" script="trap.lua" />
 	<moveevent event="StepIn" itemid="8072" script="yellow_pillow.lua" />
+
+	<!-- Darghos -->
+	<moveevent event="StepIn" itemid="11062" script="depot_tile_walk.lua" />
+	<moveevent event="StepIn" itemid="11063" script="depot_tile_walk.lua" />
+	<!-- End Darghos -->
 
 	<!-- Items -->
 	<!-- Boots -->
