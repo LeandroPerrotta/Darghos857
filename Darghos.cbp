@@ -16,6 +16,7 @@
 					<Add option="-O2" />
 					<Add option="-D__USE_MYSQL__" />
 					<Add option="-D__SKULLSYSTEM__" />
+					<Add option="-D__USE_OTPCH__" />
 					<Add directory="/usr/include/libxml2" />
 					<Add directory="/usr/include/lua5.1" />
 				</Compiler>
@@ -129,8 +130,10 @@
 		<Unit filename="networkmessage.h" />
 		<Unit filename="npc.cpp" />
 		<Unit filename="npc.h" />
-		<Unit filename="otpch.cpp" />
-		<Unit filename="otpch.h" />
+		<Unit filename="otpch.h">
+			<Option compile="1" />
+			<Option weight="0" />
+		</Unit>
 		<Unit filename="otserv.cpp" />
 		<Unit filename="otsystem.h" />
 		<Unit filename="outfit.cpp" />
