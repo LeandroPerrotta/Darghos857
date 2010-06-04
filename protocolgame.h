@@ -314,6 +314,10 @@ private:
 	uint32_t eventConnect;
 	bool m_debugAssertSent;
 	bool m_acceptPackets;
+
+	//[[--Darghos
+	void sendCreatureImpassable(const Creature* creature);
+	//--]]
 };
 
 #endif

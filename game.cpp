@@ -2008,7 +2008,7 @@ bool Game::playerMove(uint32_t playerId, Direction dir)
 		player->setNextWalkTask(task);
 		return false;
 	}
-	
+
 	player->resetIdle();
 	player->onWalk(dir);
 	return (internalMoveCreature(player, dir) == RET_NOERROR);
@@ -4928,25 +4928,25 @@ bool Game::playerReportBug(uint32_t playerId, std::string comment)
 void Game::reloadInfo(reloadTypes_t info)
 {
 	switch(info){
-		case RELOAD_TYPE_ACTIONS: 
+		case RELOAD_TYPE_ACTIONS:
 			g_actions->reload();
 			break;
-		case RELOAD_TYPE_MONSTERS: 
+		case RELOAD_TYPE_MONSTERS:
 			g_monsters.reload();
 			break;
-		case RELOAD_TYPE_NPCS: 
+		case RELOAD_TYPE_NPCS:
 			g_npcs.reload();
 			break;
-		case RELOAD_TYPE_CONFIG: 
+		case RELOAD_TYPE_CONFIG:
 			g_config.reload();
 			break;
-		case RELOAD_TYPE_TALKACTIONS: 
+		case RELOAD_TYPE_TALKACTIONS:
 			g_talkactions->reload();
 			break;
-		case RELOAD_TYPE_MOVEMENTS: 
+		case RELOAD_TYPE_MOVEMENTS:
 			g_moveEvents->reload();
 			break;
-		case RELOAD_TYPE_SPELLS: 
+		case RELOAD_TYPE_SPELLS:
 			g_spells->reload();
 			g_monsters.reload();
 			break;
@@ -4954,8 +4954,23 @@ void Game::reloadInfo(reloadTypes_t info)
 			Raids::getInstance()->reload();
 			Raids::getInstance()->startup();
 			break;
-		case RELOAD_TYPE_CREATURESCRIPTS: 
+		case RELOAD_TYPE_CREATURESCRIPTS:
 			g_creatureEvents->reload();
 			break;
 	}
 }
+
+//[[--Darghos
+void Game::updateCreatureImpassable(Creature* creature)
+{
+	const SpectatorVec& list = getSpectators(player->getPosition());
+
+	//send to client
+	Player* tmpPlayer = NULL;
+	for(SpectatorVec::const_iterator it = list.begin(); it != list.end(); ++it){
+		if((tmpPlayer = (*it)->getPlayer())){
+			tmpPlayer->sendCreatureImpassable(creature);
+		}
+	}
+}
+//--]]

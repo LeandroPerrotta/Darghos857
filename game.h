@@ -542,6 +542,10 @@ public:
 
 	void reloadInfo(reloadTypes_t info);
 
+	//[[--Darghos
+	void updateCreatureImpassable(Player* player);
+	//--]]
+
 protected:
 
 	bool playerSaySpell(Player* player, SpeakClasses type, const std::string& text);

@@ -1909,6 +1909,11 @@ void LuaScriptInterface::registerFunctions()
 	//bit operations for Lua, based on bitlib project release 24
 	//bit.bnot, bit.band, bit.bor, bit.bxor, bit.lshift, bit.rshift
 	luaL_register(m_luaState, "bit", LuaScriptInterface::luaBitReg);
+
+	//[[--Darghos
+	//doUpdateCreatureImpassable(cid)
+	lua_register(m_luaState, "doUpdateCreatureImpassable", LuaScriptInterface::luaDoUpdateCreatureImpassable);
+	//--]]
 }
 
 int LuaScriptInterface::internalGetPlayerInfo(lua_State *L, PlayerInfo_t info)
@@ -8635,3 +8640,24 @@ int LuaScriptInterface::luaGetItemArmorByUID(lua_State *L)
 	lua_pushnumber(L, item->getArmor());
 	return 1;
 }
+
+//[[--Darghos
+int LuaScriptInterface::luaDoUpdateCreatureImpassable(lua_State *L)
+{
+	//doUpdateCreatureImpassable(cid)
+	uint32_t cid = popNumber(L);
+
+	ScriptEnviroment* env = getScriptEnv();
+
+	if(Creature* creature = env->getCreatureByUID(cid)){
+		g_game.updateCreatureImpassable(creature);
+		lua_pushnumber(L, LUA_NO_ERROR);
+	}
+	else{
+		reportErrorFunc(getErrorDesc(LUA_ERROR_CREATURE_NOT_FOUND));
+		lua_pushnumber(L, LUA_ERROR);
+	}
+
+	return 1;
+}
+//--]]

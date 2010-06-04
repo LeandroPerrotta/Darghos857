@@ -2947,3 +2947,18 @@ void ProtocolGame::AddShopItem(NetworkMessage_ptr msg, const ShopInfo item)
 	msg->AddU32(item.buyPrice);
 	msg->AddU32(item.sellPrice);
 }
+
+//[[--Darghos
+void ProtocolGame::sendCreatureImpassable(const Creature* creature)
+{
+	if(canSee(creature)){
+		NetworkMessage_ptr msg = getOutputBuffer();
+		if(msg){
+			TRACK_MESSAGE(msg);
+			msg->AddByte(0x92);
+			msg->AddU32(creature->getID());
+			msg->AddByte(!player->canWalkthrough(creature));
+		}
+	}
+}
+//--]]

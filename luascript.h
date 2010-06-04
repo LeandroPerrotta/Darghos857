@@ -672,6 +672,10 @@ protected:
 	lua_State* m_luaState;
 	std::string m_lastLuaError;
 
+	//[[--Darghos
+	static int luaDoUpdateCreatureImpassable(lua_State *L);
+	//--]]
+
 private:
 
 	static ScriptEnviroment m_scriptEnv[16];
