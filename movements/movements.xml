@@ -560,11 +560,6 @@
 	<moveevent event="AddItem" tileitem="1" itemid="2579" script="trap.lua" />
 	<moveevent event="StepIn" itemid="8072" script="yellow_pillow.lua" />
 
-	<!-- Darghos -->
-	<moveevent event="StepIn" itemid="11063" script="switch_tile.lua" />
-	<moveevent event="StepOut" itemid="11062" script="switch_tile.lua" />
-	<!-- End Darghos -->
-
 	<!-- Items -->
 	<!-- Boots -->
 	<moveevent event="Equip" itemid="2195" slot="feet" function="onEquipItem"/>
