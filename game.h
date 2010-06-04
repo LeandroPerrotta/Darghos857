@@ -543,7 +543,7 @@ public:
 	void reloadInfo(reloadTypes_t info);
 
 	//[[--Darghos
-	void updateCreatureImpassable(Player* player);
+	void updateCreatureImpassable(const Creature* creature);
 	//--]]
 
 protected:

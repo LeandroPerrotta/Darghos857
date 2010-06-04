@@ -677,6 +677,11 @@ public:
 	DepotMap depots;
 	uint32_t maxDepotLimit;
 
+	//[[--Darghos
+	void sendCreatureImpassable(const Creature* creature)
+		{if(client) client->sendCreatureImpassable(creature);}
+	//--]]
+
 protected:
 	void checkTradeState(const Item* item);
 	bool hasCapacity(const Item* item, uint32_t count) const;

@@ -4961,9 +4961,9 @@ void Game::reloadInfo(reloadTypes_t info)
 }
 
 //[[--Darghos
-void Game::updateCreatureImpassable(Creature* creature)
+void Game::updateCreatureImpassable(const Creature* creature)
 {
-	const SpectatorVec& list = getSpectators(player->getPosition());
+	const SpectatorVec& list = getSpectators(creature->getPosition());
 
 	//send to client
 	Player* tmpPlayer = NULL;
