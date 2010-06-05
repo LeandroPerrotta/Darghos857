@@ -18819,6 +18819,10 @@
     <monster name="Blightwalker" x="-3" y="1" z="13" spawntime="60"/>
     <monster name="Defiler" x="1" y="1" z="13" spawntime="60"/>
   </spawn>
+  <spawn centerx="2807" centery="1241" centerz="13" radius="1">
+    <monster name="Vampire" x="1" y="0" z="13" spawntime="60"/>
+    <monster name="Grim Reaper" x="0" y="1" z="13" spawntime="60"/>
+  </spawn>
   <spawn centerx="2822" centery="1273" centerz="13" radius="26">
     <monster name="Grim Reaper" x="5" y="-22" z="13" spawntime="60"/>
     <monster name="Skeleton" x="4" y="-11" z="13" spawntime="60"/>
@@ -19265,6 +19269,11 @@
     <monster name="Priestess" x="1" y="0" z="14" spawntime="60"/>
     <monster name="Necromancer" x="-1" y="1" z="14" spawntime="60"/>
   </spawn>
+  <spawn centerx="2882" centery="1232" centerz="15" radius="5">
+    <monster name="Vampire" x="0" y="-3" z="15" spawntime="60"/>
+    <monster name="Grim Reaper" x="3" y="-2" z="15" spawntime="0"/>
+    <monster name="Grim Reaper" x="3" y="0" z="15" spawntime="0"/>
+  </spawn>
   <spawn centerx="1980" centery="1265" centerz="15" radius="30">
     <monster name="Anamelech" x="15" y="-3" z="15" spawntime="60"/>
     <monster name="Bayemon" x="-12" y="-1" z="15" spawntime="60"/>
@@ -19273,6 +19282,11 @@
     <monster name="Nergal" x="12" y="3" z="15" spawntime="60"/>
     <monster name="Ukobach" x="2" y="5" z="15" spawntime="60"/>
     <monster name="Zepar" x="3" y="13" z="15" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2886" centery="1287" centerz="15" radius="1">
+    <monster name="Grim Reaper" x="1" y="-1" z="15" spawntime="0"/>
+    <monster name="Grim Reaper" x="-1" y="1" z="15" spawntime="0"/>
+    <monster name="Vampire" x="0" y="1" z="15" spawntime="60"/>
   </spawn>
   <spawn centerx="1988" centery="1813" centerz="15" radius="1">
     <monster name="Behemoth" x="1" y="-1" z="15" spawntime="60"/>
