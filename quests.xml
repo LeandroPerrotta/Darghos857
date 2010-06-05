@@ -32,4 +32,21 @@
 			<missionstate id="4" description="Missão concluida." />
 		</mission>		
 	</quest>
+	
+	<quest name="Missões Bonartes" startstorageid="3612" startstoragevalue="1">
+		<mission name="Derrotar heroes" storageid="3612" startvalue="2" endvalue="3">	
+			<missionstate id="2" description="Derrote 8457 heroes e depois fale com Bonartes." />
+			<missionstate id="3" description="Missão concluida." />
+		</mission>		
+	
+		<mission name="Derrotar demonios" storageid="3613" startvalue="1" endvalue="2">	
+			<missionstate id="1" description="Derrote 1209 demonios e depois fale com Bonartes." />
+			<missionstate id="2" description="Missão concluida." />
+		</mission>		
+		
+		<mission name="Derrotar behemoths" storageid="3614" startvalue="1" endvalue="2">	
+			<missionstate id="1" description="Derrote 3731 behemoths e depois fale com Bonartes." />
+			<missionstate id="2" description="Missão concluida." />
+		</mission>			
+	</quest>	
 </quests>

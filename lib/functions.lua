@@ -1,4 +1,19 @@
 --[[
+	* REGISTRO DE EVENTOS ONKILL PARA MISSÕES
+]]--
+function OnKillCreatureMission(cid)
+
+	-- Bonartes Mission's
+	local _demonMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_DEMONS)
+	local _heroMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_HEROS)
+	local _behemothMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_BEHEMOTHS)	
+	
+	if(_heroMission == 2 or _behemothMission == 1 or _demonMission == 1) then
+		registerCreatureEvent(cid, "OnKillMission")
+	end
+end
+
+--[[
 	* DIVINE ANKH QUEST
 ]]--
 function onLordVankynerDie()

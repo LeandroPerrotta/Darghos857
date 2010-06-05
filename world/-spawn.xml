@@ -7253,6 +7253,9 @@
   <spawn centerx="2978" centery="1298" centerz="8" radius="5">
     <monster name="Monk" x="1" y="1" z="8" spawntime="60"/>
   </spawn>
+  <spawn centerx="2895" centery="1299" centerz="8" radius="3">
+    <npc name="global.bonartes" x="-1" y="0" z="8" spawntime="60"/>
+  </spawn>
   <spawn centerx="2954" centery="1299" centerz="8" radius="5">
     <monster name="Monk" x="0" y="-1" z="8" spawntime="60"/>
   </spawn>

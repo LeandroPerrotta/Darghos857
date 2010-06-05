@@ -15,6 +15,7 @@
 	setRateStage(cid, getPlayerLevel(cid))
 	setLoginSkillRateStages(cid)
 	checkItemShop(cid)
+	OnKillCreatureMission(cid)
 	
 	if(getPlayerVocation(cid) <= 4) then
 		defineFirstItems(cid)	
