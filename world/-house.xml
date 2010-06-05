@@ -358,41 +358,41 @@
   <house name="General Depot 3" houseid="474" entryx="1266" entryy="2217" entryz="7" rent="1500" townid="6" size="16"/>
   <house name="General Depot 4" houseid="475" entryx="1250" entryy="2213" entryz="6" rent="1500" townid="6" size="16"/>
   <house name="General Depot 5" houseid="476" entryx="1269" entryy="2213" entryz="6" rent="1500" townid="6" size="16"/>
-  <house name="Olipus House" houseid="477" entryx="2404" entryy="1819" entryz="7" rent="0" townid="4" size="116"/>
-  <house name="Ironius House #2" houseid="478" entryx="2384" entryy="1813" entryz="7" rent="0" townid="4" size="111"/>
-  <house name="Ironius House #3" houseid="479" entryx="2393" entryy="1809" entryz="7" rent="0" townid="4" size="6"/>
-  <house name="Feligiar House" houseid="480" entryx="2397" entryy="1803" entryz="7" rent="0" townid="4" size="17"/>
-  <house name="Cronous House" houseid="481" entryx="2372" entryy="1828" entryz="7" rent="0" townid="4" size="70"/>
-  <house name="Veciner House #1" houseid="482" entryx="2403" entryy="1840" entryz="7" rent="0" townid="4" size="38"/>
-  <house name="Veciner House #2" houseid="485" entryx="2391" entryy="1843" entryz="7" rent="0" townid="4" size="107"/>
-  <house name="Veciner House #3" houseid="486" entryx="2415" entryy="1846" entryz="7" rent="0" townid="4" size="75"/>
-  <house name="Veciner House #4" houseid="487" entryx="2417" entryy="1844" entryz="7" rent="0" townid="4" size="90"/>
-  <house name="Veciner House #5" houseid="488" entryx="2396" entryy="1846" entryz="7" rent="0" townid="4" size="38"/>
-  <house name="Veciner House #6" houseid="489" entryx="2403" entryy="1851" entryz="7" rent="0" townid="4" size="34"/>
-  <house name="Veciner House #7" houseid="490" entryx="2392" entryy="1857" entryz="7" rent="0" townid="4" size="46"/>
-  <house name="Veciner House #8" houseid="491" entryx="2401" entryy="1861" entryz="7" rent="0" townid="4" size="28"/>
-  <house name="Milagres House #1" houseid="492" entryx="2365" entryy="1836" entryz="7" rent="0" townid="4" size="14"/>
-  <house name="Milagres House #2" houseid="493" entryx="2365" entryy="1842" entryz="7" rent="0" townid="4" size="14"/>
-  <house name="Milagres House #3" houseid="494" entryx="2365" entryy="1848" entryz="7" rent="0" townid="4" size="14"/>
-  <house name="Milagres House #4" houseid="495" entryx="2354" entryy="1845" entryz="7" rent="0" townid="4" size="21"/>
-  <house name="Milagres House #5" houseid="496" entryx="2362" entryy="1849" entryz="7" rent="0" townid="4" size="16"/>
-  <house name="Milagres House #6" houseid="497" entryx="2353" entryy="1857" entryz="7" rent="0" townid="4" size="15"/>
-  <house name="Milagres House #7" houseid="498" entryx="2362" entryy="1854" entryz="7" rent="0" townid="4" size="12"/>
-  <house name="Milagres House #8" houseid="499" entryx="2355" entryy="1848" entryz="6" rent="0" townid="4" size="4"/>
-  <house name="Milagres House #9" houseid="500" entryx="2356" entryy="1848" entryz="6" rent="0" townid="4" size="4"/>
-  <house name="Milagres House #10" houseid="501" entryx="2355" entryy="1851" entryz="6" rent="0" townid="4" size="4"/>
-  <house name="Milagres House #11" houseid="502" entryx="2356" entryy="1851" entryz="6" rent="0" townid="4" size="4"/>
-  <house name="Milagres House #12" houseid="503" entryx="2355" entryy="1854" entryz="6" rent="0" townid="4" size="4"/>
-  <house name="Milagres House #13" houseid="504" entryx="2356" entryy="1854" entryz="6" rent="0" townid="4" size="4"/>
-  <house name="Gomes Vilani House #1" houseid="505" entryx="2369" entryy="1867" entryz="7" rent="0" townid="4" size="29"/>
-  <house name="Gomes Vilani House #2" houseid="506" entryx="2368" entryy="1866" entryz="6" rent="0" townid="4" size="12"/>
-  <house name="Gomes Vilani House #3" houseid="507" entryx="2369" entryy="1867" entryz="6" rent="0" townid="4" size="21"/>
-  <house name="Gomes Vilani House #4" houseid="508" entryx="2375" entryy="1864" entryz="7" rent="0" townid="4" size="66"/>
-  <house name="Gomes Vilani House #5" houseid="509" entryx="2383" entryy="1863" entryz="7" rent="0" townid="4" size="34"/>
-  <house name="Jucian House #1" houseid="510" entryx="2409" entryy="1870" entryz="7" rent="0" townid="4" size="18"/>
-  <house name="Jucian House #2" houseid="511" entryx="2418" entryy="1874" entryz="7" rent="0" townid="4" size="14"/>
-  <house name="Jucian House #3" houseid="512" entryx="2424" entryy="1874" entryz="7" rent="0" townid="4" size="14"/>
-  <house name="Nerion House" houseid="513" entryx="2390" entryy="1826" entryz="7" rent="0" townid="4" size="23"/>
-  <house name="Grevart House" houseid="514" entryx="2364" entryy="1771" entryz="7" rent="0" guildhall="1" townid="4" size="92"/>
-  <house name="Untinion House" houseid="515" entryx="2069" entryy="1839" entryz="7" rent="0" guildhall="1" townid="1" size="134"/>
+  <house name="Olimpus House" houseid="477" entryx="2404" entryy="1819" entryz="7" rent="46000" townid="4" size="116"/>
+  <house name="Ironius House #1" houseid="478" entryx="2384" entryy="1813" entryz="7" rent="9000" townid="4" size="111"/>
+  <house name="Ironius House #2" houseid="479" entryx="2393" entryy="1809" entryz="7" rent="500" townid="4" size="6"/>
+  <house name="Feligiar House" houseid="480" entryx="2397" entryy="1803" entryz="7" rent="1500" townid="4" size="17"/>
+  <house name="Cronous House" houseid="481" entryx="2372" entryy="1828" entryz="7" rent="38000" townid="4" size="70"/>
+  <house name="Veciner House #1" houseid="482" entryx="2403" entryy="1840" entryz="7" rent="19000" townid="4" size="38"/>
+  <house name="Veciner House #2" houseid="485" entryx="2391" entryy="1843" entryz="7" rent="28000" townid="4" size="107"/>
+  <house name="Veciner House #3" houseid="486" entryx="2415" entryy="1846" entryz="7" rent="22000" townid="4" size="75"/>
+  <house name="Veciner House #4" houseid="487" entryx="2417" entryy="1844" entryz="7" rent="25000" townid="4" size="90"/>
+  <house name="Veciner House #5" houseid="488" entryx="2396" entryy="1846" entryz="7" rent="6000" townid="4" size="38"/>
+  <house name="Veciner House #6" houseid="489" entryx="2403" entryy="1851" entryz="7" rent="6000" townid="4" size="34"/>
+  <house name="Veciner House #7" houseid="490" entryx="2392" entryy="1857" entryz="7" rent="6000" townid="4" size="46"/>
+  <house name="Veciner House #8" houseid="491" entryx="2401" entryy="1861" entryz="7" rent="6000" townid="4" size="28"/>
+  <house name="Milagres House #1" houseid="492" entryx="2365" entryy="1836" entryz="7" rent="3500" townid="4" size="14"/>
+  <house name="Milagres House #2" houseid="493" entryx="2365" entryy="1842" entryz="7" rent="3500" townid="4" size="14"/>
+  <house name="Milagres House #3" houseid="494" entryx="2365" entryy="1848" entryz="7" rent="3500" townid="4" size="14"/>
+  <house name="Milagres House #4" houseid="495" entryx="2354" entryy="1845" entryz="7" rent="3500" townid="4" size="21"/>
+  <house name="Milagres House #5" houseid="496" entryx="2362" entryy="1849" entryz="7" rent="3500" townid="4" size="14"/>
+  <house name="Milagres House #6" houseid="497" entryx="2353" entryy="1857" entryz="7" rent="3500" townid="4" size="13"/>
+  <house name="Milagres House #7" houseid="498" entryx="2362" entryy="1854" entryz="7" rent="3500" townid="4" size="12"/>
+  <house name="Milagres House #8" houseid="499" entryx="2355" entryy="1848" entryz="6" rent="1000" townid="4" size="4"/>
+  <house name="Milagres House #9" houseid="500" entryx="2356" entryy="1848" entryz="6" rent="1000" townid="4" size="4"/>
+  <house name="Milagres House #10" houseid="501" entryx="2355" entryy="1851" entryz="6" rent="1000" townid="4" size="4"/>
+  <house name="Milagres House #11" houseid="502" entryx="2356" entryy="1851" entryz="6" rent="1000" townid="4" size="4"/>
+  <house name="Milagres House #12" houseid="503" entryx="2355" entryy="1854" entryz="6" rent="1000" townid="4" size="4"/>
+  <house name="Milagres House #13" houseid="504" entryx="2356" entryy="1854" entryz="6" rent="1000" townid="4" size="4"/>
+  <house name="Gomes Vilani House #2" houseid="505" entryx="2369" entryy="1867" entryz="7" rent="3500" townid="4" size="29"/>
+  <house name="Gomes Vilani House #1" houseid="506" entryx="2368" entryy="1866" entryz="6" rent="1500" townid="4" size="12"/>
+  <house name="Gomes Vilani House #3" houseid="507" entryx="2369" entryy="1867" entryz="6" rent="3500" townid="4" size="21"/>
+  <house name="Gomes Vilani House #4" houseid="508" entryx="2375" entryy="1864" entryz="7" rent="3500" townid="4" size="66"/>
+  <house name="Gomes Vilani House #5" houseid="509" entryx="2383" entryy="1863" entryz="7" rent="4000" townid="4" size="34"/>
+  <house name="Jucian House #1" houseid="510" entryx="2409" entryy="1870" entryz="7" rent="3000" townid="4" size="18"/>
+  <house name="Jucian House #2" houseid="511" entryx="2418" entryy="1874" entryz="7" rent="2000" townid="4" size="14"/>
+  <house name="Jucian House #3" houseid="512" entryx="2424" entryy="1874" entryz="7" rent="2000" townid="4" size="14"/>
+  <house name="Nerion House" houseid="513" entryx="2390" entryy="1826" entryz="7" rent="16000" townid="4" size="23"/>
+  <house name="Grevart House" houseid="514" entryx="2364" entryy="1771" entryz="7" rent="250000" guildhall="1" townid="4" size="92"/>
+  <house name="Untinion House" houseid="515" entryx="2069" entryy="1839" entryz="7" rent="280000" guildhall="1" townid="1" size="134"/>
 </houses>
