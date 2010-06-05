@@ -5920,12 +5920,7 @@
     <monster name="Dragon" x="1" y="-2" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2492" centery="2241" centerz="7" radius="5">
-    <monster name="Tortoise" x="0" y="-2" z="7" spawntime="60"/>
     <monster name="Thornback Tortoise" x="4" y="-2" z="7" spawntime="60"/>
-    <monster name="Tortoise" x="-2" y="1" z="7" spawntime="60"/>
-    <monster name="Thornback Tortoise" x="4" y="1" z="7" spawntime="60"/>
-    <monster name="Tortoise" x="-3" y="2" z="7" spawntime="60"/>
-    <monster name="Thornback Tortoise" x="0" y="2" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1191" centery="2246" centerz="7" radius="5">
     <monster name="Dragon" x="3" y="5" z="7" spawntime="60"/>
