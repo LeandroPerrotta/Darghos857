@@ -19067,6 +19067,7 @@
   </spawn>
   <spawn centerx="2852" centery="1236" centerz="14" radius="1">
     <monster name="Grim Reaper" x="1" y="-1" z="14" spawntime="60"/>
+    <monster name="Vampire" x="1" y="1" z="14" spawntime="60"/>
   </spawn>
   <spawn centerx="2877" centery="1240" centerz="14" radius="1">
     <monster name="Grim Reaper" x="-1" y="1" z="14" spawntime="60"/>
@@ -19113,6 +19114,15 @@
   </spawn>
   <spawn centerx="2909" centery="1260" centerz="14" radius="1">
     <monster name="Grim Reaper" x="0" y="-1" z="14" spawntime="60"/>
+    <monster name="Skeleton" x="1" y="0" z="14" spawntime="60"/>
+    <monster name="Ghoul" x="0" y="1" z="14" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2918" centery="1260" centerz="14" radius="1">
+    <monster name="Ghost" x="-1" y="-1" z="14" spawntime="60"/>
+    <monster name="Vampire" x="0" y="-1" z="14" spawntime="60"/>
+    <monster name="Skeleton" x="1" y="-1" z="14" spawntime="60"/>
+    <monster name="Ghost" x="-1" y="0" z="14" spawntime="60"/>
+    <monster name="Skeleton" x="1" y="0" z="14" spawntime="60"/>
   </spawn>
   <spawn centerx="2929" centery="1260" centerz="14" radius="1">
     <monster name="Vampire Bride" x="-1" y="-1" z="14" spawntime="60"/>
@@ -19139,6 +19149,7 @@
   </spawn>
   <spawn centerx="2852" centery="1274" centerz="14" radius="1">
     <monster name="Grim Reaper" x="0" y="1" z="14" spawntime="60"/>
+    <monster name="Vampire" x="1" y="1" z="14" spawntime="60"/>
   </spawn>
   <spawn centerx="1972" centery="1276" centerz="14" radius="2">
     <monster name="Destroyer" x="-1" y="0" z="14" spawntime="60"/>
