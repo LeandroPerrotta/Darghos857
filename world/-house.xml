@@ -395,4 +395,5 @@
   <house name="Nerion House" houseid="513" entryx="2390" entryy="1826" entryz="7" rent="16000" townid="4" size="23"/>
   <house name="Grevart House" houseid="514" entryx="2364" entryy="1771" entryz="7" rent="250000" guildhall="1" townid="4" size="92"/>
   <house name="Untinion House" houseid="515" entryx="2069" entryy="1839" entryz="7" rent="280000" guildhall="1" townid="1" size="134"/>
+  <house name="Nialgon House" houseid="516" entryx="2422" entryy="1871" entryz="7" rent="30000" townid="1" size="93"/>
 </houses>

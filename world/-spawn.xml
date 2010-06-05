@@ -1863,11 +1863,11 @@
     <monster name="Orc Warrior" x="-1" y="3" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2477" centery="1758" centerz="6" radius="1">
-    <monster name="Warlock" x="0" y="-1" z="6" spawntime="60"/>
+    <monster name="Warlock" x="0" y="-1" z="6" spawntime="50"/>
     <monster name="Stalker" x="-1" y="1" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2483" centery="1758" centerz="6" radius="1">
-    <monster name="Warlock" x="1" y="-1" z="6" spawntime="60"/>
+    <monster name="Warlock" x="1" y="-1" z="6" spawntime="50"/>
     <monster name="Stalker" x="0" y="1" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2129" centery="1762" centerz="6" radius="5">
@@ -2062,7 +2062,7 @@
   <spawn centerx="1981" centery="1832" centerz="6" radius="1">
     <npc name="salazart.joia" x="-1" y="0" z="6" spawntime="60"/>
   </spawn>
-  <spawn centerx="2005" centery="1842" centerz="6" radius="3">
+  <spawn centerx="2005" centery="1841" centerz="6" radius="3">
     <npc name="quendor.magic" x="0" y="3" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="2102" centery="1842" centerz="6" radius="5">
@@ -4543,11 +4543,11 @@
     <monster name="Elf" x="2" y="3" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2477" centery="1758" centerz="7" radius="1">
-    <monster name="Warlock" x="0" y="-1" z="7" spawntime="60"/>
+    <monster name="Warlock" x="0" y="-1" z="7" spawntime="50"/>
     <monster name="Stalker" x="1" y="1" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2482" centery="1758" centerz="7" radius="1">
-    <monster name="Warlock" x="0" y="-1" z="7" spawntime="60"/>
+    <monster name="Warlock" x="0" y="-1" z="7" spawntime="50"/>
     <monster name="Stalker" x="1" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2186" centery="1760" centerz="7" radius="5">
@@ -7733,7 +7733,7 @@
   </spawn>
   <spawn centerx="2478" centery="1758" centerz="8" radius="2">
     <monster name="Stalker" x="1" y="-1" z="8" spawntime="60"/>
-    <monster name="Warlock" x="-2" y="2" z="8" spawntime="60"/>
+    <monster name="Warlock" x="-2" y="2" z="8" spawntime="50"/>
   </spawn>
   <spawn centerx="2281" centery="1761" centerz="8" radius="5">
     <monster name="Swamp Troll" x="-4" y="-1" z="8" spawntime="60"/>
