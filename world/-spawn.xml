@@ -4771,6 +4771,9 @@
     <monster name="Elf" x="-3" y="1" z="7" spawntime="60"/>
     <monster name="Elf Scout" x="-1" y="2" z="7" spawntime="60"/>
   </spawn>
+  <spawn centerx="2371" centery="1806" centerz="7" radius="1">
+    <npc name="thorn.guards" x="1" y="0" z="7" spawntime="60"/>
+  </spawn>
   <spawn centerx="2456" centery="1808" centerz="7" radius="5">
     <monster name="Elf Scout" x="-4" y="-5" z="7" spawntime="60"/>
     <monster name="Elf Scout" x="-1" y="-1" z="7" spawntime="60"/>
@@ -4795,9 +4798,6 @@
     <monster name="Minotaur guard" x="-1" y="-1" z="7" spawntime="60"/>
     <monster name="Minotaur guard" x="1" y="1" z="7" spawntime="60"/>
     <monster name="Minotaur archer" x="-1" y="2" z="7" spawntime="60"/>
-  </spawn>
-  <spawn centerx="2376" centery="1812" centerz="7" radius="1">
-    <npc name="thorn.guards" x="1" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2152" centery="1813" centerz="7" radius="3">
     <monster name="Minotaur" x="-3" y="0" z="7" spawntime="60"/>
@@ -4880,9 +4880,6 @@
     <monster name="Thorn Citizen" x="-4" y="-2" z="7" spawntime="60"/>
     <monster name="Thorn Citizen" x="2" y="1" z="7" spawntime="60"/>
   </spawn>
-  <spawn centerx="2383" centery="1842" centerz="7" radius="1">
-    <npc name="thorn.guards" x="0" y="-1" z="7" spawntime="60"/>
-  </spawn>
   <spawn centerx="2442" centery="1842" centerz="7" radius="5">
     <monster name="Thorn Citizen" x="0" y="-3" z="7" spawntime="60"/>
     <monster name="Thorn Citizen" x="-1" y="4" z="7" spawntime="60"/>
@@ -4903,6 +4900,9 @@
   <spawn centerx="2508" centery="1843" centerz="7" radius="5">
     <monster name="Thorn Citizen" x="-4" y="-5" z="7" spawntime="60"/>
     <monster name="Thorn Citizen" x="1" y="2" z="7" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2390" centery="1846" centerz="7" radius="1">
+    <npc name="thorn.guards" x="0" y="-1" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="2183" centery="1849" centerz="7" radius="5">
     <monster name="Amazon" x="0" y="-1" z="7" spawntime="60"/>
@@ -4993,6 +4993,9 @@
     <monster name="Scorpion" x="0" y="3" z="7" spawntime="60"/>
     <monster name="Scorpion" x="-2" y="4" z="7" spawntime="60"/>
     <monster name="Scorpion" x="-4" y="5" z="7" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2400" centery="1868" centerz="7" radius="2">
+    <npc name="thorn.tables" x="1" y="-1" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1961" centery="1869" centerz="7" radius="5">
     <monster name="Dog" x="0" y="2" z="7" spawntime="60"/>
