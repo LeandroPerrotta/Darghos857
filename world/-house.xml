@@ -393,6 +393,6 @@
   <house name="Jucian House #2" houseid="511" entryx="2418" entryy="1874" entryz="7" rent="0" townid="4" size="14"/>
   <house name="Jucian House #3" houseid="512" entryx="2424" entryy="1874" entryz="7" rent="0" townid="4" size="14"/>
   <house name="Nerion House" houseid="513" entryx="2390" entryy="1826" entryz="7" rent="0" townid="4" size="23"/>
-  <house name="Grevart House" houseid="514" entryx="2364" entryy="1771" entryz="7" rent="0" guildhall="1" townid="4" size="92"/>
-  <house name="Untinion House" houseid="515" entryx="0" entryy="0" entryz="0" rent="0" guildhall="1" townid="1" size="133"/>
+  <house name="Grevart House" houseid="514" entryx="2364" entryy="1771" entryz="7" rent="0" guildhall="1" townid="4" size="93"/>
+  <house name="Untinion House" houseid="515" entryx="2069" entryy="1839" entryz="7" rent="0" guildhall="1" townid="1" size="136"/>
 </houses>
