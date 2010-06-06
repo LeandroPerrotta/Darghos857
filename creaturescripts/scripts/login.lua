@@ -16,6 +16,7 @@
 	setLoginSkillRateStages(cid)
 	checkItemShop(cid)
 	OnKillCreatureMission(cid)
+	Dungeons.onLogin(cid)
 	
 	if(getPlayerVocation(cid) <= 4) then
 		defineFirstItems(cid)	

@@ -204,6 +204,20 @@ function Dungeons.onPlayerDeath(cid)
 	Dungeons.updateEntranceDescription(playerDungeon)
 end
 
+-- Função chamada 
+function Dungeons.onLogin(cid)
+
+	local isInDungeon = (getPlayerStorageValue(cid, sid.DUNGEON_STATUS) == dungeonStatus.IN_DUNGEON)
+
+	if (isInDungeon) then
+		setPlayerStorageValue(cid, sid.ON_DUNGEON, -1)
+		setPlayerStorageValue(cid, sid.DUNGEON_STATUS, dungeonStatus.OUT_DUNGEON)
+		setPlayerStorageValue(cid, sid.DUNGEON_TIME, -1)
+		
+		print("[Dungeons.onLogin] " .. getPlayerName(cid) .. " dungeon info cleaned.")
+	end
+end
+
 function Dungeons.onServerStart()
 	
 	--configuraremos as descrições iniciais das portas das dungeons
