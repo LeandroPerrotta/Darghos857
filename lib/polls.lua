@@ -66,7 +66,7 @@ function Polls.InfoPlayer(cid)
 		return false	
 	end
 
-	Polls.BroadcastMessage()
+	Polls.PlayerMessage()
 
 	local minleft = (Polls.enddate - os.time()) / 60
 
