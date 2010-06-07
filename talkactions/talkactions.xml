@@ -13,6 +13,7 @@
 	<talkaction words="/m" access="5" filter="first word" script="placemonster.lua"/>
 	<talkaction words="/c" access="5" filter="first word" script="teleporthere.lua"/>
 	<talkaction words="/summon" access="5" filter="first word" script="placesummon.lua"/>
+	<talkaction words="/poll" access="5" filter="first word" script="game/createpoll.lua"/>
 	
 	<!-- Comunity Managers -->
 	<talkaction words="/raid" access="4" filter="first word" function="forceRaid"/>
@@ -53,4 +54,6 @@
 	<talkaction words="!online" access="0" script="onlinelist.lua"/>
 	<talkaction words="!unjustkills" access="0" script="unjustkills.lua"/>
 	<talkaction words="!blesses" access="0" script="game/bless.lua"/>	
+	<talkaction words="!vote" access="0" filter="first word" script="game/vote.lua"/>
+	<talkaction words="!voteinfo" access="0" script="game/voteinfo.lua"/>
 </talkactions>
