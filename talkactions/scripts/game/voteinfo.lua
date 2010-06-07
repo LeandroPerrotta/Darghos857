@@ -1,6 +1,6 @@
 function onSay(cid, words, param)
 	
-	Polls.Info(cid)
+	Polls.InfoPlayer(cid)
 	
 	return TRUE
 end

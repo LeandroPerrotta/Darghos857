@@ -59,8 +59,38 @@ function Polls.Info(cid)
 	return true
 end
 
+function Polls.InfoPlayer(cid)
+
+	if(Polls.message == "") then
+		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Não existe nenhuma enquete aberta no momento.")
+		return false	
+	end
+
+	Polls.BroadcastMessage()
+
+	local minleft = (Polls.enddate - os.time()) / 60
+
+	local info = "Informações basicas sobre o sistema de enquetes rápidas:\n"
+	info = info .. "Você pode votar entre sim e não, leia o assunto e responda se você concorda com o comando !vote sim ou caso você não concorda com !vote nao.\n"
+	info = info .. "As enquetes possuem um tempo em que ficam ativas, e após este tempo não é possivel mais votar. Esta enquete irá expirar em " .. minleft .. " minutos.\n"
+	info = info .. "As enquetes possuem um level minimo na qual o jogador poderá votar, no caso, esta enquete o nivel minimo para votar é " .. Polls.minlevel .. ".\n"
+	
+	doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_ORANGE, info)
+	
+	info = "O resultado parcial da enquete é exibido de tempos em tempos, e ao final da enquete será exibido o resultado final.\n"
+	info = info .. "Para visualizar novamente esta mensagem digite o comando !voteinfo."
+	
+	doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_ORANGE, info)
+	
+	return true
+end
+
 function Polls.BroadcastMessage()
 	broadcastMessage("Enquete: " .. Polls.message, MESSAGE_TYPES["green"])
+end
+
+function Polls.PlayerMessage()
+	doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Enquete: " .. Polls.message, MESSAGE_TYPES["green"])
 end
 
 function Polls.ParcialResult()
