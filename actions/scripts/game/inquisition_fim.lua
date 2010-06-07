@@ -6,7 +6,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 	wallPos = getThingPos(uid.INQ_MWALL)
 	wallPos.y = wallPos.y-2
 	
-	if(itemEx.itemid == 1497) then
+	if(itemEx.itemid == 1498) then
 		doTransformItem(itemEx.uid, 8756)
 		doSendMagicEffect(wallPos, CONST_ME_HOLYAREA)
 		addEvent(spawnDemons, (15*1000))
@@ -60,7 +60,7 @@ function executeFire()
 	elseif(wall.itemid == 8759) then
 		doRemoveItem(wall.uid,1)
 		doSendMagicEffect(posToEffect,CONST_ME_HOLYAREA)
-		doCreateItem(1497,1,wallPos)
+		doCreateItem(1498,1,wallPos)
 	end
 	
 
