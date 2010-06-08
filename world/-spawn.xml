@@ -18004,21 +18004,23 @@
     <monster name="Fire Elemental" x="2" y="0" z="12" spawntime="60"/>
   </spawn>
   <spawn centerx="1428" centery="1395" centerz="12" radius="30">
-    <monster name="Warlock" x="-5" y="-9" z="12" spawntime="60"/>
-    <monster name="Warlock" x="2" y="-5" z="12" spawntime="20"/>
-    <monster name="Warlock" x="5" y="2" z="12" spawntime="20"/>
+    <monster name="Warlock" x="3" y="-10" z="12" spawntime="120"/>
+    <monster name="Warlock" x="-5" y="-9" z="12" spawntime="120"/>
+    <monster name="Warlock" x="-1" y="6" z="12" spawntime="120"/>
   </spawn>
   <spawn centerx="1348" centery="1406" centerz="12" radius="30">
-    <monster name="Warlock" x="-7" y="-6" z="12" spawntime="20"/>
-    <monster name="Warlock" x="-8" y="5" z="12" spawntime="20"/>
+    <monster name="Warlock" x="3" y="-5" z="12" spawntime="120"/>
+    <monster name="Warlock" x="-7" y="2" z="12" spawntime="120"/>
+    <monster name="Warlock" x="1" y="4" z="12" spawntime="120"/>
   </spawn>
   <spawn centerx="1396" centery="1473" centerz="12" radius="30">
-    <monster name="Warlock" x="28" y="-11" z="12" spawntime="20"/>
-    <monster name="Warlock" x="-26" y="-10" z="12" spawntime="20"/>
-    <monster name="Warlock" x="2" y="-10" z="12" spawntime="20"/>
-    <monster name="Warlock" x="-27" y="2" z="12" spawntime="20"/>
-    <monster name="Warlock" x="29" y="4" z="12" spawntime="20"/>
-    <monster name="Warlock" x="-11" y="8" z="12" spawntime="20"/>
+    <monster name="Warlock" x="1" y="-12" z="12" spawntime="120"/>
+    <monster name="Warlock" x="28" y="-10" z="12" spawntime="120"/>
+    <monster name="Warlock" x="-28" y="-9" z="12" spawntime="120"/>
+    <monster name="Warlock" x="-29" y="3" z="12" spawntime="120"/>
+    <monster name="Warlock" x="29" y="3" z="12" spawntime="120"/>
+    <monster name="Warlock" x="-14" y="10" z="12" spawntime="120"/>
+    <monster name="Warlock" x="18" y="10" z="12" spawntime="120"/>
   </spawn>
   <spawn centerx="2520" centery="1667" centerz="12" radius="30">
     <monster name="Necromancer" x="6" y="-22" z="12" spawntime="10"/>
@@ -18939,8 +18941,8 @@
     <monster name="Demon" x="5" y="14" z="13" spawntime="60"/>
   </spawn>
   <spawn centerx="1426" centery="1388" centerz="13" radius="30">
-    <monster name="Warlock" x="-5" y="0" z="13" spawntime="20"/>
-    <monster name="Warlock" x="8" y="0" z="13" spawntime="20"/>
+    <monster name="Warlock" x="7" y="-1" z="13" spawntime="120"/>
+    <monster name="Warlock" x="-4" y="2" z="13" spawntime="120"/>
     <monster name="Elf Arcanist" x="8" y="4" z="13" spawntime="20"/>
     <monster name="Elf Arcanist" x="-4" y="12" z="13" spawntime="20"/>
     <monster name="Dragon" x="0" y="15" z="13" spawntime="20"/>
@@ -18953,35 +18955,33 @@
     <monster name="Demon" x="-2" y="8" z="13" spawntime="60"/>
   </spawn>
   <spawn centerx="1342" centery="1425" centerz="13" radius="30">
-    <monster name="Warlock" x="-2" y="-17" z="13" spawntime="20"/>
-    <monster name="Warlock" x="8" y="-16" z="13" spawntime="20"/>
-    <monster name="Warlock" x="-19" y="9" z="13" spawntime="20"/>
-    <monster name="Warlock" x="-7" y="26" z="13" spawntime="20"/>
+    <monster name="Warlock" x="7" y="-25" z="13" spawntime="120"/>
+    <monster name="Warlock" x="-2" y="-20" z="13" spawntime="120"/>
+    <monster name="Warlock" x="-7" y="10" z="13" spawntime="120"/>
+    <monster name="Warlock" x="-20" y="12" z="13" spawntime="120"/>
+    <monster name="Warlock" x="-18" y="25" z="13" spawntime="120"/>
+    <monster name="Warlock" x="26" y="25" z="13" spawntime="120"/>
+    <monster name="Warlock" x="-5" y="29" z="13" spawntime="120"/>
   </spawn>
   <spawn centerx="1412" centery="1439" centerz="13" radius="30">
-    <monster name="Warlock" x="-11" y="-20" z="13" spawntime="20"/>
-    <monster name="Warlock" x="-20" y="-14" z="13" spawntime="20"/>
+    <monster name="Warlock" x="-11" y="-19" z="13" spawntime="120"/>
+    <monster name="Warlock" x="-20" y="-18" z="13" spawntime="120"/>
+    <monster name="Warlock" x="15" y="-12" z="13" spawntime="120"/>
     <monster name="Elf Arcanist" x="-15" y="4" z="13" spawntime="20"/>
     <monster name="Warlock" x="-13" y="9" z="13" spawntime="20"/>
+    <monster name="Warlock" x="14" y="9" z="13" spawntime="120"/>
   </spawn>
   <spawn centerx="1401" centery="1510" centerz="13" radius="30">
-    <monster name="Warlock" x="-4" y="-20" z="13" spawntime="20"/>
     <monster name="Elf Arcanist" x="-25" y="-17" z="13" spawntime="20"/>
     <monster name="Elf Arcanist" x="17" y="-16" z="13" spawntime="20"/>
     <monster name="Elf Arcanist" x="-4" y="-13" z="13" spawntime="20"/>
     <monster name="Elf Arcanist" x="-4" y="8" z="13" spawntime="20"/>
     <monster name="Elf Arcanist" x="-5" y="16" z="13" spawntime="20"/>
     <monster name="Elf Arcanist" x="12" y="17" z="13" spawntime="20"/>
-    <monster name="Dwarf Guard" x="24" y="17" z="13" spawntime="20"/>
-    <monster name="Dwarf Guard" x="4" y="18" z="13" spawntime="20"/>
-    <monster name="Dwarf Guard" x="19" y="18" z="13" spawntime="20"/>
     <monster name="Dwarf Guard" x="12" y="19" z="13" spawntime="20"/>
     <monster name="Elf Arcanist" x="3" y="20" z="13" spawntime="20"/>
-    <monster name="Dwarf Guard" x="7" y="20" z="13" spawntime="20"/>
     <monster name="Elf Arcanist" x="12" y="20" z="13" spawntime="20"/>
     <monster name="Dwarf Guard" x="17" y="20" z="13" spawntime="20"/>
-    <monster name="Elf Arcanist" x="27" y="20" z="13" spawntime="20"/>
-    <monster name="Elf Arcanist" x="20" y="21" z="13" spawntime="20"/>
     <monster name="Dwarf Guard" x="24" y="21" z="13" spawntime="20"/>
   </spawn>
   <spawn centerx="2539" centery="1669" centerz="13" radius="5">
@@ -19271,8 +19271,8 @@
   </spawn>
   <spawn centerx="2882" centery="1232" centerz="15" radius="5">
     <monster name="Vampire" x="0" y="-3" z="15" spawntime="60"/>
-    <monster name="Grim Reaper" x="3" y="-2" z="15" spawntime="0"/>
-    <monster name="Grim Reaper" x="3" y="0" z="15" spawntime="0"/>
+    <monster name="Grim Reaper" x="3" y="-2" z="15" spawntime="60"/>
+    <monster name="Grim Reaper" x="3" y="0" z="15" spawntime="60"/>
   </spawn>
   <spawn centerx="1980" centery="1265" centerz="15" radius="30">
     <monster name="Anamelech" x="15" y="-3" z="15" spawntime="60"/>
@@ -19284,8 +19284,8 @@
     <monster name="Zepar" x="3" y="13" z="15" spawntime="60"/>
   </spawn>
   <spawn centerx="2886" centery="1287" centerz="15" radius="1">
-    <monster name="Grim Reaper" x="1" y="-1" z="15" spawntime="0"/>
-    <monster name="Grim Reaper" x="-1" y="1" z="15" spawntime="0"/>
+    <monster name="Grim Reaper" x="-1" y="-1" z="15" spawntime="60"/>
+    <monster name="Grim Reaper" x="-1" y="1" z="15" spawntime="60"/>
     <monster name="Vampire" x="0" y="1" z="15" spawntime="60"/>
   </spawn>
   <spawn centerx="1988" centery="1813" centerz="15" radius="1">
