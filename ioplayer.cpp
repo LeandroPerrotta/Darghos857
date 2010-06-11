@@ -830,6 +830,7 @@ int32_t IOPlayer::getPlayerUnjustKillCount(const Player* player, UnjustKillPerio
 	query << "`players` on `players`.`id` = `player_deaths`.`player_id` ";
 	query << "WHERE ";
 	query << "`player_killers`.`player_id` = " << player->getGUID() << " "
+		<< "AND " << "`player_killers`.`enabled` = " << " 1 "
 		<< "AND " << "`player_killers`.`unjustified` = " << " 1 "
 		<< "AND " << date  << " < `player_deaths`.`date` "
 		<< "ORDER BY `player_deaths`.`date` ASC";
@@ -1088,3 +1089,27 @@ bool IOPlayer::cleanOnlineInfo()
 	DBQuery query;
 	return db->executeQuery("UPDATE `players` SET `online` = 0");
 }
+
+//[[--Darghos
+void IOPlayer::removePlayerLastFrag(const Player* player)
+{
+	//clean cache, so next getPlayerUnjustKillCount gets value
+	//from database, not from cache
+	UnjustCacheMap::iterator it = unjustKillCacheMap.find(player->getGUID());
+	if(it != unjustKillCacheMap.end()){
+		unjustKillCacheMap.erase(it);
+	}
+
+	//remove from database last frag
+	Database* db = Database::instance();
+	DBQuery query;
+
+	query << "UPDATE `player_killers` SET `enabled` = 0 "
+			<< "LEFT JOIN `killers` ON `killers`.`id` = `player_killers`.`kill_id` "
+			<< "LEFT JOIN `player_deaths` ON `player_deaths`.`id` = `killers`.`death_id` "
+			<< "WHERE `player_killers`.`player_id` = " << player->getGUID() << " "
+			<< "ORDER BY `player_deaths`.`date` DESC LIMIT 1";
+
+	db->executeQuery(query.str());
+}
+//--]]

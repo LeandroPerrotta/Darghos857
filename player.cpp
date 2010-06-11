@@ -4322,50 +4322,9 @@ void Player::addUnjustifiedDead(const Player* attacked)
 		lastSkullTime = std::time(NULL);
 	}
 
-	//day
-	int32_t unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, UNJUST_KILL_PERIOD_DAY);
-	if(g_config.getNumber(ConfigManager::KILLS_PER_DAY_BLACK_SKULL) > 0 &&
-		g_config.getNumber(ConfigManager::KILLS_PER_DAY_BLACK_SKULL) <= unjustKills){
-		setSkull(SKULL_BLACK);
-	}
-	else if(getSkull() != SKULL_BLACK &&
-			g_config.getNumber(ConfigManager::KILLS_PER_DAY_RED_SKULL) > 0 &&
-			g_config.getNumber(ConfigManager::KILLS_PER_DAY_RED_SKULL) <= unjustKills){
-		setSkull(SKULL_RED);
-	}
-
-	//week
-	unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, UNJUST_KILL_PERIOD_WEEK);
-	if(g_config.getNumber(ConfigManager::KILLS_PER_WEEK_BLACK_SKULL) > 0 &&
-		g_config.getNumber(ConfigManager::KILLS_PER_WEEK_BLACK_SKULL) <= unjustKills){
-		setSkull(SKULL_BLACK);
-	}
-	else if(getSkull() != SKULL_BLACK &&
-			g_config.getNumber(ConfigManager::KILLS_PER_WEEK_RED_SKULL) > 0 &&
-			g_config.getNumber(ConfigManager::KILLS_PER_WEEK_RED_SKULL) <= unjustKills){
-		setSkull(SKULL_RED);
-	}
-
-	//month
-	unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, UNJUST_KILL_PERIOD_MONTH);
-	if(g_config.getNumber(ConfigManager::KILLS_PER_MONTH_BLACK_SKULL) > 0 &&
-		g_config.getNumber(ConfigManager::KILLS_PER_MONTH_BLACK_SKULL) <= unjustKills){
-		setSkull(SKULL_BLACK);
-	}
-	else if(getSkull() != SKULL_BLACK &&
-			g_config.getNumber(ConfigManager::KILLS_PER_MONTH_RED_SKULL) > 0 &&
-			g_config.getNumber(ConfigManager::KILLS_PER_MONTH_RED_SKULL) <= unjustKills){
-		setSkull(SKULL_RED);
-	}
-
-	if(oldSkull != getSkull()){
-		lastSkullTime = std::time(NULL);
-		g_game.updateCreatureSkull(this);
-		if(getSkull() == SKULL_BLACK){
-			setAttackedCreature(NULL);
-			destroySummons();
-		}
-	}
+	//[[--Darghos
+	checkSkullUpdate();
+	//--]]
 }
 
 void Player::checkSkullTicks(int32_t ticks)
@@ -4688,3 +4647,67 @@ bool Player::onLookEvent(Thing* target, uint32_t itemId)
 
 	return true;
 }
+
+//[[--Darghos
+void Player::checkSkullUpdate()
+{
+	Skulls_t oldSkull = getSkull();
+	setSkull(SKULL_NONE);
+
+	//day
+	int32_t unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, UNJUST_KILL_PERIOD_DAY);
+	if(g_config.getNumber(ConfigManager::KILLS_PER_DAY_BLACK_SKULL) > 0 &&
+		g_config.getNumber(ConfigManager::KILLS_PER_DAY_BLACK_SKULL) <= unjustKills){
+		setSkull(SKULL_BLACK);
+	}
+	else if(getSkull() != SKULL_BLACK &&
+			g_config.getNumber(ConfigManager::KILLS_PER_DAY_RED_SKULL) > 0 &&
+			g_config.getNumber(ConfigManager::KILLS_PER_DAY_RED_SKULL) <= unjustKills){
+		setSkull(SKULL_RED);
+	}
+
+	//week
+	unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, UNJUST_KILL_PERIOD_WEEK);
+	if(g_config.getNumber(ConfigManager::KILLS_PER_WEEK_BLACK_SKULL) > 0 &&
+		g_config.getNumber(ConfigManager::KILLS_PER_WEEK_BLACK_SKULL) <= unjustKills){
+		setSkull(SKULL_BLACK);
+	}
+	else if(getSkull() != SKULL_BLACK &&
+			g_config.getNumber(ConfigManager::KILLS_PER_WEEK_RED_SKULL) > 0 &&
+			g_config.getNumber(ConfigManager::KILLS_PER_WEEK_RED_SKULL) <= unjustKills){
+		setSkull(SKULL_RED);
+	}
+
+	//month
+	unjustKills = IOPlayer::instance()->getPlayerUnjustKillCount(this, UNJUST_KILL_PERIOD_MONTH);
+	if(g_config.getNumber(ConfigManager::KILLS_PER_MONTH_BLACK_SKULL) > 0 &&
+		g_config.getNumber(ConfigManager::KILLS_PER_MONTH_BLACK_SKULL) <= unjustKills){
+		setSkull(SKULL_BLACK);
+	}
+	else if(getSkull() != SKULL_BLACK &&
+			g_config.getNumber(ConfigManager::KILLS_PER_MONTH_RED_SKULL) > 0 &&
+			g_config.getNumber(ConfigManager::KILLS_PER_MONTH_RED_SKULL) <= unjustKills){
+		setSkull(SKULL_RED);
+	}
+
+	bool updateClient = false;
+	if(getSkull() != SKULL_NONE && oldSkull != getSkull()){
+		lastSkullTime = std::time(NULL);
+		if(getSkull() == SKULL_BLACK){
+			setAttackedCreature(NULL);
+			destroySummons();
+		}
+
+		updateClient = true;
+	}
+	else if(getSkull() == SKULL_NONE && oldSkull != SKULL_NONE){
+		if(oldSkull == SKULL_WHITE)
+			setSkull(SKULL_WHITE)
+
+		updateClient = true;
+	}
+
+	if(updateClient)
+		g_game.updateCreatureSkull(this);
+}
+//--]]

@@ -1913,6 +1913,9 @@ void LuaScriptInterface::registerFunctions()
 	//[[--Darghos
 	//doUpdateCreatureImpassable(cid)
 	lua_register(m_luaState, "doUpdateCreatureImpassable", LuaScriptInterface::luaDoUpdateCreatureImpassable);
+
+	//doPlayerRemoveLastFrag(cid)
+	lua_register(m_luaState, "doPlayerRemoveLastFrag", LuaScriptInterface::luaDoPlayerRemoveLastFrag);
 	//--]]
 }
 
@@ -8655,6 +8658,26 @@ int LuaScriptInterface::luaDoUpdateCreatureImpassable(lua_State *L)
 	}
 	else{
 		reportErrorFunc(getErrorDesc(LUA_ERROR_CREATURE_NOT_FOUND));
+		lua_pushnumber(L, LUA_ERROR);
+	}
+
+	return 1;
+}
+
+int LuaScriptInterface::luaDoPlayerRemoveLastFrag(lua_State *L)
+{
+	//doPlayerRemoveLastFrag(cid)
+	uint32_t cid = popNumber(L);
+
+	ScriptEnviroment* env = getScriptEnv();
+
+	if(Player* player = env->getPlayerByUID(cid)){
+		IOPlayer::instance()->removePlayerLastFrag(player);
+		player->checkSkullUpdate();
+		lua_pushnumber(L, LUA_NO_ERROR);
+	}
+	else{
+		reportErrorFunc(getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
 		lua_pushnumber(L, LUA_ERROR);
 	}
 

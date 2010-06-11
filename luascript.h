@@ -674,6 +674,7 @@ protected:
 
 	//[[--Darghos
 	static int luaDoUpdateCreatureImpassable(lua_State *L);
+	static int luaDoPlayerRemoveLastFrag(lua_State *L);
 	//--]]
 
 private:

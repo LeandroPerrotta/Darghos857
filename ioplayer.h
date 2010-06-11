@@ -77,6 +77,10 @@ public:
 	void updateLogoutInfo(Player* player);
 	bool cleanOnlineInfo();
 
+	//[[--Darghos
+	void removePlayerLastFrag(const Player* player);
+	//--]]
+
 protected:
 	bool storeNameByGuid(Database &mysql, uint32_t guid);
 
