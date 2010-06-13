@@ -59,6 +59,10 @@ public:
 
 	DATABASE_VIRTUAL void freeResult(DBResult *res);
 
+	//[[--Darghos
+	DATABASE_VIRTUAL uint64_t getAffectedRows();
+	//--]]
+
 protected:
 	MYSQL m_handle;
 };

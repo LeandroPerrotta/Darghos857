@@ -34,6 +34,11 @@ extern ConfigManager g_config;
 
 DatabasePgSQL::DatabasePgSQL()
 {
+	//[[--Darghos
+	//No query yet executed
+	lastAffectedRows = -1;
+	//--]]
+
 	// load connection parameters
 	std::stringstream dns;
 	dns << "host='" << g_config.getString(ConfigManager::SQL_HOST) << "' dbname='" << g_config.getString(ConfigManager::SQL_DB) << "' user='" << g_config.getString(ConfigManager::SQL_USER) << "' password='" << g_config.getString(ConfigManager::SQL_PASS) << "' port='" << g_config.getNumber(ConfigManager::SQL_PORT) << "'";
@@ -78,6 +83,10 @@ bool DatabasePgSQL::commit()
 
 bool DatabasePgSQL::executeQuery(const std::string &query)
 {
+	//[[--Darghos
+	//Changes were made here
+	//--]]
+
 	if(!m_connected)
 		return false;
 
@@ -90,18 +99,24 @@ bool DatabasePgSQL::executeQuery(const std::string &query)
 	ExecStatusType stat = PQresultStatus(res);
 
 	if(stat != PGRES_COMMAND_OK && stat != PGRES_TUPLES_OK){
+		lastAffectedRows = -1;
 		std::cout << "PQexec(): " << query << ": " << PQresultErrorMessage(res) << std::endl;
 		PQclear(res);
 		return false;
 	}
 
 	// everything went fine
+	lastAffectedRows = ATOI64(PQcmdTuples(res));
 	PQclear(res);
 	return true;
 }
 
 DBResult* DatabasePgSQL::storeQuery(const std::string &query)
 {
+	//[[--Darghos
+	//Changes were made here
+	//--]]
+
 	if(!m_connected)
 		return NULL;
 
@@ -114,12 +129,14 @@ DBResult* DatabasePgSQL::storeQuery(const std::string &query)
 	ExecStatusType stat = PQresultStatus(res);
 
 	if(stat != PGRES_COMMAND_OK && stat != PGRES_TUPLES_OK){
+		lastAffectedRows = -1;
 		std::cout << "PQexec(): " << query << ": " << PQresultErrorMessage(res) << std::endl;
 		PQclear(res);
 		return false;
 	}
 
 	// everything went fine
+	lastAffectedRows = ATOI64(PQcmdTuples(res));
 	DBResult* results = new PgSQLResult(res);
 	return verifyResult(results);
 }

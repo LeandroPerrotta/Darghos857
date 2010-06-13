@@ -92,7 +92,7 @@ DatabaseMySQL::~DatabaseMySQL()
 bool DatabaseMySQL::getParam(DBParam_t param)
 {
 	switch(param){
-		case DBPARAM_MULTIINSERT: 
+		case DBPARAM_MULTIINSERT:
 			return true;
 			break;
 		default:
@@ -335,5 +335,12 @@ MySQLResult::~MySQLResult()
 {
 	mysql_free_result(m_handle);
 }
+
+//[[--Darghos
+uint64_t DatabaseMySQL::getAffectedRows()
+{
+	return (uint64_t)mysql_affected_rows(&m_handle);
+}
+//--]]
 
 #endif

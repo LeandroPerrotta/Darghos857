@@ -1914,8 +1914,8 @@ void LuaScriptInterface::registerFunctions()
 	//doUpdateCreatureImpassable(cid)
 	lua_register(m_luaState, "doUpdateCreatureImpassable", LuaScriptInterface::luaDoUpdateCreatureImpassable);
 
-	//doPlayerRemoveLastFrag(cid)
-	lua_register(m_luaState, "doPlayerRemoveLastFrag", LuaScriptInterface::luaDoPlayerRemoveLastFrag);
+	//doPlayerRemoveLastFrags(cid, count, time)
+	lua_register(m_luaState, "doPlayerRemoveLastFrags", LuaScriptInterface::luaDoPlayerRemoveLastFrags);
 	//--]]
 }
 
@@ -8664,17 +8664,27 @@ int LuaScriptInterface::luaDoUpdateCreatureImpassable(lua_State *L)
 	return 1;
 }
 
-int LuaScriptInterface::luaDoPlayerRemoveLastFrag(lua_State *L)
+int LuaScriptInterface::luaDoPlayerRemoveLastFrags(lua_State *L)
 {
-	//doPlayerRemoveLastFrag(cid)
+	//doPlayerRemoveLastFrags(cid, count, time)
+	uint32_t time = popNumber(L);
+	uint32_t count = popNumber(L);
 	uint32_t cid = popNumber(L);
 
 	ScriptEnviroment* env = getScriptEnv();
 
 	if(Player* player = env->getPlayerByUID(cid)){
-		IOPlayer::instance()->removePlayerLastFrag(player);
-		player->checkSkullUpdate();
-		lua_pushnumber(L, LUA_NO_ERROR);
+		int64_t fragsRemoved = IOPlayer::instance()->removePlayerLastFrags(player, count, time_t(std::time(NULL) - time));
+		if(fragsRemoved == -1){
+			reportErrorFunc("Could not run query to remove player frag.");
+			lua_pushnumber(L, LUA_ERROR);
+		}
+		else{
+			if(fragsRemoved > 0)
+				player->checkSkullUpdate(true);
+
+			lua_pushnumber(L, fragsRemoved);
+		}
 	}
 	else{
 		reportErrorFunc(getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));

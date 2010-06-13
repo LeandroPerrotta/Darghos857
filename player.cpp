@@ -4317,13 +4317,12 @@ void Player::addUnjustifiedDead(const Player* attacked)
 	msg << "Warning! The murder of " << attacked->getName() << " was not justified.";
 	sendTextMessage(MSG_STATUS_WARNING, msg.str());
 
-	Skulls_t oldSkull = getSkull();
-	if(oldSkull == SKULL_RED || oldSkull == SKULL_BLACK){
+	if(getSkull() == SKULL_RED || getSkull() == SKULL_BLACK){
 		lastSkullTime = std::time(NULL);
 	}
 
 	//[[--Darghos
-	checkSkullUpdate();
+	checkSkullUpdate(false);
 	//--]]
 }
 
@@ -4649,8 +4648,9 @@ bool Player::onLookEvent(Thing* target, uint32_t itemId)
 }
 
 //[[--Darghos
-void Player::checkSkullUpdate()
+void Player::checkSkullUpdate(bool isRemoving)
 {
+	//store skull values
 	Skulls_t oldSkull = getSkull();
 	setSkull(SKULL_NONE);
 
@@ -4690,24 +4690,23 @@ void Player::checkSkullUpdate()
 		setSkull(SKULL_RED);
 	}
 
-	bool updateClient = false;
+	//update client and do some stuff
 	if(getSkull() != SKULL_NONE && oldSkull != getSkull()){
-		lastSkullTime = std::time(NULL);
-		if(getSkull() == SKULL_BLACK){
-			setAttackedCreature(NULL);
-			destroySummons();
+		if(!isRemoving){
+			lastSkullTime = std::time(NULL);
+			if(getSkull() == SKULL_BLACK){
+				setAttackedCreature(NULL);
+				destroySummons();
+			}
 		}
-
-		updateClient = true;
 	}
 	else if(getSkull() == SKULL_NONE && oldSkull != SKULL_NONE){
-		if(oldSkull == SKULL_WHITE)
-			setSkull(SKULL_WHITE)
-
-		updateClient = true;
+		lastSkullTime = 0;
+		if(oldSkull == SKULL_WHITE || hasCondition(CONDITION_INFIGHT))
+			setSkull(SKULL_WHITE);
 	}
 
-	if(updateClient)
+	if(getSkull() != oldSkull)
 		g_game.updateCreatureSkull(this);
 }
 //--]]

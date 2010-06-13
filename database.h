@@ -173,6 +173,15 @@ public:
 	*/
 	DATABASE_VIRTUAL void freeResult(DBResult *res) {};
 
+	//[[--Darghos
+	/**
+	 * Returns affected rows
+	 *
+	 * @return number of affected rows of last query (UPDATE, DELETE..)
+	 */
+	DATABASE_VIRTUAL uint64_t getAffectedRows() {return 0;}
+	//--]]
+
 protected:
 	_Database() : m_connected(false) {};
 	DATABASE_VIRTUAL ~_Database() {};

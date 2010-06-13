@@ -53,6 +53,10 @@ public:
 
 	DATABASE_VIRTUAL void freeResult(DBResult *res);
 
+	//[[--Darghos
+	DATABASE_VIRTUAL uint64_t getAffectedRows();
+	//--]]
+
 protected:
 	std::string _parse(const std::string &s);
 

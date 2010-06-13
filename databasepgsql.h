@@ -51,10 +51,18 @@ public:
 
 	DATABASE_VIRTUAL void freeResult(DBResult *res);
 
+	//[[--Darghos
+	DATABASE_VIRTUAL uint64_t getAffectedRows(){return (uint64_t)lastAffectedRows;}
+	//--]]
+
 protected:
 	std::string _parse(const std::string &s);
 
 	PGconn* m_handle;
+
+	//[[--Darghos
+	int64_t lastAffectedRows;
+	//--]]
 };
 
 class PgSQLResult : public _DBResult

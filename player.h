@@ -680,7 +680,7 @@ public:
 	//[[--Darghos
 	void sendCreatureImpassable(const Creature* creature)
 		{if(client) client->sendCreatureImpassable(creature);}
-	void checkSkullUpdate();
+	void checkSkullUpdate(bool isRemoving);
 	//--]]
 
 protected:

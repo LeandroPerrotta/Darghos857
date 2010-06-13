@@ -291,4 +291,11 @@ SQLiteResult::~SQLiteResult()
 	sqlite3_finalize(m_handle);
 }
 
+//[[--Darghos
+uint64_t DatabaseSQLite::getAffectedRows()
+{
+	return (uint64_t)sqlite3_changes(m_handle);
+}
+//--]]
+
 #endif
