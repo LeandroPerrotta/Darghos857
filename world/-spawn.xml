@@ -5804,11 +5804,14 @@
     <monster name="Amazon" x="5" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1251" centery="2204" centerz="7" radius="1">
-    <npc name="isle_of_peace.distance" x="-1" y="0" z="7" spawntime="10"/>
+    <npc name="isle_of_peace.distance" x="0" y="1" z="7" spawntime="10"/>
   </spawn>
   <spawn centerx="1229" centery="2205" centerz="7" radius="2">
     <monster name="Deer" x="-2" y="-2" z="7" spawntime="10"/>
     <monster name="Deer" x="0" y="1" z="7" spawntime="10"/>
+  </spawn>
+  <spawn centerx="1258" centery="2205" centerz="7" radius="1">
+    <npc name="isle_of_peace.bank" x="0" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1270" centery="2205" centerz="7" radius="2">
     <monster name="Deer" x="-1" y="1" z="7" spawntime="10"/>
@@ -9026,8 +9029,7 @@
     <monster name="Skeleton" x="-2" y="2" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1247" centery="2193" centerz="8" radius="5">
-    <monster name="Troll" x="0" y="-3" z="8" spawntime="60"/>
-    <monster name="Troll" x="-3" y="-2" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="-2" y="-2" z="8" spawntime="60"/>
     <monster name="Troll" x="-5" y="1" z="8" spawntime="60"/>
     <monster name="Troll" x="2" y="1" z="8" spawntime="60"/>
   </spawn>
@@ -9040,9 +9042,7 @@
   <spawn centerx="1223" centery="2205" centerz="8" radius="5">
     <monster name="Troll" x="-2" y="-3" z="8" spawntime="60"/>
     <monster name="Troll" x="2" y="-2" z="8" spawntime="60"/>
-    <monster name="Troll" x="-4" y="0" z="8" spawntime="60"/>
-    <monster name="Troll" x="-1" y="0" z="8" spawntime="60"/>
-    <monster name="Troll" x="-3" y="3" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="-1" y="0" z="8" spawntime="60"/>
     <monster name="Troll" x="3" y="3" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1239" centery="2208" centerz="8" radius="5">
@@ -9050,9 +9050,9 @@
     <monster name="Rotworm" x="2" y="1" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1215" centery="2212" centerz="8" radius="5">
-    <monster name="Troll" x="-2" y="-2" z="8" spawntime="60"/>
     <monster name="Troll" x="-4" y="-1" z="8" spawntime="60"/>
-    <monster name="Troll" x="3" y="2" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="-1" y="-1" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="1" y="1" z="8" spawntime="60"/>
     <monster name="Troll" x="1" y="3" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1263" centery="2213" centerz="8" radius="5">
@@ -9079,17 +9079,16 @@
   </spawn>
   <spawn centerx="1203" centery="2227" centerz="8" radius="5">
     <monster name="Troll" x="0" y="-3" z="8" spawntime="60"/>
-    <monster name="Troll" x="-3" y="0" z="8" spawntime="60"/>
-    <monster name="Troll" x="3" y="0" z="8" spawntime="60"/>
-    <monster name="Troll" x="2" y="2" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="-2" y="-1" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="2" y="1" z="8" spawntime="60"/>
     <monster name="Troll" x="-3" y="3" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1274" centery="2236" centerz="8" radius="5">
-    <monster name="Troll" x="-5" y="-3" z="8" spawntime="60"/>
-    <monster name="Troll" x="2" y="-3" z="8" spawntime="60"/>
-    <monster name="Troll" x="-2" y="1" z="8" spawntime="60"/>
+    <monster name="Troll" x="1" y="-3" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="-4" y="-1" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="-1" y="-1" z="8" spawntime="60"/>
     <monster name="Troll" x="-4" y="3" z="8" spawntime="60"/>
-    <monster name="Troll" x="0" y="4" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="1" y="3" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1216" centery="2240" centerz="8" radius="5">
     <monster name="Troll" x="1" y="-3" z="8" spawntime="60"/>
@@ -9110,15 +9109,13 @@
     <monster name="Dwarf" x="-1" y="6" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1253" centery="2248" centerz="8" radius="5">
-    <monster name="Troll" x="0" y="-3" z="8" spawntime="60"/>
-    <monster name="Troll" x="-3" y="0" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="-1" y="-2" z="8" spawntime="60"/>
     <monster name="Troll" x="2" y="0" z="8" spawntime="60"/>
-    <monster name="Troll" x="-2" y="2" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="-1" y="2" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1225" centery="2249" centerz="8" radius="5">
-    <monster name="Troll" x="-1" y="-2" z="8" spawntime="60"/>
     <monster name="Troll" x="-4" y="1" z="8" spawntime="60"/>
-    <monster name="Troll" x="-1" y="2" z="8" spawntime="60"/>
+    <monster name="Troll Champion" x="-1" y="1" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1191" centery="2251" centerz="8" radius="5">
     <monster name="Dragon" x="-1" y="-2" z="8" spawntime="60"/>
@@ -15356,6 +15353,7 @@
     <monster name="Destroyer" x="-3" y="6" z="10" spawntime="10"/>
   </spawn>
   <spawn centerx="1199" centery="2199" centerz="10" radius="5">
+    <monster name="Carrion Worm" x="-4" y="-4" z="10" spawntime="60"/>
     <monster name="Rotworm" x="0" y="-2" z="10" spawntime="60"/>
     <monster name="Rotworm" x="-1" y="2" z="10" spawntime="60"/>
   </spawn>
@@ -15363,8 +15361,10 @@
     <monster name="Rotworm" x="1" y="-1" z="10" spawntime="60"/>
     <monster name="Rotworm" x="-1" y="1" z="10" spawntime="60"/>
     <monster name="Rotworm" x="3" y="1" z="10" spawntime="60"/>
+    <monster name="Carrion Worm" x="1" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1212" centery="2201" centerz="10" radius="5">
+    <monster name="Carrion Worm" x="0" y="-2" z="10" spawntime="60"/>
     <monster name="Rotworm" x="1" y="-1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1204" centery="2215" centerz="10" radius="5">
@@ -15378,6 +15378,7 @@
   </spawn>
   <spawn centerx="1252" centery="2222" centerz="10" radius="5">
     <monster name="Rotworm" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Carrion Worm" x="-1" y="0" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1218" centery="2228" centerz="10" radius="5">
     <monster name="Rotworm" x="-3" y="-4" z="10" spawntime="60"/>
@@ -15445,6 +15446,7 @@
   <spawn centerx="1264" centery="2237" centerz="10" radius="5">
     <monster name="Rotworm" x="0" y="-2" z="10" spawntime="60"/>
     <monster name="Rotworm" x="-2" y="1" z="10" spawntime="60"/>
+    <monster name="Carrion Worm" x="2" y="1" z="10" spawntime="60"/>
     <monster name="Rotworm" x="3" y="4" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1245" centery="2243" centerz="10" radius="5">
@@ -15459,6 +15461,7 @@
   </spawn>
   <spawn centerx="1239" centery="2258" centerz="10" radius="5">
     <monster name="Rotworm" x="1" y="-2" z="10" spawntime="60"/>
+    <monster name="Carrion Worm" x="2" y="0" z="10" spawntime="60"/>
     <monster name="Rotworm" x="1" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1285" centery="2258" centerz="10" radius="10">
@@ -15478,6 +15481,7 @@
   <spawn centerx="1216" centery="2261" centerz="10" radius="5">
     <monster name="Rotworm" x="-2" y="-2" z="10" spawntime="60"/>
     <monster name="Rotworm" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Carrion Worm" x="-1" y="0" z="10" spawntime="60"/>
     <monster name="Rotworm" x="1" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1805" centery="2282" centerz="10" radius="5">
@@ -16928,31 +16932,30 @@
   <spawn centerx="1185" centery="2169" centerz="11" radius="5">
     <monster name="Rotworm" x="-1" y="-1" z="11" spawntime="60"/>
     <monster name="Rotworm" x="0" y="0" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-2" y="2" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-2" y="2" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="1241" centery="2186" centerz="11" radius="30">
-    <monster name="Rotworm" x="13" y="-23" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="12" y="-21" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="13" y="-22" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="12" y="-21" z="11" spawntime="60"/>
     <monster name="Rotworm" x="10" y="-19" z="11" spawntime="60"/>
     <monster name="Rotworm" x="9" y="-11" z="11" spawntime="60"/>
     <monster name="Rotworm" x="10" y="-9" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-8" y="-6" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-10" y="-5" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-7" y="-5" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-9" y="-3" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-30" y="-1" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-7" y="-5" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-9" y="-3" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-30" y="0" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-28" y="2" z="11" spawntime="60"/>
     <monster name="Rotworm" x="16" y="3" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="28" y="3" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="29" y="5" z="11" spawntime="1024"/>
-    <monster name="Rotworm" x="30" y="5" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="28" y="3" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="28" y="5" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-24" y="10" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-2" y="12" z="11" spawntime="60"/>
     <monster name="Rotworm" x="1" y="12" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-3" y="16" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="0" y="16" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-27" y="18" z="11" spawntime="60"/>
     <monster name="Rotworm" x="2" y="18" z="11" spawntime="60"/>
     <monster name="Rotworm" x="11" y="23" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="10" y="25" z="11" spawntime="60"/>
     <monster name="Rotworm" x="11" y="26" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-10" y="30" z="11" spawntime="60"/>
   </spawn>
@@ -16960,59 +16963,56 @@
     <monster name="Rotworm" x="-19" y="-19" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-16" y="-17" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-14" y="-15" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="13" y="-15" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="13" y="-15" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-20" y="-10" z="11" spawntime="60"/>
     <monster name="Rotworm" x="2" y="-4" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-22" y="-3" z="11" spawntime="60"/>
     <monster name="Rotworm" x="4" y="-3" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-21" y="-1" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-1" y="0" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="0" y="0" z="11" spawntime="60"/>
     <monster name="Rotworm" x="14" y="7" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-22" y="8" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-24" y="9" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-25" y="10" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-23" y="8" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-24" y="10" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-2" y="10" z="11" spawntime="60"/>
     <monster name="Rotworm" x="0" y="13" z="11" spawntime="60"/>
     <monster name="Rotworm" x="30" y="20" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="5" y="21" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="4" y="23" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="4" y="22" z="11" spawntime="60"/>
     <monster name="Rotworm" x="2" y="24" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="19" y="25" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="18" y="26" z="11" spawntime="60"/>
     <monster name="Rotworm" x="17" y="27" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="18" y="29" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="18" y="29" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="1229" centery="2214" centerz="11" radius="30">
-    <monster name="Rotworm" x="-2" y="12" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-2" y="13" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-1" y="15" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="10" y="19" z="11" spawntime="60"/>
     <monster name="Rotworm" x="7" y="20" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="5" y="21" z="11" spawntime="60"/>
     <monster name="Rotworm" x="6" y="22" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-19" y="30" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="1274" centery="2220" centerz="11" radius="30">
-    <monster name="Rotworm" x="8" y="-21" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="9" y="-19" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="8" y="-21" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="10" y="-19" z="11" spawntime="60"/>
     <monster name="Rotworm" x="7" y="-18" z="11" spawntime="60"/>
     <monster name="Rotworm" x="13" y="-11" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="1" y="-10" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="2" y="-10" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-1" y="-9" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="2" y="-8" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="1" y="-8" z="11" spawntime="60"/>
     <monster name="Rotworm" x="15" y="-8" z="11" spawntime="60"/>
     <monster name="Rotworm" x="24" y="-7" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="21" y="-6" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="21" y="-6" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-2" y="-4" z="11" spawntime="60"/>
     <monster name="Rotworm" x="11" y="0" z="11" spawntime="60"/>
     <monster name="Rotworm" x="7" y="1" z="11" spawntime="60"/>
     <monster name="Rotworm" x="3" y="11" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-13" y="12" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-7" y="15" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="15" y="16" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-11" y="18" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="17" y="18" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="18" y="20" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-7" y="15" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="15" y="15" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-11" y="17" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="15" y="17" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="18" y="19" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-15" y="27" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-29" y="28" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-30" y="29" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-28" y="30" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-29" y="29" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="1405" centery="2238" centerz="11" radius="30">
     <monster name="Dwarf Guard" x="-2" y="-19" z="11" spawntime="60"/>
@@ -17089,32 +17089,29 @@
   <spawn centerx="1254" centery="2259" centerz="11" radius="30">
     <monster name="Rotworm" x="-16" y="-12" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-26" y="-7" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="4" y="-5" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="6" y="-2" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-9" y="8" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-10" y="12" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="5" y="-3" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-9" y="9" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-10" y="12" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-23" y="15" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-18" y="15" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-23" y="18" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-27" y="28" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-29" y="29" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-29" y="30" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="1201" centery="2261" centerz="11" radius="30">
-    <monster name="Rotworm" x="8" y="-15" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="7" y="-14" z="11" spawntime="60"/>
     <monster name="Rotworm" x="7" y="-10" z="11" spawntime="60"/>
     <monster name="Rotworm" x="15" y="-3" z="11" spawntime="60"/>
     <monster name="Rotworm" x="19" y="0" z="11" spawntime="60"/>
     <monster name="Rotworm" x="-6" y="1" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="17" y="1" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-14" y="4" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="-15" y="6" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="5" y="8" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="17" y="2" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-14" y="3" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="-15" y="6" z="11" spawntime="60"/>
     <monster name="Rotworm" x="7" y="8" z="11" spawntime="60"/>
     <monster name="Rotworm" x="5" y="10" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="6" y="18" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="5" y="20" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="7" y="21" z="11" spawntime="60"/>
-    <monster name="Rotworm" x="22" y="27" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="6" y="19" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="5" y="20" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="8" y="21" z="11" spawntime="60"/>
+    <monster name="Carrion Worm" x="22" y="26" z="11" spawntime="60"/>
   </spawn>
   <spawn centerx="1861" centery="2284" centerz="11" radius="5">
     <monster name="Demon" x="-2" y="2" z="11" spawntime="60"/>

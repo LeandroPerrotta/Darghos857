@@ -24,10 +24,10 @@ local quests =
 			rewardExp = 1800000,
 			rewardContainer = 5927,
 			rewardContainerItems = { 
-				{itemid = 6099, count = 1},
-				{itemid = 6100, count = 1},
-				{itemid = 6101, count = 1},
-				{itemid = 6102, count = 1}
+				{itemid = 6099, count = 1}, -- Brutus Bloodbeard's hat
+				{itemid = 6100, count = 1}, -- Lethal Lissy's shirt
+				{itemid = 6101, count = 1}, -- Ron the Ripper's sabre
+				{itemid = 6102, count = 1} -- Deadeye Devious' eye patch
 			}
 		},
 		
