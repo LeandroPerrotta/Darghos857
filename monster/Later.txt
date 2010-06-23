@@ -1,0 +1,27 @@
+-- Loot --
+Hellhound 
+Werewolf 
+Chakoya (all)
+Dwarfs
+Diabolic Imp
+Fire Devil
+Fury
+Hand of Cursed Fate
+Juggernaut
+Nightstalker
+Energy Overlord
+Earth Overlord
+Massive earth elemental
+Muddy earth elemental
+Yeti
+Goblin Leader
+Massive water elemental
+Lizard Snakecharmer
+Wyvern
+Badger
+Pharaos (all)
+
+-- Bosses -- 
+Apprentice Sheng
+Barbaria
+big boss trolliver

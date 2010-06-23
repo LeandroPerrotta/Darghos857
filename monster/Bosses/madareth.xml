@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Madareth" nameDescription="madareth" race="fire" experience="10000" speed="380" manacost="0">
+	<health now="55000" max="55000"/>
+	<look type="12" head="77" body="116" legs="82" feet="79" corpse="6068"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="1"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="85"/>
+		<flag runonhealth="0"/>
+	</flags>
+			<script>
+<event name="Inquisition"/>
+</script>
+	<attacks/>
+	<defenses armor="48" defense="46"/>
+	<elements>
+		<element icePercent="15"/>
+		<element deathPercent="-10"/>
+	</elements>
+	<immunities>
+		<immunity energy="1"/>
+		<immunity fire="1"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<voices interval="3000" chance="5">
+		<voice sentence="I am going to play with yourself!" yell="1"/>
+	</voices>
+	<loot>
+    <item id="2148" countmax="100" chance="45400" /><!-- gold coin -->
+    <item id="2148" countmax="54" chance="45400" /><!-- gold coin -->
+    <item id="9811" chance="42300" /><!-- rusty legs -->
+    <item id="5954" countmax="2" chance="12175" /><!-- demon horn -->
+    <item id="9808" chance="73075" /><!-- rusty armor -->
+    <item id="7443" chance="26900" /><!-- bullseye potion -->
+    <item id="2183" chance="23075" /><!-- hailstorm rod -->
+    <item id="7404" chance="12825" /><!-- assassin dagger -->
+    <item id="2169" chance="6400" /><!-- time ring -->
+    <item id="1988" chance="100000"><!-- bag -->
+        <inside>
+            <item id="7591" chance="32050" /><!-- great health potion -->
+            <item id="2152" countmax="30" chance="16375" /><!-- platinum coin -->
+            <item id="8473" chance="19225" /><!-- ultimate health potion -->
+            <item id="7440" chance="32050" /><!-- mastermind potion -->
+            <item id="2396" chance="16675" /><!-- ice rapier -->
+            <item id="6300" chance="21800" /><!-- death ring -->
+            <item id="6500" chance="7700" /><!-- demonic essence -->
+            <item id="8912" chance="14100" /><!-- springsprout rod -->
+            <item id="8472" chance="30750" /><!-- great spirit potion -->
+            <item id="7439" chance="25625" /><!-- berserk potion -->
+            <item id="2071" chance="14100" /><!-- lyre -->
+            <item id="8910" chance="20500" /><!-- underworld rod -->
+            <item id="2207" chance="8975" /><!-- sword ring -->
+            <item id="2072" chance="8975" /><!-- lute -->
+            <item id="2214" chance="14100" /><!-- ring of healing -->
+            <item id="3953" chance="14100" /><!-- war drum -->
+            <item id="2187" chance="12825" /><!-- wand of inferno -->
+            <item id="2377" chance="17950" /><!-- two handed sword -->
+            <item id="7386" chance="10250" /><!-- mercenary sword -->
+            <item id="2208" chance="8975" /><!-- axe ring -->
+            <item id="7590" chance="17950" /><!-- great mana potion -->
+            <item id="7449" chance="11550" /><!-- crystal sword -->
+            <item id="8920" chance="12825" /><!-- wand of starstorm -->
+            <item id="2168" chance="16675" /><!-- life ring -->
+            <item id="7407" chance="8975" /><!-- haunted blade -->
+            <item id="2213" chance="10250" /><!-- dwarven ring -->
+            <item id="7383" chance="7700" /><!-- relic sword -->
+            <item id="3952" chance="3850" /><!-- didgeridoo -->
+            <item id="7416" chance="12825" /><!-- bloody edge -->
+            <item id="2374" chance="6400" /><!-- wooden flute -->
+            <item id="3957" chance="3850" /><!-- war horn -->
+            <item id="2209" chance="6400" /><!-- club ring -->
+            <item id="8922" chance="7700" /><!-- wand of voodoo -->
+            <item id="7418" chance="1275" /><!-- nightmare blade -->
+        </inside>
+    </item>
+</loot>
+
+
+
+
+
+
+
+
+</monster>

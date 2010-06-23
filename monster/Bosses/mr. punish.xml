@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Mr. Punish" nameDescription="a mr. punish" race="undead" experience="9000" speed="470" manacost="0">
+	<health now="29400" max="29400"/>
+	<look type="234" corpse="6331"/>
+	<targetchange interval="2000" chance="5"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="50"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="2000"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="140" attack="150"/>
+		<attack name="physical" interval="2000" chance="25" range="6" min="0" max="-715">
+			<attribute key="shootEffect" value="throwingknife"/>
+		</attack>
+	</attacks>
+	<defenses armor="64" defense="72">
+		<defense name="healing" interval="1000" chance="12" min="475" max="650">
+			<attribute key="areaEffect" value="blueshimmer"/>
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity physical="0"/>
+		<immunity energy="1"/>
+		<immunity fire="1"/>
+		<immunity poison="1"/>
+		<immunity lifedrain="0"/>
+		<immunity paralyze="0"/>
+		<immunity outfit="0"/>
+		<immunity drunk="0"/>
+		<immunity invisible="1"/>
+	</immunities>
+	<loot>
+    <item id="2148" countmax="100" chance="47500" /><!-- gold coin -->
+    <item id="2148" countmax="7" chance="47500" /><!-- gold coin -->
+    <item id="6500" chance="100000" /><!-- demonic essence -->
+    <item id="5801" chance="12500" /><!-- key ring -->
+    <item id="9971" chance="41675" /><!-- gold ingot -->
+    <item id="2387" chance="33325" /><!-- double axe -->
+    <item id="5944" chance="100000" /><!-- soul orb -->
+    <item id="6537" chance="100000" /><!-- mr. punish's handcuffs -->
+    <item id="2152" countmax="4" chance="13550" /><!-- platinum coin -->
+    <item id="1987" chance="100000"><!-- bag -->
+        <inside>
+            <item id="7368" countmax="4" chance="6250" /><!-- assassin star -->
+            <item id="6492" chance="16675" /><!-- bat decoration -->
+            <item id="7590" chance="12500" /><!-- great mana potion -->
+            <item id="5480" chance="29175" /><!-- cat's paw -->
+            <item id="6300" chance="4175" /><!-- death ring -->
+            <item id="7591" chance="4150" /><!-- great health potion -->
+        </inside>
+    </item>
+</loot>
+
+
+
+
+
+
+
+
+</monster>
