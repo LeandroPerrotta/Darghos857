@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<monster name="Dark Eye" description="a Dark Eye" experience="4600" speed="280" race="blood">
+
+  <health now="4500" max="4500"/>
+
+  <strategy attack="100" defense="0"/>
+
+  <targetchange speed="10" chance="10"/>
+
+  <look type="256" head="0" body="0" legs="0" feet="0" addons="0" corpse="7256"/>
+
+  <flags>
+
+    <flag canpushitems="1"/>
+
+    <flag canpushcreatures="1"/>
+
+    <flag hostile="1"/>
+
+    <flag attackable="1"/>
+
+    <flag pushable="0"/>
+
+    <flag targetdistance="4"/>
+
+  </flags>
+
+  <attacks>
+
+    <attack name="melee" interval="2000" min="-40" max="-220"/>
+    <attack name="poison" interval="1800" chance="24" min="-120" max="-250">
+
+      <attribute key="shootEffect" value="poison"/>
+    </attack>
+    <attack name="fire" interval="1900" chance="30" min="-120" max="-250">
+
+      <attribute key="shootEffect" value="fire"/>
+    </attack>
+    <attack name="death" interval="2000" chance="32" min="-200" max="-320">
+
+      <attribute key="shootEffect" value="suddendeath"/>
+    </attack>
+      <attack name="death" interval="2100" chance="25" length="8" spread="3" min="-70" max="-350">
+
+      <attribute key="shootEffect" value="suddendeath"/>
+      <attribute key="areaEffect" value="mortarea"/>
+
+    </attack>
+  </attacks>
+
+  <defenses defense="30" armor="30">
+
+    <defense name="Light Healing" interval="5000" chance="80" min="100" max="180"/>
+
+  </defenses>
+
+  <immunities>
+
+    <immunity name="energy"/>
+
+    <immunity name="paralyze"/>
+
+    <immunity name="drunk"/>
+
+    <immunity name="invisible"/>
+
+  </immunities>
+
+  <summons maxSummons="2">
+
+    <summon name="Beholder" speed="1000" chance="10"/>
+
+  </summons>
+
+  <loot>
+
+    <item id="7407" countmax="1" chance="900"/>
+
+    <item id="3972" countmax="1" chance="0"/>
+
+    <item id="2148" countmax="100" chance="100000"/>
+
+    <item id="2148" countmax="62" chance="100000"/>
+
+    <item id="2148" countmax="38" chance="100000"/>
+
+    <item id="2518" countmax="1" chance="1000"/>
+
+    <item id="5898" countmax="1" chance="2000"/>
+ 
+    <item id="1987" countmax="1" chance="90000">
+
+      <inside>
+
+        <item id="2148" countmax="52" chance="100000"/>
+
+        <item id="2173" countmax="1" chance="900"/>
+
+        <item id="2656" countmax="1" chance="1800"/>
+
+        <item id="2791" countmax="2" chance="8000"/>
+
+        <item id="2794" countmax="3" chance="8000"/>
+
+        <item id="7364" countmax="10" chance="7000"/>
+
+        <item id="7452" countmax="1" chance="900"/>
+
+      </inside>
+
+    </item>
+
+  </loot>
+
+</monster>

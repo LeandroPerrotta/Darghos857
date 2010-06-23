@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="High Inquisitor" nameDescription="monk" race="VENOM" experience="100000" speed="320" manacost="0">
+  <health now="500000" max="500000"/>
+  <look type="9" head="100" body="150" legs="10" feet="150" corpse="3058"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="2"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="2500"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" min="-100" max="-350"/>
+    <attack name="manadrain" interval="2000" chance="20" range="7" min="-600" max="-1000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+    <attack name="poison" interval="3000" chance="20" radius="6" target="0" min="-550" max="-750">
+      <attribute key="areaEffect" value="poison"/>
+    </attack>
+    <attack name="energy" interval="2000" chance="18" radius="6" target="0" min="-400" max="-600">
+      <attribute key="areaEffect" value="energy"/>
+    </attack>
+    <attack name="manadrain" interval="2000" chance="16" radius="6" target="0" min="-225" max="-1075">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+    <attack name="lifedrain" interval="2000" chance="21" radius="6" target="0" min="-200" max="-1050">
+      <attribute key="areaEffect" value="poff"/>
+    </attack>
+    <attack name="strength" interval="3000" chance="20" radius="5" target="0" min="-200" max="-800">
+      <attribute key="areaEffect" value="blackspark"/>
+    </attack>
+    <attack name="firecondition" interval="3000" chance="20" range="7" radius="7" target="1" min="-200" max="-800">
+      <attribute key="shootEffect" value="fire"/>
+      <attribute key="areaEffect" value="firearea"/>
+    </attack>
+    <attack name="lifedrain" interval="2000" chance="25" length="8" spread="0" min="-50" max="-250">
+      <attribute key="areaEffect" value="greenspark"/>
+    </attack>
+
+  </attacks>
+  <defenses armor="100" defense="120">
+    <defense name="healing" interval="2000" chance="10" min="900" max="1500">
+      <attribute key="areaEffect" value="greenshimmer"/>
+    </defense>
+    <defense name="speed" interval="3000" chance="30" speedchange="360" duration="7000">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="invisible" interval="4000" chance="20" duration="5000">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="1"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <summons maxSummons="1">
+    <summon name="behemoth king" interval="3000" chance="50" max="3"/>
+  </summons>
+  <voices interval="5000" chance="20">
+    <voice sentence="FERUMBRAS IS JUST A KID!" yell="1"/>
+    <voice sentence="POWER? I AM THE POWER!" yell="1"/>
+    <voice sentence="I never die?"/>
+    <voice sentence="Ferumbras told me that I was too much evil!"/>
+    <voice sentence="I AM THE DARKNESS!"/>
+    <voice sentence="SEE THIS DEMONS?!"/>
+    <voice sentence="I never lose!"/>
+  </voices>
+<loot>
+ 	<item id="2148" countmax="100" chance1="100000" chancemax="0"/>
+ 	<item id="2148" countmax="25" chance1="100000" chancemax="0"/> 
+ 	<item id="2421" chance="1000"/>
+ 	<item id="2471" chance="1000"/>
+	<item id="2493" chance="1000"/>
+	<item id="2195" chance="1000"/>
+	<item id="2195" chance="1000"/>
+	<item id="2656" chance="1000"/>
+	<item id="2656" chance="1000"/>
+	<item id="2488" chance="1500"/>
+	<item id="2491" chance="34700"/>
+	<item id="2488" chance="34700"/>
+	<item id="2519" chance="34700"/>
+	<item id="2494" chance="500"/>
+
+ 	<item id="1987" chance="100000">
+ 	<inside>
+  	<item id="2268" countmax="100" chance1="24600" chancemax="0"/> --small amethyst
+	<item id="2268" countmax="100" chance1="19700" chancemax="0"/> --small sapphire
+	<item id="5880" countmax="50" chance1="12000" chancemax="0"/> --small diamond
+ 	<item id="2268" countmax="60" chance1="100000" chancemax="0"/> --gold	
+	<item id="2268" countmax="50" chance1="24600" chancemax="0"/>
+	<item id="2268" countmax="20" chance1="24600" chancemax="0"/>
+	<item id="2268" countmax="15" chance1="24600" chancemax="0"/>
+	<item id="2268" countmax="70" chance1="24600" chancemax="0"/>
+ 	</inside>
+ 	</item>
+</loot>
+</monster>
