@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="serpent spawn" nameDescription="a serpent spawn" race="VENOM" experience="2350" speed="240" manacost="0">
+  <health now="3000" max="3000"/>
+  <look type="220" head="20" body="30" legs="40" feet="50" corpse="4323"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="275"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="90" attack="50"/>
+    
+    <attack name="poison" interval="2000" chance="33" range="7" min="0" max="-300">
+      <attribute key="shootEffect" value="poison"/>
+      <attribute key="areaEffect" value="greenspark"/>
+    </attack>
+    <attack name="speed" interval="2000" chance="20" range="7" radius="4" target="1" speedchange="-850" duration="120000">
+      <attribute key="shootEffect" value="poison"/>
+      <attribute key="areaEffect" value="greenbubble"/>
+    </attack>
+    <attack name="lifedrain" interval="2000" chance="21" length="8" spread="0" min="0" max="-500">
+      <attribute key="areaEffect" value="rednote"/>
+    </attack>
+    <attack name="poison" interval="2000" chance="21" length="8" spread="3" min="0" max="-500">
+      <attribute key="areaEffect" value="poison"/>
+    </attack>
+    
+    <attack name="outfit" interval="2000" chance="15" range="7" item="3976" duration="12000">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </attack> 
+  </attacks>
+  <defenses armor="18" defense="25">
+    <defense name="healing" interval="2000" chance="25" min="250" max="400">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+    <defense name="speed" interval="1000" chance="9" speedchange="320" duration="7000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>
+  </defenses>
+  <elements>
+	<element earthPercent="100"/>
+	<element icePercent="30"/>
+	<element firePercent="-6"/>
+	<element energyPercent="-10"/>
+  </elements>
+  <immunities>
+    <immunity paralyze="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <voices interval="5000" chance="10">
+    <voice sentence="Sssssouls for the one"/>
+    <voice sentence="HISSSS" yell="1"/>
+    <voice sentence="Tsssse one will risssse again"/>
+    <voice sentence="I bring your deathhh, mortalssss"/>
+  </voices>
+  <loot>
+  	<item id="2148" countmax="60" chance1="100000"/> -- gold coins
+  	<item id="2148" countmax="50" chance1="100000"/>
+  
+	<item id="2547" countmax="1" chance="6000"/> -- power bolt
+	<item id="7365" countmax="3" chance="2900"/> -- onyx arrow  
+  
+  	<item id="2796" countmax="1" chance="18000"/> -- green mushroom
+  
+    <item id="2182" chance="1000"/> -- snakebite rod
+    
+    <item id="10611" countmax="1" chance="15000"/> -- snake skin
+    <item id="8880" chance="100"/> --Swamplair Armor
+	<item id="8902" chance="150"/> --Spellbook of Mind Control
+    <item id="2487" chance="700"/> --crown armor
+	<item id="1976" chance="9000"/> -- gemmed book
+    <item id="3971" chance="1500"/> -- charmer's tiara
+    <item id="2167" chance="4900"/> -- energy ring
+    <item id="7590" chance="2690"/> -- great mana potion
+    <item id="4842" chance="700"/> -- old parchment
+    <item id="11230" chance="700"/> -- winged tail
+    <item id="2475" chance="700"/> -- warrior helmet
+
+    <item id="1987" chance="100000">
+		<inside>
+			<item id="2148" countmax="100" chance1="20000" chancemax="0"/> -- gold coins
+			<item id="2033" chance="3750"/> -- golden mug
+			
+			<item id="2177" chance="600"/> -- life crystal
+			<item id="2168" chance="7000"/> -- life ring
+			<item id="2498" chance="100"/> -- royal helmet
+			<item id="2146" countmax="1" chance="13000"/> -- small sapphire
+			<item id="2479" chance="580"/> -- strange helmet
+			<item id="2528" chance="1000"/> -- tower shield
+			<item id="7386" chance="2220"/> -- mercenary sword 
+			<item id="7456" chance="850"/> -- noble axe
+		</inside>
+    </item>
+  </loot>
+</monster>

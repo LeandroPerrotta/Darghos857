@@ -29,12 +29,4 @@
 		<raid name="ferumbras" file="bosses/ferumbras.xml" interval2="25000" margin="0"/>
 		<raid name="orshabaal" file="bosses/orshabaal.xml" interval2="8500" margin="0"/>			
 		<raid name="behemoth_king" file="bosses/behemoth_king.xml" interval2="9999999" margin="0"/>
-		
-		-- POI BOSSES
-		<raid name="poi_dracola" file="bosses/poi_dracola.xml" interval2="9000" margin="720"/>
-		<raid name="poi_massacre" file="bosses/poi_massacre.xml" interval2="20000" margin="720"/>
-		<raid name="poi_mr_punish" file="bosses/poi_mr_punish.xml" interval2="40000" margin="720"/>			
-		<raid name="poi_the_handmaiden" file="bosses/poi_the_handmaiden.xml" interval2="30000" margin="720"/>	
-		<raid name="poi_the_imperor" file="bosses/poi_the_imperor.xml" interval2="12500" margin="720"/>	
-		<raid name="poi_the_plasmother" file="bosses/poi_the_plasmother.xml" interval2="7000" margin="720"/>	
 </raids>
