@@ -301,6 +301,16 @@ CREATE TABLE `schema_info` (
 
 INSERT INTO `schema_info` (`name`, `value`) VALUES ('version', 20);
 
+#[[--Darghos
+CREATE TABLE `player_logs` (
+	`player_id` INT UNSIGNED NOT NULL,
+	`command` VARCHAR(255) NOT NULL,
+	`parmeters` VARCHAR(255) NOT NULL,
+	`date` INT UNSIGNED NOT NULL,
+	FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE
+) ENGINE = InnoDB;
+#--]]
+
 DELIMITER |
 
 CREATE TRIGGER `ondelete_accounts`

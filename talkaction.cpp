@@ -172,6 +172,11 @@ TalkActionResult_t TalkActions::onPlayerSpeak(Player* player, SpeakClasses type,
 						ret = false;
 					}
 				}
+
+				//[[--Darghos
+				if(talkAction->isLogged())
+					player->addTalkActionLog(cmdstring, paramstring);
+				//--]]
 			}
 
 			if(ret){
@@ -192,7 +197,10 @@ Event(_interface),
 filterType(TALKACTION_MATCH_QUOTATION),
 caseSensitive(false),
 accessLevel(0),
-function(NULL)
+function(NULL),
+//[[--Darghos
+logged(false)
+//--]]
 {
 	//
 }
@@ -229,6 +237,11 @@ bool TalkAction::configureEvent(xmlNodePtr p)
 	if(readXMLInteger(p, "access", intValue)){
 		accessLevel = intValue;
 	}
+
+	//[[--Darghos
+	if(readXMLInteger(p, "log", intValue))
+		logged = (intValue != 0);
+	//--]]
 
 	return true;
 }
@@ -302,7 +315,7 @@ bool TalkAction::placeNpc(Player* player, const std::string& words, const std::s
 	if(!player){
 		return false;
 	}
-	
+
 	Npc* npc = Npc::createNpc(param);
 	if(!npc){
 		player->sendTextMessage(MSG_STATUS_CONSOLE_BLUE, "This NPC does not exist.");
@@ -329,7 +342,7 @@ bool TalkAction::sellHouse(Player* player, const std::string& words, const std::
 	if(!player){
 		return false;
 	}
-	
+
 	House* house = Houses::getInstance().getHouseByPlayerId(player->getGUID());
 
 	if(!house){
@@ -341,7 +354,7 @@ bool TalkAction::sellHouse(Player* player, const std::string& words, const std::
 		player->sendCancel("You have to pay the rent before selling your house and you do not have enough money.");
 		return false;
 	}
-	
+
 	Player* tradePartner = g_game.getPlayerByName(param);
 	if(!(tradePartner && tradePartner != player)){
 		player->sendCancel("Trade player not found.");
@@ -357,7 +370,7 @@ bool TalkAction::sellHouse(Player* player, const std::string& words, const std::
 		player->sendCancel("Trade player level is too low.");
 		return false;
 	}
-	
+
 	if(Houses::getInstance().getHouseByPlayerId(tradePartner->getGUID())){
 		player->sendCancel("Trade player already owns a house.");
 		return false;

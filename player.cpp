@@ -4691,8 +4691,8 @@ void Player::checkSkullUpdate(bool isRemoving)
 	}
 
 	//update client and do some stuff
-	if(getSkull() != SKULL_NONE && oldSkull != getSkull()){
-		if(!isRemoving){
+	if(!isRemoving){
+		if(getSkull() != SKULL_NONE && oldSkull != getSkull()){
 			lastSkullTime = std::time(NULL);
 			if(getSkull() == SKULL_BLACK){
 				setAttackedCreature(NULL);

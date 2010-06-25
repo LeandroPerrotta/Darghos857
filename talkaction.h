@@ -84,6 +84,10 @@ public:
 	//scripting
 	bool executeSay(Player* player, const std::string& words, const std::string& param);
 
+	//[[--Darghos
+	bool isLogged() const {return logged;}
+	//--]]
+
 protected:
 	virtual std::string getScriptEventName();
 
@@ -99,6 +103,10 @@ protected:
 	bool caseSensitive;
 	int16_t accessLevel;
 	TalkActionFunction* function;
+
+	//[[--Darghos
+	bool logged;
+	//--]]
 };
 
 #endif

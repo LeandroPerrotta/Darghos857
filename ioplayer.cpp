@@ -650,6 +650,21 @@ bool IOPlayer::savePlayer(Player* player, bool shallow)
 		query.str("");
 	}
 
+	//[[--Darghos
+	//Log List
+	stmt.setQuery("INSERT INTO `player_logs` (`player_id` , `command` , `parameters`, `date`) VALUES ");
+	for(TalkActionLogsVector::const_iterator cit = player->talkActionLog.begin(); cit != player->talkActionLog.end(); cit++){
+		query << player->getGUID() << ", " << (*cit).second.first << ", " << (*cit).second.second << ", " << (*cit).first;
+		if(!stmt.addRow(query)){
+			return false;
+		}
+	}
+
+	if(!stmt.execute()){
+		return false;
+	}
+	//--]]
+
 	//End the transaction
 	return transaction.commit();
 }

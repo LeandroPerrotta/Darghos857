@@ -8667,14 +8667,22 @@ int LuaScriptInterface::luaDoUpdateCreatureImpassable(lua_State *L)
 int LuaScriptInterface::luaDoPlayerRemoveLastFrags(lua_State *L)
 {
 	//doPlayerRemoveLastFrags(cid, count, time)
-	uint32_t time = popNumber(L);
-	uint32_t count = popNumber(L);
+	int32_t parameters = lua_gettop(L);
+
+	time_t time = 0;
+	if(parameters > 2)
+		time = time_t(std::time(NULL) - popNumber(L));
+
+	uint32_t count = 0;
+	if(parameters > 1)
+		count = popNumber(L);
+
 	uint32_t cid = popNumber(L);
 
 	ScriptEnviroment* env = getScriptEnv();
 
 	if(Player* player = env->getPlayerByUID(cid)){
-		int64_t fragsRemoved = IOPlayer::instance()->removePlayerLastFrags(player, count, time_t(std::time(NULL) - time));
+		int64_t fragsRemoved = IOPlayer::instance()->removePlayerLastFrags(player, count, time);
 		if(fragsRemoved == -1){
 			reportErrorFunc("Could not run query to remove player frag.");
 			lua_pushnumber(L, LUA_ERROR);
