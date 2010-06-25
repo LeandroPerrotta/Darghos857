@@ -96,10 +96,6 @@ typedef std::map<uint32_t, std::string> ChannelStatementMap;
 typedef std::list<std::string> LearnedInstantSpellList;
 typedef std::list<Party*> PartyList;
 
-//[[--Darghos
-typedef std::vector< std::pair< time_t, std::pair<std::string, std::string> > > TalkActionLogsVector;
-//--]]
-
 #define PLAYER_MAX_SPEED 1500
 #define PLAYER_MIN_SPEED 10
 const int32_t MAX_STAMINA = 42 * 60 * 60 * 1000;
@@ -685,10 +681,6 @@ public:
 	void sendCreatureImpassable(const Creature* creature)
 		{if(client) client->sendCreatureImpassable(creature);}
 	void checkSkullUpdate(bool isRemoving);
-
-	void addTalkActionLog(std::string command, std::string params){
-		talkActionLog.push_back(std::make_pair(std::time(NULL), std::make_pair(command, params)));
-	}
 	//--]]
 
 protected:
@@ -889,10 +881,6 @@ protected:
 	friend class Actions;
 	friend class IOPlayer;
 	friend class ProtocolGame;
-
-	//[[--Darghos
-	TalkActionLogsVector talkActionLog;
-	//--]]
 };
 
 #endif

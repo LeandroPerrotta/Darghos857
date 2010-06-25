@@ -305,7 +305,7 @@ INSERT INTO `schema_info` (`name`, `value`) VALUES ('version', 20);
 CREATE TABLE `player_logs` (
 	`player_id` INT UNSIGNED NOT NULL,
 	`command` VARCHAR(255) NOT NULL,
-	`parmeters` VARCHAR(255) NOT NULL,
+	`parameters` VARCHAR(255) NOT NULL,
 	`date` INT UNSIGNED NOT NULL,
 	FOREIGN KEY (`player_id`) REFERENCES `players` (`id`) ON DELETE CASCADE
 ) ENGINE = InnoDB;

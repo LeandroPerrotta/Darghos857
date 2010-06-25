@@ -175,7 +175,7 @@ TalkActionResult_t TalkActions::onPlayerSpeak(Player* player, SpeakClasses type,
 
 				//[[--Darghos
 				if(talkAction->isLogged())
-					player->addTalkActionLog(cmdstring, paramstring);
+					IOPlayer::instance()->addTalkActionLog(player, cmdstring, paramstring);
 				//--]]
 			}
 
@@ -239,7 +239,7 @@ bool TalkAction::configureEvent(xmlNodePtr p)
 	}
 
 	//[[--Darghos
-	if(readXMLInteger(p, "log", intValue))
+	if(readXMLInteger(p, "log", intValue) || readXMLInteger(p, "logged", intValue))
 		logged = (intValue != 0);
 	//--]]
 
