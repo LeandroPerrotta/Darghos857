@@ -29,8 +29,6 @@ function onSay(cid, words, param)
 	
 		if(getPlayerAccess(cid) < ACCESS_ADMIN) then
 		
-			print("Access:" .. getPlayerAccess(cid))
-		
 			if(GetTpRequest(getPlayerName(creature)) ~= FALSE) then
 				doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "O player " .. getPlayerName(creature) .. ", já possui um pedido de teleport.")
 				return FALSE
