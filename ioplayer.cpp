@@ -1090,40 +1090,6 @@ bool IOPlayer::cleanOnlineInfo()
 }
 
 //[[--Darghos
-int64_t IOPlayer::removePlayerLastFrags(const Player* player, uint32_t count, time_t checkTime /*=0*/)
-{
-	//remove from database last frag
-	Database* db = Database::instance();
-	DBQuery query;
-
-	query << "UPDATE `player_killers` "
-			<< "LEFT JOIN `killers` ON `killers`.`id` = `player_killers`.`kill_id` "
-			<< "LEFT JOIN `player_deaths` ON `player_deaths`.`id` = `killers`.`death_id` "
-			<< "SET `enabled` = 0 "
-			<< "WHERE `player_killers`.`player_id` = " << player->getGUID() << " "
-			<< "AND `player_deaths`.`date` >= " << checkTime << " "
-			<< "ORDER BY `player_deaths`.`date` DESC";
-
-	if(count > 0)
-		query << " LIMIT " << count;
-
-	if(!db->executeQuery(query.str()))
-		return -1;
-
-	//if everything went ok...
-	int64_t affectedRows = db->getAffectedRows();
-	if(affectedRows > 0){
-		//clean cache, so next getPlayerUnjustKillCount gets value
-		//from database, not from cache
-		UnjustCacheMap::iterator it = unjustKillCacheMap.find(player->getGUID());
-		if(it != unjustKillCacheMap.end()){
-			unjustKillCacheMap.erase(it);
-		}
-	}
-
-	return affectedRows;
-}
-
 bool IOPlayer::addTalkActionLog(const Player* player, const std::string& command, const std::string& params)
 {
 	Database* db = Database::instance();

@@ -78,7 +78,6 @@ public:
 	bool cleanOnlineInfo();
 
 	//[[--Darghos
-	int64_t removePlayerLastFrags(const Player* player, uint32_t count, time_t checkTime = 0);
 	bool addTalkActionLog(const Player* player, const std::string& command, const std::string& params);
 	//--]]
 
