@@ -1,29 +1,29 @@
 <?xml version="1.0"?>
 <talkactions>
 	<!-- Gods -->
-	<talkaction words="/i" access="5" filter="first word" script="createitembyid.lua"/>
-	<talkaction words="/n" access="5" filter="first word" script="createitembyname.lua"/>
+	<talkaction words="/i" logged="1" access="5" filter="first word" script="createitembyid.lua"/>
+	<talkaction words="/n" logged="1" access="5" filter="first word" script="createitembyname.lua"/>
 
-	<talkaction words="/cleanhouses" access="5" filter="first word" script="housecleaning.lua"/>
+	<talkaction words="/cleanhouses" logged="1" access="5" filter="first word" script="housecleaning.lua"/>
 	
-	<talkaction words="/s" access="5" filter="first word" function="placeNpc"/>
-	<talkaction words="/shutdown" access="5" filter="first word" script="shutdown.lua"/>
-	<talkaction words="/serverdiag" access="5" filter="first word" function="serverDiagnostic"/>
-	<talkaction words="/reload" access="5" filter="first word" script="reload.lua"/>
-	<talkaction words="/m" access="5" filter="first word" script="placemonster.lua"/>
-	<talkaction words="/c" access="5" filter="first word" script="teleporthere.lua"/>
-	<talkaction words="/summon" access="5" filter="first word" script="placesummon.lua"/>
-	<talkaction words="/poll" access="5" filter="first word" script="game/createpoll.lua"/>
-	<talkaction words="/raid" access="5" filter="first word" function="forceRaid"/>
-	<talkaction words="/kick" access="5" filter="first word" script="kickplayer.lua"/>
-	<talkaction words="/r" access="5" filter="first word" script="removething.lua"/>
-	<talkaction words="/owner" access="5" filter="first word" script="sethouseowner.lua"/>	
+	<talkaction words="/s" logged="1" access="5" filter="first word" function="placeNpc"/>
+	<talkaction words="/shutdown" logged="1" access="5" filter="first word" script="shutdown.lua"/>
+	<talkaction words="/serverdiag" logged="1" access="5" filter="first word" function="serverDiagnostic"/>
+	<talkaction words="/reload" logged="1" access="5" filter="first word" script="reload.lua"/>
+	<talkaction words="/m" logged="1" access="5" filter="first word" script="placemonster.lua"/>
+	<talkaction words="/c" logged="1" access="5" filter="first word" script="teleporthere.lua"/>
+	<talkaction words="/summon" logged="1" access="5" filter="first word" script="placesummon.lua"/>
+	<talkaction words="/poll" logged="1" access="5" filter="first word" script="game/createpoll.lua"/>
+	<talkaction words="/raid" logged="1" access="5" filter="first word" function="forceRaid"/>
+	<talkaction words="/kick" logged="1" access="5" filter="first word" script="kickplayer.lua"/>
+	<talkaction words="/r" logged="1" access="5" filter="first word" script="removething.lua"/>
+	<talkaction words="/owner" logged="1" access="5" filter="first word" script="sethouseowner.lua"/>	
 	
 	<!-- Comunity Managers -->
-	<talkaction words="/openserver" access="4" filter="first word" script="openserver.lua"/>
-	<talkaction words="/closeserver" access="4" filter="first word" script="closeserver.lua"/>	
-	<talkaction words="/save" access="4" script="saveserver.lua"/>
-	<talkaction words="/refreshmap" access="4" filter="first word" script="refreshmap.lua"/>	
+	<talkaction words="/openserver" logged="1" access="4" filter="first word" script="openserver.lua"/>
+	<talkaction words="/closeserver" logged="1" access="4" filter="first word" script="closeserver.lua"/>	
+	<talkaction words="/save" logged="1" access="4" script="saveserver.lua"/>
+	<talkaction words="/refreshmap" logged="1" access="4" filter="first word" script="refreshmap.lua"/>	
 	<talkaction words="/checkconfig" access="4" filter="first word" script="configval.lua"/>
 	<talkaction words="/getoutfit" access="4" filter="first word" script="game/getoutfit.lua"/>
 	
@@ -32,14 +32,14 @@
 	<talkaction words="/down" access="3" filter="first word" script="floorchange.lua"/>
 	<talkaction words="/a" access="3" filter="first word" script="teleportntiles.lua"/>
 	<talkaction words="/town" access="3" filter="first word" script="teleporttotown.lua"/>
-	<talkaction words="/goto" access="3" filter="first word" script="teleportto.lua"/>
-	<talkaction words="/bc" access="3" filter="first word" script="broadcastclass.lua"/>
+	<talkaction words="/goto" logged="1" access="3" filter="first word" script="teleportto.lua"/>
+	<talkaction words="/bc" logged="1" access="3" filter="first word" script="broadcastclass.lua"/>
 	<talkaction words="/z" access="3" filter="first word" script="testeffect.lua"/>
 	<talkaction words="/zt" access="3" filter="first word" script="testtutorial.lua"/>	
 	<talkaction words="/getonline" access="3" filter="first word" script="accessonlinelist.lua"/>
 
 	<!-- Senior Tutors -->
-	<talkaction words="/t" access="2" filter="first word" script="teleportmasterpos.lua"/>
+	<talkaction words="/t" logged="1" access="2" filter="first word" script="teleportmasterpos.lua"/>
 	
 	<!-- Tutors -->
 	<talkaction words="/serverinfo" access="1" script="serverinfo.lua"/>
