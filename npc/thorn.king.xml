@@ -123,7 +123,7 @@
 							
 							if(isKnight(cid)) then
 							
-								reward = CUSTOM_ITEMS.DURIN_HELMT
+								reward = CUSTOM_ITEMS.DURIN_HELMET
 							elseif(isPaladin(cid)) then
 							
 								reward = CUSTOM_ITEMS.TASHI_AHARON_HELMET

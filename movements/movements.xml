@@ -84,100 +84,100 @@
 		<!-- CUSTOM ITEMS --> 
 		
 		<!-- Durin Set -->
-		<moveevent event="Equip" itemid="11736" level="220" slot="head" function="onEquipItem">
+		<moveevent event="Equip" itemid="11736" level="180" slot="head" function="onEquipItem">
 			<vocation name="Knight"/>
 			<vocation name="Elite Knight" showInDescription="0"/>	
 		</moveevent>
 		<moveevent event="DeEquip" itemid="11736" slot="head" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="11737" level="220" slot="armor" function="onEquipItem">
+		<moveevent event="Equip" itemid="11737" level="180" slot="armor" function="onEquipItem">
 			<vocation name="Knight"/>
 			<vocation name="Elite Knight" showInDescription="0"/>	
 		</moveevent>		
 		<moveevent event="DeEquip" itemid="11737" slot="armor" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="11738" level="220" slot="legs" function="onEquipItem">
+		<moveevent event="Equip" itemid="11738" level="180" slot="legs" function="onEquipItem">
 			<vocation name="Knight"/>
 			<vocation name="Elite Knight" showInDescription="0"/>	
 		</moveevent>		
 		<moveevent event="DeEquip" itemid="11738" slot="legs" function="onDeEquipItem"/>	
 			
-		<moveevent event="Equip" itemid="11739" level="220" slot="hand" function="onEquipItem">
+		<moveevent event="Equip" itemid="11739" level="180" slot="hand" function="onEquipItem">
 			<vocation name="Knight"/>
 			<vocation name="Elite Knight" showInDescription="0"/>	
 		</moveevent>		
 		<moveevent event="DeEquip" itemid="11739" slot="hand" function="onDeEquipItem"/>		
 		
 		<!-- Tashi Aharon Set  -->
-		<moveevent event="Equip" itemid="11740" level="220" slot="head" function="onEquipItem">
+		<moveevent event="Equip" itemid="11740" level="180" slot="head" function="onEquipItem">
 			<vocation name="Paladin"/>
 			<vocation name="Royal Paladin" showInDescription="0"/>	
 		</moveevent>				
 		<moveevent event="DeEquip" itemid="11740" slot="head" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="11741" level="220" slot="armor" function="onEquipItem">
+		<moveevent event="Equip" itemid="11741" level="180" slot="armor" function="onEquipItem">
 			<vocation name="Paladin"/>
 			<vocation name="Royal Paladin" showInDescription="0"/>	
 		</moveevent>			
 		<moveevent event="DeEquip" itemid="11741" slot="armor" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="11742" level="220" slot="legs" function="onEquipItem">
+		<moveevent event="Equip" itemid="11742" level="180" slot="legs" function="onEquipItem">
 			<vocation name="Paladin"/>
 			<vocation name="Royal Paladin" showInDescription="0"/>	
 		</moveevent>			
 		<moveevent event="DeEquip" itemid="11742" slot="legs" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="11743" level="220" slot="feet" function="onEquipItem">
+		<moveevent event="Equip" itemid="11743" level="180" slot="feet" function="onEquipItem">
 			<vocation name="Paladin"/>
 			<vocation name="Royal Paladin" showInDescription="0"/>	
 		</moveevent>			
 		<moveevent event="DeEquip" itemid="11743" slot="feet" function="onDeEquipItem"/>
 		
 		<!-- Warden Set  -->
-		<moveevent event="Equip" itemid="11744" level="220" slot="head" function="onEquipItem">
+		<moveevent event="Equip" itemid="11744" level="180" slot="head" function="onEquipItem">
 			<vocation name="Druid"/>
 			<vocation name="Elder Druid" showInDescription="0"/>	
 		</moveevent>				
 		<moveevent event="DeEquip" itemid="11744" slot="head" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="11745" level="220" slot="armor" function="onEquipItem">
+		<moveevent event="Equip" itemid="11745" level="180" slot="armor" function="onEquipItem">
 			<vocation name="Druid"/>
 			<vocation name="Elder Druid" showInDescription="0"/>	
 		</moveevent>			
 		<moveevent event="DeEquip" itemid="11745" slot="armor" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="11746" level="220" slot="legs" function="onEquipItem">
+		<moveevent event="Equip" itemid="11746" level="180" slot="legs" function="onEquipItem">
 			<vocation name="Druid"/>
 			<vocation name="Elder Druid" showInDescription="0"/>	
 		</moveevent>			
 		<moveevent event="DeEquip" itemid="11746" slot="legs" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="11747" level="220" slot="feet" function="onEquipItem">
+		<moveevent event="Equip" itemid="11747" level="180" slot="feet" function="onEquipItem">
 			<vocation name="Druid"/>
 			<vocation name="Elder Druid" showInDescription="0"/>	
 		</moveevent>			
 		<moveevent event="DeEquip" itemid="11747" slot="feet" function="onDeEquipItem"/>	
 		
 		<!-- Deathface Set  -->
-		<moveevent event="Equip" itemid="11748" level="220" slot="head" function="onEquipItem">
+		<moveevent event="Equip" itemid="11748" level="180" slot="head" function="onEquipItem">
 			<vocation name="Sorcerer"/>
 			<vocation name="Master Sorcerer" showInDescription="0"/>	
 		</moveevent>				
 		<moveevent event="DeEquip" itemid="11748" slot="head" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="11749" level="220" slot="armor" function="onEquipItem">
+		<moveevent event="Equip" itemid="11749" level="180" slot="armor" function="onEquipItem">
 			<vocation name="Sorcerer"/>
 			<vocation name="Master Sorcerer" showInDescription="0"/>	
 		</moveevent>			
 		<moveevent event="DeEquip" itemid="11749" slot="armor" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="11750" level="220" slot="legs" function="onEquipItem">
+		<moveevent event="Equip" itemid="11750" level="180" slot="legs" function="onEquipItem">
 			<vocation name="Sorcerer"/>
 			<vocation name="Master Sorcerer" showInDescription="0"/>	
 		</moveevent>			
 		<moveevent event="DeEquip" itemid="11750" slot="legs" function="onDeEquipItem"/>
 		
-		<moveevent event="Equip" itemid="11751" level="220" slot="feet" function="onEquipItem">
+		<moveevent event="Equip" itemid="11751" level="180" slot="feet" function="onEquipItem">
 			<vocation name="Sorcerer"/>
 			<vocation name="Master Sorcerer" showInDescription="0"/>	
 		</moveevent>			
