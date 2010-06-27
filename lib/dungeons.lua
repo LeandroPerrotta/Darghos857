@@ -46,9 +46,9 @@ function Dungeons.onPlayerEnter(cid, item, position)
 	
 	local canEnter = (getPlayerStorageValue(cid, dungeonId) == -1)
 	
-	-- Verificamos se o Player já fez a Dungeon
+	-- Verificamos se o Player jï¿½ fez a Dungeon
 	if not(canEnter) then
-		doPlayerSendCancel(cid, "Você já concluiu está dungeon. Não pode passar novamente por aqui.")
+		doPlayerSendCancel(cid, "Vocï¿½ jï¿½ concluiu estï¿½ dungeon. Nï¿½o pode passar novamente por aqui.")
 		
 		Dungeons.doTeleportPlayerBack(cid, position)
 		return FALSE
@@ -56,27 +56,27 @@ function Dungeons.onPlayerEnter(cid, item, position)
 
 	local dungeonInfo = dungeonList[dungeonId]
 	
-	-- Verificamos se há espaço na quest
+	-- Verificamos se hï¿½ espaï¿½o na quest
 	if(Dungeons.getPlayersIn(dungeonId) == dungeonInfo.maxPlayers) then
-		doPlayerSendCancel(cid, "Está dungeon já está com o numero maximo de jogadores a tentar realiza-la. Tente novamente mais tarde.")
+		doPlayerSendCancel(cid, "Estï¿½ dungeon jï¿½ estï¿½ com o numero maximo de jogadores a tentar realiza-la. Tente novamente mais tarde.")
 		
 		Dungeons.doTeleportPlayerBack(cid, position)
 		return FALSE		
 	end
 	
-	-- Daqui em diante dispararemos eventos que irão configurar o jogador dentro da dungeon
+	-- Daqui em diante dispararemos eventos que irï¿½o configurar o jogador dentro da dungeon
 	
 	-- Incrementamos o numero de jogadores na dungeon
 	Dungeons.increasePlayers(dungeonId)
 	
-	-- Informamos em storage values que o jogador está em uma dungeon e em qual dungeon ele está
+	-- Informamos em storage values que o jogador estï¿½ em uma dungeon e em qual dungeon ele estï¿½
 	setPlayerStorageValue(cid, sid.DUNGEON_STATUS, dungeonStatus.IN_DUNGEON)
 	setPlayerStorageValue(cid, sid.ON_DUNGEON, dungeonId)
 	
 	-- Transportamos o jogador para dentro da dungeon
 	Dungeons.doTeleportPlayer(cid, position)
 	
-	-- Atualizamos a descrição da entrada (o teleport)
+	-- Atualizamos a descriï¿½ï¿½o da entrada (o teleport)
 	Dungeons.updateEntranceDescription(dungeonId)
 	
 	-- Resetamos qualquer cronometro possivel existente e disparamos o cronometro
@@ -164,7 +164,7 @@ function Dungeons.onTimeStart(cid)
 		if(playerDungeonTime < dungeonInfo.maxTimeIn) then
 		
 			local leftTime = dungeonInfo.maxTimeIn - playerDungeonTime
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você possui " .. leftTime .. " minutos para concluir a dungeon...")
+			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Vocï¿½ possui " .. leftTime .. " minutos para concluir a dungeon...")
 			
 			setPlayerStorageValue(cid, sid.DUNGEON_TIME, playerDungeonTime + 5)
 			addEvent(Dungeons.onTimeStart, 1000 * 60 * 5, cid)		
@@ -179,7 +179,7 @@ function Dungeons.onTimeEnd(cid)
 	local dungeonStorage = getPlayerStorageValue(cid, sid.DUNGEON_STATUS)
 	
 	if(dungeonStorage == dungeonStatus.IN_DUNGEON) then
-		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "O tempo para você cumprir esta dungeon acabou. Você agora será jugado no INFERNO!")
+		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "O tempo para vocï¿½ cumprir esta dungeon acabou. Vocï¿½ agora serï¿½ jugado no INFERNO!")
 		doTeleportThing(cid, HELL_POS)
 		
 		setPlayerStorageValue(cid, sid.DUNGEON_TIME, -1)
@@ -204,7 +204,7 @@ function Dungeons.onPlayerDeath(cid)
 	Dungeons.updateEntranceDescription(playerDungeon)
 end
 
--- Função chamada 
+-- Funï¿½ï¿½o chamada 
 function Dungeons.onLogin(cid)
 
 	local isInDungeon = (getPlayerStorageValue(cid, sid.DUNGEON_STATUS) == dungeonStatus.IN_DUNGEON)
@@ -214,13 +214,15 @@ function Dungeons.onLogin(cid)
 		setPlayerStorageValue(cid, sid.DUNGEON_STATUS, dungeonStatus.OUT_DUNGEON)
 		setPlayerStorageValue(cid, sid.DUNGEON_TIME, -1)
 		
+		doTeleportThing(cid, HELL_POS)
+		
 		print("[Dungeons.onLogin] " .. getPlayerName(cid) .. " dungeon info cleaned.")
 	end
 end
 
 function Dungeons.onServerStart()
 	
-	--configuraremos as descrições iniciais das portas das dungeons
+	--configuraremos as descriï¿½ï¿½es iniciais das portas das dungeons
 	for key,dungeonValue in ipairs(dungeonEntranceUids) do
 		
 		if(getThing(dungeonValue) ~= nil) then
@@ -232,7 +234,7 @@ end
 
 function Dungeons.updateEntranceDescription(dungeonId)
 	
-	-- Atualizamos a descrição da porta
+	-- Atualizamos a descriï¿½ï¿½o da porta
 	local dungeonInfo = dungeonList[dungeonId]
 	print("jogadores na quest: " .. Dungeons.getPlayersIn(dungeonId) .. "/" .. dungeonInfo.maxPlayers .. ", uid: " .. dungeonId)
 	doSetItemSpecialDescription(dungeonId, "[Esta dungeon possui " .. Dungeons.getPlayersIn(dungeonId) .. " jogadores de um maximo de " .. dungeonInfo.maxPlayers .. ".]")
