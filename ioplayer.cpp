@@ -1096,8 +1096,8 @@ bool IOPlayer::addTalkActionLog(const Player* player, const std::string& command
 	DBQuery query;
 
 	query << "INSERT INTO `player_logs` (`player_id`, `command`, `parameters`, `date`) VALUES ("
-			<< player->getGUID() << ", " << command << ", "
-			<< params << ", " << std::time(NULL) << ")";
+			<< player->getGUID() << ", " << db->escapeString(command) << ", "
+			<< db->escapeString(params) << ", " << std::time(NULL) << ")";
 
 	return db->executeQuery(query.str());
 }
