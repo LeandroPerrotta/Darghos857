@@ -829,7 +829,6 @@ int32_t IOPlayer::getPlayerUnjustKillCount(const Player* player, UnjustKillPerio
 	query << "`players` on `players`.`id` = `player_deaths`.`player_id` ";
 	query << "WHERE ";
 	query << "`player_killers`.`player_id` = " << player->getGUID() << " "
-		<< "AND " << "`player_killers`.`enabled` = " << " 1 "
 		<< "AND " << "`player_killers`.`unjustified` = " << " 1 "
 		<< "AND " << date  << " < `player_deaths`.`date` "
 		<< "ORDER BY `player_deaths`.`date` ASC";
