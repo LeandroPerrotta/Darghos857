@@ -86,6 +86,11 @@ class LuaScriptInterface;
 class Game;
 class Npc;
 
+//[[--Darghos
+#include <boost/any.hpp>
+typedef std::map<std::string, boost::any> GlobalValuesMap;
+//--]]
+
 class ScriptEnviroment
 {
 public:
@@ -673,7 +678,17 @@ protected:
 	std::string m_lastLuaError;
 
 	//[[--Darghos
+	//Cool things
+	static bool popBoolean(lua_State *L);
+
+	//Global values handler
+	void setGlobalValue(std::string name, boost::any value){ globalValues[name] = value; }
+	void pushGlobalValue(lua_State *L);
+
+	//Lua functions
 	static int luaDoUpdateCreatureImpassable(lua_State *L);
+	static int luaSetGlobalValue(lua_State *L);
+	static int luaGetGlobalValue(lua_State *L);
 	//--]]
 
 private:
@@ -703,6 +718,10 @@ private:
 	void executeTimerEvent(uint32_t eventIndex);
 
 	std::string m_interfaceName;
+
+	//[[--Darghos
+	GlobalValuesMap globalValues;
+	//--]]
 };
 
 #endif

@@ -1913,6 +1913,12 @@ void LuaScriptInterface::registerFunctions()
 	//[[--Darghos
 	//doUpdateCreatureImpassable(cid)
 	lua_register(m_luaState, "doUpdateCreatureImpassable", LuaScriptInterface::luaDoUpdateCreatureImpassable);
+
+	//setGlobalValue(cid)
+	lua_register(m_luaState, "setGlobalValue", LuaScriptInterface::luaSetGlobalValue);
+
+	//getGlobalValue(cid)
+	lua_register(m_luaState, "getGlobalValue", LuaScriptInterface::luaGetGlobalValue);
 	//--]]
 }
 
@@ -8634,6 +8640,7 @@ int LuaScriptInterface::luaGetItemArmorByUID(lua_State *L)
 	if(!item){
 		reportErrorFunc(getErrorDesc(LUA_ERROR_ITEM_NOT_FOUND));
 		lua_pushnil(L);
+
 		return 1;
 	}
 
@@ -8642,6 +8649,33 @@ int LuaScriptInterface::luaGetItemArmorByUID(lua_State *L)
 }
 
 //[[--Darghos
+bool LuaScriptInterface::popBoolean(lua_State *L)
+{
+	lua_pop(L, 1);
+	return (bool)lua_toboolean(L, 0);
+}
+
+void LuaScriptInterface::pushGlobalValue(lua_State *L)
+{
+	std::string name = popString(L);
+
+	GlobalValuesMap::const_iterator it = globalValues.find(name);
+	if(it != globalValues.end()){
+		if(it->second.type() == typeid(bool))
+			lua_pushboolean(L, boost::any_cast<bool>(it->second));
+		else if(it->second.type() == typeid(double))
+			lua_pushnumber(L, boost::any_cast<double>(it->second));
+		else if(it->second.type() == typeid(std::string))
+			lua_pushstring(L, boost::any_cast<std::string>(it->second).c_str());
+		else
+			lua_pushnil(L);
+
+		return;
+	}
+
+	lua_pushnil(L);
+}
+
 int LuaScriptInterface::luaDoUpdateCreatureImpassable(lua_State *L)
 {
 	//doUpdateCreatureImpassable(cid)
@@ -8658,6 +8692,43 @@ int LuaScriptInterface::luaDoUpdateCreatureImpassable(lua_State *L)
 		lua_pushnumber(L, LUA_ERROR);
 	}
 
+	return 1;
+}
+
+int LuaScriptInterface::luaSetGlobalValue(lua_State *L)
+{
+	//setGlobalValue(name, value)
+	ScriptEnviroment* env = getScriptEnv();
+	LuaScriptInterface* script_interface = env->getScriptInterface();
+
+	boost::any value;
+	int32_t type = lua_type(L, -1);
+	if(type == LUA_TBOOLEAN)
+		value = popBoolean(L);
+	else if(type == LUA_TNUMBER)
+		value = popFloatNumber(L);
+	else if(type == LUA_TSTRING)
+		value = popString(L);
+	else{
+		reportErrorFunc("Not valid value type.");
+		lua_pushnumber(L, LUA_ERROR);
+		return 1;
+	}
+	std::string name = popString(L);
+
+	//insert at map and return clean state
+	script_interface->setGlobalValue(name, value);
+	lua_pushnumber(L, LUA_NO_ERROR);
+
+	return 1;
+}
+
+int LuaScriptInterface::luaGetGlobalValue(lua_State *L)
+{
+	//getGlobalValue(name)
+	ScriptEnviroment* env = getScriptEnv();
+	LuaScriptInterface* script_interface = env->getScriptInterface();
+	script_interface->pushGlobalValue(L);
 	return 1;
 }
 //--]]
