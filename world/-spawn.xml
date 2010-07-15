@@ -15140,6 +15140,18 @@
     <monster name="Dwarf Guard" x="2" y="13" z="10" spawntime="20"/>
     <monster name="Dwarf Guard" x="3" y="15" z="10" spawntime="20"/>
   </spawn>
+  <spawn centerx="2563" centery="1955" centerz="10" radius="5">
+    <monster name="Cultist" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-3" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist" x="3" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-3" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-2" y="1" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2547" centery="1956" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="-1" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="4" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-4" y="0" z="10" spawntime="60"/>
+  </spawn>
   <spawn centerx="2068" centery="1958" centerz="10" radius="5">
     <monster name="Minotaur guard" x="-3" y="0" z="10" spawntime="60"/>
   </spawn>
@@ -15153,15 +15165,40 @@
   <spawn centerx="2126" centery="1959" centerz="10" radius="5">
     <monster name="Minotaur guard" x="2" y="-1" z="10" spawntime="60"/>
   </spawn>
+  <spawn centerx="2587" centery="1966" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="1" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="0" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="0" y="4" z="10" spawntime="60"/>
+  </spawn>
   <spawn centerx="2045" centery="1969" centerz="10" radius="5">
     <monster name="Minotaur mage" x="0" y="-1" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2575" centery="1969" centerz="10" radius="5">
+    <monster name="Cultist Master" x="0" y="3" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1984" centery="1970" centerz="10" radius="5">
     <monster name="Dwarf Guard" x="3" y="-1" z="10" spawntime="20"/>
     <monster name="Dwarf Soldier" x="-5" y="3" z="10" spawntime="20"/>
   </spawn>
+  <spawn centerx="2551" centery="1970" centerz="10" radius="5">
+    <monster name="Cultist Master" x="1" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-2" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="1" z="10" spawntime="60"/>
+  </spawn>
   <spawn centerx="2007" centery="1971" centerz="10" radius="5">
     <monster name="Beholder" x="1" y="-1" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2510" centery="1971" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="3" y="4" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2610" centery="1971" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="2" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="1" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="3" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2364" centery="1976" centerz="10" radius="30">
     <monster name="dragon lord hatchling" x="-8" y="-16" z="10" spawntime="60"/>
@@ -15175,6 +15212,13 @@
     <monster name="Dragon Lord" x="20" y="16" z="10" spawntime="180"/>
     <monster name="dragon lord hatchling" x="-11" y="23" z="10" spawntime="60"/>
     <monster name="Dragon Lord" x="-12" y="26" z="10" spawntime="180"/>
+  </spawn>
+  <spawn centerx="2568" centery="1976" centerz="10" radius="5">
+    <monster name="Cultist Master" x="1" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-4" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-3" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-4" y="4" z="10" spawntime="60"/>
+    <monster name="Cultist" x="1" y="4" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1969" centery="1980" centerz="10" radius="30">
     <monster name="Dwarf Soldier" x="-9" y="-16" z="10" spawntime="20"/>
@@ -15197,6 +15241,16 @@
   <spawn centerx="2249" centery="1981" centerz="10" radius="5">
     <monster name="Skeleton" x="0" y="2" z="10" spawntime="60"/>
   </spawn>
+  <spawn centerx="2535" centery="1981" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="-2" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="0" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="3" y="0" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2551" centery="1981" centerz="10" radius="5">
+    <monster name="Cultist" x="-3" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="4" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="4" z="10" spawntime="60"/>
+  </spawn>
   <spawn centerx="2304" centery="1982" centerz="10" radius="30">
     <monster name="dragon lord hatchling" x="-20" y="-24" z="10" spawntime="60"/>
     <monster name="Dragon Lord" x="-17" y="-22" z="10" spawntime="180"/>
@@ -15208,6 +15262,21 @@
     <monster name="dragon lord hatchling" x="-19" y="2" z="10" spawntime="60"/>
     <monster name="Dragon Lord" x="18" y="3" z="10" spawntime="180"/>
     <monster name="dragon lord hatchling" x="15" y="7" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2579" centery="1982" centerz="10" radius="5">
+    <monster name="Cultist Master" x="-3" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="1" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="3" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="4" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-4" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="3" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="4" y="2" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2598" centery="1982" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="0" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="4" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="4" y="3" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2023" centery="1983" centerz="10" radius="10">
     <monster name="Fire Elemental" x="0" y="-6" z="10" spawntime="60"/>
@@ -15226,8 +15295,44 @@
     <monster name="Skeleton" x="-1" y="-2" z="10" spawntime="60"/>
     <monster name="Skeleton" x="-2" y="1" z="10" spawntime="60"/>
   </spawn>
+  <spawn centerx="2508" centery="1995" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="-2" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-2" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-2" y="3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="0" y="4" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="2" y="4" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2551" centery="1997" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-2" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-4" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="2" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="0" y="5" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2574" centery="2005" centerz="10" radius="5">
+    <monster name="Cultist" x="1" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-2" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist" x="1" y="2" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2523" centery="2008" centerz="10" radius="5">
+    <monster name="Cultist Master" x="3" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-2" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="3" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="3" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="3" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2554" centery="2008" centerz="10" radius="5">
+    <monster name="Cultist Master" x="-3" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="4" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="2" y="0" z="10" spawntime="60"/>
+  </spawn>
   <spawn centerx="2187" centery="2011" centerz="10" radius="5">
     <monster name="Dwarf Guard" x="0" y="-3" z="10" spawntime="20"/>
+  </spawn>
+  <spawn centerx="2602" centery="2013" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="-2" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-1" y="3" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2184" centery="2016" centerz="10" radius="20">
     <monster name="Dwarf Guard" x="2" y="-13" z="10" spawntime="20"/>
@@ -15265,14 +15370,69 @@
     <monster name="Dwarf Guard" x="12" y="14" z="10" spawntime="20"/>
     <monster name="Dwarf Guard" x="10" y="20" z="10" spawntime="20"/>
   </spawn>
+  <spawn centerx="2564" centery="2030" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="-2" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="2" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-2" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-2" y="4" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-1" y="4" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="4" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="1" y="4" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="2" y="4" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2583" centery="2030" centerz="10" radius="5">
+    <monster name="Cultist Master" x="1" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-2" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-3" y="4" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="4" y="5" z="10" spawntime="60"/>
+  </spawn>
   <spawn centerx="2229" centery="2033" centerz="10" radius="20">
     <monster name="Dwarf Guard" x="7" y="18" z="10" spawntime="20"/>
+  </spawn>
+  <spawn centerx="2515" centery="2033" centerz="10" radius="5">
+    <monster name="Cultist Master" x="2" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist" x="2" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="2" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2538" centery="2039" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="-3" y="-5" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-1" y="-5" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="3" y="-5" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-4" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="1" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-2" y="3" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="2" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2611" centery="2039" centerz="10" radius="5">
+    <monster name="Blood Cultist" x="-4" y="-5" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-3" y="-5" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="-2" y="-5" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-1" y="-5" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="0" y="-5" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="-3" y="1" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-2" y="1" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="-1" y="1" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="0" y="1" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="1" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-2" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="0" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="5" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="3" y="3" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="1954" centery="2040" centerz="10" radius="2">
     <monster name="Giant Spider" x="1" y="-1" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2419" centery="2044" centerz="10" radius="1">
     <monster name="Pirate Ghost" x="1" y="0" z="10" spawntime="120"/>
+  </spawn>
+  <spawn centerx="2557" centery="2046" centerz="10" radius="5">
+    <monster name="Burning Demon" x="1" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist" x="2" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="2" y="-1" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="2" y="1" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="2" y="2" z="10" spawntime="2304"/>
   </spawn>
   <spawn centerx="2412" centery="2047" centerz="10" radius="1">
     <monster name="Pirate Skeleton" x="1" y="0" z="10" spawntime="120"/>
@@ -15283,6 +15443,24 @@
   </spawn>
   <spawn centerx="2408" centery="2051" centerz="10" radius="1">
     <monster name="Pirate Skeleton" x="1" y="0" z="10" spawntime="120"/>
+  </spawn>
+  <spawn centerx="2534" centery="2053" centerz="10" radius="5">
+    <monster name="Cultist" x="2" y="-1" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="2" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="5" y="1" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="1" y="2" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="1" y="3" z="10" spawntime="2304"/>
+    <monster name="Burning Demon" x="3" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2571" centery="2053" centerz="10" radius="5">
+    <monster name="Burning Demon" x="-2" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-3" y="4" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-2" y="4" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-1" y="4" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="0" y="4" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="1" y="4" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="2" y="4" z="10" spawntime="2560"/>
   </spawn>
   <spawn centerx="2415" centery="2056" centerz="10" radius="1">
     <monster name="Ghoul" x="1" y="0" z="10" spawntime="120"/>
@@ -15299,6 +15477,48 @@
     <monster name="Tarantula" x="4" y="5" z="10" spawntime="60"/>
     <monster name="Tarantula" x="1" y="6" z="10" spawntime="60"/>
     <monster name="Giant Spider" x="9" y="9" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2585" centery="2057" centerz="10" radius="5">
+    <monster name="Cultist" x="-1" y="-3" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="0" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-1" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-1" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-1" y="0" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-1" y="1" z="10" spawntime="2560"/>
+  </spawn>
+  <spawn centerx="2612" centery="2057" centerz="10" radius="5">
+    <monster name="Blood Cultist" x="-1" y="-4" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-1" y="-3" z="10" spawntime="2560"/>
+    <monster name="Burning Demon" x="-2" y="0" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-1" y="0" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="0" y="0" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="-1" y="1" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-3" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-2" y="2" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-1" y="2" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="0" y="2" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="1" y="2" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="2" y="2" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="4" y="2" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2500" centery="2058" centerz="10" radius="5">
+    <monster name="Cultist" x="1" y="-4" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="2" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist" x="3" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="1" y="0" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="2" y="1" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="2" y="2" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="1" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2513" centery="2058" centerz="10" radius="5">
+    <monster name="Cultist" x="2" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-5" y="0" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-2" y="0" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-3" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-2" y="2" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="0" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="4" y="2" z="10" spawntime="60"/>
   </spawn>
   <spawn centerx="2422" centery="2059" centerz="10" radius="1">
     <monster name="Pirate Ghost" x="1" y="0" z="10" spawntime="120"/>
@@ -15317,11 +15537,451 @@
     <monster name="Pirate Skeleton" x="1" y="0" z="10" spawntime="120"/>
     <monster name="Pirate Ghost" x="0" y="1" z="10" spawntime="120"/>
   </spawn>
+  <spawn centerx="2509" centery="2069" centerz="10" radius="5">
+    <monster name="Cultist" x="5" y="-2" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist" x="3" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-3" y="1" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2528" centery="2069" centerz="10" radius="5">
+    <monster name="Cultist" x="-2" y="-1" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-1" y="0" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="1" y="0" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist" x="4" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-2" y="1" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="0" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="2" y="1" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2559" centery="2071" centerz="10" radius="5">
+    <monster name="Burning Demon" x="-2" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="0" y="-2" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="0" y="-1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-2" y="0" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="-1" y="0" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-2" y="1" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="-1" y="1" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="0" y="1" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="-1" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="2" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-2" y="3" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="0" y="3" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-2" y="4" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="4" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2612" centery="2077" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="-1" y="-3" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="0" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="0" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="0" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="1" y="0" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="-1" y="3" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="0" y="3" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="1" y="3" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="2" y="3" z="10" spawntime="60"/>
+  </spawn>
   <spawn centerx="2411" centery="2079" centerz="10" radius="1">
     <monster name="Pirate Ghost" x="1" y="0" z="10" spawntime="120"/>
   </spawn>
+  <spawn centerx="2527" centery="2079" centerz="10" radius="5">
+    <monster name="Cultist Master" x="-5" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-2" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="-4" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-2" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="1" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="3" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="4" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-3" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist" x="3" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-3" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="1" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="5" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="4" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2549" centery="2079" centerz="10" radius="5">
+    <monster name="Cultist" x="0" y="-2" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="1" y="-2" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="2" y="-2" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="3" y="-2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-1" y="-1" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-1" y="0" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="3" y="0" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="1" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="2" y="1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="0" y="2" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="1" y="2" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="0" y="3" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="1" y="3" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="0" y="4" z="10" spawntime="2304"/>
+  </spawn>
   <spawn centerx="2406" centery="2080" centerz="10" radius="1">
     <monster name="Pirate Skeleton" x="1" y="0" z="10" spawntime="120"/>
+  </spawn>
+  <spawn centerx="2510" centery="2080" centerz="10" radius="5">
+    <monster name="Cultist" x="2" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="3" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="5" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="1" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="2" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="5" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="3" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="2" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="5" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2597" centery="2080" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="0" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="1" y="-3" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="1" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="1" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="2" y="0" z="10" spawntime="2560"/>
+    <monster name="Burning Demon" x="2" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2583" centery="2082" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="-3" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-2" y="-4" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="-2" y="-3" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="-1" y="-3" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="-1" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-2" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-2" y="2" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-1" y="3" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-1" y="4" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-1" y="5" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="0" y="5" z="10" spawntime="2560"/>
+  </spawn>
+  <spawn centerx="2500" centery="2088" centerz="10" radius="5">
+    <monster name="Blood Cultist" x="1" y="-5" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="1" y="-4" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="0" y="-3" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="2" y="-3" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="-2" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="2" y="-2" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="1" y="-1" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="2" y="-1" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="1" y="0" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="2" y="0" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="1" y="1" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="2" y="1" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="1" y="3" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="2" y="3" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="1" y="4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="4" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2615" centery="2091" centerz="10" radius="5">
+    <monster name="Burning Demon" x="0" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="0" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="0" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-1" y="1" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="2" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="1" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="0" y="3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2543" centery="2092" centerz="10" radius="5">
+    <monster name="Cultist" x="-3" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-1" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="0" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-2" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-2" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="0" y="2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="3" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-1" y="4" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="5" z="10" spawntime="2304"/>
+  </spawn>
+  <spawn centerx="2525" centery="2093" centerz="10" radius="5">
+    <monster name="Cultist Master" x="1" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-1" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="3" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="3" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="5" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="1" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-1" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2564" centery="2094" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="-4" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="-3" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="1" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="2" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-2" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-1" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="0" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="1" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-3" y="0" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-2" y="0" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="1" y="0" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="4" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="1" y="1" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="2" y="2" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="3" y="2" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="2" y="3" z="10" spawntime="2560"/>
+  </spawn>
+  <spawn centerx="2555" centery="2100" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="-3" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-4" y="-1" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="-3" y="-1" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="-2" y="-1" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="-1" y="-1" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="0" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-3" y="0" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="-1" y="0" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="1" y="0" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-3" y="1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-2" y="1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-1" y="1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="0" y="1" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="1" y="1" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2599" centery="2104" centerz="10" radius="5">
+    <monster name="Burning Demon" x="-1" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-2" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="2" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-2" y="3" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="0" y="3" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="0" y="4" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-1" y="5" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2544" centery="2107" centerz="10" radius="5">
+    <monster name="Blood Cultist" x="-3" y="-2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-3" y="0" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-2" y="2" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="1" y="2" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="2" y="2" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="3" y="2" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-2" y="3" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-1" y="3" z="10" spawntime="2304"/>
+  </spawn>
+  <spawn centerx="2586" centery="2107" centerz="10" radius="5">
+    <monster name="Cultist Master" x="0" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="-3" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="0" y="-3" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-1" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="2" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="0" y="0" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="2" y="0" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="0" y="1" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="1" y="1" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-2" y="2" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-1" y="2" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="1" y="2" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-5" y="3" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="0" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2511" centery="2108" centerz="10" radius="5">
+    <monster name="Cultist Master" x="-1" y="-5" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="0" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="-3" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="-1" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="0" y="4" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2567" centery="2110" centerz="10" radius="5">
+    <monster name="Cultist" x="-1" y="-4" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="-1" y="-3" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="-5" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="-4" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="-5" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-4" y="-1" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="1" y="-1" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="2" y="-1" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="4" y="-1" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="5" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-3" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-2" y="0" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="2" y="0" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2525" centery="2114" centerz="10" radius="5">
+    <monster name="Cultist Warden" x="-2" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="0" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="1" y="-3" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-2" y="-2" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="-1" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-2" y="0" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-2" y="1" z="10" spawntime="2304"/>
+    <monster name="Cultist Warden" x="1" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-2" y="4" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="-1" y="4" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="5" z="10" spawntime="2304"/>
+  </spawn>
+  <spawn centerx="2573" centery="2118" centerz="10" radius="5">
+    <monster name="Cultist" x="-5" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist Warden" x="4" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-4" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-2" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-1" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="1" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="2" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="3" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="5" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-5" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-2" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Warden" x="0" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="1" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="3" y="1" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="4" y="1" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2615" centery="2118" centerz="10" radius="5">
+    <monster name="Cultist" x="0" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-5" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="-3" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="0" y="-2" z="10" spawntime="2560"/>
+    <monster name="Cultist" x="0" y="-1" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="0" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-5" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-5" y="2" z="10" spawntime="2560"/>
+    <monster name="Burning Demon" x="-2" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="2" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="1" y="3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="0" y="4" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-4" y="5" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-3" y="5" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="0" y="5" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2501" centery="2119" centerz="10" radius="5">
+    <monster name="Cultist Master" x="0" y="-5" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="-3" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="1" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="-2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="1" y="-1" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="-1" y="0" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="1" y="0" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="-1" y="1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="0" y="2" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="1" y="2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="3" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="0" y="4" z="10" spawntime="2304"/>
+  </spawn>
+  <spawn centerx="2546" centery="2122" centerz="10" radius="5">
+    <monster name="Cultist Master" x="0" y="-3" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="-2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="1" y="-2" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="2" y="-2" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="-3" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="-1" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="-1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="1" y="-1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="2" y="-1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-1" y="0" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="0" y="0" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="-2" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2558" centery="2135" centerz="10" radius="5">
+    <monster name="Blood Cultist" x="2" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="3" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="3" y="0" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="3" y="1" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-3" y="2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-1" y="2" z="10" spawntime="2304"/>
+    <monster name="Burning Demon" x="0" y="2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="3" y="2" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="0" y="3" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="2" y="3" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="0" y="4" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="1" y="4" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="2" y="4" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2596" centery="2137" centerz="10" radius="5">
+    <monster name="Cultist Master" x="5" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-4" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="3" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="1" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="3" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-4" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-4" y="4" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2614" centery="2146" centerz="10" radius="5">
+    <monster name="Cultist Master" x="-1" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="2" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="-3" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="0" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="0" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="1" y="2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="0" y="3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2501" centery="2147" centerz="10" radius="5">
+    <monster name="Cultist Master" x="0" y="-4" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-1" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="1" y="-2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-1" y="-1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="0" y="0" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="1" y="0" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="1" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="0" y="4" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="4" y="5" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2597" centery="2148" centerz="10" radius="5">
+    <monster name="Cultist Master" x="-5" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="4" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-4" y="-2" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="3" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="4" y="-1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-4" y="1" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2548" centery="2149" centerz="10" radius="5">
+    <monster name="Blood Cultist" x="-4" y="-2" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-3" y="-2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-4" y="-1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-4" y="0" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-3" y="1" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="-3" y="2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-2" y="2" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="-1" y="2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="2" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="2" y="2" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="3" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2573" centery="2150" centerz="10" radius="5">
+    <monster name="Blood Cultist" x="-4" y="0" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-2" y="0" z="10" spawntime="60"/>
+    <monster name="Burning Demon" x="-4" y="1" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-3" y="1" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-3" y="2" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-2" y="2" z="10" spawntime="2560"/>
+    <monster name="Blood Cultist" x="0" y="2" z="10" spawntime="2560"/>
+    <monster name="Cultist Master" x="-1" y="3" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="0" y="3" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="2525" centery="2151" centerz="10" radius="5">
+    <monster name="Cultist Master" x="-3" y="-4" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-2" y="-3" z="10" spawntime="60"/>
+    <monster name="Cultist" x="-2" y="-2" z="10" spawntime="2304"/>
+    <monster name="Cultist" x="-2" y="-1" z="10" spawntime="2304"/>
+    <monster name="Cultist Master" x="-4" y="0" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="-1" y="0" z="10" spawntime="2304"/>
+    <monster name="Burning Demon" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Blood Cultist" x="-4" y="1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-2" y="1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="-1" y="1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="0" y="1" z="10" spawntime="2304"/>
+    <monster name="Blood Cultist" x="2" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="3" y="1" z="10" spawntime="60"/>
+    <monster name="Cultist Master" x="4" y="1" z="10" spawntime="2304"/>
   </spawn>
   <spawn centerx="1830" centery="2162" centerz="10" radius="30">
     <monster name="Betrayed Wraith" x="8" y="-21" z="10" spawntime="10"/>
