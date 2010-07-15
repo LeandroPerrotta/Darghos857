@@ -626,6 +626,12 @@
 	<monster name="Swamp Thing" file="ariadne/troll-wing/swamp thing.xml"/>
 	<monster name="Big Ooze" file="ariadne/troll-wing/big ooze.xml"/>
 	<monster name="Ghazran" file="ariadne/troll-wing/ghazran.xml"/>
+	<monster name="Burning Demon" file="ariadne/cultist-wing/Burning Demon.xml"/>
+	<monster name="Cultist Warden" file="ariadne/cultist-wing/Cultist Warden.xml"/>
+	<monster name="Blood Cultist" file="ariadne/cultist-wing/Blood Cultist.xml"/>
+	<monster name="Cultist Master" file="ariadne/cultist-wing/Cultist Master.xml"/>
+	<monster name="Cultist" file="ariadne/cultist-wing/Cultist.xml"/>
+	
 
 	<!-- Nieruzad Raid -->
 	<monster name="Nieruzad" file="Nieruzad/Nieruzad.xml"/>	
