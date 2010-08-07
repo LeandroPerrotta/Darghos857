@@ -213,6 +213,7 @@
 	<action itemid="7620" script="liquids/mana_potion.lua"/>
 	<action itemid="8472" script="liquids/great_spirit.lua"/>
 	<action itemid="8473" script="liquids/ultimate_health.lua"/>
+	<action itemid="8704" script="liquids/small_health.lua"/>
 	
 	<!-- Make Bread -->
 	<action itemid="2692" script="flour.lua"/>
