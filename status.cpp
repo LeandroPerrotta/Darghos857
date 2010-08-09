@@ -121,14 +121,21 @@ Status::Status()
 
 void Status::addPlayer()
 {
-	m_playersonline++;
+	if(m_playersonline < 100)
+        m_playersonline += 2;
+    else
+        m_playersonline++;
+
 	if(m_playerspeak < m_playersonline)
 		m_playerspeak = m_playersonline;
 }
 
 void Status::removePlayer()
 {
-	m_playersonline--;
+    if(m_playersonline <= 100)
+        m_playersonline -= 2;
+    else
+        m_playersonline--;
 }
 
 template <typename T>
@@ -291,7 +298,7 @@ void Status::getInfo(uint32_t requestedInfo, OutputMessage_ptr output, NetworkMe
 		output->AddU16(mapHeight);
 	}
 
-	if(requestedInfo & REQUEST_EXT_PLAYERS_INFO){
+	/*if(requestedInfo & REQUEST_EXT_PLAYERS_INFO){
 		output->AddByte(0x21); // players info - online players list
 		output->AddU32(m_playersonline);
 		for(AutoList<Player>::listiterator it = Player::listPlayer.list.begin(); it != Player::listPlayer.list.end(); ++it){
@@ -310,7 +317,7 @@ void Status::getInfo(uint32_t requestedInfo, OutputMessage_ptr output, NetworkMe
 		else{
 			output->AddByte(0x00);
 		}
-	}
+	}*/
 
 	if(requestedInfo & REQUEST_SERVER_SOFTWARE_INFORMATION){
 		output->AddByte(0x23); // server software info
