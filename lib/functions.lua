@@ -1,5 +1,5 @@
 --[[
-	* REGISTRO DE EVENTOS ONKILL PARA MISSÕES
+	* REGISTRO DE EVENTOS ONKILL PARA MISSï¿½ES
 ]]--
 function OnKillCreatureMission(cid)
 
@@ -60,11 +60,11 @@ function obsidianKnifeOnGhazranCorpse(cid, corpse)
 	
 	if not(hasRemovedTongue) then
 
-		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você conseguiu obter a língua de Ghazran. Seu questlog foi atualizado.")
+		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Vocï¿½ conseguiu obter a lï¿½ngua de Ghazran. Seu questlog foi atualizado.")
 		setPlayerStorageValue(cid, sid.ARIADNE_GHAZRAN_TONGUE, 1)
 		setPlayerStorageValue(cid, QUESTLOG.ARIADNE.GHAZRAN_WING, 3)
 	else
-		doPlayerSendCancel(cid, "Você já obteve a língua de Ghazran.")
+		doPlayerSendCancel(cid, "Vocï¿½ jï¿½ obteve a lï¿½ngua de Ghazran.")
 	end
 end
 
@@ -79,7 +79,7 @@ function chestScripts(cid, questActionId)
 end
 
 --[[
-	@ Função chamada quando o server é iniciado
+	@ Funï¿½ï¿½o chamada quando o server ï¿½ iniciado
 ]]--
 function onServerStart()
 
@@ -347,16 +347,16 @@ function playerRecord()
 		local playerson = getPlayersOnlineList()
 		local total = #playerson
 		
-		--[[if(total <= 100) then
+		if(total <= 50) then
 			total = total * 2
 		else
-			total = total + 100
-		end]]--
+			total = total + 50
+		end
 		
 		if(total > record) then
 		
 			setGlobalStorageValue(gid.PLAYERS_RECORD, total)
-			broadcastMessage("A marca de ".. total .." jogadores online é um novo recorde no Darghos!", MESSAGE_EVENT_DEFAULT)
+			broadcastMessage("A marca de ".. total .." jogadores online ï¿½ um novo recorde no Darghos!", MESSAGE_EVENT_DEFAULT)
 		end
 	else
 
@@ -406,7 +406,7 @@ function setRateStage(cid)
 end
 ]]--
 --[[
- * Contem todas funções referente ao Darghos
+ * Contem todas funï¿½ï¿½es referente ao Darghos
 ]]--
 function checkGeneralInfoPlayer(cid)
 	
@@ -431,7 +431,7 @@ function checkGeneralInfoPlayer(cid)
 end
 
 
--- Verificação ATUAL se um player está em Area premmy, e teleporta ele para area free.
+-- Verificaï¿½ï¿½o ATUAL se um player estï¿½ em Area premmy, e teleporta ele para area free.
 function runPremiumSystem(cid)
 
 	local name = getCreatureName(cid)
