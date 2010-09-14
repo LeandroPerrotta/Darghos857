@@ -3,6 +3,6 @@
 	<announce delay="60000" type="event" message="O grande inquisitor esta prestes a visitar a cidade para queimar infieis em Aracura. Infieis se escondam!"/>
 	<announce delay="120000" type="event" message="High Inquisitor esta em Aracura!"/>
 	
-	<singlespawn delay="120000" name="Ent" x="2890" y="1180" z="7" />
+	<singlespawn delay="120000" name="high inquisitor" x="2890" y="1180" z="7" />
 	
 </raid>
