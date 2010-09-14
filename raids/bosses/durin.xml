@@ -1,0 +1,8 @@
+<raid>
+	<announce delay="0" type="event" message="Os Anoes de Kazmodan estao agitados!"/>
+	<announce delay="60000" type="event" message="O antigo rei dos anoes esta prestes a sair de sua cidade e vir para superficie!"/>
+	<announce delay="120000" type="event" message="Durin voltou! A area de kazmodan precisa de ajuda para derruba-lo"/>
+
+	<singlespawn delay="120000" name="Durin" x="2075" y="1929" z="7" />
+	
+</raid>
