@@ -2,6 +2,45 @@
  * Contem todas constantes referentes ao Darghos, podem estar divididas por Arrays!
 ]]--
 
+	groups =
+	{
+		PLAYER = 0,
+		TUTOR = 0,
+		SENIOR_TUTOR = 2,
+		GAME_MASTER = 3,
+		COMMUNITY_MANAGER = 4,
+		GOD = 5
+	}
+
+	outfits =
+	{
+		CITIZEN = {female = 136, male = 128},
+		HUNTER = {female = 137, male = 129},
+		MAGE = {female = 138, male = 130},
+		KNIGHT = {female = 139, male = 131},
+		NOBLE = {female = 140, male = 132},
+		SUMMONER = {female = 141, male = 133},
+		WARRIOR = {female = 142, male = 134},
+		BARBARIAN = {female = 147, male = 143},
+		DRUID = {female = 148, male = 144},
+		WIZARD = {female = 149, male = 145},
+		ORIENTAL = {female = 150, male = 146},
+		PIRATE = {female = 155, male = 151},
+		ASSASSIN = {female = 156, male = 152},
+		BEGGAR = {female = 157, male = 153},
+		SHAMAN = {female = 158, male = 154},
+		NORSE = {female = 252, male = 251},
+		NIGHTMARE = {female = 269, male = 268},
+		JESTER = {female = 270, male = 273},
+		BROTHERHOOD = {female = 279, male = 278},
+		DEMONHUNTER = {female = 288, male = 289},
+		YALAHARIAN = {female = 324, male = 325},
+		WARMASTER = {female = 336, male = 335},
+		WEEDING = {female = 329, male = 328},
+		GAMEMASTER = {female = 75, male = 75},
+		OLD_CM = {female = 266, male = 266},
+		CM = {female = 302, male = 302}
+	}
 
 	-->> Posi��es de area para checagem ao login {creaturescripts/login.lua} (expulsa jogadores free de area premium)
 	areaCheck = 

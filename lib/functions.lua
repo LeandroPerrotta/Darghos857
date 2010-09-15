@@ -1,3 +1,78 @@
+function addAllOufits(cid)
+
+	if(isPlayer(cid) == TRUE) then
+	
+		doPlayerAddOutfit(cid, outfits.CITIZEN.male, 3)
+		doPlayerAddOutfit(cid, outfits.CITIZEN.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.HUNTER.male, 3)
+		doPlayerAddOutfit(cid, outfits.HUNTER.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.MAGE.male, 3)
+		doPlayerAddOutfit(cid, outfits.MAGE.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.KNIGHT.male, 3)
+		doPlayerAddOutfit(cid, outfits.KNIGHT.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.NOBLE.male, 3)
+		doPlayerAddOutfit(cid, outfits.NOBLE.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.SUMMONER.male, 3)
+		doPlayerAddOutfit(cid, outfits.SUMMONER.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.WARRIOR.male, 3)
+		doPlayerAddOutfit(cid, outfits.WARRIOR.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.BARBARIAN.male, 3)
+		doPlayerAddOutfit(cid, outfits.BARBARIAN.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.DRUID.male, 3)
+		doPlayerAddOutfit(cid, outfits.DRUID.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.WIZARD.male, 3)
+		doPlayerAddOutfit(cid, outfits.WIZARD.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.ORIENTAL.male, 3)
+		doPlayerAddOutfit(cid, outfits.ORIENTAL.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.PIRATE.male, 3)
+		doPlayerAddOutfit(cid, outfits.PIRATE.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.ASSASSIN.male, 3)
+		doPlayerAddOutfit(cid, outfits.ASSASSIN.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.BEGGAR.male, 3)
+		doPlayerAddOutfit(cid, outfits.BEGGAR.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.SHAMAN.male, 3)
+		doPlayerAddOutfit(cid, outfits.SHAMAN.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.NORSE.male, 3)
+		doPlayerAddOutfit(cid, outfits.NORSE.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.NIGHTMARE.male, 3)
+		doPlayerAddOutfit(cid, outfits.NIGHTMARE.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.JESTER.male, 3)
+		doPlayerAddOutfit(cid, outfits.JESTER.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.BROTHERHOOD.male, 3)
+		doPlayerAddOutfit(cid, outfits.BROTHERHOOD.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.DEMONHUNTER.male, 3)
+		doPlayerAddOutfit(cid, outfits.DEMONHUNTER.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.YALAHARIAN.male, 3)
+		doPlayerAddOutfit(cid, outfits.YALAHARIAN.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.WARMASTER.male, 3)
+		doPlayerAddOutfit(cid, outfits.WARMASTER.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.WEEDING.male, 3)
+		doPlayerAddOutfit(cid, outfits.WEEDING.female, 3)
+	end
+end
+
 --[[
 	* REGISTRO DE EVENTOS ONKILL PARA MISS�ES
 ]]--

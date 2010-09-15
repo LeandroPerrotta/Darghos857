@@ -433,7 +433,7 @@ function useQuestChest(cid, quest, questActionId)
 			doPlayerAddItem(cid, quest.rewardId, quest.count)
 		elseif(quest.rewardContainer) then
 			
-			-- Verificamos se o container de reward items está em ordem!!
+			-- Verificamos se o container de reward items estï¿½ em ordem!!
 			if(quest.rewardContainerItems == nil) then
 			
 				debugPrint("QuestChest: Reward container items not found.")
