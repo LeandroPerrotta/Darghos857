@@ -1,8 +1,6 @@
 <raid>
-	<announce delay="0" type="event" message="Um dragao desceu em Isle of Peace. Peguem suas foices e seus martelos para defender a cidade!"/>
+	<announce delay="0" type="event" message="Dragoes em Island of Peace!"/>
 
-	<areaspawn delay="0" centerx="1254" centery="2230" centerz="7" radius="50">
-		<monster name="Dragon" minamount="10" maxamount="20"/>
-	</areaspawn>
+	<singlespawn delay="10000" name="Dragon" x="1254" y="2230" z="7" />
 	
 </raid>
