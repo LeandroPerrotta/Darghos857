@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
 <raid>
 	<announce delay="0" type="event" message="Forcas se organizam em Thorn para convocar o Avatar da mae natureza!"/>
 	<announce delay="60000" type="event" message="A grande arvore comeca a ser convocada em Thorn! Se dirijam para a cidade do rei Ordon!"/>

@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
 <raid>
 	<announce delay="0" type="event" message="Chuva de meteoros em Quendor! Demonios caem do ceu! O apocalypse nunca esteve tao proximo!"/>
 	<announce delay="60000" type="event" message="Uma chuva de demonios nunca vistos antes caí sobre a cidade de Quendor. Nao ha para onde correr, e o fim!"/>
