@@ -396,4 +396,36 @@
   <house name="Grevart House" houseid="514" entryx="2364" entryy="1771" entryz="7" rent="250000" guildhall="1" townid="4" size="92"/>
   <house name="Untinion House" houseid="515" entryx="2069" entryy="1839" entryz="7" rent="280000" guildhall="1" townid="1" size="134"/>
   <house name="Nialgon House" houseid="516" entryx="2422" entryy="1871" entryz="7" rent="30000" townid="1" size="93"/>
+  <house name="West Palace I" houseid="517" entryx="1075" entryy="1121" entryz="7" rent="19000" townid="9" size="51"/>
+  <house name="West Palace II" houseid="518" entryx="1075" entryy="1129" entryz="7" rent="19000" townid="9" size="51"/>
+  <house name="West GuildHouse I" houseid="519" entryx="1075" entryy="1143" entryz="7" rent="47200" guildhall="1" townid="9" size="92"/>
+  <house name="West House I" houseid="520" entryx="1074" entryy="1155" entryz="7" rent="6000" townid="9" size="8"/>
+  <house name="West House II" houseid="521" entryx="1074" entryy="1160" entryz="7" rent="9000" townid="9" size="12"/>
+  <house name="South House I" houseid="522" entryx="1076" entryy="1162" entryz="7" rent="3100" townid="9" size="4"/>
+  <house name="South House II" houseid="523" entryx="1081" entryy="1162" entryz="7" rent="4700" townid="9" size="12"/>
+  <house name="South House III" houseid="524" entryx="1086" entryy="1162" entryz="7" rent="3100" townid="9" size="4"/>
+  <house name="South House IV" houseid="525" entryx="1100" entryy="1157" entryz="7" rent="9000" townid="9" size="13"/>
+  <house name="South House V" houseid="526" entryx="1107" entryy="1157" entryz="7" rent="9000" townid="9" size="13"/>
+  <house name="South House VI" houseid="527" entryx="1114" entryy="1157" entryz="7" rent="9000" townid="9" size="13"/>
+  <house name="South House VII" houseid="528" entryx="1121" entryy="1157" entryz="7" rent="9000" townid="9" size="13"/>
+  <house name="South Palace I" houseid="529" entryx="1126" entryy="1149" entryz="7" rent="14000" townid="9" size="36"/>
+  <house name="South Palace II" houseid="530" entryx="1111" entryy="1146" entryz="7" rent="15000" townid="9" size="20"/>
+  <house name="South House VIII" houseid="531" entryx="1092" entryy="1149" entryz="7" rent="10000" townid="9" size="15"/>
+  <house name="South Palace III" houseid="532" entryx="1111" entryy="1135" entryz="7" rent="34000" townid="9" size="57"/>
+  <house name="South House XIX" houseid="533" entryx="1101" entryy="1143" entryz="7" rent="5200" townid="9" size="9"/>
+  <house name="South House X" houseid="534" entryx="1096" entryy="1143" entryz="7" rent="5200" townid="9" size="9"/>
+  <house name="South House XI" houseid="535" entryx="1091" entryy="1137" entryz="7" rent="5200" townid="9" size="9"/>
+  <house name="South House XII" houseid="536" entryx="1094" entryy="1145" entryz="7" rent="5200" townid="9" size="9"/>
+  <house name="North Palace I" houseid="537" entryx="1088" entryy="1131" entryz="7" rent="35000" townid="9" size="65"/>
+  <house name="North Palace II" houseid="538" entryx="1088" entryy="1123" entryz="7" rent="35000" townid="9" size="65"/>
+  <house name="North House I" houseid="539" entryx="1107" entryy="1118" entryz="7" rent="7000" townid="9" size="10"/>
+  <house name="North House II" houseid="540" entryx="1114" entryy="1118" entryz="7" rent="7000" townid="9" size="10"/>
+  <house name="North House III" houseid="541" entryx="1120" entryy="1115" entryz="7" rent="9000" townid="9" size="14"/>
+  <house name="North House IV" houseid="542" entryx="1135" entryy="1115" entryz="7" rent="4500" townid="9" size="6"/>
+  <house name="East GuildHouse I" houseid="543" entryx="1124" entryy="1126" entryz="7" rent="84700" guildhall="1" townid="9" size="97"/>
+  <house name="East House I" houseid="544" entryx="1137" entryy="1123" entryz="7" rent="4500" townid="9" size="9"/>
+  <house name="East House II" houseid="545" entryx="1137" entryy="1128" entryz="7" rent="4500" townid="9" size="9"/>
+  <house name="East House III" houseid="546" entryx="1137" entryy="1133" entryz="7" rent="4500" townid="9" size="9"/>
+  <house name="East House IV" houseid="547" entryx="1133" entryy="1137" entryz="7" rent="4500" townid="9" size="4"/>
+  <house name="East House V" houseid="548" entryx="1133" entryy="1142" entryz="7" rent="4500" townid="9" size="4"/>
 </houses>
