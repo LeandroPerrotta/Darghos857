@@ -632,6 +632,9 @@
 	<monster name="Cultist Master" file="ariadne/cultist-wing/Cultist Master.xml"/>
 	<monster name="Cultist" file="ariadne/cultist-wing/Cultist.xml"/>
 	
+	<!-- Kashmir -->
+	<monster name="Loyal elf" file="elves/loyal elf.xml"/>
+	<monster name="Dark Sorcerer" file="darghos/dark sorcerer.xml"/>
 
 	<!-- Nieruzad Raid -->
 	<monster name="Nieruzad" file="Nieruzad/Nieruzad.xml"/>	
