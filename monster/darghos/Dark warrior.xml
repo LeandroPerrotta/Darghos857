@@ -18,7 +18,11 @@
     <flag runonhealth="0"/>
   </flags>
   <attacks>
-    <attack name="melee" interval="500" min="-10" max="-200"/>
+    <attack name="melee" interval="500" min="-100" max="-300"/>
+    <attack name="physical" interval="1000" chance="50" range="7" radius="4" target="1" min="-100" max="-220">
+      <attribute key="shootEffect" value="bolt"/>
+      <attribute key="areaEffect" value="blackspark"/>
+    </attack>
   </attacks>
   <defenses armor="50" defense="100"/>
   <immunities>
