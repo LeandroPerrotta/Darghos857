@@ -79,7 +79,7 @@
 	INQ_CHESTS				= 2079,
 	CHEST_DIVINE_ANKH		= 2080,
 	
-	--[[ VALUES PARA VERIFICAÇÕES (QUESTS, ETC) ]]--
+	--[[ VALUES PARA VERIFICAï¿½ï¿½ES (QUESTS, ETC) ]]--
 	
 	BANSHEE_FIRST			= 4002,
 	BANSHEE_SECOND			= 4003,
@@ -143,6 +143,9 @@
 	ON_DUNGEON				= 8897,
 	DUNGEON_TIME			= 8898,
 	
+	-- REBORNS
+	REBORN_FIRST			= 9200,
+	
 	FIRST_CITIZEN				= 10001,
 	SECOND_CITIZEN				= 10002,
 	
@@ -203,7 +206,7 @@
 	FIRST_BROTHERHOOD			= 10039,
 	SECOND_BROTHERHOOD			= 10040,
 	
-	UNIQUE_YALAHARIAN			= 10041 --@ ID unica pois é o mesmo para os dois (1,2)	
+	UNIQUE_YALAHARIAN			= 10041 --@ ID unica pois ï¿½ o mesmo para os dois (1,2)	
 		
 		
 		

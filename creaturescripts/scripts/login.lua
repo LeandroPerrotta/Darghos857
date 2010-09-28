@@ -37,7 +37,7 @@
 	end
 	
 	--Promotes player if necessary
-	if(isPremium(cid) == TRUE) then
+	--if(isPremium(cid) == TRUE) then
 		if(getPlayerStorageValue(cid, STORAGE_PROMOTION) == 1 and getPlayerVocation(cid) <= 4) then
 			doPlayerSetVocation(cid, getPlayerVocation(cid)+4)
 			doPlayerRemoveSkillLossPercent(cid, 30)
@@ -47,8 +47,8 @@
 		if(getPlayerStorageValue(cid, STORAGE_PREMIUM_ACCOUNT) == 1) then
 			setPlayerStorageValue(cid, STORAGE_PREMIUM_ACCOUNT, -1)
 		end
-		return TRUE
-	end
+		--return TRUE
+	--end
 
 	--Player is not premium - remove premium privileges
 	--Change outfit
@@ -75,11 +75,14 @@
 	]]-- Hoster's premium towns changes according to the map
 
 	--Remove promotion
-	local isPromo = (getPlayerVocation(cid) > 4)
+	--[[ local isPromo = (getPlayerVocation(cid) > 4)
 	if(isPromo) then
 		doPlayerSetVocation(cid, getPlayerVocation(cid)-4)
+		if(getPlayerStorageValue(cid, sid.REBORN_FIRST) == 1) then
+			doPlayerSetVocation(cid, getPlayerVocation(cid)-4)
+		end
 		doPlayerRemoveSkillLossPercent(cid, -30)
 		setPlayerStorageValue(cid, STORAGE_PROMOTION, 1)
-	end	
+	end	]]--
 	return TRUE
 end

@@ -33,6 +33,40 @@
 			</response>			
 		</interact>
 		
+	<interact keywords="promot">
+		<keywords>promote</keywords>
+		<keywords>promotion</keywords>
+	
+		<response text="Do you want to be a {promoted} people? If you is promoted, you have some privillegies. Do you want to pay 20000 golds for this?">
+			<action name="topic" value="100"/>
+		</response>
+	</interact>
+    
+    <interact keywords="yes" topic="100">
+       <response>
+        <action name="script">
+        <![CDATA[
+		
+		if(getPlayerLevel(cid)) >= 20 then
+			if(getPlayerVocation(cid)) <= 4 then
+				if(doPlayerRemoveMoney(cid,20000)) == TRUE then
+					setPlayerStorageValue(cid,STORAGE_PROMOTION,1)
+					selfSay("Congratulations! Now you are promoted. You need relog your character!   {LONG LIFE TO THE KING!}",cid)
+				else
+					selfSay("Sorry, you do not have enough gold.",cid)
+				end
+			else
+				selfSay("You already is promoted, your vocation is promoted!",cid)
+			end
+		else
+			selfSay("Only players level 20+ can buy PROMOTION!",cid)
+		end
+		
+        ]]>
+        </action>
+      </response>
+    </interact>
+		
 		<interact keywords="bye" focus="0">
 			<keywords>adeus</keywords>
 
