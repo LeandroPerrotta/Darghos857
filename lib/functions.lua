@@ -309,39 +309,24 @@ function setRateStage(cid, newlevel)
 	end
 
 	local stages = {
-	
-		first 	= 50,
-		second	= 20,
-		third	= 10,
-		fourth 	= 4,
-		fifth	= 2,
-		sixth	= 1
-	
+		normal 		= 8,
+		reborn_1	= 6	
 	}
 	
 	if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == 1) then
-		if(newlevel < 40) then
-			setExperienceRate(cid, stages.first)
-		elseif(newlevel < 80) then
-			setExperienceRate(cid, stages.second)
-		elseif(newlevel < 120) then
-			setExperienceRate(cid, stages.third)
-		elseif(newlevel < 160) then
-			setExperienceRate(cid, stages.fourth)
-		elseif(newlevel < 220) then
-			setExperienceRate(cid, stages.fifth)
-		else
-			setExperienceRate(cid, stages.sixth)
+	
+		local reborns = getPlayerStorageValue(cid, sid.REBORNS)
+	
+		if(reborns == 0) then
+			setExperienceRate(cid, stages.normal)
+		elseif(reborns == 1) then
+			setExperienceRate(cid, stages.reborn_1)
 		end
 	else
-		if(newlevel < 20) then
-			setExperienceRate(cid, stages.first)
-		elseif(newlevel < 60) then
-			setExperienceRate(cid, stages.second)
-		elseif(newlevel < 80) then
-			setExperienceRate(cid, stages.third)
+		if(newlevel > 80) then
+			setExperienceRate(cid, 1)
 		else
-			setExperienceRate(cid, stages.sixth)
+			setExperienceRate(cid, stages.normal)
 		end		
 	end	
 	
@@ -371,7 +356,7 @@ function setLoginSkillRateStages(cid)
 			setSkillRate(cid, LEVEL_SKILL_SWORD, 30)
 		end		
 			
-		if(getPlayerSkill(cid, LEVEL_SKILL_SWORD) >= 85) then		
+		if(getPlayerSkill(cid, LEVEL_SKILL_AXE) >= 85) then		
 			setSkillRate(cid, LEVEL_SKILL_AXE, 1)
 		else	
 			setSkillRate(cid, LEVEL_SKILL_AXE, 30)
@@ -443,46 +428,6 @@ function msgcontains(txt, str)
       return (string.find(txt, str) and not string.find(txt, '(%w+)' .. str) and not string.find(txt, str .. '(%w+)'))
 end
 
-
---[[
- * ATIVANDO O RATE STAGES! USED IN ACTION!
-
-function setRateStage(cid)
-	
-	stages = {
-	
-	first 	= 50,
-	second	= 20,
-	third	= 10,
-	fourth 	= 4,
-	fifth	= 2,
-	six		= 1
-	}
-
-	level 	= getPlayerLevel(cid)
-	name 	= getPlayerName(cid)
-	
-	if(level <= 40) then
-		setExperienceRate(cid, stages.first)
-	elseif(level > 40) and (level <= 80) then
-		setExperienceRate(cid, stages.second)
-	elseif(level > 80) and (level <= 120) then
-		setExperienceRate(cid, stages.third)
-	elseif(level > 120) and (level <= 160) then
-		setExperienceRate(cid, stages.fourth)
-	elseif(level > 160) and (level <= 220) then
-		setExperienceRate(cid, stages.fifth)
-	elseif(level > 220) then
-		setExperienceRate(cid, stages.six)
-	else
-		print("Player "..name.." falhou durante o processo de setRateStage.")
-	end
-	
-end
-]]--
---[[
- * Contem todas fun��es referente ao Darghos
-]]--
 function checkGeneralInfoPlayer(cid)
 	
 	local level 		= 	getPlayerLevel(cid)
