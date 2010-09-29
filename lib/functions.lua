@@ -317,7 +317,7 @@ function setRateStage(cid, newlevel)
 	
 		local reborns = getPlayerStorageValue(cid, sid.REBORNS)
 	
-		if(reborns == 0) then
+		if(reborns == 0 or reborns == -1) then
 			setExperienceRate(cid, stages.normal)
 		elseif(reborns == 1) then
 			setExperienceRate(cid, stages.reborn_1)
