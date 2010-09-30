@@ -162,7 +162,7 @@ function isSorcerer(cid)
 		return false
 	end
 
-	return (isInArray({1,5}, getPlayerVocation(cid)) == TRUE)
+	return (isInArray({1,5,9}, getPlayerVocation(cid)) == TRUE)
 end
 
 function isDruid(cid)
@@ -171,7 +171,7 @@ function isDruid(cid)
 		return false
 	end
 
-	return (isInArray({2,6}, getPlayerVocation(cid)) == TRUE)
+	return (isInArray({2,6,10}, getPlayerVocation(cid)) == TRUE)
 end
 
 function isPaladin(cid)
@@ -180,7 +180,7 @@ function isPaladin(cid)
 		return false
 	end
 
-	return (isInArray({3,7}, getPlayerVocation(cid)) == TRUE)
+	return (isInArray({3,7,11}, getPlayerVocation(cid)) == TRUE)
 end
 
 function isKnight(cid)
@@ -189,7 +189,7 @@ function isKnight(cid)
 		return false
 	end
 
-	return (isInArray({4,8}, getPlayerVocation(cid)) == TRUE)
+	return (isInArray({4,8,12}, getPlayerVocation(cid)) == TRUE)
 end
 
 function getDirectionTo(pos1, pos2)
