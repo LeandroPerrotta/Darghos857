@@ -309,8 +309,8 @@ function setRateStage(cid, newlevel)
 	end
 
 	local stages = {
-		normal 		= 6,
-		reborn_1	= 4	
+		normal 		= 4,
+		reborn_1	= 3	
 	}
 	
 	if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == 1) then
