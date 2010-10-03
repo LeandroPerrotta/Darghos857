@@ -407,16 +407,16 @@ function playerRecord()
 		local playerson = getPlayersOnlineList()
 		local total = #playerson
 		
-		--[[if(total <= 50) then
+		if(total <= 50) then
 			total = total * 2
 		else
 			total = total + 50
-		end]]--
+		end
 		
 		if(total > record) then
 		
 			setGlobalStorageValue(gid.PLAYERS_RECORD, total)
-			broadcastMessage("A marca de ".. total .." jogadores online � um novo recorde no Darghos!", MESSAGE_EVENT_DEFAULT)
+			broadcastMessage("A marca de ".. total .." jogadores online é um novo recorde no Darghos!", MESSAGE_EVENT_DEFAULT)
 		end
 	else
 
