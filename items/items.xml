@@ -4003,7 +4003,7 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="shootType" value="spear"/>
 		<attribute key="range" value="3"/>
-		<attribute key="breakChance" value="3"/>
+		<attribute key="breakChance" value="1"/>
 		<attribute key="ammoAction" value="moveback"/>
 	</item>
 	<item id="2390" article="a" name="magic longsword">
