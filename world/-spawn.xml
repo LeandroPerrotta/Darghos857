@@ -2863,6 +2863,32 @@
     <monster name="Frost Dragon" x="-3" y="2" z="6" spawntime="20"/>
     <monster name="Frost Dragon" x="0" y="2" z="6" spawntime="20"/>
   </spawn>
+  <spawn centerx="2164" centery="1517" centerz="6" radius="16">
+    <monster name="Marksman Target S" x="-15" y="-11" z="6" spawntime="60"/>
+    <monster name="Marksman Target S" x="-14" y="-11" z="6" spawntime="60"/>
+    <monster name="Marksman Target S" x="-13" y="-11" z="6" spawntime="60"/>
+    <monster name="Marksman Target S" x="-12" y="-11" z="6" spawntime="60"/>
+    <monster name="Marksman Target S" x="12" y="-11" z="6" spawntime="60"/>
+    <monster name="Marksman Target S" x="13" y="-11" z="6" spawntime="60"/>
+    <monster name="Marksman Target S" x="14" y="-11" z="6" spawntime="60"/>
+    <monster name="Marksman Target S" x="15" y="-11" z="6" spawntime="60"/>
+    <monster name="Marksman Target W" x="-16" y="-10" z="6" spawntime="60"/>
+    <monster name="Marksman Target W" x="10" y="-10" z="6" spawntime="60"/>
+    <monster name="Marksman Target W" x="-16" y="-9" z="6" spawntime="60"/>
+    <monster name="Marksman Target W" x="10" y="-9" z="6" spawntime="60"/>
+    <monster name="Marksman Target W" x="-16" y="-8" z="6" spawntime="60"/>
+    <monster name="Marksman Target W" x="10" y="-8" z="6" spawntime="60"/>
+    <monster name="Marksman Target W" x="-16" y="-7" z="6" spawntime="60"/>
+    <monster name="Marksman Target W" x="10" y="-7" z="6" spawntime="60"/>
+    <monster name="Hitdoll S" x="-14" y="-1" z="6" spawntime="60"/>
+    <monster name="Hitdoll W" x="12" y="-1" z="6" spawntime="60"/>
+    <monster name="Hitdoll S" x="-11" y="2" z="6" spawntime="60"/>
+    <monster name="Hitdoll S" x="15" y="2" z="6" spawntime="60"/>
+    <monster name="Hitdoll S" x="-14" y="5" z="6" spawntime="60"/>
+    <monster name="Hitdoll S" x="12" y="5" z="6" spawntime="60"/>
+    <monster name="Hitdoll S" x="-13" y="8" z="6" spawntime="60"/>
+    <monster name="Hitdoll W" x="15" y="8" z="6" spawntime="60"/>
+  </spawn>
   <spawn centerx="1969" centery="1697" centerz="6" radius="5">
     <monster name="Cyclops" x="1" y="0" z="6" spawntime="60"/>
   </spawn>

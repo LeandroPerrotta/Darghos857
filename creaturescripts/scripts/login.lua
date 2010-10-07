@@ -5,10 +5,7 @@
 	registerCreatureEvent(cid, "Advance")	
 	registerCreatureEvent(cid, "Stages")
 	registerCreatureEvent(cid, "Inquisition")
-	
-	if(getPlayerTown(cid) == towns.ISLAND_OF_PEACE) then
-		registerCreatureEvent(cid, "Combat")
-	end
+	registerCreatureEvent(cid, "Combat")
 	
 	playerRecord()
 	runPremiumSystem(cid)
