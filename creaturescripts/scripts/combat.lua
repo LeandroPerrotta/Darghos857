@@ -1,5 +1,8 @@
 function onCombat(cid, target)
 
+	if(isPlayer(cid) == TRUE and (getCreatureName(target) == "Marksman Target" or getCreatureName(target) == "Hitdoll")) then
+		addShieldTriesInTrain(cid, target)
+	end
 
 	--checks attacker
 	local player_attacker = nil

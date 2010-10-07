@@ -1,3 +1,14 @@
+function addShieldTriesInTrain(cid, target)
+
+	doPlayerAddSkillTry(cid, LEVEL_SKILL_SHIELDING, 2, TRUE)
+	
+	local cTarget = getCreatureTarget(cid)
+	
+	if(cTarget == TRUE and cTarget == target) then
+		addEvent(addShieldTriesInTrain, 1000 * 2, cid, target)
+	end
+end
+
 function addAllOufits(cid)
 
 	if(isPlayer(cid) == TRUE) then
