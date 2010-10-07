@@ -1,10 +1,15 @@
 function addShieldTriesInTrain(cid, target)
 
-	doPlayerAddSkillTry(cid, LEVEL_SKILL_SHIELDING, 2, TRUE)
+	local lastTry = getPlayerStorageValue(cid, sid.LAST_TRY_SHIELD)
+
+	if(lastTry == -1 or os.date() + 2 > lastTry) then
+		doPlayerAddSkillTry(cid, LEVEL_SKILL_SHIELDING, 2, TRUE)
+	end
 	
 	local cTarget = getCreatureTarget(cid)
 	
 	if(cTarget == TRUE and cTarget == target) then
+		setPlayerStorageValue(cid, sid.LAST_TRY_SHIELD, os.date())
 		addEvent(addShieldTriesInTrain, 1000 * 2, cid, target)
 	end
 end
