@@ -22,6 +22,7 @@
 		<raid name="peace_cyc" file="peace/peace_cyc.xml" interval2="4500" margin="240"/>
 		<raid name="peace_demon" file="peace/peace_demon.xml" interval2="50000" margin="240"/>
 		<raid name="peace_dragon" file="peace/peace_dragon.xml" interval2="20000" margin="240"/>
+		<raid name="peace_rotworms" file="peace/rotworms.xml" interval2="2500" margin="240"/>
 		
 		
 		-- Others Areas
