@@ -2,7 +2,7 @@ function addShieldTriesInTrain(cid, target)
 
 	local lastTry = getPlayerStorageValue(cid, sid.LAST_TRY_SHIELD)
 
-	if(lastTry == -1 or os.date() > lastTry + 2) then
+	if(lastTry == -1 or os.date() > lastTry + 3) then
 		doPlayerAddSkillTry(cid, LEVEL_SKILL_SHIELDING, 1, TRUE)
 	end
 	
@@ -10,7 +10,7 @@ function addShieldTriesInTrain(cid, target)
 	
 	if(cTarget == TRUE and cTarget == target) then
 		setPlayerStorageValue(cid, sid.LAST_TRY_SHIELD, os.date())
-		addEvent(addShieldTriesInTrain, 1000 * 2, cid, target)
+		addEvent(addShieldTriesInTrain, 1000 * 3, cid, target)
 	end
 end
 
