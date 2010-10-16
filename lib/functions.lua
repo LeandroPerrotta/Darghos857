@@ -1,17 +1,26 @@
-function addShieldTriesInTrain(cid, target)
-
-	local lastTry = getPlayerStorageValue(cid, sid.LAST_TRY_SHIELD)
-
-	if(lastTry == -1 or os.date() > lastTry + 3) then
-		doPlayerAddSkillTry(cid, LEVEL_SKILL_SHIELDING, 1, TRUE)
-	end
+function startShieldTrain(cid, target)
 	
+	local trainingShield = getPlayerStorageValue(cid, sid.TRAINING_SHIELD) > 0 and true or false
+
+	if(not trainingShield) then
+		addEvent(addShieldTrie, 1000 * 2, cid, target)
+		setPlayerStorageValue(cid, sid.TRAINING_SHIELD, 1)
+	end
+end
+
+function addShieldTrie(cid, target)	
+
+	--print("Training: " .. getCreatureName(cid) .. " value: " .. getPlayerStorageValue(cid, sid.TRAINING_SHIELD))
 	local cTarget = getCreatureTarget(cid)
 	
-	if(cTarget == TRUE and cTarget == target) then
-		setPlayerStorageValue(cid, sid.LAST_TRY_SHIELD, os.date())
-		addEvent(addShieldTriesInTrain, 1000 * 3, cid, target)
-	end
+	if(cTarget ~= FALSE and cTarget == target) then
+		doPlayerAddSkillTry(cid, LEVEL_SKILL_SHIELDING, 2, TRUE) 
+		addEvent(addShieldTrie, 1000 * 2, cid, target)
+		
+		return
+	end	
+	
+	setPlayerStorageValue(cid, sid.TRAINING_SHIELD, 0)	
 end
 
 function addAllOufits(cid)

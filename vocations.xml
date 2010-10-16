@@ -40,12 +40,12 @@
 		<damage magicDamage="1.0" wandDamage="1.0" healingDamage="1.0" />
 		<meleeDamage sword="1.0" axe="1.0" club="1.0" dist="1.2" fist="1.0" />
 		<defense baseDefense="1.0" armorDefense="1.0" />
-		<skill id="0" base="50" multiplier="1.2"/>
-		<skill id="1" base="50" multiplier="1.2"/>
-		<skill id="2" base="50" multiplier="1.2"/>
-		<skill id="3" base="50" multiplier="1.2"/>
+		<skill id="0" base="50" multiplier="0.7"/>
+		<skill id="1" base="50" multiplier="0.7"/>
+		<skill id="2" base="50" multiplier="0.7"/>
+		<skill id="3" base="50" multiplier="0.7"/>
 		<skill id="4" base="30" multiplier="1.1"/>
-		<skill id="5" base="100" multiplier="1.1"/>
+		<skill id="5" base="100" multiplier="0.7"/>
 		<skill id="6" base="20" multiplier="1.1"/>
 	</vocation>
 	<vocation id="4" name="Knight" description="a knight" gaincap="25" gainhp="15" gainmana="5" gainhpticks="6" gainhpamount="30" gainmanaticks="6" gainmanaamount="60" maxsoul="100" gainsoulticks="120" manamultiplier="3.0">
@@ -56,7 +56,7 @@
 		<skill id="1" base="50" multiplier="1.1"/>
 		<skill id="2" base="50" multiplier="1.1"/>
 		<skill id="3" base="50" multiplier="1.1"/>
-		<skill id="4" base="30" multiplier="1.4"/>
+		<skill id="4" base="30" multiplier="0.7"/>
 		<skill id="5" base="100" multiplier="1.1"/>
 		<skill id="6" base="20" multiplier="1.1"/>
 	</vocation>
@@ -88,12 +88,12 @@
 		<damage magicDamage="1.0" wandDamage="1.0" healingDamage="1.0" />
 		<meleeDamage sword="1.0" axe="1.0" club="1.0" dist="1.2" fist="1.0" />
 		<defense baseDefense="1.0" armorDefense="1.0" />
-		<skill id="0" base="50" multiplier="1.2"/>
-		<skill id="1" base="50" multiplier="1.2"/>
-		<skill id="2" base="50" multiplier="1.2"/>
-		<skill id="3" base="50" multiplier="1.2"/>
+		<skill id="0" base="50" multiplier="0.7"/>
+		<skill id="1" base="50" multiplier="0.7"/>
+		<skill id="2" base="50" multiplier="0.7"/>
+		<skill id="3" base="50" multiplier="0.7"/>
 		<skill id="4" base="30" multiplier="1.1"/>
-		<skill id="5" base="100" multiplier="1.1"/>
+		<skill id="5" base="100" multiplier="0.7"/>
 		<skill id="6" base="20" multiplier="1.1"/>
 	</vocation>
 	<vocation id="8" name="Elite Knight" description="an elite knight" gaincap="25" gainhp="15" gainmana="5" gainhpticks="4" gainhpamount="30" gainmanaticks="6" gainmanaamount="60" maxsoul="200" gainsoulticks="15" manamultiplier="3.0">
@@ -104,7 +104,7 @@
 		<skill id="1" base="50" multiplier="1.1"/>
 		<skill id="2" base="50" multiplier="1.1"/>
 		<skill id="3" base="50" multiplier="1.1"/>
-		<skill id="4" base="30" multiplier="1.4"/>
+		<skill id="4" base="30" multiplier="0.7"/>
 		<skill id="5" base="100" multiplier="1.1"/>
 		<skill id="6" base="20" multiplier="1.1"/>
 	</vocation>
@@ -136,12 +136,12 @@
 		<damage magicDamage="1.0" wandDamage="1.0" healingDamage="1.0" />
 		<meleeDamage sword="1.0" axe="1.0" club="1.0" dist="1.3" fist="1.0" />
 		<defense baseDefense="1.0" armorDefense="1.0" />
-		<skill id="0" base="50" multiplier="1.2"/>
-		<skill id="1" base="50" multiplier="1.2"/>
-		<skill id="2" base="50" multiplier="1.2"/>
-		<skill id="3" base="50" multiplier="1.2"/>
+		<skill id="0" base="50" multiplier="0.7"/>
+		<skill id="1" base="50" multiplier="0.7"/>
+		<skill id="2" base="50" multiplier="0.7"/>
+		<skill id="3" base="50" multiplier="0.7"/>
 		<skill id="4" base="30" multiplier="1.1"/>
-		<skill id="5" base="100" multiplier="1.1"/>
+		<skill id="5" base="100" multiplier="0.7"/>
 		<skill id="6" base="20" multiplier="1.1"/>
 	</vocation>
 	<vocation id="12" name="Berserk Warrior" description="an berserk warrior" gaincap="35" gainhp="21" gainmana="7" gainhpticks="4" gainhpamount="30" gainmanaticks="3" gainmanaamount="60" maxsoul="200" gainsoulticks="15" manamultiplier="3.0">
@@ -152,7 +152,7 @@
 		<skill id="1" base="50" multiplier="1.1"/>
 		<skill id="2" base="50" multiplier="1.1"/>
 		<skill id="3" base="50" multiplier="1.1"/>
-		<skill id="4" base="30" multiplier="1.4"/>
+		<skill id="4" base="30" multiplier="0.7"/>
 		<skill id="5" base="100" multiplier="1.1"/>
 		<skill id="6" base="20" multiplier="1.1"/>
 	</vocation>	

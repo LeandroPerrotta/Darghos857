@@ -53,6 +53,5 @@
   </voices>
   <loot>
     <item id="3976" countmax="10" chance1="50000" chancemax="0"/>
-    </item>
   </loot>
 </monster>
