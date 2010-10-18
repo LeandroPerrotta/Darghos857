@@ -10,17 +10,28 @@ end
 
 function addShieldTrie(cid, target)	
 
+	-- aqui provavelmente o player morreu
+	if(cid == FALSE) then
+		return
+	end
+
 	--print("Training: " .. getCreatureName(cid) .. " value: " .. getPlayerStorageValue(cid, sid.TRAINING_SHIELD))
 	local cTarget = getCreatureTarget(cid)
 	
-	if(cTarget ~= FALSE and cTarget == target) then
-		doPlayerAddSkillTry(cid, LEVEL_SKILL_SHIELDING, 2, TRUE) 
-		addEvent(addShieldTrie, 1000 * 2, cid, target)
-		
+	if(cTarget == FALSE) then
+		print("Alvo não encontrado, limpando... ")
+		setPlayerStorageValue(cid, sid.TRAINING_SHIELD, 0)
 		return
-	end	
+	else 
 	
-	setPlayerStorageValue(cid, sid.TRAINING_SHIELD, 0)	
+		if(getCreatureName(cTarget) ~= "Marksman Target" and getCreatureName(cTarget) ~= "Hitdoll") then
+			setPlayerStorageValue(cid, sid.TRAINING_SHIELD, 0)
+			return
+		end
+		
+		doPlayerAddSkillTry(cid, LEVEL_SKILL_SHIELDING, 2, TRUE) 
+		addEvent(addShieldTrie, 1000 * 2, cid, target)			
+	end	
 end
 
 function addAllOufits(cid)

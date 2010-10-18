@@ -23,6 +23,8 @@
 		defineFirstItems(cid)	
 	end
 	
+	setPlayerStorageValue(cid, sid.TRAINING_SHIELD, 0)
+	
 	--Remove blesses if necessary
 	if getPlayerStorageValue(cid, STORAGE_REMOVE_BLESSES) == 1 then
 		local i = 0
