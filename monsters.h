@@ -144,9 +144,8 @@ public:
 
 	MonsterScriptList scriptList;
 
-	void createLoot(Container* corpse);
-	void createLootContainer(Container* parent, const LootBlock& lootblock);
-	Item* createLootItem(const LootBlock& lootblock);
+	void createLoot(Container* corpse, Creature* creature, Player* killer, uint32_t& gold);
+	void createLootContainer(Container* parent, const LootBlock& lootblock, uint32_t& gold);	Item* createLootItem(const LootBlock& lootblock, Container* corpse, uint32_t& gold);
 
 	bool getParameter(const std::string key, std::string& value);
 };

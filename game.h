@@ -99,6 +99,8 @@ typedef std::vector<Player*> PlayerVector;
 #define EVENT_LIGHTINTERVAL  10000
 #define EVENT_DECAYINTERVAL  1000
 #define EVENT_DECAY_BUCKETS  16
+#define EVENT_PING_INTERVAL  1000
+#define MAX_PING_TIMEOUT  1000
 
 /**
   * Main Game class.
@@ -563,6 +565,9 @@ protected:
 	uint32_t checkCreatureEvent;
 	uint32_t checkDecayEvent;
 
+	uint32_t checkPingEvent;
+	uint32_t pingErrors;
+
 	//list of items that are in trading state, mapped to the player
 	std::map<Item*, uint32_t> tradeItems;
 
@@ -580,6 +585,9 @@ protected:
 		int      type;
 		void*    data;
 	};
+
+    void checkPing();
+    void pingHost();
 
 	void checkDecay();
 	void internalDecayItem(Item* item);

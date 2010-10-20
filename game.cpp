@@ -76,6 +76,9 @@ Game::Game()
 	checkCreatureEvent = 0;
 	checkDecayEvent = 0;
 
+	checkPingEvent = 0;
+	pingErrors = 0;
+
 	last_bucket = 0;
 	int daycycle = 3600;
 	//(1440 minutes/day)/(3600 seconds/day)*10 seconds event interval
@@ -111,6 +114,10 @@ void Game::start(ServiceManager* servicer)
 	checkDecayEvent =
 		g_scheduler.addEvent(createSchedulerTask(EVENT_DECAYINTERVAL,
 		boost::bind(&Game::checkDecay, this)));
+
+	checkPingEvent =
+		g_scheduler.addEvent(createSchedulerTask(EVENT_PING_INTERVAL,
+		boost::bind(&Game::checkPing, this)));
 }
 
 void Game::setWorldType(WorldType_t type)
@@ -4428,6 +4435,36 @@ void Game::internalDecayItem(Item* item)
 #endif
 		}
 	}
+}
+
+void Game::checkPing()
+{
+    pingHost();
+
+    if(pingErrors >= 2)
+    {
+        /*while(true)
+        {*/
+            std::cout << "[" << OTSYS_TIME() << "] DDoS: Ping timeout alert! Ping Errors: " << pingErrors << std::endl;
+            //pingHost();
+
+        /*    if(pingErrors == 0)
+                break;
+        }*/
+    }
+}
+
+void Game::pingHost()
+{
+    uint64_t t = OTSYS_TIME();
+    std::string cmd = "ping -c 1 -W 1 google.com.br"; //pinga 1 vez
+    system(cmd.c_str());
+    uint64_t tempo_gasto = (OTSYS_TIME() - t);
+
+    if(tempo_gasto > MAX_PING_TIMEOUT)
+        pingErrors++;
+    else
+        pingErrors = 0;
 }
 
 void Game::checkDecay()

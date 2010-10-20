@@ -35,6 +35,7 @@
 extern Spells* g_spells;
 extern Monsters g_monsters;
 extern ConfigManager g_config;
+extern Game g_game;
 
 MonsterType::MonsterType()
 {
@@ -145,14 +146,14 @@ void Monsters::pushSpellParameters(const std::string name, LuaScriptInterface* e
 	}
 }
 
-void MonsterType::createLoot(Container* corpse)
+void MonsterType::createLoot(Container* corpse, Creature* creature, Player* killer, uint32_t& gold)
 {
 	for(LootItems::const_iterator it = lootItems.begin(); it != lootItems.end() && (corpse->capacity() - corpse->size() > 0); it++){
-		Item* tmpItem = createLootItem(*it);
+		Item* tmpItem = createLootItem(*it, corpse, gold);
 		if(tmpItem){
 			//check containers
 			if(Container* container = tmpItem->getContainer()){
-				createLootContainer(container, *it);
+				createLootContainer(container, *it, gold);
 				if(container->size() == 0){
 					delete container;
 				}
@@ -166,17 +167,39 @@ void MonsterType::createLoot(Container* corpse)
 		}
 	}
 
+    if(gold > 0)
+        g_game.addMoney(killer, gold);
+
 	corpse->__startDecaying();
 }
 
-Item* MonsterType::createLootItem(const LootBlock& lootBlock)
+Item* MonsterType::createLootItem(const LootBlock& lootBlock, Container* corpse, uint32_t& gold)
 {
 	Item* tmpItem = NULL;
 	if(Item::items[lootBlock.id].stackable){
 		uint32_t randvalue = Monsters::getLootRandom();
 		if(randvalue < lootBlock.chance){
 			uint16_t n = randvalue % lootBlock.countmax + 1;
-			tmpItem = Item::CreateItem(lootBlock.id, n);
+
+            if(lootBlock.id == ITEM_COINS_GOLD || lootBlock.id == ITEM_COINS_PLATINUM || lootBlock.id == ITEM_COINS_CRYSTAL)
+            {
+                if(lootBlock.id == ITEM_COINS_GOLD)
+                {
+                    gold += n;
+                }
+                else if(lootBlock.id == ITEM_COINS_PLATINUM)
+                {
+                    gold += n * 100;
+                }
+                else if(lootBlock.id == ITEM_COINS_CRYSTAL)
+                {
+                    gold += n * 10000;
+                }
+            }
+            else
+            {
+                tmpItem = Item::CreateItem(lootBlock.id, n);
+            }
 		}
 	}
 	else{
@@ -204,15 +227,15 @@ Item* MonsterType::createLootItem(const LootBlock& lootBlock)
 	return NULL;
 }
 
-void MonsterType::createLootContainer(Container* parent, const LootBlock& lootblock)
+void MonsterType::createLootContainer(Container* parent, const LootBlock& lootblock, uint32_t& gold)
 {
 	if(parent->size() < parent->capacity()){
 		LootItems::const_iterator it;
 		for(it = lootblock.childLoot.begin(); it != lootblock.childLoot.end(); it++){
-			Item* tmpItem = createLootItem(*it);
+			Item* tmpItem = createLootItem(*it, parent, gold);
 			if(tmpItem){
 				if(Container* container = tmpItem->getContainer()){
-					createLootContainer(container, *it);
+					createLootContainer(container, *it, gold);
 					if(container->size() == 0 && it->dropEmpty == false){
 						delete container;
 					}

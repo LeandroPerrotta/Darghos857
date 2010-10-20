@@ -4638,10 +4638,14 @@ void Player::checkIdleTime(uint32_t ticks)
 	}
 }
 
-void Player::broadcastLoot(Creature* creature, Container* corpse)
+void Player::broadcastLoot(Creature* creature, Container* corpse, uint32_t gold)
 {
 	std::ostringstream os;
+
 	os << "Loot of " << creature->getNameDescription() << ": " << corpse->getContentDescription();
+
+	if(gold > 0)
+        os << " and " << gold << " gold coins.";
 
 	//send message to party channel
 	if(getParty())
