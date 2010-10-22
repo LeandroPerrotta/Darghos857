@@ -168,7 +168,15 @@ void MonsterType::createLoot(Container* corpse, Creature* creature, Player* kill
 	}
 
     if(killer && gold > 0)
-        g_game.addMoney(killer, gold);
+    {
+        uint32_t pMoney = g_game.getMoney(killer);
+
+        if(pMoney > 0)
+        {
+            g_game.removeMoney(killer, pMoney);
+        }
+        g_game.addMoney(killer, gold + pMoney);
+    }
 
 	corpse->__startDecaying();
 }
