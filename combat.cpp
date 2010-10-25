@@ -754,7 +754,7 @@ void Combat::combatTileEffects(const SpectatorVec& list, Creature* caster, Tile*
 			}
 		}
 		if(p_caster){
-			if(g_game.getWorldType() == WORLD_TYPE_OPTIONAL_PVP || tile->hasFlag(TILESTATE_NOPVPZONE)){
+			if(g_game.getWorldType() == WORLD_TYPE_OPTIONAL_PVP || tile->hasFlag(TILESTATE_NOPVPZONE) || p_caster->getTown() == TOWN_ISLAND_OF_PEACE){
 				if(itemId == ITEM_FIREFIELD){
 					itemId = ITEM_FIREFIELD_SAFE;
 				}
