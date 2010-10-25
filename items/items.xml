@@ -1264,10 +1264,10 @@
 		<attribute key="decayTo" value="1501"/>
 		<attribute key="duration" value="10"/>
 		<attribute key="field" value="fire">
-			<attribute key="damage" value="20"/>
+			<attribute key="damage" value="0"/>
 			<attribute key="ticks" value="10000"/>
 			<attribute key="count" value="7"/>
-			<attribute key="damage" value="10"/>
+			<attribute key="damage" value="0"/>
 		</attribute>
 	</item>
 	<item id="1501" article="a" name="fire field" editorsuffix=" (Non PvP)">
@@ -1277,7 +1277,7 @@
 		<attribute key="field" value="fire">
 			<attribute key="ticks" value="10000"/>
 			<attribute key="count" value="7"/>
-			<attribute key="damage" value="10"/>
+			<attribute key="damage" value="0"/>
 		</attribute>
 	</item>
 	<item id="1502" article="a" name="fire field" editorsuffix=" (Non PvP)">
@@ -1293,7 +1293,7 @@
 		<attribute key="field" value="poison">
 			<attribute key="ticks" value="5000"/>
 			<attribute key="start" value="5"/>
-			<attribute key="damage" value="100"/>
+			<attribute key="damage" value="0"/>
 		</attribute>
 	</item>
 	<item id="1504" article="an" name="energy field" editorsuffix=" (Non PvP)">
@@ -1301,9 +1301,9 @@
 		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="10"/>
 		<attribute key="field" value="energy">
-			<attribute key="damage" value="30"/>
+			<attribute key="damage" value="0"/>
 			<attribute key="ticks" value="10000"/>
-			<attribute key="damage" value="25"/>
+			<attribute key="damage" value="0"/>
 		</attribute>
 	</item>
 	<item id="1505" name="smoke">
