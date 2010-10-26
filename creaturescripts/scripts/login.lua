@@ -14,13 +14,10 @@
 	checkItemShop(cid)
 	OnKillCreatureMission(cid)
 	Dungeons.onLogin(cid)
+	defineFirstItems(cid)
 
 	if(getPlayerAccess(cid) == groups.GOD) then
 		addAllOufits(cid)
-	end
-	
-	if(getPlayerVocation(cid) <= 4) then
-		defineFirstItems(cid)	
 	end
 	
 	setPlayerStorageValue(cid, sid.TRAINING_SHIELD, 0)
