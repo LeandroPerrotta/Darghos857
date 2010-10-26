@@ -25063,4 +25063,9 @@
 		<attribute key="description" value="Nothing in life is to be feared. It is only to be understood."/>
 		<attribute key="weight" value="2300"/>
 	</item>			
+	<item id="11754" article="a" name="teleport rune">
+		<attribute key="description" value="Esta runa magica é capaz de lhe transportar para sua cidade natal."/>
+		<attribute key="weight" value="120"/>
+	</item>
+	
 </items>

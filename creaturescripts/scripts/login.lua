@@ -24,6 +24,22 @@
 	end
 	
 	setPlayerStorageValue(cid, sid.TRAINING_SHIELD, 0)
+	setPlayerStorageValue(cid, sid.TELEPORT_RUNE_STATE, -1)
+	
+	--Give basic itens after death
+	if getPlayerStorageValue(cid, sid.GIVE_ITEMS_AFTER_DEATH) == 1 then
+		if getPlayerSlotItem(cid, CONST_SLOT_BACKPACK).uid == 0 then
+			local item_backpack = doCreateItemEx(1988, 1) -- backpack
+			
+			doAddContainerItem(item_backpack, 2120, 1) -- rope
+			doAddContainerItem(item_backpack, 2554, 1) -- shovel
+			doAddContainerItem(item_backpack, 2666, 4) -- meat
+			doAddContainerItem(item_backpack, 11754, 1) -- teleport rune
+			
+			doPlayerAddItemEx(cid, item_backpack, FALSE, CONST_SLOT_BACKPACK)
+		end
+		setPlayerStorageValue(cid, sid.GIVE_ITEMS_AFTER_DEATH, -1)
+	end		
 	
 	--Remove blesses if necessary
 	if getPlayerStorageValue(cid, STORAGE_REMOVE_BLESSES) == 1 then

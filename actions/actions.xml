@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <actions>
 
+	<action itemid="11754" script="game/teleport_rune.lua"/>
+
 	<!-- Divine Ankh -->
 	<action itemid="2193" script="game/ankh.lua"/>
 	<action itemid="11753" script="game/unholy_sword.lua"/>

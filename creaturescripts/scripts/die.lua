@@ -1,8 +1,9 @@
 function onDie(cid, corpse)
 	if isPlayer(cid) == TRUE then
-		--FunçÕes que serão chamadas quando um jogador morrer...
+		--Funï¿½ï¿½es que serï¿½o chamadas quando um jogador morrer...
 		
 		Dungeons.onPlayerDeath(cid)
+		setPlayerStorageValue(cid, sid.GIVE_ITEMS_AFTER_DEATH, 1)
 	else
 		
 		local cName = getCreatureName(cid)

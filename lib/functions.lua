@@ -249,93 +249,65 @@ end
 ]]--
 function defineFirstItems(cid)
 
-	local storage = sid.FIRSTLOGIN_ITEMS
-
-	
-	local array = 
-	{
-		[1] = {
-			legs 	=  getItemIdByName("studded legs"),
-			armor	=  getItemIdByName("magician's robe"),
-			boots	=  getItemIdByName("leather boots"),
-			shield 	=  getItemIdByName("dwarven shield"),
-			helmet	=  getItemIdByName("mage hat"),
-			weapon	=  getItemIdByName("wand of vortex"),
-			food	=  getItemIdByName("brown mushroom"),
-			rope	=  getItemIdByName("rope"),
-			shovel	=  getItemIdByName("shovel"),
-			money	=  getItemIdByName("platinum coin")
-		},
-		[2] = {
-			legs 	=  getItemIdByName("studded legs"),
-			armor	=  getItemIdByName("magician's robe"),
-			boots	=  getItemIdByName("leather boots"),
-			shield 	=  getItemIdByName("dwarven shield"),
-			helmet	=  getItemIdByName("mage hat"),
-			weapon	=  getItemIdByName("snakebite rod"),
-			food	=  getItemIdByName("brown mushroom"),
-			rope	=  getItemIdByName("rope"),
-			shovel	=  getItemIdByName("shovel"),
-			money	=  getItemIdByName("platinum coin")
-		},
-		[3] = {
-			legs 	=  getItemIdByName("studded legs"),
-			armor	=  getItemIdByName("belted cape"),
-			boots	=  getItemIdByName("leather boots"),
-			shield 	=  getItemIdByName("dwarven shield"),
-			helmet	=  getItemIdByName("studded helmet"),
-			weapon	=  getItemIdByName("spear"),
-			food	=  getItemIdByName("brown mushroom"),
-			rope	=  getItemIdByName("rope"),
-			shovel	=  getItemIdByName("shovel"),
-			money	=  getItemIdByName("platinum coin")
-		},
-		[4] = {
-			legs 	=  getItemIdByName("studded legs"),
-			armor	=  getItemIdByName("studded armor"),
-			boots	=  getItemIdByName("leather boots"),
-			shield 	=  getItemIdByName("dwarven shield"),
-			helmet	=  getItemIdByName("studded helmet"),
-			weapon	=  getItemIdByName("hatchet"),
-			weapon2	=  getItemIdByName("mace"),
-			weapon3	=  getItemIdByName("katana"),
-			food	=  getItemIdByName("brown mushroom"),
-			rope	=  getItemIdByName("rope"),
-			shovel	=  getItemIdByName("shovel"),
-			money	=  getItemIdByName("platinum coin")	
-		}
-	}
-	
-	putItems(cid, array[getPlayerVocation(cid)])
-	
-end
-function putItems(cid, add)
-	
-	local status 	= getPlayerStorageValue(cid, sid.FIRSTLOGIN_ITEMS)
-
-
-	if(status ~= 1) then
-		container = doPlayerAddItem(cid, getItemIdByName("backpack"), 1)
-		doAddContainerItem(container, add.food,100)
-		doAddContainerItem(container, add.rope,1)
-		doAddContainerItem(container, add.shovel,1)
-		doAddContainerItem(container, add.money,2)
-		doPlayerAddItem(cid, add.armor,1)
-		doPlayerAddItem(cid, add.legs,1)		
-		doPlayerAddItem(cid, add.boots,1)		
-		doPlayerAddItem(cid, add.shield,1)	
-		doPlayerAddItem(cid, add.helmet,1)
-		if(getPlayerVocation(cid) == 3) then
-			doPlayerAddItem(cid, add.weapon,5)
-		elseif(getPlayerVocation(cid) == 4) then
-			doPlayerAddItem(cid, add.weapon,1)
-			doPlayerAddItem(cid, add.weapon2,1)
-			doPlayerAddItem(cid, add.weapon3,1)
-		else
-			doPlayerAddItem(cid, add.weapon,1)		
-		end
-		setPlayerStorageValue(cid, sid.FIRSTLOGIN_ITEMS, 1)		
+	if(isPlayer(cid) == FALSE) then
+		return
 	end
+
+	--Give a teleport rune for everyone
+	if getPlayerStorageValue(cid, sid.RECEIVE_TELEPORT_RUNE) == -1 then
+		doPlayerAddItem(cid, 11754, 1)
+		setPlayerStorageValue(cid, sid.RECEIVE_TELEPORT_RUNE, 1)
+	end	
+
+	if(getPlayerStorageValue(cid, sid.FIRSTLOGIN_ITEMS) == 1) then
+		return
+	end
+	
+	-- general itens for all vocations
+	local item_legs = doCreateItemEx(getItemIdByName("studded legs"), 1)
+	local item_armor = 0
+	local item_boots = doCreateItemEx(getItemIdByName("leather boots"), 1)
+	local item_helmet = 0
+	local item_left_hand = 0
+	local item_right_hand = doCreateItemEx(getItemIdByName("dwarven shield"), 1)
+	local item_backpack = doCreateItemEx(1988, 1)
+
+	doAddContainerItem(item_backpack, 2120, 1) -- rope
+	doAddContainerItem(item_backpack, 2554, 1) -- shovel	
+	doAddContainerItem(item_backpack, 2789, 100) -- brown mushroom
+	doAddContainerItem(item_backpack, 2152, 2) -- platinum coin
+	
+	if(isSorcerer(cid)) then
+		item_armor = doCreateItemEx(getItemIdByName("magician's robe"), 1)
+		item_helmet = doCreateItemEx(getItemIdByName("mage hat"), 1)
+		item_left_hand = doCreateItemEx(getItemIdByName("wand of vortex"), 1)
+	elseif(isDruid(cid)) then
+		item_armor = doCreateItemEx(getItemIdByName("magician's robe"), 1)
+		item_helmet = doCreateItemEx(getItemIdByName("mage hat"), 1)
+		item_left_hand = doCreateItemEx(getItemIdByName("snakebite rod"), 1)
+	elseif(isPaladin(cid)) then
+		item_armor = doCreateItemEx(getItemIdByName("belted cape"), 1)
+		item_helmet = doCreateItemEx(getItemIdByName("studded helmet"), 1)
+		item_left_hand = doCreateItemEx(getItemIdByName("spear"), 5)
+	elseif(isKnight(cid)) then
+		item_armor = doCreateItemEx(getItemIdByName("studded armor"), 1)
+		item_helmet = doCreateItemEx(getItemIdByName("studded helmet"), 1)
+		item_left_hand = doCreateItemEx(getItemIdByName("hatchet"), 1)	
+		
+		-- adicional weapon to knights choose in backpack
+		doAddContainerItem(item_backpack, getItemIdByName("katana"), 1) 
+		doAddContainerItem(item_backpack, getItemIdByName("mace"), 1)
+	end
+
+	doPlayerAddItemEx(cid, item_legs, FALSE, CONST_SLOT_LEGS)
+	doPlayerAddItemEx(cid, item_armor, FALSE, CONST_SLOT_ARMOR)
+	doPlayerAddItemEx(cid, item_boots, FALSE, CONST_SLOT_FEET)
+	doPlayerAddItemEx(cid, item_helmet, FALSE, CONST_SLOT_HEAD)
+	doPlayerAddItemEx(cid, item_left_hand, FALSE, CONST_SLOT_LEFT)
+	doPlayerAddItemEx(cid, item_right_hand, FALSE, CONST_SLOT_RIGHT)
+	doPlayerAddItemEx(cid, item_backpack, FALSE, CONST_SLOT_BACKPACK)
+	
+	setPlayerStorageValue(cid, sid.FIRSTLOGIN_ITEMS, 1)		
 end
 
 function setRateStage(cid, newlevel)
