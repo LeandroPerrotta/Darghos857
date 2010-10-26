@@ -11,7 +11,7 @@ end
 function addShieldTrie(cid, target)	
 
 	-- aqui provavelmente o player morreu
-	if(cid == FALSE) then
+	if(isCreature(cid) == FALSE) then
 		return
 	end
 
