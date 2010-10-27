@@ -1919,6 +1919,21 @@ void LuaScriptInterface::registerFunctions()
 
 	//getGlobalValue(cid)
 	lua_register(m_luaState, "getGlobalValue", LuaScriptInterface::luaGetGlobalValue);
+
+	//getPlayerBuyList(cid)
+	lua_register(m_luaState, "getPlayerBuyList", LuaScriptInterface::luaGetPlayerBuyList);
+
+	//setPlayerBuyReceived(cid, id)
+	lua_register(m_luaState, "setPlayerBuyReceived", LuaScriptInterface::luaSetPlayerBuyReceived);
+
+	//getItemShopInfoById(id)
+	lua_register(m_luaState, "getItemShopInfoById", LuaScriptInterface::luaGetItemShopInfoById);
+
+	//doPlayerSetRebornLevel(cid, level)
+	lua_register(m_luaState, "doPlayerSetRebornLevel", LuaScriptInterface::luaDoPlayerSetRebornLevel);
+
+	//getPlayerRebornLevel(cid)
+	lua_register(m_luaState, "getPlayerRebornLevel", LuaScriptInterface::luaGetPlayerRebornLevel);
 	//--]]
 }
 
@@ -1936,6 +1951,9 @@ int LuaScriptInterface::internalGetPlayerInfo(lua_State *L, PlayerInfo_t info)
 			break;
 		case PlayerInfoLevel:
 			value = player->getLevel();
+			break;
+        case PlayerInfoRebornLevel:
+			value = player->getRebornLevel();
 			break;
 		case PlayerInfoMagLevel:
 			value = player->getMagicLevel();
@@ -2107,6 +2125,10 @@ int LuaScriptInterface::luaGetPlayerAccess(lua_State *L)
 int LuaScriptInterface::luaGetPlayerLevel(lua_State *L)
 {
 	return internalGetPlayerInfo(L, PlayerInfoLevel);
+}
+int LuaScriptInterface::luaGetPlayerRebornLevel(lua_State *L)
+{
+	return internalGetPlayerInfo(L, PlayerInfoRebornLevel);
 }
 
 int LuaScriptInterface::luaGetPlayerMagLevel(lua_State *L)
@@ -8729,6 +8751,100 @@ int LuaScriptInterface::luaGetGlobalValue(lua_State *L)
 	ScriptEnviroment* env = getScriptEnv();
 	LuaScriptInterface* script_interface = env->getScriptInterface();
 	script_interface->pushGlobalValue(L);
+	return 1;
+}
+
+int LuaScriptInterface::luaGetPlayerBuyList(lua_State *L)
+{
+	//getPlayerBuyList(cid)
+	uint32_t cid = popNumber(L);
+
+	ScriptEnviroment* env = getScriptEnv();
+
+	Player* player = env->getPlayerByUID(cid);
+	if(player){
+
+	    int itemshop_id = IOPlayer::instance()->getPlayerBuy(player);
+
+		if(itemshop_id != -1){
+
+            lua_pushnumber(L, itemshop_id);
+		}
+		else{
+			lua_pushnumber(L, LUA_ERROR);
+		}
+	}
+	else{
+		reportErrorFunc(getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
+		lua_pushnumber(L, LUA_ERROR);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaSetPlayerBuyReceived(lua_State *L)
+{
+	//setPlayerBuyReceived(cid, id)
+	uint32_t itemshoplist_id = popNumber(L);
+    uint32_t cid = popNumber(L);
+
+	ScriptEnviroment* env = getScriptEnv();
+
+	Player* player = env->getPlayerByUID(cid);
+	if(player){
+		if(IOPlayer::instance()->setPlayerBuyReceived(player, itemshoplist_id)){
+
+            lua_pushnumber(L, LUA_NO_ERROR);
+		}
+		else{
+			lua_pushnumber(L, LUA_ERROR);
+		}
+	}
+	else{
+		reportErrorFunc(getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
+		lua_pushnumber(L, LUA_ERROR);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaGetItemShopInfoById(lua_State *L)
+{
+	//getItemShopInfoById(id)
+	uint32_t itemshop_id = popNumber(L);
+
+    std::map<std::string, std::string> itemshop_info = IOPlayer::instance()->getItemShopInfo(itemshop_id);
+
+	if(itemshop_info.size() > 0){
+
+        lua_newtable(L);
+
+        setField(L, "name", itemshop_info["name"]);
+        setField(L, "item_id", itemshop_info["item_id"]);
+        setField(L, "count", itemshop_info["count"]);
+        setField(L, "type", itemshop_info["type"]);
+	}
+	else{
+		lua_pushnumber(L, LUA_ERROR);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDoPlayerSetRebornLevel(lua_State *L)
+{
+	//doPlayerSetRebornLevel(cid, level)
+	uint32_t rebornLevel = popNumber(L);
+	uint32_t cid = popNumber(L);
+
+	ScriptEnviroment* env = getScriptEnv();
+
+	Player* player = env->getPlayerByUID(cid);
+	if(player){
+		player->setRebornLevel(rebornLevel);
+		lua_pushnumber(L, LUA_NO_ERROR);
+	}
+	else{
+		reportErrorFunc(getErrorDesc(LUA_ERROR_PLAYER_NOT_FOUND));
+		lua_pushnumber(L, LUA_ERROR);
+	}
 	return 1;
 }
 //--]]

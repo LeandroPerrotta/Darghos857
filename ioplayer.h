@@ -79,6 +79,9 @@ public:
 
 	//[[--Darghos
 	bool addTalkActionLog(const Player* player, const std::string& command, const std::string& params);
+	int getPlayerBuy(const Player* player);
+	bool setPlayerBuyReceived(const Player* player, uint32_t itemshoplist_id);
+	std::map<std::string, std::string> getItemShopInfo(uint32_t itemshop_id);
 	//--]]
 
 protected:

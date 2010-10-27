@@ -184,6 +184,8 @@ public:
 	std::string getAccountName() const {return accountName;}
 	uint32_t getAccountId() const {return accountId;}
 	uint32_t getLevel() const {return level;}
+	uint32_t getRebornLevel() const {return reborn_level;}
+	void setRebornLevel(uint32_t level ) { reborn_level = level; }
 	uint32_t getMagicLevel() const {return getPlayerInfo(PLAYERINFO_MAGICLEVEL);}
 	int16_t getAccessLevel() const {return accessLevel;}
 	int16_t getViolationLevel() const {return violationLevel;}
@@ -734,6 +736,7 @@ protected:
 
 	uint32_t level;
 	uint32_t levelPercent;
+	uint32_t reborn_level;
 	uint32_t magLevel;
 	uint32_t magLevelPercent;
 	int16_t accessLevel;

@@ -212,6 +212,7 @@ enum PlayerInfo_t{
 	PlayerInfoFood,
 	PlayerInfoAccess,
 	PlayerInfoLevel,
+	PlayerInfoRebornLevel,
 	PlayerInfoMagLevel,
 	PlayerInfoMana,
 	PlayerInfoMaxMana,
@@ -689,6 +690,11 @@ protected:
 	static int luaDoUpdateCreatureImpassable(lua_State *L);
 	static int luaSetGlobalValue(lua_State *L);
 	static int luaGetGlobalValue(lua_State *L);
+	static int luaGetPlayerBuyList(lua_State *L);
+	static int luaSetPlayerBuyReceived(lua_State *L);
+	static int luaGetItemShopInfoById(lua_State *L);
+	static int luaDoPlayerSetRebornLevel(lua_State *L);
+	static int luaGetPlayerRebornLevel(lua_State *L);
 	//--]]
 
 private:

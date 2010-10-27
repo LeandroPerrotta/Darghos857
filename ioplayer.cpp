@@ -54,7 +54,7 @@ bool IOPlayer::loadPlayer(Player* player, const std::string& name, bool preload 
 		`lookfeet`, `lookhead`, `looklegs`, `looktype`, `lookaddons`, `posx`, `posy`, \
 		`posz`, `cap`, `lastlogin`, `lastlogout`, `lastip`, `conditions`, `skull_time`, \
 		`skull_type`, `loss_experience`, `loss_mana`, `loss_skills`, \
-		`loss_items`, `loss_containers`, `town_id`, `balance`, `stamina` \
+		`loss_items`, `loss_containers`, `town_id`, `balance`, `stamina`, `reborn_level` \
 		FROM `players` \
 		LEFT JOIN `accounts` ON `account_id` = `accounts`.`id`\
 		LEFT JOIN `groups` ON `groups`.`id` = `players`.`group_id` \
@@ -91,6 +91,7 @@ bool IOPlayer::loadPlayer(Player* player, const std::string& name, bool preload 
 	player->setSex((playersex_t)result->getDataInt("sex"));
 	player->setDirection((Direction)result->getDataInt("direction"));
 	player->level = std::max((uint32_t)1, (uint32_t)result->getDataInt("level"));
+	player->reborn_level = (uint32_t)result->getDataInt("reborn_level");
 
 	uint64_t currExpCount = Player::getExpForLevel(player->level);
 	uint64_t nextExpCount = Player::getExpForLevel(player->level + 1);
@@ -479,6 +480,7 @@ bool IOPlayer::savePlayer(Player* player, bool shallow)
 	//First, an UPDATE query to write the player itself
 	query.str("");
 	query << "UPDATE `players` SET `level` = " << player->level
+	<< ", `reborn_level` = " << (int32_t)player->getRebornLevel()
 	<< ", `vocation` = " << (int32_t)player->getVocationId()
 	<< ", `health` = " << player->health
 	<< ", `healthmax` = " << player->healthMax
@@ -1099,5 +1101,54 @@ bool IOPlayer::addTalkActionLog(const Player* player, const std::string& command
 			<< db->escapeString(params) << ", " << std::time(NULL) << ")";
 
 	return db->executeQuery(query.str());
+}
+
+int IOPlayer::getPlayerBuy(const Player* player)
+{
+	Database* db = Database::instance();
+	DBResult* result;
+
+	DBQuery query;
+
+    int itemshop_id;
+	query << "SELECT `itemlist_id` FROM `wb_itemshop` WHERE `player_id` = '" <<  player->getGUID() << "' AND `received` = '0'";
+	if(!(result = db->storeQuery(query.str())))
+		return -1;
+
+    itemshop_id = result->getDataInt("itemlist_id");
+
+	db->freeResult(result);
+	return itemshop_id;
+}
+
+bool IOPlayer::setPlayerBuyReceived(const Player* player, uint32_t itemshoplist_id)
+{
+	Database* db = Database::instance();
+	DBQuery query;
+
+	query << "UPDATE `wb_itemshop` SET `received` = '1' WHERE `player_id` = '" << player->getGUID() << "' AND `id` = '" << itemshoplist_id << "'";
+
+	return db->executeQuery(query.str());
+}
+
+std::map<std::string, std::string> IOPlayer::getItemShopInfo(uint32_t itemshop_id)
+{
+	Database* db = Database::instance();
+	DBResult* result;
+
+	DBQuery query;
+
+    std::map<std::string, std::string> itemshop_info;
+	query << "SELECT `name`, `item_id`, `count`, `type`  FROM `wb_itemshop_list` WHERE `id` = '" <<  itemshop_id << "'";
+	if(!(result = db->storeQuery(query.str())))
+		return itemshop_info;
+
+    itemshop_info["name"] = result->getDataString("name");
+    itemshop_info["item_id"] = result->getDataString("item_id");
+    itemshop_info["count"] = result->getDataString("count");
+    itemshop_info["type"] = result->getDataString("type");
+
+	db->freeResult(result);
+	return itemshop_info;
 }
 //--]]

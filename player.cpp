@@ -81,6 +81,7 @@ Creature()
 
 	level      = 1;
 	levelPercent = 0;
+	reborn_level = 0;
 	magLevelPercent = 0;
 	magLevel   = 0;
 	experience = 0;

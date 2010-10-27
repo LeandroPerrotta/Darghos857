@@ -115,9 +115,9 @@ void Game::start(ServiceManager* servicer)
 		g_scheduler.addEvent(createSchedulerTask(EVENT_DECAYINTERVAL,
 		boost::bind(&Game::checkDecay, this)));
 
-	checkPingEvent =
+	/*checkPingEvent =
 		g_scheduler.addEvent(createSchedulerTask(EVENT_PING_INTERVAL,
-		boost::bind(&Game::checkPing, this)));
+		boost::bind(&Game::checkPing, this)));*/
 }
 
 void Game::setWorldType(WorldType_t type)
@@ -4436,37 +4436,6 @@ void Game::internalDecayItem(Item* item)
 		}
 	}
 }
-
-void Game::checkPing()
-{
-    pingHost();
-
-    if(pingErrors >= 2)
-    {
-        /*while(true)
-        {*/
-            std::cout << "[" << OTSYS_TIME() << "] DDoS: Ping timeout alert! Ping Errors: " << pingErrors << std::endl;
-            //pingHost();
-
-        /*    if(pingErrors == 0)
-                break;
-        }*/
-    }
-}
-
-void Game::pingHost()
-{
-    uint64_t t = OTSYS_TIME();
-    std::string cmd = "ping -c 1 -W 1 google.com.br"; //pinga 1 vez
-    system(cmd.c_str());
-    uint64_t tempo_gasto = (OTSYS_TIME() - t);
-
-    if(tempo_gasto > MAX_PING_TIMEOUT)
-        pingErrors++;
-    else
-        pingErrors = 0;
-}
-
 void Game::checkDecay()
 {
 	g_scheduler.addEvent(createSchedulerTask(EVENT_DECAYINTERVAL,
@@ -5010,4 +4979,42 @@ void Game::updateCreatureImpassable(const Creature* creature)
 		}
 	}
 }
+
+void Game::checkPing()
+{
+    pingHost();
+
+    if(pingErrors >= 2)
+    {
+        /*while(true)
+        {*/
+            std::cout << "[" << OTSYS_TIME() << "] DDoS: Two ping timeout! Server under attack!" << pingErrors << std::endl;
+            //pingHost();
+
+        /*    if(pingErrors == 0)
+                break;
+        }*/
+    }
+
+    checkPingEvent =
+    g_scheduler.addEvent(createSchedulerTask(EVENT_PING_INTERVAL,
+    boost::bind(&Game::checkPing, this)));
+}
+
+void Game::pingHost()
+{
+    uint64_t t = OTSYS_TIME();
+    std::string cmd = "ping -c 1 -W 1 uol.com.br"; //pinga 1 vez
+    system(cmd.c_str());
+    uint64_t tempo_gasto = (OTSYS_TIME() - t);
+
+    if(tempo_gasto > MAX_PING_TIMEOUT)
+    {
+        std::cout << "[" << OTSYS_TIME() << "] DDoS: Ping timeout alert! " << std::endl;
+        pingErrors++;
+    }
+    else
+        pingErrors = 0;
+}
+
 //--]]
