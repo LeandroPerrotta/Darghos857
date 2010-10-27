@@ -323,11 +323,11 @@ function setRateStage(cid, newlevel)
 	
 	if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == 1) then
 	
-		local reborns = getPlayerStorageValue(cid, sid.REBORNS)
+		local rebornLevel = getPlayerRebornLevel(cid)
 	
-		if(reborns == 0 or reborns == -1) then
+		if(rebornLevel == 0) then
 			setExperienceRate(cid, stages.normal)
-		elseif(reborns == 1) then
+		elseif(rebornLevel == 1) then
 			setExperienceRate(cid, stages.reborn_1)
 		end
 	else
