@@ -32,9 +32,6 @@
 
 #include <sstream>
 
-#define STORAGE_REBORN 15300
-#define STORAGE_REBORN_BLESS_FIRST 15301
-
 extern Game g_game;
 extern ConfigManager g_config;
 extern Weapons* g_weapons;
@@ -652,15 +649,9 @@ bool Combat::CombatHealthFunc(Creature* caster, Creature* target, const CombatPa
 		#endif
 			healthChange = healthChange/2;
 
-			int32_t caster_storage_reborn;
-			caster->getPlayer()->getStorageValue(STORAGE_REBORN, caster_storage_reborn);
-
-			int32_t target_storage_reborn;
-			target->getPlayer()->getStorageValue(STORAGE_REBORN, target_storage_reborn);
-
-			if(caster_storage_reborn < 1 && target_storage_reborn == 1 && target->getPlayer()->getSkull() == SKULL_NONE)
+			if(caster->getPlayer()->getRebornLevel() == 0 && target->getPlayer()->getRebornLevel() >= 1 && target->getPlayer()->getSkull() == SKULL_NONE)
 			{
-			    healthChange = healthChange * 0.2;
+			    healthChange = healthChange * 0.5;
 			}
 		}
 	}
