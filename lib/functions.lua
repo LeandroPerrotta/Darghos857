@@ -312,16 +312,12 @@ end
 
 function setRateStage(cid, newlevel)
 
-	if(getPlayerTown(cid) ~= towns.ISLAND_OF_PEACE and getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) ~= 1) then
-		setPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE, 1)
-	end
-
 	local stages = {
 		normal 		= 4,
 		reborn_1	= 3	
 	}
 	
-	if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == 1) then
+	if(getPlayerTown(cid) ~= towns.ISLAND_OF_PEACE) then
 	
 		local rebornLevel = getPlayerRebornLevel(cid)
 	
@@ -344,7 +340,7 @@ end
 
 function setLoginSkillRateStages(cid)
 
-	if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == -1) then
+	if(getPlayerTown(cid) == towns.ISLAND_OF_PEACE) then
 	
 		if(getPlayerSkill(cid, LEVEL_SKILL_FIST) >= 85) then
 			setSkillRate(cid, LEVEL_SKILL_FIST, 1)

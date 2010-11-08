@@ -5,12 +5,12 @@ function onAdvance(cid, type, oldlevel, newlevel)
 		setRateStage(cid, newlevel)
 	elseif(type == LEVEL_MAGIC) then
 	
-		if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == -1 and newlevel >= 50) then
+		if(getPlayerTown(cid) == towns.ISLAND_OF_PEACE and newlevel >= 50) then
 			
 			setSkillRate(cid, type, 1)
 		end
 	else	
-		if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == -1 and newlevel >= 85) then
+		if(getPlayerTown(cid) == towns.ISLAND_OF_PEACE and newlevel >= 85) then
 		
 			setSkillRate(cid, type, 1)
 		end
