@@ -340,66 +340,14 @@ end
 
 function setLoginSkillRateStages(cid)
 
-	if(getPlayerTown(cid) == towns.ISLAND_OF_PEACE) then
-	
-		if(getPlayerSkill(cid, LEVEL_SKILL_FIST) >= 85) then
-			setSkillRate(cid, LEVEL_SKILL_FIST, 1)
-		else
-			setSkillRate(cid, LEVEL_SKILL_FIST, 30)
-		end	
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_CLUB) >= 85) then	
-			setSkillRate(cid, LEVEL_SKILL_CLUB, 1)
-		else
-			setSkillRate(cid, LEVEL_SKILL_CLUB, 30)
-		end		
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_SWORD) >= 85) then		
-			setSkillRate(cid, LEVEL_SKILL_SWORD, 1)
-		else	
-			setSkillRate(cid, LEVEL_SKILL_SWORD, 30)
-		end		
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_AXE) >= 85) then		
-			setSkillRate(cid, LEVEL_SKILL_AXE, 1)
-		else	
-			setSkillRate(cid, LEVEL_SKILL_AXE, 30)
-		end		
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_DISTANCE) >= 85) then	
-			setSkillRate(cid, LEVEL_SKILL_DISTANCE, 1)
-		else	
-			setSkillRate(cid, LEVEL_SKILL_DISTANCE, 30)
-		end		
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_SHIELDING) >= 85) then		
-			setSkillRate(cid, LEVEL_SKILL_SHIELDING, 1)
-		else	
-			setSkillRate(cid, LEVEL_SKILL_SHIELDING, 30)
-		end		
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_FISHING) >= 85) then		
-			setSkillRate(cid, LEVEL_SKILL_FISHING, 1)	
-		else	
-			setSkillRate(cid, LEVEL_SKILL_FISHING, 30)	
-		end		
-		
-		if(getPlayerMagLevel(cid) >= 50) then		
-			setSkillRate(cid, LEVEL_MAGIC, 1)	
-		else	
-			setSkillRate(cid, LEVEL_MAGIC, 7)	
-		end			
-	else
-	
-		setSkillRate(cid, LEVEL_SKILL_FIST, 30)
-		setSkillRate(cid, LEVEL_SKILL_CLUB, 30)
-		setSkillRate(cid, LEVEL_SKILL_SWORD, 30)
-		setSkillRate(cid, LEVEL_SKILL_AXE, 30)
-		setSkillRate(cid, LEVEL_SKILL_DISTANCE, 30)
-		setSkillRate(cid, LEVEL_SKILL_SHIELDING, 30)
-		setSkillRate(cid, LEVEL_SKILL_FISHING, 30)	
-		setSkillRate(cid, LEVEL_MAGIC, 7)			
-	end	
+	setSkillRate(cid, LEVEL_SKILL_FIST, 30)
+	setSkillRate(cid, LEVEL_SKILL_CLUB, 30)
+	setSkillRate(cid, LEVEL_SKILL_SWORD, 30)
+	setSkillRate(cid, LEVEL_SKILL_AXE, 30)
+	setSkillRate(cid, LEVEL_SKILL_DISTANCE, 30)
+	setSkillRate(cid, LEVEL_SKILL_SHIELDING, 30)
+	setSkillRate(cid, LEVEL_SKILL_FISHING, 30)	
+	setSkillRate(cid, LEVEL_MAGIC, 1)				
 end
 
 function playerRecord()
