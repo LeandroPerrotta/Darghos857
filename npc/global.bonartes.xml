@@ -32,14 +32,14 @@
 		
 		<interact keywords="tesouros" topic="1">
 
-			<response text="Sim, são tesouros retirados do sarcófago do Faraó, por isto eu fugi... Se você provar sua coragem concluindo algumas {missões} a mim eu posso lhe dar alguns de meus tesouros.">
+			<response text="Sim, são tesouros retirados do sarcófago do Faraó, por isto eu fugi... Se você provar sua coragem concluindo algumas {missoes} a mim eu posso lhe dar alguns de meus tesouros.">
 				<action name="topic" value="2"/>
 			</response>
 		</interact>		
 		
-		<interact keywords="missões" topic="2">
+		<interact keywords="missoes" topic="2">
 
-			<response text="São três missões, ao fim de cada missão você recebera uma peça de meu tesouro.">
+			<response text="São três missoes, ao fim de cada missao você recebera uma peça de meu tesouro. Quer saber a {primeira missao}, a {segunda missao} ou a {terceira missao}? Se voce terminou alguma missao apenas me diga {primeira missao terminada}!">
 				<action name="topic" value="3"/>
 			</response>
 		</interact>			
@@ -47,12 +47,12 @@
 		<interact keywords="primeira;missao" topic="3">
 			<keywords>first;mission</keywords>
 
-			<response text="Heroes são criaturas nobres, porem não são nada doceis, você aceita a missão de derrotar alguns heroes?">
+			<response text="Heroes são criaturas nobres, porem não são nada doceis, você aceita a missao de derrotar alguns heroes?">
 				<action name="topic" value="4"/>
 			</response>
 		</interact>		
 		
-		<interact keywords="segunda;missão" topic="3">
+		<interact keywords="segunda;missao" topic="3">
 			<keywords>second;mission</keywords>
 
 			<response>
@@ -62,10 +62,10 @@
 					local _heroMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_HEROS)
 			
 					if(_heroMission == 3) then			  
-						selfSay("Dizem ser possível ouvir Behemoths andando a vários quilômetros de distancia. Você aceita a missão de derrotar alguns behemoths?", cid)					
+						selfSay("Dizem ser possível ouvir Behemoths andando a vários quilômetros de distancia. Você aceita a missao de derrotar alguns behemoths?", cid)					
 						_state.topic = 5
 					else
-						selfSay("Você deve concluir a primeira missão antes de seguir para a segunda missão.", cid)	
+						selfSay("Você deve concluir a primeira missao antes de seguir para a segunda missao.", cid)	
 						_state.topic = 0		
 					end	
 			]]>
@@ -73,7 +73,7 @@
 			</response>	
 		</interact>
 		
-		<interact keywords="terceira;missão" topic="3">
+		<interact keywords="terceira;missao" topic="3">
 			<keywords>third;mission</keywords>
 
 			<response>
@@ -84,10 +84,10 @@
 					local _behemothMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_BEHEMOTHS)
 			
 					if(_heroMission == 3 and _behemothMission == 2) then			  
-						selfSay("Bom... Ele pode invocar fire elementals, mas isto não será  seu maior problema! Você aceita a missão de derrotar alguns demons?", cid)					
+						selfSay("Bom... Ele pode invocar fire elementals, mas isto não será  seu maior problema! Você aceita a missao de derrotar alguns demons?", cid)					
 						_state.topic = 6
 					else
-						selfSay("Você deve concluir a primeira e segunda missão antes de seguir para a terceira missão.", cid)	
+						selfSay("Você deve concluir a primeira e segunda missao antes de seguir para a terceira missao.", cid)	
 						_state.topic = 0		
 					end	
 			]]>
@@ -109,9 +109,9 @@
 					if(_state.topic == 4) then
 						  
 						if(_heroMission ~= -1) then
-							selfSay("Você já concluiu esta missão!", cid)
+							selfSay("Você já concluiu esta missao!", cid)
 						else
-							selfSay("Certo! Me prove que você merece uma parte de meu tesouro derrotando 8457 heroes e fale comigo quando terminar a primeira missão.", cid)								
+							selfSay("Certo! Me prove que você merece uma parte de meu tesouro derrotando 8457 heroes e fale comigo quando terminar a primeira missao.", cid)								
 							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_HEROS, 2)
 							registerCreatureEvent(cid, "OnKillMission")
 						end	
@@ -121,9 +121,9 @@
 					elseif(_state.topic == 5) then
 	
 						if(_behemothMission ~= -1) then
-							selfSay("Você já concluiu esta missão!", cid)
+							selfSay("Você já concluiu esta missao!", cid)
 						else
-							selfSay("Certo! Me prove que você merece uma parte de meu tesouro derrotando 3731 behemoths e fale comigo quando terminar a segunda missão.", cid)								
+							selfSay("Certo! Me prove que você merece uma parte de meu tesouro derrotando 3731 behemoths e fale comigo quando terminar a segunda missao.", cid)								
 							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_BEHEMOTHS, 1)
 							registerCreatureEvent(cid, "OnKillMission")
 						end	
@@ -133,9 +133,9 @@
 					elseif(_state.topic == 6) then
 	
 						if(_demonMission ~= -1) then
-							selfSay("Você já concluiu esta missão!", cid)							
+							selfSay("Você já concluiu esta missao!", cid)							
 						else
-							selfSay("Certo! Me prove que você merece uma parte de meu tesouro derrotando 1209 demons e fale comigo quando terminar a terceira missão.", cid)								
+							selfSay("Certo! Me prove que você merece uma parte de meu tesouro derrotando 1209 demons e fale comigo quando terminar a terceira missao.", cid)								
 							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_DEMONS, 1)
 							registerCreatureEvent(cid, "OnKillMission")
 						end		
@@ -150,11 +150,11 @@
 		<interact keywords="não">
 			<keywords>no</keywords>
 			
-			<response text="Que pena... Retorne quando estiver preparado para esta missão..."/>
+			<response text="Que pena... Retorne quando estiver preparado para esta missao..."/>
 			<action name="topic" value="0"/>
 		</interact>		
 	
-		<interact keywords="primeira;missão;terminada">
+		<interact keywords="primeira;missao;terminada">
 			<keywords>first;mission;finished</keywords>
 
 			<response>
@@ -166,7 +166,7 @@
 					
 					if(_heroMission == 2) then
 						if(kills >= KILL_MISSIONS.BONARTES_HERO) then
-							selfSay("Parabens! Você concluiu a missão derrotando os heroes! Aqui esta a sua recompensa!", cid)	
+							selfSay("Parabens! Você concluiu a missao derrotando os heroes! Aqui esta a sua recompensa!", cid)	
 							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_HEROS, 3)
 							
 							local backpack = doPlayerAddItem(cid, 10522, 1)
@@ -182,7 +182,7 @@
 			</response>	
 		</interact>	
 		
-		<interact keywords="segunda;missão;terminada">
+		<interact keywords="segunda;missao;terminada">
 			<keywords>second;mission;finished</keywords>
 
 			<response>
@@ -194,7 +194,7 @@
 					
 					if(_behemothMission == 1) then
 						if(kills >= KILL_MISSIONS.BONARTES_BEHEMOTH) then
-							selfSay("Parabens! Você concluiu a missão derrotando os behemoths! Aqui esta a sua recompensa!", cid)	
+							selfSay("Parabens! Você concluiu a missao derrotando os behemoths! Aqui esta a sua recompensa!", cid)	
 							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_BEHEMOTHS, 2)
 							
 							local backpack = doPlayerAddItem(cid, 11244, 1)
@@ -210,7 +210,7 @@
 			</response>	
 		</interact>
 		
-		<interact keywords="terceira;missão;terminada">
+		<interact keywords="terceira;missao;terminada">
 			<keywords>third;mission;finished</keywords>
 
 			<response>
@@ -222,7 +222,7 @@
 					
 					if(_demonMission == 1) then
 						if(kills >= KILL_MISSIONS.BONARTES_DEMON) then
-							selfSay("Parabens! Você concluiu a missão derrotando os demons! Aqui esta a sua recompensa!", cid)	
+							selfSay("Parabens! Você concluiu a missao derrotando os demons! Aqui esta a sua recompensa!", cid)	
 							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_DEMONS, 2)
 							
 							local backpack = doPlayerAddItem(cid, 10518, 1)
