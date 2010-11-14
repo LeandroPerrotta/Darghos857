@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Mechanical Catapult" nameDescription="a mechanical catapult" race="undead" experience="700000" speed="0" manacost="0">
-  <health now="450000" max="450000"/>
+  <health now="45000" max="45000"/>
 <look typeex="5608" corpse="5608" />
   <targetchange interval="2000" chance="50"/>
   <strategy attack="100" defense="0"/>
