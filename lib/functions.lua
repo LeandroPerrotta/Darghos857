@@ -1,3 +1,50 @@
+function getPlayerHighMelee(cid)
+	local skill = getPlayerSkill(cid, LEVEL_SKILL_CLUB)
+	local skillid = LEVEL_SKILL_CLUB
+	
+	if(getPlayerSkill(cid, LEVEL_SKILL_SWORD) > skill) then
+		skillid = LEVEL_SKILL_SWORD
+		skill = getPlayerSkill(cid, LEVEL_SKILL_SWORD)
+	end
+	
+	if(getPlayerSkill(cid, LEVEL_SKILL_AXE) > skill) then
+		skillid = LEVEL_SKILL_AXE
+		skill = getPlayerSkill(cid, LEVEL_SKILL_AXE)
+	end
+	
+	return skillid
+end
+
+function doPlayerAddMagLevel(cid, count)
+
+	for i = 1, count, 1 do
+		local manaspent = 1600 * 1.1 ^ getPlayerMagLevel(cid) + 1	
+		doPlayerAddManaSpent(cid, manaspent, TRUE)
+	end
+	
+	return getPlayerMagLevel(cid)
+end
+
+function doPlayerAddSkill(cid, skillid, count)
+	
+	if(skillid == LEVEL_MAGIC or skillid == LEVEL_EXPERIENCE) then
+		return false
+	end
+	
+	for i = 1, count, 1 do
+		if(doPlayerAddSkillTry(cid, skillid, getIntegerLimit(32, true), TRUE) == LUA_ERROR) then
+			return false
+		end
+	end
+	
+	return true
+end
+
+function getIntegerLimit(bits, signed)
+	local value = (signed and (math.pow(2, bits) / 2) or (math.pow(2, bits)))
+	return (value - 1)
+end
+
 function startShieldTrain(cid, target)
 	
 	local trainingShield = getPlayerStorageValue(cid, sid.TRAINING_SHIELD) > 0 and true or false
@@ -253,15 +300,9 @@ function defineFirstItems(cid)
 		return
 	end
 
-	--Give a teleport rune for everyone
-	if getPlayerStorageValue(cid, sid.RECEIVE_TELEPORT_RUNE) == -1 then
-		doPlayerAddItem(cid, 11754, 1)
-		setPlayerStorageValue(cid, sid.RECEIVE_TELEPORT_RUNE, 1)
-	end	
-
 	if(getPlayerStorageValue(cid, sid.FIRSTLOGIN_ITEMS) == 1) then
 		return
-	end
+	end		
 	
 	-- general itens for all vocations
 	local item_legs = doCreateItemEx(getItemIdByName("studded legs"), 1)
@@ -276,6 +317,7 @@ function defineFirstItems(cid)
 	doAddContainerItem(item_backpack, 2554, 1) -- shovel	
 	doAddContainerItem(item_backpack, 2789, 100) -- brown mushroom
 	doAddContainerItem(item_backpack, 2152, 2) -- platinum coin
+	doAddContainerItem(item_backpack, 11754, 1) -- teleport rune
 	
 	if(isSorcerer(cid)) then
 		item_armor = doCreateItemEx(getItemIdByName("magician's robe"), 1)
@@ -286,11 +328,11 @@ function defineFirstItems(cid)
 		item_helmet = doCreateItemEx(getItemIdByName("mage hat"), 1)
 		item_left_hand = doCreateItemEx(getItemIdByName("snakebite rod"), 1)
 	elseif(isPaladin(cid)) then
-		item_armor = doCreateItemEx(getItemIdByName("belted cape"), 1)
+		item_armor = doCreateItemEx(getItemIdByName("chain armor"), 1)
 		item_helmet = doCreateItemEx(getItemIdByName("studded helmet"), 1)
 		item_left_hand = doCreateItemEx(getItemIdByName("spear"), 5)
 	elseif(isKnight(cid)) then
-		item_armor = doCreateItemEx(getItemIdByName("studded armor"), 1)
+		item_armor = doCreateItemEx(getItemIdByName("chain armor"), 1)
 		item_helmet = doCreateItemEx(getItemIdByName("studded helmet"), 1)
 		item_left_hand = doCreateItemEx(getItemIdByName("hatchet"), 1)	
 		

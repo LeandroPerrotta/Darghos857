@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<npc name="Winston, o guarda" floorchange="0" walkradius="2" walkinterval="4000" speed="220" script="game/isle_of_peace.tasks_fourth.lua">
+	
+	<health now="150" max="150"/>
+    <look type="268" head="116" body="48" legs="10" feet="114" addons="2"/>>  
+</npc>

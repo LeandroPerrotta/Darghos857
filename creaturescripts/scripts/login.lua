@@ -7,6 +7,10 @@
 	registerCreatureEvent(cid, "Inquisition")
 	registerCreatureEvent(cid, "Combat")
 	
+	--if(tasks.hasStartedTask(cid)) then
+		registerCreatureEvent(cid, "Tasks")
+	--end
+	
 	playerRecord()
 	runPremiumSystem(cid)
 	setRateStage(cid, getPlayerLevel(cid))
@@ -14,7 +18,7 @@
 	checkItemShop(cid)
 	OnKillCreatureMission(cid)
 	Dungeons.onLogin(cid)
-	defineFirstItems(cid)
+	--defineFirstItems(cid)
 
 	if(getPlayerAccess(cid) == groups.GOD) then
 		addAllOufits(cid)

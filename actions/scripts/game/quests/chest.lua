@@ -9,6 +9,12 @@
 
 local quests =
 	{
+		[uid.GOLDEN_GOBLET_QUEST] = {
+			storageId = sid.GOLDEN_GOBLET_QUEST,
+			rewardId = getItemIdByName("golden goblet"),
+			count = 1
+		},	
+		
 		[uid.CHEST_DIVINE_ANKH] = {
 			storageId = sid.CHEST_DIVINE_ANKH,
 			rewardExp = 3000000,

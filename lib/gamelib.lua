@@ -13,3 +13,4 @@ dofile(getDataDir() .. "lib/gids.lua")
 dofile(getDataDir() .. "lib/uids.lua")
 
 dofile(getDataDir() .. "lib/dungeons.lua")
+dofile(getDataDir() .. "lib/tasks.lua")

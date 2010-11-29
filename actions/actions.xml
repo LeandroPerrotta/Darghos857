@@ -106,6 +106,7 @@
 	<action uniqueid="2078" script="game/quests/chest.lua"/>
 	<action uniqueid="2079" script="game/quests/chest.lua"/>
 	<action uniqueid="2080" script="game/quests/chest.lua"/>
+	<action uniqueid="2081" script="game/quests/chest.lua"/>
 
 
 	

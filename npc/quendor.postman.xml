@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<npc name="Daves" floorchange="0" walkinterval="2500">
+<npc name="Daves" floorchange="0" walkinterval="2500" script="game/quendor.postman.lua">
 	<health now="150" max="150"/>
 	<look type="136" head="59" body="86" legs="106" feet="115" addons="0"/>
 
@@ -25,6 +25,33 @@
     <interact keywords="name">
       <response text="My name is |NPCNAME|."/>
     </interact>
+
+    <interact keywords="tarefa">
+         <response>
+       	 <action name="script"> 
+         <![CDATA[
+		
+		task = Task:new()
+		task:loadById(CAP_ONE.QUENDOR.TRAVELER_IOP)
+		task:setPlayer(cid)
+		
+		print("Value:" .. task:getState())
+		
+		if(task:getState() ~= taskStats.COMPLETED and task:checkPlayerRequirements()) then
+			dialog:say("Oh, claro! Mészáros havia me falado sobre você, o bravo matador de dragões, e pediu que lhe desse este premio por você ter o ajudado:",cid)
+			task:doPlayerAddReward()			
+			task:doPlayerAddRewardItems()		
+			task:setCompleted()
+			dialog:say("Ele havia dito que esperava que você gostasse. Deve ter o ajudado em algo muito perigoso, pois é uma generosa recompensa. Bom, se ver-lo por ai mande lembranças. Boa sorte bravo guerreiro!",cid)
+		else
+			dialog:say("Sempre fale com os habitantes das cidades sobre tarefas e missões. Algumas podem dar ótimas recompensas!",cid)
+		end
+		
+        ]]> 
+        
+        </action>
+        </response>
+	</interact>
 
     <interact keywords="job">
       <response text="I am working here at the post office. If you have questions about the Royal Tibia Mail System or the depots ask me."/>
