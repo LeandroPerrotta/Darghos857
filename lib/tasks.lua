@@ -609,7 +609,7 @@ function Task:doPlayerAddRewardItems()
 	end
 	
 	if(self.itemsStr ~= "") then
-		doPlayerAddItemEx(self.cid, _container, FALSE)
+		doPlayerAddItemEx(self.cid, _container, TRUE)
 		self.itemsStr = self.itemsStr .. "."
 		doPlayerSendTextMessage(self.cid, MESSAGE_STATUS_CONSOLE_BLUE, self.itemsStr)
 	end
