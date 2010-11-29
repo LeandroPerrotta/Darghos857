@@ -67,14 +67,16 @@ function tasks.onKill(cid, target)
 								
 				if(newplayerpoints == requirePoints) then
 					local str = "Parabens! Você concluiu sua missão ao atingir " .. requirePoints .. " pontos!"
-					task:sendKillMessage(str)	
-					
-					newplayerpoints = requirePoints		
+					task:sendKillMessage(str)		
 				elseif(newplayerpoints < requirePoints) then
 					local str = "Você ganhou " .. monsterPoints .. " pontos por derrotar um " .. name .. "! Você ainda precisa conseguir mais " .. (requirePoints - newplayerpoints) .. " pontos para concluir a sua tarefa."
 					task:sendKillMessage(str)	
 				else
-					return								
+					if(playerpoints == requirePoints) then
+						return	
+					end
+					
+					newplayerpoints = requirePoints									
 				end
 				
 				task:setPlayerKillsCount(taskid + 1, newplayerpoints)	
