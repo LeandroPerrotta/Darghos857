@@ -77,6 +77,8 @@ function addShieldTrie(cid, target)
 		end
 		
 		doPlayerAddSkillTry(cid, LEVEL_SKILL_SHIELDING, 2, TRUE) 
+		doSendMagicEffect(getPlayerPosition(cid), CONST_ME_POFF)
+		
 		addEvent(addShieldTrie, 1000 * 2, cid, target)			
 	end	
 end
