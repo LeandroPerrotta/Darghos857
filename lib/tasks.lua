@@ -497,7 +497,7 @@ function Task:setStarted()
 	setPlayerStorageValue(self.cid, sid.TASK_STARTED, self.taskid)
 end
 
-function Task:setCompleted(cid, taskid)
+function Task:setCompleted()
 	setPlayerStorageValue(self.cid, self.taskid, taskStats.COMPLETED)
 	setPlayerStorageValue(self.cid, sid.TASK_STARTED, -1)
 end
