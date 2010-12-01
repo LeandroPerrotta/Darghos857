@@ -226,12 +226,13 @@ function NpcTasks:completed()
 	
 	self.dialog:say(self.taskConf.dialogs.taskCompleted[1], self.cid)
 	
+	task:setCompleted()	
+	
 	function giveRewards(task)
 		task:doPlayerAddReward()
 		task:doPlayerAddRewardItems()				
 	end
 	
-	task:setCompleted()	
 	addEvent(giveRewards, 1000 * 2, task)
 	
 	self.dialog:say(self.taskConf.dialogs.taskCompleted[2], self.cid)		
