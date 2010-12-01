@@ -2,6 +2,7 @@
 <talkactions>
 	<!-- Gods -->
 	<talkaction words="/i" logged="1" access="5" filter="first word" script="createitembyid.lua"/>
+	<talkaction words="/storagevalue" logged="1" access="5" filter="first word" script="playerstorage.lua"/>
 	<talkaction words="/n" logged="1" access="5" filter="first word" script="createitembyname.lua"/>
 
 	<talkaction words="/cleanhouses" logged="1" access="5" filter="first word" script="housecleaning.lua"/>
