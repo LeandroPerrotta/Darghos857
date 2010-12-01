@@ -44,5 +44,5 @@ function onSay(cid, words, param)
 	end
 
 
-	return TRUE
+	return FALSE
 end
