@@ -65,9 +65,12 @@ function NpcTasks:responseTask(_state, cid)
 	
 	local startedTask = getPlayerStorageValue(cid, sid.TASK_STARTED)	
 	
+	-- verificamos se uma possivel task iniciada pelo player é uma das tasks do NPC
 	if(isInArray(self.registeredTasks, startedTask) == FALSE) then
+		-- se não for, é chamado um pedido de descrição, que deve mostrar
+		-- os requerimentos para a task...
 		if(self:sendTaskDescription()) then
-			_state.topic = 2		
+			_state.topic = 2
 		end
 		
 		return
@@ -216,6 +219,11 @@ function NpcTasks:completed()
 	task:loadById(self.currentTask)
 	task:setPlayer(self.cid)
 	
+	if(task:getState() == taskStats.COMPLETED) then
+		print("[FATAL ERROR] NpcTasks.completed :: This player has already completed the task! {player=" .. getCreatureName(self.cid) .. ", task=" .. self.currentTask .. "}")
+		return false
+	end
+	
 	self.dialog:say(self.taskConf.dialogs.taskCompleted[1], self.cid)
 	
 	function giveRewards(task)
@@ -266,7 +274,7 @@ function NpcTasks:onCompleteConfirm()
 		function teleportPlayer(cid, destPos)
 			doSendMagicEffect(getPlayerPosition(cid), CONST_ME_POFF)
 			doTeleportThing(cid, destPos)
-			doSendMagicEffect(destPos, CONST_ME_TELEPORT)			
+			doSendMagicEffect(destPos, CONST_ME_TELEPORT)
 		end
 		
 		addEvent(teleportPlayer, 1000 * 3, self.cid, destPos)
