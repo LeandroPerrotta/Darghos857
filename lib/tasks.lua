@@ -493,6 +493,7 @@ function Task:sendKillMessage(str)
 end
 
 function Task:setStarted()
+	consoleLog(T_LOG_NOTIFY, "Task:setCompleted", "Setting player to task completed!", {player=getCreatureName(self.cid), startedTask=self.taskid})
 	setPlayerStorageValue(self.cid, self.taskid, taskStats.STARTED)
 	setPlayerStorageValue(self.cid, sid.TASK_STARTED, self.taskid)
 end
