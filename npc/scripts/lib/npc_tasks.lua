@@ -159,7 +159,7 @@ end
 
 function NpcTasks:sendTaskStart()
 
-	consoleLog(T_LOG_NOTIFY, "NpcTasks:responseTask", "Ok, the player has started our task! Good luck!")
+	consoleLog(T_LOG_NOTIFY, "NpcTasks:responseTask", "Ok, the player has started our task! Good luck!", {player=getCreatureName(self.cid), startedTask=self.currentTask})
 
 	local task = Task:new()
 	task:loadById(self.currentTask)
