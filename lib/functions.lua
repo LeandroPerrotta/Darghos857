@@ -1,3 +1,32 @@
+function consoleLog(type, caller, string, params)
+	local out = os.date("%X") .. " | [" .. type .. "] " .. caller .. " | " .. string
+	
+	if(params ~= nil) then
+		out = out .. " | Params: {"
+		
+		local isFirst = true	
+		
+		for k,v in pairs(params) do
+			
+			if(not isFirst) then
+				out = out .. ", "
+			end
+			
+			out = out .. "[" .. k .. "] = " .. v
+			
+			isFirst = false
+		end
+		
+		out = out .. "}"
+	end
+	
+	local printTypes = { T_LOG_ALL }
+	
+	if(isInArray(printTypes, type) == TRUE or printTypes[1] == T_LOG_ALL) then
+		print(out)
+	end
+end
+
 function getPlayerHighMelee(cid)
 	local skill = getPlayerSkill(cid, LEVEL_SKILL_CLUB)
 	local skillid = LEVEL_SKILL_CLUB

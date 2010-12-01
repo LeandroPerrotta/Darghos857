@@ -2,6 +2,13 @@
  * Contem todas constantes referentes ao Darghos, podem estar divididas por Arrays!
 ]]--
 
+	T_LOG_ALL = "ALL"
+	T_LOG_NOTIFY = "NOTIFY"
+	T_LOG_WARNING = "WARNING"
+	T_LOG_FAIL = "FAIL"
+	T_LOG_ERROR = "ERROR"
+	T_LOG_FATAL_ERROR = "FATAL ERROR"
+
 	groups =
 	{
 		PLAYER = 0,

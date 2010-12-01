@@ -508,6 +508,10 @@ end
 
 function Task:doPlayerAddReward()
 
+	if(self:getState() == taskStats.COMPLETED) then
+		consoleLog(T_LOG_WARNING, "Task:doPlayerAddReward", "The Player are receiving reward!", {taskid=self.taskid, player=getCreatureName(self.cid)})
+	end
+
 	local reward = tasksList[self.taskid].reward
 	
 	if(reward.paladinDistTo ~= nil and isPaladin(self.cid)) then
@@ -563,6 +567,8 @@ function Task:doPlayerAddReward()
 		doPlayerAddMoney(self.cid, reward.money)
 		doPlayerSendTextMessage(self.cid, MESSAGE_STATUS_CONSOLE_BLUE, "Você adquiriu " .. reward.money .. " gold coins por concluir a tarefa.")
 	end	
+	
+	self:doPlayerAddRewardItems()
 end
 
 function Task:doPlayerAddRewardItems()
@@ -580,7 +586,7 @@ function Task:doPlayerAddRewardItems()
 	if(container.id ~= nil) then
 		_container = doCreateItemEx(container.id, 1)
 	else
-		print("[WARNING] Task:doPlayerAddRewardItems :: Container id not found")
+		consoleLog(T_LOG_WARNING, "Task:doPlayerAddRewardItems", "Container id not found!")
 	end
 	
 	for ck, cv in pairs(container) do
@@ -603,8 +609,11 @@ function Task:doPlayerAddRewardItems()
 				self:parseVocationItems(cv, _container)
 			end			
 		else
-			doAddContainerItem(_container, cv)
-			self:addItemToString(cv)
+			if(doAddContainerItem(_container, cv) ~= LUA_ERROR) then
+				self:addItemToString(cv)
+			else
+				consoleLog(T_LOG_ERROR, "Task:doPlayerAddRewardItems", "Cant add item to main container.", {taskid=self.taskid, player=getCreatureName(self.cid), itemid=cv})
+			end
 		end
 	end
 	
@@ -628,13 +637,16 @@ function Task:parseVocationItems(node, container)
 		
 			self:parseInternalContainer(value, internalContainer)
 			if(doAddContainerItemEx(container, internalContainer) == LUA_ERROR) then
-				print("[ERROR] Task:parseVocationItems :: Can not add internal container to main container. Internal container details:")
+				consoleLog(T_LOG_ERROR, "Task:parseVocationItems", "Cant add internal container to main container.", {taskid=self.taskid, player=getCreatureName(self.cid)})
 			end
 		elseif(key == "meleeOptions") then
 			self:parseMeleeWeapon(value, container)
 		else
-			doAddContainerItem(container, value)
-			self:addItemToString(value)
+			if(doAddContainerItem(container, value) ~= LUA_ERROR) then
+				self:addItemToString(value)
+			else
+				consoleLog(T_LOG_ERROR, "Task:parseVocationItems", "Can not add item to main container.", {taskid=self.taskid, player=getCreatureName(self.cid)})
+			end
 		end
 	end
 end
@@ -649,7 +661,7 @@ function Task:parseInternalContainer(node, internalContainer)
 	for i = 1, amount, 1 do
 		local itemEx = doCreateItemEx(itemid)
 		if(doAddContainerItemEx(internalContainer, itemEx) == LUA_ERROR) then
-			print("[ERROR] Task:parseInternalContainer :: Can not add a item to internal container: {itemid=" .. itemid .. ", amount=" .. amount .. ", posError=" .. i .. "}")
+			consoleLog(T_LOG_ERROR, "Task:parseInternalContainer", "Cant add a item to internal container.", {taskid=self.taskid, player=getCreatureName(self.cid), itemid=itemid, amount=i})	
 		end
 	end
 end
@@ -660,14 +672,23 @@ function Task:parseMeleeWeapon(node, container)
 
 	for key,value in pairs(node) do
 		if(key == "club" and skillid == LEVEL_SKILL_CLUB) then	
-			doAddContainerItem(container, value)
-			self:addItemToString(value)
+			if(doAddContainerItem(container, value) ~= LUA_ERROR) then
+				self:addItemToString(value)
+			else
+				consoleLog(T_LOG_ERROR, "Task:parseMeleeWeapon", "Can not add player melee weapon (club).", {taskid=self.taskid, player=getCreatureName(self.cid), itemid=value})
+			end
 		elseif(key == "axe" and killid == LEVEL_SKILL_AXE) then	
-			doAddContainerItem(container, value)
-			self:addItemToString(value)
+			if(doAddContainerItem(container, value) ~= LUA_ERROR) then
+				self:addItemToString(value)
+			else
+				consoleLog(T_LOG_ERROR, "Task:parseMeleeWeapon", "Can not add player melee weapon (axe).", {taskid=self.taskid, player=getCreatureName(self.cid), itemid=value})
+			end			
 		elseif(key == "sword" and skillid == LEVEL_SKILL_SWORD) then	
-			doAddContainerItem(container, value)
-			self:addItemToString(value)
+			if(doAddContainerItem(container, value) ~= LUA_ERROR) then
+				self:addItemToString(value)
+			else
+				consoleLog(T_LOG_ERROR, "Task:parseMeleeWeapon", "Can not add player melee weapon (sword).", {taskid=self.taskid, player=getCreatureName(self.cid), itemid=value})
+			end		
 		end
 	end
 end

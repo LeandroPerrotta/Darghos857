@@ -8,7 +8,7 @@ function tasks.findMonster(name, task)
 		end
 	end
 	
-	print("[WARNING] tasks.findMonster :: Monster details not found {name=" .. name .. "}")
+	consoleLog(T_LOG_WARNING, "tasks:findMonster", "Monster details not found.", {monster=name})
 	return nil
 end
 
@@ -31,7 +31,7 @@ function tasks.onKill(cid, target)
 		
 		if(not(task:loadById(taskid))) then
 			-- Erro: avisar que a task salva no jogador nao foi encontrada...
-			print("[WARNING] task.onKill :: Task can not be loaded")
+			consoleLog(T_LOG_WARNING, "tasks:onKill", "The player task can not be loaded.", {player=getCreatureName(cid), taskid=taskid})
 			return
 		end
 		
