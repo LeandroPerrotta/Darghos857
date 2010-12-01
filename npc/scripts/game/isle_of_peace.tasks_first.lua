@@ -118,9 +118,10 @@ function onCreatureSay(cid, type, msg)
 				_state.topic = 3
 			elseif(_state.topic == 3) then
 				npcTask:sendTaskStart()
-				_state.isidle = TRUE
+				_state.topic = 0
 			elseif(_state.topic == 4) then
-				npcTask:onCompleteConfirm(cid)
+				npcTask:onCompleteConfirm()
+				state.topic = 0
 			elseif(_state.topic == 5) then
 				dialog:say("Isto é bom! Até imagino que você veio aqui saber sobre mais certo? Haha, não é preciso responder... Bom... Eu não tenho mais nenhuma tarefa mas se você seguir ao leste do templo você chegará na saida leste da cidade e lá você encontrará o guarda Winston [...]", cid)
 				dialog:say("Converse com ele, eu sei estava precisando de alguem para fazer algumas tarefas fora da cidade, agora que você já está mais forte creio que tem capacidade de o ajudar... Boa sorte!", cid, 6)

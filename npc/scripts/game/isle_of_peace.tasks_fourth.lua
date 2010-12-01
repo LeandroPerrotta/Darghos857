@@ -84,9 +84,10 @@ function onCreatureSay(cid, type, msg)
 				_state.topic = 3
 			elseif(_state.topic == 3) then
 				npcTask:sendTaskStart()
-				_state.isidle = TRUE
+				_state.topic = 0
 			elseif(_state.topic == 4) then
-				npcTask:onCompleteConfirm()		
+				npcTask:onCompleteConfirm()
+				state.topic = 0		
 			elseif(_state.topic == 5) then	
 				dialog:say("O Rei ficará contente ".. getCreatureName(cid) .."! Ao sul desta portão você encontrará uma pequena ponte, atravessando-a entrará num territorio desertico habitado por minotauros. Nele há uma piramide destruida. A sua  tarefa é a seguinte: [...]", cid)
 				dialog:say("Você deve entrar no sub-solo da piramide e decer até o andar mais baixo. Note que está é uma missão muito perigosa pois o sub-solo da piramide é recheada de minotaurs dos mais variados tipos, como minotaur archer, guard e mage [...]", cid, 6)

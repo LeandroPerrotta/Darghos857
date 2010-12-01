@@ -71,9 +71,10 @@ function onCreatureSay(cid, type, msg)
 				_state.topic = 3
 			elseif(_state.topic == 3) then
 				npcTask:sendTaskStart()
-				_state.isidle = TRUE
+				_state.topic = 0
 			elseif(_state.topic == 4) then
-				npcTask:onCompleteConfirm()		
+				npcTask:onCompleteConfirm()
+				state.topic = 0
 			end
 		elseif((isFocused(cid)) and (msg == "bye" or msg == "goodbye" or msg == "cya" or msg == "adeus")) then
 			dialog:say("Boa sorte!", cid)
