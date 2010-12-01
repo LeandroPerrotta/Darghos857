@@ -23,7 +23,7 @@ function consoleLog(type, caller, string, params)
 	local printTypes = { T_LOG_ALL }
 	
 	if(isInArray(printTypes, type) == TRUE or printTypes[1] == T_LOG_ALL) then
-		print(out)
+		debugPrint(out)
 	end
 end
 
