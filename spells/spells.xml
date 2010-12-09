@@ -320,7 +320,7 @@
 	<instant name="Great Energy Beam" words="exevo gran vis lux" lvl="29" mana="110" direction="1" script="attack/great_energy_beam.lua">
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/>		<vocation name="Warmaster Sorcerer"/>
 	</instant>
-	<instant name="Wound Cleasing" words="exana mort" lvl="30" mana="65" selftarget="1" aggressive="0" script="healing/wound_cleasing.lua">
+	<instant name="Wound Cleasing" words="exana mort" lvl="30" mana="65" selftarget="1" prem="1" aggressive="0" script="healing/wound_cleasing.lua">
 		<vocation name="Knight"/>   <vocation name="Elite Knight"/>			<vocation name="Berserk Warrior"/>
 	</instant>
 	<instant name="Undead Legion" words="exana mas mort" lvl="30" mana="500" selftarget="1" script="summon/undead_legion.lua">
@@ -332,7 +332,7 @@
 	<instant name="Berserk" words="exori" lvl="35" mana="115" selftarget="1" script="attack/berserk.lua">
 		<vocation name="Knight"/>   <vocation name="Elite Knight"/>			<vocation name="Berserk Warrior"/>
 	</instant>
-	<instant name="Divine Healing" words="exura san" lvl="35" mana="210" selftarget="1" aggressive="0" script="healing/divine_healing.lua">
+	<instant name="Divine Healing" words="exura san" lvl="35" mana="210" selftarget="1" prem="1" aggressive="0" script="healing/divine_healing.lua">
 		<vocation name="Paladin"/>  <vocation name="Royal Paladin"/>		<vocation name="Holy Paladin"/>
 	</instant>
 	<instant name="Invisibility" words="utana vid" lvl="35" mana="440" selftarget="1" aggressive="0" script="support/invisible.lua">
@@ -340,7 +340,7 @@
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>			<vocation name="Warden Druid"/>
 		<vocation name="Paladin"/>  <vocation name="Royal Paladin"/>		<vocation name="Holy Paladin"/>
 	</instant>
-	<instant name="Mass Healing" words="exura gran mas res" lvl="36" mana="150" selftarget="1" aggressive="0" script="healing/mass_healing.lua">
+	<instant name="Mass Healing" words="exura gran mas res" lvl="36" mana="150" selftarget="1" prem="1" aggressive="0" script="healing/mass_healing.lua">
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>			<vocation name="Warden Druid"/>
 	</instant>
 	<instant name="Energy Wave" words="exevo vis hur" lvl="38" mana="170" direction="1" script="attack/energy_wave.lua">
@@ -352,22 +352,22 @@
 	<instant name="Divine Missile" words="exori san" lvl="40" range="4" mana="20" casterTargetOrDirection="1" script="attack/divine_missile.lua">
 		<vocation name="Paladin"/>  <vocation name="Royal Paladin"/>		<vocation name="Holy Paladin"/>
 	</instant>
-	<instant name="Divine Caldera" words="exevo mas san" lvl="50" mana="160" selftarget="1" script="attack/divine_caldera.lua">
+	<instant name="Divine Caldera" words="exevo mas san" lvl="50" mana="160" selftarget="1" prem="1" script="attack/divine_caldera.lua">
 		<vocation name="Paladin"/>  <vocation name="Royal Paladin"/>		<vocation name="Holy Paladin"/>
 	</instant>
-	<instant name="Rage of the Skies" words="exevo gran mas vis" lvl="55" mana="650" selftarget="1" script="attack/rage_of_the_skies.lua">
+	<instant name="Rage of the Skies" words="exevo gran mas vis" lvl="55" mana="650" selftarget="1" prem="1" script="attack/rage_of_the_skies.lua">
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/>		<vocation name="Warmaster Sorcerer"/>
 	</instant>
 	<instant name="Wrath of Nature" words="exevo gran mas tera" lvl="55" mana="770" selftarget="1" script="attack/wrath_of_nature.lua">
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>			<vocation name="Warden Druid"/>
 	</instant>
-	<instant name="Eternal Winter" words="exevo gran mas frigo" lvl="60" mana="1200" selftarget="1" script="attack/eternal_winter.lua">
+	<instant name="Eternal Winter" words="exevo gran mas frigo" lvl="60" mana="1200" selftarget="1" prem="1" script="attack/eternal_winter.lua">
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/>			<vocation name="Warden Druid"/>
 	</instant>
-	<instant name="Hell's Core" words="exevo gran mas flam" lvl="60" mana="1200" selftarget="1" script="attack/hells_core.lua">
+	<instant name="Hell's Core" words="exevo gran mas flam" lvl="60" mana="1200" selftarget="1" prem="1" script="attack/hells_core.lua">
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/>		<vocation name="Warmaster Sorcerer"/>
 	</instant>
-	<instant name="Fierce Berserk" words="exori gran" lvl="70" mana="340" selftarget="1" script="attack/fierce_berserk.lua">
+	<instant name="Fierce Berserk" words="exori gran" lvl="70" mana="340" selftarget="1" prem="1" script="attack/fierce_berserk.lua">
 		<vocation name="Knight"/>   <vocation name="Elite Knight"/>			<vocation name="Berserk Warrior"/>
 	</instant>
   	<instant name="Train Party" words="utito mas sio" lvl="32" mana="0" aggressive="0" selftarget="1" script="support/party_knight.lua">
