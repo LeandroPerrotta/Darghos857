@@ -272,6 +272,7 @@ end
 ]]--
 function onServerStart()
 
+	testLog()
 	Dungeons.onServerStart()
 	
 	summonLordVankyner()
@@ -384,27 +385,52 @@ function defineFirstItems(cid)
 end
 
 function setRateStage(cid, newlevel)
-
+	
 	local stages = {
-		normal 		= 4,
-		reborn_1	= 3	
+		reborns = {
+			first = { 
+				{end_level = 299, multipler = 3}, 
+				{start_level = 300, multipler = 1.5} 
+			},
+		},
+		normal = {
+			multipler = 4
+		},
+		iop = {
+			{end_level = 79, multipler = 4}, 
+			{start_level = 80, multipler = 1} 		
+		} 
 	}
+	
+	function readStagesNode(node, cid, newlevel)
+		for k,v in pairs(node) do
+		
+			if(v.end_level ~= nil and newlevel <= v.end_level) then
+				setExperienceRate(cid, v.multipler)		
+				break
+			end
+			
+			if(v.start_level ~= nil and newlevel >= v.start_level) then
+				setExperienceRate(cid, v.multipler)
+				break
+			end
+		end
+	end
 	
 	if(getPlayerTown(cid) ~= towns.ISLAND_OF_PEACE) then
 	
 		local rebornLevel = getPlayerRebornLevel(cid)
 	
 		if(rebornLevel == 0) then
-			setExperienceRate(cid, stages.normal)
+			local multipler = stages.normal.multipler
+			setExperienceRate(cid, multipler)
 		elseif(rebornLevel == 1) then
-			setExperienceRate(cid, stages.reborn_1)
+			local stageNode = stages.reborns.first
+			readStagesNode(stageNode, cid, newlevel)
 		end
 	else
-		if(newlevel > 80) then
-			setExperienceRate(cid, 1)
-		else
-			setExperienceRate(cid, stages.normal)
-		end		
+		local stageNode = stages.iop
+		readStagesNode(stageNode, cid, newlevel)
 	end	
 	
 	return LUA_TRUE
