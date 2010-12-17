@@ -25067,5 +25067,16 @@
 		<attribute key="description" value="Esta runa magica é capaz de lhe transportar para sua cidade natal."/>
 		<attribute key="weight" value="120"/>
 	</item>
+	<item id="11755" article="a" name="cursed sudden death rune">
+		<attribute key="runeSpellName" value="adori gran mas mort"/>
+		<attribute key="weight" value="120"/>
+		<attribute key="charges" value="1"/>
+		<attribute key="showcharges" value="1"/>
+	</item>	
+	<item id="11756" article="a" name="paralyze bomb rune">
+		<attribute key="runeSpellName" value="adana mas ani"/>
+		<attribute key="weight" value="120"/>
+		<attribute key="charges" value="1"/>
+	</item>	
 	
 </items>

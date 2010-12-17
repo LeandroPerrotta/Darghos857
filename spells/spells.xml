@@ -106,7 +106,7 @@
 	</conjure>
 	<conjure name="Sudden Death" words="adori gran mort" lvl="45" mana="985" soul="5" reagentId="2260" conjureId="2268" conjureCount="3" function="conjureRune">
 		<vocation name="Sorcerer"/> <vocation name="Master Sorcerer"/> <vocation name="Warmaster Sorcerer"/>
-	</conjure>
+	</conjure>	
 	<conjure name="Paralyze" words="adana ani" lvl="54" mana="1400" soul="3" reagentId="2260" conjureId="2278" conjureCount="1" function="conjureRune">
 		<vocation name="Druid"/>    <vocation name="Elder Druid"/> <vocation name="Warden Druid"/>
 	</conjure>
@@ -397,4 +397,28 @@
 	<instant name="Sharpshooter" words="utito tempo san" lvl="60" mana="450" selftarget="1" aggressive="0" script="support/sharpshooter.lua">
 		<vocation name="Paladin"/>   <vocation name="Royal Paladin"/>		<vocation name="Holy Paladin"/>
 	</instant>
+	
+	<!-- CUSTOM AREA -->
+	
+	<!-- RUNES -->
+	<rune name="adori gran mas mort" prem="1" id="11755" lvl="75" maglv="65" charges="1" script="custom/cursed_sudden_death.lua">
+		<vocation name="Warmaster Sorcerer"/>
+	</rune>	
+	
+	<rune name="adana mas ani" id="11756" lvl="88" maglv="65" mana="0" charges="1" script="custom/paralyze_bomb_rune.lua">
+		<vocation name="Warden Druid"/>
+	</rune>	
+	
+	<!--  INSTANT -->
+	<conjure name="Cursed Sudden Death" prem="1" words="adori gran mas mort" lvl="75" mana="1740" soul="7" reagentId="2268" conjureId="11755" conjureCount="1" function="conjureRune">
+		<vocation name="Warmaster Sorcerer"/>
+	</conjure>
+	
+	<conjure name="Paralyze Bomb" prem="1" words="adana mas ani" lvl="88" mana="1400" soul="3" reagentId="2278" conjureId="11756" conjureCount="1" function="conjureRune">
+		<vocation name="Warden Druid"/>
+	</conjure>
+		
+	<instant name="Great WhirlWind Throw" words="exori gran hur" lvl="42" range="5" mana="80" prem="1" needtarget="1" needweapon="1" script="custom/great_whirlwind_throw.lua">
+		<vocation name="Berserk Warrior"/>
+	</instant>	
 </spells>

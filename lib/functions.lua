@@ -272,7 +272,6 @@ end
 ]]--
 function onServerStart()
 
-	testLog()
 	Dungeons.onServerStart()
 	
 	summonLordVankyner()
