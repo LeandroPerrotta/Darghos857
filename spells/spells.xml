@@ -414,7 +414,7 @@
 		<vocation name="Warmaster Sorcerer"/>
 	</conjure>
 	
-	<conjure name="Paralyze Bomb" prem="1" words="adana mas ani" lvl="88" mana="1400" soul="3" reagentId="2278" conjureId="11756" conjureCount="1" function="conjureRune">
+	<conjure name="Paralyze Bomb" prem="1" words="adana mas ani" lvl="88" mana="1900" soul="6" reagentId="2278" conjureId="11756" conjureCount="1" function="conjureRune">
 		<vocation name="Warden Druid"/>
 	</conjure>
 		
