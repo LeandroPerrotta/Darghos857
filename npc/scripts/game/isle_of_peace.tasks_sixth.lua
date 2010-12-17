@@ -6,7 +6,6 @@ npcTask:registerTask(CAP_ONE.ISLAND_OF_PEACE.THIRTEENTH)
 npcTask:setDialog(dialog)
 
 local TALK_RADIUS = 4
-local _state = {}
 local focuses = {}
 local function isFocused(cid)
 	for i, v in pairs(focuses) do
@@ -61,21 +60,21 @@ function onCreatureSay(cid, type, msg)
 		elseif(isFocused(cid) and (msg == "task" or msg == "mission" or msg == "yes" or msg == "no")) then
 			dialog:say("Desculpe " .. getCreatureName(cid) .. ", mas somente sei conversar em portugues.", cid)			
 		elseif(isFocused(cid) and (msg == "tarefa" or msg == "missão" or msg == "missao")) then
-			npcTask:responseTask(_state, cid)
+			npcTask:responseTask(cid)
 		elseif(isFocused(cid) and (msg == "não" or msg == "nao")) then
 			dialog:say("Oh... Que pena, mas sem problemas! Então o que deseja?", cid)
-			_state.topic = 0			
+			setTopic(cid, 0)		
 		elseif(isFocused(cid) and msg == "sim") then
 		
-			if(_state.topic == 2) then
+			if(getTopic(cid) == 2) then
 				npcTask:sendTaskObjectives()
-				_state.topic = 3
-			elseif(_state.topic == 3) then
+				setTopic(cid, 3)
+			elseif(getTopic(cid) == 3) then
 				npcTask:sendTaskStart()
-				_state.topic = 0
-			elseif(_state.topic == 4) then
+				setTopic(cid, 0)
+			elseif(getTopic(cid) == 4) then
 				npcTask:onCompleteConfirm()
-				state.topic = 0
+				setTopic(cid, 0)
 			end
 		elseif((isFocused(cid)) and (msg == "bye" or msg == "goodbye" or msg == "cya" or msg == "adeus")) then
 			dialog:say("Boa sorte!", cid)

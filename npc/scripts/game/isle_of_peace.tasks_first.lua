@@ -6,8 +6,6 @@ npcTask:registerTask(CAP_ONE.ISLAND_OF_PEACE.SECOND)
 npcTask:setDialog(dialog)
 
 local TALK_RADIUS = 4
-
-local _state = {}
 local focuses = {}
 local function isFocused(cid)
 	for i, v in pairs(focuses) do
@@ -39,6 +37,17 @@ local function lookAtFocus()
 		end
 	end
 	doNpcSetCreatureFocus(0)
+end
+
+function onCreatureAppear(cid)
+	firstLoginEvent(cid)
+end
+
+function onCreatureDisappear(cid)
+	if(isFocused(cid)) then
+		dialog:say("Mas que pressa!")
+		removeFocus(cid)
+	end
 end
 
 function firstLoginEvent(cid)
@@ -73,17 +82,6 @@ function firstLoginEvent(cid)
 	end	
 end
 
-function onCreatureAppear(cid)
-	firstLoginEvent(cid)
-end
-
-function onCreatureDisappear(cid)
-	if(isFocused(cid)) then
-		dialog:say("Mas que pressa!")
-		removeFocus(cid)
-	end
-end
-
 function onCreatureSay(cid, type, msg)
 	msg = string.lower(msg)
 	npcTask:setPlayer(cid)
@@ -92,37 +90,38 @@ function onCreatureSay(cid, type, msg)
 		if((msg == "hi" or msg == "hello" or msg == "ola") and not (isFocused(cid))) then
 		
 			local task = Task:new()
+			task:setNpcName(getNpcName())
 			task:loadById(CAP_ONE.ISLAND_OF_PEACE.FOURTH)
 			task:setPlayer(cid)		
 		
 			if(task:getState() == taskStats.COMPLETED) then
 				dialog:say("Mas veja só! É o ".. getCreatureName(cid) .."! Está bem mais forte do que a ultima vez que o vi! Andou fazendo tarefas?", cid)
-				_state.topic = 5
+				setTopic(cid, 5)
 			else
 				dialog:say("Ola ".. getCreatureName(cid) ..". Gostaria de fazer uma {tarefa}?", cid)
 			end
 			
-			addFocus(cid)
+			addFocus(cid)		
 		elseif(isFocused(cid) and (msg == "task" or msg == "mission" or msg == "yes" or msg == "no")) then
 			dialog:say("Desculpe " .. getCreatureName(cid) .. ", mas somente sei conversar em portugues.", cid)				
 		elseif(isFocused(cid) and (msg == "tarefa" or msg == "missão" or msg == "missao")) then
 		
-			npcTask:responseTask(_state, cid)
+			npcTask:responseTask(cid)
 		elseif(isFocused(cid) and (msg == "não" or msg == "nao")) then
 			dialog:say("Oh... Que pena, mas sem problemas! Então o que deseja?", cid)
-			_state.topic = 0			
+			setTopic(cid, 0)			
 		elseif(isFocused(cid) and msg == "sim") then
 		
-			if(_state.topic == 2) then
+			if(getTopic(cid) == 2) then
 				npcTask:sendTaskObjectives()
-				_state.topic = 3
-			elseif(_state.topic == 3) then
+				setTopic(cid, 3)
+			elseif(getTopic(cid) == 3) then
 				npcTask:sendTaskStart()
-				_state.topic = 0
-			elseif(_state.topic == 4) then
+				setTopic(cid, 0)
+			elseif(getTopic(cid) == 4) then
 				npcTask:onCompleteConfirm()
-				state.topic = 0
-			elseif(_state.topic == 5) then
+				setTopic(cid, 0)
+			elseif(getTopic(cid) == 5) then
 				dialog:say("Isto é bom! Até imagino que você veio aqui saber sobre mais certo? Haha, não é preciso responder... Bom... Eu não tenho mais nenhuma tarefa mas se você seguir ao leste do templo você chegará na saida leste da cidade e lá você encontrará o guarda Winston [...]", cid)
 				dialog:say("Converse com ele, eu sei estava precisando de alguem para fazer algumas tarefas fora da cidade, agora que você já está mais forte creio que tem capacidade de o ajudar... Boa sorte!", cid, 6)
 			end

@@ -16,7 +16,7 @@ function NpcDialog:new()
 end
 
 function NpcDialog:say(message, creature, delay)	
-	
+
 	if(delay == nil) then
 		delay = NPC_DIALOG_INTERVAL
 	end

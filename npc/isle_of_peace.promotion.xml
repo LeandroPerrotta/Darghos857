@@ -39,6 +39,7 @@
 		task = Task:new()
 		task:loadById(CAP_ONE.ISLAND_OF_PEACE.EIGHTH)
 		task:setPlayer(cid)
+		task:setNpcName(getNameName())
 		
 		dialog = NpcDialog:new()
 		

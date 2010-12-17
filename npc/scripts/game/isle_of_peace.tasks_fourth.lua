@@ -6,7 +6,6 @@ npcTask:registerTask(CAP_ONE.ISLAND_OF_PEACE.SEVENTH)
 npcTask:setDialog(dialog)
 
 local TALK_RADIUS = 4
-local _state = {}
 local focuses = {}
 local function isFocused(cid)
 	for i, v in pairs(focuses) do
@@ -55,7 +54,8 @@ function onCreatureSay(cid, type, msg)
 	
 	local kingTask = Task:new()
 	kingTask:loadById(CAP_ONE.ISLAND_OF_PEACE.EIGHTH)
-	kingTask:setPlayer(cid)			
+	kingTask:setPlayer(cid)	
+	kingTask:setNpcName(getNpcName())		
 	
 	npcTask:setPlayer(cid)
 	local distance = getDistanceTo(cid) or -1
@@ -70,25 +70,25 @@ function onCreatureSay(cid, type, msg)
 		
 			if(kingTask:getState() ~= taskStats.COMPLETED and kingTask:checkPlayerRequirements()) then	
 				dialog:say("Eu não tenho mais nenhuma tarefa para você, mas sei de algo que talvez lhe interesse, e envolve ajudar o Rei, quer saber mais?", cid)
-				_state.topic = 5
+				setTopic(cid, 5)
 			else
-				npcTask:responseTask(_state, cid)
+				npcTask:responseTask(cid)
 			end	
 		elseif(isFocused(cid) and (msg == "não" or msg == "nao")) then
 			dialog:say("Oh... Que pena, mas sem problemas! Então o que deseja?", cid)
-			_state.topic = 0
+			setTopic(cid, 0)
 		elseif(isFocused(cid) and msg == "sim") then
 		
-			if(_state.topic == 2) then
+			if(getTopic() == 2) then
 				npcTask:sendTaskObjectives()
-				_state.topic = 3
-			elseif(_state.topic == 3) then
+				setTopic(cid, 3)
+			elseif(getTopic() == 3) then
 				npcTask:sendTaskStart()
-				_state.topic = 0
-			elseif(_state.topic == 4) then
+				setTopic(cid, 0)
+			elseif(getTopic() == 4) then
 				npcTask:onCompleteConfirm()
-				state.topic = 0		
-			elseif(_state.topic == 5) then	
+				setTopic(cid, 0)	
+			elseif(getTopic() == 5) then	
 				dialog:say("O Rei ficará contente ".. getCreatureName(cid) .."! Ao sul desta portão você encontrará uma pequena ponte, atravessando-a entrará num territorio desertico habitado por minotauros. Nele há uma piramide destruida. A sua  tarefa é a seguinte: [...]", cid)
 				dialog:say("Você deve entrar no sub-solo da piramide e decer até o andar mais baixo. Note que está é uma missão muito perigosa pois o sub-solo da piramide é recheada de minotaurs dos mais variados tipos, como minotaur archer, guard e mage [...]", cid, 6)
 				dialog:say("Para lhe auxiliar nesta missão foi dado na recompensa da tarefa dos anões um stealth ring. Ao usar-lo, você ficará invisivel e isso permitirá você andar entre os minotaurs, mas preste atenção: [...]", cid, 6)

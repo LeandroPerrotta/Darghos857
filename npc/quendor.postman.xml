@@ -34,6 +34,7 @@
 		task = Task:new()
 		task:loadById(CAP_ONE.QUENDOR.TRAVELER_IOP)
 		task:setPlayer(cid)
+		task:setNpcName(getNpcName())
 		
 		print("Value:" .. task:getState())
 		

@@ -1,4 +1,4 @@
-function consoleLog(type, caller, string, params)
+function consoleLog(type, npcname, caller, string, params)
 	local out = os.date("%X") .. " | [" .. type .. "] " .. caller .. " | " .. string
 	
 	if(params ~= nil) then
@@ -23,7 +23,16 @@ function consoleLog(type, caller, string, params)
 	local printTypes = { T_LOG_ALL }
 	
 	if(isInArray(printTypes, type) == TRUE or printTypes[1] == T_LOG_ALL) then
-		debugPrint(out)
+	
+		local date = os.date("*t")
+		local fileStr = npcname .. "_" .. date.day .. "-" .. date.month .. ".log"
+		local patch = getDataDir() .. "logs/npc/"
+		local io = io.open(patch .. fileStr, "a+")
+		
+		io:write(out .. "\n")
+		io:close()
+		
+		--debugPrint(out)
 	end
 end
 

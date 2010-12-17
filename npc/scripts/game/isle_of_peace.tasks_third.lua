@@ -5,7 +5,6 @@ npcTask:registerTask(CAP_ONE.ISLAND_OF_PEACE.FOURTH)
 npcTask:setDialog(dialog)
 
 local TALK_RADIUS = 4
-local _state = {}
 local focuses = {}
 local function isFocused(cid)
 	for i, v in pairs(focuses) do
@@ -67,6 +66,7 @@ function onCreatureSay(cid, type, msg)
 		elseif(isFocused(cid) and (msg == "tarefa" or msg == "missão" or msg == "missao")) then
 		
 			local task = Task:new()
+			task:setNpcName(getNpcName())	
 			task:loadById(CAP_ONE.ISLAND_OF_PEACE.FOURTH)
 			task:setPlayer(cid)
 			
