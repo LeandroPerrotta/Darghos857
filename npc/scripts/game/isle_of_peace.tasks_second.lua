@@ -11,7 +11,7 @@ function onCreatureSay(cid, type, msg)
 	msg = string.lower(msg)
 	npcTask:setPlayer(cid)
 	local distance = getDistanceTo(cid) or -1
-	if((distance < npcSys:getTalkRadius()) or (distance ~= -1)) then
+	if((distance < npcSys:getTalkRadius()) and (distance ~= -1)) then
 		if((msg == "hi" or msg == "hello" or msg == "ola") and not (npcSys:isFocused(cid))) then
 		
 			dialog:say("Fale baixo ".. getCreatureName(cid) .."! Os sem carne podem nos ouvir! Preciso de alguem para ajudar em uma {tarefa}...", cid)

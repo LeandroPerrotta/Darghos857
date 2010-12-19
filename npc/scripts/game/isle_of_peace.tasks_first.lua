@@ -48,7 +48,7 @@ function onCreatureSay(cid, type, msg)
 	msg = string.lower(msg)
 	npcTask:setPlayer(cid)
 	local distance = getDistanceTo(cid) or -1
-	if((distance < npcSys:getTalkRadius()) or (distance ~= -1)) then
+	if((distance < npcSys:getTalkRadius()) and (distance ~= -1)) then
 		if((msg == "hi" or msg == "hello" or msg == "ola") and not (npcSys:isFocused(cid))) then
 		
 			local task = Task:new()
@@ -58,7 +58,7 @@ function onCreatureSay(cid, type, msg)
 		
 			if(task:getState() == taskStats.COMPLETED) then
 				dialog:say("Mas veja só! É o ".. getCreatureName(cid) .."! Está bem mais forte do que a ultima vez que o vi! Andou fazendo tarefas?", cid)
-				setTopic(cid, 5)
+				npcSys:setTopic(cid, 5)
 			else
 				dialog:say("Ola ".. getCreatureName(cid) ..". Gostaria de fazer uma {tarefa}?", cid)
 			end
@@ -71,7 +71,7 @@ function onCreatureSay(cid, type, msg)
 			npcTask:responseTask(cid)
 		elseif(npcSys:isFocused(cid) and (msg == "não" or msg == "nao")) then
 			dialog:say("Oh... Que pena, mas sem problemas! Então o que deseja?", cid)
-			setTopic(cid, 0)			
+			npcSys:setTopic(cid, 0)			
 		elseif(npcSys:isFocused(cid) and msg == "sim") then
 		
 			if(npcSys:getTopic(cid) == 2) then

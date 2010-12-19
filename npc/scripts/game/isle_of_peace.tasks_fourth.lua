@@ -18,7 +18,7 @@ function onCreatureSay(cid, type, msg)
 	
 	npcTask:setPlayer(cid)
 	local distance = getDistanceTo(cid) or -1
-	if((distance < npcSys:getTalkRadius()) or (distance ~= -1)) then
+	if((distance < npcSys:getTalkRadius()) and (distance ~= -1)) then
 		if((msg == "hi" or msg == "hello" or msg == "ola") and not (npcSys:isFocused(cid))) then
 		
 			dialog:say("Ola ".. getCreatureName(cid) .."! Diga-me como posso lhe ajudar. Só não demore, não posso me destrair!", cid)

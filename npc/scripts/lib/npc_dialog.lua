@@ -3,13 +3,15 @@ NPC_DIALOG_INTERVAL = 1
 NpcDialog = {
 	lastMessage = 0,
 	delays = nil,
-	messages = nil
+	messages = nil,
+	default_messages = nil
 }
 
 function NpcDialog:new()
 	local obj = {}
 	obj.delays = {}
 	obj.messages = {}
+	obj.default_messages = {}
 	setmetatable(obj, self)
 	self.__index = self
 	return obj
@@ -17,18 +19,25 @@ end
 
 function NpcDialog:say(message, creature, delay)	
 
-	if(self.messages[cid] == nil) then
-		table.insert(self.messages, creature, {msgQueue = {}, lastMessage = 0})
-	end
-
 	if(delay == nil) then
 		delay = NPC_DIALOG_INTERVAL
 	end
-	
-	self:delay(delay, creature)
-	
-	local prop = {msgStr=message}
-	table.insert(self.messages[creature].msgQueue, prop)
+
+	if(creature ~= nil) then
+		if(self.messages[cid] == nil) then
+			table.insert(self.messages, creature, {msgQueue = {}, lastMessage = 0})
+		end
+		
+		self:delay(delay, creature)
+		
+		local prop = {msgStr=message}
+		table.insert(self.messages[creature].msgQueue, prop)	
+	else
+		self:delay(delay)
+		
+		local prop = {msgStr=message}
+		table.insert(self.default_messages, prop)			
+	end
 end
 
 function NpcDialog:delay(seconds, cid)
@@ -50,9 +59,7 @@ function NpcDialog:delay(seconds, cid)
 		end
 	
 		table.insert(self.messages[cid].msgQueue, {delay=self.messages[cid].lastMessage})	
-	else
-		debugPrint("Deprecated use of function delay(seconds) on NpcDialog class, use delay(seconds, cid).")
-	
+	else	
 		if(self.lastMessage == 0) then
 			self.lastMessage = os.time() + seconds
 		else
@@ -63,7 +70,7 @@ function NpcDialog:delay(seconds, cid)
 			end
 		end
 	
-		table.insert(self.messages, {delay=self.lastMessage})	
+		table.insert(self.default_messages, {delay=self.lastMessage})	
 	end
 end
 
@@ -82,19 +89,23 @@ function NpcDialog:run()
 					
 					self.messages[cid].msgQueue[k] = nil
 				else
-					--[[
-					if(msgInfo.msgStr ~= nil) then
-						if(msgInfo.cid == nil) then
-							selfSay(msgInfo.msgStr)
-						else
-					]]--
-					selfSay(msgInfo.msgStr, cid)
-					--	end
-					--end
-					
+					selfSay(msgInfo.msgStr, cid)					
 					self.messages[cid].msgQueue[k] = nil	
 				end		
 			end	
 		end
 	end
+	
+	for k,msgInfo in pairs(self.default_messages) do
+		if(msgInfo.delay ~= nil) then
+			if(os.time() <= msgInfo.delay) then
+				break
+			end
+			
+			self.default_messages[k] = nil
+		else
+			selfSay(msgInfo.msgStr)
+			self.default_messages[k] = nil	
+		end		
+	end		
 end

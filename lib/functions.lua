@@ -27,10 +27,10 @@ function consoleLog(type, npcname, caller, string, params)
 		local date = os.date("*t")
 		local fileStr = npcname .. "_" .. date.day .. "-" .. date.month .. ".log"
 		local patch = getDataDir() .. "logs/npc/"
-		local io = io.open(patch .. fileStr, "a+")
+		local file = io.open(patch .. fileStr, "a+")
 		
-		io:write(out .. "\n")
-		io:close()
+		file:write(out .. "\n")
+		file:close()
 		
 		--debugPrint(out)
 	end
