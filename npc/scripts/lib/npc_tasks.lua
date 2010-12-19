@@ -4,6 +4,7 @@ NpcTasks = {
 	currentTask = 0,
 	taskConf = 0,
 	dialog = 0,
+	npcSystem = 0
 }
 
 function NpcTasks:new()
@@ -18,6 +19,15 @@ function NpcTasks:setPlayer(cid)
 	self.cid = cid
 end
 
+function NpcTasks:setDialog(dialog)
+	self.dialog = dialog
+end
+
+function NpcTasks:setNpcSystem(npcSystem)
+	self.npcSystem = npcSystem
+end
+
+
 function NpcTasks:registerTask(taskid)
 	table.insert(self.registeredTasks, taskid)
 end
@@ -25,10 +35,6 @@ end
 function NpcTasks:loadTask(taskid)
 	self.currentTask = taskid
 	self.taskConf = tasksList[taskid]
-end
-
-function NpcTasks:setDialog(dialog)
-	self.dialog = dialog
 end
 
 function NpcTasks:responseTask(cid)
@@ -62,7 +68,7 @@ function NpcTasks:responseTask(cid)
 	if(startedTask == LUA_ERROR) then
 		consoleLog(T_LOG_NOTIFY, getNpcName(), "NpcTasks:responseTask", "NPC will talk to player about an task.")
 		if(self:sendTaskDescription()) then
-			setTopic(cid, 2)
+			self.npcSystem:setTopic(cid, 2)
 		end
 	else
 		local state = getPlayerStorageValue(cid, startedTask)
@@ -70,7 +76,7 @@ function NpcTasks:responseTask(cid)
 		if(state == taskStats.NONE or state == taskStats.COMPLETED) then
 			consoleLog(T_LOG_NOTIFY, getNpcName(), "NpcTasks:responseTask", "NPC will talk to player about an task.")
 			if(self:sendTaskDescription()) then
-				setTopic(cid, 2)
+				self.npcSystem:setTopic(cid, 2)
 			end
 		elseif(state == taskStats.STARTED) then
 			consoleLog(T_LOG_NOTIFY, getNpcName(), "NpcTasks:responseTask", "NPC will check if the player has ended the task.")
@@ -258,7 +264,7 @@ function NpcTasks:eventOnComplete(infos)
 	elseif(infos.type == "question") then
 		consoleLog(T_LOG_NOTIFY, getNpcName(), "NpcTasks:responseTask", "Ok, the event is an question!")
 		self.dialog:say(infos.text, self.cid)
-		setTopic(self.cid, 4)
+		self.npcSystem:setTopic(self.cid, 4)
 		
 		if(infos.action ~= nil) then
 			if(infos.action == "setState") then
@@ -266,7 +272,7 @@ function NpcTasks:eventOnComplete(infos)
 					consoleLog(T_LOG_WARNING, getNpcName(), "NpcTasks:eventOnComplete", "Unknown param for setState.", {player=getCreatureName(self.cid), taskid=self.currentTask})
 				else
 					consoleLog(T_LOG_NOTIFY, getNpcName(), "NpcTasks:responseTask", "The event has an custom setTopic!", {topic=infos.confirmParam})
-					setTopic(self.cid, infos.confirmParam)
+					self.npcSystem:setTopic(self.cid, infos.confirmParam)
 				end
 			end
 		end
