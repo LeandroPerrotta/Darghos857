@@ -4,12 +4,13 @@ NpcTasks = {
 	currentTask = 0,
 	taskConf = 0,
 	dialog = 0,
-	npcSystem = 0
+	npcSystem = nil
 }
 
-function NpcTasks:new()
+function NpcTasks:new(npcSystem)
 	local obj = {}
 	obj.registeredTasks = {}
+	obj.npcSystem = npcSystem
 	setmetatable(obj, self)
 	self.__index = self
 	return obj

@@ -2,9 +2,9 @@ local dialog = NpcDialog:new()
 local npcSys = _NpcSystem:new()
 npcSys:setDialog(dialog)
 
-local npcTask = NpcTasks:new()
+local npcTask = NpcTasks:new(npcSys)
 npcTask:registerTask(CAP_ONE.ISLAND_OF_PEACE.TWELFTH)
-npcTask:setNpcSystem(npcSys)
+--npcTask:setNpcSystem(npcSys)
 npcTask:setDialog(dialog)
 
 function onCreatureSay(cid, type, msg)	

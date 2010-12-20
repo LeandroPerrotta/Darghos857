@@ -19,12 +19,15 @@ end
 
 function NpcDialog:say(message, creature, delay)	
 
+	print("Antes [" .. message .. "]")
+	print(table.show(self.messages))
+
 	if(delay == nil) then
 		delay = NPC_DIALOG_INTERVAL
 	end
 
 	if(creature ~= nil) then
-		if(self.messages[cid] == nil) then
+		if(self.messages[creature] == nil) then
 			table.insert(self.messages, creature, {msgQueue = {}, lastMessage = 0})
 		end
 		
@@ -38,6 +41,9 @@ function NpcDialog:say(message, creature, delay)
 		local prop = {msgStr=message}
 		table.insert(self.default_messages, prop)			
 	end
+	
+	print("Depois")
+	print(table.show(self.messages))
 end
 
 function NpcDialog:delay(seconds, cid)
@@ -45,10 +51,10 @@ function NpcDialog:delay(seconds, cid)
 
 	if(cid ~= nil) then
 		if(self.messages[cid] == nil) then
-			table.insert(self.messages, cid, {lastMessage = 0})
+			table.insert(self.messages, cid, {msgQueue = {}, lastMessage = 0})
 		end
 	
-		if(self.messages[cid] == nil or self.messages[cid].lastMessage == 0) then
+		if(self.messages[cid].lastMessage == 0) then
 			self.messages[cid].lastMessage = os.time() + seconds
 		else
 			if(os.time() > self.messages[cid].lastMessage) then
