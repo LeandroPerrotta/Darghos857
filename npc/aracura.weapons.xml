@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<npc name="Thomaz" floorchange="0" walkinterval="2000" speed="220">
+<npc name="Costello" floorchange="0" walkinterval="2000" speed="220">
 	<health now="150" max="150"/>
-	<look type="143" body="94" feet="114" head="98" legs="0" corpse="2212"/>
+	<look type="128" head="97" body="113" legs="114" feet="0" addons="1"/>
   
   <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
 

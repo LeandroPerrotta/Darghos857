@@ -5,6 +5,9 @@
   
 <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
     
+	<include file="carpet/aaragon.xml"/>
+	<include file="carpet/hills.xml"/>      
+    
     <interact keywords="hi" focus="1">
       <!--These are the keywords will trigger this interaction-->
       <keywords>hello</keywords>

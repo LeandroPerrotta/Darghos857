@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <houses>
+  <house name="South Palace I" houseid="1" entryx="3362" entryy="2023" entryz="7" rent="32000" townid="10" size="53"/>
   <house name="Black Borne III" houseid="3" entryx="1984" entryy="1852" entryz="6" rent="8000" townid="1" size="20"/>
   <house name="Black Borne IV" houseid="4" entryx="1984" entryy="1858" entryz="6" rent="8000" townid="1" size="20"/>
   <house name="Black Borne V" houseid="5" entryx="1985" entryy="1852" entryz="6" rent="6000" townid="1" size="15"/>
@@ -30,8 +31,25 @@
   <house name="Berg Town VI" houseid="30" entryx="2016" entryy="1875" entryz="6" rent="800" townid="1" size="13"/>
   <house name="Beach Apartment II" houseid="31" entryx="1966" entryy="1877" entryz="7" rent="1500" townid="1" size="10"/>
   <house name="Beach Apartment III" houseid="32" entryx="1970" entryy="1877" entryz="7" rent="1500" townid="1" size="8"/>
+  <house name="North II" houseid="33" entryx="3368" entryy="1983" entryz="7" rent="11500" townid="10" size="21"/>
+  <house name="North III" houseid="34" entryx="3374" entryy="1983" entryz="7" rent="11500" townid="10" size="21"/>
+  <house name="North IV" houseid="35" entryx="3366" entryy="1983" entryz="6" rent="12000" townid="10" size="22"/>
+  <house name="North V" houseid="36" entryx="3376" entryy="1983" entryz="6" rent="12000" townid="10" size="22"/>
   <house name="Beach Apartment IV" houseid="37" entryx="1957" entryy="1874" entryz="6" rent="1100" townid="1" size="7"/>
   <house name="Beach Apartment V" houseid="38" entryx="1957" entryy="1870" entryz="6" rent="1100" townid="1" size="7"/>
+  <house name="North VI" houseid="51" entryx="3336" entryy="1993" entryz="7" rent="18000" townid="10" size="40"/>
+  <house name="North VII" houseid="52" entryx="3339" entryy="1993" entryz="7" rent="18000" townid="10" size="40"/>
+  <house name="North VIII" houseid="53" entryx="3336" entryy="1993" entryz="6" rent="18000" townid="10" size="40"/>
+  <house name="North IX" houseid="54" entryx="3339" entryy="1993" entryz="6" rent="18000" townid="10" size="40"/>
+  <house name="West I" houseid="55" entryx="3337" entryy="2003" entryz="7" rent="14000" townid="10" size="40"/>
+  <house name="West II" houseid="56" entryx="3333" entryy="2008" entryz="7" rent="7500" townid="10" size="14"/>
+  <house name="West III" houseid="57" entryx="3333" entryy="2013" entryz="7" rent="7500" townid="10" size="14"/>
+  <house name="West IV" houseid="58" entryx="3333" entryy="2018" entryz="7" rent="7500" townid="10" size="14"/>
+  <house name="West V" houseid="59" entryx="3333" entryy="2008" entryz="6" rent="7500" townid="10" size="14"/>
+  <house name="West VI" houseid="60" entryx="3333" entryy="2013" entryz="6" rent="7500" townid="10" size="14"/>
+  <house name="West VII" houseid="61" entryx="3333" entryy="2018" entryz="6" rent="7500" townid="10" size="14"/>
+  <house name="South I" houseid="62" entryx="3341" entryy="2017" entryz="7" rent="9500" townid="10" size="28"/>
+  <house name="South II" houseid="63" entryx="3357" entryy="2017" entryz="7" rent="9500" townid="10" size="28"/>
   <house name="Beach Apartment VI" houseid="64" entryx="1957" entryy="1876" entryz="6" rent="400" townid="1" size="4"/>
   <house name="Beach Apartment VII" houseid="65" entryx="1967" entryy="1876" entryz="6" rent="400" townid="1" size="4"/>
   <house name="Beach Apartment VIII" houseid="66" entryx="1967" entryy="1878" entryz="6" rent="1800" townid="1" size="31"/>
@@ -47,6 +65,9 @@
   <house name="Green Park X" houseid="76" entryx="1950" entryy="1855" entryz="6" rent="1400" townid="1" size="13"/>
   <house name="Green Park XI" houseid="77" entryx="1948" entryy="1849" entryz="6" rent="2000" townid="1" size="17"/>
   <house name="Green Park XII" houseid="78" entryx="1951" entryy="1849" entryz="6" rent="3200" townid="1" size="20"/>
+  <house name="West VIII" houseid="79" entryx="3318" entryy="2003" entryz="7" rent="9000" townid="10" size="13"/>
+  <house name="West IX" houseid="80" entryx="3318" entryy="2010" entryz="7" rent="9000" townid="10" size="19"/>
+  <house name="West X" houseid="81" entryx="3318" entryy="2019" entryz="7" rent="9000" townid="10" size="19"/>
   <house name="Castelo de Wargrowth" houseid="85" entryx="1979" entryy="1791" entryz="7" rent="150000" townid="1" size="1250"/>
   <house name="Rua um I" houseid="86" entryx="1984" entryy="1864" entryz="7" rent="4000" townid="1" size="14"/>
   <house name="Rua um II" houseid="87" entryx="1984" entryy="1858" entryz="7" rent="5000" townid="1" size="18"/>
@@ -83,6 +104,7 @@
   <house name="Green Park XIV" houseid="118" entryx="1965" entryy="1845" entryz="7" rent="4000" townid="1" size="16"/>
   <house name="Green Park XV" houseid="119" entryx="1965" entryy="1842" entryz="6" rent="4000" townid="1" size="14"/>
   <house name="Green Park XVI" houseid="120" entryx="1965" entryy="1845" entryz="6" rent="4000" townid="1" size="14"/>
+  <house name="North I" houseid="147" entryx="3366" entryy="1990" entryz="6" rent="13500" townid="10" size="53"/>
   <house name="Beach Apartment I" houseid="173" entryx="1957" entryy="1876" entryz="7" rent="3200" townid="1" size="23"/>
   <house name="Salazart A1P1" houseid="188" entryx="2150" entryy="2700" entryz="7" rent="2000" townid="5" size="20"/>
   <house name="Salazart A1P2" houseid="189" entryx="2150" entryy="2695" entryz="7" rent="2000" townid="5" size="25"/>
@@ -428,4 +450,8 @@
   <house name="East House III" houseid="546" entryx="1137" entryy="1133" entryz="7" rent="4500" townid="9" size="9"/>
   <house name="East House IV" houseid="547" entryx="1133" entryy="1137" entryz="7" rent="4500" townid="9" size="4"/>
   <house name="East House V" houseid="548" entryx="1133" entryy="1142" entryz="7" rent="4500" townid="9" size="4"/>
+  <house name="West XI" houseid="549" entryx="3320" entryy="2003" entryz="6" rent="6500" townid="10" size="15"/>
+  <house name="West XII" houseid="550" entryx="3320" entryy="2010" entryz="6" rent="6500" townid="10" size="15"/>
+  <house name="West XIII" houseid="551" entryx="3320" entryy="2017" entryz="6" rent="8500" townid="10" size="18"/>
+  <house name="West XIV" houseid="552" entryx="3320" entryy="2021" entryz="6" rent="9500" townid="10" size="18"/>
 </houses>

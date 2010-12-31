@@ -5,6 +5,11 @@
   
 <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
     
+    <include file="travel/aracura.xml"/>
+    <include file="travel/aaragon.xml"/>
+    <include file="travel/quendor.xml"/>
+    <include file="travel/northrend.xml"/>   
+    
     <interact keywords="hi" focus="1">
       <!--These are the keywords will trigger this interaction-->
       <keywords>hello</keywords>
@@ -76,72 +81,6 @@
         <action name="scriptparam" value="|TEXT|"/>
       </response>
     </interact>
-    
-	<!-- INICIO - DESTINO: QUENDOR @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-	<interact keywords="quendor">
-		<response text="Do you want a passage to Quendor for |PRICE| gold?">
-			<action name="topic" value="1"/>
-			<action name="price" value="110"/>
-			<interact keywords="yes" topic="1">
-				<response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
-				<response param="lowmoney" text="You don't have enough money."/>
-				<response param="premium" text="Have a nice trip!">
-					<action name="idle" value="1"/>
-					<action name="takemoney" value="|PRICE|"/>
-					<action name="teleport" value="1925;1865;6"/>
-					<action name="effect" value="teleport"/>
-				</response>
-				<response text="Only premium players can travel with me."/>
-			</interact>
-			<interact keywords="|*|">
-				<response text="Maybe some other time."/>
-			</interact>
-		</response>
-	</interact>
-	
-	<!-- INICIO - DESTINO: ARACURA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-	<interact keywords="aracura">
-		<response text="Do you want a passage to Aracura for |PRICE| gold?">
-			<action name="topic" value="1"/>
-			<action name="price" value="90"/>
-			<interact keywords="yes" topic="1">
-				<response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
-				<response param="lowmoney" text="You don't have enough money."/>
-				<response param="premium" text="Have a nice trip!">
-					<action name="idle" value="1"/>
-					<action name="takemoney" value="|PRICE|"/>
-					<action name="teleport" value="3005;1119;6"/>
-					<action name="effect" value="teleport"/>
-				</response>
-				<response text="Only premium players can travel with me."/>	
-			</interact>   
-			<interact keywords="|*|">
-				<response text="Maybe some other time."/>
-			</interact>
-		</response>
-	</interact>	
-	
-	<!-- INICIO - DESTINO: NORTHREND @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-	<interact keywords="northrend">
-		<response text="Do you want a passage to Northrend for |PRICE| gold?">
-			<action name="topic" value="1"/>
-			<action name="price" value="190"/>
-			<interact keywords="yes" topic="1">
-				<response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
-				<response param="lowmoney" text="You don't have enough money."/>
-				<response param="premium" text="Have a nice trip!">
-					<action name="idle" value="1"/>
-					<action name="takemoney" value="|PRICE|"/>
-					<action name="teleport" value="2025;1235;6"/>
-					<action name="effect" value="teleport"/>
-				</response>
-				<response text="Only premium players can travel with me."/>
-			</interact>	
-			<interact keywords="|*|">
-				<response text="Maybe some other time."/>
-			</interact>
-		</response>
-	</interact>
 	
   </interaction>
   

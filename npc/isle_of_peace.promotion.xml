@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<npc name="Aldebaran" floorchange="0" walkinterval="2000" speed="220" script="game/isle_of_peace.tasks_	promote.lua">
+<npc name="Aldebaran" floorchange="0" walkinterval="2000" speed="220" script="game/isle_of_peace.tasks_promote.lua">
 	<health now="150" max="150"/>
 	<look type="73" head="87" body="2" legs="18" feet="90" addons="3"/>
   

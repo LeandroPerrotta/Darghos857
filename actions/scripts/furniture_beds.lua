@@ -33,15 +33,27 @@ local function getBedPartnerDirection(itemid)
 end
 
 function onUse(cid, item, frompos, item2, topos)
+
 	local changeBed = MODIFICATION_BEDS[item.itemid]
-	if (isInArray(CHANGEABLE_BEDS, item2.itemid) == FALSE) then
-		return FALSE
+	
+	local error = true
+	
+	for k,v in pairs(CHANGEABLE_BEDS) do
+		if (isInArray(v, item2.itemid) == TRUE) then
+			error = false
+			break
+		end	
+	end
+
+	if(error) then
+		doPlayerSendCancel(cid, "You must open the bed furniture in an bed on your house.")
+		return FALSE	
 	end
 
 	if frompos.x == CONTAINER_POSITION then
 		frompos = getPlayerPosition(cid)
 	end
-
+	
 	if not(House.getHouseByPos(frompos)) then
 		doPlayerSendCancel(cid, "You must open the bed furniture in your house.")
 	else

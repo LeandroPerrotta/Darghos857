@@ -5,9 +5,19 @@
 	<!--
 	Furniture SHOP
 	-->
+		<itemlist listid="beds">
+			<item keywords="green;bed;kit" id="7904" buyprice="80"/>
+			<item keywords="red;bed;kit" id="7905" buyprice="80"/>
+			<item keywords="yellow;bed;kit" id="7906" buyprice="80"/>
+			<item keywords="blue;bed;kit" id="7907" buyprice="80"/>
+		</itemlist>
+	
 		<!--
 		TABLES compraveis
 		-->
+		
+		
+		
 		<itemlist listid="table">
 			<item keywords="trophy;stand" id="7936" buyprice="50"/>
 			<item keywords="small;table;kit" id="3908" buyprice="20"/>

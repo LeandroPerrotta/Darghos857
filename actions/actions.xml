@@ -15,7 +15,9 @@
 	<action itemid="6387" script="game/item_nightmare1.lua"/>
 	<action itemid="6388" script="game/item_nightmare2.lua"/>	
 	<action actionid="4001" script="game/dh.alavanca.lua"/>
+	<action actionid="4062" script="game/dh.alavanca.lua"/>
 	<action actionid="4010" script="game/annihilator.lua"/>	
+	<action actionid="4061" script="game/annihilator.lua"/>	
 	<action actionid="4012" script="game/poi.quest/levers/poi_grave.lua"/>
 	<action actionid="4013" script="game/poi.quest/levers/lever.enter.lua"/>
 	<action actionid="4014" script="game/poi.quest/levers/lever.createstair.lua"/>
@@ -107,6 +109,11 @@
 	<action uniqueid="2079" script="game/quests/chest.lua"/>
 	<action uniqueid="2080" script="game/quests/chest.lua"/>
 	<action uniqueid="2081" script="game/quests/chest.lua"/>
+	<action uniqueid="2082" script="game/quests/chest.lua"/>
+	<action uniqueid="2083" script="game/quests/chest.lua"/>
+	<action uniqueid="2084" script="game/quests/chest.lua"/>
+	<action uniqueid="2085" script="game/quests/chest.lua"/>
+	
 
 
 	

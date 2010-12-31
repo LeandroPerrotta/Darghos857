@@ -9,11 +9,51 @@
 
 local quests =
 	{
+		[uid.QUEST_BEHE_THIRD] = {
+			storageId = sid.QUEST_BEHE_THIRD,
+			rewardContainer = 1987,
+			rewardContainerItems = { 
+				{ itemid = 2145, count = 3 }, -- small diamonds
+				{ itemid = 2146, count = 4 }  -- small sapphires
+			}
+		},
+		
+		[uid.QUEST_BEHE_SECOND] = {
+			storageId = sid.QUEST_BEHE_SECOND,
+			rewardContainer = 1987,
+			rewardContainerItems = { 
+				{ itemid = 2466, count = 1 }, -- golden armor
+				{ itemid = 2427, count = 1 }, -- guardian halberd
+				{ itemid = 2520, count = 1 }, -- demon shield
+				{ itemid = 2171, count = 1 }  -- platinum amulet
+			}
+		},
+		
+		[uid.QUEST_BEHE_FIRST] = {
+			storageId = sid.QUEST_BEHE_FIRST,
+			rewardContainer = 1987,
+			rewardContainerItems = { 
+				{ itemid = 2168, count = 1 }, -- life ring
+				{ itemid = 2124, count = 1 }  -- cristal ring
+			}
+		},
+		
+		[uid.ARACURA_DLAIR_FIRE_AXE] = {
+			storageId = sid.ARACURA_DLAIR_FIRE_AXE,
+			rewardContainer = 1993,
+			rewardContainerItems = { 
+				{ itemid = 2432, count = 1 }, -- fire axe
+				{ itemid = 2214, count = 1 }, -- ring of healing
+				{ itemid = 2201, count = 1 }, -- dragon necklace
+				{ itemid = 2145, count = 10 } -- small diamond
+			}
+		},
+		
 		[uid.GOLDEN_GOBLET_QUEST] = {
 			storageId = sid.GOLDEN_GOBLET_QUEST,
 			rewardId = getItemIdByName("golden goblet"),
 			count = 1
-		},	
+		},
 		
 		[uid.CHEST_DIVINE_ANKH] = {
 			storageId = sid.CHEST_DIVINE_ANKH,

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<npc name="Joner" floorchange="0" walkinterval="2000" speed="220">
+<npc name="William" floorchange="0" walkinterval="2000" speed="220">
 	<health now="150" max="150"/>
-	<look type="128" head="117" body="50" legs="67" feet="71" addons="0"/>
+	<look type="128" head="97" body="68" legs="10" feet="0" addons="1"/>
   
   <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
 
