@@ -18804,20 +18804,20 @@
 		<attribute key="absorbPercentFire" value="-5"/>
 		<attribute key="slotType" value="head"/>
 	</item>
-	<item id="7904" article="a" name="blue bed kit">
-		<attribute key="description" value="Use it on your bed to change the bed to blue."/>
-		<attribute key="weight" value="3500"/>
-	</item>
-	<item id="7905" article="a" name="green bed kit">
+	<item id="7904" article="a" name="green bed kit">
 		<attribute key="description" value="Use it on your bed to change the bed to green."/>
 		<attribute key="weight" value="3500"/>
 	</item>
-	<item id="7906" article="a" name="red bed kit">
+	<item id="7905" article="a" name="red bed kit">
 		<attribute key="description" value="Use it on your bed to change the bed to red."/>
 		<attribute key="weight" value="3500"/>
 	</item>
-	<item id="7907" article="a" name="yellow bed kit">
+	<item id="7906" article="a" name="yellow bed kit">
 		<attribute key="description" value="Use it on your bed to change the bed to yellow."/>
+		<attribute key="weight" value="3500"/>
+	</item>
+	<item id="7907" article="a" name="blue bed kit">
+		<attribute key="description" value="Use it on your bed to change the bed to blue."/>
 		<attribute key="weight" value="3500"/>
 	</item>
 	<item id="7908" article="a" name="dead human"/>

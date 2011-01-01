@@ -48,37 +48,6 @@
     <interact event="onPlayerLeave" focus="0">
       <response text="Good bye. Recommend us, if you were satisfied with our service."/>
     </interact>
-
-    <!---Example of calling a script function, check ruby.lua-->
-    <interact focus="1">
-      <!--These are the keywords will trigger this interaction-->
-      <keywords>asshole</keywords>
-      <keywords>stupid</keywords>
-      <keywords>idiot</keywords>
-      <keywords>fuck</keywords>
-      <keywords>fag</keywords>
-
-      <response function="onSayCurse">
-        <action name="idle" value="1"/>
-        <action name="scriptparam" value="|PLAYER|"/>
-        <action name="scriptparam" value="|TEXT|"/>
-      </response>
-    </interact>
-
-    <interact focus="0">
-      <!--These are the keywords will trigger this interaction-->
-      <keywords>asshole</keywords>
-      <keywords>stupid</keywords>
-      <keywords>idiot</keywords>
-      <keywords>fuck</keywords>
-      <keywords>fag</keywords>
-
-      <response function="onSayCurse">
-        <action name="idle" value="1"/>
-        <action name="scriptparam" value="|PLAYER|"/>
-        <action name="scriptparam" value="|TEXT|"/>
-      </response>
-    </interact>
 	
   </interaction>
   
