@@ -29,7 +29,7 @@ function firstLoginEvent(cid)
 	
 	if(getPlayerStorageValue(cid, CAP_ONE.ISLAND_OF_PEACE.FIRST) == taskStats.NONE) then
 	
-		addFocus(cid)	
+		npcSys:addFocus(cid)	
 		
 		if(distance ~= -1 and distance > 1) then
 			moveToCreature(cid)
