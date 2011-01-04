@@ -9,6 +9,24 @@
 
 local quests =
 	{
+		[uid.MOLS_GRIFFIN_SHIELD] = {
+			storageId = sid.MOLS_GRIFFIN_SHIELD,
+			rewardId = getItemIdByName("griffin shield"),
+			count = 1
+		},
+		
+		[uid.MOLS_DWARVEN_AXE] = {
+			storageId = sid.MOLS_DWARVEN_AXE,
+			rewardId = getItemIdByName("dwarven axe"),
+			count = 1
+		},
+		
+		[uid.MOLS_OBSIDIAN_LANCE] = {
+			storageId = sid.MOLS_OBSIDIAN_LANCE,
+			rewardId = getItemIdByName("obsidian lance"),
+			count = 1
+		},
+		
 		[uid.QUEST_BEHE_THIRD] = {
 			storageId = sid.QUEST_BEHE_THIRD,
 			rewardContainer = 1987,
