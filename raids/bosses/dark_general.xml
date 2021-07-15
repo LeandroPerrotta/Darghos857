@@ -1,0 +1,51 @@
+<raid>
+	<announce delay="0" type="event" message="Dark Army inicia sua marcha para a Cidade de Quendor!"/>
+	<announce delay="60000" type="event" message="Os gritos da marcha ja podem ser ouvidos na cidade de Quendor! Prepare-se para batalha"/>
+	<announce delay="120000" type="event" message="Quendor esta sitiada, mate os soldados invasores!"/>
+	<announce delay="180000" type="event" message="O General do ataque invade a cidade!"/>
+	<announce delay="200000" type="event" message="Mais soldados chegaram em Quendor, nao ande sozinho!"/>
+
+	<areaspawn delay="120000" centerx="2061" centery="1869" centerz="7" radius="15">
+		<monster name="Dark Warrior" minamount="10" maxamount="13"/>
+	</areaspawn>
+
+	<areaspawn delay="120000" centerx="2028" centery="1850" centerz="7" radius="15">
+		<monster name="Dark Warrior" minamount="10" maxamount="14"/>
+	</areaspawn>
+
+	<areaspawn delay="120000" centerx="2042" centery="1884" centerz="7" radius="15">
+		<monster name="Dark Archer" minamount="10" maxamount="20"/>
+	</areaspawn>
+	
+	<areaspawn delay="120000" centerx="2031" centery="1876" centerz="7" radius="15">
+		<monster name="Dark Archer" minamount="10" maxamount="20"/>
+	</areaspawn>
+
+	<areaspawn delay="180000" centerx="2028" centery="1869" centerz="7" radius="15">
+		<monster name="Dark Warrior" minamount="10" maxamount="14"/>
+	</areaspawn>
+
+	<areaspawn delay="180000" centerx="2035" centery="1873" centerz="7" radius="15">
+		<monster name="Dark Archer" minamount="10" maxamount="20"/>
+	</areaspawn>
+	
+	<singlespawn delay="180000" name="Dark General" x="2040" y="1869" z="7" />
+	<singlespawn delay="180000" name="Dark General" x="2025" y="1874" z="7" />
+
+	<areaspawn delay="190000" centerx="2061" centery="1869" centerz="7" radius="15">
+		<monster name="Dark Warrior" minamount="10" maxamount="13"/>
+	</areaspawn>
+
+	<areaspawn delay="200000" centerx="2028" centery="1850" centerz="7" radius="15">
+		<monster name="Dark Warrior" minamount="10" maxamount="14"/>
+	</areaspawn>
+
+	<areaspawn delay="220000" centerx="2042" centery="1884" centerz="7" radius="15">
+		<monster name="Dark Archer" minamount="10" maxamount="20"/>
+	</areaspawn>
+	
+	<areaspawn delay="240000" centerx="2031" centery="1876" centerz="7" radius="15">
+		<monster name="Dark Archer" minamount="10" maxamount="20"/>
+	</areaspawn>
+	
+</raid>

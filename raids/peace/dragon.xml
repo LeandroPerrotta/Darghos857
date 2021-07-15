@@ -1,0 +1,6 @@
+<raid>
+	<announce delay="0" type="event" message="Um dragao desceu em Isle of Peace. Peguem suas foices e seus martelos para defender a cidade!"/>
+
+	<singlespawn delay="9000" name="Dragon" x="1254" y="2230" z="7" />
+	
+</raid>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<npc name="Hector" floorchange="0" walkradius="2" walkinterval="4000" speed="220" script="game/isle_of_peace.tasks_second.lua">
+	
+	<health now="150" max="150"/>
+    <look type="128" head="22" body="58" legs="40" feet="114" addons="1"/>
+</npc>

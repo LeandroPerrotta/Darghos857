@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 <actions>
 
+	<action itemid="11754" script="game/teleport_rune.lua"/>
+
 	<!-- Divine Ankh -->
 	<action itemid="2193" script="game/ankh.lua"/>
 	<action itemid="11753" script="game/unholy_sword.lua"/>
@@ -13,7 +15,9 @@
 	<action itemid="6387" script="game/item_nightmare1.lua"/>
 	<action itemid="6388" script="game/item_nightmare2.lua"/>	
 	<action actionid="4001" script="game/dh.alavanca.lua"/>
+	<action actionid="4062" script="game/dh.alavanca.lua"/>
 	<action actionid="4010" script="game/annihilator.lua"/>	
+	<action actionid="4061" script="game/annihilator.lua"/>	
 	<action actionid="4012" script="game/poi.quest/levers/poi_grave.lua"/>
 	<action actionid="4013" script="game/poi.quest/levers/lever.enter.lua"/>
 	<action actionid="4014" script="game/poi.quest/levers/lever.createstair.lua"/>
@@ -104,6 +108,12 @@
 	<action uniqueid="2078" script="game/quests/chest.lua"/>
 	<action uniqueid="2079" script="game/quests/chest.lua"/>
 	<action uniqueid="2080" script="game/quests/chest.lua"/>
+	<action uniqueid="2081" script="game/quests/chest.lua"/>
+	<action uniqueid="2082" script="game/quests/chest.lua"/>
+	<action uniqueid="2083" script="game/quests/chest.lua"/>
+	<action uniqueid="2084" script="game/quests/chest.lua"/>
+	<action uniqueid="2085" script="game/quests/chest.lua"/>
+	
 
 
 	
@@ -213,6 +223,7 @@
 	<action itemid="7620" script="liquids/mana_potion.lua"/>
 	<action itemid="8472" script="liquids/great_spirit.lua"/>
 	<action itemid="8473" script="liquids/ultimate_health.lua"/>
+	<action itemid="8704" script="liquids/small_health.lua"/>
 	
 	<!-- Make Bread -->
 	<action itemid="2692" script="flour.lua"/>

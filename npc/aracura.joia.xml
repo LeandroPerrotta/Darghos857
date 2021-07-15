@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<npc name="Obardi" floorchange="0" walkinterval="2000" speed="220">
+<npc name="Beatrice" floorchange="0" walkinterval="2000" speed="220">
 	<health now="150" max="150"/>
-	<look type="138" head="22" body="99" legs="5" feet="76" addons="0"/>
+	<look type="150" head="114" body="59" legs="59" feet="114" addons="1"/>
   
   <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
 

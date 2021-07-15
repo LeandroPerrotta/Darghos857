@@ -1,3 +1,216 @@
+function consoleLog(type, npcname, caller, string, params)
+	local out = os.date("%X") .. " | [" .. type .. "] " .. caller .. " | " .. string
+	
+	if(params ~= nil) then
+		out = out .. " | Params: {"
+		
+		local isFirst = true	
+		
+		for k,v in pairs(params) do
+			
+			if(not isFirst) then
+				out = out .. ", "
+			end
+			
+			out = out .. "[" .. k .. "] = " .. v
+			
+			isFirst = false
+		end
+		
+		out = out .. "}"
+	end
+	
+	local printTypes = { T_LOG_ALL }
+	
+	if(isInArray(printTypes, type) == TRUE or printTypes[1] == T_LOG_ALL) then
+	
+		local date = os.date("*t")
+		local fileStr = npcname .. "_" .. date.day .. "-" .. date.month .. ".log"
+		local patch = getDataDir() .. "logs/npc/"
+		local file = io.open(patch .. fileStr, "a+")
+		
+		file:write(out .. "\n")
+		file:close()
+		
+		--debugPrint(out)
+	end
+end
+
+function getPlayerHighMelee(cid)
+	local skill = getPlayerSkill(cid, LEVEL_SKILL_CLUB)
+	local skillid = LEVEL_SKILL_CLUB
+	
+	if(getPlayerSkill(cid, LEVEL_SKILL_SWORD) > skill) then
+		skillid = LEVEL_SKILL_SWORD
+		skill = getPlayerSkill(cid, LEVEL_SKILL_SWORD)
+	end
+	
+	if(getPlayerSkill(cid, LEVEL_SKILL_AXE) > skill) then
+		skillid = LEVEL_SKILL_AXE
+		skill = getPlayerSkill(cid, LEVEL_SKILL_AXE)
+	end
+	
+	return skillid
+end
+
+function doPlayerAddMagLevel(cid, count)
+
+	for i = 1, count, 1 do
+		local manaspent = 1600 * 1.1 ^ getPlayerMagLevel(cid) + 1	
+		doPlayerAddManaSpent(cid, manaspent, TRUE)
+	end
+	
+	return getPlayerMagLevel(cid)
+end
+
+function doPlayerAddSkill(cid, skillid, count)
+	
+	if(skillid == LEVEL_MAGIC or skillid == LEVEL_EXPERIENCE) then
+		return false
+	end
+	
+	for i = 1, count, 1 do
+		if(doPlayerAddSkillTry(cid, skillid, getIntegerLimit(32, true), TRUE) == LUA_ERROR) then
+			return false
+		end
+	end
+	
+	return true
+end
+
+function getIntegerLimit(bits, signed)
+	local value = (signed and (math.pow(2, bits) / 2) or (math.pow(2, bits)))
+	return (value - 1)
+end
+
+function startShieldTrain(cid, target)
+	
+	local trainingShield = getPlayerStorageValue(cid, sid.TRAINING_SHIELD) > 0 and true or false
+
+	if(not trainingShield) then
+		addEvent(addShieldTrie, 1000 * 2, cid, target)
+		setPlayerStorageValue(cid, sid.TRAINING_SHIELD, 1)
+	end
+end
+
+function addShieldTrie(cid, target)	
+
+	-- aqui provavelmente o player morreu
+	if(isCreature(cid) == FALSE) then
+		return
+	end
+
+	--print("Training: " .. getCreatureName(cid) .. " value: " .. getPlayerStorageValue(cid, sid.TRAINING_SHIELD))
+	local cTarget = getCreatureTarget(cid)
+	
+	if(cTarget == FALSE) then
+		print("Alvo nÃ£o encontrado, limpando... ")
+		setPlayerStorageValue(cid, sid.TRAINING_SHIELD, 0)
+		return
+	else 
+	
+		if(getCreatureName(cTarget) ~= "Marksman Target" and getCreatureName(cTarget) ~= "Hitdoll") then
+			setPlayerStorageValue(cid, sid.TRAINING_SHIELD, 0)
+			return
+		end
+		
+		doPlayerAddSkillTry(cid, LEVEL_SKILL_SHIELDING, 2, TRUE) 
+		doSendMagicEffect(getPlayerPosition(cid), CONST_ME_POFF)
+		
+		addEvent(addShieldTrie, 1000 * 2, cid, target)			
+	end	
+end
+
+function addAllOufits(cid)
+
+	if(isPlayer(cid) == TRUE) then
+	
+		doPlayerAddOutfit(cid, outfits.CITIZEN.male, 3)
+		doPlayerAddOutfit(cid, outfits.CITIZEN.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.HUNTER.male, 3)
+		doPlayerAddOutfit(cid, outfits.HUNTER.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.MAGE.male, 3)
+		doPlayerAddOutfit(cid, outfits.MAGE.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.KNIGHT.male, 3)
+		doPlayerAddOutfit(cid, outfits.KNIGHT.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.NOBLE.male, 3)
+		doPlayerAddOutfit(cid, outfits.NOBLE.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.SUMMONER.male, 3)
+		doPlayerAddOutfit(cid, outfits.SUMMONER.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.WARRIOR.male, 3)
+		doPlayerAddOutfit(cid, outfits.WARRIOR.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.BARBARIAN.male, 3)
+		doPlayerAddOutfit(cid, outfits.BARBARIAN.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.DRUID.male, 3)
+		doPlayerAddOutfit(cid, outfits.DRUID.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.WIZARD.male, 3)
+		doPlayerAddOutfit(cid, outfits.WIZARD.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.ORIENTAL.male, 3)
+		doPlayerAddOutfit(cid, outfits.ORIENTAL.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.PIRATE.male, 3)
+		doPlayerAddOutfit(cid, outfits.PIRATE.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.ASSASSIN.male, 3)
+		doPlayerAddOutfit(cid, outfits.ASSASSIN.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.BEGGAR.male, 3)
+		doPlayerAddOutfit(cid, outfits.BEGGAR.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.SHAMAN.male, 3)
+		doPlayerAddOutfit(cid, outfits.SHAMAN.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.NORSE.male, 3)
+		doPlayerAddOutfit(cid, outfits.NORSE.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.NIGHTMARE.male, 3)
+		doPlayerAddOutfit(cid, outfits.NIGHTMARE.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.JESTER.male, 3)
+		doPlayerAddOutfit(cid, outfits.JESTER.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.BROTHERHOOD.male, 3)
+		doPlayerAddOutfit(cid, outfits.BROTHERHOOD.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.DEMONHUNTER.male, 3)
+		doPlayerAddOutfit(cid, outfits.DEMONHUNTER.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.YALAHARIAN.male, 3)
+		doPlayerAddOutfit(cid, outfits.YALAHARIAN.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.WARMASTER.male, 3)
+		doPlayerAddOutfit(cid, outfits.WARMASTER.female, 3)
+		
+		doPlayerAddOutfit(cid, outfits.WEEDING.male, 3)
+		doPlayerAddOutfit(cid, outfits.WEEDING.female, 3)
+	end
+end
+
+--[[
+	* REGISTRO DE EVENTOS ONKILL PARA MISSï¿½ES
+]]--
+function OnKillCreatureMission(cid)
+
+	-- Bonartes Mission's
+	local _demonMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_DEMONS)
+	local _heroMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_HEROS)
+	local _behemothMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_BEHEMOTHS)	
+	
+	if(_heroMission == 2 or _behemothMission == 1 or _demonMission == 1) then
+		registerCreatureEvent(cid, "OnKillMission")
+	end
+end
+
 --[[
 	* DIVINE ANKH QUEST
 ]]--
@@ -45,11 +258,11 @@ function obsidianKnifeOnGhazranCorpse(cid, corpse)
 	
 	if not(hasRemovedTongue) then
 
-		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Você conseguiu obter a língua de Ghazran. Seu questlog foi atualizado.")
+		doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Vocï¿½ conseguiu obter a lï¿½ngua de Ghazran. Seu questlog foi atualizado.")
 		setPlayerStorageValue(cid, sid.ARIADNE_GHAZRAN_TONGUE, 1)
 		setPlayerStorageValue(cid, QUESTLOG.ARIADNE.GHAZRAN_WING, 3)
 	else
-		doPlayerSendCancel(cid, "Você já obteve a língua de Ghazran.")
+		doPlayerSendCancel(cid, "Vocï¿½ jï¿½ obteve a lï¿½ngua de Ghazran.")
 	end
 end
 
@@ -64,7 +277,7 @@ function chestScripts(cid, questActionId)
 end
 
 --[[
-	@ Função chamada quando o server é iniciado
+	@ Funï¿½ï¿½o chamada quando o server ï¿½ iniciado
 ]]--
 function onServerStart()
 
@@ -123,136 +336,109 @@ end
 ]]--
 function defineFirstItems(cid)
 
-	local storage = sid.FIRSTLOGIN_ITEMS
-
-	
-	local array = 
-	{
-		[1] = {
-			legs 	=  getItemIdByName("studded legs"),
-			armor	=  getItemIdByName("magician's robe"),
-			boots	=  getItemIdByName("leather boots"),
-			shield 	=  getItemIdByName("dwarven shield"),
-			helmet	=  getItemIdByName("mage hat"),
-			weapon	=  getItemIdByName("wand of vortex"),
-			food	=  getItemIdByName("brown mushroom"),
-			rope	=  getItemIdByName("rope"),
-			shovel	=  getItemIdByName("shovel"),
-			money	=  getItemIdByName("platinum coin")
-		},
-		[2] = {
-			legs 	=  getItemIdByName("studded legs"),
-			armor	=  getItemIdByName("magician's robe"),
-			boots	=  getItemIdByName("leather boots"),
-			shield 	=  getItemIdByName("dwarven shield"),
-			helmet	=  getItemIdByName("mage hat"),
-			weapon	=  getItemIdByName("snakebite rod"),
-			food	=  getItemIdByName("brown mushroom"),
-			rope	=  getItemIdByName("rope"),
-			shovel	=  getItemIdByName("shovel"),
-			money	=  getItemIdByName("platinum coin")
-		},
-		[3] = {
-			legs 	=  getItemIdByName("studded legs"),
-			armor	=  getItemIdByName("belted cape"),
-			boots	=  getItemIdByName("leather boots"),
-			shield 	=  getItemIdByName("dwarven shield"),
-			helmet	=  getItemIdByName("studded helmet"),
-			weapon	=  getItemIdByName("spear"),
-			food	=  getItemIdByName("brown mushroom"),
-			rope	=  getItemIdByName("rope"),
-			shovel	=  getItemIdByName("shovel"),
-			money	=  getItemIdByName("platinum coin")
-		},
-		[4] = {
-			legs 	=  getItemIdByName("studded legs"),
-			armor	=  getItemIdByName("studded armor"),
-			boots	=  getItemIdByName("leather boots"),
-			shield 	=  getItemIdByName("dwarven shield"),
-			helmet	=  getItemIdByName("studded helmet"),
-			weapon	=  getItemIdByName("hatchet"),
-			weapon2	=  getItemIdByName("mace"),
-			weapon3	=  getItemIdByName("katana"),
-			food	=  getItemIdByName("brown mushroom"),
-			rope	=  getItemIdByName("rope"),
-			shovel	=  getItemIdByName("shovel"),
-			money	=  getItemIdByName("platinum coin")	
-		}
-	}
-	
-	putItems(cid, array[getPlayerVocation(cid)])
-	
-end
-function putItems(cid, add)
-	
-	local status 	= getPlayerStorageValue(cid, sid.FIRSTLOGIN_ITEMS)
-
-
-	if(status ~= 1) then
-		container = doPlayerAddItem(cid, getItemIdByName("backpack"), 1)
-		doAddContainerItem(container, add.food,100)
-		doAddContainerItem(container, add.rope,1)
-		doAddContainerItem(container, add.shovel,1)
-		doAddContainerItem(container, add.money,2)
-		doPlayerAddItem(cid, add.armor,1)
-		doPlayerAddItem(cid, add.legs,1)		
-		doPlayerAddItem(cid, add.boots,1)		
-		doPlayerAddItem(cid, add.shield,1)	
-		doPlayerAddItem(cid, add.helmet,1)
-		if(getPlayerVocation(cid) == 3) then
-			doPlayerAddItem(cid, add.weapon,5)
-		elseif(getPlayerVocation(cid) == 4) then
-			doPlayerAddItem(cid, add.weapon,1)
-			doPlayerAddItem(cid, add.weapon2,1)
-			doPlayerAddItem(cid, add.weapon3,1)
-		else
-			doPlayerAddItem(cid, add.weapon,1)		
-		end
-		setPlayerStorageValue(cid, sid.FIRSTLOGIN_ITEMS, 1)		
+	if(isPlayer(cid) == FALSE) then
+		return
 	end
+
+	if(getPlayerStorageValue(cid, sid.FIRSTLOGIN_ITEMS) == 1) then
+		return
+	end		
+	
+	-- general itens for all vocations
+	local item_legs = doCreateItemEx(getItemIdByName("studded legs"), 1)
+	local item_armor = 0
+	local item_boots = doCreateItemEx(getItemIdByName("leather boots"), 1)
+	local item_helmet = 0
+	local item_left_hand = 0
+	local item_right_hand = doCreateItemEx(getItemIdByName("dwarven shield"), 1)
+	local item_backpack = doCreateItemEx(1988, 1)
+
+	doAddContainerItem(item_backpack, 2120, 1) -- rope
+	doAddContainerItem(item_backpack, 2554, 1) -- shovel	
+	doAddContainerItem(item_backpack, 2789, 100) -- brown mushroom
+	doAddContainerItem(item_backpack, 2152, 2) -- platinum coin
+	doAddContainerItem(item_backpack, 11754, 1) -- teleport rune
+	
+	if(isSorcerer(cid)) then
+		item_armor = doCreateItemEx(getItemIdByName("magician's robe"), 1)
+		item_helmet = doCreateItemEx(getItemIdByName("mage hat"), 1)
+		item_left_hand = doCreateItemEx(getItemIdByName("wand of vortex"), 1)
+	elseif(isDruid(cid)) then
+		item_armor = doCreateItemEx(getItemIdByName("magician's robe"), 1)
+		item_helmet = doCreateItemEx(getItemIdByName("mage hat"), 1)
+		item_left_hand = doCreateItemEx(getItemIdByName("snakebite rod"), 1)
+	elseif(isPaladin(cid)) then
+		item_armor = doCreateItemEx(getItemIdByName("chain armor"), 1)
+		item_helmet = doCreateItemEx(getItemIdByName("studded helmet"), 1)
+		item_left_hand = doCreateItemEx(getItemIdByName("spear"), 5)
+	elseif(isKnight(cid)) then
+		item_armor = doCreateItemEx(getItemIdByName("chain armor"), 1)
+		item_helmet = doCreateItemEx(getItemIdByName("studded helmet"), 1)
+		item_left_hand = doCreateItemEx(getItemIdByName("hatchet"), 1)	
+		
+		-- adicional weapon to knights choose in backpack
+		doAddContainerItem(item_backpack, getItemIdByName("katana"), 1) 
+		doAddContainerItem(item_backpack, getItemIdByName("mace"), 1)
+	end
+
+	doPlayerAddItemEx(cid, item_legs, FALSE, CONST_SLOT_LEGS)
+	doPlayerAddItemEx(cid, item_armor, FALSE, CONST_SLOT_ARMOR)
+	doPlayerAddItemEx(cid, item_boots, FALSE, CONST_SLOT_FEET)
+	doPlayerAddItemEx(cid, item_helmet, FALSE, CONST_SLOT_HEAD)
+	doPlayerAddItemEx(cid, item_left_hand, FALSE, CONST_SLOT_LEFT)
+	doPlayerAddItemEx(cid, item_right_hand, FALSE, CONST_SLOT_RIGHT)
+	doPlayerAddItemEx(cid, item_backpack, FALSE, CONST_SLOT_BACKPACK)
+	
+	setPlayerStorageValue(cid, sid.FIRSTLOGIN_ITEMS, 1)		
 end
 
 function setRateStage(cid, newlevel)
-
-	if(getPlayerTown(cid) ~= towns.ISLAND_OF_PEACE and getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) ~= 1) then
-		setPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE, 1)
-	end
-
+	
 	local stages = {
-	
-		first 	= 50,
-		second	= 20,
-		third	= 10,
-		fourth 	= 4,
-		fifth	= 2,
-		sixth	= 1
-	
+		reborns = {
+			first = { 
+				{end_level = 299, multipler = 3}, 
+				{start_level = 300, multipler = 1.5} 
+			},
+		},
+		normal = {
+			multipler = 4
+		},
+		iop = {
+			{end_level = 79, multipler = 4}, 
+			{start_level = 80, multipler = 1} 		
+		} 
 	}
 	
-	if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == 1) then
-		if(newlevel < 40) then
-			setExperienceRate(cid, stages.first)
-		elseif(newlevel < 80) then
-			setExperienceRate(cid, stages.second)
-		elseif(newlevel < 120) then
-			setExperienceRate(cid, stages.third)
-		elseif(newlevel < 160) then
-			setExperienceRate(cid, stages.fourth)
-		elseif(newlevel < 220) then
-			setExperienceRate(cid, stages.fifth)
-		else
-			setExperienceRate(cid, stages.sixth)
+	function readStagesNode(node, cid, newlevel)
+		for k,v in pairs(node) do
+		
+			if(v.end_level ~= nil and newlevel <= v.end_level) then
+				setExperienceRate(cid, v.multipler)		
+				break
+			end
+			
+			if(v.start_level ~= nil and newlevel >= v.start_level) then
+				setExperienceRate(cid, v.multipler)
+				break
+			end
+		end
+	end
+	
+	if(getPlayerTown(cid) ~= towns.ISLAND_OF_PEACE) then
+	
+		local rebornLevel = getPlayerRebornLevel(cid)
+	
+		if(rebornLevel == 0) then
+			local multipler = stages.normal.multipler
+			setExperienceRate(cid, multipler)
+		elseif(rebornLevel == 1) then
+			local stageNode = stages.reborns.first
+			readStagesNode(stageNode, cid, newlevel)
 		end
 	else
-		if(newlevel < 20) then
-			setExperienceRate(cid, stages.first)
-		elseif(newlevel < 60) then
-			setExperienceRate(cid, stages.second)
-		elseif(newlevel < 80) then
-			setExperienceRate(cid, stages.third)
-		else
-			setExperienceRate(cid, stages.sixth)
-		end		
+		local stageNode = stages.iop
+		readStagesNode(stageNode, cid, newlevel)
 	end	
 	
 	return LUA_TRUE
@@ -261,66 +447,14 @@ end
 
 function setLoginSkillRateStages(cid)
 
-	if(getPlayerStorageValue(cid, sid.ON_ISLAND_OF_PEACE) == -1) then
-	
-		if(getPlayerSkill(cid, LEVEL_SKILL_FIST) >= 85) then
-			setSkillRate(cid, LEVEL_SKILL_FIST, 1)
-		else
-			setSkillRate(cid, LEVEL_SKILL_FIST, 30)
-		end	
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_CLUB) >= 85) then	
-			setSkillRate(cid, LEVEL_SKILL_CLUB, 1)
-		else
-			setSkillRate(cid, LEVEL_SKILL_CLUB, 30)
-		end		
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_SWORD) >= 85) then		
-			setSkillRate(cid, LEVEL_SKILL_SWORD, 1)
-		else	
-			setSkillRate(cid, LEVEL_SKILL_SWORD, 30)
-		end		
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_SWORD) >= 85) then		
-			setSkillRate(cid, LEVEL_SKILL_AXE, 1)
-		else	
-			setSkillRate(cid, LEVEL_SKILL_AXE, 30)
-		end		
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_DISTANCE) >= 85) then	
-			setSkillRate(cid, LEVEL_SKILL_DISTANCE, 1)
-		else	
-			setSkillRate(cid, LEVEL_SKILL_DISTANCE, 30)
-		end		
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_SHIELDING) >= 85) then		
-			setSkillRate(cid, LEVEL_SKILL_SHIELDING, 1)
-		else	
-			setSkillRate(cid, LEVEL_SKILL_SHIELDING, 30)
-		end		
-			
-		if(getPlayerSkill(cid, LEVEL_SKILL_FISHING) >= 85) then		
-			setSkillRate(cid, LEVEL_SKILL_FISHING, 1)	
-		else	
-			setSkillRate(cid, LEVEL_SKILL_FISHING, 30)	
-		end		
-		
-		if(getPlayerMagLevel(cid) >= 50) then		
-			setSkillRate(cid, LEVEL_MAGIC, 1)	
-		else	
-			setSkillRate(cid, LEVEL_MAGIC, 7)	
-		end			
-	else
-	
-		setSkillRate(cid, LEVEL_SKILL_FIST, 30)
-		setSkillRate(cid, LEVEL_SKILL_CLUB, 30)
-		setSkillRate(cid, LEVEL_SKILL_SWORD, 30)
-		setSkillRate(cid, LEVEL_SKILL_AXE, 30)
-		setSkillRate(cid, LEVEL_SKILL_DISTANCE, 30)
-		setSkillRate(cid, LEVEL_SKILL_SHIELDING, 30)
-		setSkillRate(cid, LEVEL_SKILL_FISHING, 30)	
-		setSkillRate(cid, LEVEL_MAGIC, 7)			
-	end	
+	setSkillRate(cid, LEVEL_SKILL_FIST, 30)
+	setSkillRate(cid, LEVEL_SKILL_CLUB, 30)
+	setSkillRate(cid, LEVEL_SKILL_SWORD, 30)
+	setSkillRate(cid, LEVEL_SKILL_AXE, 30)
+	setSkillRate(cid, LEVEL_SKILL_DISTANCE, 30)
+	setSkillRate(cid, LEVEL_SKILL_SHIELDING, 30)
+	setSkillRate(cid, LEVEL_SKILL_FISHING, 30)	
+	setSkillRate(cid, LEVEL_MAGIC, 1)				
 end
 
 function playerRecord()
@@ -332,16 +466,16 @@ function playerRecord()
 		local playerson = getPlayersOnlineList()
 		local total = #playerson
 		
-		--[[if(total <= 100) then
+		if(total <= 50) then
 			total = total * 2
 		else
-			total = total + 100
-		end]]--
+			total = total + 50
+		end
 		
 		if(total > record) then
 		
 			setGlobalStorageValue(gid.PLAYERS_RECORD, total)
-			broadcastMessage("A marca de ".. total .." jogadores online é um novo recorde no Darghos!", MESSAGE_EVENT_DEFAULT)
+			broadcastMessage("A marca de ".. total .." jogadores online Ã© um novo recorde no Darghos!", MESSAGE_EVENT_DEFAULT)
 		end
 	else
 
@@ -353,46 +487,6 @@ function msgcontains(txt, str)
       return (string.find(txt, str) and not string.find(txt, '(%w+)' .. str) and not string.find(txt, str .. '(%w+)'))
 end
 
-
---[[
- * ATIVANDO O RATE STAGES! USED IN ACTION!
-
-function setRateStage(cid)
-	
-	stages = {
-	
-	first 	= 50,
-	second	= 20,
-	third	= 10,
-	fourth 	= 4,
-	fifth	= 2,
-	six		= 1
-	}
-
-	level 	= getPlayerLevel(cid)
-	name 	= getPlayerName(cid)
-	
-	if(level <= 40) then
-		setExperienceRate(cid, stages.first)
-	elseif(level > 40) and (level <= 80) then
-		setExperienceRate(cid, stages.second)
-	elseif(level > 80) and (level <= 120) then
-		setExperienceRate(cid, stages.third)
-	elseif(level > 120) and (level <= 160) then
-		setExperienceRate(cid, stages.fourth)
-	elseif(level > 160) and (level <= 220) then
-		setExperienceRate(cid, stages.fifth)
-	elseif(level > 220) then
-		setExperienceRate(cid, stages.six)
-	else
-		print("Player "..name.." falhou durante o processo de setRateStage.")
-	end
-	
-end
-]]--
---[[
- * Contem todas funções referente ao Darghos
-]]--
 function checkGeneralInfoPlayer(cid)
 	
 	local level 		= 	getPlayerLevel(cid)
@@ -416,7 +510,7 @@ function checkGeneralInfoPlayer(cid)
 end
 
 
--- Verificação ATUAL se um player está em Area premmy, e teleporta ele para area free.
+-- Verificaï¿½ï¿½o ATUAL se um player estï¿½ em Area premmy, e teleporta ele para area free.
 function runPremiumSystem(cid)
 
 	local name = getCreatureName(cid)

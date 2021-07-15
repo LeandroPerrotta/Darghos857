@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<raid>
+	<announce delay="0" type="event" message="Chuva de meteoros em Quendor! Demonios caem do ceu! O apocalypse nunca esteve tao proximo!"/>
+	<announce delay="60000" type="event" message="Uma chuva de demonios nunca vistos antes caí sobre a cidade de Quendor. Nao ha para onde correr, e o fim!"/>
+	<announce delay="120000" type="event" message="Resista ao apocalyspe demoniaco ou sera o fim da raca humana!"/>
+	<announce delay="180000" type="event" message="Nada se compara ao que pode ser visto em Quendor! Nunca estivemos tao proximos do fim, defenda a sua existencia."/>
+	
+	<areaspawn delay="0" centerx="2009" centery="1871" centerz="7" radius="15">
+		<monster name="Fire Devil" minamount="10" maxamount="13"/>
+	</areaspawn>
+
+	<areaspawn delay="0" centerx="2039" centery="1870" centerz="7" radius="15">
+		<monster name="Fire Devil" minamount="10" maxamount="14"/>
+	</areaspawn>
+
+	<areaspawn delay="0" centerx="2009" centery="1840" centerz="7" radius="15">
+		<monster name="Fire Devil" minamount="10" maxamount="20"/>
+	</areaspawn>
+	
+	<areaspawn delay="0" centerx="2028" centery="1869" centerz="7" radius="15">
+		<monster name="Fire Devil" minamount="10" maxamount="14"/>
+	</areaspawn>
+	
+	<areaspawn delay="60000" centerx="2009" centery="1871" centerz="7" radius="15">
+		<monster name="Demon" minamount="2" maxamount="10"/>
+	</areaspawn>
+
+	<areaspawn delay="60000" centerx="2039" centery="1870" centerz="7" radius="15">
+		<monster name="Demon" minamount="2" maxamount="10"/>
+	</areaspawn>
+
+	<areaspawn delay="60000" centerx="2009" centery="1840" centerz="7" radius="15">
+		<monster name="Demon" minamount="2" maxamount="10"/>
+	</areaspawn>
+	
+	<areaspawn delay="60000" centerx="2028" centery="1869" centerz="7" radius="15">
+		<monster name="Demon" minamount="2" maxamount="10"/>
+	</areaspawn>
+
+	<areaspawn delay="60000" centerx="2031" centery="1876" centerz="7" radius="15">
+		<monster name="Demon" minamount="10" maxamount="20"/>
+	</areaspawn>
+
+	<singlespawn delay="60000" name="demonlegs" x="2040" y="1869" z="7" />
+	<singlespawn delay="60000" name="burning demon" x="2025" y="1874" z="7" />
+
+	<areaspawn delay="120000" centerx="2061" centery="1869" centerz="7" radius="15">
+		<monster name="demonlegs" minamount="1" maxamount="5"/>
+	</areaspawn>
+
+	<areaspawn delay="180000" centerx="2042" centery="1884" centerz="7" radius="15">
+		<monster name="Demon" minamount="10" maxamount="20"/>
+	</areaspawn>
+	
+	<areaspawn delay="180000" centerx="2031" centery="1876" centerz="7" radius="15">
+		<monster name="demonlegs" minamount="5" maxamount="10"/>
+	</areaspawn>
+	
+	
+</raid>

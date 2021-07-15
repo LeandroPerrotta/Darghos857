@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<interaction>
+	<interact keywords="aaragon">
+		<response text="Do you want a passage to Aaragon for |PRICE| gold?">
+			<action name="topic" value="1"/>
+			<action name="price" value="70"/>
+			<interact keywords="yes" topic="1">
+				<response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
+				<response param="lowmoney" text="You don't have enough money."/>
+				<response param="premium" text="Have a nice trip!">
+					<action name="idle" value="1"/>
+					<action name="takemoney" value="|PRICE|"/>
+					<action name="teleport" value="2941;1207;6"/>
+					<action name="effect" value="teleport"/>
+				</response>
+				<response text="Only premium players can travel with me."/>
+			</interact>
+			<interact keywords="|*|">
+				<response text="Maybe some other time."/>
+			</interact>
+		</response>
+	</interact>
+</interaction>

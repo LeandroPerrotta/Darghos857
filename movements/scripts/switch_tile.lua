@@ -10,12 +10,18 @@ local function doTransformTile(item)
 	end
 end
 
-function onStepIn(cid, item, pos)
+function onStepIn(cid, item, pos, frompos)
 	if(item.actionid > 0) then
 		return TRUE
 	end
 
+	local itemid = item.itemid
+
 	doTransformTile(item)
+
+	if(itemid == 11062) then
+		doUpdateCreatureImpassable(cid)
+	end
 	
 	if(isPlayer(cid) == TRUE) then
 		local depot = {}
@@ -43,7 +49,14 @@ function onStepIn(cid, item, pos)
 	return TRUE
 end
 
-function onStepOut(cid, item, pos)
+function onStepOut(cid, item, pos, frompos)
+	local itemid = item.itemid
 	doTransformTile(item)
+
+	if(itemid == 11063) then
+		doUpdateCreatureImpassable(cid)
+	end
+
 	return TRUE
 end
+

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<npc name="Rovener" floorchange="0" walkinterval="2500">
+<npc name="Crystaline" floorchange="0" walkinterval="2500">
 	<health now="150" max="150"/>
-	<look type="132" head="111" body="78" legs="90" feet="40" addons="2"/>
+	<look type="136" head="79" body="30" legs="29" feet="0" addons="1"/>
 
   <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
     <include file="postman.xml"/>

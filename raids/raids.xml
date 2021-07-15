@@ -15,9 +15,16 @@
 		<raid name="thorn_cyclops" file="thorn/thorn_cyclops.xml" interval2="4500" margin="240"/>
 		<raid name="thorn_elf" file="thorn/thorn_elf.xml" interval2="4500" margin="240"/>
 		<raid name="thorn_ariadne" file="thorn/thorn_ariadne.xml" interval2="4500" margin="0"/>
+		<raid name="thashi_aharon" file="bosses/thashi_aharon.xml" interval2="4500" margin="0"/>
 		
 		
-		-- Aracura
+		-- Isle of peace
+		<raid name="peace_cyc" file="peace/peace_cyc.xml" interval2="4500" margin="240"/>
+		<raid name="peace_demon" file="peace/peace_demon.xml" interval2="50000" margin="240"/>
+		<raid name="peace_dragon" file="peace/peace_dragon.xml" interval2="20000" margin="240"/>
+		<raid name="peace_rotworms" file="peace/rotworms.xml" interval2="2500" margin="240"/>
+		<!-- <raid name="peace_skeletons" file="peace/skeletons.xml" interval2="10" margin="15"/>  -->
+		
 		
 		-- Others Areas
 		
@@ -28,5 +35,18 @@
 		<raid name="demodras_poh" file="bosses/demodras_poh.xml" interval2="5000" margin="0"/>
 		<raid name="ferumbras" file="bosses/ferumbras.xml" interval2="25000" margin="0"/>
 		<raid name="orshabaal" file="bosses/orshabaal.xml" interval2="8500" margin="0"/>			
+		<raid name="dark_general" file="bosses/dark_general.xml" interval2="9999999" margin="0"/>
+		<raid name="demon_quendor" file="bosses/demon_quendor.xml" interval2="9999999" margin="0"/>
+		<raid name="ent" file="bosses/ent.xml" interval2="9999999" margin="0"/>
+		<raid name="high_inquisitor" file="bosses/high_inquisitor.xml" interval2="9999999" margin="0"/>
+		<raid name="durin" file="bosses/durin.xml" interval2="9999999" margin="0"/>
 		<raid name="behemoth_king" file="bosses/behemoth_king.xml" interval2="9999999" margin="0"/>
+		
+		-- POI BOSSES
+		<raid name="poi_dracola" file="bosses/poi_dracola.xml" interval2="9000" margin="720"/>
+		<raid name="poi_massacre" file="bosses/poi_massacre.xml" interval2="20000" margin="720"/>
+		<raid name="poi_mr_punish" file="bosses/poi_mr_punish.xml" interval2="40000" margin="720"/>			
+		<raid name="poi_the_handmaiden" file="bosses/poi_the_handmaiden.xml" interval2="30000" margin="720"/>	
+		<raid name="poi_the_imperor" file="bosses/poi_the_imperor.xml" interval2="12500" margin="720"/>	
+		<raid name="poi_the_plasmother" file="bosses/poi_the_plasmother.xml" interval2="7000" margin="720"/>	
 </raids>

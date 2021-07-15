@@ -1,0 +1,22 @@
+<raid>
+<announce delay="0" type="event" message="The ground is shaking on Island of Peace. Red alert."/>
+<announce delay="60000" type="event" message="Ground creatures! The ancients creatures are coming to the surface again."/>
+<announce delay="100000" type="event" message="The Island of Peace is under attack of Rotworms!"/>
+
+<areaspawn delay="100000" centerx="1228" centery="2205" centerz="7" radius="15">
+<monster name="Rotworm" minamount="25" maxamount="45"/>
+<monster name="Carrion Worm" minamount="10" maxamount="20"/>
+</areaspawn>
+
+<areaspawn delay="100000" centerx="1226" centery="2237" centerz="7" radius="10">
+<monster name="Rotworm" minamount="15" maxamount="30"/>
+<monster name="Carrion Worm" minamount="5" maxamount="15"/>
+</areaspawn>
+
+<areaspawn delay="100000" centerx="1304" centery="2231" centerz="7" radius="20">
+<monster name="Rotworm" minamount="40" maxamount="70"/>
+<monster name="Carrion Worm" minamount="15" maxamount="35"/>
+<monster name="Rotworm Queen" minamount="1" maxamount="2"/>
+</areaspawn>
+
+</raid>

@@ -46,7 +46,7 @@
 						end
 					doPlayerAddOutfit(cid, conf.typeFemale,conf.addon)
 					doPlayerAddOutfit(cid, conf.typeMale, conf.addon)
-					setPlayerStorageValue(cid, storage,1)
+					setPlayerStorageValue(cid, conf.storage,1)
 					selfSay("Enjoy your newest addon!",cid)
 				else
 					selfSay("You no have the nescessary itens to this addon.",cid)
@@ -110,7 +110,7 @@
 						end
 					doPlayerAddOutfit(cid, conf.typeFemale,conf.addon)
 					doPlayerAddOutfit(cid, conf.typeMale, conf.addon)
-					setPlayerStorageValue(cid, storage,1)
+					setPlayerStorageValue(cid, conf.storage,1)
 					selfSay("Enjoy your newest addon!",cid)
 				else
 					selfSay("You no have the nescessary itens to this addon.",cid)

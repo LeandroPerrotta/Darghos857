@@ -1264,10 +1264,10 @@
 		<attribute key="decayTo" value="1501"/>
 		<attribute key="duration" value="10"/>
 		<attribute key="field" value="fire">
-			<attribute key="damage" value="20"/>
+			<attribute key="damage" value="0"/>
 			<attribute key="ticks" value="10000"/>
 			<attribute key="count" value="7"/>
-			<attribute key="damage" value="10"/>
+			<attribute key="damage" value="0"/>
 		</attribute>
 	</item>
 	<item id="1501" article="a" name="fire field" editorsuffix=" (Non PvP)">
@@ -1277,7 +1277,7 @@
 		<attribute key="field" value="fire">
 			<attribute key="ticks" value="10000"/>
 			<attribute key="count" value="7"/>
-			<attribute key="damage" value="10"/>
+			<attribute key="damage" value="0"/>
 		</attribute>
 	</item>
 	<item id="1502" article="a" name="fire field" editorsuffix=" (Non PvP)">
@@ -1293,7 +1293,7 @@
 		<attribute key="field" value="poison">
 			<attribute key="ticks" value="5000"/>
 			<attribute key="start" value="5"/>
-			<attribute key="damage" value="100"/>
+			<attribute key="damage" value="0"/>
 		</attribute>
 	</item>
 	<item id="1504" article="an" name="energy field" editorsuffix=" (Non PvP)">
@@ -1301,9 +1301,9 @@
 		<attribute key="decayTo" value="0"/>
 		<attribute key="duration" value="10"/>
 		<attribute key="field" value="energy">
-			<attribute key="damage" value="30"/>
+			<attribute key="damage" value="0"/>
 			<attribute key="ticks" value="10000"/>
-			<attribute key="damage" value="25"/>
+			<attribute key="damage" value="0"/>
 		</attribute>
 	</item>
 	<item id="1505" name="smoke">
@@ -4003,7 +4003,7 @@
 		<attribute key="weaponType" value="distance"/>
 		<attribute key="shootType" value="spear"/>
 		<attribute key="range" value="3"/>
-		<attribute key="breakChance" value="3"/>
+		<attribute key="breakChance" value="1"/>
 		<attribute key="ammoAction" value="moveback"/>
 	</item>
 	<item id="2390" article="a" name="magic longsword">
@@ -16635,7 +16635,7 @@
 		<attribute key="weight" value="4600"/>
 		<attribute key="defense" value="23"/>
 		<attribute key="attack" value="46"/>
-		<attribute key="weaponType" value="axe"/>
+		<attribute key="weaponType" value="sword"/>
 		<attribute key="extradef" value="-3"/>
 	</item>
 	<item id="7419" article="a" name="dreaded cleaver">
@@ -18804,20 +18804,20 @@
 		<attribute key="absorbPercentFire" value="-5"/>
 		<attribute key="slotType" value="head"/>
 	</item>
-	<item id="7904" article="a" name="blue bed kit">
-		<attribute key="description" value="Use it on your bed to change the bed to blue."/>
-		<attribute key="weight" value="3500"/>
-	</item>
-	<item id="7905" article="a" name="green bed kit">
+	<item id="7904" article="a" name="green bed kit">
 		<attribute key="description" value="Use it on your bed to change the bed to green."/>
 		<attribute key="weight" value="3500"/>
 	</item>
-	<item id="7906" article="a" name="red bed kit">
+	<item id="7905" article="a" name="red bed kit">
 		<attribute key="description" value="Use it on your bed to change the bed to red."/>
 		<attribute key="weight" value="3500"/>
 	</item>
-	<item id="7907" article="a" name="yellow bed kit">
+	<item id="7906" article="a" name="yellow bed kit">
 		<attribute key="description" value="Use it on your bed to change the bed to yellow."/>
+		<attribute key="weight" value="3500"/>
+	</item>
+	<item id="7907" article="a" name="blue bed kit">
+		<attribute key="description" value="Use it on your bed to change the bed to blue."/>
 		<attribute key="weight" value="3500"/>
 	</item>
 	<item id="7908" article="a" name="dead human"/>
@@ -25063,4 +25063,20 @@
 		<attribute key="description" value="Nothing in life is to be feared. It is only to be understood."/>
 		<attribute key="weight" value="2300"/>
 	</item>			
+	<item id="11754" article="a" name="teleport rune">
+		<attribute key="description" value="Esta runa magica é capaz de lhe transportar para sua cidade natal."/>
+		<attribute key="weight" value="120"/>
+	</item>
+	<item id="11755" article="a" name="cursed sudden death rune">
+		<attribute key="runeSpellName" value="adori gran mas mort"/>
+		<attribute key="weight" value="120"/>
+		<attribute key="charges" value="1"/>
+		<attribute key="showcharges" value="1"/>
+	</item>	
+	<item id="11756" article="a" name="paralyze bomb rune">
+		<attribute key="runeSpellName" value="adana mas ani"/>
+		<attribute key="weight" value="120"/>
+		<attribute key="charges" value="1"/>
+	</item>	
+	
 </items>

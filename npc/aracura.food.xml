@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-<npc name="Marcole" floorchange="0" walkinterval="2000" speed="220">
+<npc name="Dario" floorchange="0" walkinterval="2000" speed="220">
 	<health now="150" max="150"/>
-	<look type="128" head="124" body="114" legs="114" feet="124" addons="0"/>
+	<look type="129" head="116" body="30" legs="31" feet="10" addons="0"/>
   
   <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
 

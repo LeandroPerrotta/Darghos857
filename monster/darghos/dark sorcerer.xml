@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Dark Sorcerer" nameDescription="a sorcerer" race="blood" experience="10000" speed="210" manacost="0">
+  <health now="6050" max="6050"/>
+  <look type="133" head="114" body="95" legs="114" feet="114" corpse="6080"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="1"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="0"/>
+    <flag staticattack="90"/>
+    <flag targetdistance="1"/>
+    <flag runonhealth="40"/>
+  </flags>
+
+<attacks>
+    <attack name="lifedrain" interval="2000" chance="17" range="7" radius="4" target="1" min="-200" max="-750">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+    <attack name="physical" interval="2000" chance="50" range="7" min="-200" max="-400">
+      <attribute key="shootEffect" value="suddendeath"/>
+    </attack>
+    <attack name="fire" interval="2000" chance="34" range="7" radius="7" target="1" min="-150" max="-250">
+		<attribute key="shootEffect" value="fire"/>
+		<attribute key="areaEffect" value="firearea"/>
+	</attack>
+
+</attacks>
+  <defenses armor="15" defense="10">
+    <defense name="healing" interval="1000" chance="12" min="25" max="49">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+  </defenses>
+
+  <elements>
+	<element earthPercent="10"/>
+	<element icePercent="10"/>
+	<element holyPercent="10"/>
+	<element physicalPercent="-15"/>
+	<element energyPercent="-6"/>
+	<element firePercent="-5"/>
+	<element deathPercent="-5"/>
+  </elements>
+
+  <summons maxSummons="3">
+    <summon name="dragon" interval="2000" chance="10000"/>
+  </summons>
+
+  <voices interval="5000" chance="10">
+    <voice sentence="Learn with me!"/>
+  </voices>
+
+  <loot>
+    <item id="2148" countmax="20" chance1="100000" chancemax="0"/>
+  </loot>
+</monster>

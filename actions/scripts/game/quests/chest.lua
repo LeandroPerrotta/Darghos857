@@ -9,6 +9,70 @@
 
 local quests =
 	{
+		[uid.MOLS_GRIFFIN_SHIELD] = {
+			storageId = sid.MOLS_GRIFFIN_SHIELD,
+			rewardId = getItemIdByName("griffin shield"),
+			count = 1
+		},
+		
+		[uid.MOLS_DWARVEN_AXE] = {
+			storageId = sid.MOLS_DWARVEN_AXE,
+			rewardId = getItemIdByName("dwarven axe"),
+			count = 1
+		},
+		
+		[uid.MOLS_OBSIDIAN_LANCE] = {
+			storageId = sid.MOLS_OBSIDIAN_LANCE,
+			rewardId = getItemIdByName("obsidian lance"),
+			count = 1
+		},
+		
+		[uid.QUEST_BEHE_THIRD] = {
+			storageId = sid.QUEST_BEHE_THIRD,
+			rewardContainer = 1987,
+			rewardContainerItems = { 
+				{ itemid = 2145, count = 3 }, -- small diamonds
+				{ itemid = 2146, count = 4 }  -- small sapphires
+			}
+		},
+		
+		[uid.QUEST_BEHE_SECOND] = {
+			storageId = sid.QUEST_BEHE_SECOND,
+			rewardContainer = 1987,
+			rewardContainerItems = { 
+				{ itemid = 2466, count = 1 }, -- golden armor
+				{ itemid = 2427, count = 1 }, -- guardian halberd
+				{ itemid = 2520, count = 1 }, -- demon shield
+				{ itemid = 2171, count = 1 }  -- platinum amulet
+			}
+		},
+		
+		[uid.QUEST_BEHE_FIRST] = {
+			storageId = sid.QUEST_BEHE_FIRST,
+			rewardContainer = 1987,
+			rewardContainerItems = { 
+				{ itemid = 2168, count = 1 }, -- life ring
+				{ itemid = 2124, count = 1 }  -- cristal ring
+			}
+		},
+		
+		[uid.ARACURA_DLAIR_FIRE_AXE] = {
+			storageId = sid.ARACURA_DLAIR_FIRE_AXE,
+			rewardContainer = 1993,
+			rewardContainerItems = { 
+				{ itemid = 2432, count = 1 }, -- fire axe
+				{ itemid = 2214, count = 1 }, -- ring of healing
+				{ itemid = 2201, count = 1 }, -- dragon necklace
+				{ itemid = 2145, count = 10 } -- small diamond
+			}
+		},
+		
+		[uid.GOLDEN_GOBLET_QUEST] = {
+			storageId = sid.GOLDEN_GOBLET_QUEST,
+			rewardId = getItemIdByName("golden goblet"),
+			count = 1
+		},
+		
 		[uid.CHEST_DIVINE_ANKH] = {
 			storageId = sid.CHEST_DIVINE_ANKH,
 			rewardExp = 3000000,
@@ -24,10 +88,10 @@ local quests =
 			rewardExp = 1800000,
 			rewardContainer = 5927,
 			rewardContainerItems = { 
-				{itemid = 6099, count = 1},
-				{itemid = 6100, count = 1},
-				{itemid = 6101, count = 1},
-				{itemid = 6102, count = 1}
+				{itemid = 6099, count = 1}, -- Brutus Bloodbeard's hat
+				{itemid = 6100, count = 1}, -- Lethal Lissy's shirt
+				{itemid = 6101, count = 1}, -- Ron the Ripper's sabre
+				{itemid = 6102, count = 1} -- Deadeye Devious' eye patch
 			}
 		},
 		
@@ -433,7 +497,7 @@ function useQuestChest(cid, quest, questActionId)
 			doPlayerAddItem(cid, quest.rewardId, quest.count)
 		elseif(quest.rewardContainer) then
 			
-			-- Verificamos se o container de reward items está em ordem!!
+			-- Verificamos se o container de reward items estï¿½ em ordem!!
 			if(quest.rewardContainerItems == nil) then
 			
 				debugPrint("QuestChest: Reward container items not found.")

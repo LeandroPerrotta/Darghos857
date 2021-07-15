@@ -162,7 +162,7 @@ function isSorcerer(cid)
 		return false
 	end
 
-	return (isInArray({1,5}, getPlayerVocation(cid)) == TRUE)
+	return (isInArray({1,5,9}, getPlayerVocation(cid)) == TRUE)
 end
 
 function isDruid(cid)
@@ -171,7 +171,7 @@ function isDruid(cid)
 		return false
 	end
 
-	return (isInArray({2,6}, getPlayerVocation(cid)) == TRUE)
+	return (isInArray({2,6,10}, getPlayerVocation(cid)) == TRUE)
 end
 
 function isPaladin(cid)
@@ -180,7 +180,7 @@ function isPaladin(cid)
 		return false
 	end
 
-	return (isInArray({3,7}, getPlayerVocation(cid)) == TRUE)
+	return (isInArray({3,7,11}, getPlayerVocation(cid)) == TRUE)
 end
 
 function isKnight(cid)
@@ -189,7 +189,7 @@ function isKnight(cid)
 		return false
 	end
 
-	return (isInArray({4,8}, getPlayerVocation(cid)) == TRUE)
+	return (isInArray({4,8,12}, getPlayerVocation(cid)) == TRUE)
 end
 
 function getDirectionTo(pos1, pos2)
@@ -380,6 +380,83 @@ table.getCombinations = function (table, num)
 			end
 		end
 	return newlist
+end
+
+function table.show(t, name, indent)
+   local cart     -- a container
+   local autoref  -- for self references
+
+   --[[ counts the number of elements in a table
+   local function tablecount(t)
+      local n = 0
+      for _, _ in pairs(t) do n = n+1 end
+      return n
+   end
+   ]]
+   -- (RiciLake) returns true if the table is empty
+   local function isemptytable(t) return next(t) == nil end
+
+   local function basicSerialize (o)
+      local so = tostring(o)
+      if type(o) == "function" then
+         local info = debug.getinfo(o, "S")
+         -- info.name is nil because o is not a calling level
+         if info.what == "C" then
+            return string.format("%q", so .. ", C function")
+         else 
+            -- the information is defined through lines
+            return string.format("%q", so .. ", defined in (" ..
+                info.linedefined .. "-" .. info.lastlinedefined ..
+                ")" .. info.source)
+         end
+      elseif type(o) == "number" then
+         return so
+      else
+         return string.format("%q", so)
+      end
+   end
+
+   local function addtocart (value, name, indent, saved, field)
+      indent = indent or ""
+      saved = saved or {}
+      field = field or name
+
+      cart = cart .. indent .. field
+
+      if type(value) ~= "table" then
+         cart = cart .. " = " .. basicSerialize(value) .. ";\n"
+      else
+         if saved[value] then
+            cart = cart .. " = {}; -- " .. saved[value] 
+                        .. " (self reference)\n"
+            autoref = autoref ..  name .. " = " .. saved[value] .. ";\n"
+         else
+            saved[value] = name
+            --if tablecount(value) == 0 then
+            if isemptytable(value) then
+               cart = cart .. " = {};\n"
+            else
+               cart = cart .. " = {\n"
+               for k, v in pairs(value) do
+                  k = basicSerialize(k)
+                  local fname = string.format("%s[%s]", name, k)
+                  field = string.format("[%s]", k)
+                  -- three spaces between levels
+                  addtocart(v, fname, indent .. "   ", saved, field)
+               end
+               cart = cart .. indent .. "};\n"
+            end
+         end
+      end
+   end
+
+   name = name or "__unnamed__"
+   if type(t) ~= "table" then
+      return name .. " = " .. basicSerialize(t)
+   end
+   cart, autoref = "", ""
+   addtocart(t, name, indent)
+   return cart .. autoref
 end
 
 string.gfind = string.gmatch

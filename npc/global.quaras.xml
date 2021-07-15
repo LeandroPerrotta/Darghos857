@@ -46,36 +46,6 @@
       <response text="Good bye. Recommend us, if you were satisfied with our service."/>
     </interact>
 
-    <!---Example of calling a script function, check ruby.lua-->
-    <interact focus="1">
-      <!--These are the keywords will trigger this interaction-->
-      <keywords>asshole</keywords>
-      <keywords>stupid</keywords>
-      <keywords>idiot</keywords>
-      <keywords>fuck</keywords>
-      <keywords>fag</keywords>
-
-      <response function="onSayCurse">
-        <action name="idle" value="1"/>
-        <action name="scriptparam" value="|PLAYER|"/>
-        <action name="scriptparam" value="|TEXT|"/>
-      </response>
-    </interact>
-
-    <interact focus="0">
-      <!--These are the keywords will trigger this interaction-->
-      <keywords>asshole</keywords>
-      <keywords>stupid</keywords>
-      <keywords>idiot</keywords>
-      <keywords>fuck</keywords>
-      <keywords>fag</keywords>
-
-      <response function="onSayCurse">
-        <action name="idle" value="1"/>
-        <action name="scriptparam" value="|PLAYER|"/>
-        <action name="scriptparam" value="|TEXT|"/>
-      </response>
-    </interact>
 	<!-- INICIO - PEGANDO ACESSO PRA IR CLICAR NA PEDRA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
     <interact keywords="mission">
       <response text="Do you want, to make the mission for me?">
@@ -237,6 +207,55 @@
 
         </response>
     </interact>		
+    
+    <interact keywords="warlock">
+    	<keywords>warlocks</keywords>
+    	<keywords>access;warlock</keywords>
+    	<keywords>access;warlocks</keywords>
+    	
+    	<response text="Eles são os verdadeiros ancioes do poder mágico, o domam com maestria. Dizem que sua fonte de poder está na energia, na luz! Acredito que tenha algo haver com a {magic lightning dungeon} em Aracura..."/>
+    </interact>
+    
+	<!-- INICIO - ACESSO WARLOCKS ARACURA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+	<interact keywords="access;magic;lightning;dungeon">
+		<keywords>lightning;dungeon</keywords>
+		<keywords>magic;lightning;dungeon</keywords>
+		
+		<response text="Chegou a ir lá perto? A luminosidade além da porta lhe chama atenção. Posso deixar-lo entrar pela bagatela de um lightning legs e um lightning robe, e então?">
+			<action name="topic" value="1"/>
+			    
+			<interact keywords="yes" topic="1">
+				<keywords>sim</keywords>
+				
+				<response>
+					<action name="script">
+						<![CDATA[
+						
+						item1 = getItemIdByName("lightning legs")
+						item2 = getItemIdByName("lightning robe")
+								
+						if(getPlayerStorageValue(cid, sid.ARACURA_WARLOCKS_ACCESS) ~= 1) then
+							if getPlayerItemCount(cid, item1) >= 1 and getPlayerItemCount(cid, item2) >= 1 then
+									doPlayerRemoveItem(cid, item1, 1)
+									doPlayerRemoveItem(cid, item2, 1)				
+									setPlayerStorageValue(cid, sid.ARACURA_WARLOCKS_ACCESS, 1)
+									selfSay("Muito bom! Agora você poderá atravessar a porta mágica!.",cid)
+							else
+								selfSay("Você não tem os itens necessarios...",cid)
+							end
+						else
+							selfSay("Oh, que coisa... Me lembro de já ter lhe dado o acesso a {magic lightning dungeon}...", cid)
+						end
+						     ]]>
+					</action>
+				</response>
+			</interact>
+			
+			<interact keywords="|*|">
+				<response text="Sem problemas, talvez uma outra hora..."/>
+			</interact>
+		</response>
+	</interact>    
 	
 	<!-- INICIO - STONE SKIN BPS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
     <interact keywords="stone;skin;amulet">

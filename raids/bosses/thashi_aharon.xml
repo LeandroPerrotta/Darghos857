@@ -1,0 +1,27 @@
+<raid>
+	<announce delay="0" type="event" message="O Elfo Lendario Thashi Aharon marcha para a cidade de Thorn!."/>
+	<announce delay="220000" type="event" message="A cidade de Thorn corre perigo!"/>
+	<announce delay="380000" type="event" message="Ajudem a cidade ou salvem suas vidas!."/>
+
+	<areaspawn delay="260000" centerx="2382" centery="1778" centerz="7" radius="8">
+		<monster name="Elf" minamount="10" maxamount="20"/>
+	</areaspawn>
+
+	<areaspawn delay="260000" centerx="2378" centery="1774" centerz="7" radius="7">
+		<monster name="Elf Scout" minamount="10" maxamount="20"/>
+	</areaspawn>
+
+	<areaspawn delay="260000" centerx="2385" centery="1780" centerz="7" radius="7">
+		<monster name="Elf Arcanist" minamount="10" maxamount="15"/>
+	</areaspawn>
+
+	<areaspawn delay="260000" centerx="2367" centery="1775" centerz="7" radius="5">
+		<monster name="Elf" minamount="15" maxamount="30"/>
+	</areaspawn>
+
+	<areaspawn delay="260000" centerx="2368" centery="1764" centerz="7" radius="6">
+		<monster name="Elf Scout" minamount="6" maxamount="12"/>
+	</areaspawn>
+	
+	<singlespawn delay="390000" name="Thashi Aharon" x="2388" y="1777" z="7" />
+</raid>

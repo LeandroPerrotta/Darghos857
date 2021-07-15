@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Cultist Master" nameDescription="Cultist Master" race="blood" experience="500" speed="220" manacost="0">
+  <health now="7000" max="7000"/>
+  <look type="193" head="0" body="0" legs="0" feet="0" corpse="6080"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag staticattack="50"/>
+    <flag targetdistance="5"/>
+    <flag runonhealth="0"/>
+  </flags>
+<attacks>
+    <attack name="melee" interval="2000" min="-30" max="-120"/>
+
+    <attack name="lifedrain" interval="2000" chance="17" range="7" radius="1" target="1" min="-100" max="-240">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+
+    <attack name="drunk" interval="1000" chance="15" range="7" radius="1" target="1">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+
+    <attack name="physical" interval="3000" chance="17" range="7" radius="1" target="1" min="-70" max="-585">
+      <attribute key="shootEffect" value="energy"/>
+      <attribute key="areaEffect" value="energyarea"/>
+    </attack>
+</attacks>
+
+  <defenses armor="15" defense="20">
+    <defense name="invisible" interval="2000" chance="15" duration="6000">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+  </defenses>
+  <elements>
+	<element holyPercent="20"/>
+	<element icePercent="10"/>
+	<element physicalPercent="-10"/>
+	<element energyPercent="-7"/>
+	<element deathPercent="-5"/>
+  </elements>
+  <immunities>
+    <immunity paralyze="1"/>
+  </immunities>
+
+  <summons maxSummons="2">
+    <summon name="Grim Reaper" interval="2000" chance="10000"/>
+    <summon name="Vampire" interval="2000" chance="10000"/>
+  </summons>
+
+  <loot>
+  </loot>
+
+</monster>

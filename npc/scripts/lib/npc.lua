@@ -1,4 +1,7 @@
 -- Include external classes.
+dofile(getDataDir() .. 'npc/scripts/lib/npc_dialog.lua')
+dofile(getDataDir() .. 'npc/scripts/lib/npc_tasks.lua')
+dofile(getDataDir() .. 'npc/scripts/lib/npc_system.lua')
 dofile(getDataDir() .. 'npc/scripts/lib/npcsystem/npcsystem.lua')
 
 -- Callback for isPremium(cid) so Jiddo's npcsystem works

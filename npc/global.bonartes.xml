@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<npc name="Bonartes" floorchange="0" walkradius="2" walkinterval="4000" speed="220">
+	
+	<health now="150" max="150"/>
+    <look type="146" head="38" body="76" legs="114" feet="94" addons="0"/>
+  
+	<interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+    
+		<interact keywords="hi" focus="1">
+			<keywords>hello</keywords>
+			<keywords>ola</keywords>
+			
+			<response text="Silencio |NAME|! Eu estou aqui {escondido}!"/>		
+		</interact>
+		
+		<interact keywords="bye" focus="0">
+			<keywords>adeus</keywords>
+
+			<response text="Cuide-se!"/>
+		</interact>
+		
+		<interact event="onPlayerLeave" focus="0">
+			<response text="Não conte que me viu por aqui!"/>
+		</interact>			
+		
+		<interact keywords="escondido">
+
+			<response text="Sim! Eu fugi de Salazart devido a terrivel ameaça do faraó! Apénas peguei alguns {tesouros} e vim para ca!">
+				<action name="topic" value="1"/>
+			</response>
+		</interact>		
+		
+		<interact keywords="tesouros" topic="1">
+
+			<response text="Sim, são tesouros retirados do sarcófago do Faraó, por isto eu fugi... Se você provar sua coragem concluindo algumas {missoes} a mim eu posso lhe dar alguns de meus tesouros.">
+				<action name="topic" value="2"/>
+			</response>
+		</interact>		
+		
+		<interact keywords="missoes" topic="2">
+
+			<response text="São três missoes, ao fim de cada missao você recebera uma peça de meu tesouro. Quer saber a {primeira missao}, a {segunda missao} ou a {terceira missao}? Se voce terminou alguma missao apenas me diga {primeira missao terminada}!">
+				<action name="topic" value="3"/>
+			</response>
+		</interact>			
+		
+		<interact keywords="primeira;missao" topic="3">
+			<keywords>first;mission</keywords>
+
+			<response text="Heroes são criaturas nobres, porem não são nada doceis, você aceita a missao de derrotar alguns heroes?">
+				<action name="topic" value="4"/>
+			</response>
+		</interact>		
+		
+		<interact keywords="segunda;missao" topic="3">
+			<keywords>second;mission</keywords>
+
+			<response>
+			<action name="script">
+			<![CDATA[	
+			
+					local _heroMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_HEROS)
+			
+					if(_heroMission == 3) then			  
+						selfSay("Dizem ser possível ouvir Behemoths andando a vários quilômetros de distancia. Você aceita a missao de derrotar alguns behemoths?", cid)					
+						_state.topic = 5
+					else
+						selfSay("Você deve concluir a primeira missao antes de seguir para a segunda missao.", cid)	
+						_state.topic = 0		
+					end	
+			]]>
+			</action>
+			</response>	
+		</interact>
+		
+		<interact keywords="terceira;missao" topic="3">
+			<keywords>third;mission</keywords>
+
+			<response>
+			<action name="script">
+			<![CDATA[	
+			
+					local _heroMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_HEROS)
+					local _behemothMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_BEHEMOTHS)
+			
+					if(_heroMission == 3 and _behemothMission == 2) then			  
+						selfSay("Bom... Ele pode invocar fire elementals, mas isto não será  seu maior problema! Você aceita a missao de derrotar alguns demons?", cid)					
+						_state.topic = 6
+					else
+						selfSay("Você deve concluir a primeira e segunda missao antes de seguir para a terceira missao.", cid)	
+						_state.topic = 0		
+					end	
+			]]>
+			</action>
+			</response>	
+		</interact>						
+		
+		<interact keywords="yes" >
+			<keywords>sim</keywords>
+			
+			<response>
+			<action name="script">
+			<![CDATA[	
+			
+					local _demonMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_DEMONS)
+					local _heroMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_HEROS)
+					local _behemothMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_BEHEMOTHS)
+			
+					if(_state.topic == 4) then
+						  
+						if(_heroMission ~= -1) then
+							selfSay("Você já concluiu esta missao!", cid)
+						else
+							selfSay("Certo! Me prove que você merece uma parte de meu tesouro derrotando 8457 heroes e fale comigo quando terminar a primeira missao.", cid)								
+							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_HEROS, 2)
+							registerCreatureEvent(cid, "OnKillMission")
+						end	
+						
+						_state.topic = 0
+					
+					elseif(_state.topic == 5) then
+	
+						if(_behemothMission ~= -1) then
+							selfSay("Você já concluiu esta missao!", cid)
+						else
+							selfSay("Certo! Me prove que você merece uma parte de meu tesouro derrotando 3731 behemoths e fale comigo quando terminar a segunda missao.", cid)								
+							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_BEHEMOTHS, 1)
+							registerCreatureEvent(cid, "OnKillMission")
+						end	
+						
+						_state.topic = 0
+						
+					elseif(_state.topic == 6) then
+	
+						if(_demonMission ~= -1) then
+							selfSay("Você já concluiu esta missao!", cid)							
+						else
+							selfSay("Certo! Me prove que você merece uma parte de meu tesouro derrotando 1209 demons e fale comigo quando terminar a terceira missao.", cid)								
+							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_DEMONS, 1)
+							registerCreatureEvent(cid, "OnKillMission")
+						end		
+						
+						_state.topic = 0					
+					end	
+			]]>
+			</action>
+			</response>			
+		</interact>		
+		
+		<interact keywords="não">
+			<keywords>no</keywords>
+			
+			<response text="Que pena... Retorne quando estiver preparado para esta missao..."/>
+			<action name="topic" value="0"/>
+		</interact>		
+	
+		<interact keywords="primeira;missao;terminada">
+			<keywords>first;mission;finished</keywords>
+
+			<response>
+			<action name="script">
+			<![CDATA[	
+			
+					local _heroMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_HEROS)
+					local kills = getPlayerStorageValue(cid, sid.BONARTES_HERO_KILLS)
+					
+					if(_heroMission == 2) then
+						if(kills >= KILL_MISSIONS.BONARTES_HERO) then
+							selfSay("Parabens! Você concluiu a missao derrotando os heroes! Aqui esta a sua recompensa!", cid)	
+							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_HEROS, 3)
+							
+							local backpack = doPlayerAddItem(cid, 10522, 1)
+							
+							doAddContainerItem(backpack, 2152, 50)
+							doAddContainerItem(backpack, 2491, 1)
+						else
+							selfSay("Você ainda não derrotou heros sulficientes.", cid)	
+						end				
+					end	
+			]]>
+			</action>
+			</response>	
+		</interact>	
+		
+		<interact keywords="segunda;missao;terminada">
+			<keywords>second;mission;finished</keywords>
+
+			<response>
+			<action name="script">
+			<![CDATA[	
+			
+					local _behemothMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_BEHEMOTHS)
+					local kills = getPlayerStorageValue(cid, sid.BONARTES_BEHEMOTH_KILLS)
+					
+					if(_behemothMission == 1) then
+						if(kills >= KILL_MISSIONS.BONARTES_BEHEMOTH) then
+							selfSay("Parabens! Você concluiu a missao derrotando os behemoths! Aqui esta a sua recompensa!", cid)	
+							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_BEHEMOTHS, 2)
+							
+							local backpack = doPlayerAddItem(cid, 11244, 1)
+							
+							doAddContainerItem(backpack, 2152, 100)
+							doAddContainerItem(backpack, 5930, 6)							
+						else
+							selfSay("Você ainda não derrotou behemoths sulficientes.", cid)	
+						end				
+					end	
+			]]>
+			</action>
+			</response>	
+		</interact>
+		
+		<interact keywords="terceira;missao;terminada">
+			<keywords>third;mission;finished</keywords>
+
+			<response>
+			<action name="script">
+			<![CDATA[	
+			
+					local _demonMission = getPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_DEMONS)
+					local kills = getPlayerStorageValue(cid, sid.BONARTES_DEMON_KILLS)
+					
+					if(_demonMission == 1) then
+						if(kills >= KILL_MISSIONS.BONARTES_DEMON) then
+							selfSay("Parabens! Você concluiu a missao derrotando os demons! Aqui esta a sua recompensa!", cid)	
+							setPlayerStorageValue(cid, QUESTLOG.MISSION_BONARTES.KILL_DEMONS, 2)
+							
+							local backpack = doPlayerAddItem(cid, 10518, 1)
+							
+							doAddContainerItem(backpack, 2152, 100)
+							doAddContainerItem(backpack, 2152, 100)
+							doAddContainerItem(backpack, 2152, 20)
+							doAddContainerItem(backpack, 5527, 11)
+							doAddContainerItem(backpack, 2788, 27)
+						else
+							selfSay("Você ainda não derrotou demons sulficientes.", cid)	
+						end				
+					end	
+			]]>
+			</action>
+			</response>	
+		</interact>	
+	
+	</interaction>
+  
+</npc>

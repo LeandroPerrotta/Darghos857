@@ -8,4 +8,6 @@
 	<event name="Stages" type="advance" script="stages.lua"/>
 	<event name="Inquisition" type="kill" script="inquisition.lua"/>
 	<event name="Combat" type="combat" script="combat.lua"/>
+	<event name="OnKillMission" type="kill" script="onkillmission.lua"/>
+	<event name="Tasks" type="kill" script="tasks.lua"/>
 </creaturescripts>

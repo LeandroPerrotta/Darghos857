@@ -1,8 +1,8 @@
 function onSay(cid, words, param)
 
 	local outfit = getCreatureOutfit(cid)
-
-	local message = "Look type: " .. outfit.lookType .. "\nLook head: " .. outfit.lookHead .. "\nLook body: " .. outfit.lookBody .. "\n Look legs: " .. outfit.lookLegs .. "\nLook feet: " .. outfit.lookFeet
+	
+	local message = "<look type=\"".. outfit.lookType .."\" head=\"".. outfit.lookHead .."\" body=\"".. outfit.lookBody .."\" legs=\"".. outfit.lookLegs .."\" feet=\"".. outfit.lookFeet .."\" addons=\"".. outfit.lookAddons .."\"/>"   
 
 	doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, message)
 

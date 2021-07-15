@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<npc name="Boros Krum" floorchange="0" walkradius="2" walkinterval="4000" speed="220" script="game/isle_of_peace.tasks_seventh.lua">
+	
+	<health now="150" max="150"/>
+    <look type="133" head="38" body="80" legs="38" feet="38" addons="1"/>
+</npc>

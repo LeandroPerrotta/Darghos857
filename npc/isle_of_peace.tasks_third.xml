@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<npc name="Fred" floorchange="0" walkradius="2" walkinterval="4000" speed="220" script="game/isle_of_peace.tasks_third.lua">
+	
+	<health now="150" max="150"/>
+    <look type="134" head="96" body="132" legs="113" feet="132" addons="3"/>
+</npc>

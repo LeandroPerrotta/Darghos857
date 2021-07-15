@@ -5,6 +5,9 @@
   
 <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
     
+	<include file="carpet/aaragon.xml"/>
+	<include file="carpet/hills.xml"/>      
+    
     <interact keywords="hi" focus="1">
       <!--These are the keywords will trigger this interaction-->
       <keywords>hello</keywords>
@@ -45,81 +48,6 @@
     <interact event="onPlayerLeave" focus="0">
       <response text="Good bye. Recommend us, if you were satisfied with our service."/>
     </interact>
-
-    <!---Example of calling a script function, check ruby.lua-->
-    <interact focus="1">
-      <!--These are the keywords will trigger this interaction-->
-      <keywords>asshole</keywords>
-      <keywords>stupid</keywords>
-      <keywords>idiot</keywords>
-      <keywords>fuck</keywords>
-      <keywords>fag</keywords>
-
-      <response function="onSayCurse">
-        <action name="idle" value="1"/>
-        <action name="scriptparam" value="|PLAYER|"/>
-        <action name="scriptparam" value="|TEXT|"/>
-      </response>
-    </interact>
-
-    <interact focus="0">
-      <!--These are the keywords will trigger this interaction-->
-      <keywords>asshole</keywords>
-      <keywords>stupid</keywords>
-      <keywords>idiot</keywords>
-      <keywords>fuck</keywords>
-      <keywords>fag</keywords>
-
-      <response function="onSayCurse">
-        <action name="idle" value="1"/>
-        <action name="scriptparam" value="|PLAYER|"/>
-        <action name="scriptparam" value="|TEXT|"/>
-      </response>
-    </interact>
-
-	<!-- INICIO - DESTINO: TAPETE ARACURA @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-	<interact keywords="aracura">
-		<response text="Do you want a passage to aracura, for |PRICE| gold?">
-			<action name="topic" value="1"/>
-			<action name="price" value="70"/>
-			<interact keywords="yes" topic="1">
-				<response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
-				<response param="lowmoney" text="You don't have enough money."/>
-				<response param="premium" text="Have a nice trip!">
-					<action name="idle" value="1"/>
-					<action name="takemoney" value="|PRICE|"/>
-					<action name="teleport" value="2941;1207;6"/>
-					<action name="effect" value="teleport"/>
-				</response>
-				<response text="Only premium players can travel with me."/>
-			</interact>
-			<interact keywords="|*|">
-				<response text="Maybe some other time."/>
-			</interact>
-		</response>
-	</interact>
-	
-	<!-- INICIO - DESTINO: TAPETE HILLS @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
-	<interact keywords="hills">
-		<response text="Do you want a passage to mountain of hills, for |PRICE| gold?">
-			<action name="topic" value="1"/>
-			<action name="price" value="70"/>
-			<interact keywords="yes" topic="1">
-				<response param="pzblock" text="First get rid of those blood stains! You are not going to ruin my vehicle!"/>
-				<response param="lowmoney" text="You don't have enough money."/>
-				<response param="premium" text="Have a nice trip!">
-					<action name="idle" value="1"/>
-					<action name="takemoney" value="|PRICE|"/>
-					<action name="teleport" value="2167;1978;3"/>
-					<action name="effect" value="teleport"/>
-				</response>
-				<response text="Only premium players can travel with me."/>	
-			</interact>
-			<interact keywords="|*|">
-				<response text="Maybe some other time."/>
-			</interact>
-		</response>
-	</interact>
 	
   </interaction>
   
