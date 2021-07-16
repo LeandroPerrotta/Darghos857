@@ -1,0 +1,173 @@
+<?xml version="1.0"?>
+<npc name="Haroun" floorchange="0" walkinterval="2000" speed="220">
+	<health now="150" max="150"/>
+    <look type="80" head="95" body="132" legs="0" feet="0" addons="0"/>
+  
+  <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+
+	<include file="events_shop.xml"/>
+    <include file="djinns.xml"/>
+    
+    <interact keywords="hi" focus="1">
+      <keywords>hello</keywords>
+      
+      <response text="Hello. How may I help you |NAME|?"/>
+    </interact>
+
+    <interact keywords="bye" focus="0">
+      <keywords>farewell</keywords>
+
+      <response text="It was a pleasure to help you."/>
+    </interact>
+
+    <interact event="onPlayerLeave" focus="0">
+      <response text="It was a pleasure to help you |NAME|."/>
+    </interact>
+    
+    <interact keywords="name">
+      <response text="My name is |NPCNAME|."/>
+    </interact>
+
+    <interact keywords="job">
+      <response text="I am a merchant, my job is to serve you!"/>
+    </interact>
+
+    <interact keywords="wares">
+		<response text="I sell and buy some itens!, ask {trade} and I will see my offers."/>
+    </interact>
+	
+	<interact keywords="trade">
+		<list>djinn_haroun</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>
+	
+	<!-- INICIO - TROCAR MAGIC SULPHUR @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="magic;sulphur">
+      <response text="Do you want to trade 3 fire swords for a Magic Sulphur?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			
+			fs = getItemIdByName("fire sword")
+			
+			if getPlayerItemCount(cid,fs) >= 3 then
+					doPlayerRemoveItem(cid,fs,3)
+					doPlayerAddItem(cid, 5904,1)
+					selfSay("Thanks to this trade!",cid)
+			else
+				selfSay("You dont have nescessary itens for this.",cid)
+			end
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>
+	
+	<!-- INICIO - TROCAR WARRIOR SWEAT @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="warrior;sweat">
+      <response text="Do you want to trade 4 warriors helmets for a Warrior Sweat?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			
+			wh = getItemIdByName("warrior helmet")
+			
+			if getPlayerItemCount(cid,wh) >= 4 then
+					doPlayerRemoveItem(cid,wh,4)
+					doPlayerAddItem(cid, 5885,1)
+					selfSay("Thanks to this trade!",cid)
+			else
+				selfSay("You dont have nescessary itens for this.",cid)
+			end
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>	
+
+	<!-- INICIO - TROCAR FIGHTN SPIRINT @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="fighting;spirit">
+      <response text="Do you want to trade 2 royal helmets for a Fighting Spirit?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			
+			rh = getItemIdByName("royal helmet")
+			
+			if getPlayerItemCount(cid,rh) >= 2 then
+					doPlayerRemoveItem(cid,rh,2)
+					doPlayerAddItem(cid, 5884,1)
+					selfSay("Thanks to this trade!",cid)
+			else
+				selfSay("You dont have nescessary itens for this.",cid)
+			end
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>	
+
+	<!-- INICIO - TROCAR CHICKEN W222ING @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@-->
+    <interact keywords="enchanted;chicken;wing">
+      <response text="Do you want to trade 1 boots of haste for a Enchanted Chicken Wing?">
+        <action name="topic" value="1"/>
+    
+    <interact keywords="yes" topic="1">
+       <response>
+        <action name="script">
+        <![CDATA[
+			
+			boh = 2195
+			
+			if getPlayerItemCount(cid,boh) >= 1 then
+					doPlayerRemoveItem(cid,boh,1)
+					doPlayerAddItem(cid, 5891,1)
+					selfSay("Thanks to this trade!",cid)
+			else
+				selfSay("You dont have nescessary itens for this.",cid)
+			end
+        ]]>
+        </action>
+      </response>
+    </interact>
+        <interact keywords="|*|">
+          <response text="Maybe some other time."/>
+        </interact>
+
+        </response>
+    </interact>
+	
+  </interaction>
+  
+</npc>

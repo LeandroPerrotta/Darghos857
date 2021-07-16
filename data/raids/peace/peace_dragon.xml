@@ -1,0 +1,6 @@
+<raid>
+	<announce delay="0" type="event" message="Dragoes em Island of Peace!"/>
+
+	<singlespawn delay="10000" name="Dragon" x="1254" y="2230" z="7" />
+	
+</raid>

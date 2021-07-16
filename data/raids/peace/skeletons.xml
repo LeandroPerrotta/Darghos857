@@ -1,0 +1,8 @@
+<raid>
+
+<areaspawn delay="100000" centerx="1236" centery="2171" centerz="9" radius="25">
+<monster name="Skeleton" minamount="25" maxamount="40"/>
+<monster name="Skeleton Warrior" minamount="5" maxamount="15"/>
+</areaspawn>
+
+</raid>

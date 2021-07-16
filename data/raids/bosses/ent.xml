@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<raid>
+	<announce delay="0" type="event" message="Forcas se organizam em Thorn para convocar o Avatar da mae natureza!"/>
+	<announce delay="60000" type="event" message="A grande arvore comeca a ser convocada em Thorn! Se dirijam para a cidade do rei Ordon!"/>
+	<announce delay="120000" type="event" message="A antiga arvore foi summonada! Preparem-se humanos, para enfrentar esta grande força da natureza!"/>
+	
+	<singlespawn delay="120000" name="Ent" x="2368" y="1783" z="7" />
+	
+</raid>

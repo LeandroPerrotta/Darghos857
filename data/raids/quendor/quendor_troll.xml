@@ -1,0 +1,38 @@
+<raid>
+<announce delay="0" type="event" message="A strange disturbance has been detected from the sewage of Quendor city."/>
+<announce delay="200000" type="event" message="The trolls are planing a raid to get their old territory."/>
+<announce delay="400000" type="event" message="The trolls are raiding Quendor City!"/>
+
+<areaspawn delay="100000" centerx="2011" centery="1871" centerz="7" radius="30">
+<monster name="Troll" minamount="10" maxamount="20"/>
+</areaspawn>
+
+<areaspawn delay="100000" centerx="1990" centery="1871" centerz="7" radius="15">
+<monster name="Troll" minamount="10" maxamount="50"/>
+</areaspawn>
+
+<areaspawn delay="100000" centerx="1986" centery="1861" centerz="7" radius="3">
+<monster name="Troll" minamount="12" maxamount="20"/>
+</areaspawn>
+
+<areaspawn delay="100000" centerx="1981" centery="1876" centerz="7" radius="3">
+<monster name="Troll" minamount="12" maxamount="20"/>
+</areaspawn>
+
+<areaspawn delay="150000" centerx="2011" centery="1871" centerz="7" radius="30">
+<monster name="Troll" minamount="10" maxamount="20"/>
+</areaspawn>
+
+<areaspawn delay="170000" centerx="1990" centery="1871" centerz="7" radius="15">
+<monster name="Troll" minamount="10" maxamount="50"/>
+</areaspawn>
+
+<areaspawn delay="190000" centerx="1986" centery="1861" centerz="7" radius="3">
+<monster name="Troll" minamount="12" maxamount="20"/>
+</areaspawn>
+
+<areaspawn delay="200000" centerx="1981" centery="1876" centerz="7" radius="3">
+<monster name="Troll" minamount="12" maxamount="20"/>
+</areaspawn>
+
+</raid>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Ghazran" nameDescription="a ghazran" race="blood" experience="1" speed="290" manacost="0">
+  <health now="50050" max="50050"/>
+  <look type="121" head="20" body="30" legs="40" feet="50" corpse="6048"/>
+  <targetchange interval="2000" chance="7"/>
+  <strategy attack="70" defense="30"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="3000"/>
+  </flags>
+<attacks>
+    <attack name="melee" interval="2000" skill="300" attack="75"/>
+    
+    <attack name="speed" interval="2000" chance="40" range="10" radius="10" target="1" speedchange="-100" duration="55000">
+    	<attribute key="areaEffect" value="sleep"/>
+    </attack>
+    
+    <attack name="earth" interval="2000" chance="40" radius="9" target="0" min="-340" max="-810">
+    	<attribute key="areaEffect" value="poison"/>
+    </attack>
+    
+    <attack name="earth" interval="2000" chance="32" length="9" spread="4" min="-700" max="-1200">
+    	<attribute key="areaEffect" value="plantattack"/>
+    </attack>
+	
+	<attack name="earth" interval="2000" chance="33" radius="5" target="0" min="-350" max="-650">
+		<attribute key="areaEffect" value="blackspark"/>
+	</attack>	
+
+	<!-- Jamais fique de frente pro bixo -->
+    <attack name="death" interval="2000" chance="20" length="1" spread="0" min="-1400" max="-1950">
+		<attribute key="shootEffect" value="suddendeath"/>
+    </attack>
+
+</attacks>
+<defenses armor="50" defense="100">
+	<defense name="healing" interval="1000" chance="35" min="4690" max="5540">
+		<attribute key="areaEffect" value="blueshimmer"/>
+	</defense>
+
+	<defense name="speed" interval="1000" chance="15" speedchange="600" duration="10000">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </defense>	
+</defenses>
+<elements>
+	<element physicalPercent="10"/>
+	<element deathPercent="15"/>
+	<element earthPercent="70"/>
+	<element icePercent="-10"/>
+	<element firePercent="-50"/>
+</elements>
+<immunities>
+	<immunity lifedrain="1"/>
+	<immunity paralyze="1"/>
+	<immunity outfit="1"/>
+	<immunity drown="1"/>
+	<immunity drunk="1"/>
+	<immunity invisible="1"/>
+</immunities>
+  <voices interval="2000" chance="15">
+    <voice sentence="FCHHHHH"/>
+    <voice sentence="HISSSS"/>
+  </voices>
+  <loot>
+    <item id="2148" countmax="85" chance1="100000"/> -- Gold Coin
+    <item id="2148" countmax="70" chance1="20000"/> -- Gold Coin
+    <item id="2148" countmax="100" chance1="10000"/> -- Gold Coin
+  </loot>
+</monster>

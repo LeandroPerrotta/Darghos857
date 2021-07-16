@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<npc name="Rei Ordon" floorchange="0" walkradius="2" walkinterval="4000" speed="220">
+	<health now="150" max="150"/>
+    <look type="332" head="21" body="87" legs="107" feet="95" addons="0"/>
+  
+	<interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+    
+		<interact keywords="hi" focus="1">
+			<keywords>hello</keywords>
+			<keywords>ola</keywords>
+			
+			<response>
+			<action name="script">  
+				<![CDATA[
+				local ariadneLairStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR)
+				local ghazranWingStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.GHAZRAN_WING)
+				
+				if(ghazranWingStatus >= 1 and ghazranWingStatus < 4) then
+				
+					selfSay("Está em posse da língua de Ghazran?", cid)
+					_state.topic = 5
+				elseif(ariadneLairStatus >= 1) then
+				
+					if(ariadneLairStatus == 2) then
+						selfSay("Encontre a entrada do Lair de Ariadne, um de meus Guardas o espera lá!", cid)
+					end
+				else
+				
+					selfSay("A cidade está sob {perigo}, se não puder ajudar-nos se vá!", cid)	
+				end
+				]]>
+			</action>
+			</response>			
+		</interact>
+		
+	<interact keywords="promot">
+		<keywords>promote</keywords>
+		<keywords>promotion</keywords>
+	
+		<response text="Do you want to be a {promoted} people? If you is promoted, you have some privillegies. Do you want to pay 20000 golds for this?">
+			<action name="topic" value="100"/>
+		</response>
+	</interact>
+    
+    <interact keywords="yes" topic="100">
+       <response>
+        <action name="script">
+        <![CDATA[
+		
+		if(getPlayerLevel(cid)) >= 20 then
+			if(getPlayerVocation(cid)) <= 4 then
+				if(doPlayerRemoveMoney(cid,20000)) == TRUE then
+					setPlayerStorageValue(cid,STORAGE_PROMOTION,1)
+					selfSay("Congratulations! Now you are promoted. You need relog your character!   {LONG LIFE TO THE KING!}",cid)
+				else
+					selfSay("Sorry, you do not have enough gold.",cid)
+				end
+			else
+				selfSay("You already is promoted, your vocation is promoted!",cid)
+			end
+		else
+			selfSay("Only players level 20+ can buy PROMOTION!",cid)
+		end
+		
+        ]]>
+        </action>
+      </response>
+    </interact>
+		
+		<interact keywords="bye" focus="0">
+			<keywords>adeus</keywords>
+
+			<response text="Volte quando puder ajudar-nos!"/>
+		</interact>		
+		
+		<interact event="onPlayerLeave" focus="0">
+			<response text="Volte quando puder ajudar-nos!"/>
+		</interact>		
+		
+		<interact keywords="name">
+			<keywords>nome</keywords>
+			
+			<response text="Como assim, todos sabem meu nome!"/>
+		</interact>
+
+		<interact keywords="job">
+			<keywords>cargo</keywords>
+
+			<response text="Sou Ordom, Rei de Thorn, filho de Exxus!"/>
+		</interact>
+		
+		<interact keywords="perigo">
+			<response>
+			<action name="script">  
+				<![CDATA[
+				local ariadneLairStatus = getPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR)
+				
+				if(ariadneLairStatus == -1) then
+					selfSay("A velha bruxa Ariadne está a assombrar a paz em Thorn, sua ultima vitima foi a {princesa}! Como pode!!", cid)
+					_state.topic = 1
+				end
+				]]>
+			</action>
+			</response>			
+		</interact>		
+		
+		<interact keywords="princesa" topic="1">
+			<response text="Minha querida filha, a princesa Elione foi vitima de um {feitiço} da velha Ariadne enquanto passeava pelo pantano. Desde então eu ordenei que meus guardas proibissem que as pessoas fossem para o pantano para evitar novas vitimas...">
+				<action name="topic" value="2"/>	
+			</response>					
+		</interact>
+			
+		<interact keywords="feitiço" topic="2">
+			<response text="O feitiço que a princesa Elione sofreu transformou minha bela filha em um horrozo sapo! Thorn precisa de bravos guerreiros que se comprometam a entrar no pantano para me ajudar a buscar os ingredientes necessarios para se fazer o {antidoto} que anula o feitiço sofrido!">
+				<action name="topic" value="3"/>
+			</response>				
+		</interact>
+	
+		<interact keywords="antidoto" topic="3">
+			<response text="Para ser feito o antidoto é necessario conseguir 3 raros ingredientes, além de um recipiente especial que somente pode ser obtido vencendo a velha Ariadne. Os ingredientes especiais estão sob os cuidados de maléficos seguidos de Ariadne! Você gostaria de tentar ajudar a conseguir o antidoto para recuperar a doce Elione?">
+				<action name="topic" value="4"/>
+			</response>	
+		</interact>			
+		
+		<interact keywords="yes" >
+			<keywords>sim</keywords>
+			
+			<response>
+			<action name="script">
+			<![CDATA[	
+					-- topico de abertura da quest
+					if(_state.topic == 4) then
+					
+						level = getPlayerLevel(cid)
+						  
+						if(level < 180) then
+							selfSay("Estou impressionado com sua brava coragem meu rapaz, mas esta missão requer maior conhecimento e habilidade.", cid)
+						else
+							selfSay("Otimo! Estou profundamente contente que você irá nos ajudar! Meus guardas já recebam ordens para que permitam você a entrar no Pantano. Muito cuidado, este lugar é traiçoeiro! Consigas o antidoto e lhe re-compensarei por esta brava atitude!", cid)	
+							doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Nova Quest aberta em seu QuestLog: Ariadne's Quest.")
+							
+							setPlayerStorageValue(cid, QUESTLOG.ARIADNE.LAIR, 2)
+						end	
+					
+					-- topico da conclusão da primeira wing (língua de ghazran)
+					elseif(_state.topic == 5) then
+						
+						local haveGhazranTongue = (getPlayerStorageValue(cid, sid.ARIADNE_GHAZRAN_TONGUE) == 1)
+						
+						if not(haveGhazranTongue) then
+							
+							selfSay("Você ainda não conseguiu a língua de Ghazran, seja rápido em conseguir-la!", cid)
+						else
+							selfSay("Magnifico! Esta língua será guardada para fazermos o antidoto quando tivermos os outros ingredientes. Aqui está sua recompensa!", cid)	
+							
+							local reward = nil 
+							
+							if(isKnight(cid)) then
+							
+								reward = CUSTOM_ITEMS.DURIN_HELMET
+							elseif(isPaladin(cid)) then
+							
+								reward = CUSTOM_ITEMS.TASHI_AHARON_HELMET
+							elseif(isDruid(cid)) then
+							
+								reward = CUSTOM_ITEMS.WARDEN_BOOTS
+							elseif(isSorcerer(cid)) then
+								
+								reward = CUSTOM_ITEMS.DEATHFACE_LEGS
+							end
+							
+							doPlayerAddItem(cid, reward, 1)
+							
+							setPlayerStorageValue(cid, QUESTLOG.ARIADNE.GHAZRAN_WING, 4)
+							setPlayerStorageValue(cid, QUESTLOG.ARIADNE.CULTISTS_WING, 1)
+							
+							_state.topic = nil
+						end
+					end	
+			]]>
+			</action>
+			</response>			
+		</interact>		
+	
+	</interaction>
+  
+</npc>

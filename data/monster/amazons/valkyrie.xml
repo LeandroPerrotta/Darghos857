@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="valkyrie" nameDescription="a valkyrie" race="blood" experience="85" speed="200" manacost="450">
+  <health now="190" max="190"/>
+  <look type="139" head="113" body="57" legs="95" feet="113" corpse="6081"/>
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="1"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="1"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="0"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="10"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="24" attack="25"/>
+    <attack name="physical" interval="1000" chance="10" range="7" min="0" max="-50">
+      <attribute key="shootEffect" value="spear"/>
+    </attack>
+  </attacks>
+  <defenses armor="16" defense="14"/>
+  <elements>
+	<element icePercent="10"/>
+	<element holyPercent="7"/>
+	<element firePercent="10"/>
+	<element physicalPercent="-8"/>
+	<element deathPercent="-7"/>
+  </elements>
+  <immunities>
+  </immunities>
+  <voices interval="5000" chance="10">
+	<voice sentence="Another head for me!"/>
+    <voice sentence="Stand still!"/>
+    <voice sentence="One more head for me!"/>
+    <voice sentence="Head off!"/>
+  </voices>
+  <loot>
+    <item id="2148" countmax="12" chance1="100000" chancemax="0"/> --Gold
+    <item id="2464" chance="6666"/> --Chain Armor
+    <item id="2125" chance="4500"/> --Crystal Necklace
+    <item id="2387" chance="4000"/> --Double Axe
+    <item id="2458" chance="5500"/> --Chain Helmet
+    <item id="1987" chance="100000"> --BAG
+      <inside>
+        <item id="2674" countmax="4" chance1="10000" chancemax="0"/> --Apples
+        <item id="3965" chance="10000"/> --Hunting Spear
+        <item id="2666" countmax="3" chance1="20000" chancemax="0"/> --MEat
+        <item id="2147" countmax="1" chance1="1500" chancemax="0"/> --Small Ruby
+        <item id="2145" countmax="1" chance1="1500" chancemax="0"/> --Small Diamond
+        <item id="2200" chance="2000"/> --Protection Amulet
+        <item id="2463" chance="1800"/> --Plate ARmor
+      </inside>
+    </item>
+  </loot>
+</monster>

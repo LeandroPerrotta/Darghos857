@@ -1,0 +1,12 @@
+<raid>
+	<announce delay="0" type="event" message="Orshabaal's minions are working on his return to the World. LEAVE Quendor at once, mortals."/>
+	<announce delay="220000" type="event" message="Orshabaal is about to make his way into the mortal realm. Run for your lives!"/>
+	<announce delay="380000" type="event" message="Orshabaal has been summoned from hell to plague the lands of mortals again."/>
+
+	<areaspawn delay="260000" centerx="1964" centery="1717" centerz="7" radius="5">
+		<monster name="Demon" minamount="1" maxamount="4"/>
+	</areaspawn>
+	
+	<singlespawn delay="390000" name="Orshabaal" x="1960" y="1709" z="7" />
+	
+</raid>

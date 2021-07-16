@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+
+<interaction>
+
+	<!--
+	Armor's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="armor_all">
+			<item keywords="chain;armor" id="2464" buyprice="200" sellprice="105"/>
+			<item keywords="brass;armor" id="2465" buyprice="450" sellprice="225"/>
+			<item keywords="scale;armor" id="2483" buyprice="260" sellprice="112"/>
+			<item keywords="plate;armor" id="2463" buyprice="1200" sellprice="600"/>
+			<item keywords="dark;armor" id="2489" buyprice="1500" sellprice="600"/>
+		</itemlist>
+
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="armor_sellable">
+			<item keywords="knight;armor" id="2476" sellprice="1125"/>
+			<item keywords="golden;armor" id="2466" sellprice="2250"/>
+		</itemlist> 
+
+	
+	<!--
+	Helmet's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="helmet_all">
+			<item keywords="chain;helmet" id="2458" buyprice="52" sellprice="25"/>
+			<item keywords="brass;helmet" id="2460" buyprice="120" sellprice="45"/>
+			<item keywords="viking;helmet" id="2473" buyprice="265" sellprice="99"/>
+			<item keywords="soldier;helmet" id="2481" buyprice="200" sellprice="30"/>
+			<item keywords="iron;helmet" id="2459" buyprice="390" sellprice="225"/>
+			<item keywords="steel;helmet" id="2457" buyprice="580" sellprice="285"/>
+		</itemlist>
+
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="helmet_sellable">
+			<item keywords="legion;helmet" id="2480" sellprice="45"/>
+			<item keywords="warrior;helmet" id="2475" sellprice="1044"/>
+		</itemlist> 
+
+	<!--
+	Legs's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="legs_all">
+			<item keywords="studded;legs" id="2468" buyprice="60" sellprice="22"/>
+			<item keywords="chain;legs" id="2648" buyprice="80" sellprice="37"/>
+			<item keywords="brass;legs" id="2478" buyprice="195" sellprice="73"/>
+		</itemlist>
+
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="legs_sellable">
+			<item keywords="plate;legs" id="2647" sellprice="57"/>
+			<item keywords="knight;legs" id="2477" sellprice="562"/>
+		</itemlist> 
+		
+		
+	<!--
+	Shield's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="shields_all">
+			<item keywords="wooden;shield" id="2512" buyprice="15" sellprice="7"/>
+			<item keywords="studded;shield" id="2526" buyprice="50" sellprice="24"/>
+			<item keywords="brass;shield" id="2511" buyprice="65" sellprice="37"/>
+			<item keywords="plate;shield" id="2510" buyprice="125" sellprice="67"/>
+			<item keywords="steel;shield" id="2509" buyprice="240" sellprice="120"/>
+			<item keywords="viking;shield" id="2531" buyprice="260" sellprice="127"/>
+			<item keywords="dwarven;shield" id="2525" buyprice="500" sellprice="150"/>
+
+		</itemlist>
+
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="shields_sellable">
+			<item keywords="copper;shield" id="2530" sellprice="75"/>
+			<item keywords="sentinel;shield" id="3974" sellprice="180"/>
+			<item keywords="sentinel;shield" id="2513" sellprice="142"/>
+			<item keywords="salamander;shield" id="3975" sellprice="420"/>
+			<item keywords="tusk;shield" id="3973" sellprice="1275"/>
+			<item keywords="guardian;shield" id="2515" sellprice="270"/>
+			<item keywords="dragon;shield" id="2516" sellprice="547"/>
+			<item keywords="mastermind;shield" id="2514" sellprice="825"/>
+		</itemlist> 		
+
+		
+	<!--
+	Boots's Shop
+	-->
+		<!--
+		compraveis e vendiveis
+		-->
+		<itemlist listid="boots_all">
+			<item keywords="leather;boots" id="2643" buyprice="10" sellprice="3"/>
+		</itemlist>
+
+		<!--
+		apenas vendiveis
+		-->
+		<itemlist listid="boots_sellable">
+			<item keywords="crocodile;boots" id="3982" sellprice="150"/>
+		</itemlist> 
+
+
+
+		
+</interaction>

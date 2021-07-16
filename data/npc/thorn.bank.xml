@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Bankman Strifeminer" floorchange="0" walkinterval="4000" script="game/bank.lua">
+    <health now="100" max="100"/>
+    <look type="289" head="87" body="54" legs="18" feet="18" addons="3"/>
+    <parameters>
+        <parameter key="message_greet" value="Welcome to the Darghos {bank}, |PLAYERNAME|! What can I do for you?"/>
+        <parameter key="message_farewell" value="Good bye."/>
+        <parameter key="module_keywords" value="1" />
+        <parameter key="keywords" value="bank;job;" />
+        <parameter key="keyword_reply1" value="We can change money for you. You can also access your bank account." />
+        <parameter key="keyword_reply2" value="I work in this bank. I can change money for you and help you with your bank account." />
+
+        <parameter key="module_shop" value="1"/>
+        <parameter key="shop_sellable" value="" />
+        <parameter key="shop_buyable" value="" />
+    </parameters>
+</npc>

@@ -1,0 +1,25 @@
+<raid>
+	<announce delay="0" type="event" message="Um grande estrondo foi possivel de ser ovido vindo do centro do planeta... Quendor deve se organizar."/>
+	<announce delay="360000" type="event" message="Metais pesados estao sendo distorcer, os gigantes glorificam a chegada do rei!"/>
+	
+	<announce delay="600000" type="event" message="Rebelião de gigantes aos arredores de Quendor, a cidade está em perigo!"/>	
+	<areaspawn delay="600000" centerx="2090" centery="1825" centerz="7" radius="20">
+		<monster name="Cyclops" minamount="25" maxamount="35"/>
+		<monster name="Cyclops Drone" minamount="15" maxamount="25"/>
+		<monster name="Cyclops Smith" minamount="8" maxamount="15"/>
+	</areaspawn>	
+	
+	<announce delay="900000" type="event" message="Mais uma rebelião explode as portas de Quendor! Os humanos precisarão se unir para vencer esta ameaça!"/>
+	<areaspawn delay="900000" centerx="2020" centery="1770" centerz="7" radius="25">
+		<monster name="Cyclops" minamount="14" maxamount="24"/>
+		<monster name="Cyclops Drone" minamount="18" maxamount="28"/>
+		<monster name="Cyclops Smith" minamount="18" maxamount="28"/>
+		<monster name="Behemoth" minamount="8" maxamount="14"/>
+	</areaspawn>
+	
+	<announce delay="1500000" type="event" message="Os gigantes agora lutam ao lado de seu Rei, o Rei Behemoth aclama a tomada de Quendor por seus súditos! Quendor resistira a esta grave ameaça?"/>
+	<areaspawn delay="1500000" centerx="2006" centery="1827" centerz="15" radius="5">
+		<monster name="Behemoth King" minamount="1" maxamount="1"/>
+	</areaspawn>		
+	
+</raid>

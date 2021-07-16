@@ -1,0 +1,9 @@
+<raid>
+	<announce delay="0" type="event" message="Cyclops atacam Isle of Peace!"/>
+
+	<areaspawn delay="0" centerx="1254" centery="2230" centerz="7" radius="5">
+		<monster name="Cyclops" minamount="20" maxamount="50"/>
+	</areaspawn>
+
+	
+</raid>

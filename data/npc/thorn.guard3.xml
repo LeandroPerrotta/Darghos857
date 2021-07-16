@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<npc name="Shivoc, o Guarda" floorchange="0" walkinterval="0" speed="0" script="game/guard.ariadne_lair.lua">
+	<health now="150" max="150"/>
+    <look type="268" head="80" body="95" legs="80" feet="95" addons="3"/>
+  
+	<interaction talkradius="3" range="3" idletime="30" idleinterval="300">
+    
+		<interact keywords="hi" focus="1">
+			<keywords>hello</keywords>
+			<keywords>ola</keywords>
+			<keywords>oi</keywords>
+
+			<response text="Caro |NAME|, tome cuidado! Criaturas macabras rondam pelo {Ariadne Lair}!"/>
+		</interact>
+		
+		<interact keywords="bye" focus="0">
+			<keywords>adeus</keywords>
+
+			<response text="Boa sorte bravo guerreiro!"/>
+		</interact>		
+		
+		<interact event="onPlayerLeave" focus="0">
+			<response text="Boa sorte bravo guerreiro!"/>
+		</interact>		
+		
+		<interact keywords="name">
+			<keywords>nome</keywords>
+			
+			<response text="Eu sou Shivoc, e sirvo ao Rei de Thorn!"/>
+		</interact>
+
+		<interact keywords="job">
+			<keywords>cargo</keywords>
+
+			<response text="Eu sirvo ao Rei de Thorn, minha função é reconhecer o pantano!"/>
+		</interact>
+		
+		<interact keywords="ariadne lair">
+			<keywords>lair</keywords>
+
+			<response text="Esta é a entrada para o Aridane Lair, nos cofins deste sombrio lugar se encontra Ariadne e seus seguidores. Muito cuidado ao entrar neste lugar!"/>
+		</interact>		
+	</interaction>
+  
+</npc>

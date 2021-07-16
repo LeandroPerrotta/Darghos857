@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<npc name="Mereus" floorchange="0" walkradius="2" walkinterval="8000" speed="150" script="game/isle_of_peace.tasks_first.lua">
+	
+	<health now="700" max="700"/>
+    <look type="143" head="78" body="69" legs="10" feet="69" addons="1"/>
+</npc>

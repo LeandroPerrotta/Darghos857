@@ -1,0 +1,4 @@
+<?xml version="1.0"?> 
+<raid> 
+	<script delay="0" script="save.lua" /> 
+</raid>

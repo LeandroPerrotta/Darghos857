@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Nature Ancient" nameDescription="Mother Nature" race="fire" experience="3500000" speed="60" manacost="0">
+  <health now="1000000" max="1000000"/>
+  <look typeex="2699" corpse="2720" /> 
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="1"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="500"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="1000" min="-0" max="-5000" poison="350"/>
+    <attack name="physical" interval="1000" chance="13" range="10" min="10" max="-80">
+	  <attribute key="shootEffect" value="poison"/>
+    </attack>
+    <attack name="lifedrain" interval="2000" chance="50" radius="5" target="0" min="-15020" max="-25050">
+      <attribute key="areaEffect" value="bigplants"/>
+    </attack>
+  </attacks>
+  <defenses armor="150" defense="200">
+    <defense name="healing" interval="1000" chance="25" min="513" max="787">
+      <attribute key="areaEffect" value="blueshimmer"/>
+    </defense>
+  </defenses>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="1"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="1"/>
+    <immunity paralyze="1"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <voices interval="5000" chance="10">
+    <voice sentence="Humans come with that axe, crushing, biting, cutting!" yell="1"/>
+  </voices>
+  <loot>
+    <item id="2148" countmax="40" chance1="100000" chancemax="0"/>
+  </loot>
+</monster>

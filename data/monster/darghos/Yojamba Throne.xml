@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Yojamba Throne" nameDescription="something really weird" race="blood" experience="200" speed="0" manacost="0">
+  <health now="1000000" max="1000000"/>
+  <look typeex="5915" corpse="1487" />
+  <targetchange interval="5000" chance="8"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="1"/>
+    <flag convinceable="1"/>
+    <flag pushable="1"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="4"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="10"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="500" skill="65" attack="1"/>
+  </attacks>
+  <defenses armor="17" defense="14"/>
+  <immunities>
+    <immunity physical="0"/>
+    <immunity energy="0"/>
+    <immunity fire="0"/>
+    <immunity poison="1"/>
+    <immunity lifedrain="0"/>
+    <immunity paralyze="0"/>
+    <immunity outfit="1"/>
+    <immunity drunk="1"/>
+    <immunity invisible="1"/>
+  </immunities>
+  <loot>
+    <item id="2148" countmax="25" chance1="100000" chancemax="0"/>
+    <item id="2425" chance="3000"/>
+    <item id="2381" chance="6666"/>
+    <item id="2457" chance="6666"/>
+    <item id="3974" chance="1000"/>
+    <item id="3965" chance="3000"/>
+    <item id="5876" countmax="1" chance1="5000" chancemax="0"/>
+    <item id="1987" chance="100000">
+      <inside>
+        <item id="2148" countmax="10" chance1="100000" chancemax="0"/>
+        <item id="2654" chance="20000"/>
+        <item id="5881" countmax="1" chance1="5000" chancemax="0"/>
+      </inside>
+    </item>
+  </loot>
+</monster>

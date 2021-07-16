@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<talkactions>
+	<!-- Gods -->
+	<talkaction words="/i" logged="1" access="5" filter="first word" script="createitembyid.lua"/>
+	<talkaction words="/storagevalue" logged="1" access="5" filter="first word" script="playerstorage.lua"/>
+	<talkaction words="/n" logged="1" access="5" filter="first word" script="createitembyname.lua"/>
+
+	<talkaction words="/cleanhouses" logged="1" access="5" filter="first word" script="housecleaning.lua"/>
+	
+	<talkaction words="/s" logged="1" access="5" filter="first word" function="placeNpc"/>
+	<talkaction words="/shutdown" logged="1" access="5" filter="first word" script="shutdown.lua"/>
+	<talkaction words="/serverdiag" logged="1" access="5" filter="first word" function="serverDiagnostic"/>
+	<talkaction words="/reload" logged="1" access="5" filter="first word" script="reload.lua"/>
+	<talkaction words="/m" logged="1" access="5" filter="first word" script="placemonster.lua"/>
+	<talkaction words="/c" logged="1" access="5" filter="first word" script="teleporthere.lua"/>
+	<talkaction words="/summon" logged="1" access="5" filter="first word" script="placesummon.lua"/>
+	<talkaction words="/poll" logged="1" access="5" filter="first word" script="game/createpoll.lua"/>
+	<talkaction words="/raid" logged="1" access="5" filter="first word" function="forceRaid"/>
+	<talkaction words="/kick" logged="1" access="5" filter="first word" script="kickplayer.lua"/>
+	<talkaction words="/r" logged="1" access="5" filter="first word" script="removething.lua"/>
+	<talkaction words="/owner" logged="1" access="5" filter="first word" script="sethouseowner.lua"/>	
+	
+	<!-- Comunity Managers -->
+	<talkaction words="/openserver" logged="1" access="4" filter="first word" script="openserver.lua"/>
+	<talkaction words="/closeserver" logged="1" access="4" filter="first word" script="closeserver.lua"/>	
+	<talkaction words="/save" logged="1" access="4" script="saveserver.lua"/>
+	<talkaction words="/refreshmap" logged="1" access="4" filter="first word" script="refreshmap.lua"/>	
+	<talkaction words="/checkconfig" access="4" filter="first word" script="configval.lua"/>
+	<talkaction words="/getoutfit" access="4" filter="first word" script="game/getoutfit.lua"/>
+	
+	<!-- Gamemasters -->
+	<talkaction words="/up" access="3" filter="first word" script="floorchange.lua"/>
+	<talkaction words="/down" access="3" filter="first word" script="floorchange.lua"/>
+	<talkaction words="/a" access="3" filter="first word" script="teleportntiles.lua"/>
+	<talkaction words="/town" access="3" filter="first word" script="teleporttotown.lua"/>
+	<talkaction words="/goto" logged="1" access="3" filter="first word" script="teleportto.lua"/>
+	<talkaction words="/bc" logged="1" access="3" filter="first word" script="broadcastclass.lua"/>
+	<talkaction words="/z" access="3" filter="first word" script="testeffect.lua"/>
+	<talkaction words="/zt" access="3" filter="first word" script="testtutorial.lua"/>	
+	<talkaction words="/getonline" access="3" filter="first word" script="accessonlinelist.lua"/>
+
+	<!-- Senior Tutors -->
+	<talkaction words="/t" logged="1" access="2" filter="first word" script="teleportmasterpos.lua"/>
+	
+	<!-- Tutors -->
+	<talkaction words="/serverinfo" access="1" script="serverinfo.lua"/>
+	<talkaction words="/gethouse" access="1" filter="first word" script="gethouse.lua"/>
+	<talkaction words="/info" access="1" filter="first word" script="getinfo.lua"/>
+
+	<!-- Players -->
+	<!-- <talkaction words="!sellhouse" access="0" function="sellHouse"/> -->
+	<talkaction words="!buyhouse" access="0" script="buyhouse.lua"/>
+	<talkaction words="!leavehouse" access="0" script="leavehouse.lua"/>
+	<talkaction words="!houseinfo" access="0" script="houseinfo.lua"/>
+	<talkaction words="!online" access="0" script="onlinelist.lua"/>
+	<talkaction words="!unjustkills" access="0" script="unjustkills.lua"/>
+	<talkaction words="!blesses" access="0" script="game/bless.lua"/>	
+	<talkaction words="!vote" access="0" filter="first word" script="game/vote.lua"/>
+	<talkaction words="!voteinfo" access="0" script="game/voteinfo.lua"/>
+	<talkaction words="!aceitotp" access="0" script="game/accept_teleport.lua"/>
+</talkactions>

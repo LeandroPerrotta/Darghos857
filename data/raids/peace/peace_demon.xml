@@ -1,0 +1,6 @@
+<raid>
+	<announce delay="0" type="event" message="Um demonio subiu do inferno em Isle of peace! A cidade esta sob ataque!"/>
+
+	<singlespawn delay="18000" name="Demon" x="1254" y="2230" z="7" />
+	
+</raid>

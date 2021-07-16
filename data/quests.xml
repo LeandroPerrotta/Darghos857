@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<quests>
+
+	<quest name="Ariadne's Quest" startstorageid="3600" startstoragevalue="1">
+		<mission name="The Lair" storageid="3600" startvalue="2" endvalue="3">
+			<missionstate id="2" description="Encontre a entrada do Ariadne Lair no pantano ao Leste da cidade de Thorn." /> 
+			<missionstate id="3" description="Ariadne Lair encontrado." />
+		</mission>
+		
+		<mission name="Sen Gan Trolls Wing" storageid="3601" startvalue="1" endvalue="4">
+			<missionstate id="1" description="Mecha nos doze bone totem's e obtenha as  benções necessárias para passar pela ponte envenenada e chegar ao hall de Ghazran, o deus dragão dos trolls." />
+			<missionstate id="2" description="Derrote Ghazran e use sua Obsidian Knife no corpo para remover sua língua, um dos ingredientes do antidoto." />
+			<missionstate id="3" description="Leve a língua de Ghazran até o Rei Ordon de Thorn." />
+			<missionstate id="4" description="Wing completa." />
+		</mission>	
+		
+		<mission name="Cultists Wing" storageid="3602" startvalue="1" endvalue="4">	
+			<missionstate id="1" description="Dungeon sendo desenvolvida..." />
+		</mission>	
+	</quest>
+
+	<quest name="Divine Ankh Quest" startstorageid="3610" startstoragevalue="1">
+		<mission name="Igreja amaldiçoada" storageid="3610" startvalue="2" endvalue="3">	
+			<missionstate id="2" description="Obtenha 1000 essencias negras de criaturas derrotadas usando a cruz divina." />
+			<missionstate id="3" description="Missão concluida." />
+		</mission>	
+
+		<mission name="Camara da tentação" storageid="3611" startvalue="1" endvalue="4">	
+			<missionstate id="1" description="Trazer uma Fire Sword ao padre Benedictus." />
+			<missionstate id="2" description="Aguardar uma hora enquanto o Benefictus prepara a arma." />
+			<missionstate id="3" description="Usar a Unholy Sword para abrir a câmara e derrotar Lord Vankyner e pegar os tesouros." />
+			<missionstate id="4" description="Missão concluida." />
+		</mission>		
+	</quest>
+	
+	<quest name="Missões Bonartes" startstorageid="3612" startstoragevalue="1">
+		<mission name="Derrotar heroes" storageid="3612" startvalue="2" endvalue="3">	
+			<missionstate id="2" description="Derrote 8457 heroes e depois fale com Bonartes." />
+			<missionstate id="3" description="Missão concluida." />
+		</mission>		
+	
+		<mission name="Derrotar demonios" storageid="3613" startvalue="1" endvalue="2">	
+			<missionstate id="1" description="Derrote 1209 demonios e depois fale com Bonartes." />
+			<missionstate id="2" description="Missão concluida." />
+		</mission>		
+		
+		<mission name="Derrotar behemoths" storageid="3614" startvalue="1" endvalue="2">	
+			<missionstate id="1" description="Derrote 3731 behemoths e depois fale com Bonartes." />
+			<missionstate id="2" description="Missão concluida." />
+		</mission>			
+	</quest>	
+	
+	<quest name="Tarefas Island of Peace" startstorageid="52100" startstoragevalue="0">
+		<mission name="Controle dos Trolls" storageid="52100" startvalue="0" endvalue="1">	
+			<missionstate id="0" description="Você deve derrotar 25 trolls, após isto volte a falar com Mereus no templo da cidade." />
+			<missionstate id="1" description="Tarefa concluida." />
+		</mission>		
+	
+		<mission name="Problemas na plantação" storageid="52200" startvalue="0" endvalue="1">	
+			<missionstate id="0" description="Você deve derrotar 15 rotworms e 10 carriom worms, após isto volte a falar com Mereus no templo da cidade." />
+			<missionstate id="1" description="Tarefa concluida." />
+		</mission>		
+		
+		<mission name="Sarcófago com vida!" storageid="52300" startvalue="0" endvalue="1">	
+			<missionstate id="0" description="Você deve derrotar 30 skeletons e 5 skeleton warriors, após isto volte a falar com Hector na entrada do sarcófago." />
+			<missionstate id="1" description="Tarefa concluida." />
+		</mission>
+		
+		<mission name="Segurança aos despreparados" storageid="52600" startvalue="0" endvalue="1">	
+			<missionstate id="0" description="Você deve derrotar 35 amazons e 15 valkyries, após isto volte a falar com o guarda Winston na saida leste da cidade." />
+			<missionstate id="1" description="Tarefa concluida." />
+		</mission>		
+			
+		<mission name="A ousadia dos anões" storageid="52700" startvalue="0" endvalue="1">	
+			<missionstate id="0" description="Você deve somar 360 pontos derrotando dwarfs(1 pt), dwarfs(2 pts) e dwarfs guards(4 pts), após isto volte a falar com o guarda Winston na saida leste da cidade." />
+			<missionstate id="1" description="Tarefa concluida." />
+		</mission>		
+		
+		<mission name="O artefato Real" storageid="52800" startvalue="0" endvalue="1">	
+			<missionstate id="0" description="Você deve ir até a piramide dos minotauros e ir até o andar mais baixo, nele encontrar o artefato do Rei e então levar-lo para o ele no castelo." />
+			<missionstate id="1" description="Tarefa concluida." />
+		</mission>
+		
+		<mission name="Movimentação dos gigantes" storageid="52900" startvalue="0" endvalue="1">	
+			<missionstate id="0" description="Você deve derrotar 70 cyclops e 10 cyclops smiths após isto volte a falar com o elfo Van'Caelnis na saida sul da cidade." />
+			<missionstate id="1" description="Tarefa concluida." />
+		</mission>	
+		
+		<mission name="A limpeza na fortaleza" storageid="53000" startvalue="0" endvalue="1">	
+			<missionstate id="0" description="Você deve somar 850 pontos derrotando os seguintes Orcs: normal(1 pt), spearmans(2 pts), warriors(3 pts), shaman e rider(6 pts), berserkers(8 pts), leaders(12 pts) e warlords(30pts), após isto volte a falar com o elfo Van'Caelnis na saida sul da cidade." />
+			<missionstate id="1" description="Tarefa concluida." />
+		</mission>	
+		
+		<mission name="O matador de dragões" storageid="53100" startvalue="0" endvalue="1">	
+			<missionstate id="0" description="Você deve derrotar 50 dragons e obter 1 green dragon scale e levar ao caçador de dragões Mesth'zaros na dragon lair's." />
+			<missionstate id="1" description="Tarefa concluida." />
+		</mission>	
+		
+		<mission name="A praga das aranhas" storageid="53200" startvalue="0" endvalue="1">	
+			<missionstate id="0" description="Você deve derrotar 80 giant spiders e obter 5 giant spider silks e levar ao Boros Krum na altar do territorio das aranhas." />
+			<missionstate id="1" description="Tarefa concluida." />
+		</mission>	
+		
+		<mission name="O teste final" storageid="53300" startvalue="0" endvalue="1">	
+			<missionstate id="0" description="Você deve derrotar 5 dragon lords, após isto volte a falar com o caçador de dragões Mesth'Zaros na dragon lair's." />
+			<missionstate id="1" description="Todas tarefas de island of peace estão concluidas, você já pode sair da ilha e ir para o continente em segurança. Em quendor fale com Daves para receber o ultimo prêmio." />
+		</mission>						
+				
+	</quest>	
+</quests>

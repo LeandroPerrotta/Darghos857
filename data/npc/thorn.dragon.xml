@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<npc name="Tankya" floorchange="0" walkinterval="4000" speed="220">
+	<health now="1000" max="1000"/>
+	<look type="34" head="20" body="30" legs="40" feet="50" addons="0"/>
+  
+<interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+    
+  </interaction>
+  
+</npc>

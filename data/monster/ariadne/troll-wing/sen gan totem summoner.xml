@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Sen Gan Totem Summoner" nameDescription="a troll" race="VENOM" experience="1" speed="50" manacost="1">
+  <health now="10005" max="10005"/>
+  <look type="76" head="20" body="30" legs="40" feet="50" corpse="6018"/>
+  <targetchange interval="1000" chance="10"/>
+  <strategy attack="100" defense="0"/>
+  <flags>
+    <flag summonable="0"/>
+    <flag attackable="1"/>
+    <flag hostile="1"/>
+    <flag illusionable="0"/>
+    <flag convinceable="0"/>
+    <flag pushable="0"/>
+    <flag canpushitems="1"/>
+    <flag canpushcreatures="1"/>
+    <flag targetdistance="4"/>
+    <flag staticattack="90"/>
+    <flag runonhealth="2500"/>
+  </flags>
+  <attacks>
+    <attack name="melee" interval="2000" skill="35" attack="12"/>
+    <attack name="energy" interval="500" chance="7" range="7" min="-15" max="-40">
+      <attribute key="shootEffect" value="energy"/>
+    </attack>
+    <attack name="fire" interval="500" chance="7" range="7" min="-25" max="-40">
+      <attribute key="shootEffect" value="fire"/>
+    </attack>
+    <attack name="physical" interval="500" chance="8" range="7" min="-30" max="-50">
+      <attribute key="shootEffect" value="suddendeath"/>
+      <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+    <attack name="poison" interval="1000" chance="8" range="7" min="-5" max="-40">
+      <attribute key="shootEffect" value="poison"/>
+    </attack>
+    <attack name="lifedrain" interval="500" chance="6" range="7" min="-35" max="-40">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+    <attack name="manadrain" interval="1000" chance="5" range="7" min="-5" max="-20">
+      <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+  </attacks>
+  <defenses armor="200" defense="100"/>
+  <elements>
+	<element earthPercent="20"/>
+	<element firePercent="-10"/>
+  </elements>
+  <immunities>
+    <immunity invisible="1"/>
+  </immunities>   
+  <summons maxSummons="3">
+    <summon name="Shaman Totem" interval="500" chance="100" max="4"/>
+  </summons>
+  <voices interval="5000" chance="50">
+    <voice sentence="Shadralar!"/>
+    <voice sentence="Ariadne gime your power!"/>
+    <voice sentence="Spirits fill this totem with fire!"/>
+  </voices>
+  <loot>
+    <item id="3976" countmax="10" chance1="50000" chancemax="0"/>
+  </loot>
+</monster>

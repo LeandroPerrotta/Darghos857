@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+
+<interaction>
+
+	<!--
+	Runes's Shop
+	-->
+		<itemlist listid="runes">
+			
+			<item keywords="paralyze" id="2278" subtype="1" buyprice="700"/>
+			<item keywords="animate;dead" id="2316" subtype="1" buyprice="375"/>
+			<item keywords="magic;wall" id="2293" subtype="3" buyprice="350"/>
+			<item keywords="energy;wall" id="2279" subtype="4" buyprice="340"/>
+			<item keywords="energy;bomb" id="2262" subtype="2" buyprice="325"/>
+			<item keywords="sudden;death" id="2268" subtype="3" buyprice="325"/>
+			<item keywords="wild;growth" id="2269" subtype="2" buyprice="320"/>
+			<item keywords="fire;wall" id="2303" subtype="4" buyprice="245"/>
+			<item keywords="fire;bomb" id="2305" subtype="2" buyprice="235"/>			
+			<item keywords="chamaleon" id="2291" subtype="1" buyprice="210"/>
+			<item keywords="poison;wall" id="2289" subtype="4" buyprice="210"/>
+			<item keywords="explosion" id="2313" subtype="6" buyprice="250"/>
+			<item keywords="avalanche" id="2274" subtype="4" buyprice="180"/>
+			<item keywords="great;fireball" id="2304" subtype="4" buyprice="180"/>
+			<item keywords="ultimate;healing" id="2273" subtype="3" buyprice="175"/>
+			<item keywords="poison;bomb" id="2286" subtype="2" buyprice="170"/>
+			<item keywords="fireball" id="2302" subtype="5" buyprice="150"/>
+			<item keywords="icicle" id="2271" subtype="5" buyprice="150"/>
+			<item keywords="stone;shower" id="2288" subtype="4" buyprice="150"/>
+			<item keywords="thunderstorm" id="2315" subtype="4" buyprice="150"/>
+			<item keywords="soulfire" id="2308" subtype="3" buyprice="140"/>
+			<item keywords="heavy;magic;missile" id="2311" subtype="10" buyprice="120"/>
+			<item keywords="stalagmite" id="2292" subtype="10" buyprice="120"/>
+			<item keywords="energy;field" id="2277" subtype="3" buyprice="115"/>
+			<item keywords="intense;healing" id="2265" subtype="1" buyprice="95"/>
+			<item keywords="fire;field" id="2301" subtype="3" buyprice="85"/>
+			<item keywords="convince;creature" id="2290" subtype="1" buyprice="80"/>
+			<item keywords="desintegrate" id="2310" subtype="3" buyprice="80"/>
+			<item keywords="holly;missile" id="2295" subtype="5" buyprice="80"/>
+			<item keywords="antidote" id="2266" subtype="1" buyprice="65"/>
+			<item keywords="poison;field" id="2285" subtype="3" buyprice="65"/>
+			<item keywords="destroy;field" id="2261" subtype="3" buyprice="45"/>
+			<item keywords="light;magic;missile" id="2287" subtype="10" buyprice="40"/>
+			
+			<!-- OUTRAS -->
+			<item keywords="blank;rune" id="2260" buyprice="10"/>
+		</itemlist>
+		
+		
+	<!--
+	Potions's Shop
+	-->
+		<itemlist listid="potions">
+			<item keywords="small;health" id="8704" buyprice="20"/>
+			<item keywords="health;potion" id="7618" buyprice="45"/>
+			<item keywords="mana;potion" id="7620" buyprice="50"/>
+			<item keywords="strong;health" id="7588" buyprice="100"/>
+			<item keywords="strong;mana" id="7589" buyprice="80"/>
+			<item keywords="great;health" id="7591" buyprice="190"/>
+			<item keywords="great;mana" id="7590" buyprice="120"/>
+			<item keywords="great;spirit" id="8472" buyprice="190"/>
+			<item keywords="ultimate;health" id="8473" buyprice="310"/>
+			<item keywords="antidote;potion" id="8474" buyprice="50"/>
+			
+			<item keywords="empty;potion;flask" id="7634" sellprice="10"/>
+			<item keywords="empty;potion;flask" id="7635" sellprice="10"/>
+			<item keywords="empty;potion;flask" id="7636" sellprice="10"/>			
+		</itemlist>	
+
+		
+	<!--
+	Rod's Shop
+	-->
+		<itemlist listid="rods">
+			<item keywords="snakebite;rod" id="2182" buyprice="500"/>
+			<item keywords="moonlight;rod" id="2186" buyprice="1000"/>
+			<item keywords="necrotic;rod" id="2185" buyprice="5000"/>
+			<item keywords="northwind;rod" id="8911" buyprice="7500"/>
+			<item keywords="terra;rod" id="2181" buyprice="10000"/>
+			<item keywords="hailstorm;rod" id="2183" buyprice="15000"/>
+			<item keywords="springsprout;rod" id="8912" buyprice="18000"/>
+			<item keywords="underworld;rod" id="8910" buyprice="22000"/>
+		</itemlist>			
+			
+			
+	<!--
+	Wand's Shop
+	-->
+		<itemlist listid="wands">
+			<item keywords="wand;of;vortex" id="2190" buyprice="500"/>
+			<item keywords="wand;of;dragonbreath" id="2191" buyprice="1000"/>
+			<item keywords="wand;of;decay" id="2188" buyprice="5000"/>
+			<item keywords="wand;of;draconia" id="8921" buyprice="7500"/>
+			<item keywords="wand;of;cosmic;energy" id="2189" buyprice="10000"/>
+			<item keywords="wand;of;inferno" id="2187" buyprice="15000"/>
+			<item keywords="wand;of;starstorm" id="8920" buyprice="18000"/>
+			<item keywords="wand;of;voodoo" id="8922" buyprice="22000"/>
+		</itemlist>			
+
+</interaction>

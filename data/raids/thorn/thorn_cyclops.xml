@@ -1,0 +1,25 @@
+<raid>
+<announce delay="0" type="event" message="The Mastersmiths Cyclops are too close from our Capital Thorn. Stay alert."/>
+<announce delay="200000" type="event" message="Help in the Thorn Western Gate! Cyclops are taking the city!"/>
+
+<areaspawn delay="55000" centerx="2323" centery="1858" centerz="7" radius="12">
+<monster name="Cyclops" minamount="25" maxamount="30"/>
+</areaspawn>
+
+<areaspawn delay="55000" centerx="2323" centery="1858" centerz="7" radius="12">
+<monster name="Cyclops" minamount="25" maxamount="30"/>
+</areaspawn>
+
+<areaspawn delay="55000" centerx="2309" centery="1853" centerz="7" radius="10">
+<monster name="Cyclops" minamount="30" maxamount="30"/>
+</areaspawn>
+
+<areaspawn delay="60000" centerx="2315" centery="1861" centerz="7" radius="15">
+<monster name="Cyclops" minamount="25" maxamount="30"/>
+</areaspawn>
+
+<areaspawn delay="90000" centerx="2315" centery="1861" centerz="7" radius="15">
+<monster name="Cyclops" minamount="25" maxamount="30"/>
+</areaspawn>
+
+</raid>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <monster name="Cyclops Drone" nameDescription="a cyclops drone" species="hard" race="blood" experience="200" speed="190" manacost="490">
+    <health now="325" max="325"/>
+    <look type="280" head="20" body="30" legs="40" feet="50" corpse="7848"/>
+    <targetchange interval="60000" chance="0"/>
+    <strategy attack="100" defense="0"/>
+    <flags>
+      <flag summonable="1"/>
+      <flag attackable="1"/>
+      <flag hostile="1"/>
+      <flag illusionable="1"/>
+      <flag convinceable="1"/>
+      <flag pushable="0"/>
+      <flag canpushitems="1"/>
+      <flag staticattack="60"/>
+      <flag lightlevel="0"/>
+      <flag lightcolor="0"/>
+      <flag targetdistance="1"/>
+      <flag runonhealth="0"/>
+    </flags>
+    <attacks>
+      <attack name="melee" interval="2000" skill="55" attack="55"/>
+	  <attack name="strength" interval="1000" chance="13" target="1" min="0" max="-85">
+		<attibute key="shootEffect" value="largerock"/>
+		</attack>
+    </attacks>
+    <defenses armor="25" defense="25"/>
+		<elements>
+	<element firePercent="10"/>
+		<element energyPercent="20"/>
+			<element holyPercent="8"/>
+				<element earthPercent="-10"/>
+					<element deathPercent="-5"/>
+	</elements>
+    <immunities>
+      <immunity physical="0"/>
+      <immunity energy="0"/>
+      <immunity fire="0"/>
+      <immunity poison="0"/>
+      <immunity lifedrain="0"/>
+      <immunity paralyze="0"/>
+      <immunity outfit="0"/>
+      <immunity drunk="0"/>
+      <immunity invisible="0"/>
+    </immunities>
+    <voices interval="2000" chance="5">
+      <voice sentence="Fee! Fie! Foe! Fum!"/>
+      <voice sentence="Luttl pest!"/>
+    </voices>
+    <loot>
+      <item id="2148" countmax="24" chance1="100000" chancemax="0"/>
+      <item id="2513" chance="33333"/>
+      <item id="2406" chance="1818"/>
+      <item id="2381" chance="2000"/>
+      <item id="7588" chance="2857"/>
+      <item id="2129" chance="6666"/>
+      <item id="2666" countmax="2" chance1="33333" chancemax="0"/>
+      </loot>
+  </monster>

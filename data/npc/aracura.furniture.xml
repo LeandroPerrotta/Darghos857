@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<npc name="Yoem" floorchange="0" walkinterval="2000" speed="220">
+	<health now="150" max="150"/>
+    <look type="140" head="79" body="113" legs="18" feet="75" addons="2"/>
+  
+  <interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+
+	<include file="events_shop.xml"/>
+    <include file="furnitures.xml"/>
+    
+    <interact keywords="hi" focus="1">
+      <keywords>hello</keywords>
+      
+      <response text="Hello. How may I help you |NAME|?"/>
+    </interact>
+
+    <interact keywords="bye" focus="0">
+      <keywords>farewell</keywords>
+
+      <response text="It was a pleasure to help you."/>
+    </interact>
+
+    <interact event="onPlayerLeave" focus="0">
+      <response text="It was a pleasure to help you |NAME|."/>
+    </interact>
+    
+    <interact keywords="name">
+      <response text="My name is |NPCNAME|."/>
+    </interact>
+
+    <interact keywords="job">
+      <response text="I am a merchant, my job is to serve you!"/>
+    </interact>
+
+    <interact keywords="offer">
+
+		<response text="I sell furnitures in general, tables, vases, boxes, pillows also plants for more informations ask for {trade}."/>
+    </interact>
+	
+	<interact keywords="trade">
+		<keywords>wares</keywords>
+		
+		<list>table</list>
+		<list>vase</list>
+		<list>box</list>
+		<list>pillow</list>
+		<list>plants</list>
+		<list>beds</list>
+
+		<response>
+			<action name="script">
+			<![CDATA[
+			  openShopWindow(cid, itemlist, -1, -1)
+			]]>
+			</action>
+		</response>
+	</interact>
+    
+ 
+  </interaction>
+  
+</npc>

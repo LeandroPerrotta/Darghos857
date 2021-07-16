@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<npc name="Baron Samedi" floorchange="0" walkradius="2" walkinterval="4000" speed="220" script="game/reborn.lua">
+	<health now="150" max="150"/>
+    <look type="332" head="21" body="87" legs="107" feet="95" addons="0"/>
+  
+	<interaction talkradius="3" range="3" idletime="30" idleinterval="300" defaultpublic="0">
+    
+		<interact keywords="hi" focus="1">
+			<keywords>hello</keywords>
+			<keywords>ola</keywords>
+			
+			<response text="|NAME|! Como ousa vir em meu santuario interromper minha meditação? Apesar de você ser forte sua {alma} continua fraca!"/>				
+		</interact>
+		
+		<interact keywords="bye" focus="0">
+			<keywords>adeus</keywords>
+
+			<response text="Morra no retorno a seu lugar!"/>
+		</interact>		
+		
+		<interact event="onThink">
+			<response>
+			<action name="script">
+			<![CDATA[		
+			
+			checkReborn()
+			
+			]]>
+			</action>
+			</response>					
+		</interact>			
+		
+		<interact event="onPlayerLeave" focus="0">
+			<response text="Espero que tenha uma morte desonrrosa!"/>
+		</interact>		
+		
+		<interact keywords="name">
+			<keywords>nome</keywords>
+			
+			<response text="Conhecem-me como Baron Sameji."/>
+		</interact>
+
+		<interact keywords="job">
+			<keywords>cargo</keywords>
+
+			<response text="Eu fortifico algumas pobres almas!"/>
+		</interact>	
+		
+		<interact keywords="alma">
+			<keywords>soul</keywords>
+		
+			<response>
+			<action name="script">
+			<![CDATA[			
+			
+				newvoc = 0
+			
+				if(getPlayerVocation(cid) == vocations.MASTER_SORCERER) then
+					newvoc = "warmaster sorcerer"
+				elseif(getPlayerVocation(cid) == vocations.ELDER_DRUID) then
+					newvoc = "warden druid"
+				elseif(getPlayerVocation(cid) == vocations.ROYAL_PALADIN) then
+					newvoc = "holy paladin"			
+				elseif(getPlayerVocation(cid) == vocations.ELITE_KNIGHT) then
+					newvoc = "berzerker knight"							
+				end
+				
+				if(newvoc ~= 0) then
+					selfSay("Como se sabe todos tem uma alma. Eu posso fortificar sua alma, o que o elevaria a outro nivel, você se tornaria um " .. newvoc .. " e assim mais fortes ficaras. Mas isto requer um terrivel {sacrificio}.", cid)
+					_state.topic = 2
+				elseif(getPlayerVocation(cid) <= 4) then
+					selfSay("Eu posso fortificar sua alma, mas apesar de você parecer ser bastante corajoso, não é forte o sulficiente e não resistira ao sacrificio...", cid)
+				end
+				
+			]]>
+			</action>
+			</response>			
+						
+		</interact>
+			
+		<interact keywords="sacrificio" topic="2">		
+		
+			<response text="Sim! É um pacto entre você e eu! Para fortificar sua alma é necessario uma transição que so poder ser atingida por um sacrificio, a morte! Mas não é qualquer morte, é a {morte da alma}!">
+				<action name="topic" value="3"/>
+			</response>				
+		</interact>	
+	
+		<interact keywords="morte;da;alma" topic="3">
+			<response text="Quando sua alma morre a sua condição fisica é completamente perdida! Ou seja, você retornará ao level 8 inicial, entretanto suas habilidades com armas e magias serão mantidos. Quer fazer este pacto?">
+				<action name="topic" value="4"/>
+			</response>	
+		</interact>			
+		
+		<interact keywords="sim" topic="4">
+			<keywords>yes</keywords>
+		
+			<response text="VOCÊ TEM CERTEZA? ENTENDEU QUE IRÁ RETORNAR AO PONTO QUE TUDO COMEÇOU? AINDA QUER FORTIFICAR SUA ALMA?">
+				<action name="topic" value="5"/>
+			</response>	
+		</interact>
+		
+		<interact keywords="sim" topic="5">
+			<keywords>yes</keywords>
+		
+			<response text="PRESTE ATENÇÃO: VOCÊ NÃO PODERÁ VOLTAR ATRAS! UMA VEZ SUA ALMA FORTIFICADA É IMPOSSIVEL RETROCEDER! QUER PROSSEGUIR?">
+				<action name="topic" value="6"/>
+			</response>	
+		</interact>			
+		
+		<interact keywords="sim" topic="6">
+			<keywords>yes</keywords>
+		
+			<response text="Mas ainda não me convenceu! Pense bem! E diga {eu quero fortificar minha alma}! Lembre-se! É sua ultima chance!">
+				<action name="topic" value="7"/>
+			</response>	
+		</interact>
+		
+		<interact keywords="no">
+			<keywords>não</keywords>
+		
+			<response text="Sabia que não estava preparado para o sacrificio! Seu inseto desprezivel!">
+				<action name="topic" value="0"/>
+			</response>	
+		</interact>			
+		
+		<interact keywords="eu;quero;fortificar;minha;alma" topic="7">
+			<keywords>yes</keywords>
+		
+			<response text="CERTO! A escolha foi sua! Irei aplicar a você minha magia aniquiladora de almas! Aqui está!...">
+				<action name="script">
+				<![CDATA[	
+					startReborn(cid)
+					_state.topic = 0
+				]]>
+				</action>				
+			</response>	
+		</interact>			
+	
+	</interaction>
+  
+</npc>

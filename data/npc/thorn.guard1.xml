@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<npc name="Eric, o Guarda" floorchange="0" walkinterval="0" speed="0" script="game/guard.lua">
+	<health now="150" max="150"/>
+    <look type="268" head="80" body="95" legs="80" feet="95" addons="3"/>
+  
+	<interaction talkradius="3" range="3" idletime="30" idleinterval="300">
+    
+		<interact keywords="hi" focus="1">
+			<keywords>hello</keywords>
+			<keywords>ola</keywords>
+			<keywords>oi</keywords>
+
+			<response text="Caro |NAME|, não tire minha concentração!"/>
+		</interact>
+		
+		<interact keywords="bye" focus="0">
+			<keywords>adeus</keywords>
+
+			<response text="Cuide-se!"/>
+		</interact>		
+		
+		<interact event="onPlayerLeave" focus="0">
+			<response text="Saudações!"/>
+		</interact>		
+		
+		<interact keywords="name">
+			<keywords>nome</keywords>
+			
+			<response text="Meu nome é Eric."/>
+		</interact>
+
+		<interact keywords="job">
+			<keywords>cargo</keywords>
+
+			<response text="Eu sou um membro da infantaria de Thorn!"/>
+		</interact>
+		
+		<interact keywords="swamp">
+			<keywords>pantano</keywords>
+
+			<response text="Ao leste se encontra o pantano da velha Ariadne! O Rei de Thorn proibiu que as pessoas sigam para lá devido os perigos deste lugar!"/>
+		</interact>		
+	</interaction>
+  
+</npc>

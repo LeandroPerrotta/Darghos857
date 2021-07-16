@@ -1,0 +1,14 @@
+<raid>
+<announce delay="0" type="event" message="Adeptos ao Culto de Ariadne rondam a cidade de Thorn!"/>
+<announce delay="200000" type="event" message="Bruxas comandadas por Ariadne atacam a cidade de Thorn, o rei pede ajuda!"/>
+
+<areaspawn delay="200000" centerx="2420" centery="1872" centerz="7" radius="12">
+<monster name="Ariadne Adept" minamount="10" maxamount="30"/>
+</areaspawn>
+
+<areaspawn delay="200000" centerx="2409" centery="1882" centerz="7" radius="12">
+<monster name="Ariadne Adept" minamount="10" maxamount="30"/>
+</areaspawn>
+
+
+</raid>
